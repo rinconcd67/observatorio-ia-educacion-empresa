@@ -124,6 +124,7 @@ export function validateDashboardHtml(html) {
   assert(html.includes('rel="canonical"'), "El HTML no contiene URL canónica.");
   assert(html.includes('type="application/ld+json"'), "El HTML no contiene metadatos estructurados.");
   assert(html.includes("data/observations.csv"), "El HTML no ofrece descarga CSV.");
+  assert(html.includes(".control-row label { flex: 1 1 0; min-width: 0; }"), "El HTML no protege los controles contra desbordamiento móvil.");
   assert(html.includes("window.OBSERVATORY_ARTIFACT="), "El HTML no contiene el contrato analítico incrustado.");
   assert(html.includes("window.OBSERVATORY_GEOJSON="), "El HTML no contiene la geometría mundial incrustada.");
   assert(!/<script[^>]+src=/i.test(html), "El HTML depende de scripts externos.");
