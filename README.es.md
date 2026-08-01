@@ -63,6 +63,12 @@ El dashboard no reemplaza los datos ausentes por cero ni convierte indicadores g
 
 La descripción académica ampliada y el inventario inicial se conservan en `README_PROYECTO.md` y `FUENTES_DATOS_IA.json`.
 
+## Documentación de cierre
+
+- [Bitácora técnica integral de v0.4.0](docs/BITACORA_TECNICA_CIERRE_V0.4.0.md)
+- [Certificación interna de publicación](docs/CERTIFICACION_PUBLICACION_V0.4.0.md)
+- [Manifiesto estructurado de evidencia](docs/evidence/publication-v0.4.0.json)
+
 La geometría cartográfica procede de `johan/world.geo.json`, publicada en dominio público mediante UNLICENSE. Los límites se utilizan exclusivamente para visualización analítica y no expresan posición institucional sobre fronteras o territorios.
 
 ## Autoría

@@ -1,9 +1,12 @@
 # Aviso de atribución
 
-**Obra:** Observatorio Global de Inteligencia Artificial en Educación y Empresa  
-**Autor:** César David Rincón Godoy  
-**ORCID:** <https://orcid.org/0009-0003-2112-3851>  
-**Versión:** 0.3.1  
+**Obra:** Observatorio Global de Inteligencia Artificial en Educación y Empresa
+
+**Autor:** César David Rincón Godoy
+
+**ORCID:** <https://orcid.org/0009-0003-2112-3851>
+
+**Versión:** 0.4.0
 **Año:** 2026
 
 Concepción, dirección intelectual y responsabilidad editorial: César David Rincón Godoy.

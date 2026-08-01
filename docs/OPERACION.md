@@ -17,7 +17,7 @@ npm run check
 npm run serve
 ```
 
-`npm run refresh` descarga las fuentes activas, conserva los archivos crudos fuera de Git, normaliza el snapshot, genera el contrato analítico y empaqueta el dashboard v0.3. La publicación se detiene si falla una fuente esencial o una validación estructural. Una fuente opcional indisponible se registra como error y deja sus campos vacíos.
+`npm run refresh` descarga las fuentes activas, conserva los archivos crudos fuera de Git, normaliza el snapshot, genera el contrato analítico y empaqueta el dashboard v0.4.0. La publicación se detiene si falla una fuente esencial o una validación estructural. Una fuente opcional indisponible se registra como error y deja sus campos vacíos.
 
 La actualización completa importa AIPI desde el libro oficial y Oxford 2025 desde el bloque JSON publicado en su página oficial. Eurostat conserva precedencia sobre OCDE cuando ambas fuentes presentan el indicador empresarial para el mismo país y año. Ambas importaciones controladas conservan su huella SHA-256 y registran cualquier país no conciliado.
 

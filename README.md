@@ -52,6 +52,12 @@ test/               Automated tests
 
 The observatory does not replace missing values with zero and does not reinterpret general connectivity or economic indicators as AI preparedness. Every visualization retains source, filters, execution date and reproducible provenance. IMF AIPI and Oxford Government AI Readiness remain separate because their methods and scales differ.
 
+## Technical closure records
+
+- [Complete v0.4.0 technical log (Spanish)](docs/BITACORA_TECNICA_CIERRE_V0.4.0.md)
+- [Internal publication certificate (Spanish)](docs/CERTIFICACION_PUBLICACION_V0.4.0.md)
+- [Structured evidence manifest](docs/evidence/publication-v0.4.0.json)
+
 The map geometry comes from `johan/world.geo.json`, released into the public domain under the UNLICENSE. Boundaries are used solely for analytical visualization and do not express an institutional position on borders or territories.
 
 ## Authorship

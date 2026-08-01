@@ -100,8 +100,8 @@ export function validateArtifact(artifact) {
   assert(artifact.manifest.cards.every((card) => card.sourceId || card.source), "Existe una tarjeta sin procedencia.");
   assert(artifact.manifest.charts.every((chart) => chart.sourceId || chart.source), "Existe un gráfico sin procedencia.");
   assert(artifact.manifest.tables.every((table) => table.sourceId || table.source), "Existe una tabla sin procedencia.");
-  assert(artifact.manifest.version === 3, "El manifiesto no corresponde a la versión 0.3.");
-  assert(artifact.snapshot.version === 3, "El snapshot del artefacto no corresponde a la versión 0.3.");
+  assert(artifact.manifest.version === 3, "El manifiesto no corresponde a la versión de esquema 3.");
+  assert(artifact.snapshot.version === 3, "El snapshot del artefacto no corresponde a la versión de esquema 3.");
   assert(artifact.snapshot.datasets.country_profile.length >= 215, "La tabla país tiene cobertura insuficiente.");
   assert(artifact.snapshot.datasets.regional_summary.length === 7, "La síntesis regional no contiene siete regiones.");
   assert(artifact.snapshot.datasets.global_summary[0].aipi_countries >= 160, "La síntesis global AIPI tiene cobertura insuficiente.");
