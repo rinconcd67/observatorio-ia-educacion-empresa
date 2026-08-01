@@ -80,6 +80,8 @@ jobs:
           git push origin "$BRANCH_NAME"
 
       - name: Abrir propuesta de actualización
+        id: open-pr
+        continue-on-error: true
         if: steps.changes.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
@@ -90,3 +92,12 @@ jobs:
           --head "$BRANCH_NAME"
           --title "data: actualización automática del observatorio"
           --body-file reports/update-candidate.md
+
+      - name: Registrar revisión manual
+        if: steps.changes.outputs.changed == 'true' && steps.open-pr.outcome == 'failure'
+        env:
+          BRANCH_NAME: automation/data-refresh-${{ github.run_id }}
+        run: |
+          echo "### Actualización lista para revisión manual" >> "$GITHUB_STEP_SUMMARY"
+          echo "La política del repositorio no permitió abrir el pull request automáticamente." >> "$GITHUB_STEP_SUMMARY"
+          echo "[Abrir comparación y crear pull request](https://github.com/${GITHUB_REPOSITORY}/compare/main...${BRANCH_NAME}?expand=1)" >> "$GITHUB_STEP_SUMMARY"

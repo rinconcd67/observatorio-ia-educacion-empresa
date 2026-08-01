@@ -37,7 +37,7 @@ El empaquetador incrusta datos, GeoJSON, CSS y JavaScript en `dashboard/index.ht
 
 - `ci.yml` reconstruye y valida cada cambio, audita dependencias y revisa el formato del diff.
 - `deploy-pages.yml` publica `_site/` únicamente desde `main` después de superar la construcción y las validaciones.
-- `refresh-data.yml` se ejecuta el primer día de cada mes, refresca todas las fuentes y abre un pull request si existen cambios.
+- `refresh-data.yml` se ejecuta el primer día de cada mes, refresca todas las fuentes y abre un pull request si existen cambios. Si la política del repositorio impide esa creación automática, conserva la rama auditada y publica en el resumen un vínculo para abrir la revisión manualmente.
 - `create-update-report.mjs` compara el candidato con la línea base y bloquea caídas críticas de cobertura.
 
 La actualización mensual nunca escribe directamente sobre `main`. El informe generado debe revisarse antes de integrar el pull request y activar el despliegue público.
