@@ -132,6 +132,7 @@ export function validateDashboardHtml(html, language) {
   assert(html.includes('hreflang="es"') && html.includes('hreflang="en"') && html.includes('hreflang="x-default"'), `El HTML ${language} no contiene alternos lingüísticos.`);
   assert(html.includes(`window.OBSERVATORY_LOCALE="${language}"`), `El HTML ${language} no activa la configuración regional correcta.`);
   assert(html.includes('id="language-switch"'), `El HTML ${language} no contiene el selector de idioma.`);
+  assert(html.includes('name="google-site-verification"'), `El HTML ${language} no contiene la verificación de Google Search Console.`);
   assert(html.includes('type="application/ld+json"'), "El HTML no contiene metadatos estructurados.");
   assert(html.includes("data/observations.csv"), "El HTML no ofrece descarga CSV.");
   assert(html.includes(".control-row label { flex: 1 1 0; min-width: 0; }"), "El HTML no protege los controles contra desbordamiento móvil.");
