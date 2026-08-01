@@ -32,7 +32,7 @@ npm run serve
 
 El dashboard canónico se encuentra en `dashboard/index.html`. `npm run build` genera además `_site/`, el paquete que GitHub Pages publica. Ambos incorporan los datos, estilos, lógica y geometría mundial; `npm run serve` ofrece la vista pública local en `http://127.0.0.1:4173`.
 
-URL pública prevista: `https://rinconcd67.github.io/observatorio-ia-educacion-empresa/`.
+URL pública: `https://rinconcd67.github.io/observatorio-ia-educacion-empresa/`.
 
 ## Estructura
 
