@@ -1,9 +1,9 @@
 {
   "source_id": "oxford_government_ai_readiness_2025",
   "status": "ok",
-  "started_at": "2026-08-01T15:34:27.865Z",
-  "completed_at": "2026-08-01T15:34:29.653Z",
-  "checksum_sha256": "7b5bb91057dcc2b016be86f0048060cdc02973477b0fbe7d1d3d5a6d6f4d7430",
+  "started_at": "2026-08-01T16:22:59.351Z",
+  "completed_at": "2026-08-01T16:23:01.490Z",
+  "checksum_sha256": "e52208d58bc10c2ed2432febd5ab499302265dcc632e32e68287cf978377f59d",
   "raw_path": "data/raw/oxford_government_ai_readiness_2025.html",
   "source_records": 195,
   "matched_countries": 194,

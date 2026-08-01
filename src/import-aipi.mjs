@@ -2,7 +2,7 @@ import { mkdir, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { FileBlob, SpreadsheetFile } from "@oai/artifact-tool";
+import { readSheet } from "read-excel-file/node";
 
 import { fetchBytes } from "./lib/http.mjs";
 import { checksum, readJson, writeJson } from "./lib/io.mjs";
@@ -23,22 +23,9 @@ function nowIso() {
   return new Date().toISOString();
 }
 
-export async function importAipi() {
-  const config = await readJson(join(root, "config", "controlled_downloads.json"));
-  const source = config.sources.find((item) => item.id === "imf_aipi" && item.active);
-  if (!source) throw new Error("La fuente controlada IMF AIPI no está activa.");
-
-  const startedAt = nowIso();
-  const bytes = await fetchBytes(source.url);
-  await mkdir(dirname(rawPath), { recursive: true });
-  await writeFile(rawPath, bytes);
-
-  const workbook = await SpreadsheetFile.importXlsx(await FileBlob.load(rawPath));
-  const sheet = workbook.worksheets.getItem("AIPI");
-  const values = sheet.getUsedRange().values;
+export function normalizeAipiRows(rows, source) {
   const observations = [];
-
-  for (const row of values.slice(2)) {
+  for (const row of rows.slice(2)) {
     const [country, iso3, group] = row;
     if (!country || !/^[A-Z]{3}$/.test(String(iso3))) continue;
     for (const [column, metricId, metricName, unit] of METRICS) {
@@ -59,6 +46,21 @@ export async function importAipi() {
       });
     }
   }
+  return observations;
+}
+
+export async function importAipi() {
+  const config = await readJson(join(root, "config", "controlled_downloads.json"));
+  const source = config.sources.find((item) => item.id === "imf_aipi" && item.active);
+  if (!source) throw new Error("La fuente controlada IMF AIPI no está activa.");
+
+  const startedAt = nowIso();
+  const bytes = await fetchBytes(source.url);
+  await mkdir(dirname(rawPath), { recursive: true });
+  await writeFile(rawPath, bytes);
+
+  const rows = await readSheet(rawPath, { sheet: "AIPI" });
+  const observations = normalizeAipiRows(rows, source);
 
   if (new Set(observations.map((row) => row.iso3)).size < 160) {
     throw new Error("La descarga AIPI contiene menos de 160 países válidos.");

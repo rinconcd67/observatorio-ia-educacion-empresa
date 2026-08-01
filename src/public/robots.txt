@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rinconcd67.github.io/observatorio-ia-educacion-empresa/sitemap.xml

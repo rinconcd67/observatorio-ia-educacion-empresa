@@ -8,4 +8,5 @@ data/raw/*.xlsx
 data/raw/*.html
 dashboard/*.tmp-*
 coverage/
+_site/
 !.gitkeep

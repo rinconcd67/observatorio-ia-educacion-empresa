@@ -1,0 +1,92 @@
+name: Proponer actualización de datos
+
+on:
+  schedule:
+    - cron: "15 10 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: data-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Obtener repositorio
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Preparar Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Instalar dependencias verificadas
+        run: npm ci
+
+      - name: Conservar línea base
+        run: cp data/processed/snapshot.json /tmp/observatorio-snapshot-before.json
+
+      - name: Actualizar todas las fuentes
+        run: npm run refresh
+
+      - name: Validar actualización
+        run: npm run check
+
+      - name: Generar informe comparativo
+        run: >-
+          node src/create-update-report.mjs
+          /tmp/observatorio-snapshot-before.json
+          data/processed/snapshot.json
+          reports/update-candidate.md
+
+      - name: Publicar evidencia de la ejecución
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: actualización-${{ github.run_id }}
+          path: |
+            reports/update-candidate.md
+            data/processed/
+            dashboard/artifact.json
+          retention-days: 90
+          if-no-files-found: warn
+
+      - name: Detectar cambios sustantivos
+        id: changes
+        run: |
+          if git diff --quiet -- data/processed dashboard/artifact.json dashboard/index.html; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Crear rama de revisión
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          BRANCH_NAME: automation/data-refresh-${{ github.run_id }}
+        run: |
+          git config user.name "observatorio-automation"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH_NAME"
+          git add data/processed dashboard/artifact.json dashboard/index.html reports/update-candidate.md
+          git commit -m "data: proponer actualización automática"
+          git push origin "$BRANCH_NAME"
+
+      - name: Abrir propuesta de actualización
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCH_NAME: automation/data-refresh-${{ github.run_id }}
+        run: >-
+          gh pr create
+          --base main
+          --head "$BRANCH_NAME"
+          --title "data: actualización automática del observatorio"
+          --body-file reports/update-candidate.md

@@ -2,11 +2,11 @@
 
 Sistema reproducible para monitorear adopción, brechas y condiciones de contexto de la inteligencia artificial por país. El proyecto mantiene separados los datos crudos, las tablas normalizadas, el contrato analítico y el dashboard entregable.
 
-## Estado de la versión 0.3.0
+## Estado de la versión 0.3.1
 
 - Dashboard autocontenido y de solo lectura con identidad visual propia.
 - Mapa mundial interactivo y siete regiones normalizadas en español.
-- Siete vistas: Global, Regiones, Países, Educación, Empresa, Gobernanza y Fuentes.
+- Ocho vistas: Global, Regiones, Países, Educación, Empresa, Gobernanza, Fuentes y Acerca.
 - Comparadores país-región-mundo y cobertura explícita por indicador.
 - Once fuentes operativas entre APIs públicas y descargas oficiales controladas.
 - 218 países y economías en el catálogo maestro.
@@ -17,17 +17,22 @@ Sistema reproducible para monitorear adopción, brechas y condiciones de context
 - Integración del Oxford Government AI Readiness Index 2025 y sus seis pilares en escala de 0 a 100.
 - Validaciones de rango, integridad ISO, cobertura, procedencia y estructura del dashboard.
 - Fuentes opcionales indisponibles visibles en la interfaz; no se imputan valores.
+- Autoría, ORCID, cita recomendada, política de datos, privacidad y declaración de asistencia técnica visibles.
+- Sitio público empaquetado para GitHub Pages con metadatos SEO, vista social y descargas CSV/JSON.
+- Actualización mensual gobernada mediante informe comparativo y pull request; la automatización no publica datos nuevos sin revisión humana.
 
 ## Inicio rápido
 
 ```bash
 npm test
 npm run refresh
-npm run validate
+npm run check
 npm run serve
 ```
 
-El dashboard generado se encuentra en `dashboard/index.html`. Es autocontenido e incorpora datos, estilos, lógica y geometría mundial; `npm run serve` ofrece una vista local en `http://127.0.0.1:4173`.
+El dashboard canónico se encuentra en `dashboard/index.html`. `npm run build` genera además `_site/`, el paquete que GitHub Pages publica. Ambos incorporan los datos, estilos, lógica y geometría mundial; `npm run serve` ofrece la vista pública local en `http://127.0.0.1:4173`.
+
+URL pública prevista: `https://rinconcd67.github.io/observatorio-ia-educacion-empresa/`.
 
 ## Estructura
 
@@ -36,8 +41,10 @@ config/             Registro de conectores activos
 data/raw/           Respuestas originales, excluidas de Git
 data/processed/     Snapshot y tablas normalizadas
 dashboard/          Artefacto canónico y HTML autocontenido
+_site/              Paquete público generado, excluido de Git
 data/reference/     Geometrías y referencias públicas versionadas
 docs/               Metodología, diccionario y operación
+reports/            Informes comparativos de actualización
 src/                Ingesta, transformación, validación y servidor
 test/               Pruebas unitarias
 ```
@@ -49,3 +56,7 @@ El dashboard no reemplaza los datos ausentes por cero ni convierte indicadores g
 La descripción académica ampliada y el inventario inicial se conservan en `README_PROYECTO.md` y `FUENTES_DATOS_IA.json`.
 
 La geometría cartográfica procede de `johan/world.geo.json`, publicada en dominio público mediante UNLICENSE. Los límites se utilizan exclusivamente para visualización analítica y no expresan posición institucional sobre fronteras o territorios.
+
+## Autoría
+
+Dirección intelectual, metodología y aprobación: César David Rincón Godoy ([ORCID 0009-0003-2112-3851](https://orcid.org/0009-0003-2112-3851)). OpenAI Codex presta asistencia técnica en arquitectura, ingeniería de datos, programación, documentación y pruebas, sin figurar como autor académico.

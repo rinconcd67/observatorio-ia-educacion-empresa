@@ -1,5 +1,15 @@
 # Historial de cambios
 
+## 0.3.1 - 2026-08-01
+
+- Se incorporaron autoría verificable, ORCID, ficha técnica, cita recomendada y declaración de asistencia técnica.
+- Se añadieron licencias diferenciadas para código y contenido, aviso legal, privacidad, seguridad y política de datos.
+- Se creó la vista Acerca y se ampliaron las rutas compartibles por vista, país e indicador.
+- Se empaquetó un sitio público para GitHub Pages con CSV, JSON, estado, metadatos estructurados e imagen social.
+- Se sustituyó una dependencia local del importador AIPI por una dependencia pública fijada y auditable.
+- Se creó CI de integridad, despliegue a Pages y actualización mensual mediante pull request gobernado.
+- Se añadieron controles de regresión de cobertura e informe comparativo automático.
+
 ## 0.3.0 - 2026-08-01
 
 - Se reconstruyó la capa visual como una aplicación local propia y autocontenida.

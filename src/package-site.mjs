@@ -1,0 +1,97 @@
+import { copyFile, mkdir, readFile, rm } from "node:fs/promises";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
+
+import { checksum, readJson, writeJson, writeText } from "./lib/io.mjs";
+
+const root = join(dirname(fileURLToPath(import.meta.url)), "..");
+const siteDirectory = join(root, "_site");
+const dataDirectory = join(siteDirectory, "data");
+const publicDirectory = join(root, "src", "public");
+
+const CSV_FIELDS = [
+  "iso3", "iso2", "country", "region", "income_group", "year", "sector",
+  "metric_id", "metric_name", "value", "unit", "source_id", "source_dataset",
+];
+
+function csvCell(value) {
+  const text = String(value ?? "");
+  return /[",\r\n]/.test(text) ? `"${text.replaceAll('"', '""')}"` : text;
+}
+
+function observationsCsv(observations) {
+  const lines = [CSV_FIELDS.join(",")];
+  for (const row of observations) {
+    lines.push(CSV_FIELDS.map((field) => csvCell(row[field])).join(","));
+  }
+  return `${lines.join("\n")}\n`;
+}
+
+async function packageSite() {
+  const [artifact, snapshot, packageDefinition] = await Promise.all([
+    readJson(join(root, "dashboard", "artifact.json")),
+    readJson(join(root, "data", "processed", "snapshot.json")),
+    readJson(join(root, "package.json")),
+  ]);
+  const html = await readFile(join(root, "dashboard", "index.html"), "utf8");
+  const csv = observationsCsv(snapshot.observations);
+  const global = artifact.snapshot.datasets.global_summary[0];
+
+  await rm(siteDirectory, { recursive: true, force: true });
+  await mkdir(dataDirectory, { recursive: true });
+  await writeText(join(siteDirectory, "index.html"), html);
+  await writeJson(join(dataDirectory, "artifact.json"), artifact);
+  await writeText(join(dataDirectory, "observations.csv"), csv);
+  await writeJson(join(dataDirectory, "status.json"), {
+    project: artifact.manifest.title,
+    version: packageDefinition.version,
+    generated_at: snapshot.generated_at,
+    status: snapshot.status,
+    countries: snapshot.countries_count,
+    observations: snapshot.observations_count,
+    regions: global.regions,
+    active_sources: snapshot.active_sources_count,
+    healthy_sources: snapshot.healthy_sources_count,
+    direct_countries: global.direct_countries,
+    aipi_countries: global.aipi_countries,
+    oxford_countries: global.government_readiness_countries,
+    artifact_sha256: checksum(artifact),
+    observations_csv_sha256: checksum(csv),
+    author: {
+      name: "César David Rincón Godoy",
+      orcid: "https://orcid.org/0009-0003-2112-3851",
+      profile: "https://cesar-rincon-profile.rinconcd67.chatgpt.site",
+    },
+  });
+
+  const publicFiles = [
+    "404.html",
+    "favicon.svg",
+    "robots.txt",
+    "site.webmanifest",
+    "sitemap.xml",
+    "social-preview.png",
+  ];
+  await Promise.all(publicFiles.map((file) => copyFile(join(publicDirectory, file), join(siteDirectory, file))));
+  await Promise.all([
+    copyFile(join(root, "CITATION.cff"), join(dataDirectory, "citation.cff")),
+    copyFile(join(root, "AUTHORS.md"), join(dataDirectory, "authors.txt")),
+    copyFile(join(root, "docs", "PRIVACIDAD.md"), join(dataDirectory, "privacy.txt")),
+    copyFile(join(root, "docs", "POLITICA_DATOS.md"), join(dataDirectory, "data-policy.txt")),
+  ]);
+
+  return {
+    directory: siteDirectory,
+    version: packageDefinition.version,
+    html_bytes: Buffer.byteLength(html),
+    csv_rows: snapshot.observations.length,
+    files: 12,
+  };
+}
+
+packageSite()
+  .then((result) => console.log(JSON.stringify({ ok: true, ...result })))
+  .catch((error) => {
+    console.error(error.message);
+    process.exitCode = 1;
+  });
