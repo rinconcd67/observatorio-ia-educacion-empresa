@@ -1,6 +1,6 @@
 {
   "name": "observatorio-ia-educacion-empresa",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "private": true,
   "type": "module",
   "description": "Observatorio global reproducible de preparación y adopción de IA en educación y empresas.",

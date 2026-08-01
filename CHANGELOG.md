@@ -1,5 +1,14 @@
 # Historial de cambios
 
+## 0.4.0 - 2026-08-01
+
+- Se incorporó una versión inglesa completa en `/en/`, equivalente a la ruta española y alimentada por el mismo contrato analítico.
+- Se localizaron navegación, mapas, tooltips, tablas, gráficos, nombres geográficos, fechas y formatos numéricos.
+- Se añadió un selector ES/EN que conserva la vista, el país y el indicador activos.
+- Se publicaron metadatos `hreflang`, URL canónicas, datos estructurados, manifiestos e imágenes sociales por idioma.
+- Se incorporaron versiones inglesas de autoría, privacidad y política de datos.
+- Se ampliaron el empaquetado y las validaciones para comprobar paridad funcional, cobertura y checksums entre ambas rutas.
+
 ## 0.3.1 - 2026-08-01
 
 - Se incorporaron autoría verificable, ORCID, ficha técnica, cita recomendada y declaración de asistencia técnica.
