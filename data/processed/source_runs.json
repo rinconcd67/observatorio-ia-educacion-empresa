@@ -1,0 +1,55 @@
+[
+  {
+    "source_id": "eurostat_enterprise_ai",
+    "status": "ok",
+    "started_at": "2026-08-01T14:29:02.983Z",
+    "completed_at": "2026-08-01T14:29:03.453Z",
+    "checksum_sha256": "c1e7e9df69e04be0a80fa4066e73a436777894abecc353b7921e025f4d8274ab",
+    "raw_path": "data/raw/eurostat_enterprise_ai.json"
+  },
+  {
+    "source_id": "eurostat_formal_education_ai",
+    "status": "ok",
+    "started_at": "2026-08-01T14:29:03.454Z",
+    "completed_at": "2026-08-01T14:29:03.609Z",
+    "checksum_sha256": "6a72a9a0cbdc7aecda3a3e24415f09d43706cdd56292c754524c5e7ea1f5717b",
+    "raw_path": "data/raw/eurostat_formal_education_ai.json"
+  },
+  {
+    "source_id": "eurostat_student_ai",
+    "status": "ok",
+    "started_at": "2026-08-01T14:29:03.609Z",
+    "completed_at": "2026-08-01T14:29:03.764Z",
+    "checksum_sha256": "7b8512de03a10674c40a4446915e89e520de5ef6a8ca897be7c6b075c3147e12",
+    "raw_path": "data/raw/eurostat_student_ai.json"
+  },
+  {
+    "source_id": "world_bank_countries",
+    "status": "ok",
+    "started_at": "2026-08-01T14:29:03.764Z",
+    "completed_at": "2026-08-01T14:29:03.880Z",
+    "checksum_sha256": "d29d57f8adf954c5e2a1520a02fb2c7b45575d8db3bd327a9dff47d66914231c",
+    "raw_path": "data/raw/world_bank_countries.json"
+  },
+  {
+    "source_id": "world_bank_internet",
+    "status": "error",
+    "started_at": "2026-08-01T14:29:03.881Z",
+    "completed_at": "2026-08-01T14:29:06.494Z",
+    "error": "HTTP 502 al consultar https://api.worldbank.org/v2/country/all/indicator/IT.NET.USER.ZS?format=json&per_page=20000&date=2020:2025"
+  },
+  {
+    "source_id": "world_bank_tertiary",
+    "status": "error",
+    "started_at": "2026-08-01T14:29:06.494Z",
+    "completed_at": "2026-08-01T14:29:09.261Z",
+    "error": "HTTP 502 al consultar https://api.worldbank.org/v2/country/all/indicator/SE.TER.ENRR?format=json&per_page=20000&date=2020:2025"
+  },
+  {
+    "source_id": "world_bank_gdp_per_capita",
+    "status": "error",
+    "started_at": "2026-08-01T14:29:09.261Z",
+    "completed_at": "2026-08-01T14:29:12.397Z",
+    "error": "HTTP 502 al consultar https://api.worldbank.org/v2/country/all/indicator/NY.GDP.PCAP.CD?format=json&per_page=20000&date=2020:2025"
+  }
+]

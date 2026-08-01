@@ -1,0 +1,8 @@
+.DS_Store
+node_modules/
+logs/*.log
+data/raw/*.json
+data/raw/*.csv
+dashboard/*.tmp-*
+coverage/
+!.gitkeep

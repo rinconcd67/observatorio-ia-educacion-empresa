@@ -1,0 +1,30 @@
+name: Monitoreo mensual
+
+on:
+  schedule:
+    - cron: "15 10 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm test
+      - run: npm run refresh:data
+      - run: npm run build:artifact
+      - run: npm run validate
+      - uses: actions/upload-artifact@v4
+        with:
+          name: observatorio-${{ github.run_id }}
+          path: |
+            data/processed/
+            dashboard/artifact.json
+          retention-days: 90

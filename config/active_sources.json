@@ -1,0 +1,88 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": "eurostat_enterprise_ai",
+      "name": "Eurostat - Uso de IA en empresas",
+      "active": true,
+      "required": true,
+      "sector": "empresa",
+      "access": "api_publica_sin_llave",
+      "dataset": "isoc_eb_ai",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/isoc_eb_ai?lang=en&freq=A&size_emp=GE10&nace_r2=C10-S951_X_K&indic_is=E_AI_TANY&unit=PC_ENT",
+      "metric_id": "enterprise_ai_adoption",
+      "refresh_frequency": "mensual"
+    },
+    {
+      "id": "eurostat_formal_education_ai",
+      "name": "Eurostat - IA generativa para educación formal",
+      "active": true,
+      "required": true,
+      "sector": "educacion",
+      "access": "api_publica_sin_llave",
+      "dataset": "isoc_ai_iaiu",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/isoc_ai_iaiu?lang=en&freq=A&ind_type=IND_TOTAL&indic_is=I_IUAIFE&unit=PC_IND&time=2025",
+      "metric_id": "formal_education_genai_use",
+      "refresh_frequency": "mensual"
+    },
+    {
+      "id": "eurostat_student_ai",
+      "name": "Eurostat - Uso de IA generativa por estudiantes",
+      "active": true,
+      "required": true,
+      "sector": "educacion",
+      "access": "api_publica_sin_llave",
+      "dataset": "isoc_ai_iaiu",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/isoc_ai_iaiu?lang=en&freq=A&ind_type=STUD&indic_is=I_IUAI&unit=PC_IND&time=2025",
+      "metric_id": "student_genai_use",
+      "refresh_frequency": "mensual"
+    },
+    {
+      "id": "world_bank_countries",
+      "name": "Banco Mundial - Catálogo de países",
+      "active": true,
+      "required": true,
+      "sector": "contexto",
+      "access": "api_publica_sin_llave",
+      "dataset": "countries",
+      "url": "https://api.worldbank.org/v2/country?format=json&per_page=400",
+      "refresh_frequency": "trimestral"
+    },
+    {
+      "id": "world_bank_internet",
+      "name": "Banco Mundial - Usuarios de Internet",
+      "active": true,
+      "required": false,
+      "sector": "contexto",
+      "access": "api_publica_sin_llave",
+      "dataset": "IT.NET.USER.ZS",
+      "url": "https://api.worldbank.org/v2/country/all/indicator/IT.NET.USER.ZS?format=json&per_page=20000&date=2020:2025",
+      "metric_id": "internet_users",
+      "refresh_frequency": "trimestral"
+    },
+    {
+      "id": "world_bank_tertiary",
+      "name": "Banco Mundial - Matrícula terciaria bruta",
+      "active": true,
+      "required": false,
+      "sector": "contexto_educativo",
+      "access": "api_publica_sin_llave",
+      "dataset": "SE.TER.ENRR",
+      "url": "https://api.worldbank.org/v2/country/all/indicator/SE.TER.ENRR?format=json&per_page=20000&date=2020:2025",
+      "metric_id": "tertiary_enrollment",
+      "refresh_frequency": "trimestral"
+    },
+    {
+      "id": "world_bank_gdp_per_capita",
+      "name": "Banco Mundial - PIB per cápita",
+      "active": true,
+      "required": false,
+      "sector": "contexto_economico",
+      "access": "api_publica_sin_llave",
+      "dataset": "NY.GDP.PCAP.CD",
+      "url": "https://api.worldbank.org/v2/country/all/indicator/NY.GDP.PCAP.CD?format=json&per_page=20000&date=2020:2025",
+      "metric_id": "gdp_per_capita",
+      "refresh_frequency": "trimestral"
+    }
+  ]
+}

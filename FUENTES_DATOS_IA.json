@@ -1,0 +1,235 @@
+{
+  "project": "Observatorio de IA en Educación y Empresa por Países",
+  "owner": "César David Rincón Godoy",
+  "opened_at": "2026-08-01",
+  "validation_timezone": "America/New_York",
+  "sources": [
+    {
+      "source_id": "oecd_talis_2024",
+      "name": "OECD TALIS 2024 Database",
+      "sector": "educacion",
+      "coverage": "paises_y_sistemas_participantes",
+      "measures": [
+        "uso_de_ia_por_docentes",
+        "practicas_pedagogicas_con_ia",
+        "percepciones_y_riesgos",
+        "barreras_docentes"
+      ],
+      "access_type": "descarga_publica",
+      "free_access": true,
+      "api_status": "sin_api_estable_confirmada",
+      "validation_status": "fuente_confirmada_por_navegacion; curl_bloqueado_por_cloudflare",
+      "primary_url": "https://www.oecd.org/en/data/datasets/talis-2024-database.html",
+      "notes": "Descargas disponibles en CSV, Rds, SPSS y Stata. Debe versionarse la descarga original."
+    },
+    {
+      "source_id": "oecd_ict_businesses",
+      "name": "OECD ICT Access and Usage by Businesses",
+      "sector": "empresa",
+      "coverage": "oecd_socios_y_eurostat_integrado",
+      "measures": [
+        "empresas_que_usan_ia",
+        "uso_por_tamano_de_empresa",
+        "uso_por_industria",
+        "evolucion_anual"
+      ],
+      "access_type": "api_sdmx",
+      "free_access": true,
+      "api_status": "validado_http_200",
+      "endpoint_example": "https://sdmx.oecd.org/public/rest/data/OECD.STI.DEP,DSD_ICT_B@DF_BUSINESSES/all?startPeriod=2025&dimensionAtObservation=AllDimensions&format=csvfilewithlabels",
+      "primary_url": "https://data-explorer.oecd.org/",
+      "notes": "API gratuito sujeto a uso responsable y límites operativos."
+    },
+    {
+      "source_id": "oecd_ict_households_individuals",
+      "name": "OECD ICT Access and Usage by Households and Individuals",
+      "sector": "educacion_individuos",
+      "coverage": "oecd_y_socios",
+      "measures": [
+        "uso_de_ia_generativa_por_individuos",
+        "uso_por_estudiantes",
+        "uso_por_edad_ingreso_educacion_y_empleo"
+      ],
+      "access_type": "api_sdmx",
+      "free_access": true,
+      "api_status": "validado_http_200",
+      "endpoint_example": "https://sdmx.oecd.org/public/rest/data/OECD.STI.DEP,DSD_ICT_HH_IND@DF_HH,1.1/all?startPeriod=2025&dimensionAtObservation=AllDimensions&format=csvfilewithlabels",
+      "primary_url": "https://data-explorer.oecd.org/",
+      "notes": "Útil para medir adopción social y educativa de IA generativa."
+    },
+    {
+      "source_id": "eurostat_enterprise_ai",
+      "name": "Eurostat isoc_eb_ai",
+      "sector": "empresa",
+      "coverage": "union_europea",
+      "measures": [
+        "empresas_que_usan_ia",
+        "tipo_de_tecnologia_ia",
+        "tamano_de_empresa",
+        "pais_y_anio"
+      ],
+      "access_type": "api_json_stat_sdmx_csv",
+      "free_access": true,
+      "api_status": "validado_http_200",
+      "endpoint_example": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/isoc_eb_ai?format=JSON&time=2025&geo=DK",
+      "primary_url": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20251211-2",
+      "notes": "Fuente fuerte para empresas europeas con 10 o más empleados."
+    },
+    {
+      "source_id": "eurostat_individual_genai",
+      "name": "Eurostat isoc_ai_iaiu",
+      "sector": "educacion_individuos",
+      "coverage": "union_europea",
+      "measures": [
+        "uso_de_ia_generativa_ultimos_tres_meses",
+        "uso_para_educacion_formal",
+        "uso_para_trabajo",
+        "uso_para_fines_privados"
+      ],
+      "access_type": "api_json_stat_sdmx_csv",
+      "free_access": true,
+      "api_status": "validado_http_200",
+      "endpoint_example": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/isoc_ai_iaiu?format=JSON&time=2025&geo=DK",
+      "primary_url": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20251216-3",
+      "notes": "Permite separar educación formal, trabajo y uso privado."
+    },
+    {
+      "source_id": "unesco_uis_sdg4",
+      "name": "UNESCO DataHub / UIS SDG 4",
+      "sector": "educacion_contexto",
+      "coverage": "global",
+      "measures": [
+        "indicadores_sdg4",
+        "acceso_educativo",
+        "docentes",
+        "gasto",
+        "equidad",
+        "logro"
+      ],
+      "access_type": "api_y_descarga_masiva",
+      "free_access": true,
+      "api_status": "validado_http_200",
+      "endpoint_example": "https://data.unesco.org/api/explore/v2.1/catalog/datasets/uis001/records?limit=1",
+      "primary_url": "https://data.unesco.org/explore/dataset/uis001/api/",
+      "notes": "No mide uso de IA directamente, pero provee variables de contexto educativo."
+    },
+    {
+      "source_id": "world_bank_edstats",
+      "name": "World Bank EdStats and Indicators API",
+      "sector": "educacion_contexto_pais",
+      "coverage": "global",
+      "measures": [
+        "educacion",
+        "poblacion",
+        "economia",
+        "conectividad",
+        "capital_humano"
+      ],
+      "access_type": "api_json_xml",
+      "free_access": true,
+      "api_status": "validado_http_200",
+      "endpoint_example": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json",
+      "primary_url": "https://datahelpdesk.worldbank.org/knowledgebase/articles/889392",
+      "notes": "No requiere llave. Sirve para variables explicativas y normalización por país."
+    },
+    {
+      "source_id": "imf_aipi",
+      "name": "IMF AI Preparedness Index",
+      "sector": "preparacion_pais",
+      "coverage": "173_174_paises",
+      "measures": [
+        "ai_preparedness_index",
+        "digital_infrastructure",
+        "human_capital_labor_market",
+        "innovation_economic_integration",
+        "regulation_ethics"
+      ],
+      "access_type": "datamapper_api_parcial_y_descarga",
+      "free_access": true,
+      "api_status": "metadata_validada; serie_numerica_no_confirmada_en_ruta_directa",
+      "endpoint_example": "https://www.imf.org/external/datamapper/api/v2/indicators",
+      "primary_url": "https://www.imf.org/external/datamapper/datasets/AIPI",
+      "notes": "Usar descarga completa hasta confirmar endpoint de serie numérica para AIPI."
+    },
+    {
+      "source_id": "oxford_government_ai_readiness",
+      "name": "Oxford Insights Government AI Readiness Index 2025",
+      "sector": "gobierno_preparacion_pais",
+      "coverage": "195_gobiernos",
+      "measures": [
+        "government_ai_readiness",
+        "government",
+        "technology_sector",
+        "data_infrastructure"
+      ],
+      "access_type": "descarga_de_datos",
+      "free_access": true,
+      "api_status": "sin_api_estable_confirmada",
+      "primary_url": "https://oxfordinsights.com/ai-readiness/government-ai-readiness-index-2025/",
+      "notes": "Fuente útil para gobernanza y capacidad pública, no para uso directo en educación o empresas."
+    },
+    {
+      "source_id": "stanford_ai_index_2026",
+      "name": "Stanford AI Index 2026",
+      "sector": "global_multisectorial",
+      "coverage": "global",
+      "measures": [
+        "educacion",
+        "economia",
+        "investigacion_desarrollo",
+        "politica_gobernanza",
+        "opinion_publica"
+      ],
+      "access_type": "datos_publicos_descargables",
+      "free_access": true,
+      "api_status": "sin_api_estable_confirmada",
+      "primary_url": "https://hai.stanford.edu/ai-index/2026-ai-index-report",
+      "notes": "Excelente para tendencias y contexto; requiere control metodológico por capítulo."
+    },
+    {
+      "source_id": "unesco_iesalc_lac_2026",
+      "name": "UNESCO IESALC - Adopción y gobernanza de IA en educación superior de América Latina y el Caribe",
+      "sector": "educacion_superior",
+      "coverage": "200_instituciones_19_paises_lac",
+      "measures": [
+        "adopcion_docencia_aprendizaje",
+        "adopcion_investigacion",
+        "adopcion_administracion",
+        "adopcion_servicio_comunidad",
+        "estrategia_politica_presupuesto_evaluacion"
+      ],
+      "access_type": "articulo_abierto",
+      "free_access": true,
+      "api_status": "sin_api_confirmada",
+      "primary_url": "https://ess.iesalc.unesco.org/index.php/ess3/article/view/v37i2-dt-14",
+      "notes": "Fuente regional clave para gobernanza universitaria; revisar si el artículo incluye anexos descargables."
+    }
+  ],
+  "recommended_mvp_sources": [
+    "oecd_ict_businesses",
+    "oecd_ict_households_individuals",
+    "eurostat_enterprise_ai",
+    "eurostat_individual_genai",
+    "unesco_uis_sdg4",
+    "world_bank_edstats",
+    "imf_aipi",
+    "oecd_talis_2024"
+  ],
+  "source_classes": {
+    "uso_real": [
+      "oecd_talis_2024",
+      "oecd_ict_businesses",
+      "oecd_ict_households_individuals",
+      "eurostat_enterprise_ai",
+      "eurostat_individual_genai",
+      "unesco_iesalc_lac_2026"
+    ],
+    "preparacion_y_contexto": [
+      "imf_aipi",
+      "oxford_government_ai_readiness",
+      "stanford_ai_index_2026",
+      "unesco_uis_sdg4",
+      "world_bank_edstats"
+    ]
+  }
+}

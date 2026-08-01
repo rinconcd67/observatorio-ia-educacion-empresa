@@ -1,0 +1,75 @@
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
+
+import { readJson } from "./lib/io.mjs";
+
+const root = join(dirname(fileURLToPath(import.meta.url)), "..");
+
+function assert(condition, message) {
+  if (!condition) throw new Error(message);
+}
+
+export function validateSnapshot(snapshot) {
+  assert(snapshot.status === "ready", "El snapshot no está en estado ready.");
+  assert(snapshot.observations.length > 100, "El snapshot contiene muy pocas observaciones.");
+  const requiredSources = new Set([
+    "eurostat_enterprise_ai",
+    "eurostat_formal_education_ai",
+    "eurostat_student_ai",
+    "world_bank_countries",
+  ]);
+  assert(
+    snapshot.source_runs.filter((run) => requiredSources.has(run.source_id)).every((run) => run.status === "ok"),
+    "Existe al menos una fuente esencial con error.",
+  );
+
+  const countryCodes = new Set();
+  for (const country of snapshot.countries) {
+    assert(/^[A-Z]{3}$/.test(country.iso3), `Código ISO3 inválido: ${country.iso3}`);
+    assert(!countryCodes.has(country.iso3), `País duplicado: ${country.iso3}`);
+    countryCodes.add(country.iso3);
+  }
+
+  const directMetrics = new Set([
+    "enterprise_ai_adoption",
+    "formal_education_genai_use",
+    "student_genai_use",
+  ]);
+  const directCountries = new Set();
+  for (const row of snapshot.observations) {
+    assert(Number.isFinite(row.value), `Valor no numérico en ${row.metric_id}/${row.iso3}.`);
+    assert(countryCodes.has(row.iso3), `Observación sin país maestro: ${row.iso3}.`);
+    assert(Number.isInteger(row.year), `Año inválido en ${row.metric_id}/${row.iso3}.`);
+    if (directMetrics.has(row.metric_id)) {
+      assert(row.value >= 0 && row.value <= 100, `Porcentaje fuera de rango en ${row.metric_id}/${row.iso3}.`);
+      directCountries.add(row.iso3);
+    }
+  }
+  assert(directCountries.size >= 20, "La cobertura directa de IA es inferior a 20 países.");
+  return { countries: snapshot.countries.length, observations: snapshot.observations.length, directCountries: directCountries.size };
+}
+
+export function validateArtifact(artifact) {
+  assert(artifact.surface === "dashboard", "El artefacto no declara surface=dashboard.");
+  assert(artifact.snapshot.status === "ready", "El artefacto no está listo.");
+  assert(artifact.manifest.blocks.length >= 6, "El dashboard no tiene suficiente estructura analítica.");
+  assert(artifact.manifest.cards.every((card) => card.sourceId || card.source), "Existe una tarjeta sin procedencia.");
+  assert(artifact.manifest.charts.every((chart) => chart.sourceId || chart.source), "Existe un gráfico sin procedencia.");
+  assert(artifact.manifest.tables.every((table) => table.sourceId || table.source), "Existe una tabla sin procedencia.");
+  assert(artifact.snapshot.datasets.country_profile.length >= 20, "La tabla país tiene cobertura insuficiente.");
+  assert(!JSON.stringify(artifact).includes('"fixture"'), "El artefacto contiene datos de prueba.");
+  return {
+    blocks: artifact.manifest.blocks.length,
+    cards: artifact.manifest.cards.length,
+    charts: artifact.manifest.charts.length,
+    tables: artifact.manifest.tables.length,
+  };
+}
+
+const snapshot = await readJson(join(root, "data", "processed", "snapshot.json"));
+const artifact = await readJson(join(root, "dashboard", "artifact.json"));
+console.log(JSON.stringify({
+  ok: true,
+  snapshot: validateSnapshot(snapshot),
+  artifact: validateArtifact(artifact),
+}));
