@@ -121,6 +121,7 @@ export function validateDashboardHtml(html) {
   assert((html.match(/data-view="/g) ?? []).length === 8, "El HTML no contiene ocho vistas temáticas.");
   assert(html.includes('data-view="about"'), "El HTML no contiene la vista de autoría.");
   assert(html.includes("0009-0003-2112-3851"), "El HTML no contiene el ORCID del autor.");
+  assert(html.includes('aria-label="Abrir navegación"'), "El menú móvil no tiene nombre accesible.");
   assert(html.includes('rel="canonical"'), "El HTML no contiene URL canónica.");
   assert(html.includes('type="application/ld+json"'), "El HTML no contiene metadatos estructurados.");
   assert(html.includes("data/observations.csv"), "El HTML no ofrece descarga CSV.");

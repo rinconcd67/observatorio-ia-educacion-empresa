@@ -425,7 +425,9 @@
     document.querySelectorAll(".view").forEach((section) => section.classList.toggle("active", section.dataset.view === view));
     document.querySelectorAll(".nav-item").forEach((button) => button.classList.toggle("active", button.dataset.viewTarget === view));
     document.getElementById("primary-nav").classList.remove("open");
-    document.getElementById("nav-toggle").setAttribute("aria-expanded", "false");
+    const navToggle = document.getElementById("nav-toggle");
+    navToggle.setAttribute("aria-expanded", "false");
+    navToggle.setAttribute("aria-label", "Abrir navegación");
     if (view === "global") renderGlobal();
     if (view === "regions") renderRegions();
     if (view === "countries") renderCountries();
@@ -450,6 +452,7 @@
       const nav = document.getElementById("primary-nav");
       const open = nav.classList.toggle("open");
       event.currentTarget.setAttribute("aria-expanded", String(open));
+      event.currentTarget.setAttribute("aria-label", open ? "Cerrar navegación" : "Abrir navegación");
     });
     document.getElementById("global-region-filter").addEventListener("change", (event) => { state.region = event.target.value; renderMap(); syncUrl(); });
     document.getElementById("map-metric").addEventListener("change", (event) => { state.mapMetric = event.target.value; renderMap(); syncUrl(); });

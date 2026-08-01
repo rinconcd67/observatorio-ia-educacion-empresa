@@ -374,7 +374,7 @@ footer a { color: #fff; }
         <span><strong>Observatorio Global</strong><small>Educación y empresa</small></span>
       </div>
       <div class="freshness"><span class="status-dot" aria-hidden="true"></span><span id="freshness-label"></span></div>
-      <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" title="Abrir navegación">☰</button>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Abrir navegación" aria-expanded="false" aria-controls="primary-nav" title="Abrir navegación">☰</button>
     </div>
     <nav class="primary-nav" id="primary-nav" aria-label="Vistas del observatorio">
       <button type="button" class="nav-item active" data-view-target="global">Global</button>
@@ -915,7 +915,9 @@ footer a { color: #fff; }
     document.querySelectorAll(".view").forEach((section) => section.classList.toggle("active", section.dataset.view === view));
     document.querySelectorAll(".nav-item").forEach((button) => button.classList.toggle("active", button.dataset.viewTarget === view));
     document.getElementById("primary-nav").classList.remove("open");
-    document.getElementById("nav-toggle").setAttribute("aria-expanded", "false");
+    const navToggle = document.getElementById("nav-toggle");
+    navToggle.setAttribute("aria-expanded", "false");
+    navToggle.setAttribute("aria-label", "Abrir navegación");
     if (view === "global") renderGlobal();
     if (view === "regions") renderRegions();
     if (view === "countries") renderCountries();
@@ -940,6 +942,7 @@ footer a { color: #fff; }
       const nav = document.getElementById("primary-nav");
       const open = nav.classList.toggle("open");
       event.currentTarget.setAttribute("aria-expanded", String(open));
+      event.currentTarget.setAttribute("aria-label", open ? "Cerrar navegación" : "Abrir navegación");
     });
     document.getElementById("global-region-filter").addEventListener("change", (event) => { state.region = event.target.value; renderMap(); syncUrl(); });
     document.getElementById("map-metric").addEventListener("change", (event) => { state.mapMetric = event.target.value; renderMap(); syncUrl(); });
