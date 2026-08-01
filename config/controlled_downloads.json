@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "sources": [
     {
       "id": "imf_aipi",
@@ -12,6 +12,19 @@
       "format": "xlsx",
       "url": "https://www.imf.org/external/datamapper/aipidata.xlsx",
       "year": 2023,
+      "refresh_frequency": "trimestral"
+    },
+    {
+      "id": "oxford_government_ai_readiness_2025",
+      "name": "Oxford Insights Government AI Readiness Index 2025",
+      "active": true,
+      "required": false,
+      "sector": "gobernanza_pais",
+      "access": "pagina_publica_con_json_incrustado",
+      "dataset": "index-data-2025",
+      "format": "html_embedded_json",
+      "url": "https://oxfordinsights.com/ai-readiness/government-ai-readiness-index-2025/",
+      "year": 2025,
       "refresh_frequency": "trimestral"
     }
   ]

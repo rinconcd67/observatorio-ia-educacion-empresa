@@ -13,7 +13,7 @@
 | `metric_id` | Identificador estable del indicador normalizado. |
 | `metric_name` | Nombre legible del indicador. |
 | `value` | Valor numérico sin imputación. |
-| `unit` | Porcentaje, dólares estadounidenses corrientes, índice 0-1 o contribución 0-0,25. |
+| `unit` | Porcentaje, dólares estadounidenses corrientes, índice 0-1, contribución 0-0,25 o índice 0-100. |
 | `source_id` | Identificador estable de la fuente. |
 | `source_dataset` | Tabla o código del conjunto de datos original. |
 
@@ -30,6 +30,13 @@
 | `ai_innovation_integration` | Contribución de 0 a 0,25 | FMI `aipidata.xlsx` |
 | `ai_human_capital` | Contribución de 0 a 0,25 | FMI `aipidata.xlsx` |
 | `ai_regulation_ethics` | Contribución de 0 a 0,25 | FMI `aipidata.xlsx` |
+| `government_ai_readiness` | Índice de 0 a 100 | Oxford Insights `index-data-2025` |
+| `government_policy_capacity` | Índice de 0 a 100 | Oxford Insights `index-data-2025` |
+| `government_ai_infrastructure` | Índice de 0 a 100 | Oxford Insights `index-data-2025` |
+| `government_ai_governance` | Índice de 0 a 100 | Oxford Insights `index-data-2025` |
+| `government_public_sector_adoption` | Índice de 0 a 100 | Oxford Insights `index-data-2025` |
+| `government_development_diffusion` | Índice de 0 a 100 | Oxford Insights `index-data-2025` |
+| `government_ai_resilience` | Índice de 0 a 100 | Oxford Insights `index-data-2025` |
 | `internet_users` | Porcentaje de individuos | Banco Mundial `IT.NET.USER.ZS` |
 | `tertiary_enrollment` | Porcentaje bruto | Banco Mundial `SE.TER.ENRR` |
 | `gdp_per_capita` | USD corrientes | Banco Mundial `NY.GDP.PCAP.CD` |

@@ -1,0 +1,17 @@
+{
+  "source_id": "oxford_government_ai_readiness_2025",
+  "status": "ok",
+  "started_at": "2026-08-01T15:34:27.865Z",
+  "completed_at": "2026-08-01T15:34:29.653Z",
+  "checksum_sha256": "7b5bb91057dcc2b016be86f0048060cdc02973477b0fbe7d1d3d5a6d6f4d7430",
+  "raw_path": "data/raw/oxford_government_ai_readiness_2025.html",
+  "source_records": 195,
+  "matched_countries": 194,
+  "unmatched_countries": [
+    {
+      "code": "TW",
+      "country": "Taiwan"
+    }
+  ],
+  "observations": 1358
+}

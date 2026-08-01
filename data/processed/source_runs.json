@@ -2,71 +2,72 @@
   {
     "source_id": "eurostat_enterprise_ai",
     "status": "ok",
-    "started_at": "2026-08-01T14:54:17.004Z",
-    "completed_at": "2026-08-01T14:54:17.669Z",
+    "started_at": "2026-08-01T15:40:08.442Z",
+    "completed_at": "2026-08-01T15:40:09.164Z",
     "checksum_sha256": "c1e7e9df69e04be0a80fa4066e73a436777894abecc353b7921e025f4d8274ab",
     "raw_path": "data/raw/eurostat_enterprise_ai.json"
   },
   {
     "source_id": "eurostat_formal_education_ai",
     "status": "ok",
-    "started_at": "2026-08-01T14:54:17.669Z",
-    "completed_at": "2026-08-01T14:54:17.830Z",
+    "started_at": "2026-08-01T15:40:09.165Z",
+    "completed_at": "2026-08-01T15:40:09.320Z",
     "checksum_sha256": "6a72a9a0cbdc7aecda3a3e24415f09d43706cdd56292c754524c5e7ea1f5717b",
     "raw_path": "data/raw/eurostat_formal_education_ai.json"
   },
   {
     "source_id": "eurostat_student_ai",
     "status": "ok",
-    "started_at": "2026-08-01T14:54:17.830Z",
-    "completed_at": "2026-08-01T14:54:17.986Z",
+    "started_at": "2026-08-01T15:40:09.320Z",
+    "completed_at": "2026-08-01T15:40:09.490Z",
     "checksum_sha256": "7b8512de03a10674c40a4446915e89e520de5ef6a8ca897be7c6b075c3147e12",
     "raw_path": "data/raw/eurostat_student_ai.json"
   },
   {
     "source_id": "oecd_ict_businesses",
     "status": "ok",
-    "started_at": "2026-08-01T14:54:17.986Z",
-    "completed_at": "2026-08-01T14:54:18.211Z",
+    "started_at": "2026-08-01T15:40:09.490Z",
+    "completed_at": "2026-08-01T15:40:09.726Z",
     "checksum_sha256": "246dc8d00471397b2d3e61dc21e5ca2892eec0d8f3a05fdb02f41fcbe90f067a",
     "raw_path": "data/raw/oecd_ict_businesses.csv"
   },
   {
     "source_id": "oecd_individual_genai",
     "status": "ok",
-    "started_at": "2026-08-01T14:54:18.211Z",
-    "completed_at": "2026-08-01T14:54:18.242Z",
+    "started_at": "2026-08-01T15:40:09.726Z",
+    "completed_at": "2026-08-01T15:40:09.756Z",
     "checksum_sha256": "61df1b893c94a26fb1807ad5f625087a716b4df9a4bc9b195ddd398ea656bb6c",
     "raw_path": "data/raw/oecd_individual_genai.csv"
   },
   {
     "source_id": "world_bank_countries",
     "status": "ok",
-    "started_at": "2026-08-01T14:54:18.242Z",
-    "completed_at": "2026-08-01T14:54:18.369Z",
+    "started_at": "2026-08-01T15:40:09.757Z",
+    "completed_at": "2026-08-01T15:40:09.970Z",
     "checksum_sha256": "d29d57f8adf954c5e2a1520a02fb2c7b45575d8db3bd327a9dff47d66914231c",
     "raw_path": "data/raw/world_bank_countries.json"
   },
   {
     "source_id": "world_bank_internet",
     "status": "ok",
-    "started_at": "2026-08-01T14:54:18.370Z",
-    "completed_at": "2026-08-01T14:54:18.525Z",
+    "started_at": "2026-08-01T15:40:09.970Z",
+    "completed_at": "2026-08-01T15:40:10.076Z",
     "checksum_sha256": "ea85231efd268096444f73ae70ec3450cdcd59d205f0204952c29f04422d522f",
     "raw_path": "data/raw/world_bank_internet.json"
   },
   {
     "source_id": "world_bank_tertiary",
-    "status": "error",
-    "started_at": "2026-08-01T14:54:18.526Z",
-    "completed_at": "2026-08-01T14:56:35.786Z",
-    "error": "This operation was aborted"
+    "status": "ok",
+    "started_at": "2026-08-01T15:40:10.077Z",
+    "completed_at": "2026-08-01T15:40:10.268Z",
+    "checksum_sha256": "321c6c548b9406ac2bade480e02774a8785c359b49af73576de4cc411c7844a1",
+    "raw_path": "data/raw/world_bank_tertiary.json"
   },
   {
     "source_id": "world_bank_gdp_per_capita",
     "status": "ok",
-    "started_at": "2026-08-01T14:56:35.786Z",
-    "completed_at": "2026-08-01T14:56:36.033Z",
+    "started_at": "2026-08-01T15:40:10.269Z",
+    "completed_at": "2026-08-01T15:40:10.387Z",
     "checksum_sha256": "5e920686d0488c5401366b10659aa36888ad9c9e9afaac63c1bab59b043e41e3",
     "raw_path": "data/raw/world_bank_gdp_per_capita.json"
   },
@@ -78,5 +79,22 @@
     "checksum_sha256": "35eb38b8b692771f2a58d3c9a8db3411365873ebc11ec2e8e8f690835f9f5f17",
     "raw_path": "data/raw/imf_aipi.xlsx",
     "records": 852
+  },
+  {
+    "source_id": "oxford_government_ai_readiness_2025",
+    "status": "ok",
+    "started_at": "2026-08-01T15:34:27.865Z",
+    "completed_at": "2026-08-01T15:34:29.653Z",
+    "checksum_sha256": "7b5bb91057dcc2b016be86f0048060cdc02973477b0fbe7d1d3d5a6d6f4d7430",
+    "raw_path": "data/raw/oxford_government_ai_readiness_2025.html",
+    "source_records": 195,
+    "matched_countries": 194,
+    "unmatched_countries": [
+      {
+        "code": "TW",
+        "country": "Taiwan"
+      }
+    ],
+    "observations": 1358
   }
 ]

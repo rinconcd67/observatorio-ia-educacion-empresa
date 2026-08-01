@@ -2,15 +2,19 @@
 
 Sistema reproducible para monitorear adopción, brechas y condiciones de contexto de la inteligencia artificial por país. El proyecto mantiene separados los datos crudos, las tablas normalizadas, el contrato analítico y el dashboard entregable.
 
-## Estado de la versión 0.2.0
+## Estado de la versión 0.3.0
 
-- Dashboard autocontenido y de solo lectura.
-- Diez fuentes configuradas entre APIs públicas y descargas oficiales controladas; nueve operativas en el snapshot vigente.
+- Dashboard autocontenido y de solo lectura con identidad visual propia.
+- Mapa mundial interactivo y siete regiones normalizadas en español.
+- Siete vistas: Global, Regiones, Países, Educación, Empresa, Gobernanza y Fuentes.
+- Comparadores país-región-mundo y cobertura explícita por indicador.
+- Once fuentes operativas entre APIs públicas y descargas oficiales controladas.
 - 218 países y economías en el catálogo maestro.
-- 3.307 observaciones normalizadas.
-- 40 países con medición directa de uso o adopción de IA y 165 con índice AIPI completo.
+- 5.280 observaciones normalizadas.
+- 40 países con medición directa de uso o adopción de IA, 165 con índice AIPI completo y 194 con Oxford Government AI Readiness 2025.
 - Integración de OCDE para ampliar la adopción empresarial y el uso individual de IA generativa fuera de Eurostat.
 - Integración del IMF AI Preparedness Index 2023 y sus cuatro contribuciones estructurales.
+- Integración del Oxford Government AI Readiness Index 2025 y sus seis pilares en escala de 0 a 100.
 - Validaciones de rango, integridad ISO, cobertura, procedencia y estructura del dashboard.
 - Fuentes opcionales indisponibles visibles en la interfaz; no se imputan valores.
 
@@ -23,7 +27,7 @@ npm run validate
 npm run serve
 ```
 
-El dashboard generado se encuentra en `dashboard/index.html`. Es autocontenido y puede abrirse directamente; `npm run serve` ofrece una vista local en `http://127.0.0.1:4173`.
+El dashboard generado se encuentra en `dashboard/index.html`. Es autocontenido e incorpora datos, estilos, lógica y geometría mundial; `npm run serve` ofrece una vista local en `http://127.0.0.1:4173`.
 
 ## Estructura
 
@@ -32,6 +36,7 @@ config/             Registro de conectores activos
 data/raw/           Respuestas originales, excluidas de Git
 data/processed/     Snapshot y tablas normalizadas
 dashboard/          Artefacto canónico y HTML autocontenido
+data/reference/     Geometrías y referencias públicas versionadas
 docs/               Metodología, diccionario y operación
 src/                Ingesta, transformación, validación y servidor
 test/               Pruebas unitarias
@@ -42,3 +47,5 @@ test/               Pruebas unitarias
 El dashboard no reemplaza los datos ausentes por cero ni convierte indicadores generales de conectividad o economía en un supuesto índice de preparación para IA. Cada visual conserva fuente, filtros, fecha de ejecución y ruta reproducible.
 
 La descripción académica ampliada y el inventario inicial se conservan en `README_PROYECTO.md` y `FUENTES_DATOS_IA.json`.
+
+La geometría cartográfica procede de `johan/world.geo.json`, publicada en dominio público mediante UNLICENSE. Los límites se utilizan exclusivamente para visualización analítica y no expresan posición institucional sobre fronteras o territorios.

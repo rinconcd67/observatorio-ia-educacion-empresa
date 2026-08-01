@@ -10,6 +10,13 @@ export function round(value, digits = 2) {
   return Math.round(value * factor) / factor;
 }
 
+export function quantile(values, probability) {
+  const numbers = values.filter(Number.isFinite).sort((left, right) => left - right);
+  if (!numbers.length) return null;
+  const index = Math.round((numbers.length - 1) * probability);
+  return numbers[index];
+}
+
 export function latestBy(rows, keyFields) {
   const selected = new Map();
   for (const row of rows) {

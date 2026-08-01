@@ -1,5 +1,17 @@
 # Historial de cambios
 
+## 0.3.0 - 2026-08-01
+
+- Se reconstruyó la capa visual como una aplicación local propia y autocontenida.
+- Se añadió un mapa mundial interactivo con siete indicadores seleccionables.
+- Se incorporaron siete vistas temáticas y filtros por región y país.
+- Se añadieron promedios globales, cuartiles AIPI y comparadores país-región-mundo.
+- Se integró Oxford Government AI Readiness 2025 para 194 países conciliados, con índice total, seis pilares y comparación independiente frente a AIPI.
+- Se amplió el selector cartográfico con preparación gubernamental y la vista Gobernanza con cruce entre ambos índices globales.
+- Se tradujeron regiones, grupos de ingreso y nombres de países al español cuando existe código ISO2.
+- Se reemplazó la tendencia empresarial de cuatro periodos por barras discretas más honestas.
+- Se incorporaron validaciones de mapa, navegación, autocontención y ausencia de dependencias remotas.
+
 ## 0.2.0 - 2026-08-01
 
 - Se amplió la cobertura empresarial e individual mediante dos consultas filtradas de la API SDMX de la OCDE.

@@ -2,7 +2,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { readJson, writeJson } from "./lib/io.mjs";
-import { indexBy, latestByPriority, mean, round } from "./lib/metrics.mjs";
+import { indexBy, latestByPriority, mean, quantile, round } from "./lib/metrics.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const snapshotPath = join(root, "data", "processed", "snapshot.json");
@@ -16,6 +16,54 @@ const SOURCE_PRIORITY = {
   eurostat_enterprise_ai: 20,
   oecd_ict_businesses: 10,
 };
+
+const REGION_LABELS = new Map([
+  ["East Asia & Pacific", "Asia Oriental y Pacífico"],
+  ["Europe & Central Asia", "Europa y Asia Central"],
+  ["Latin America & Caribbean", "América Latina y el Caribe"],
+  ["Middle East, North Africa, Afghanistan & Pakistan", "Oriente Medio, Norte de África, Afganistán y Pakistán"],
+  ["North America", "América del Norte"],
+  ["South Asia", "Asia Meridional"],
+  ["Sub-Saharan Africa", "África subsahariana"],
+  ["Sin clasificación regional", "Sin clasificación regional"],
+]);
+
+const INCOME_LABELS = new Map([
+  ["High income", "Ingreso alto"],
+  ["Upper middle income", "Ingreso mediano alto"],
+  ["Lower middle income", "Ingreso mediano bajo"],
+  ["Low income", "Ingreso bajo"],
+  ["Not classified", "Sin clasificación"],
+  ["Sin clasificación", "Sin clasificación"],
+]);
+
+const countryDisplayNames = new Intl.DisplayNames(["es"], { type: "region" });
+
+function translatedRegion(value) {
+  const normalized = String(value || "Sin clasificación regional").trim();
+  return REGION_LABELS.get(normalized) ?? normalized;
+}
+
+function translatedIncome(value) {
+  return INCOME_LABELS.get(String(value || "Sin clasificación").trim()) ?? value;
+}
+
+function translatedCountry(country) {
+  if (!/^[A-Z]{2}$/.test(country.iso2)) return country.country;
+  try {
+    return countryDisplayNames.of(country.iso2) ?? country.country;
+  } catch {
+    return country.country;
+  }
+}
+
+function finiteValues(rows, field) {
+  return rows.map((row) => row[field]).filter(Number.isFinite);
+}
+
+function averageField(rows, field, digits = 3) {
+  return round(mean(finiteValues(rows, field)), digits);
+}
 
 export function latestMetricMap(observations, metricId) {
   const rows = latestByPriority(metricRows(observations, metricId), ["iso3"], SOURCE_PRIORITY);
@@ -93,6 +141,20 @@ function sourceDefinitions(snapshot) {
       }
     },
     {
+      id: "oxford_government_ai_readiness_2025",
+      label: "Oxford Insights - Government AI Readiness Index 2025",
+      path: "https://oxfordinsights.com/ai-readiness/government-ai-readiness-index-2025/",
+      query: {
+        engine: "duckdb",
+        language: "sql",
+        sql: "SELECT * FROM read_json_auto('data/processed/observations.json') WHERE source_id = 'oxford_government_ai_readiness_2025'",
+        description: "Índice de preparación gubernamental para la IA y seis pilares, edición 2025; escala de 0 a 100.",
+        executed_at: executedAt,
+        tables_used: ["index-data-2025"],
+        filters: ["195 gobiernos en la fuente", "194 conciliados con el catálogo maestro", "sin imputación", "escala 0-100"]
+      }
+    },
+    {
       id: "eurostat_enterprise_ai",
       label: "Eurostat isoc_eb_ai",
       path: "https://ec.europa.eu/eurostat/databrowser/view/isoc_eb_ai/default/table",
@@ -165,29 +227,38 @@ export function createArtifact(snapshot) {
   const innovation = latestMetricMap(snapshot.observations, "ai_innovation_integration");
   const humanCapital = latestMetricMap(snapshot.observations, "ai_human_capital");
   const regulation = latestMetricMap(snapshot.observations, "ai_regulation_ethics");
+  const governmentReadiness = latestMetricMap(snapshot.observations, "government_ai_readiness");
+  const governmentPolicy = latestMetricMap(snapshot.observations, "government_policy_capacity");
+  const governmentInfrastructure = latestMetricMap(snapshot.observations, "government_ai_infrastructure");
+  const governmentGovernance = latestMetricMap(snapshot.observations, "government_ai_governance");
+  const governmentAdoption = latestMetricMap(snapshot.observations, "government_public_sector_adoption");
+  const governmentDiffusion = latestMetricMap(snapshot.observations, "government_development_diffusion");
+  const governmentResilience = latestMetricMap(snapshot.observations, "government_ai_resilience");
   const internet = latestMetricMap(snapshot.observations, "internet_users");
   const tertiary = latestMetricMap(snapshot.observations, "tertiary_enrollment");
   const gdp = latestMetricMap(snapshot.observations, "gdp_per_capita");
-  const countries = indexBy(snapshot.countries, "iso3");
   const directIso3 = directCountries(enterprise, formalEducation, students, individuals);
-  const coveredIso3 = directCountries(enterprise, formalEducation, students, individuals, aipi);
 
-  const countryProfile = [...coveredIso3].flatMap((iso3) => {
-    const country = countries.get(iso3);
-    if (!country) return [];
+  const countryProfile = snapshot.countries.map((country) => {
+    const iso3 = country.iso3;
     const business = enterprise.get(iso3);
     const education = formalEducation.get(iso3);
     const student = students.get(iso3);
     const individual = individuals.get(iso3);
     const aipiRow = aipi.get(iso3);
+    const governmentRow = governmentReadiness.get(iso3);
     const internetRow = internet.get(iso3);
     const tertiaryRow = tertiary.get(iso3);
     const gdpRow = gdp.get(iso3);
-    return [{
+    return {
       iso3,
-      country: country.country,
-      region: country.region,
-      income_group: country.income_group,
+      iso2: country.iso2,
+      country: translatedCountry(country),
+      country_source_name: country.country,
+      region: translatedRegion(country.region),
+      region_source_name: String(country.region || "").trim(),
+      income_group: translatedIncome(country.income_group),
+      has_direct_ai: directIso3.has(iso3),
       business_ai_pct: business?.value ?? null,
       business_year: business?.year ?? null,
       formal_education_ai_pct: education?.value ?? null,
@@ -202,6 +273,14 @@ export function createArtifact(snapshot) {
       aipi_innovation_contribution: innovation.get(iso3)?.value == null ? null : round(innovation.get(iso3).value, 3),
       aipi_human_capital_contribution: humanCapital.get(iso3)?.value == null ? null : round(humanCapital.get(iso3).value, 3),
       aipi_regulation_contribution: regulation.get(iso3)?.value == null ? null : round(regulation.get(iso3).value, 3),
+      government_ai_readiness_score: governmentRow?.value == null ? null : round(governmentRow.value, 2),
+      government_ai_readiness_year: governmentRow?.year ?? null,
+      government_policy_capacity: governmentPolicy.get(iso3)?.value == null ? null : round(governmentPolicy.get(iso3).value, 2),
+      government_ai_infrastructure: governmentInfrastructure.get(iso3)?.value == null ? null : round(governmentInfrastructure.get(iso3).value, 2),
+      government_ai_governance: governmentGovernance.get(iso3)?.value == null ? null : round(governmentGovernance.get(iso3).value, 2),
+      government_public_sector_adoption: governmentAdoption.get(iso3)?.value == null ? null : round(governmentAdoption.get(iso3).value, 2),
+      government_development_diffusion: governmentDiffusion.get(iso3)?.value == null ? null : round(governmentDiffusion.get(iso3).value, 2),
+      government_ai_resilience: governmentResilience.get(iso3)?.value == null ? null : round(governmentResilience.get(iso3).value, 2),
       adoption_gap_pp: business && education ? round(business.value - education.value) : null,
       internet_users_pct: internetRow?.value == null ? null : round(internetRow.value),
       internet_year: internetRow?.year ?? null,
@@ -209,7 +288,7 @@ export function createArtifact(snapshot) {
       tertiary_year: tertiaryRow?.year ?? null,
       gdp_per_capita_usd: gdpRow?.value == null ? null : round(gdpRow.value, 0),
       gdp_year: gdpRow?.year ?? null,
-    }];
+    };
   }).sort((left, right) => left.country.localeCompare(right.country, "es"));
 
   const businessRanking = countryProfile
@@ -229,10 +308,67 @@ export function createArtifact(snapshot) {
   const studentValues = countryProfile.map((row) => row.student_ai_pct);
   const readinessAdoption = countryProfile
     .filter((row) => Number.isFinite(row.aipi_score) && Number.isFinite(row.business_ai_pct));
+  const indexComparison = countryProfile
+    .filter((row) => Number.isFinite(row.aipi_score) && Number.isFinite(row.government_ai_readiness_score));
+
+  const regionalSummary = [...new Set(countryProfile.map((row) => row.region))]
+    .filter((region) => region !== "Sin clasificación regional")
+    .map((region) => {
+      const rows = countryProfile.filter((row) => row.region === region);
+      const directRows = rows.filter((row) => row.has_direct_ai);
+      return {
+        region,
+        countries_catalog: rows.length,
+        direct_countries: directRows.length,
+        aipi_countries: finiteValues(rows, "aipi_score").length,
+        aipi_average: averageField(rows, "aipi_score"),
+        digital_average: averageField(rows, "aipi_digital_contribution"),
+        innovation_average: averageField(rows, "aipi_innovation_contribution"),
+        human_capital_average: averageField(rows, "aipi_human_capital_contribution"),
+        regulation_average: averageField(rows, "aipi_regulation_contribution"),
+        government_readiness_countries: finiteValues(rows, "government_ai_readiness_score").length,
+        government_readiness_average: averageField(rows, "government_ai_readiness_score", 2),
+        business_countries: finiteValues(rows, "business_ai_pct").length,
+        business_average_pct: averageField(rows, "business_ai_pct", 2),
+        education_countries: finiteValues(rows, "formal_education_ai_pct").length,
+        education_average_pct: averageField(rows, "formal_education_ai_pct", 2),
+        student_countries: finiteValues(rows, "student_ai_pct").length,
+        student_average_pct: averageField(rows, "student_ai_pct", 2),
+        individual_countries: finiteValues(rows, "individual_genai_pct").length,
+        individual_average_pct: averageField(rows, "individual_genai_pct", 2),
+        internet_countries: finiteValues(rows, "internet_users_pct").length,
+        internet_average_pct: averageField(rows, "internet_users_pct", 2),
+      };
+    })
+    .sort((left, right) => right.aipi_average - left.aipi_average);
+
+  const aipiValues = finiteValues(countryProfile, "aipi_score");
+  const governmentReadinessValues = finiteValues(countryProfile, "government_ai_readiness_score");
+  const globalSummary = [{
+    countries_catalog: snapshot.countries.length,
+    regions: regionalSummary.length,
+    direct_countries: directIso3.size,
+    direct_coverage_pct: round((directIso3.size / snapshot.countries.length) * 100, 1),
+    aipi_countries: aipiValues.length,
+    aipi_coverage_pct: round((aipiValues.length / snapshot.countries.length) * 100, 1),
+    aipi_average: round(mean(aipiValues), 3),
+    aipi_median: round(quantile(aipiValues, 0.5), 3),
+    aipi_q1: round(quantile(aipiValues, 0.25), 3),
+    aipi_q3: round(quantile(aipiValues, 0.75), 3),
+    government_readiness_countries: governmentReadinessValues.length,
+    government_readiness_coverage_pct: round((governmentReadinessValues.length / snapshot.countries.length) * 100, 1),
+    government_readiness_average: round(mean(governmentReadinessValues), 2),
+    government_readiness_median: round(quantile(governmentReadinessValues, 0.5), 2),
+    government_readiness_q1: round(quantile(governmentReadinessValues, 0.25), 2),
+    government_readiness_q3: round(quantile(governmentReadinessValues, 0.75), 2),
+    healthy_sources: snapshot.healthy_sources_count,
+  }];
 
   const summary = [{
     countries_covered: directIso3.size,
     aipi_countries: aipi.size,
+    government_readiness_countries: governmentReadiness.size,
+    government_readiness_average: round(mean(governmentReadinessValues), 2),
     business_average_pct: round(mean(businessRanking.map((row) => row.business_ai_pct))),
     education_average_pct: round(mean(educationRanking.map((row) => row.formal_education_ai_pct))),
     student_average_pct: round(mean(studentValues)),
@@ -257,20 +393,27 @@ export function createArtifact(snapshot) {
   return {
     surface: "dashboard",
     manifest: {
-      version: 1,
+      version: 3,
       surface: "dashboard",
-      title: "Observatorio de IA en Educación y Empresa",
-      description: "Adopción de inteligencia artificial y condiciones de contexto por país.",
+      title: "Observatorio Global de IA en Educación y Empresa",
+      description: "Preparación, adopción, uso y contexto de la inteligencia artificial por país y región.",
       generatedAt: snapshot.generated_at,
       filters: [{
         id: "country",
         label: "País",
         dataset: "country_profile",
         field: "country",
-        defaultValue: countryProfile.some((row) => row.country === "Denmark") ? "Denmark" : countryProfile[0]?.country,
+        defaultValue: countryProfile.find((row) => row.iso3 === "COL")?.country ?? countryProfile[0]?.country,
         includeAll: true,
       }],
       cards: [
+        {
+          id: "government_readiness_coverage",
+          description: "Gobiernos con índice de preparación gubernamental para la IA de Oxford Insights, edición 2025.",
+          dataset: "summary",
+          sourceId: "oxford_government_ai_readiness_2025",
+          metrics: [{ label: "Países con índice Oxford 2025", field: "government_readiness_countries", format: "number" }]
+        },
         {
           id: "aipi_coverage",
           description: "Países con índice indicativo de preparación para IA del FMI en la edición 2023.",
@@ -420,6 +563,7 @@ export function createArtifact(snapshot) {
             { field: "student_ai_pct", label: "IA entre estudiantes (%)", format: "number" },
             { field: "individual_genai_pct", label: "Uso individual de GenAI (%)", format: "number" },
             { field: "aipi_score", label: "Preparación AIPI (0-1)", format: "number" },
+            { field: "government_ai_readiness_score", label: "Preparación gubernamental Oxford (0-100)", format: "number" },
             { field: "adoption_gap_pp", label: "Brecha empresa-educación (pp)", format: "number", movement: true },
             { field: "internet_users_pct", label: "Uso de Internet (%)", format: "number" },
             { field: "tertiary_enrollment_pct", label: "Matrícula terciaria (%)", format: "number" },
@@ -438,6 +582,7 @@ export function createArtifact(snapshot) {
           columns: [
             { field: "country", label: "País", type: "text" },
             { field: "aipi_score", label: "AIPI (0-1)", format: "number" },
+            { field: "government_ai_readiness_score", label: "Oxford 2025 (0-100)", format: "number" },
             { field: "aipi_digital_contribution", label: "Infraestructura digital", format: "number" },
             { field: "aipi_innovation_contribution", label: "Innovación e integración", format: "number" },
             { field: "aipi_human_capital_contribution", label: "Capital humano y trabajo", format: "number" },
@@ -463,7 +608,7 @@ export function createArtifact(snapshot) {
       ],
       sources: sources.map((source) => ({ id: source.id, label: source.label, path: source.path })),
       blocks: [
-        { id: "metrics", type: "metric-strip", cardIds: ["coverage", "aipi_coverage", "business_average", "education_average", "individual_average", "active_sources"] },
+        { id: "metrics", type: "metric-strip", cardIds: ["coverage", "government_readiness_coverage", "aipi_coverage", "business_average", "education_average", "individual_average", "active_sources"] },
         { id: "business_trend_block", type: "chart", chartId: "business_trend", layout: "full" },
         { id: "business_ranking_block", type: "chart", chartId: "business_ranking", layout: "half" },
         { id: "education_ranking_block", type: "chart", chartId: "education_ranking", layout: "half" },
@@ -476,23 +621,26 @@ export function createArtifact(snapshot) {
         {
           id: "method_note",
           type: "markdown",
-          body: "## Lectura metodológica\n\nLos promedios son simples y no ponderados. Las métricas educativas, individuales y empresariales representan poblaciones distintas y no deben interpretarse como equivalentes causales. AIPI describe preparación estructural de forma indicativa: sirve para orientar el análisis, no para construir una clasificación competitiva de países."
+          body: "## Lectura metodológica\n\nLos promedios son simples y no ponderados. Las métricas educativas, individuales y empresariales representan poblaciones distintas y no deben interpretarse como equivalentes causales. AIPI y Oxford describen dimensiones de preparación con metodologías, escalas y periodos distintos; no se combinan en un índice nuevo ni se usan para inferir causalidad."
         },
         { id: "health_block", type: "table", tableId: "source_health", layout: "full" }
       ]
     },
     snapshot: {
-      version: 1,
+      version: 3,
       generatedAt: snapshot.generated_at,
       status: "ready",
       datasets: {
         summary,
+        global_summary: globalSummary,
+        regional_summary: regionalSummary,
         business_trend: trendDataset(snapshot.observations, "enterprise_ai_adoption"),
-        business_top: businessRanking.slice(0, 15),
-        education_top: educationRanking.slice(0, 15),
-        individual_top: individualCoverage.slice(0, 15),
+        business_top: businessRanking,
+        education_top: educationRanking,
+        individual_top: individualCoverage,
         gap_analysis: gapAnalysis,
         readiness_adoption: readinessAdoption,
+        index_comparison: indexComparison,
         country_profile: countryProfile,
         source_health: sourceHealth
       }

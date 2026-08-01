@@ -234,6 +234,8 @@ export async function refresh() {
   const countries = normalizeCountries(downloaded.get(countriesSource.id));
   const aipiObservations = await readOptionalJson(join(processedDirectory, "imf_aipi_observations.json"), []);
   const aipiRun = await readOptionalJson(join(processedDirectory, "imf_aipi_run.json"), null);
+  const oxfordObservations = await readOptionalJson(join(processedDirectory, "oxford_readiness_observations.json"), []);
+  const oxfordRun = await readOptionalJson(join(processedDirectory, "oxford_readiness_run.json"), null);
 
   const knownCountries = new Set(countries.map((country) => country.iso3));
   for (const row of aipiObservations) {
@@ -250,7 +252,8 @@ export async function refresh() {
   }
   countries.sort((left, right) => left.country.localeCompare(right.country, "es"));
   const maps = countryMaps(countries);
-  const observations = [...aipiObservations.map((row) => {
+  const controlledObservations = [...aipiObservations, ...oxfordObservations];
+  const observations = [...controlledObservations.map((row) => {
     const country = maps.byIso3.get(row.iso3);
     return {
       ...row,
@@ -275,6 +278,7 @@ export async function refresh() {
   }
 
   if (aipiRun) runs.push(aipiRun);
+  if (oxfordRun) runs.push(oxfordRun);
 
   observations.sort((left, right) =>
     left.metric_id.localeCompare(right.metric_id) ||
@@ -287,7 +291,7 @@ export async function refresh() {
     status: "ready",
     countries_count: countries.length,
     observations_count: observations.length,
-    active_sources_count: activeSources.length + (aipiRun ? 1 : 0),
+    active_sources_count: activeSources.length + (aipiRun ? 1 : 0) + (oxfordRun ? 1 : 0),
     healthy_sources_count: runs.filter((run) => run.status === "ok").length,
     countries,
     observations,

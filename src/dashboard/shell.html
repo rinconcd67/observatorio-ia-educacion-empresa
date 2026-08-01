@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Observatorio Global de IA</title>
+  <style>__OBSERVATORY_CSS__</style>
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-main">
+      <div class="brand" aria-label="Observatorio Global de IA">
+        <span class="brand-mark" aria-hidden="true">IA</span>
+        <span><strong>Observatorio Global</strong><small>Educación y empresa</small></span>
+      </div>
+      <div class="freshness"><span class="status-dot" aria-hidden="true"></span><span id="freshness-label"></span></div>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" title="Abrir navegación">☰</button>
+    </div>
+    <nav class="primary-nav" id="primary-nav" aria-label="Vistas del observatorio">
+      <button type="button" class="nav-item active" data-view-target="global">Global</button>
+      <button type="button" class="nav-item" data-view-target="regions">Regiones</button>
+      <button type="button" class="nav-item" data-view-target="countries">Países</button>
+      <button type="button" class="nav-item" data-view-target="education">Educación</button>
+      <button type="button" class="nav-item" data-view-target="business">Empresa</button>
+      <button type="button" class="nav-item" data-view-target="governance">Gobernanza</button>
+      <button type="button" class="nav-item" data-view-target="sources">Fuentes</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="view active" data-view="global">
+      <div class="view-intro">
+        <div><p class="eyebrow">Panorama mundial</p><h1>Preparación y adopción de inteligencia artificial</h1><p>Lectura comparada de capacidad estructural, uso educativo y adopción empresarial por país y región.</p></div>
+        <div class="control-row">
+          <label>Región<select id="global-region-filter"></select></label>
+          <label>Indicador<select id="map-metric"></select></label>
+        </div>
+      </div>
+      <div class="metric-strip" id="global-metrics"></div>
+      <section class="map-band" aria-labelledby="world-map-title">
+        <div class="section-heading"><div><p class="eyebrow">Cobertura geográfica</p><h2 id="world-map-title">Mapa mundial</h2><p id="map-subtitle"></p></div><div class="legend" id="map-legend"></div></div>
+        <div class="map-layout">
+          <div class="world-map-wrap"><svg id="world-map" viewBox="0 0 1000 500" role="img" aria-label="Mapa mundial por indicador"></svg></div>
+          <aside class="map-summary" id="map-summary"></aside>
+        </div>
+      </section>
+      <div class="analysis-grid">
+        <section class="analysis-panel"><div class="section-heading compact"><div><p class="eyebrow">Comparación</p><h2>Promedio AIPI por región</h2><p>Promedio simple; se muestra el número de países con índice completo.</p></div></div><div id="global-region-bars"></div></section>
+        <section class="analysis-panel"><div class="section-heading compact"><div><p class="eyebrow">Distribución</p><h2>Preparación global</h2><p>Distribución de los países disponibles en la escala AIPI de 0 a 1.</p></div></div><div id="global-distribution"></div></section>
+      </div>
+      <section class="table-band"><div class="section-heading compact"><div><p class="eyebrow">Transparencia</p><h2>Cobertura por región</h2><p>La preparación es global; las mediciones directas de uso siguen concentradas en Europa.</p></div></div><div class="table-scroll"><table id="coverage-table"></table></div></section>
+    </section>
+
+    <section class="view" data-view="regions">
+      <div class="view-intro"><div><p class="eyebrow">Lectura territorial</p><h1>Regiones del mundo</h1><p>Comparación de preparación, componentes estructurales y disponibilidad de datos directos.</p></div><label>Región<select id="region-select"></select></label></div>
+      <div class="metric-strip" id="region-metrics"></div>
+      <div class="analysis-grid">
+        <section class="analysis-panel"><div class="section-heading compact"><div><p class="eyebrow">Estructura</p><h2>Componentes AIPI</h2><p>Contribuciones medias a la escala total de 0 a 1.</p></div></div><div id="region-components"></div></section>
+        <section class="analysis-panel"><div class="section-heading compact"><div><p class="eyebrow">Países</p><h2>Distribución nacional</h2><p>Valores AIPI disponibles en la región seleccionada.</p></div></div><div id="region-country-bars"></div></section>
+      </div>
+      <section class="table-band"><div class="section-heading compact"><div><p class="eyebrow">Contexto</p><h2>Comparación regional completa</h2></div></div><div class="table-scroll"><table id="regions-table"></table></div></section>
+    </section>
+
+    <section class="view" data-view="countries">
+      <div class="view-intro"><div><p class="eyebrow">Perfil nacional</p><h1 id="country-view-title">País</h1><p id="country-view-subtitle"></p></div><label>País<select id="country-select"></select></label></div>
+      <div class="metric-strip" id="country-metrics"></div>
+      <div class="analysis-grid">
+        <section class="analysis-panel"><div class="section-heading compact"><div><p class="eyebrow">Preparación</p><h2>Componentes estructurales</h2><p>Contribución de cada dimensión al índice AIPI 2023.</p></div></div><div id="country-components"></div></section>
+        <section class="analysis-panel"><div class="section-heading compact"><div><p class="eyebrow">Referencia</p><h2>País, región y mundo</h2><p>Comparación descriptiva del índice AIPI.</p></div></div><div id="country-comparison"></div></section>
+      </div>
+      <section class="table-band"><div class="section-heading compact"><div><p class="eyebrow">Uso y contexto</p><h2>Indicadores disponibles</h2><p>Los periodos pueden variar por fuente; la ausencia se conserva explícitamente.</p></div></div><div id="country-detail-grid" class="detail-grid"></div></section>
+    </section>
+
+    <section class="view" data-view="education">
+      <div class="view-intro"><div><p class="eyebrow">Educación</p><h1>Uso educativo e individual de IA generativa</h1><p>Indicadores directos disponibles en Eurostat y OCDE, con cobertura geográfica explícita.</p></div></div>
+      <div class="metric-strip" id="education-metrics"></div>
+      <div class="analysis-grid">
+        <section class="analysis-panel"><div class="section-heading compact"><div><p class="eyebrow">Educación formal</p><h2>Uso por país</h2><p>Porcentaje de individuos, 2025.</p></div></div><div id="education-bars"></div></section>
+        <section class="analysis-panel"><div class="section-heading compact"><div><p class="eyebrow">Personas</p><h2>Uso individual de GenAI</h2><p>Personas de 16 a 74 años, 2025.</p></div></div><div id="individual-bars"></div></section>
+      </div>
+      <section class="coverage-callout"><strong>Cobertura limitada</strong><span>La base no atribuye promedios educativos a regiones sin observaciones directas. UNESCO UIS se incorporará como contexto educativo global, no como sustituto de uso de IA.</span></section>
+    </section>
+
+    <section class="view" data-view="business">
+      <div class="view-intro"><div><p class="eyebrow">Empresa</p><h1>Adopción empresarial de IA</h1><p>Empresas con diez o más personas empleadas; Eurostat prevalece en coincidencias con OCDE.</p></div></div>
+      <div class="metric-strip" id="business-metrics"></div>
+      <div class="analysis-grid">
+        <section class="analysis-panel"><div class="section-heading compact"><div><p class="eyebrow">Periodos</p><h2>Promedio por año disponible</h2><p>Comparaciones discretas; cambia la composición de países entre años.</p></div></div><div id="business-periods"></div></section>
+        <section class="analysis-panel"><div class="section-heading compact"><div><p class="eyebrow">Países</p><h2>Adopción observada</h2><p>Última observación disponible.</p></div></div><div id="business-bars"></div></section>
+      </div>
+      <section class="analysis-panel wide"><div class="section-heading compact"><div><p class="eyebrow">Relación</p><h2>Preparación frente a adopción empresarial</h2><p>Países con ambas mediciones; relación descriptiva, no causal.</p></div></div><div id="business-scatter"></div></section>
+    </section>
+
+    <section class="view" data-view="governance">
+      <div class="view-intro"><div><p class="eyebrow">Gobernanza y preparación</p><h1>Índices globales de preparación para la IA</h1><p>Comparación del AIPI 2023 del FMI y el Government AI Readiness Index 2025 de Oxford Insights.</p></div></div>
+      <div class="metric-strip" id="governance-metrics"></div>
+      <div class="analysis-grid">
+        <section class="analysis-panel"><div class="section-heading compact"><div><p class="eyebrow">Composición</p><h2>Componentes por región</h2><p>Contribuciones medias al índice AIPI.</p></div></div><div id="governance-components"></div></section>
+        <section class="analysis-panel"><div class="section-heading compact"><div><p class="eyebrow">Oxford 2025</p><h2>Promedio por región</h2><p>Escala 0–100; promedio simple de países disponibles.</p></div></div><div id="governance-oxford-regions"></div></section>
+      </div>
+      <section class="analysis-panel wide"><div class="section-heading compact"><div><p class="eyebrow">Convergencia</p><h2>Oxford frente a AIPI</h2><p>Los índices usan metodologías y periodos distintos; el cruce es descriptivo y no implica equivalencia.</p></div></div><div id="governance-comparison"></div></section>
+      <section class="table-band"><div class="section-heading compact"><div><p class="eyebrow">Exploración</p><h2>Índices y pilares por país</h2></div><label>Buscar<input id="governance-search" type="search" placeholder="País o región"></label></div><div class="table-scroll"><table id="governance-table"></table></div></section>
+    </section>
+
+    <section class="view" data-view="sources">
+      <div class="view-intro"><div><p class="eyebrow">Confianza</p><h1>Fuentes, cobertura y metodología</h1><p>Cada indicador conserva procedencia, filtros, periodo y huella de la ejecución.</p></div></div>
+      <section class="source-band" id="source-cards"></section>
+      <section class="table-band"><div class="section-heading compact"><div><p class="eyebrow">Ejecución</p><h2>Salud de conectores</h2></div></div><div class="table-scroll"><table id="source-health-table"></table></div></section>
+      <section class="method-band"><h2>Reglas de lectura</h2><ul><li>Los promedios son simples y no ponderados.</li><li>AIPI y Oxford conservan sus escalas, periodos y metodologías; no se combinan en un índice nuevo.</li><li>AIPI es indicativo y no se utiliza como clasificación competitiva.</li><li>Eurostat prevalece sobre OCDE en coincidencias empresariales del mismo país y año.</li><li>Los datos ausentes no se imputan ni se convierten en cero.</li><li>Las poblaciones educativa, individual y empresarial no son equivalentes causales.</li></ul></section>
+    </section>
+  </main>
+
+  <div class="tooltip" id="tooltip" role="status" aria-live="polite"></div>
+  <footer><span>Observatorio Global de IA · v0.3.0</span><span id="footer-freshness"></span></footer>
+  <script>window.OBSERVATORY_ARTIFACT=__OBSERVATORY_DATA__;window.OBSERVATORY_GEOJSON=__OBSERVATORY_GEOJSON__;</script>
+  <script>__OBSERVATORY_JS__</script>
+</body>
+</html>

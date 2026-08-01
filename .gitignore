@@ -5,6 +5,7 @@ logs/*.log
 data/raw/*.json
 data/raw/*.csv
 data/raw/*.xlsx
+data/raw/*.html
 dashboard/*.tmp-*
 coverage/
 !.gitkeep

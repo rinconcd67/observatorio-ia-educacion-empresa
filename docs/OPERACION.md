@@ -3,22 +3,23 @@
 ## Requisitos
 
 - Node.js 20 o posterior.
-- Acceso HTTPS a las APIs públicas de Eurostat, OCDE y Banco Mundial, y a la descarga oficial AIPI del FMI.
-- Para regenerar el HTML autocontenido, una instalación local del complemento Data Analytics de Codex.
+- Acceso HTTPS a las APIs públicas de Eurostat, OCDE y Banco Mundial, a la descarga oficial AIPI del FMI y a la página oficial de Oxford Insights.
+- La geometría mundial versionada en `data/reference/world.geo.json`.
 
 ## Comandos
 
 ```bash
 npm test
 npm run import:aipi
+npm run import:oxford
 npm run refresh
 npm run validate
 npm run serve
 ```
 
-`npm run refresh` descarga las fuentes activas, conserva los archivos crudos fuera de Git, normaliza el snapshot, genera el artefacto y empaqueta el dashboard. La publicación se detiene si falla una fuente esencial o una validación estructural. Una fuente opcional indisponible se registra como error, deja sus campos vacíos y produce un aviso visible de cobertura.
+`npm run refresh` descarga las fuentes activas, conserva los archivos crudos fuera de Git, normaliza el snapshot, genera el contrato analítico y empaqueta el dashboard v0.3. La publicación se detiene si falla una fuente esencial o una validación estructural. Una fuente opcional indisponible se registra como error y deja sus campos vacíos.
 
-La actualización completa también importa AIPI desde el libro oficial. Eurostat conserva precedencia sobre OCDE cuando ambas fuentes presentan el indicador empresarial para el mismo país y año. La descarga AIPI conserva su huella SHA-256.
+La actualización completa importa AIPI desde el libro oficial y Oxford 2025 desde el bloque JSON publicado en su página oficial. Eurostat conserva precedencia sobre OCDE cuando ambas fuentes presentan el indicador empresarial para el mismo país y año. Ambas importaciones controladas conservan su huella SHA-256 y registran cualquier país no conciliado.
 
 ## Frecuencia propuesta
 
@@ -29,3 +30,5 @@ La actualización completa también importa AIPI desde el libro oficial. Eurosta
 ## Trazabilidad
 
 Cada ejecución registra estado, hora de inicio, hora de cierre y SHA-256 del contenido descargado. Los archivos crudos no se versionan; el snapshot normalizado, el artefacto y el HTML sí pueden conservarse como evidencia de una edición.
+
+El empaquetador incrusta datos, GeoJSON, CSS y JavaScript en `dashboard/index.html`. La validación confirma siete vistas, mapa mundial, contrato analítico y ausencia de dependencias remotas en tiempo de lectura.

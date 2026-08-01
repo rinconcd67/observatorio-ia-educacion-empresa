@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { latestBy, latestByPriority, mean, round } from "../src/lib/metrics.mjs";
+import { latestBy, latestByPriority, mean, quantile, round } from "../src/lib/metrics.mjs";
 
 test("calcula promedios solo con valores numéricos", () => {
   assert.equal(mean([10, null, 20, Number.NaN]), 15);
@@ -31,4 +31,11 @@ test("resuelve coincidencias del mismo año según la precedencia de fuente", ()
     { iso3: "DNK", year: 2025, value: 42, source_id: "eurostat" },
   ];
   assert.deepEqual(latestByPriority(rows, ["iso3"], { eurostat: 20, oecd: 10 }), [rows[1]]);
+});
+
+test("calcula cuantiles sobre valores numéricos ordenados", () => {
+  const values = [0.8, null, 0.2, 0.6, 0.4, Number.NaN];
+  assert.equal(quantile(values, 0.25), 0.4);
+  assert.equal(quantile(values, 0.5), 0.6);
+  assert.equal(quantile([], 0.5), null);
 });
