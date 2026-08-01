@@ -278,7 +278,73 @@ npm run check
 npm run report:update
 ```
 
-## 15. Declaración de cierre
+## 15. Actualización del perfil profesional y registro ORCID
+
+El 1 de agosto de 2026, a las 15:17 EDT, se completó una revisión controlada del perfil público ORCID del autor y de la vinculación académica del observatorio. La verificación se efectuó tanto en la vista editable como en la vista pública del registro <https://orcid.org/0009-0003-2112-3851>.
+
+### 15.1 Perfil profesional público
+
+La afiliación profesional quedó registrada y visible para todo público con los siguientes datos:
+
+| Campo | Registro verificado |
+|---|---|
+| Institución | Broward International University |
+| Ubicación | Miami, Florida, United States |
+| Cargo | Adjunct Graduate Faculty |
+| Área académica | Graduate Faculty - Business Strategy, Artificial Intelligence in Education, and Psychology |
+| Enlace institucional | https://www.biu.us/ |
+| Visibilidad | Everyone |
+| Presentación pública | Afiliación destacada en el encabezado del perfil ORCID |
+
+La fecha `2021-12`, asociada previamente al inicio del programa doctoral, fue retirada del registro de empleo porque no constituye evidencia de la fecha de inicio del cargo docente. El estado de candidato doctoral se conserva en la nota de autoría del proyecto y, en ORCID, corresponde conceptualmente a la sección de educación y cualificaciones, no a la de empleo.
+
+### 15.2 Enlaces públicos incorporados
+
+Los siguientes recursos quedaron publicados en la sección `Websites & social links` con visibilidad `Everyone`:
+
+- perfil profesional de César David Rincón Godoy: <https://cesar-rincon-profile.rinconcd67.chatgpt.site>;
+- Observatorio Global de IA en Educación y Empresa: <https://rinconcd67.github.io/observatorio-ia-educacion-empresa/>.
+
+El enlace corporativo de RINCONCD67 Consulting & Supply LLC permanece como referencia profesional independiente. No se utiliza como institución académica del observatorio.
+
+### 15.3 Registro del observatorio como obra
+
+El observatorio quedó incorporado al registro ORCID con la siguiente ficha:
+
+| Campo | Registro verificado |
+|---|---|
+| Título | Observatorio Global de Inteligencia Artificial en Educación y Empresa |
+| Tipo de obra | Research tool |
+| Institución | Broward International University |
+| Fecha de publicación | 2026-08-01 |
+| Versión | 0.4.0 bilingüe, español e inglés |
+| Autor y contribuyente | César David Rincón Godoy |
+| Rol CRediT | Conceptualization |
+| País de publicación | United States |
+| Enlace | https://rinconcd67.github.io/observatorio-ia-educacion-empresa/ |
+| Visibilidad | Everyone |
+| Estado de presentación | Obra destacada en el perfil público |
+
+La cita registrada en ORCID es:
+
+> Rincón Godoy, C. D. (2026). *Observatorio Global de Inteligencia Artificial en Educación y Empresa* (Versión 0.4.0) [Herramienta de investigación]. https://rinconcd67.github.io/observatorio-ia-educacion-empresa/
+
+Durante la revisión se corrigió una asociación inicial con RINCONCD67 Consulting & Supply LLC. La institución visible de la obra quedó sustituida por Broward International University para mantener coherencia con la afiliación académica declarada por el autor. La empresa permanece únicamente como perfil corporativo separado.
+
+### 15.4 Evidencia de verificación
+
+La vista pública de ORCID confirmó:
+
+- el cargo `Adjunct Graduate Faculty` junto a Broward International University, Miami, Florida, US;
+- la afiliación BIU destacada en el encabezado del perfil;
+- los enlaces funcionales al perfil profesional y al observatorio;
+- el observatorio como obra pública y destacada;
+- la institución `Broward International University` en la ficha visible de la obra;
+- la existencia de dos obras públicas en el registro ORCID.
+
+Los dos destinos externos fueron cargados satisfactoriamente durante la verificación. El perfil profesional respondió con el título `Cesar Rincon | Executive Profile` y el sitio público con el título `Observatorio Global de IA en Educación y Empresa`.
+
+## 16. Declaración de cierre
 
 Se declara cerrada la fase de construcción y publicación de la versión 0.4.0. El código, los datos procesados, la documentación, las pruebas, la automatización, la release y el sitio público conforman una línea base reproducible y auditable.
 
