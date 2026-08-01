@@ -33,18 +33,26 @@ async function packageSite() {
     readJson(join(root, "data", "processed", "snapshot.json")),
     readJson(join(root, "package.json")),
   ]);
-  const html = await readFile(join(root, "dashboard", "index.html"), "utf8");
+  const [html, englishHtml] = await Promise.all([
+    readFile(join(root, "dashboard", "index.html"), "utf8"),
+    readFile(join(root, "dashboard", "en", "index.html"), "utf8"),
+  ]);
   const csv = observationsCsv(snapshot.observations);
   const global = artifact.snapshot.datasets.global_summary[0];
 
   await rm(siteDirectory, { recursive: true, force: true });
-  await mkdir(dataDirectory, { recursive: true });
+  await Promise.all([
+    mkdir(dataDirectory, { recursive: true }),
+    mkdir(join(siteDirectory, "en"), { recursive: true }),
+  ]);
   await writeText(join(siteDirectory, "index.html"), html);
+  await writeText(join(siteDirectory, "en", "index.html"), englishHtml);
   await writeJson(join(dataDirectory, "artifact.json"), artifact);
   await writeText(join(dataDirectory, "observations.csv"), csv);
   await writeJson(join(dataDirectory, "status.json"), {
     project: artifact.manifest.title,
     version: packageDefinition.version,
+    languages: ["es", "en"],
     generated_at: snapshot.generated_at,
     status: snapshot.status,
     countries: snapshot.countries_count,
@@ -69,15 +77,20 @@ async function packageSite() {
     "favicon.svg",
     "robots.txt",
     "site.webmanifest",
+    "site.en.webmanifest",
     "sitemap.xml",
     "social-preview.png",
+    "social-preview-en.png",
   ];
   await Promise.all(publicFiles.map((file) => copyFile(join(publicDirectory, file), join(siteDirectory, file))));
   await Promise.all([
     copyFile(join(root, "CITATION.cff"), join(dataDirectory, "citation.cff")),
     copyFile(join(root, "AUTHORS.md"), join(dataDirectory, "authors.txt")),
+    copyFile(join(root, "AUTHORS.en.md"), join(dataDirectory, "authors.en.txt")),
     copyFile(join(root, "docs", "PRIVACIDAD.md"), join(dataDirectory, "privacy.txt")),
+    copyFile(join(root, "docs", "PRIVACY.md"), join(dataDirectory, "privacy.en.txt")),
     copyFile(join(root, "docs", "POLITICA_DATOS.md"), join(dataDirectory, "data-policy.txt")),
+    copyFile(join(root, "docs", "DATA_POLICY.md"), join(dataDirectory, "data-policy.en.txt")),
   ]);
 
   return {
@@ -85,7 +98,7 @@ async function packageSite() {
     version: packageDefinition.version,
     html_bytes: Buffer.byteLength(html),
     csv_rows: snapshot.observations.length,
-    files: 12,
+    files: 18,
   };
 }
 

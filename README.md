@@ -1,62 +1,59 @@
-# Observatorio de IA en Educación y Empresa
+# Global AI Observatory for Education and Business
 
-Sistema reproducible para monitorear adopción, brechas y condiciones de contexto de la inteligencia artificial por país. El proyecto mantiene separados los datos crudos, las tablas normalizadas, el contrato analítico y el dashboard entregable.
+[Español](README.es.md) | **English**
 
-## Estado de la versión 0.3.1
+A reproducible, bilingual system for monitoring artificial intelligence preparedness, adoption and use in education, business and government by country and region.
 
-- Dashboard autocontenido y de solo lectura con identidad visual propia.
-- Mapa mundial interactivo y siete regiones normalizadas en español.
-- Ocho vistas: Global, Regiones, Países, Educación, Empresa, Gobernanza, Fuentes y Acerca.
-- Comparadores país-región-mundo y cobertura explícita por indicador.
-- Once fuentes operativas entre APIs públicas y descargas oficiales controladas.
-- 218 países y economías en el catálogo maestro.
-- 5.280 observaciones normalizadas.
-- 40 países con medición directa de uso o adopción de IA, 165 con índice AIPI completo y 194 con Oxford Government AI Readiness 2025.
-- Integración de OCDE para ampliar la adopción empresarial y el uso individual de IA generativa fuera de Eurostat.
-- Integración del IMF AI Preparedness Index 2023 y sus cuatro contribuciones estructurales.
-- Integración del Oxford Government AI Readiness Index 2025 y sus seis pilares en escala de 0 a 100.
-- Validaciones de rango, integridad ISO, cobertura, procedencia y estructura del dashboard.
-- Fuentes opcionales indisponibles visibles en la interfaz; no se imputan valores.
-- Autoría, ORCID, cita recomendada, política de datos, privacidad y declaración de asistencia técnica visibles.
-- Sitio público empaquetado para GitHub Pages con metadatos SEO, vista social y descargas CSV/JSON.
-- Actualización mensual gobernada mediante informe comparativo y pull request; la automatización no publica datos nuevos sin revisión humana.
+## Version 0.4.0
 
-## Inicio rápido
+- Two equivalent public routes: Spanish at `/` and English at `/en/`.
+- Eight views: Global, Regions, Countries, Education, Business, Governance, Sources and About.
+- One shared, auditable analytical contract for both languages.
+- 218 countries and economies, 7 world regions and 5,280 normalized observations.
+- 165 countries with a complete IMF AIPI, 194 with Oxford Government AI Readiness 2025 and 40 with direct AI-use or adoption measurements.
+- Eleven operational sources from public APIs and controlled official downloads.
+- Localized country and region names, interface, maps, charts, tables, tooltips, dates and number formats.
+- International SEO metadata, `hreflang`, structured data, bilingual manifests and language-specific social previews.
+- Verifiable CSV/JSON downloads, authorship, ORCID, citation, data policy and privacy documentation.
+- Monthly governed updates through a comparative report and pull request; automation does not publish new data without human review.
+
+## Quick start
 
 ```bash
 npm test
-npm run refresh
+npm run build
 npm run check
 npm run serve
 ```
 
-El dashboard canónico se encuentra en `dashboard/index.html`. `npm run build` genera además `_site/`, el paquete que GitHub Pages publica. Ambos incorporan los datos, estilos, lógica y geometría mundial; `npm run serve` ofrece la vista pública local en `http://127.0.0.1:4173`.
+`npm run build` generates the self-contained dashboards in `dashboard/index.html` and `dashboard/en/index.html`, plus the GitHub Pages package in `_site/`. The local server exposes the public package at `http://127.0.0.1:4173`.
 
-URL pública: `https://rinconcd67.github.io/observatorio-ia-educacion-empresa/`.
+Public URLs:
 
-## Estructura
+- Spanish: <https://rinconcd67.github.io/observatorio-ia-educacion-empresa/>
+- English: <https://rinconcd67.github.io/observatorio-ia-educacion-empresa/en/>
+
+## Structure
 
 ```text
-config/             Registro de conectores activos
-data/raw/           Respuestas originales, excluidas de Git
-data/processed/     Snapshot y tablas normalizadas
-dashboard/          Artefacto canónico y HTML autocontenido
-_site/              Paquete público generado, excluido de Git
-data/reference/     Geometrías y referencias públicas versionadas
-docs/               Metodología, diccionario y operación
-reports/            Informes comparativos de actualización
-src/                Ingesta, transformación, validación y servidor
-test/               Pruebas unitarias
+config/             Active connector registry
+data/raw/           Original responses, excluded from Git
+data/processed/     Normalized snapshot and tables
+dashboard/          Analytical artifact and self-contained HTML
+_site/              Generated public package, excluded from Git
+data/reference/     Versioned public geometry and references
+docs/               Methodology, data dictionary and operations
+reports/            Comparative update reports
+src/                Ingestion, transformation, validation and server
+test/               Automated tests
 ```
 
-## Principio de confianza
+## Trust principle
 
-El dashboard no reemplaza los datos ausentes por cero ni convierte indicadores generales de conectividad o economía en un supuesto índice de preparación para IA. Cada visual conserva fuente, filtros, fecha de ejecución y ruta reproducible.
+The observatory does not replace missing values with zero and does not reinterpret general connectivity or economic indicators as AI preparedness. Every visualization retains source, filters, execution date and reproducible provenance. IMF AIPI and Oxford Government AI Readiness remain separate because their methods and scales differ.
 
-La descripción académica ampliada y el inventario inicial se conservan en `README_PROYECTO.md` y `FUENTES_DATOS_IA.json`.
+The map geometry comes from `johan/world.geo.json`, released into the public domain under the UNLICENSE. Boundaries are used solely for analytical visualization and do not express an institutional position on borders or territories.
 
-La geometría cartográfica procede de `johan/world.geo.json`, publicada en dominio público mediante UNLICENSE. Los límites se utilizan exclusivamente para visualización analítica y no expresan posición institucional sobre fronteras o territorios.
+## Authorship
 
-## Autoría
-
-Dirección intelectual, metodología y aprobación: César David Rincón Godoy ([ORCID 0009-0003-2112-3851](https://orcid.org/0009-0003-2112-3851)). OpenAI Codex presta asistencia técnica en arquitectura, ingeniería de datos, programación, documentación y pruebas, sin figurar como autor académico.
+Intellectual direction, methodology and final approval: César David Rincón Godoy ([ORCID 0009-0003-2112-3851](https://orcid.org/0009-0003-2112-3851)). OpenAI Codex provides disclosed technical assistance in architecture, data engineering, programming, documentation and testing, and is not listed as an academic author.

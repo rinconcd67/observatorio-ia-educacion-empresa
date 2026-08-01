@@ -3,6 +3,9 @@
 
   const artifact = window.OBSERVATORY_ARTIFACT;
   const geojson = window.OBSERVATORY_GEOJSON;
+  const localeName = window.OBSERVATORY_LOCALE === "en" ? "en" : "es";
+  const locale = window.OBSERVATORY_I18N[localeName];
+  const messages = locale.messages;
   const datasets = artifact.snapshot.datasets;
   const profiles = datasets.country_profile;
   const regions = datasets.regional_summary;
@@ -10,6 +13,30 @@
   const profileByIso3 = new Map(profiles.map((row) => [row.iso3, row]));
   const regionByName = new Map(regions.map((row) => [row.region, row]));
   const tooltip = document.getElementById("tooltip");
+
+  function t(key, variables = {}) {
+    const template = messages[key];
+    if (template === undefined) throw new Error(`Missing ${localeName} translation: ${key}`);
+    return Object.entries(variables).reduce(
+      (text, [name, value]) => text.replaceAll(`{${name}}`, String(value)),
+      template,
+    );
+  }
+
+  function countryName(row) {
+    return localeName === "en" ? row?.country_source_name ?? row?.country : row?.country;
+  }
+
+  function regionName(value, row) {
+    if (localeName === "es") return value;
+    return row?.region_source_name
+      ?? profiles.find((profile) => profile.region === value)?.region_source_name
+      ?? (value === "Sin clasificación regional" ? t("unclassifiedRegion") : value);
+  }
+
+  function incomeGroupName(value) {
+    return locale.incomeGroups[value] ?? value;
+  }
 
   const palette = {
     teal: "#007c78",
@@ -30,10 +57,10 @@
     ["África subsahariana", "#6e7650"],
   ]);
   const componentDefinitions = [
-    ["aipi_digital_contribution", "Infraestructura digital", palette.blue],
-    ["aipi_innovation_contribution", "Innovación e integración", palette.gold],
-    ["aipi_human_capital_contribution", "Capital humano y trabajo", palette.green],
-    ["aipi_regulation_contribution", "Regulación y ética", palette.berry],
+    ["aipi_digital_contribution", t("digitalInfrastructure"), palette.blue],
+    ["aipi_innovation_contribution", t("innovationIntegration"), palette.gold],
+    ["aipi_human_capital_contribution", t("humanCapitalWork"), palette.green],
+    ["aipi_regulation_contribution", t("regulationEthics"), palette.berry],
   ];
   const regionalComponentFields = new Map([
     ["aipi_digital_contribution", "digital_average"],
@@ -42,14 +69,14 @@
     ["aipi_regulation_contribution", "regulation_average"],
   ]);
   const mapMetrics = {
-    aipi_score: { label: "Preparación AIPI", unit: "0-1", digits: 3, max: 1, colors: ["#d9efeb", "#94d4c7", "#42aa9d", "#007c78", "#005c59"], cuts: [0.3, 0.42, 0.54, 0.66] },
-    government_ai_readiness_score: { label: "Preparación gubernamental", unit: "0-100", digits: 1, max: 100, colors: ["#f6e9ca", "#ecd296", "#dcb556", "#c88a18", "#8a5d0b"], cuts: [30, 42, 54, 66] },
-    aipi_digital_contribution: { label: "Infraestructura digital", unit: "0-0,25", max: 0.25, colors: ["#e2e9f6", "#b8c9e8", "#7fa0d1", "#2f5da8", "#1f4178"], cuts: [0.06, 0.1, 0.14, 0.18] },
-    aipi_human_capital_contribution: { label: "Capital humano", unit: "0-0,25", max: 0.25, colors: ["#e0eee3", "#b8d8bf", "#83b68e", "#4f865c", "#345f40"], cuts: [0.06, 0.1, 0.14, 0.18] },
-    aipi_regulation_contribution: { label: "Regulación y ética", unit: "0-0,25", max: 0.25, colors: ["#f3dfe7", "#dfb2c4", "#c77b99", "#a23e65", "#732646"], cuts: [0.06, 0.1, 0.14, 0.18] },
-    business_ai_pct: { label: "Adopción empresarial", unit: "%", max: 50, colors: ["#e2e9f6", "#b8c9e8", "#7fa0d1", "#2f5da8", "#1f4178"], cuts: [8, 15, 22, 30] },
-    formal_education_ai_pct: { label: "IA para educación formal", unit: "%", max: 30, colors: ["#fae4df", "#f2bfb5", "#e99180", "#dc5a46", "#a93d2c"], cuts: [5, 10, 15, 20] },
-    internet_users_pct: { label: "Uso de Internet", unit: "%", max: 100, colors: ["#f6e9ca", "#ecd296", "#dcb556", "#c88a18", "#8a5d0b"], cuts: [40, 60, 75, 90] },
+    aipi_score: { label: t("aipiPreparedness"), unit: "0-1", digits: 3, max: 1, colors: ["#d9efeb", "#94d4c7", "#42aa9d", "#007c78", "#005c59"], cuts: [0.3, 0.42, 0.54, 0.66] },
+    government_ai_readiness_score: { label: t("governmentPreparedness"), unit: "0-100", digits: 1, max: 100, colors: ["#f6e9ca", "#ecd296", "#dcb556", "#c88a18", "#8a5d0b"], cuts: [30, 42, 54, 66] },
+    aipi_digital_contribution: { label: t("digitalInfrastructure"), unit: localeName === "en" ? "0-0.25" : "0-0,25", max: 0.25, colors: ["#e2e9f6", "#b8c9e8", "#7fa0d1", "#2f5da8", "#1f4178"], cuts: [0.06, 0.1, 0.14, 0.18] },
+    aipi_human_capital_contribution: { label: t("humanCapital"), unit: localeName === "en" ? "0-0.25" : "0-0,25", max: 0.25, colors: ["#e0eee3", "#b8d8bf", "#83b68e", "#4f865c", "#345f40"], cuts: [0.06, 0.1, 0.14, 0.18] },
+    aipi_regulation_contribution: { label: t("regulationEthics"), unit: localeName === "en" ? "0-0.25" : "0-0,25", max: 0.25, colors: ["#f3dfe7", "#dfb2c4", "#c77b99", "#a23e65", "#732646"], cuts: [0.06, 0.1, 0.14, 0.18] },
+    business_ai_pct: { label: t("enterpriseAdoption"), unit: "%", max: 50, colors: ["#e2e9f6", "#b8c9e8", "#7fa0d1", "#2f5da8", "#1f4178"], cuts: [8, 15, 22, 30] },
+    formal_education_ai_pct: { label: t("formalEducationAi"), unit: "%", max: 30, colors: ["#fae4df", "#f2bfb5", "#e99180", "#dc5a46", "#a93d2c"], cuts: [5, 10, 15, 20] },
+    internet_users_pct: { label: t("internetUse"), unit: "%", max: 100, colors: ["#f6e9ca", "#ecd296", "#dcb556", "#c88a18", "#8a5d0b"], cuts: [40, 60, 75, 90] },
   };
 
   const validViews = new Set(["global", "regions", "countries", "education", "business", "governance", "sources", "about"]);
@@ -57,9 +84,10 @@
   const requestedView = urlParameters.get("view");
   const requestedCountry = urlParameters.get("country");
   const requestedMetric = urlParameters.get("metric");
+  const requestedRegion = urlParameters.get("region");
   const state = {
     view: validViews.has(requestedView) ? requestedView : "global",
-    region: "Todas las regiones",
+    region: regions.some((row) => row.region === requestedRegion) ? requestedRegion : "__all__",
     mapMetric: Object.hasOwn(mapMetrics, requestedMetric) ? requestedMetric : "aipi_score",
     country: profileByIso3.has(requestedCountry) ? requestedCountry : profiles.some((row) => row.iso3 === "COL") ? "COL" : profiles.find((row) => Number.isFinite(row.aipi_score))?.iso3,
   };
@@ -69,8 +97,12 @@
     if (state.view !== "global") parameters.set("view", state.view);
     if (state.view === "countries" && state.country) parameters.set("country", state.country);
     if (state.view === "global" && state.mapMetric !== "aipi_score") parameters.set("metric", state.mapMetric);
+    if (state.view === "global" && state.region !== "__all__") parameters.set("region", state.region);
     const query = parameters.toString();
     window.history.replaceState({}, "", `${window.location.pathname}${query ? `?${query}` : ""}`);
+    const languageUrl = new URL(window.OBSERVATORY_LANGUAGE_SWITCH_PATH, window.location.href);
+    languageUrl.search = query;
+    document.getElementById("language-switch").href = languageUrl.href;
   }
 
   function escapeHtml(value) {
@@ -78,17 +110,17 @@
   }
 
   function number(value, digits = 2) {
-    if (!Number.isFinite(value)) return "n/d";
-    return new Intl.NumberFormat("es-ES", { maximumFractionDigits: digits, minimumFractionDigits: 0 }).format(value);
+    if (!Number.isFinite(value)) return t("na");
+    return new Intl.NumberFormat(locale.numberLocale, { maximumFractionDigits: digits, minimumFractionDigits: 0 }).format(value);
   }
 
   function integer(value) {
-    if (!Number.isFinite(value)) return "n/d";
-    return new Intl.NumberFormat("es-ES", { maximumFractionDigits: 0 }).format(value);
+    if (!Number.isFinite(value)) return t("na");
+    return new Intl.NumberFormat(locale.numberLocale, { maximumFractionDigits: 0 }).format(value);
   }
 
   function percentage(value, digits = 1) {
-    return Number.isFinite(value) ? `${number(value, digits)} %` : "n/d";
+    return Number.isFinite(value) ? `${number(value, digits)} %` : t("na");
   }
 
   function metricCard(label, value, context, color) {
@@ -153,13 +185,13 @@
   function renderMap() {
     const svg = document.getElementById("world-map");
     const metric = mapMetrics[state.mapMetric];
-    const regionRows = state.region === "Todas las regiones" ? profiles : profiles.filter((row) => row.region === state.region);
+    const regionRows = state.region === "__all__" ? profiles : profiles.filter((row) => row.region === state.region);
     const regionSet = new Set(regionRows.map((row) => row.iso3));
     svg.innerHTML = geojson.features.map((feature) => {
       const row = profileByIso3.get(feature.id);
       const value = row?.[state.mapMetric];
-      const dimmed = state.region !== "Todas las regiones" && !regionSet.has(feature.id);
-      const country = row?.country ?? feature.properties?.name ?? feature.id;
+      const dimmed = state.region !== "__all__" && !regionSet.has(feature.id);
+      const country = row ? countryName(row) : feature.properties?.name ?? feature.id;
       return `<path class="map-country" tabindex="0" data-iso3="${escapeHtml(feature.id)}" data-country="${escapeHtml(country)}" data-value="${Number.isFinite(value) ? value : ""}" d="${geometryPath(feature.geometry)}" fill="${colorForMetric(state.mapMetric, value)}" opacity="${dimmed ? 0.16 : 1}"></path>`;
     }).join("");
 
@@ -167,7 +199,7 @@
       const iso3 = path.dataset.iso3;
       const row = profileByIso3.get(iso3);
       const value = row?.[state.mapMetric];
-      const content = `<strong>${escapeHtml(path.dataset.country)}</strong><br>${escapeHtml(row?.region ?? "Sin clasificación")}<br>${escapeHtml(metric.label)}: <b>${Number.isFinite(value) ? number(value, metric.digits ?? (state.mapMetric.includes("pct") ? 1 : 3)) : "sin dato"}</b>`;
+      const content = `<strong>${escapeHtml(path.dataset.country)}</strong><br>${escapeHtml(row ? regionName(row.region, row) : t("unclassified"))}<br>${escapeHtml(metric.label)}: <b>${Number.isFinite(value) ? number(value, metric.digits ?? (state.mapMetric.includes("pct") ? 1 : 3)) : t("noData")}</b>`;
       path.addEventListener("pointermove", (event) => showTooltip(event, content));
       path.addEventListener("pointerleave", hideTooltip);
       path.addEventListener("focus", (event) => showTooltip({ clientX: 24, clientY: 150 }, content));
@@ -180,30 +212,31 @@
       });
     });
 
-    document.getElementById("map-subtitle").textContent = `${metric.label}; ${metric.unit}. Los países sin observación permanecen en gris.`;
-    const labels = ["Bajo", "", "Medio", "", "Alto"];
-    document.getElementById("map-legend").innerHTML = metric.colors.map((color, index) => `<span class="legend-swatch" style="background:${color}" title="${labels[index] || "Escala intermedia"}"></span>`).join("") + `<span>${metric.unit}</span>`;
+    document.getElementById("map-subtitle").textContent = `${metric.label}; ${metric.unit}. ${t("mapNoObservation")}`;
+    const labels = [t("low"), "", t("middle"), "", t("high")];
+    document.getElementById("map-legend").innerHTML = metric.colors.map((color, index) => `<span class="legend-swatch" style="background:${color}" title="${labels[index] || t("intermediate")}"></span>`).join("") + `<span>${metric.unit}</span>`;
 
     const values = regionRows.map((row) => row[state.mapMetric]).filter(Number.isFinite);
-    const areaName = state.region === "Todas las regiones" ? "Mundo" : state.region;
+    const areaName = state.region === "__all__" ? t("world") : regionName(state.region);
     const total = regionRows.length;
     const average = mean(values);
-    const source = state.mapMetric.startsWith("aipi") ? "FMI" : state.mapMetric.startsWith("government_") ? "Oxford Insights" : state.mapMetric === "internet_users_pct" ? "Banco Mundial" : "Eurostat / OCDE";
-    document.getElementById("map-summary").innerHTML = `<div><p class="eyebrow">${escapeHtml(metric.label)}</p><h3>${escapeHtml(areaName)}</h3><p>${values.length} países con observación de ${total} en el catálogo.</p></div><dl><div class="summary-row"><dt>Promedio</dt><dd>${number(average, metric.digits ?? (state.mapMetric.includes("pct") ? 1 : 3))}</dd></div><div class="summary-row"><dt>Cobertura</dt><dd>${total ? percentage((values.length / total) * 100, 1) : "n/d"}</dd></div><div class="summary-row"><dt>Máximo observado</dt><dd>${number(values.length ? Math.max(...values) : null, metric.digits ?? (state.mapMetric.includes("pct") ? 1 : 3))}</dd></div><div class="summary-row"><dt>Fuente principal</dt><dd>${source}</dd></div></dl>`;
+    const source = state.mapMetric.startsWith("aipi") ? t("sourceImf") : state.mapMetric.startsWith("government_") ? "Oxford Insights" : state.mapMetric === "internet_users_pct" ? t("sourceWorldBank") : t("sourceEurostatOecd");
+    document.getElementById("map-summary").innerHTML = `<div><p class="eyebrow">${escapeHtml(metric.label)}</p><h3>${escapeHtml(areaName)}</h3><p>${escapeHtml(t("countriesObserved", { observed: values.length, total }))}</p></div><dl><div class="summary-row"><dt>${escapeHtml(t("average"))}</dt><dd>${number(average, metric.digits ?? (state.mapMetric.includes("pct") ? 1 : 3))}</dd></div><div class="summary-row"><dt>${escapeHtml(t("coverage"))}</dt><dd>${total ? percentage((values.length / total) * 100, 1) : t("na")}</dd></div><div class="summary-row"><dt>${escapeHtml(t("maximumObserved"))}</dt><dd>${number(values.length ? Math.max(...values) : null, metric.digits ?? (state.mapMetric.includes("pct") ? 1 : 3))}</dd></div><div class="summary-row"><dt>${escapeHtml(t("mainSource"))}</dt><dd>${escapeHtml(source)}</dd></div></dl>`;
   }
 
   function renderBarList(id, rows, options) {
     const container = document.getElementById(id);
     const validRows = rows.filter((row) => Number.isFinite(row[options.field])).slice(0, options.limit ?? rows.length);
     if (!validRows.length) {
-      container.innerHTML = `<div class="empty-state">No hay observaciones directas para esta selección.</div>`;
+      container.innerHTML = `<div class="empty-state">${escapeHtml(t("emptySelection"))}</div>`;
       return;
     }
     const maximum = options.max ?? Math.max(...validRows.map((row) => row[options.field]));
     container.innerHTML = `<div class="bar-list">${validRows.map((row) => {
       const width = Math.max(1, (row[options.field] / maximum) * 100);
       const note = options.note ? options.note(row) : "";
-      return `<div class="bar-row"><span class="bar-label" title="${escapeHtml(row[options.labelField])}">${escapeHtml(row[options.labelField])}${note ? `<small class="bar-note">${escapeHtml(note)}</small>` : ""}</span><span class="bar-track"><span class="bar-fill" style="width:${width}%;--bar-color:${options.color ?? palette.teal}"></span></span><span class="bar-value">${number(row[options.field], options.digits ?? 2)}${options.suffix ?? ""}</span></div>`;
+      const label = options.label ? options.label(row) : row[options.labelField];
+      return `<div class="bar-row"><span class="bar-label" title="${escapeHtml(label)}">${escapeHtml(label)}${note ? `<small class="bar-note">${escapeHtml(note)}</small>` : ""}</span><span class="bar-track"><span class="bar-fill" style="width:${width}%;--bar-color:${options.color ?? palette.teal}"></span></span><span class="bar-value">${number(row[options.field], options.digits ?? 2)}${options.suffix ?? ""}</span></div>`;
     }).join("")}</div>`;
   }
 
@@ -227,7 +260,7 @@
   }
 
   function regionLegend() {
-    return `<div class="component-legend">${regions.map((row) => `<span><i style="background:${regionColors.get(row.region) ?? palette.neutral}"></i>${escapeHtml(row.region)}</span>`).join("")}</div>`;
+    return `<div class="component-legend">${regions.map((row) => `<span><i style="background:${regionColors.get(row.region) ?? palette.neutral}"></i>${escapeHtml(regionName(row.region, row))}</span>`).join("")}</div>`;
   }
 
   function renderComponentBars(id, row) {
@@ -236,36 +269,36 @@
   }
 
   function renderRegionalStacks(id) {
-    document.getElementById(id).innerHTML = `<div class="component-stack">${regions.map((row) => `<div class="stack-row"><div class="stack-head"><strong>${escapeHtml(row.region)}</strong><strong>${number(row.aipi_average, 3)}</strong></div><div class="stack-track">${componentDefinitions.map(([field, , color]) => `<span class="stack-segment" style="width:${(row[regionalComponentFields.get(field)] ?? 0) * 100}%;background:${color}"></span>`).join("")}</div></div>`).join("")}</div>${componentLegend()}`;
+    document.getElementById(id).innerHTML = `<div class="component-stack">${regions.map((row) => `<div class="stack-row"><div class="stack-head"><strong>${escapeHtml(regionName(row.region, row))}</strong><strong>${number(row.aipi_average, 3)}</strong></div><div class="stack-track">${componentDefinitions.map(([field, , color]) => `<span class="stack-segment" style="width:${(row[regionalComponentFields.get(field)] ?? 0) * 100}%;background:${color}"></span>`).join("")}</div></div>`).join("")}</div>${componentLegend()}`;
   }
 
   function renderGlobal() {
     setMetricStrip("global-metrics", [
-      metricCard("Países y economías", integer(global.countries_catalog), "Catálogo maestro", palette.blue),
-      metricCard("Oxford 2025", integer(global.government_readiness_countries), `${number(global.government_readiness_coverage_pct, 1)} % del catálogo`, palette.gold),
-      metricCard("Cobertura AIPI", integer(global.aipi_countries), `${number(global.aipi_coverage_pct, 1)} % del catálogo`, palette.teal),
-      metricCard("Regiones", integer(global.regions), "Comparación territorial", palette.coral),
-      metricCard("Uso o adopción directa", integer(global.direct_countries), `${number(global.direct_coverage_pct, 1)} % del catálogo`, palette.berry),
+      metricCard(t("globalCountries"), integer(global.countries_catalog), t("masterCatalog"), palette.blue),
+      metricCard("Oxford 2025", integer(global.government_readiness_countries), t("catalogCoverage", { value: number(global.government_readiness_coverage_pct, 1) }), palette.gold),
+      metricCard(t("aipiCoverage"), integer(global.aipi_countries), t("catalogCoverage", { value: number(global.aipi_coverage_pct, 1) }), palette.teal),
+      metricCard(t("regions"), integer(global.regions), t("territorialComparison"), palette.coral),
+      metricCard(t("directUse"), integer(global.direct_countries), t("catalogCoverage", { value: number(global.direct_coverage_pct, 1) }), palette.berry),
     ]);
     renderMap();
-    renderBarList("global-region-bars", regions, { field: "aipi_average", labelField: "region", max: 0.8, digits: 3, color: palette.teal, note: (row) => `${row.aipi_countries} países` });
+    renderBarList("global-region-bars", regions, { field: "aipi_average", label: (row) => regionName(row.region, row), max: 0.8, digits: 3, color: palette.teal, note: (row) => t("countriesCount", { count: row.aipi_countries }) });
     renderHistogram("global-distribution", profiles.map((row) => row.aipi_score));
     renderCoverageTable();
   }
 
   function renderCoverageTable() {
-    document.getElementById("coverage-table").innerHTML = `<thead><tr><th>Región</th><th class="numeric">Catálogo</th><th class="numeric">AIPI</th><th class="numeric">Empresa</th><th class="numeric">Educación formal</th><th class="numeric">Estudiantes</th><th class="numeric">Uso individual</th></tr></thead><tbody>${regions.map((row) => `<tr><td><strong>${escapeHtml(row.region)}</strong></td><td class="numeric">${integer(row.countries_catalog)}</td><td class="numeric">${integer(row.aipi_countries)}</td><td class="numeric">${integer(row.business_countries)}</td><td class="numeric">${integer(row.education_countries)}</td><td class="numeric">${integer(row.student_countries)}</td><td class="numeric">${integer(row.individual_countries)}</td></tr>`).join("")}</tbody>`;
+    document.getElementById("coverage-table").innerHTML = `<thead><tr><th>${escapeHtml(t("region"))}</th><th class="numeric">${escapeHtml(t("catalog"))}</th><th class="numeric">AIPI</th><th class="numeric">${escapeHtml(t("business"))}</th><th class="numeric">${escapeHtml(t("formalEducation"))}</th><th class="numeric">${escapeHtml(t("students"))}</th><th class="numeric">${escapeHtml(t("individualUse"))}</th></tr></thead><tbody>${regions.map((row) => `<tr><td><strong>${escapeHtml(regionName(row.region, row))}</strong></td><td class="numeric">${integer(row.countries_catalog)}</td><td class="numeric">${integer(row.aipi_countries)}</td><td class="numeric">${integer(row.business_countries)}</td><td class="numeric">${integer(row.education_countries)}</td><td class="numeric">${integer(row.student_countries)}</td><td class="numeric">${integer(row.individual_countries)}</td></tr>`).join("")}</tbody>`;
   }
 
   function renderRegions() {
     const selected = regionByName.get(document.getElementById("region-select").value) ?? regions[0];
     setMetricStrip("region-metrics", [
-      metricCard("Países", integer(selected.countries_catalog), "Catálogo regional", palette.blue),
-      metricCard("AIPI medio", number(selected.aipi_average, 3), `${selected.aipi_countries} países`, palette.teal),
-      metricCard("Oxford medio", number(selected.government_readiness_average, 1), `${selected.government_readiness_countries} países`, palette.gold),
-      metricCard("Uso directo", integer(selected.direct_countries), `${percentage((selected.direct_countries / selected.countries_catalog) * 100, 1)} de cobertura`, palette.coral),
-      metricCard("Internet medio", percentage(selected.internet_average_pct, 1), `${selected.internet_countries} países`, palette.gold),
-      metricCard("Empresa", percentage(selected.business_average_pct, 1), `${selected.business_countries} países`, palette.berry),
+      metricCard(t("countries"), integer(selected.countries_catalog), t("regionalCatalog"), palette.blue),
+      metricCard(t("aipiAverage"), number(selected.aipi_average, 3), t("countriesCount", { count: selected.aipi_countries }), palette.teal),
+      metricCard(t("oxfordAverage"), number(selected.government_readiness_average, 1), t("countriesCount", { count: selected.government_readiness_countries }), palette.gold),
+      metricCard(t("directUseShort"), integer(selected.direct_countries), t("coverageValue", { value: percentage((selected.direct_countries / selected.countries_catalog) * 100, 1) }), palette.coral),
+      metricCard(t("internetAverage"), percentage(selected.internet_average_pct, 1), t("countriesCount", { count: selected.internet_countries }), palette.gold),
+      metricCard(t("business"), percentage(selected.business_average_pct, 1), t("countriesCount", { count: selected.business_countries }), palette.berry),
     ]);
     renderComponentBars("region-components", {
       aipi_digital_contribution: selected.digital_average,
@@ -274,45 +307,45 @@
       aipi_regulation_contribution: selected.regulation_average,
     });
     const rows = profiles.filter((row) => row.region === selected.region && Number.isFinite(row.aipi_score)).sort((a, b) => b.aipi_score - a.aipi_score);
-    renderBarList("region-country-bars", rows, { field: "aipi_score", labelField: "country", max: 0.85, digits: 3, color: regionColors.get(selected.region), limit: 12 });
-    document.getElementById("regions-table").innerHTML = `<thead><tr><th>Región</th><th class="numeric">Oxford</th><th class="numeric">AIPI</th><th class="numeric">Infraestructura</th><th class="numeric">Innovación</th><th class="numeric">Capital humano</th><th class="numeric">Regulación</th><th class="numeric">Internet</th></tr></thead><tbody>${regions.map((row) => `<tr><td><strong>${escapeHtml(row.region)}</strong></td><td class="numeric">${number(row.government_readiness_average, 1)}</td><td class="numeric">${number(row.aipi_average, 3)}</td><td class="numeric">${number(row.digital_average, 3)}</td><td class="numeric">${number(row.innovation_average, 3)}</td><td class="numeric">${number(row.human_capital_average, 3)}</td><td class="numeric">${number(row.regulation_average, 3)}</td><td class="numeric">${percentage(row.internet_average_pct, 1)}</td></tr>`).join("")}</tbody>`;
+    renderBarList("region-country-bars", rows, { field: "aipi_score", label: countryName, max: 0.85, digits: 3, color: regionColors.get(selected.region), limit: 12 });
+    document.getElementById("regions-table").innerHTML = `<thead><tr><th>${escapeHtml(t("region"))}</th><th class="numeric">Oxford</th><th class="numeric">AIPI</th><th class="numeric">${escapeHtml(t("infrastructure"))}</th><th class="numeric">${escapeHtml(t("innovation"))}</th><th class="numeric">${escapeHtml(t("humanCapital"))}</th><th class="numeric">${escapeHtml(t("regulation"))}</th><th class="numeric">Internet</th></tr></thead><tbody>${regions.map((row) => `<tr><td><strong>${escapeHtml(regionName(row.region, row))}</strong></td><td class="numeric">${number(row.government_readiness_average, 1)}</td><td class="numeric">${number(row.aipi_average, 3)}</td><td class="numeric">${number(row.digital_average, 3)}</td><td class="numeric">${number(row.innovation_average, 3)}</td><td class="numeric">${number(row.human_capital_average, 3)}</td><td class="numeric">${number(row.regulation_average, 3)}</td><td class="numeric">${percentage(row.internet_average_pct, 1)}</td></tr>`).join("")}</tbody>`;
   }
 
   function renderCountries() {
     const row = profileByIso3.get(state.country) ?? profiles[0];
     const region = regionByName.get(row.region);
-    document.getElementById("country-view-title").textContent = row.country;
-    document.getElementById("country-view-subtitle").textContent = `${row.region} · ${row.income_group}`;
+    document.getElementById("country-view-title").textContent = countryName(row);
+    document.getElementById("country-view-subtitle").textContent = `${regionName(row.region, row)} · ${incomeGroupName(row.income_group)}`;
     setMetricStrip("country-metrics", [
-      metricCard("Oxford Gobierno", number(row.government_ai_readiness_score, 1), row.government_ai_readiness_year ? `Edición ${row.government_ai_readiness_year}` : "Sin observación", palette.gold),
-      metricCard("Preparación AIPI", number(row.aipi_score, 3), row.aipi_year ? `Edición ${row.aipi_year}` : "Sin observación", palette.teal),
-      metricCard("IA en empresas", percentage(row.business_ai_pct, 1), row.business_year ? `Año ${row.business_year}` : "Sin observación", palette.blue),
-      metricCard("IA para educación", percentage(row.formal_education_ai_pct, 1), row.education_year ? `Año ${row.education_year}` : "Sin observación", palette.coral),
-      metricCard("Uso individual GenAI", percentage(row.individual_genai_pct, 1), row.individual_genai_year ? `Año ${row.individual_genai_year}` : "Sin observación", palette.berry),
+      metricCard(t("governmentOxford"), number(row.government_ai_readiness_score, 1), row.government_ai_readiness_year ? t("edition", { year: row.government_ai_readiness_year }) : t("noObservation"), palette.gold),
+      metricCard(t("aipiPreparedness"), number(row.aipi_score, 3), row.aipi_year ? t("edition", { year: row.aipi_year }) : t("noObservation"), palette.teal),
+      metricCard(t("enterpriseAi"), percentage(row.business_ai_pct, 1), row.business_year ? t("year", { year: row.business_year }) : t("noObservation"), palette.blue),
+      metricCard(t("educationAi"), percentage(row.formal_education_ai_pct, 1), row.education_year ? t("year", { year: row.education_year }) : t("noObservation"), palette.coral),
+      metricCard(t("individualGenAi"), percentage(row.individual_genai_pct, 1), row.individual_genai_year ? t("year", { year: row.individual_genai_year }) : t("noObservation"), palette.berry),
     ]);
     renderComponentBars("country-components", row);
     renderBarList("country-comparison", [
-      { label: row.country, value: row.aipi_score },
-      { label: row.region, value: region?.aipi_average },
-      { label: "Promedio mundial", value: global.aipi_average },
+      { label: countryName(row), value: row.aipi_score },
+      { label: regionName(row.region, row), value: region?.aipi_average },
+      { label: t("worldAverage"), value: global.aipi_average },
     ], { field: "value", labelField: "label", max: 0.85, digits: 3, color: palette.teal });
     const details = [
-      ["Uso de Internet", percentage(row.internet_users_pct, 1), row.internet_year],
-      ["Matrícula terciaria", percentage(row.tertiary_enrollment_pct, 1), row.tertiary_year],
-      ["PIB per cápita", Number.isFinite(row.gdp_per_capita_usd) ? `USD ${integer(row.gdp_per_capita_usd)}` : "n/d", row.gdp_year],
-      ["IA entre estudiantes", percentage(row.student_ai_pct, 1), row.student_year],
-      ["Brecha empresa-educación", Number.isFinite(row.adoption_gap_pp) ? `${number(row.adoption_gap_pp, 2)} pp` : "n/d", null],
-      ["Oxford · capacidad de política", number(row.government_policy_capacity, 1), row.government_ai_readiness_year],
-      ["Oxford · infraestructura de IA", number(row.government_ai_infrastructure, 1), row.government_ai_readiness_year],
-      ["Oxford · gobernanza", number(row.government_ai_governance, 1), row.government_ai_readiness_year],
-      ["Oxford · adopción sector público", number(row.government_public_sector_adoption, 1), row.government_ai_readiness_year],
-      ["Oxford · desarrollo y difusión", number(row.government_development_diffusion, 1), row.government_ai_readiness_year],
-      ["Oxford · resiliencia", number(row.government_ai_resilience, 1), row.government_ai_readiness_year],
-      ["Grupo de ingreso", row.income_group, null],
-      ["Región", row.region, null],
-      ["Código ISO", row.iso3, null],
+      [t("internetUse"), percentage(row.internet_users_pct, 1), row.internet_year],
+      [t("tertiaryEnrollment"), percentage(row.tertiary_enrollment_pct, 1), row.tertiary_year],
+      [t("gdpPerCapita"), Number.isFinite(row.gdp_per_capita_usd) ? `USD ${integer(row.gdp_per_capita_usd)}` : t("na"), row.gdp_year],
+      [t("studentAi"), percentage(row.student_ai_pct, 1), row.student_year],
+      [t("businessEducationGap"), Number.isFinite(row.adoption_gap_pp) ? `${number(row.adoption_gap_pp, 2)} pp` : t("na"), null],
+      [`Oxford · ${t("policyCapacity")}`, number(row.government_policy_capacity, 1), row.government_ai_readiness_year],
+      [`Oxford · ${t("aiInfrastructure")}`, number(row.government_ai_infrastructure, 1), row.government_ai_readiness_year],
+      [`Oxford · ${t("aiGovernance")}`, number(row.government_ai_governance, 1), row.government_ai_readiness_year],
+      [`Oxford · ${t("publicSectorAdoption")}`, number(row.government_public_sector_adoption, 1), row.government_ai_readiness_year],
+      [`Oxford · ${t("developmentDiffusion")}`, number(row.government_development_diffusion, 1), row.government_ai_readiness_year],
+      [`Oxford · ${t("resilience")}`, number(row.government_ai_resilience, 1), row.government_ai_readiness_year],
+      [t("incomeGroup"), incomeGroupName(row.income_group), null],
+      [t("region"), regionName(row.region, row), null],
+      [t("isoCode"), row.iso3, null],
     ];
-    document.getElementById("country-detail-grid").innerHTML = details.map(([label, value, year]) => `<div class="detail-item"><span class="label">${escapeHtml(label)}</span><strong>${escapeHtml(value)}</strong>${year ? `<small>Año ${year}</small>` : ""}</div>`).join("");
+    document.getElementById("country-detail-grid").innerHTML = details.map(([label, value, year]) => `<div class="detail-item"><span class="label">${escapeHtml(label)}</span><strong>${escapeHtml(value)}</strong>${year ? `<small>${escapeHtml(t("year", { year }))}</small>` : ""}</div>`).join("");
   }
 
   function renderEducation() {
@@ -320,20 +353,20 @@
     const individual = datasets.individual_top;
     const students = profiles.filter((row) => Number.isFinite(row.student_ai_pct));
     setMetricStrip("education-metrics", [
-      metricCard("Educación formal", integer(formal.length), "Países con dato", palette.coral),
-      metricCard("Promedio educación formal", percentage(mean(formal.map((row) => row.formal_education_ai_pct)), 1), "Promedio no ponderado", palette.coral),
-      metricCard("Estudiantes", integer(students.length), "Países con dato", palette.gold),
-      metricCard("Uso individual GenAI", integer(individual.length), "Países con dato", palette.berry),
-      metricCard("Región dominante", "Europa", "Cobertura directa", palette.blue),
+      metricCard(t("formalEducation"), integer(formal.length), t("countriesWithData"), palette.coral),
+      metricCard(t("formalEducationAverage"), percentage(mean(formal.map((row) => row.formal_education_ai_pct)), 1), t("unweightedAverage"), palette.coral),
+      metricCard(t("students"), integer(students.length), t("countriesWithData"), palette.gold),
+      metricCard(t("individualGenAi"), integer(individual.length), t("countriesWithData"), palette.berry),
+      metricCard(t("dominantRegion"), t("europe"), t("directCoverage"), palette.blue),
     ]);
-    renderBarList("education-bars", formal, { field: "formal_education_ai_pct", labelField: "country", max: 25, digits: 1, suffix: "%", color: palette.coral, limit: 12 });
-    renderBarList("individual-bars", individual, { field: "individual_genai_pct", labelField: "country", max: 60, digits: 1, suffix: "%", color: palette.berry, limit: 12 });
+    renderBarList("education-bars", formal, { field: "formal_education_ai_pct", label: countryName, max: 25, digits: 1, suffix: "%", color: palette.coral, limit: 12 });
+    renderBarList("individual-bars", individual, { field: "individual_genai_pct", label: countryName, max: 60, digits: 1, suffix: "%", color: palette.berry, limit: 12 });
   }
 
   function renderPeriods() {
     const rows = datasets.business_trend;
     const max = Math.max(...rows.map((row) => row.adoption_pct), 1);
-    document.getElementById("business-periods").innerHTML = `<div class="period-chart">${rows.map((row) => `<div class="period-item"><div class="period-bar" style="height:${(row.adoption_pct / max) * 100}%"><strong>${number(row.adoption_pct, 1)}%</strong></div><span class="period-label">${row.year}<br>${row.countries} países</span></div>`).join("")}</div>`;
+    document.getElementById("business-periods").innerHTML = `<div class="period-chart">${rows.map((row) => `<div class="period-item"><div class="period-bar" style="height:${(row.adoption_pct / max) * 100}%"><strong>${number(row.adoption_pct, 1)}%</strong></div><span class="period-label">${row.year}<br>${escapeHtml(t("countriesCount", { count: row.countries }))}</span></div>`).join("")}</div>`;
   }
 
   function renderScatter() {
@@ -345,10 +378,10 @@
     const y = (value) => height - margin.bottom - (value / 50) * (height - margin.top - margin.bottom);
     const xTicks = [0.2, 0.4, 0.6, 0.8];
     const yTicks = [0, 10, 20, 30, 40, 50];
-    const svg = `<div class="scatter-wrap"><svg class="scatter" viewBox="0 0 ${width} ${height}" role="img" aria-label="Preparación AIPI frente a adopción empresarial">${xTicks.map((tick) => `<line class="grid" x1="${x(tick)}" x2="${x(tick)}" y1="${margin.top}" y2="${height - margin.bottom}"></line><text x="${x(tick)}" y="${height - 22}" text-anchor="middle">${number(tick, 1)}</text>`).join("")}${yTicks.map((tick) => `<line class="grid" x1="${margin.left}" x2="${width - margin.right}" y1="${y(tick)}" y2="${y(tick)}"></line><text x="${margin.left - 10}" y="${y(tick) + 4}" text-anchor="end">${tick}</text>`).join("")}<line class="axis" x1="${margin.left}" x2="${width - margin.right}" y1="${height - margin.bottom}" y2="${height - margin.bottom}"></line><line class="axis" x1="${margin.left}" x2="${margin.left}" y1="${margin.top}" y2="${height - margin.bottom}"></line><text x="${width / 2}" y="${height - 3}" text-anchor="middle">Índice AIPI (0-1)</text><text transform="translate(14 ${height / 2}) rotate(-90)" text-anchor="middle">Empresas que usan IA (%)</text>${rows.map((row) => `<circle tabindex="0" data-country="${escapeHtml(row.country)}" data-region="${escapeHtml(row.region)}" data-aipi="${row.aipi_score}" data-business="${row.business_ai_pct}" cx="${x(row.aipi_score)}" cy="${y(row.business_ai_pct)}" r="6" fill="${regionColors.get(row.region) ?? palette.neutral}"></circle>`).join("")}</svg></div>${regionLegend()}`;
+    const svg = `<div class="scatter-wrap"><svg class="scatter" viewBox="0 0 ${width} ${height}" role="img" aria-label="${escapeHtml(t("businessScatterAria"))}">${xTicks.map((tick) => `<line class="grid" x1="${x(tick)}" x2="${x(tick)}" y1="${margin.top}" y2="${height - margin.bottom}"></line><text x="${x(tick)}" y="${height - 22}" text-anchor="middle">${number(tick, 1)}</text>`).join("")}${yTicks.map((tick) => `<line class="grid" x1="${margin.left}" x2="${width - margin.right}" y1="${y(tick)}" y2="${y(tick)}"></line><text x="${margin.left - 10}" y="${y(tick) + 4}" text-anchor="end">${tick}</text>`).join("")}<line class="axis" x1="${margin.left}" x2="${width - margin.right}" y1="${height - margin.bottom}" y2="${height - margin.bottom}"></line><line class="axis" x1="${margin.left}" x2="${margin.left}" y1="${margin.top}" y2="${height - margin.bottom}"></line><text x="${width / 2}" y="${height - 3}" text-anchor="middle">${escapeHtml(t("aipiAxis"))}</text><text transform="translate(14 ${height / 2}) rotate(-90)" text-anchor="middle">${escapeHtml(t("businessAxis"))}</text>${rows.map((row) => `<circle tabindex="0" data-country="${escapeHtml(countryName(row))}" data-region="${escapeHtml(regionName(row.region, row))}" data-aipi="${row.aipi_score}" data-business="${row.business_ai_pct}" cx="${x(row.aipi_score)}" cy="${y(row.business_ai_pct)}" r="6" fill="${regionColors.get(row.region) ?? palette.neutral}"></circle>`).join("")}</svg></div>${regionLegend()}`;
     document.getElementById("business-scatter").innerHTML = svg;
     document.querySelectorAll("#business-scatter circle").forEach((circle) => {
-      const content = `<strong>${escapeHtml(circle.dataset.country)}</strong><br>${escapeHtml(circle.dataset.region)}<br>AIPI: <b>${number(Number(circle.dataset.aipi), 3)}</b><br>Empresas: <b>${percentage(Number(circle.dataset.business), 1)}</b>`;
+      const content = `<strong>${escapeHtml(circle.dataset.country)}</strong><br>${escapeHtml(circle.dataset.region)}<br>AIPI: <b>${number(Number(circle.dataset.aipi), 3)}</b><br>${escapeHtml(t("enterprises"))}: <b>${percentage(Number(circle.dataset.business), 1)}</b>`;
       circle.addEventListener("pointermove", (event) => showTooltip(event, content));
       circle.addEventListener("pointerleave", hideTooltip);
     });
@@ -357,21 +390,21 @@
   function renderBusiness() {
     const rows = datasets.business_top;
     setMetricStrip("business-metrics", [
-      metricCard("Países observados", integer(rows.length), "Último dato disponible", palette.blue),
-      metricCard("Promedio", percentage(mean(rows.map((row) => row.business_ai_pct)), 1), "Promedio no ponderado", palette.blue),
-      metricCard("Regiones cubiertas", integer(new Set(rows.map((row) => row.region)).size), "Cobertura directa", palette.gold),
-      metricCard("Cruce con AIPI", integer(datasets.readiness_adoption.length), "Países comparables", palette.teal),
-      metricCard("Fuente prevalente", "Eurostat", "OCDE amplía cobertura", palette.coral),
+      metricCard(t("observedCountries"), integer(rows.length), t("latestAvailable"), palette.blue),
+      metricCard(t("average"), percentage(mean(rows.map((row) => row.business_ai_pct)), 1), t("unweightedAverage"), palette.blue),
+      metricCard(t("coveredRegions"), integer(new Set(rows.map((row) => row.region)).size), t("directCoverage"), palette.gold),
+      metricCard(t("aipiMatch"), integer(datasets.readiness_adoption.length), t("comparableCountries"), palette.teal),
+      metricCard(t("leadingSource"), "Eurostat", t("oecdExpands"), palette.coral),
     ]);
     renderPeriods();
-    renderBarList("business-bars", rows, { field: "business_ai_pct", labelField: "country", max: 50, digits: 1, suffix: "%", color: palette.blue, limit: 12 });
+    renderBarList("business-bars", rows, { field: "business_ai_pct", label: countryName, max: 50, digits: 1, suffix: "%", color: palette.blue, limit: 12 });
     renderScatter();
   }
 
   function renderGovernanceTable(query = "") {
-    const normalized = query.trim().toLocaleLowerCase("es");
-    const rows = profiles.filter((row) => (Number.isFinite(row.aipi_score) || Number.isFinite(row.government_ai_readiness_score)) && (!normalized || `${row.country} ${row.region}`.toLocaleLowerCase("es").includes(normalized)));
-    document.getElementById("governance-table").innerHTML = `<thead><tr><th>País</th><th>Región</th><th class="numeric">Oxford</th><th class="numeric">AIPI</th><th class="numeric">Política</th><th class="numeric">Gobernanza</th><th class="numeric">Sector público</th><th class="numeric">Resiliencia</th></tr></thead><tbody>${rows.map((row) => `<tr><td><strong>${escapeHtml(row.country)}</strong></td><td>${escapeHtml(row.region)}</td><td class="numeric">${number(row.government_ai_readiness_score, 1)}</td><td class="numeric">${number(row.aipi_score, 3)}</td><td class="numeric">${number(row.government_policy_capacity, 1)}</td><td class="numeric">${number(row.government_ai_governance, 1)}</td><td class="numeric">${number(row.government_public_sector_adoption, 1)}</td><td class="numeric">${number(row.government_ai_resilience, 1)}</td></tr>`).join("")}</tbody>`;
+    const normalized = query.trim().toLocaleLowerCase(locale.htmlLang);
+    const rows = profiles.filter((row) => (Number.isFinite(row.aipi_score) || Number.isFinite(row.government_ai_readiness_score)) && (!normalized || `${countryName(row)} ${regionName(row.region, row)} ${row.country} ${row.region}`.toLocaleLowerCase(locale.htmlLang).includes(normalized)));
+    document.getElementById("governance-table").innerHTML = `<thead><tr><th>${escapeHtml(t("country"))}</th><th>${escapeHtml(t("region"))}</th><th class="numeric">Oxford</th><th class="numeric">AIPI</th><th class="numeric">${escapeHtml(t("policy"))}</th><th class="numeric">${escapeHtml(t("governance"))}</th><th class="numeric">${escapeHtml(t("publicSector"))}</th><th class="numeric">${escapeHtml(t("resilience"))}</th></tr></thead><tbody>${rows.map((row) => `<tr><td><strong>${escapeHtml(countryName(row))}</strong></td><td>${escapeHtml(regionName(row.region, row))}</td><td class="numeric">${number(row.government_ai_readiness_score, 1)}</td><td class="numeric">${number(row.aipi_score, 3)}</td><td class="numeric">${number(row.government_policy_capacity, 1)}</td><td class="numeric">${number(row.government_ai_governance, 1)}</td><td class="numeric">${number(row.government_public_sector_adoption, 1)}</td><td class="numeric">${number(row.government_ai_resilience, 1)}</td></tr>`).join("")}</tbody>`;
   }
 
   function renderIndexComparison() {
@@ -383,7 +416,7 @@
     const y = (value) => height - margin.bottom - (value / 100) * (height - margin.top - margin.bottom);
     const xTicks = [0, 0.25, 0.5, 0.75, 1];
     const yTicks = [0, 25, 50, 75, 100];
-    const svg = `<div class="scatter-wrap"><svg class="scatter" viewBox="0 0 ${width} ${height}" role="img" aria-label="Comparación entre AIPI y Oxford 2025">${xTicks.map((tick) => `<line class="grid" x1="${x(tick)}" x2="${x(tick)}" y1="${margin.top}" y2="${height - margin.bottom}"></line><text x="${x(tick)}" y="${height - 22}" text-anchor="middle">${number(tick, 2)}</text>`).join("")}${yTicks.map((tick) => `<line class="grid" x1="${margin.left}" x2="${width - margin.right}" y1="${y(tick)}" y2="${y(tick)}"></line><text x="${margin.left - 10}" y="${y(tick) + 4}" text-anchor="end">${tick}</text>`).join("")}<line class="axis" x1="${margin.left}" x2="${width - margin.right}" y1="${height - margin.bottom}" y2="${height - margin.bottom}"></line><line class="axis" x1="${margin.left}" x2="${margin.left}" y1="${margin.top}" y2="${height - margin.bottom}"></line><text x="${width / 2}" y="${height - 3}" text-anchor="middle">FMI AIPI 2023 (0-1)</text><text transform="translate(14 ${height / 2}) rotate(-90)" text-anchor="middle">Oxford 2025 (0-100)</text>${rows.map((row) => `<circle data-country="${escapeHtml(row.country)}" data-region="${escapeHtml(row.region)}" data-aipi="${row.aipi_score}" data-oxford="${row.government_ai_readiness_score}" cx="${x(row.aipi_score)}" cy="${y(row.government_ai_readiness_score)}" r="5" fill="${regionColors.get(row.region) ?? palette.neutral}"></circle>`).join("")}</svg></div>${regionLegend()}`;
+    const svg = `<div class="scatter-wrap"><svg class="scatter" viewBox="0 0 ${width} ${height}" role="img" aria-label="${escapeHtml(t("indexComparisonAria"))}">${xTicks.map((tick) => `<line class="grid" x1="${x(tick)}" x2="${x(tick)}" y1="${margin.top}" y2="${height - margin.bottom}"></line><text x="${x(tick)}" y="${height - 22}" text-anchor="middle">${number(tick, 2)}</text>`).join("")}${yTicks.map((tick) => `<line class="grid" x1="${margin.left}" x2="${width - margin.right}" y1="${y(tick)}" y2="${y(tick)}"></line><text x="${margin.left - 10}" y="${y(tick) + 4}" text-anchor="end">${tick}</text>`).join("")}<line class="axis" x1="${margin.left}" x2="${width - margin.right}" y1="${height - margin.bottom}" y2="${height - margin.bottom}"></line><line class="axis" x1="${margin.left}" x2="${margin.left}" y1="${margin.top}" y2="${height - margin.bottom}"></line><text x="${width / 2}" y="${height - 3}" text-anchor="middle">IMF AIPI 2023 (0-1)</text><text transform="translate(14 ${height / 2}) rotate(-90)" text-anchor="middle">Oxford 2025 (0-100)</text>${rows.map((row) => `<circle tabindex="0" data-country="${escapeHtml(countryName(row))}" data-region="${escapeHtml(regionName(row.region, row))}" data-aipi="${row.aipi_score}" data-oxford="${row.government_ai_readiness_score}" cx="${x(row.aipi_score)}" cy="${y(row.government_ai_readiness_score)}" r="5" fill="${regionColors.get(row.region) ?? palette.neutral}"></circle>`).join("")}</svg></div>${regionLegend()}`;
     document.getElementById("governance-comparison").innerHTML = svg;
     document.querySelectorAll("#governance-comparison circle").forEach((circle) => {
       const content = `<strong>${escapeHtml(circle.dataset.country)}</strong><br>${escapeHtml(circle.dataset.region)}<br>Oxford: <b>${number(Number(circle.dataset.oxford), 1)}</b><br>AIPI: <b>${number(Number(circle.dataset.aipi), 3)}</b>`;
@@ -394,14 +427,14 @@
 
   function renderGovernance() {
     setMetricStrip("governance-metrics", [
-      metricCard("Oxford 2025", integer(global.government_readiness_countries), `${number(global.government_readiness_coverage_pct, 1)} % del catálogo`, palette.gold),
-      metricCard("Oxford medio", number(global.government_readiness_average, 1), `Mediana ${number(global.government_readiness_median, 1)}`, palette.gold),
-      metricCard("Países AIPI", integer(global.aipi_countries), `${number(global.aipi_coverage_pct, 1)} % del catálogo`, palette.teal),
-      metricCard("AIPI medio", number(global.aipi_average, 3), `Mediana ${number(global.aipi_median, 3)}`, palette.teal),
-      metricCard("Cobertura dual", integer(datasets.index_comparison.length), "Países comparables", palette.coral),
+      metricCard("Oxford 2025", integer(global.government_readiness_countries), t("catalogCoverage", { value: number(global.government_readiness_coverage_pct, 1) }), palette.gold),
+      metricCard(t("oxfordAverage"), number(global.government_readiness_average, 1), t("median", { value: number(global.government_readiness_median, 1) }), palette.gold),
+      metricCard(t("aipiCountries"), integer(global.aipi_countries), t("catalogCoverage", { value: number(global.aipi_coverage_pct, 1) }), palette.teal),
+      metricCard(t("aipiAverage"), number(global.aipi_average, 3), t("median", { value: number(global.aipi_median, 3) }), palette.teal),
+      metricCard(t("dualCoverage"), integer(datasets.index_comparison.length), t("comparableCountries"), palette.coral),
     ]);
     renderRegionalStacks("governance-components");
-    renderBarList("governance-oxford-regions", regions, { field: "government_readiness_average", labelField: "region", max: 75, digits: 1, color: palette.gold, note: (row) => `${row.government_readiness_countries} países` });
+    renderBarList("governance-oxford-regions", regions, { field: "government_readiness_average", label: (row) => regionName(row.region, row), max: 75, digits: 1, color: palette.gold, note: (row) => t("countriesCount", { count: row.government_readiness_countries }) });
     renderIndexComparison();
     renderGovernanceTable(document.getElementById("governance-search").value);
   }
@@ -410,13 +443,13 @@
     const sourceDescriptions = new Map(artifact.sources.map((source) => [source.id, source]));
     document.getElementById("source-cards").innerHTML = artifact.manifest.sources.map((source) => {
       const detail = sourceDescriptions.get(source.id);
-      const description = detail?.query?.description ?? "Fuente normalizada del observatorio.";
+      const description = locale.sourceDescriptions[source.id] ?? detail?.query?.description ?? t("sourceDefault");
       const reference = /^https?:\/\//.test(source.path)
-        ? `<a href="${escapeHtml(source.path)}" target="_blank" rel="noreferrer">Fuente oficial</a>`
+        ? `<a href="${escapeHtml(source.path)}" target="_blank" rel="noreferrer">${escapeHtml(t("officialSource"))}</a>`
         : `<code>${escapeHtml(source.path)}</code>`;
-      return `<article class="source-card"><strong>${escapeHtml(source.label)}</strong><p>${escapeHtml(description)}</p>${reference}</article>`;
+      return `<article class="source-card"><strong>${escapeHtml(locale.sourceLabels[source.id] ?? source.label)}</strong><p>${escapeHtml(description)}</p>${reference}</article>`;
     }).join("");
-    document.getElementById("source-health-table").innerHTML = `<thead><tr><th>Conector</th><th>Estado</th><th>Actualización</th><th>SHA-256</th></tr></thead><tbody>${datasets.source_health.map((row) => `<tr><td><strong>${escapeHtml(row.source)}</strong></td><td><span class="status ${row.status === "ok" ? "" : "error"}">${row.status === "ok" ? "Operativo" : "No disponible"}</span></td><td>${escapeHtml(new Date(row.updated_at).toLocaleString("es-ES"))}</td><td><code>${escapeHtml(row.checksum)}</code></td></tr>`).join("")}</tbody>`;
+    document.getElementById("source-health-table").innerHTML = `<thead><tr><th>${escapeHtml(t("connector"))}</th><th>${escapeHtml(t("status"))}</th><th>${escapeHtml(t("update"))}</th><th>SHA-256</th></tr></thead><tbody>${datasets.source_health.map((row) => `<tr><td><strong>${escapeHtml(locale.sourceLabels[row.source] ?? row.source)}</strong></td><td><span class="status ${row.status === "ok" ? "" : "error"}">${escapeHtml(row.status === "ok" ? t("operational") : t("unavailable"))}</span></td><td>${escapeHtml(new Date(row.updated_at).toLocaleString(locale.dateLocale))}</td><td><code>${escapeHtml(row.checksum)}</code></td></tr>`).join("")}</tbody>`;
   }
 
   function setView(view, options = {}) {
@@ -427,7 +460,7 @@
     document.getElementById("primary-nav").classList.remove("open");
     const navToggle = document.getElementById("nav-toggle");
     navToggle.setAttribute("aria-expanded", "false");
-    navToggle.setAttribute("aria-label", "Abrir navegación");
+    navToggle.setAttribute("aria-label", t("openNavigation"));
     if (view === "global") renderGlobal();
     if (view === "regions") renderRegions();
     if (view === "countries") renderCountries();
@@ -440,11 +473,11 @@
   }
 
   function initializeControls() {
-    const regionOptions = [["Todas las regiones", "Todas las regiones"], ...regions.map((row) => [row.region, row.region])];
+    const regionOptions = [["__all__", t("allRegions")], ...regions.map((row) => [row.region, regionName(row.region, row)])];
     populateSelect(document.getElementById("global-region-filter"), regionOptions, state.region);
     const defaultRegion = regions.find((row) => row.region === "América Latina y el Caribe")?.region ?? regions[0].region;
-    populateSelect(document.getElementById("region-select"), regions.map((row) => [row.region, row.region]), defaultRegion);
-    populateSelect(document.getElementById("country-select"), profiles.map((row) => [row.iso3, `${row.country} · ${row.region}`]), state.country);
+    populateSelect(document.getElementById("region-select"), regions.map((row) => [row.region, regionName(row.region, row)]), defaultRegion);
+    populateSelect(document.getElementById("country-select"), profiles.map((row) => [row.iso3, `${countryName(row)} · ${regionName(row.region, row)}`]), state.country);
     populateSelect(document.getElementById("map-metric"), Object.entries(mapMetrics).map(([id, metric]) => [id, metric.label]), state.mapMetric);
 
     document.querySelectorAll(".nav-item").forEach((button) => button.addEventListener("click", () => setView(button.dataset.viewTarget)));
@@ -452,7 +485,7 @@
       const nav = document.getElementById("primary-nav");
       const open = nav.classList.toggle("open");
       event.currentTarget.setAttribute("aria-expanded", String(open));
-      event.currentTarget.setAttribute("aria-label", open ? "Cerrar navegación" : "Abrir navegación");
+      event.currentTarget.setAttribute("aria-label", open ? t("closeNavigation") : t("openNavigation"));
     });
     document.getElementById("global-region-filter").addEventListener("change", (event) => { state.region = event.target.value; renderMap(); syncUrl(); });
     document.getElementById("map-metric").addEventListener("change", (event) => { state.mapMetric = event.target.value; renderMap(); syncUrl(); });
@@ -463,11 +496,12 @@
 
   function initialize() {
     const generated = new Date(artifact.snapshot.generatedAt);
-    const freshness = `Actualizado ${generated.toLocaleDateString("es-ES", { day: "numeric", month: "short", year: "numeric" })}`;
+    const freshness = t("updated", { date: generated.toLocaleDateString(locale.dateLocale, { day: "numeric", month: "short", year: "numeric" }) });
     document.getElementById("freshness-label").textContent = freshness;
     document.getElementById("footer-freshness").textContent = freshness;
     initializeControls();
     setView(state.view, { sync: false });
+    syncUrl();
   }
 
   initialize();

@@ -3,6 +3,8 @@ import { readFile } from "node:fs/promises";
 import { dirname, extname, join, normalize } from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { publicAssetPath } from "./lib/site-path.mjs";
+
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const dashboardRoot = join(root, "_site");
 const port = Number(process.env.OBSERVATORY_PORT ?? 4173);
@@ -19,9 +21,9 @@ const types = {
 };
 
 const server = createServer(async (request, response) => {
-  const relative = request.url === "/" ? "index.html" : request.url.split("?")[0].replace(/^\//, "");
+  const relative = publicAssetPath(request.url);
   const candidate = normalize(join(dashboardRoot, relative));
-  if (!candidate.startsWith(dashboardRoot)) {
+  if (candidate !== dashboardRoot && !candidate.startsWith(`${dashboardRoot}/`)) {
     response.writeHead(403).end("Acceso denegado");
     return;
   }

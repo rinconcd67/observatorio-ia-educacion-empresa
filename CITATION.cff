@@ -7,14 +7,14 @@ authors:
     given-names: "César David"
     orcid: "https://orcid.org/0009-0003-2112-3851"
     affiliation: "Doctoral Program in Education and Artificial Intelligence, Broward International University"
-version: 0.3.1
+version: 0.4.0
 date-released: 2026-08-01
 url: "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/"
 repository-code: "https://github.com/rinconcd67/observatorio-ia-educacion-empresa"
 abstract: >-
-  Sistema de información y dashboard interactivo para el monitoreo comparado de
-  la preparación, adopción y uso de la inteligencia artificial en educación,
-  empresas y gobiernos por país y región.
+  Bilingual information system and interactive dashboard for comparative
+  monitoring of artificial intelligence preparedness, adoption and use in
+  education, business and government by country and region.
 keywords:
   - artificial intelligence
   - education

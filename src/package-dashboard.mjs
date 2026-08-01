@@ -1,4 +1,4 @@
-import { readFile } from "node:fs/promises";
+import { mkdir, readFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -6,41 +6,127 @@ import { readJson, writeText } from "./lib/io.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const templateDirectory = join(root, "src", "dashboard");
-const outputPath = join(root, "dashboard", "index.html");
+const dashboardDirectory = join(root, "dashboard");
 
 function safeJson(value) {
   return JSON.stringify(value).replaceAll("<", "\\u003c");
 }
 
+function translateTextNodes(shell, translations) {
+  return shell.replace(/>([^<>]+)</g, (match, content) => {
+    const trimmed = content.trim();
+    if (!trimmed || /^__[A-Z0-9_]+__$/.test(trimmed) || trimmed.includes("__OBSERVATORY_")) return match;
+    const translated = translations[trimmed];
+    if (translated === undefined) {
+      throw new Error(`Falta traducción estática para: ${trimmed}`);
+    }
+    return `>${content.replace(trimmed, translated)}<`;
+  });
+}
+
+function translateAttributes(shell, locale) {
+  const attributes = locale === "en" ? {
+    "Observatorio Global de IA": "Global AI Observatory",
+    "Abrir navegación": "Open navigation",
+    "Vistas del observatorio": "Observatory views",
+    "Mapa mundial por indicador": "World map by indicator",
+    "País o región": "Country or region",
+  } : {};
+  return shell.replace(/\b(aria-label|title|placeholder)="([^"]+)"/g, (match, name, value) => {
+    return `${name}="${attributes[value] ?? value}"`;
+  });
+}
+
+function structuredData(locale, version) {
+  const spanish = locale.htmlLang === "es";
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: locale.pageTitle,
+    applicationCategory: "EducationalApplication",
+    operatingSystem: "Web",
+    inLanguage: locale.htmlLang,
+    version,
+    author: {
+      "@type": "Person",
+      name: "César David Rincón Godoy",
+      identifier: "https://orcid.org/0009-0003-2112-3851",
+      url: "https://cesar-rincon-profile.rinconcd67.chatgpt.site",
+      affiliation: { "@type": "CollegeOrUniversity", name: "Broward International University" },
+    },
+    about: spanish
+      ? ["Inteligencia artificial", "Educación", "Empresa", "Gobernanza"]
+      : ["Artificial intelligence", "Education", "Business", "Governance"],
+    isAccessibleForFree: true,
+  };
+}
+
+function renderLocale(shell, css, javascript, artifact, geojson, i18n, localeName, version) {
+  const locale = i18n[localeName];
+  const runtimeI18n = Object.fromEntries(
+    Object.entries(i18n).map(([name, configuration]) => [name, { ...configuration, static: undefined }]),
+  );
+  const localizedShell = localeName === "en"
+    ? translateAttributes(translateTextNodes(shell, locale.static), localeName)
+    : shell;
+  return localizedShell
+    .replaceAll("__PACKAGE_VERSION__", version)
+    .replaceAll("__HTML_LANG__", locale.htmlLang)
+    .replaceAll("__PAGE_TITLE__", locale.pageTitle)
+    .replaceAll("__META_DESCRIPTION__", locale.metaDescription)
+    .replaceAll("__CANONICAL_URL__", locale.canonical)
+    .replaceAll("__OG_LOCALE__", locale.ogLocale)
+    .replaceAll("__OG_DESCRIPTION__", locale.ogDescription)
+    .replaceAll("__OG_IMAGE__", locale.ogImage)
+    .replaceAll("__ASSET_PREFIX__", locale.assetPrefix)
+    .replaceAll("__MANIFEST__", locale.manifest)
+    .replaceAll("__LANGUAGE_SWITCH_PATH__", locale.languageSwitchPath)
+    .replaceAll("__LANGUAGE_SWITCH_TEXT__", locale.languageSwitchText)
+    .replaceAll("__LANGUAGE_SWITCH_LABEL__", locale.languageSwitchLabel)
+    .replaceAll("__AUTHORS_FILE__", locale.authorsFile)
+    .replaceAll("__PRIVACY_FILE__", locale.privacyFile)
+    .replaceAll("__DATA_POLICY_FILE__", locale.dataPolicyFile)
+    .replace("__STRUCTURED_DATA__", safeJson(structuredData(locale, version)))
+    .replace("__OBSERVATORY_CSS__", css)
+    .replace("__OBSERVATORY_DATA__", safeJson(artifact))
+    .replace("__OBSERVATORY_GEOJSON__", safeJson(geojson))
+    .replace("__OBSERVATORY_I18N__", safeJson(runtimeI18n))
+    .replaceAll("__OBSERVATORY_LOCALE__", localeName)
+    .replace("__OBSERVATORY_JS__", javascript);
+}
+
 async function packageDashboard() {
-  const [shell, css, javascript, artifact, geojson] = await Promise.all([
+  const [shell, css, javascript, artifact, geojson, i18n, packageDefinition] = await Promise.all([
     readFile(join(templateDirectory, "shell.html"), "utf8"),
     readFile(join(templateDirectory, "app.css"), "utf8"),
     readFile(join(templateDirectory, "app.js"), "utf8"),
     readJson(join(root, "dashboard", "artifact.json")),
     readJson(join(root, "data", "reference", "world.geo.json")),
+    readJson(join(templateDirectory, "i18n.json")),
+    readJson(join(root, "package.json")),
   ]);
 
   if (artifact.manifest.version !== 3 || artifact.snapshot.version !== 3) {
-    throw new Error("El contrato analítico no corresponde a la versión 0.3.");
+    throw new Error("El contrato analítico no corresponde a la versión esperada.");
   }
   if (geojson.features.length < 170) {
     throw new Error("La geometría mundial contiene menos de 170 países.");
   }
 
-  const html = shell
-    .replace("__OBSERVATORY_CSS__", css)
-    .replace("__OBSERVATORY_DATA__", safeJson(artifact))
-    .replace("__OBSERVATORY_GEOJSON__", safeJson(geojson))
-    .replace("__OBSERVATORY_JS__", javascript);
-
-  await writeText(outputPath, html);
+  const outputs = {};
+  for (const localeName of ["es", "en"]) {
+    const outputPath = join(dashboardDirectory, i18n[localeName].output);
+    const html = renderLocale(shell, css, javascript, artifact, geojson, i18n, localeName, packageDefinition.version);
+    await mkdir(dirname(outputPath), { recursive: true });
+    await writeText(outputPath, html);
+    outputs[localeName] = { path: outputPath, bytes: Buffer.byteLength(html) };
+  }
   return {
-    html: outputPath,
-    bytes: Buffer.byteLength(html),
+    outputs,
     countries: artifact.snapshot.datasets.country_profile.length,
     regions: artifact.snapshot.datasets.regional_summary.length,
     views: 8,
+    locales: 2,
   };
 }
 

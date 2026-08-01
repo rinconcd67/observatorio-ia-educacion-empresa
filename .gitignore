@@ -9,4 +9,6 @@ data/raw/*.html
 dashboard/*.tmp-*
 coverage/
 _site/
+.playwright-cli/
+output/playwright/
 !.gitkeep

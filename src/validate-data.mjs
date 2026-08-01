@@ -115,27 +115,44 @@ export function validateArtifact(artifact) {
   };
 }
 
-export function validateDashboardHtml(html) {
-  assert(html.includes("Observatorio Global de IA"), "El HTML no contiene la identidad v0.3.");
+export function validateDashboardHtml(html, language) {
+  const english = language === "en";
+  const identity = english ? "Global AI Observatory for Education and Business" : "Observatorio Global de IA en Educación y Empresa";
+  const canonical = english
+    ? "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/en/"
+    : "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/";
+  assert(html.includes(`<html lang="${language}">`), `El HTML ${language} no declara el idioma correcto.`);
+  assert(html.includes(identity), `El HTML ${language} no contiene la identidad v0.4.0.`);
   assert(html.includes('id="world-map"'), "El HTML no contiene el mapa mundial.");
   assert((html.match(/data-view="/g) ?? []).length === 8, "El HTML no contiene ocho vistas temáticas.");
   assert(html.includes('data-view="about"'), "El HTML no contiene la vista de autoría.");
   assert(html.includes("0009-0003-2112-3851"), "El HTML no contiene el ORCID del autor.");
-  assert(html.includes('aria-label="Abrir navegación"'), "El menú móvil no tiene nombre accesible.");
-  assert(html.includes('rel="canonical"'), "El HTML no contiene URL canónica.");
+  assert(html.includes(`aria-label="${english ? "Open navigation" : "Abrir navegación"}"`), `El menú móvil ${language} no tiene nombre accesible.`);
+  assert(html.includes(`<link rel="canonical" href="${canonical}">`), `El HTML ${language} no contiene la URL canónica correcta.`);
+  assert(html.includes('hreflang="es"') && html.includes('hreflang="en"') && html.includes('hreflang="x-default"'), `El HTML ${language} no contiene alternos lingüísticos.`);
+  assert(html.includes(`window.OBSERVATORY_LOCALE="${language}"`), `El HTML ${language} no activa la configuración regional correcta.`);
+  assert(html.includes('id="language-switch"'), `El HTML ${language} no contiene el selector de idioma.`);
   assert(html.includes('type="application/ld+json"'), "El HTML no contiene metadatos estructurados.");
   assert(html.includes("data/observations.csv"), "El HTML no ofrece descarga CSV.");
   assert(html.includes(".control-row label { flex: 1 1 0; min-width: 0; }"), "El HTML no protege los controles contra desbordamiento móvil.");
   assert(html.includes("window.OBSERVATORY_ARTIFACT="), "El HTML no contiene el contrato analítico incrustado.");
   assert(html.includes("window.OBSERVATORY_GEOJSON="), "El HTML no contiene la geometría mundial incrustada.");
+  assert(!/__([A-Z][A-Z0-9_]+)__/g.test(html), `El HTML ${language} contiene tokens sin resolver.`);
   assert(!/<script[^>]+src=/i.test(html), "El HTML depende de scripts externos.");
   assert(!/<link[^>]+rel=["']stylesheet/i.test(html), "El HTML depende de hojas de estilo externas.");
-  return { bytes: Buffer.byteLength(html), views: 8, selfContained: true };
+  return { language, bytes: Buffer.byteLength(html), views: 8, selfContained: true };
 }
 
-export function validateSite(siteHtml, status, csv, artifact, socialPreview) {
-  assert(siteHtml === dashboardHtml, "El sitio público no coincide con el dashboard canónico.");
-  assert(status.version === "0.3.1", "El sitio público no corresponde a la versión 0.3.1.");
+function embeddedArtifact(html) {
+  return html.match(/window\.OBSERVATORY_ARTIFACT=(.*?);window\.OBSERVATORY_GEOJSON=/s)?.[1];
+}
+
+export function validateSite(siteHtml, englishSiteHtml, status, csv, artifact, socialPreview, englishSocialPreview) {
+  assert(siteHtml === dashboardHtml, "El sitio público español no coincide con el dashboard canónico.");
+  assert(englishSiteHtml === englishDashboardHtml, "El sitio público inglés no coincide con el dashboard canónico.");
+  assert(embeddedArtifact(siteHtml) === embeddedArtifact(englishSiteHtml), "Las rutas bilingües no comparten el mismo contrato analítico.");
+  assert(status.version === "0.4.0", "El sitio público no corresponde a la versión 0.4.0.");
+  assert(JSON.stringify(status.languages) === JSON.stringify(["es", "en"]), "El estado público no declara los dos idiomas.");
   assert(status.status === "ready", "El estado público no está listo.");
   assert(status.countries === artifact.snapshot.datasets.country_profile.length, "El estado público no coincide en países.");
   assert(status.artifact_sha256 === checksum(artifact), "El checksum público del artefacto no coincide.");
@@ -143,25 +160,36 @@ export function validateSite(siteHtml, status, csv, artifact, socialPreview) {
   assert(csv.startsWith("iso3,iso2,country,region"), "El CSV público no tiene el encabezado esperado.");
   assert(socialPreview.length > 50_000, "La imagen social pública está vacía o incompleta.");
   assert(socialPreview.subarray(1, 4).toString("ascii") === "PNG", "La imagen social pública no es PNG.");
+  assert(englishSocialPreview.length > 50_000, "La imagen social inglesa está vacía o incompleta.");
+  assert(englishSocialPreview.subarray(1, 4).toString("ascii") === "PNG", "La imagen social inglesa no es PNG.");
+  assert(!socialPreview.equals(englishSocialPreview), "Las imágenes sociales por idioma no pueden ser idénticas.");
   return {
     version: status.version,
     csvRows: snapshot.observations.length,
     status: status.status,
     socialPreviewBytes: socialPreview.length,
+    englishSocialPreviewBytes: englishSocialPreview.length,
+    languages: status.languages,
   };
 }
 
 const snapshot = await readJson(join(root, "data", "processed", "snapshot.json"));
 const artifact = await readJson(join(root, "dashboard", "artifact.json"));
 const dashboardHtml = await readFile(join(root, "dashboard", "index.html"), "utf8");
+const englishDashboardHtml = await readFile(join(root, "dashboard", "en", "index.html"), "utf8");
 const siteHtml = await readFile(join(root, "_site", "index.html"), "utf8");
+const englishSiteHtml = await readFile(join(root, "_site", "en", "index.html"), "utf8");
 const siteStatus = await readJson(join(root, "_site", "data", "status.json"));
 const siteCsv = await readFile(join(root, "_site", "data", "observations.csv"), "utf8");
 const socialPreview = await readFile(join(root, "_site", "social-preview.png"));
+const englishSocialPreview = await readFile(join(root, "_site", "social-preview-en.png"));
 console.log(JSON.stringify({
   ok: true,
   snapshot: validateSnapshot(snapshot),
   artifact: validateArtifact(artifact),
-  dashboard: validateDashboardHtml(dashboardHtml),
-  site: validateSite(siteHtml, siteStatus, siteCsv, artifact, socialPreview),
+  dashboards: {
+    es: validateDashboardHtml(dashboardHtml, "es"),
+    en: validateDashboardHtml(englishDashboardHtml, "en"),
+  },
+  site: validateSite(siteHtml, englishSiteHtml, siteStatus, siteCsv, artifact, socialPreview, englishSocialPreview),
 }));
