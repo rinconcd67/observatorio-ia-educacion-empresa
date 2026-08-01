@@ -20,6 +20,20 @@ export function latestBy(rows, keyFields) {
   return [...selected.values()];
 }
 
+export function latestByPriority(rows, keyFields, sourcePriority = {}) {
+  const selected = new Map();
+  for (const row of rows) {
+    const key = keyFields.map((field) => row[field]).join("|");
+    const current = selected.get(key);
+    const newer = !current || Number(row.year) > Number(current.year);
+    const sameYearPreferred = current
+      && Number(row.year) === Number(current.year)
+      && (sourcePriority[row.source_id] ?? 0) > (sourcePriority[current.source_id] ?? 0);
+    if (newer || sameYearPreferred) selected.set(key, row);
+  }
+  return [...selected.values()];
+}
+
 export function indexBy(rows, keyField) {
   return new Map(rows.map((row) => [row[keyField], row]));
 }

@@ -11,7 +11,7 @@ function assert(condition, message) {
 
 export function validateSnapshot(snapshot) {
   assert(snapshot.status === "ready", "El snapshot no está en estado ready.");
-  assert(snapshot.observations.length > 100, "El snapshot contiene muy pocas observaciones.");
+  assert(snapshot.observations.length > 900, "El snapshot contiene muy pocas observaciones para la cobertura ampliada.");
   const requiredSources = new Set([
     "eurostat_enterprise_ai",
     "eurostat_formal_education_ai",
@@ -34,8 +34,17 @@ export function validateSnapshot(snapshot) {
     "enterprise_ai_adoption",
     "formal_education_genai_use",
     "student_genai_use",
+    "individual_genai_use",
+  ]);
+  const aipiMetrics = new Set(["ai_preparedness_index"]);
+  const aipiComponents = new Set([
+    "ai_digital_infrastructure",
+    "ai_innovation_integration",
+    "ai_human_capital",
+    "ai_regulation_ethics",
   ]);
   const directCountries = new Set();
+  const aipiCountries = new Set();
   for (const row of snapshot.observations) {
     assert(Number.isFinite(row.value), `Valor no numérico en ${row.metric_id}/${row.iso3}.`);
     assert(countryCodes.has(row.iso3), `Observación sin país maestro: ${row.iso3}.`);
@@ -44,9 +53,22 @@ export function validateSnapshot(snapshot) {
       assert(row.value >= 0 && row.value <= 100, `Porcentaje fuera de rango en ${row.metric_id}/${row.iso3}.`);
       directCountries.add(row.iso3);
     }
+    if (aipiMetrics.has(row.metric_id)) {
+      assert(row.value >= 0 && row.value <= 1, `Índice AIPI fuera de rango en ${row.iso3}.`);
+      aipiCountries.add(row.iso3);
+    }
+    if (aipiComponents.has(row.metric_id)) {
+      assert(row.value >= 0 && row.value <= 0.25, `Contribución AIPI fuera de rango en ${row.metric_id}/${row.iso3}.`);
+    }
   }
-  assert(directCountries.size >= 20, "La cobertura directa de IA es inferior a 20 países.");
-  return { countries: snapshot.countries.length, observations: snapshot.observations.length, directCountries: directCountries.size };
+  assert(directCountries.size >= 35, "La cobertura directa de IA es inferior a 35 países.");
+  assert(aipiCountries.size >= 160, "La cobertura AIPI es inferior a 160 países.");
+  return {
+    countries: snapshot.countries.length,
+    observations: snapshot.observations.length,
+    directCountries: directCountries.size,
+    aipiCountries: aipiCountries.size,
+  };
 }
 
 export function validateArtifact(artifact) {
@@ -56,7 +78,7 @@ export function validateArtifact(artifact) {
   assert(artifact.manifest.cards.every((card) => card.sourceId || card.source), "Existe una tarjeta sin procedencia.");
   assert(artifact.manifest.charts.every((chart) => chart.sourceId || chart.source), "Existe un gráfico sin procedencia.");
   assert(artifact.manifest.tables.every((table) => table.sourceId || table.source), "Existe una tabla sin procedencia.");
-  assert(artifact.snapshot.datasets.country_profile.length >= 20, "La tabla país tiene cobertura insuficiente.");
+  assert(artifact.snapshot.datasets.country_profile.length >= 160, "La tabla país tiene cobertura insuficiente.");
   assert(!JSON.stringify(artifact).includes('"fixture"'), "El artefacto contiene datos de prueba.");
   return {
     blocks: artifact.manifest.blocks.length,

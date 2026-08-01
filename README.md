@@ -2,12 +2,15 @@
 
 Sistema reproducible para monitorear adopción, brechas y condiciones de contexto de la inteligencia artificial por país. El proyecto mantiene separados los datos crudos, las tablas normalizadas, el contrato analítico y el dashboard entregable.
 
-## Estado de la versión 0.1.0
+## Estado de la versión 0.2.0
 
 - Dashboard autocontenido y de solo lectura.
-- Siete conectores configurados; cuatro fuentes esenciales operativas en el primer snapshot.
-- 217 países en el catálogo maestro.
-- 201 observaciones directas de adopción de IA.
+- Diez fuentes configuradas entre APIs públicas y descargas oficiales controladas; nueve operativas en el snapshot vigente.
+- 218 países y economías en el catálogo maestro.
+- 3.307 observaciones normalizadas.
+- 40 países con medición directa de uso o adopción de IA y 165 con índice AIPI completo.
+- Integración de OCDE para ampliar la adopción empresarial y el uso individual de IA generativa fuera de Eurostat.
+- Integración del IMF AI Preparedness Index 2023 y sus cuatro contribuciones estructurales.
 - Validaciones de rango, integridad ISO, cobertura, procedencia y estructura del dashboard.
 - Fuentes opcionales indisponibles visibles en la interfaz; no se imputan valores.
 

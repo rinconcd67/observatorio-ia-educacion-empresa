@@ -2,7 +2,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { readJson, writeJson } from "./lib/io.mjs";
-import { indexBy, latestBy, mean, round } from "./lib/metrics.mjs";
+import { indexBy, latestByPriority, mean, round } from "./lib/metrics.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const snapshotPath = join(root, "data", "processed", "snapshot.json");
@@ -12,14 +12,20 @@ function metricRows(observations, metricId) {
   return observations.filter((row) => row.metric_id === metricId);
 }
 
-function latestMetricMap(observations, metricId) {
-  const rows = latestBy(metricRows(observations, metricId), ["iso3"]);
+const SOURCE_PRIORITY = {
+  eurostat_enterprise_ai: 20,
+  oecd_ict_businesses: 10,
+};
+
+export function latestMetricMap(observations, metricId) {
+  const rows = latestByPriority(metricRows(observations, metricId), ["iso3"], SOURCE_PRIORITY);
   return indexBy(rows, "iso3");
 }
 
 function trendDataset(observations, metricId) {
   const byYear = new Map();
-  for (const row of metricRows(observations, metricId)) {
+  const rows = latestByPriority(metricRows(observations, metricId), ["iso3", "year"], SOURCE_PRIORITY);
+  for (const row of rows) {
     if (!byYear.has(row.year)) byYear.set(row.year, []);
     byYear.get(row.year).push(row.value);
   }
@@ -55,6 +61,35 @@ function sourceDefinitions(snapshot) {
           unweighted_average: "Promedio aritmético no ponderado de los países con observación disponible; no representa un promedio poblacional de la UE.",
           adoption_gap: "Diferencia en puntos porcentuales entre uso empresarial de IA y uso de IA generativa para educación formal en el mismo país y año disponible."
         }
+      }
+    },
+    {
+      id: "oecd_ict",
+      label: "OCDE - Uso de TIC por empresas e individuos",
+      path: "https://data-explorer.oecd.org/",
+      query: {
+        engine: "duckdb",
+        language: "sql",
+        sql: "SELECT * FROM read_json_auto('data/processed/observations.json') WHERE source_id IN ('oecd_ict_businesses', 'oecd_individual_genai')",
+        description: "Amplía la cobertura de adopción empresarial y uso individual de IA generativa. Eurostat tiene precedencia en coincidencias del mismo país y año.",
+        executed_at: executedAt,
+        tables_used: ["DSD_ICT_B@DF_BUSINESSES", "DSD_ICT_HH_IND@DF_IND"],
+        filters: ["empresas de 10 o más personas", "actividad total", "personas de 16 a 74 años", "última observación disponible"]
+      }
+    },
+    {
+      id: "imf_aipi",
+      label: "FMI - AI Preparedness Index",
+      path: "https://www.imf.org/external/datamapper/datasets/AIPI",
+      query: {
+        engine: "duckdb",
+        language: "sql",
+        sql: "SELECT * FROM read_json_auto('data/processed/observations.json') WHERE source_id = 'imf_aipi'",
+        url: "https://www.imf.org/external/datamapper/aipidata.xlsx",
+        description: "Índice indicativo de preparación para IA y contribuciones de cuatro dimensiones estructurales, edición 2023.",
+        executed_at: executedAt,
+        tables_used: ["aipidata.xlsx!AIPI"],
+        filters: ["se excluyen agregados", "sin imputación", "no se usa como ranking"]
       }
     },
     {
@@ -124,11 +159,18 @@ export function createArtifact(snapshot) {
   const enterprise = latestMetricMap(snapshot.observations, "enterprise_ai_adoption");
   const formalEducation = latestMetricMap(snapshot.observations, "formal_education_genai_use");
   const students = latestMetricMap(snapshot.observations, "student_genai_use");
+  const individuals = latestMetricMap(snapshot.observations, "individual_genai_use");
+  const aipi = latestMetricMap(snapshot.observations, "ai_preparedness_index");
+  const digital = latestMetricMap(snapshot.observations, "ai_digital_infrastructure");
+  const innovation = latestMetricMap(snapshot.observations, "ai_innovation_integration");
+  const humanCapital = latestMetricMap(snapshot.observations, "ai_human_capital");
+  const regulation = latestMetricMap(snapshot.observations, "ai_regulation_ethics");
   const internet = latestMetricMap(snapshot.observations, "internet_users");
   const tertiary = latestMetricMap(snapshot.observations, "tertiary_enrollment");
   const gdp = latestMetricMap(snapshot.observations, "gdp_per_capita");
   const countries = indexBy(snapshot.countries, "iso3");
-  const coveredIso3 = directCountries(enterprise, formalEducation, students);
+  const directIso3 = directCountries(enterprise, formalEducation, students, individuals);
+  const coveredIso3 = directCountries(enterprise, formalEducation, students, individuals, aipi);
 
   const countryProfile = [...coveredIso3].flatMap((iso3) => {
     const country = countries.get(iso3);
@@ -136,6 +178,8 @@ export function createArtifact(snapshot) {
     const business = enterprise.get(iso3);
     const education = formalEducation.get(iso3);
     const student = students.get(iso3);
+    const individual = individuals.get(iso3);
+    const aipiRow = aipi.get(iso3);
     const internetRow = internet.get(iso3);
     const tertiaryRow = tertiary.get(iso3);
     const gdpRow = gdp.get(iso3);
@@ -150,6 +194,14 @@ export function createArtifact(snapshot) {
       education_year: education?.year ?? null,
       student_ai_pct: student?.value ?? null,
       student_year: student?.year ?? null,
+      individual_genai_pct: individual?.value ?? null,
+      individual_genai_year: individual?.year ?? null,
+      aipi_score: aipiRow?.value == null ? null : round(aipiRow.value, 3),
+      aipi_year: aipiRow?.year ?? null,
+      aipi_digital_contribution: digital.get(iso3)?.value == null ? null : round(digital.get(iso3).value, 3),
+      aipi_innovation_contribution: innovation.get(iso3)?.value == null ? null : round(innovation.get(iso3).value, 3),
+      aipi_human_capital_contribution: humanCapital.get(iso3)?.value == null ? null : round(humanCapital.get(iso3).value, 3),
+      aipi_regulation_contribution: regulation.get(iso3)?.value == null ? null : round(regulation.get(iso3).value, 3),
       adoption_gap_pp: business && education ? round(business.value - education.value) : null,
       internet_users_pct: internetRow?.value == null ? null : round(internetRow.value),
       internet_year: internetRow?.year ?? null,
@@ -168,16 +220,23 @@ export function createArtifact(snapshot) {
     .filter((row) => Number.isFinite(row.formal_education_ai_pct))
     .sort((left, right) => right.formal_education_ai_pct - left.formal_education_ai_pct)
     .map((row, index) => ({ ...row, rank: index + 1 }));
+  const individualCoverage = countryProfile
+    .filter((row) => Number.isFinite(row.individual_genai_pct))
+    .sort((left, right) => right.individual_genai_pct - left.individual_genai_pct);
   const gapAnalysis = countryProfile
     .filter((row) => Number.isFinite(row.adoption_gap_pp))
     .sort((left, right) => right.adoption_gap_pp - left.adoption_gap_pp);
   const studentValues = countryProfile.map((row) => row.student_ai_pct);
+  const readinessAdoption = countryProfile
+    .filter((row) => Number.isFinite(row.aipi_score) && Number.isFinite(row.business_ai_pct));
 
   const summary = [{
-    countries_covered: coveredIso3.size,
+    countries_covered: directIso3.size,
+    aipi_countries: aipi.size,
     business_average_pct: round(mean(businessRanking.map((row) => row.business_ai_pct))),
     education_average_pct: round(mean(educationRanking.map((row) => row.formal_education_ai_pct))),
     student_average_pct: round(mean(studentValues)),
+    individual_genai_average_pct: round(mean(individualCoverage.map((row) => row.individual_genai_pct))),
     overlap_countries: gapAnalysis.length,
     active_sources: snapshot.healthy_sources_count,
   }];
@@ -213,8 +272,15 @@ export function createArtifact(snapshot) {
       }],
       cards: [
         {
+          id: "aipi_coverage",
+          description: "Países con índice indicativo de preparación para IA del FMI en la edición 2023.",
+          dataset: "summary",
+          sourceId: "imf_aipi",
+          metrics: [{ label: "Países con preparación AIPI", field: "aipi_countries", format: "number" }]
+        },
+        {
           id: "coverage",
-          description: "Países con al menos una medición directa de adopción educativa o empresarial.",
+          description: "Países con al menos una medición directa de uso o adopción de IA.",
           dataset: "summary",
           sourceId: "processed_snapshot",
           metrics: [{ label: "Países con datos de IA", field: "countries_covered", format: "number" }]
@@ -223,22 +289,22 @@ export function createArtifact(snapshot) {
           id: "business_average",
           description: "Promedio no ponderado del porcentaje nacional de empresas con diez o más personas empleadas que usan IA.",
           dataset: "summary",
-          sourceId: "eurostat_enterprise_ai",
+          sourceId: "processed_snapshot",
           metrics: [{ label: "Adopción empresarial media (%)", field: "business_average_pct", format: "number" }]
         },
         {
           id: "education_average",
           description: "Promedio no ponderado del uso de IA generativa para educación formal entre individuos.",
           dataset: "summary",
-          sourceId: "eurostat_student_ai",
+          sourceId: "eurostat_formal_education_ai",
           metrics: [{ label: "Uso para educación formal (%)", field: "education_average_pct", format: "number" }]
         },
         {
-          id: "student_average",
-          description: "Promedio no ponderado del uso de IA generativa entre estudiantes de los países con observación.",
+          id: "individual_average",
+          description: "Promedio no ponderado del uso individual de herramientas de IA generativa entre personas de 16 a 74 años.",
           dataset: "summary",
-          sourceId: "eurostat_formal_education_ai",
-          metrics: [{ label: "Uso entre estudiantes (%)", field: "student_average_pct", format: "number" }]
+          sourceId: "oecd_ict",
+          metrics: [{ label: "Uso individual de GenAI (%)", field: "individual_genai_average_pct", format: "number" }]
         },
         {
           id: "active_sources",
@@ -255,7 +321,7 @@ export function createArtifact(snapshot) {
           subtitle: "Promedio no ponderado de los países con observación en cada año.",
           type: "line",
           dataset: "business_trend",
-          sourceId: "eurostat_enterprise_ai",
+          sourceId: "processed_snapshot",
           valueFormat: "number",
           encodings: {
             x: { field: "year", type: "ordinal", label: "Año" },
@@ -269,12 +335,42 @@ export function createArtifact(snapshot) {
           subtitle: "Empresas con diez o más personas empleadas; última observación disponible.",
           type: "bar",
           dataset: "business_top",
-          sourceId: "eurostat_enterprise_ai",
+          sourceId: "processed_snapshot",
           valueFormat: "number",
           encodings: {
             x: { field: "country", type: "nominal", label: "País" },
             y: { field: "business_ai_pct", type: "quantitative", label: "Empresas que usan IA (%)" },
             tooltip: [{ field: "business_year", type: "quantitative", label: "Año" }]
+          }
+        },
+        {
+          id: "individual_ranking",
+          title: "Uso individual de herramientas de IA generativa",
+          subtitle: "Personas de 16 a 74 años; última observación disponible en la OCDE.",
+          type: "bar",
+          dataset: "individual_top",
+          sourceId: "oecd_ict",
+          valueFormat: "number",
+          encodings: {
+            x: { field: "country", type: "nominal", label: "País" },
+            y: { field: "individual_genai_pct", type: "quantitative", label: "Personas que usan GenAI (%)" },
+            tooltip: [{ field: "individual_genai_year", type: "quantitative", label: "Año" }]
+          }
+        },
+        {
+          id: "readiness_adoption_scatter",
+          title: "Preparación nacional frente a adopción empresarial",
+          subtitle: "Relación descriptiva; AIPI es un índice indicativo y no una clasificación de desempeño.",
+          type: "scatter",
+          dataset: "readiness_adoption",
+          sourceId: "processed_snapshot",
+          encodings: {
+            x: { field: "aipi_score", type: "quantitative", label: "Índice AIPI (0-1)" },
+            y: { field: "business_ai_pct", type: "quantitative", label: "Empresas que usan IA (%)" },
+            tooltip: [
+              { field: "country", type: "nominal", label: "País" },
+              { field: "business_year", type: "quantitative", label: "Año empresarial" }
+            ]
           }
         },
         {
@@ -322,10 +418,30 @@ export function createArtifact(snapshot) {
             { field: "business_ai_pct", label: "IA en empresas (%)", format: "number" },
             { field: "formal_education_ai_pct", label: "IA para educación (%)", format: "number" },
             { field: "student_ai_pct", label: "IA entre estudiantes (%)", format: "number" },
+            { field: "individual_genai_pct", label: "Uso individual de GenAI (%)", format: "number" },
+            { field: "aipi_score", label: "Preparación AIPI (0-1)", format: "number" },
             { field: "adoption_gap_pp", label: "Brecha empresa-educación (pp)", format: "number", movement: true },
             { field: "internet_users_pct", label: "Uso de Internet (%)", format: "number" },
             { field: "tertiary_enrollment_pct", label: "Matrícula terciaria (%)", format: "number" },
             { field: "gdp_per_capita_usd", label: "PIB per cápita (USD)", format: "number" }
+          ]
+        },
+        {
+          id: "aipi_dimensions",
+          title: "Componentes del índice de preparación para IA",
+          subtitle: "Contribuciones ponderadas al AIPI 2023; cada componente se expresa de 0 a 0,25.",
+          dataset: "country_profile",
+          sourceId: "imf_aipi",
+          defaultSort: { field: "country", direction: "asc" },
+          density: "dense",
+          layout: "full",
+          columns: [
+            { field: "country", label: "País", type: "text" },
+            { field: "aipi_score", label: "AIPI (0-1)", format: "number" },
+            { field: "aipi_digital_contribution", label: "Infraestructura digital", format: "number" },
+            { field: "aipi_innovation_contribution", label: "Innovación e integración", format: "number" },
+            { field: "aipi_human_capital_contribution", label: "Capital humano y trabajo", format: "number" },
+            { field: "aipi_regulation_contribution", label: "Regulación y ética", format: "number" }
           ]
         },
         {
@@ -347,17 +463,20 @@ export function createArtifact(snapshot) {
       ],
       sources: sources.map((source) => ({ id: source.id, label: source.label, path: source.path })),
       blocks: [
-        { id: "metrics", type: "metric-strip", cardIds: ["coverage", "business_average", "education_average", "student_average", "active_sources"] },
+        { id: "metrics", type: "metric-strip", cardIds: ["coverage", "aipi_coverage", "business_average", "education_average", "individual_average", "active_sources"] },
         { id: "business_trend_block", type: "chart", chartId: "business_trend", layout: "full" },
         { id: "business_ranking_block", type: "chart", chartId: "business_ranking", layout: "half" },
         { id: "education_ranking_block", type: "chart", chartId: "education_ranking", layout: "half" },
+        { id: "individual_ranking_block", type: "chart", chartId: "individual_ranking", layout: "half" },
         { id: "gap_block", type: "chart", chartId: "gap_scatter", layout: "full" },
+        { id: "readiness_adoption_block", type: "chart", chartId: "readiness_adoption_scatter", layout: "full" },
         { id: "coverage_note", type: "markdown", body: caveatBody },
         { id: "country_block", type: "table", tableId: "country_table", layout: "full" },
+        { id: "aipi_dimensions_block", type: "table", tableId: "aipi_dimensions", layout: "full" },
         {
           id: "method_note",
           type: "markdown",
-          body: "## Lectura metodológica\n\nLos promedios son simples y no ponderados. Las métricas educativas y empresariales representan poblaciones distintas y no deben interpretarse como equivalentes causales. Los indicadores del Banco Mundial aportan contexto; no constituyen un índice oficial de preparación para IA."
+          body: "## Lectura metodológica\n\nLos promedios son simples y no ponderados. Las métricas educativas, individuales y empresariales representan poblaciones distintas y no deben interpretarse como equivalentes causales. AIPI describe preparación estructural de forma indicativa: sirve para orientar el análisis, no para construir una clasificación competitiva de países."
         },
         { id: "health_block", type: "table", tableId: "source_health", layout: "full" }
       ]
@@ -371,7 +490,9 @@ export function createArtifact(snapshot) {
         business_trend: trendDataset(snapshot.observations, "enterprise_ai_adoption"),
         business_top: businessRanking.slice(0, 15),
         education_top: educationRanking.slice(0, 15),
+        individual_top: individualCoverage.slice(0, 15),
         gap_analysis: gapAnalysis,
+        readiness_adoption: readinessAdoption,
         country_profile: countryProfile,
         source_health: sourceHealth
       }

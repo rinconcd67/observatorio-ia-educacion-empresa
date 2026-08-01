@@ -1,14 +1,15 @@
 {
   "name": "observatorio-ia-educacion-empresa",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "description": "Monitoreo reproducible de adopción de IA en educación y empresas por país.",
   "scripts": {
     "refresh:data": "node src/refresh.mjs",
+    "import:aipi": "node src/import-aipi.mjs",
     "build:artifact": "node src/build-artifact.mjs",
     "package:dashboard": "node src/package-dashboard.mjs",
-    "refresh": "npm run refresh:data && npm run build",
+    "refresh": "npm run import:aipi && npm run refresh:data && npm run build",
     "build": "npm run build:artifact && npm run package:dashboard",
     "validate": "node src/validate-data.mjs",
     "test": "node --test",

@@ -1520,6 +1520,14 @@
     "lending_type": "IDA"
   },
   {
+    "iso2": "",
+    "iso3": "TWN",
+    "country": "Taiwan, China",
+    "region": "Sin clasificación regional",
+    "income_group": "AE",
+    "lending_type": "No aplica"
+  },
+  {
     "iso2": "TJ",
     "iso3": "TJK",
     "country": "Tajikistan",

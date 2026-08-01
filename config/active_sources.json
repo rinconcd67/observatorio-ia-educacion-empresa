@@ -38,6 +38,32 @@
       "refresh_frequency": "mensual"
     },
     {
+      "id": "oecd_ict_businesses",
+      "name": "OECD - Uso de IA en empresas",
+      "active": true,
+      "required": false,
+      "sector": "empresa",
+      "access": "api_sdmx_publica_sin_llave",
+      "dataset": "DSD_ICT_B@DF_BUSINESSES",
+      "format": "csv",
+      "url": "https://sdmx.oecd.org/public/rest/data/OECD.STI.DEP,DSD_ICT_B@DF_BUSINESSES,1.0/.A.G14_B.PT_ENT._T.S_GE10?startPeriod=2023&dimensionAtObservation=AllDimensions&format=csvfilewithlabels",
+      "metric_id": "enterprise_ai_adoption",
+      "refresh_frequency": "mensual"
+    },
+    {
+      "id": "oecd_individual_genai",
+      "name": "OECD - Uso individual de IA generativa",
+      "active": true,
+      "required": false,
+      "sector": "individuos",
+      "access": "api_sdmx_publica_sin_llave",
+      "dataset": "DSD_ICT_HH_IND@DF_IND",
+      "format": "csv",
+      "url": "https://sdmx.oecd.org/public/rest/data/OECD.STI.DEP,DSD_ICT_HH_IND@DF_IND,1.1/.A.D1X_I.PT_POP._Z.Y16T74._T._T._T._T?startPeriod=2025&dimensionAtObservation=AllDimensions&format=csvfilewithlabels",
+      "metric_id": "individual_genai_use",
+      "refresh_frequency": "mensual"
+    },
+    {
       "id": "world_bank_countries",
       "name": "Banco Mundial - Catálogo de países",
       "active": true,

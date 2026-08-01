@@ -3,7 +3,7 @@ const DEFAULT_HEADERS = {
   "user-agent": "Observatorio-IA-Educacion-Empresa/0.1 (academic research)",
 };
 
-export async function fetchJson(url, options = {}) {
+async function fetchWithRetry(url, options = {}) {
   const timeoutMs = options.timeoutMs ?? 45_000;
   const attempts = options.attempts ?? 3;
   let lastError;
@@ -19,7 +19,7 @@ export async function fetchJson(url, options = {}) {
       if (!response.ok) {
         throw new Error(`HTTP ${response.status} al consultar ${url}`);
       }
-      return await response.json();
+      return response;
     } catch (error) {
       lastError = error;
       if (attempt < attempts) {
@@ -31,4 +31,23 @@ export async function fetchJson(url, options = {}) {
   }
 
   throw lastError;
+}
+
+export async function fetchJson(url, options = {}) {
+  return (await fetchWithRetry(url, options)).json();
+}
+
+export async function fetchText(url, options = {}) {
+  return (await fetchWithRetry(url, {
+    ...options,
+    headers: { accept: "text/csv", ...options.headers },
+  })).text();
+}
+
+export async function fetchBytes(url, options = {}) {
+  const response = await fetchWithRetry(url, {
+    ...options,
+    headers: { accept: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", ...options.headers },
+  });
+  return new Uint8Array(await response.arrayBuffer());
 }

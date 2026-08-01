@@ -2,54 +2,81 @@
   {
     "source_id": "eurostat_enterprise_ai",
     "status": "ok",
-    "started_at": "2026-08-01T14:29:02.983Z",
-    "completed_at": "2026-08-01T14:29:03.453Z",
+    "started_at": "2026-08-01T14:54:17.004Z",
+    "completed_at": "2026-08-01T14:54:17.669Z",
     "checksum_sha256": "c1e7e9df69e04be0a80fa4066e73a436777894abecc353b7921e025f4d8274ab",
     "raw_path": "data/raw/eurostat_enterprise_ai.json"
   },
   {
     "source_id": "eurostat_formal_education_ai",
     "status": "ok",
-    "started_at": "2026-08-01T14:29:03.454Z",
-    "completed_at": "2026-08-01T14:29:03.609Z",
+    "started_at": "2026-08-01T14:54:17.669Z",
+    "completed_at": "2026-08-01T14:54:17.830Z",
     "checksum_sha256": "6a72a9a0cbdc7aecda3a3e24415f09d43706cdd56292c754524c5e7ea1f5717b",
     "raw_path": "data/raw/eurostat_formal_education_ai.json"
   },
   {
     "source_id": "eurostat_student_ai",
     "status": "ok",
-    "started_at": "2026-08-01T14:29:03.609Z",
-    "completed_at": "2026-08-01T14:29:03.764Z",
+    "started_at": "2026-08-01T14:54:17.830Z",
+    "completed_at": "2026-08-01T14:54:17.986Z",
     "checksum_sha256": "7b8512de03a10674c40a4446915e89e520de5ef6a8ca897be7c6b075c3147e12",
     "raw_path": "data/raw/eurostat_student_ai.json"
   },
   {
+    "source_id": "oecd_ict_businesses",
+    "status": "ok",
+    "started_at": "2026-08-01T14:54:17.986Z",
+    "completed_at": "2026-08-01T14:54:18.211Z",
+    "checksum_sha256": "246dc8d00471397b2d3e61dc21e5ca2892eec0d8f3a05fdb02f41fcbe90f067a",
+    "raw_path": "data/raw/oecd_ict_businesses.csv"
+  },
+  {
+    "source_id": "oecd_individual_genai",
+    "status": "ok",
+    "started_at": "2026-08-01T14:54:18.211Z",
+    "completed_at": "2026-08-01T14:54:18.242Z",
+    "checksum_sha256": "61df1b893c94a26fb1807ad5f625087a716b4df9a4bc9b195ddd398ea656bb6c",
+    "raw_path": "data/raw/oecd_individual_genai.csv"
+  },
+  {
     "source_id": "world_bank_countries",
     "status": "ok",
-    "started_at": "2026-08-01T14:29:03.764Z",
-    "completed_at": "2026-08-01T14:29:03.880Z",
+    "started_at": "2026-08-01T14:54:18.242Z",
+    "completed_at": "2026-08-01T14:54:18.369Z",
     "checksum_sha256": "d29d57f8adf954c5e2a1520a02fb2c7b45575d8db3bd327a9dff47d66914231c",
     "raw_path": "data/raw/world_bank_countries.json"
   },
   {
     "source_id": "world_bank_internet",
-    "status": "error",
-    "started_at": "2026-08-01T14:29:03.881Z",
-    "completed_at": "2026-08-01T14:29:06.494Z",
-    "error": "HTTP 502 al consultar https://api.worldbank.org/v2/country/all/indicator/IT.NET.USER.ZS?format=json&per_page=20000&date=2020:2025"
+    "status": "ok",
+    "started_at": "2026-08-01T14:54:18.370Z",
+    "completed_at": "2026-08-01T14:54:18.525Z",
+    "checksum_sha256": "ea85231efd268096444f73ae70ec3450cdcd59d205f0204952c29f04422d522f",
+    "raw_path": "data/raw/world_bank_internet.json"
   },
   {
     "source_id": "world_bank_tertiary",
     "status": "error",
-    "started_at": "2026-08-01T14:29:06.494Z",
-    "completed_at": "2026-08-01T14:29:09.261Z",
-    "error": "HTTP 502 al consultar https://api.worldbank.org/v2/country/all/indicator/SE.TER.ENRR?format=json&per_page=20000&date=2020:2025"
+    "started_at": "2026-08-01T14:54:18.526Z",
+    "completed_at": "2026-08-01T14:56:35.786Z",
+    "error": "This operation was aborted"
   },
   {
     "source_id": "world_bank_gdp_per_capita",
-    "status": "error",
-    "started_at": "2026-08-01T14:29:09.261Z",
-    "completed_at": "2026-08-01T14:29:12.397Z",
-    "error": "HTTP 502 al consultar https://api.worldbank.org/v2/country/all/indicator/NY.GDP.PCAP.CD?format=json&per_page=20000&date=2020:2025"
+    "status": "ok",
+    "started_at": "2026-08-01T14:56:35.786Z",
+    "completed_at": "2026-08-01T14:56:36.033Z",
+    "checksum_sha256": "5e920686d0488c5401366b10659aa36888ad9c9e9afaac63c1bab59b043e41e3",
+    "raw_path": "data/raw/world_bank_gdp_per_capita.json"
+  },
+  {
+    "source_id": "imf_aipi",
+    "status": "ok",
+    "started_at": "2026-08-01T14:53:47.834Z",
+    "completed_at": "2026-08-01T14:53:48.519Z",
+    "checksum_sha256": "35eb38b8b692771f2a58d3c9a8db3411365873ebc11ec2e8e8f690835f9f5f17",
+    "raw_path": "data/raw/imf_aipi.xlsx",
+    "records": 852
   }
 ]
