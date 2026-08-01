@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "evidence_id": "OIAEE-CERT-PUB-004",
+  "project": "Observatorio Global de Inteligencia Artificial en Educación y Empresa",
+  "version": "0.4.0",
+  "verified_at": "2026-08-01T18:28:01Z",
+  "responsible": {
+    "name": "César David Rincón Godoy",
+    "orcid": "https://orcid.org/0009-0003-2112-3851"
+  },
+  "repository": {
+    "url": "https://github.com/rinconcd67/observatorio-ia-educacion-empresa",
+    "visibility": "PUBLIC",
+    "default_branch": "main",
+    "certified_commit": "9077220a591f236ab22dd23e3537a8e9209a85cc",
+    "release_url": "https://github.com/rinconcd67/observatorio-ia-educacion-empresa/releases/tag/v0.4.0",
+    "release_published_at": "2026-08-01T17:37:50Z"
+  },
+  "public_assets": [
+    {
+      "locale": "es",
+      "url": "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/",
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "1c5d44f50a8bb2a42bbfa6f81a4f170459b146c9fc267d46a4eaeb119d17add2",
+      "canonical_path": "dashboard/index.html",
+      "byte_identical": true
+    },
+    {
+      "locale": "en",
+      "url": "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/en/",
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "9c423d947fe8263c23cf38fedcbfda2071568e34f26fb59ef53090635a3ff6d7",
+      "canonical_path": "dashboard/en/index.html",
+      "byte_identical": true
+    },
+    {
+      "url": "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/sitemap.xml",
+      "http_status": 200,
+      "content_type": "application/xml",
+      "sha256": "1419b601061b5338df565222678078d8cffbfa44ec3accdcfc304235395866b7",
+      "canonical_path": "src/public/sitemap.xml",
+      "byte_identical": true
+    },
+    {
+      "url": "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/robots.txt",
+      "http_status": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "sha256": "74487169744d35cb989cff5dc16d70e53215bceb7f6285de1ba349b232823cf2",
+      "canonical_path": "src/public/robots.txt",
+      "byte_identical": true
+    }
+  ],
+  "github_actions": [
+    {
+      "name": "Integridad del observatorio",
+      "run_id": 30711938287,
+      "status": "completed",
+      "conclusion": "success",
+      "commit": "9077220a591f236ab22dd23e3537a8e9209a85cc",
+      "url": "https://github.com/rinconcd67/observatorio-ia-educacion-empresa/actions/runs/30711938287"
+    },
+    {
+      "name": "Publicar observatorio",
+      "run_id": 30711938228,
+      "status": "completed",
+      "conclusion": "success",
+      "commit": "9077220a591f236ab22dd23e3537a8e9209a85cc",
+      "url": "https://github.com/rinconcd67/observatorio-ia-educacion-empresa/actions/runs/30711938228"
+    }
+  ],
+  "search_console": {
+    "property_verified": true,
+    "sitemap_submitted": true,
+    "indexing_requested": [
+      "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/",
+      "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/en/"
+    ],
+    "indexing_complete": false,
+    "note": "La indexación efectiva y la aparición en resultados dependen de Google."
+  },
+  "certification": {
+    "publicly_accessible": true,
+    "deployment_successful": true,
+    "local_public_parity": true,
+    "third_party_certification": false
+  }
+}
