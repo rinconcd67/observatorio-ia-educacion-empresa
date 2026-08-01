@@ -1,8 +1,8 @@
 {
   "source_id": "imf_aipi",
   "status": "ok",
-  "started_at": "2026-08-01T14:53:47.834Z",
-  "completed_at": "2026-08-01T14:53:48.519Z",
+  "started_at": "2026-08-01T16:22:58.946Z",
+  "completed_at": "2026-08-01T16:22:59.203Z",
   "checksum_sha256": "35eb38b8b692771f2a58d3c9a8db3411365873ebc11ec2e8e8f690835f9f5f17",
   "raw_path": "data/raw/imf_aipi.xlsx",
   "records": 852

@@ -2,7 +2,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { readFile } from "node:fs/promises";
 
-import { readJson } from "./lib/io.mjs";
+import { checksum, readJson } from "./lib/io.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -56,10 +56,14 @@ export function validateSnapshot(snapshot) {
   const directCountries = new Set();
   const aipiCountries = new Set();
   const oxfordCountries = new Set();
+  const observationKeys = new Set();
   for (const row of snapshot.observations) {
     assert(Number.isFinite(row.value), `Valor no numérico en ${row.metric_id}/${row.iso3}.`);
     assert(countryCodes.has(row.iso3), `Observación sin país maestro: ${row.iso3}.`);
     assert(Number.isInteger(row.year), `Año inválido en ${row.metric_id}/${row.iso3}.`);
+    const observationKey = [row.source_id, row.metric_id, row.iso3, row.year, row.unit].join("|");
+    assert(!observationKeys.has(observationKey), `Observación duplicada: ${observationKey}.`);
+    observationKeys.add(observationKey);
     if (directMetrics.has(row.metric_id)) {
       assert(row.value >= 0 && row.value <= 100, `Porcentaje fuera de rango en ${row.metric_id}/${row.iso3}.`);
       directCountries.add(row.iso3);
@@ -79,6 +83,7 @@ export function validateSnapshot(snapshot) {
   assert(directCountries.size >= 35, "La cobertura directa de IA es inferior a 35 países.");
   assert(aipiCountries.size >= 160, "La cobertura AIPI es inferior a 160 países.");
   assert(oxfordCountries.size >= 190, "La cobertura Oxford 2025 es inferior a 190 países.");
+  assert(snapshot.healthy_sources_count === snapshot.active_sources_count, "No todas las fuentes activas están operativas.");
   return {
     countries: snapshot.countries.length,
     observations: snapshot.observations.length,
@@ -113,20 +118,48 @@ export function validateArtifact(artifact) {
 export function validateDashboardHtml(html) {
   assert(html.includes("Observatorio Global de IA"), "El HTML no contiene la identidad v0.3.");
   assert(html.includes('id="world-map"'), "El HTML no contiene el mapa mundial.");
-  assert((html.match(/data-view="/g) ?? []).length === 7, "El HTML no contiene siete vistas temáticas.");
+  assert((html.match(/data-view="/g) ?? []).length === 8, "El HTML no contiene ocho vistas temáticas.");
+  assert(html.includes('data-view="about"'), "El HTML no contiene la vista de autoría.");
+  assert(html.includes("0009-0003-2112-3851"), "El HTML no contiene el ORCID del autor.");
+  assert(html.includes('rel="canonical"'), "El HTML no contiene URL canónica.");
+  assert(html.includes('type="application/ld+json"'), "El HTML no contiene metadatos estructurados.");
+  assert(html.includes("data/observations.csv"), "El HTML no ofrece descarga CSV.");
   assert(html.includes("window.OBSERVATORY_ARTIFACT="), "El HTML no contiene el contrato analítico incrustado.");
   assert(html.includes("window.OBSERVATORY_GEOJSON="), "El HTML no contiene la geometría mundial incrustada.");
   assert(!/<script[^>]+src=/i.test(html), "El HTML depende de scripts externos.");
   assert(!/<link[^>]+rel=["']stylesheet/i.test(html), "El HTML depende de hojas de estilo externas.");
-  return { bytes: Buffer.byteLength(html), views: 7, selfContained: true };
+  return { bytes: Buffer.byteLength(html), views: 8, selfContained: true };
+}
+
+export function validateSite(siteHtml, status, csv, artifact, socialPreview) {
+  assert(siteHtml === dashboardHtml, "El sitio público no coincide con el dashboard canónico.");
+  assert(status.version === "0.3.1", "El sitio público no corresponde a la versión 0.3.1.");
+  assert(status.status === "ready", "El estado público no está listo.");
+  assert(status.countries === artifact.snapshot.datasets.country_profile.length, "El estado público no coincide en países.");
+  assert(status.artifact_sha256 === checksum(artifact), "El checksum público del artefacto no coincide.");
+  assert(csv.split("\n").filter(Boolean).length === snapshot.observations.length + 1, "El CSV público no contiene todas las observaciones.");
+  assert(csv.startsWith("iso3,iso2,country,region"), "El CSV público no tiene el encabezado esperado.");
+  assert(socialPreview.length > 50_000, "La imagen social pública está vacía o incompleta.");
+  assert(socialPreview.subarray(1, 4).toString("ascii") === "PNG", "La imagen social pública no es PNG.");
+  return {
+    version: status.version,
+    csvRows: snapshot.observations.length,
+    status: status.status,
+    socialPreviewBytes: socialPreview.length,
+  };
 }
 
 const snapshot = await readJson(join(root, "data", "processed", "snapshot.json"));
 const artifact = await readJson(join(root, "dashboard", "artifact.json"));
 const dashboardHtml = await readFile(join(root, "dashboard", "index.html"), "utf8");
+const siteHtml = await readFile(join(root, "_site", "index.html"), "utf8");
+const siteStatus = await readJson(join(root, "_site", "data", "status.json"));
+const siteCsv = await readFile(join(root, "_site", "data", "observations.csv"), "utf8");
+const socialPreview = await readFile(join(root, "_site", "social-preview.png"));
 console.log(JSON.stringify({
   ok: true,
   snapshot: validateSnapshot(snapshot),
   artifact: validateArtifact(artifact),
   dashboard: validateDashboardHtml(dashboardHtml),
+  site: validateSite(siteHtml, siteStatus, siteCsv, artifact, socialPreview),
 }));

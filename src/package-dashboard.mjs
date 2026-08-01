@@ -40,7 +40,7 @@ async function packageDashboard() {
     bytes: Buffer.byteLength(html),
     countries: artifact.snapshot.datasets.country_profile.length,
     regions: artifact.snapshot.datasets.regional_summary.length,
-    views: 7,
+    views: 8,
   };
 }
 

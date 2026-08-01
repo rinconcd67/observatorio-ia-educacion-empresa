@@ -1,17 +1,20 @@
 {
   "name": "observatorio-ia-educacion-empresa",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "private": true,
   "type": "module",
   "description": "Observatorio global reproducible de preparación y adopción de IA en educación y empresas.",
+  "author": "César David Rincón Godoy <cdavidve67@gmail.com> (https://orcid.org/0009-0003-2112-3851)",
   "scripts": {
     "refresh:data": "node src/refresh.mjs",
     "import:aipi": "node src/import-aipi.mjs",
     "import:oxford": "node src/import-oxford-readiness.mjs",
     "build:artifact": "node src/build-artifact.mjs",
     "package:dashboard": "node src/package-dashboard.mjs",
+    "package:site": "node src/package-site.mjs",
+    "report:update": "node src/create-update-report.mjs data/processed/snapshot.json data/processed/snapshot.json reports/update-candidate.md",
     "refresh": "npm run import:aipi && npm run import:oxford && npm run refresh:data && npm run build",
-    "build": "npm run build:artifact && npm run package:dashboard",
+    "build": "npm run build:artifact && npm run package:dashboard && npm run package:site",
     "validate": "node src/validate-data.mjs",
     "test": "node --test",
     "check": "npm run test && npm run validate",
@@ -19,5 +22,8 @@
   },
   "engines": {
     "node": ">=20"
+  },
+  "dependencies": {
+    "read-excel-file": "9.3.4"
   }
 }

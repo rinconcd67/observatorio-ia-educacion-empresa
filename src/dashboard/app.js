@@ -52,12 +52,26 @@
     internet_users_pct: { label: "Uso de Internet", unit: "%", max: 100, colors: ["#f6e9ca", "#ecd296", "#dcb556", "#c88a18", "#8a5d0b"], cuts: [40, 60, 75, 90] },
   };
 
+  const validViews = new Set(["global", "regions", "countries", "education", "business", "governance", "sources", "about"]);
+  const urlParameters = new URLSearchParams(window.location.search);
+  const requestedView = urlParameters.get("view");
+  const requestedCountry = urlParameters.get("country");
+  const requestedMetric = urlParameters.get("metric");
   const state = {
-    view: "global",
+    view: validViews.has(requestedView) ? requestedView : "global",
     region: "Todas las regiones",
-    mapMetric: "aipi_score",
-    country: profiles.some((row) => row.iso3 === "COL") ? "COL" : profiles.find((row) => Number.isFinite(row.aipi_score))?.iso3,
+    mapMetric: Object.hasOwn(mapMetrics, requestedMetric) ? requestedMetric : "aipi_score",
+    country: profileByIso3.has(requestedCountry) ? requestedCountry : profiles.some((row) => row.iso3 === "COL") ? "COL" : profiles.find((row) => Number.isFinite(row.aipi_score))?.iso3,
   };
+
+  function syncUrl() {
+    const parameters = new URLSearchParams();
+    if (state.view !== "global") parameters.set("view", state.view);
+    if (state.view === "countries" && state.country) parameters.set("country", state.country);
+    if (state.view === "global" && state.mapMetric !== "aipi_score") parameters.set("metric", state.mapMetric);
+    const query = parameters.toString();
+    window.history.replaceState({}, "", `${window.location.pathname}${query ? `?${query}` : ""}`);
+  }
 
   function escapeHtml(value) {
     return String(value ?? "").replace(/[&<>'"]/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" })[character]);
@@ -405,7 +419,8 @@
     document.getElementById("source-health-table").innerHTML = `<thead><tr><th>Conector</th><th>Estado</th><th>Actualización</th><th>SHA-256</th></tr></thead><tbody>${datasets.source_health.map((row) => `<tr><td><strong>${escapeHtml(row.source)}</strong></td><td><span class="status ${row.status === "ok" ? "" : "error"}">${row.status === "ok" ? "Operativo" : "No disponible"}</span></td><td>${escapeHtml(new Date(row.updated_at).toLocaleString("es-ES"))}</td><td><code>${escapeHtml(row.checksum)}</code></td></tr>`).join("")}</tbody>`;
   }
 
-  function setView(view) {
+  function setView(view, options = {}) {
+    if (!validViews.has(view)) return;
     state.view = view;
     document.querySelectorAll(".view").forEach((section) => section.classList.toggle("active", section.dataset.view === view));
     document.querySelectorAll(".nav-item").forEach((button) => button.classList.toggle("active", button.dataset.viewTarget === view));
@@ -418,6 +433,7 @@
     if (view === "business") renderBusiness();
     if (view === "governance") renderGovernance();
     if (view === "sources") renderSources();
+    if (options.sync !== false) syncUrl();
     window.scrollTo({ top: 0, behavior: "auto" });
   }
 
@@ -435,10 +451,10 @@
       const open = nav.classList.toggle("open");
       event.currentTarget.setAttribute("aria-expanded", String(open));
     });
-    document.getElementById("global-region-filter").addEventListener("change", (event) => { state.region = event.target.value; renderMap(); });
-    document.getElementById("map-metric").addEventListener("change", (event) => { state.mapMetric = event.target.value; renderMap(); });
+    document.getElementById("global-region-filter").addEventListener("change", (event) => { state.region = event.target.value; renderMap(); syncUrl(); });
+    document.getElementById("map-metric").addEventListener("change", (event) => { state.mapMetric = event.target.value; renderMap(); syncUrl(); });
     document.getElementById("region-select").addEventListener("change", renderRegions);
-    document.getElementById("country-select").addEventListener("change", (event) => { state.country = event.target.value; renderCountries(); });
+    document.getElementById("country-select").addEventListener("change", (event) => { state.country = event.target.value; renderCountries(); syncUrl(); });
     document.getElementById("governance-search").addEventListener("input", (event) => renderGovernanceTable(event.target.value));
   }
 
@@ -448,7 +464,7 @@
     document.getElementById("freshness-label").textContent = freshness;
     document.getElementById("footer-freshness").textContent = freshness;
     initializeControls();
-    renderGlobal();
+    setView(state.view, { sync: false });
   }
 
   initialize();
