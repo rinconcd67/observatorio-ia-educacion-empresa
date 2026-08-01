@@ -37,7 +37,7 @@ flowchart LR
 1. Una ejecución mensual recupera las fuentes activas.
 2. Las pruebas verifican rangos, duplicados, cobertura y salud de fuentes.
 3. El sistema genera un informe de variaciones frente a la versión publicada.
-4. Los cambios se presentan en un pull request, sin modificar directamente `main`.
+4. Los cambios se presentan en un pull request, sin modificar directamente `main`; si GitHub restringe su creación automática, la rama queda disponible con un vínculo de revisión manual.
 5. La integración aprobada activa la construcción y publicación en GitHub Pages.
 6. El sitio expone el estado, los datos descargables y la identificación de la versión.
 
