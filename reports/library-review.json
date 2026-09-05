@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-05T01:11:21.293Z",
-  "mode": "check",
-  "catalog_reviewed_date": "2026-09-04",
+  "generated_at": "2026-09-05T23:10:20.190Z",
+  "mode": "offline",
+  "catalog_reviewed_date": "2026-09-05",
   "policy": "Proposal queue only. Catalog and publication are never modified. Byte changes require editorial assessment.",
   "discovery": {
     "status": "editorial_review_required",
@@ -16,6 +16,29 @@
           "education",
           "ethics",
           "policy"
+        ]
+      },
+      {
+        "id": "unesco_ethics_ai_observatory",
+        "organization": "UNESCO",
+        "url": "https://www.unesco.org/ethics-ai/en",
+        "topics": [
+          "ethics",
+          "governance",
+          "policy",
+          "neurotechnology"
+        ]
+      },
+      {
+        "id": "unesco_neurotechnology",
+        "organization": "UNESCO",
+        "url": "https://www.unesco.org/en/ethics-neurotech",
+        "topics": [
+          "neurotechnology",
+          "artificial intelligence",
+          "ethics",
+          "mental privacy",
+          "human rights"
         ]
       },
       {
@@ -40,13 +63,24 @@
           "business",
           "policy"
         ]
+      },
+      {
+        "id": "mit",
+        "organization": "MIT",
+        "url": "https://aiandeducation.mit.edu/",
+        "catalog_url": "https://aihub.mit.edu/",
+        "topics": [
+          "education",
+          "research",
+          "policy"
+        ]
       }
     ],
     "note": "Discovery portals are provided for research; no automatic claim extraction or new-item publication."
   },
   "validation": {
     "valid": true,
-    "item_count": 12,
+    "item_count": 15,
     "issues": []
   },
   "checks": [
