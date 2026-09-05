@@ -43,6 +43,8 @@
       <button type="button" class="nav-item" data-view-target="education">Educación</button>
       <button type="button" class="nav-item" data-view-target="business">Empresa</button>
       <button type="button" class="nav-item" data-view-target="governance">Gobernanza</button>
+      <a class="nav-item" href="__LIBRARY_PATH__">Biblioteca</a>
+      <a class="nav-item" href="__TOPICS_PATH__">Temas</a>
       <button type="button" class="nav-item" data-view-target="sources">Fuentes</button>
       <button type="button" class="nav-item" data-view-target="about">Acerca</button>
     </nav>
@@ -50,8 +52,10 @@
 
   <main>
     <section class="view active" data-view="global">
-      <div class="view-intro">
-        <div><p class="eyebrow">Panorama mundial</p><h1>Preparación y adopción de inteligencia artificial</h1><p>Lectura comparada de capacidad estructural, uso educativo y adopción empresarial por país y región.</p></div>
+      <div id="editorial-portal"></div>
+      <section class="library-launch"><div><p class="eyebrow">Biblioteca de IA · Español e inglés</p><h2>Una estantería para comprender la inteligencia artificial.</h2><p>UNESCO, BID y OCDE: publicaciones, reseñas y rutas de lectura conectadas con nuestros datos.</p></div><div><a class="portal-button" href="__LIBRARY_PATH__">Explorar la biblioteca →</a><a class="library-topics" href="__TOPICS_PATH__">Ver guías temáticas →</a></div></section>
+      <div class="view-intro" id="data-explorer">
+        <div><p class="eyebrow">Panorama mundial</p><h2>Preparación y adopción de inteligencia artificial</h2><p>Lectura comparada de capacidad estructural, uso educativo y adopción empresarial por país y región.</p></div>
         <div class="control-row">
           <label>Región<select id="global-region-filter"></select></label>
           <label>Indicador<select id="map-metric"></select></label>
@@ -93,8 +97,9 @@
     </section>
 
     <section class="view" data-view="education">
-      <div class="view-intro"><div><p class="eyebrow">Educación</p><h1>Uso educativo e individual de IA generativa</h1><p>Indicadores directos disponibles en Eurostat y OCDE, con cobertura geográfica explícita.</p></div></div>
+      <div class="view-intro"><div><p class="eyebrow">Educación</p><h1>IA en educación: estudiantes, docentes e instituciones</h1><p>Indicadores de uso de IA y evidencia docente e institucional, con fuentes, poblaciones y cobertura explícitas.</p></div></div>
       <div class="metric-strip" id="education-metrics"></div>
+      <div id="education-evidence"></div>
       <div class="analysis-grid">
         <section class="analysis-panel"><div class="section-heading compact"><div><p class="eyebrow">Educación formal</p><h2>Uso por país</h2><p>Porcentaje de individuos, 2025.</p></div></div><div id="education-bars"></div></section>
         <section class="analysis-panel"><div class="section-heading compact"><div><p class="eyebrow">Personas</p><h2>Uso individual de GenAI</h2><p>Personas de 16 a 74 años, 2025.</p></div></div><div id="individual-bars"></div></section>
@@ -127,7 +132,7 @@
       <div class="view-intro"><div><p class="eyebrow">Confianza</p><h1>Fuentes, cobertura y metodología</h1><p>Cada indicador conserva procedencia, filtros, periodo y huella de la ejecución.</p></div></div>
       <section class="source-band" id="source-cards"></section>
       <section class="table-band"><div class="section-heading compact"><div><p class="eyebrow">Ejecución</p><h2>Salud de conectores</h2></div></div><div class="table-scroll"><table id="source-health-table"></table></div></section>
-      <section class="method-band"><h2>Reglas de lectura</h2><ul><li>Los promedios son simples y no ponderados.</li><li>AIPI y Oxford conservan sus escalas, periodos y metodologías; no se combinan en un índice nuevo.</li><li>AIPI es indicativo y no se utiliza como clasificación competitiva.</li><li>Eurostat prevalece sobre OCDE en coincidencias empresariales del mismo país y año.</li><li>Los datos ausentes no se imputan ni se convierten en cero.</li><li>Las poblaciones educativa, individual y empresarial no son equivalentes causales.</li></ul></section>
+      <section class="method-band"><h2>Reglas de lectura</h2><ul><li>Los promedios son simples y no ponderados.</li><li>La brecha empresa-educación solo compara observaciones del mismo país y el mismo año.</li><li>AIPI y Oxford conservan sus escalas, periodos y metodologías; no se combinan en un índice nuevo.</li><li>AIPI es indicativo y no se utiliza como clasificación competitiva.</li><li>Eurostat prevalece sobre OCDE en coincidencias empresariales del mismo país y año.</li><li>Los datos ausentes no se imputan ni se convierten en cero.</li><li>Las poblaciones educativa, individual y empresarial no son equivalentes causales.</li></ul></section>
       <section class="download-band"><div><p class="eyebrow">Datos abiertos para consulta</p><h2>Descargas verificables</h2><p>Los archivos procesados conservan periodo, unidad, fuente y código de país.</p></div><div class="download-actions"><a class="action-link primary" href="__ASSET_PREFIX__data/observations.csv" download>Descargar CSV</a><a class="action-link" href="__ASSET_PREFIX__data/artifact.json" download>Contrato JSON</a><a class="action-link" href="__ASSET_PREFIX__data/status.json">Estado de datos</a></div></section>
     </section>
 

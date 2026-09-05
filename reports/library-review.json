@@ -1,0 +1,243 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-05T01:11:21.293Z",
+  "mode": "check",
+  "catalog_reviewed_date": "2026-09-04",
+  "policy": "Proposal queue only. Catalog and publication are never modified. Byte changes require editorial assessment.",
+  "discovery": {
+    "status": "editorial_review_required",
+    "sources": [
+      {
+        "id": "unesco",
+        "organization": "UNESCO",
+        "url": "https://www.unesco.org/en/artificial-intelligence",
+        "catalog_url": "https://unesdoc.unesco.org/",
+        "topics": [
+          "education",
+          "ethics",
+          "policy"
+        ]
+      },
+      {
+        "id": "idb",
+        "organization": "BID / IDB",
+        "url": "https://publications.iadb.org/en",
+        "topics": [
+          "education",
+          "Latin America",
+          "business",
+          "policy"
+        ]
+      },
+      {
+        "id": "oecd",
+        "organization": "OCDE / OECD",
+        "url": "https://www.oecd.org/en/topics/artificial-intelligence.html",
+        "catalog_url": "https://www.oecd.org/en/publications.html",
+        "topics": [
+          "education",
+          "skills",
+          "business",
+          "policy"
+        ]
+      }
+    ],
+    "note": "Discovery portals are provided for research; no automatic claim extraction or new-item publication."
+  },
+  "validation": {
+    "valid": true,
+    "item_count": 12,
+    "issues": []
+  },
+  "checks": [
+    {
+      "id": "unesco-teachers-2024",
+      "source_url": "https://www.unesco.org/en/articles/ai-competency-framework-teachers",
+      "checked_at": "2026-09-05T01:11:21.293Z",
+      "status": "ok",
+      "http_status": 200,
+      "needs_review": false,
+      "change_interpretation": null,
+      "last_success": {
+        "checked_at": "2026-09-05T01:11:21.293Z",
+        "final_url": "https://www.unesco.org/en/articles/ai-competency-framework-teachers",
+        "sha256": "7e6fff99f8a01dea8ff6a1b4f7a5e8daa34d6a95e712461cb4cbd4b2a125997f",
+        "bytes": 82829,
+        "content_type": "text/html; charset=UTF-8"
+      }
+    },
+    {
+      "id": "unesco-students-2024",
+      "source_url": "https://www.unesco.org/en/articles/ai-competency-framework-students",
+      "checked_at": "2026-09-05T01:11:21.293Z",
+      "status": "ok",
+      "http_status": 200,
+      "needs_review": false,
+      "change_interpretation": null,
+      "last_success": {
+        "checked_at": "2026-09-05T01:11:21.293Z",
+        "final_url": "https://www.unesco.org/en/articles/ai-competency-framework-students",
+        "sha256": "2548cd5d9cdc78af40f5b548d8bf524b5465e15e495a203e3139945b32c16a7f",
+        "bytes": 83001,
+        "content_type": "text/html; charset=UTF-8"
+      }
+    },
+    {
+      "id": "unesco-genai-guidance-2023",
+      "source_url": "https://www.unesco.org/en/articles/guidance-generative-ai-education-and-research",
+      "checked_at": "2026-09-05T01:11:21.293Z",
+      "status": "ok",
+      "http_status": 200,
+      "needs_review": false,
+      "change_interpretation": null,
+      "last_success": {
+        "checked_at": "2026-09-05T01:11:21.293Z",
+        "final_url": "https://www.unesco.org/en/articles/guidance-generative-ai-education-and-research",
+        "sha256": "7aaa3bf94618697bf2d300fde613ff1f018dea3498d5463d9e69593a4ab6cd47",
+        "bytes": 84275,
+        "content_type": "text/html; charset=UTF-8"
+      }
+    },
+    {
+      "id": "unesco-ai-ethics-2022",
+      "source_url": "https://www.unesco.org/en/articles/recommendation-ethics-artificial-intelligence",
+      "checked_at": "2026-09-05T01:11:21.293Z",
+      "status": "ok",
+      "http_status": 200,
+      "needs_review": false,
+      "change_interpretation": null,
+      "last_success": {
+        "checked_at": "2026-09-05T01:11:21.293Z",
+        "final_url": "https://www.unesco.org/en/articles/recommendation-ethics-artificial-intelligence",
+        "sha256": "69d981b86a4c45f69d298ab76e17c89f65a8d8cbcf43140029c3618e471b1cce",
+        "bytes": 75940,
+        "content_type": "text/html; charset=UTF-8"
+      }
+    },
+    {
+      "id": "bid-ai-education-2025",
+      "source_url": "https://publications.iadb.org/en/ai-and-education-building-future-through-digital-transformation",
+      "checked_at": "2026-09-05T01:11:21.293Z",
+      "status": "access_blocked",
+      "http_status": 403,
+      "needs_review": true
+    },
+    {
+      "id": "bid-ai-infrastructure-2026",
+      "source_url": "https://publications.iadb.org/en/development-and-use-artificial-intelligence-latin-america-and-caribbean",
+      "checked_at": "2026-09-05T01:11:21.293Z",
+      "status": "access_blocked",
+      "http_status": 403,
+      "needs_review": true
+    },
+    {
+      "id": "bid-ai-framework-2025",
+      "source_url": "https://publications.iadb.org/en/artificial-intelligence-framework-inter-american-development-group",
+      "checked_at": "2026-09-05T01:11:21.293Z",
+      "status": "access_blocked",
+      "http_status": 403,
+      "needs_review": true
+    },
+    {
+      "id": "bid-responsible-projects-2021",
+      "source_url": "https://publications.iadb.org/en/responsible-use-ai-public-policy-project-formulation-manual",
+      "checked_at": "2026-09-05T01:11:21.293Z",
+      "status": "access_blocked",
+      "http_status": 403,
+      "needs_review": true
+    },
+    {
+      "id": "oecd-digital-education-2026",
+      "source_url": "https://www.oecd.org/en/publications/oecd-digital-education-outlook-2026_062a7394-en.html",
+      "checked_at": "2026-09-05T01:11:21.293Z",
+      "status": "access_blocked",
+      "http_status": 403,
+      "needs_review": true
+    },
+    {
+      "id": "oecd-digital-education-2023",
+      "source_url": "https://www.oecd.org/en/publications/oecd-digital-education-outlook-2023_c74f03de-en.html",
+      "checked_at": "2026-09-05T01:11:21.293Z",
+      "status": "ok",
+      "http_status": 200,
+      "needs_review": false,
+      "change_interpretation": null,
+      "last_success": {
+        "checked_at": "2026-09-05T01:11:21.293Z",
+        "final_url": "https://www.oecd.org/en/publications/oecd-digital-education-outlook-2023_c74f03de-en.html",
+        "sha256": "868d94c4d9a983c13ed8c4ec17922a0ea7366db8babcaf04f8e45bec5f54cc8e",
+        "bytes": 1520778,
+        "content_type": "text/html;charset=utf-8"
+      }
+    },
+    {
+      "id": "oecd-sme-ai-adoption-2025",
+      "source_url": "https://www.oecd.org/en/publications/ai-adoption-by-small-and-medium-sized-enterprises_426399c1-en.html",
+      "checked_at": "2026-09-05T01:11:21.293Z",
+      "status": "access_blocked",
+      "http_status": 403,
+      "needs_review": true
+    },
+    {
+      "id": "oecd-sme-workforce-2025",
+      "source_url": "https://www.oecd.org/en/publications/generative-ai-and-the-sme-workforce_2d08b99d-en.html",
+      "checked_at": "2026-09-05T01:11:21.293Z",
+      "status": "ok",
+      "http_status": 200,
+      "needs_review": false,
+      "change_interpretation": null,
+      "last_success": {
+        "checked_at": "2026-09-05T01:11:21.293Z",
+        "final_url": "https://www.oecd.org/en/publications/generative-ai-and-the-sme-workforce_2d08b99d-en.html",
+        "sha256": "9ac766ebca18ba6484f917b451ab0d2bff03487986ffb8973a19f3bf89f87ad8",
+        "bytes": 1507253,
+        "content_type": "text/html;charset=utf-8"
+      }
+    }
+  ],
+  "proposals": [
+    {
+      "type": "review_source_access",
+      "id": "bid-ai-education-2025",
+      "source_url": "https://publications.iadb.org/en/ai-and-education-building-future-through-digital-transformation",
+      "reason": "access_blocked",
+      "checked_at": "2026-09-05T01:11:21.293Z"
+    },
+    {
+      "type": "review_source_access",
+      "id": "bid-ai-infrastructure-2026",
+      "source_url": "https://publications.iadb.org/en/development-and-use-artificial-intelligence-latin-america-and-caribbean",
+      "reason": "access_blocked",
+      "checked_at": "2026-09-05T01:11:21.293Z"
+    },
+    {
+      "type": "review_source_access",
+      "id": "bid-ai-framework-2025",
+      "source_url": "https://publications.iadb.org/en/artificial-intelligence-framework-inter-american-development-group",
+      "reason": "access_blocked",
+      "checked_at": "2026-09-05T01:11:21.293Z"
+    },
+    {
+      "type": "review_source_access",
+      "id": "bid-responsible-projects-2021",
+      "source_url": "https://publications.iadb.org/en/responsible-use-ai-public-policy-project-formulation-manual",
+      "reason": "access_blocked",
+      "checked_at": "2026-09-05T01:11:21.293Z"
+    },
+    {
+      "type": "review_source_access",
+      "id": "oecd-digital-education-2026",
+      "source_url": "https://www.oecd.org/en/publications/oecd-digital-education-outlook-2026_062a7394-en.html",
+      "reason": "access_blocked",
+      "checked_at": "2026-09-05T01:11:21.293Z"
+    },
+    {
+      "type": "review_source_access",
+      "id": "oecd-sme-ai-adoption-2025",
+      "source_url": "https://www.oecd.org/en/publications/ai-adoption-by-small-and-medium-sized-enterprises_426399c1-en.html",
+      "reason": "access_blocked",
+      "checked_at": "2026-09-05T01:11:21.293Z"
+    }
+  ],
+  "publication_performed": false
+}

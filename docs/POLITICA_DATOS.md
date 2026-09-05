@@ -7,6 +7,9 @@
 - Los valores ausentes no se imputan ni se convierten en cero.
 - Los índices con metodologías distintas se mantienen separados.
 - Las actualizaciones requieren controles de cobertura, rango, duplicados y variación.
+- Las comparaciones derivadas requieren coincidencia de país y año; no se restan periodos diferentes.
+- Las fuentes dinámicas no fijan manualmente un año final y las ediciones históricas se mantienen explícitamente fijadas.
+- Las huellas SHA-256 representan los bytes exactos almacenados o publicados y declaran su alcance.
 
 ## Publicación
 

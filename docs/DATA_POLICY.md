@@ -7,6 +7,9 @@
 - Missing values are neither imputed nor converted to zero.
 - Indexes based on different methodologies remain separate.
 - Updates must pass coverage, range, duplicate and variation controls.
+- Derived comparisons require the same country and year; observations from different periods are not subtracted.
+- Dynamic sources do not use a manually frozen end year, while historical editions remain explicitly pinned.
+- SHA-256 fingerprints identify the exact stored or published bytes and declare their scope.
 
 ## Publication
 

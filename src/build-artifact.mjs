@@ -2,7 +2,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { readJson, writeJson } from "./lib/io.mjs";
-import { indexBy, latestByPriority, mean, quantile, round } from "./lib/metrics.mjs";
+import { indexBy, latestByPriority, latestCommonYearPairs, mean, quantile, round } from "./lib/metrics.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const snapshotPath = join(root, "data", "processed", "snapshot.json");
@@ -70,6 +70,24 @@ export function latestMetricMap(observations, metricId) {
   return indexBy(rows, "iso3");
 }
 
+export function latestComparableMetricPairMap(observations, leftMetricId, rightMetricId) {
+  const pairs = latestCommonYearPairs(
+    metricRows(observations, leftMetricId),
+    metricRows(observations, rightMetricId),
+    ["iso3"],
+    SOURCE_PRIORITY,
+  );
+  return indexBy(pairs, "iso3");
+}
+
+function comparisonStatus(left, right, pair) {
+  if (pair) return "comparable_same_year";
+  if (!left && !right) return "missing_both";
+  if (!left) return "missing_business";
+  if (!right) return "missing_education";
+  return "no_common_year";
+}
+
 function trendDataset(observations, metricId) {
   const byYear = new Map();
   const rows = latestByPriority(metricRows(observations, metricId), ["iso3", "year"], SOURCE_PRIORITY);
@@ -107,7 +125,7 @@ function sourceDefinitions(snapshot) {
         metric_definitions: {
           country_coverage: "Número de países con al menos una observación directa de uso de IA en educación o empresas.",
           unweighted_average: "Promedio aritmético no ponderado de los países con observación disponible; no representa un promedio poblacional de la UE.",
-          adoption_gap: "Diferencia en puntos porcentuales entre uso empresarial de IA y uso de IA generativa para educación formal en el mismo país y año disponible."
+          adoption_gap: "Diferencia en puntos porcentuales entre uso empresarial de IA y uso de IA generativa para educación formal en el último año común disponible para el país."
         }
       }
     },
@@ -177,11 +195,11 @@ function sourceDefinitions(snapshot) {
         engine: "duckdb",
         language: "sql",
         sql: "SELECT * FROM read_json_auto('data/processed/observations.json') WHERE source_id = 'eurostat_formal_education_ai'",
-        url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/isoc_ai_iaiu?lang=en&freq=A&ind_type=IND_TOTAL&indic_is=I_IUAIFE&unit=PC_IND&time=2025",
-        description: "Individuos que usaron herramientas de IA generativa para educación formal en 2025.",
+        url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/isoc_ai_iaiu?lang=en&freq=A&ind_type=IND_TOTAL&indic_is=I_IUAIFE&unit=PC_IND&sinceTimePeriod=2025",
+        description: "Individuos que usaron herramientas de IA generativa para educación formal; consulta abierta desde 2025.",
         executed_at: executedAt,
         tables_used: ["Eurostat.isoc_ai_iaiu"],
-        filters: ["ind_type=IND_TOTAL", "indic_is=I_IUAIFE", "unit=PC_IND", "time=2025"]
+        filters: ["ind_type=IND_TOTAL", "indic_is=I_IUAIFE", "unit=PC_IND", "sinceTimePeriod=2025"]
       }
     },
     {
@@ -192,11 +210,11 @@ function sourceDefinitions(snapshot) {
         engine: "duckdb",
         language: "sql",
         sql: "SELECT * FROM read_json_auto('data/processed/observations.json') WHERE source_id = 'eurostat_student_ai'",
-        url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/isoc_ai_iaiu?lang=en&freq=A&ind_type=STUD&indic_is=I_IUAI&unit=PC_IND&time=2025",
-        description: "Estudiantes que usaron herramientas de IA generativa en 2025.",
+        url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/isoc_ai_iaiu?lang=en&freq=A&ind_type=STUD&indic_is=I_IUAI&unit=PC_IND&sinceTimePeriod=2025",
+        description: "Estudiantes que usaron herramientas de IA generativa; consulta abierta desde 2025.",
         executed_at: executedAt,
         tables_used: ["Eurostat.isoc_ai_iaiu"],
-        filters: ["ind_type=STUD", "indic_is=I_IUAI", "unit=PC_IND", "time=2025"]
+        filters: ["ind_type=STUD", "indic_is=I_IUAI", "unit=PC_IND", "sinceTimePeriod=2025"]
       }
     },
     {
@@ -207,10 +225,10 @@ function sourceDefinitions(snapshot) {
         engine: "duckdb",
         language: "sql",
         sql: "SELECT * FROM read_json_auto('data/processed/observations.json') WHERE source_id LIKE 'world_bank_%'",
-        description: "Última observación disponible entre 2020 y 2025 para conectividad, matrícula terciaria y PIB per cápita.",
+        description: "Última observación disponible desde 2020 hasta el año UTC de ejecución para conectividad, matrícula terciaria y PIB per cápita.",
         executed_at: executedAt,
         tables_used: ["IT.NET.USER.ZS", "SE.TER.ENRR", "NY.GDP.PCAP.CD"],
-        filters: ["date=2020:2025", "country=all", "se excluyen agregados regionales"]
+        filters: ["date=2020:año_de_ejecución", "country=all", "se excluyen agregados regionales"]
       }
     }
   ];
@@ -220,6 +238,11 @@ function sourceDefinitions(snapshot) {
 export function createArtifact(snapshot) {
   const enterprise = latestMetricMap(snapshot.observations, "enterprise_ai_adoption");
   const formalEducation = latestMetricMap(snapshot.observations, "formal_education_genai_use");
+  const comparableAdoptionPairs = latestComparableMetricPairMap(
+    snapshot.observations,
+    "enterprise_ai_adoption",
+    "formal_education_genai_use",
+  );
   const students = latestMetricMap(snapshot.observations, "student_genai_use");
   const individuals = latestMetricMap(snapshot.observations, "individual_genai_use");
   const aipi = latestMetricMap(snapshot.observations, "ai_preparedness_index");
@@ -243,6 +266,7 @@ export function createArtifact(snapshot) {
     const iso3 = country.iso3;
     const business = enterprise.get(iso3);
     const education = formalEducation.get(iso3);
+    const adoptionPair = comparableAdoptionPairs.get(iso3);
     const student = students.get(iso3);
     const individual = individuals.get(iso3);
     const aipiRow = aipi.get(iso3);
@@ -281,7 +305,13 @@ export function createArtifact(snapshot) {
       government_public_sector_adoption: governmentAdoption.get(iso3)?.value == null ? null : round(governmentAdoption.get(iso3).value, 2),
       government_development_diffusion: governmentDiffusion.get(iso3)?.value == null ? null : round(governmentDiffusion.get(iso3).value, 2),
       government_ai_resilience: governmentResilience.get(iso3)?.value == null ? null : round(governmentResilience.get(iso3).value, 2),
-      adoption_gap_pp: business && education ? round(business.value - education.value) : null,
+      adoption_gap_pp: adoptionPair ? round(adoptionPair.left.value - adoptionPair.right.value) : null,
+      adoption_gap_year: adoptionPair?.year ?? null,
+      adoption_gap_business_pct: adoptionPair?.left.value ?? null,
+      adoption_gap_education_pct: adoptionPair?.right.value ?? null,
+      adoption_gap_business_source_id: adoptionPair?.left.source_id ?? null,
+      adoption_gap_education_source_id: adoptionPair?.right.source_id ?? null,
+      adoption_gap_status: comparisonStatus(business, education, adoptionPair),
       internet_users_pct: internetRow?.value == null ? null : round(internetRow.value),
       internet_year: internetRow?.year ?? null,
       tertiary_enrollment_pct: tertiaryRow?.value == null ? null : round(tertiaryRow.value),
@@ -303,7 +333,7 @@ export function createArtifact(snapshot) {
     .filter((row) => Number.isFinite(row.individual_genai_pct))
     .sort((left, right) => right.individual_genai_pct - left.individual_genai_pct);
   const gapAnalysis = countryProfile
-    .filter((row) => Number.isFinite(row.adoption_gap_pp))
+    .filter((row) => row.adoption_gap_status === "comparable_same_year")
     .sort((left, right) => right.adoption_gap_pp - left.adoption_gap_pp);
   const studentValues = countryProfile.map((row) => row.student_ai_pct);
   const readinessAdoption = countryProfile
@@ -373,6 +403,7 @@ export function createArtifact(snapshot) {
     education_average_pct: round(mean(educationRanking.map((row) => row.formal_education_ai_pct))),
     student_average_pct: round(mean(studentValues)),
     individual_genai_average_pct: round(mean(individualCoverage.map((row) => row.individual_genai_pct))),
+    same_year_overlap_countries: gapAnalysis.length,
     overlap_countries: gapAnalysis.length,
     active_sources: snapshot.healthy_sources_count,
   }];
@@ -382,7 +413,14 @@ export function createArtifact(snapshot) {
     source: run.source_id,
     status: run.status,
     updated_at: run.completed_at,
-    checksum: run.checksum_sha256?.slice(0, 12) ?? "No disponible",
+    policy_mode: run.policy_mode,
+    edition_year: run.edition_year ?? null,
+    requested_start_year: run.requested_start_year ?? null,
+    requested_end_year: run.requested_end_year ?? null,
+    returned_min_year: run.returned_min_year ?? null,
+    returned_max_year: run.returned_max_year ?? null,
+    checksum: (run.raw_sha256 ?? run.checksum_sha256)?.slice(0, 12) ?? null,
+    checksum_scope: run.checksum_scope ?? null,
   }));
 
   const unavailableSources = snapshot.source_runs.filter((run) => run.status !== "ok");
@@ -393,7 +431,7 @@ export function createArtifact(snapshot) {
   return {
     surface: "dashboard",
     manifest: {
-      version: 3,
+      version: 4,
       surface: "dashboard",
       title: "Observatorio Global de IA en Educación y Empresa",
       description: "Preparación, adopción, uso y contexto de la inteligencia artificial por país y región.",
@@ -532,16 +570,17 @@ export function createArtifact(snapshot) {
         {
           id: "gap_scatter",
           title: "Adopción empresarial frente a uso educativo",
-          subtitle: "Cada punto representa un país con ambas mediciones disponibles.",
+          subtitle: "Cada punto representa un país con ambas mediciones en el mismo año.",
           type: "scatter",
           dataset: "gap_analysis",
           sourceId: "processed_snapshot",
           encodings: {
-            x: { field: "formal_education_ai_pct", type: "quantitative", label: "Uso para educación formal (%)" },
-            y: { field: "business_ai_pct", type: "quantitative", label: "Empresas que usan IA (%)" },
+            x: { field: "adoption_gap_education_pct", type: "quantitative", label: "Uso para educación formal (%)" },
+            y: { field: "adoption_gap_business_pct", type: "quantitative", label: "Empresas que usan IA (%)" },
             tooltip: [
               { field: "country", type: "nominal", label: "País" },
-              { field: "adoption_gap_pp", type: "quantitative", label: "Brecha (pp)" }
+              { field: "adoption_gap_pp", type: "quantitative", label: "Brecha (pp)" },
+              { field: "adoption_gap_year", type: "quantitative", label: "Año común" }
             ]
           }
         }
@@ -565,6 +604,7 @@ export function createArtifact(snapshot) {
             { field: "aipi_score", label: "Preparación AIPI (0-1)", format: "number" },
             { field: "government_ai_readiness_score", label: "Preparación gubernamental Oxford (0-100)", format: "number" },
             { field: "adoption_gap_pp", label: "Brecha empresa-educación (pp)", format: "number", movement: true },
+            { field: "adoption_gap_year", label: "Año común de la brecha", format: "number" },
             { field: "internet_users_pct", label: "Uso de Internet (%)", format: "number" },
             { field: "tertiary_enrollment_pct", label: "Matrícula terciaria (%)", format: "number" },
             { field: "gdp_per_capita_usd", label: "PIB per cápita (USD)", format: "number" }
@@ -592,7 +632,7 @@ export function createArtifact(snapshot) {
         {
           id: "source_health",
           title: "Trazabilidad y salud de fuentes",
-          subtitle: "Estado y huella de la ejecución que produjo el snapshot.",
+          subtitle: "Estado, periodo y SHA-256 del archivo raw exacto que produjo el snapshot.",
           dataset: "source_health",
           sourceId: "processed_snapshot",
           defaultSort: { field: "source", direction: "asc" },
@@ -602,7 +642,11 @@ export function createArtifact(snapshot) {
             { field: "source", label: "Fuente", type: "text" },
             { field: "status", label: "Estado", type: "text" },
             { field: "updated_at", label: "Actualización", type: "text" },
-            { field: "checksum", label: "SHA-256 abreviado", type: "text" }
+            { field: "requested_start_year", label: "Inicio solicitado", type: "number" },
+            { field: "requested_end_year", label: "Fin solicitado", type: "number" },
+            { field: "returned_min_year", label: "Inicio recibido", type: "number" },
+            { field: "returned_max_year", label: "Fin recibido", type: "number" },
+            { field: "checksum", label: "SHA-256 del archivo raw", type: "text" }
           ]
         }
       ],
@@ -627,7 +671,7 @@ export function createArtifact(snapshot) {
       ]
     },
     snapshot: {
-      version: 3,
+      version: 4,
       generatedAt: snapshot.generated_at,
       status: "ready",
       datasets: {

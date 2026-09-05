@@ -1,0 +1,65 @@
+(() => {
+  'use strict';
+  const es=window.OBSERVATORY_LOCALE!=='en';
+  const say=(a,b)=>es?a:b;
+  const ds=window.OBSERVATORY_ARTIFACT.snapshot.datasets;
+  const p=ds.country_profile,g=ds.global_summary[0];
+  const news=window.OBSERVATORY_NEWS,change=window.OBSERVATORY_CHANGES;
+  const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const date=v=>Number.isFinite(Date.parse(v))?new Date(v).toLocaleDateString(es?'es-ES':'en-GB',{day:'numeric',month:'short',year:'numeric',timeZone:'America/New_York'}):say('Sin fecha','Undated');
+  const ratio=n=>new Intl.NumberFormat(es?'es':'en',{maximumFractionDigits:1}).format(n/p.length*100);
+  const education=p.filter(r=>Number.isFinite(r.formal_education_ai_pct));
+  const eu=education.filter(r=>r.region_source_name==='Europe & Central Asia').length;
+  const link=(view,label)=>`<a class="portal-link" href="?view=${view}">${esc(label)} <span aria-hidden="true">↗</span></a>`;
+  const headlineRows=(news.items??[]).filter(r=>{try{return new URL(r.url).protocol==='https:';}catch{return false;}});
+  const card=(n,title,body,view,label)=>`<article class="insight-card"><span class="insight-number">0${n}</span><h3>${esc(title)}</h3><p>${esc(body)}</p>${link(view,label)}</article>`;
+  document.getElementById('editorial-portal').innerHTML=`
+    <section class="portal-hero"><div><p class="eyebrow">${say('EL OBSERVATORIO · DATOS Y ACTUALIDAD','THE OBSERVATORY · DATA & DEVELOPMENTS')}</p><h1>${say('La IA cambia el mundo.<br>Entendamos cómo.','AI is changing the world.<br>Let’s understand how.')}</h1><p class="portal-deck">${say('Evidencia para educación y empresa. Indicadores comparados, claves de lectura y titulares de fuentes oficiales en un solo lugar.','Evidence for education and business. Comparative indicators, key insights and headlines from official sources in one place.')}</p><a href="#news-window" class="portal-button">${say('Explorar titulares','Explore headlines')} ↓</a> <a href="#data-explorer" class="portal-secondary">${say("Consultar los datos","Explore the data")} ↓</a></div><aside class="coverage-spot"><span>${say('EL ALCANCE REAL','THE ACTUAL REACH')}</span><strong>${g.direct_countries}<small> / ${g.countries_catalog}</small></strong><p>${say('países con medición directa de uso de IA dentro del catálogo.','countries with direct measurements of AI use in the catalogue.')}</p><div class="coverage-meter"><span style="width:${Math.min(100,g.direct_coverage_pct)}%"></span></div><p>${say('Preparación y adopción miden cosas distintas. Un país sin dato no equivale a un país sin IA.','Preparedness and adoption measure different things. Missing data does not mean no AI use.')}</p></aside></section>
+    <section class="editorial-section"><div class="portal-section-title"><div><p class="eyebrow">${say('LECTURA EJECUTIVA','EXECUTIVE BRIEF')}</p><h2>${say('Tres claves para interpretar los datos','Three keys to reading the data')}</h2></div><span class="editorial-label">${say('Síntesis del observatorio','Observatory synthesis')}</span></div><div class="insights-grid">
+    ${card(1,say('La preparación tiene mayor cobertura','Preparedness has broader coverage'),say(`AIPI cubre ${g.aipi_countries} países y Oxford ${g.government_readiness_countries}. Son índices estructurales: no indican cuántas personas utilizan IA.`,`AIPI covers ${g.aipi_countries} countries and Oxford ${g.government_readiness_countries}. These structural indices do not measure how many people use AI.`),'governance',say('Ver preparación','Explore preparedness'))}
+    ${card(2,say('La evidencia educativa es regional','Education evidence is regional'),say(`Hay medición de educación formal en ${education.length} países (${ratio(education.length)} % del catálogo); ${eu} pertenecen a Europa y Asia Central. No es un promedio mundial.`,`Formal education is measured in ${education.length} countries (${ratio(education.length)}% of the catalogue); ${eu} are in Europe and Central Asia. This is not a world average.`),'education',say('Examinar cobertura','Examine coverage'))}
+    ${card(3,say('Más uso no demuestra más impacto','More use does not establish more impact'),say('Las tasas empresariales y educativas describen poblaciones diferentes. Para decidir, revise país, año y fuente; estos indicadores no demuestran aprendizaje ni productividad.','Business and education rates describe different populations. Check country, year and source before deciding; these indicators do not establish learning or productivity gains.'),'sources',say('Leer metodología','Read methodology'))}
+    </div><div class="change-note"><strong>${say('Qué cambió desde','What changed since')} ${date(change.baseline)}</strong><span>${say(`${change.added} registros nuevos · ${change.changed} valores revisados · ${change.removed} registros retirados.`,`${change.added} new records · ${change.changed} revised values · ${change.removed} removed records.`)} ${say('La fecha de revisión no cambia el año de los datos.','The review date does not change the year of the data.')}</span></div></section>
+    <section id="news-window" class="editorial-section news-window"><div class="portal-section-title"><div><p class="eyebrow">${say('RADAR DE IA','AI RADAR')}</p><h2>${say('En las fuentes','From the sources')}</h2></div><span class="editorial-label">${say('Comprobado','Checked')} ${date(news.checked_at)}</span></div><p class="news-disclosure">${say('Titulares de canales oficiales, en su idioma original. Incluyen anuncios de sus propios productos e investigaciones; no representan una cobertura periodística exhaustiva ni un respaldo del observatorio.','Official-channel headlines in their original language. They include announcements of the publishers’ own products and research; this is not comprehensive news coverage or an endorsement.')}</p><div class="news-grid">${headlineRows.length?headlineRows.slice(0,12).map((r,i)=>`<article class="news-card"><div class="news-meta"><span>${esc(r.source)}</span><time datetime="${esc(r.published_at)}">${date(r.published_at)}</time></div><h3><a href="${esc(r.url)}" target="_blank" rel="noopener noreferrer">${esc(r.title)}</a></h3><span class="news-read">${say('Leer en la fuente','Read at source')} ↗</span></article>`).join(''):`<p>${say('No hay titulares verificados disponibles.','No verified headlines are available.')}</p>`}</div><details class="news-status"><summary>${say('Fuentes y estado de actualización','Sources and refresh status')}</summary><ul>${(news.sources??[]).map(r=>`<li>${esc(r.name)} · ${esc(({ok:say("Operativo","Operational"),stale:say("Copia anterior; consulta fallida","Previous copy; fetch failed"),error:say("No disponible","Unavailable")})[r.status]??r.status)}${r.error?' · '+esc(r.error):''}</li>`).join('')}</ul><p>${say('La ventana se actualiza al ejecutar la consulta de titulares y publicar una nueva versión. No es una transmisión en tiempo real.','This window updates when headlines are fetched and a new version is published. It is not a real-time stream.')}</p></details></section>`;
+
+  const newsPanel=document.getElementById('news-window');
+  newsPanel.setAttribute('aria-label',say('Ventana de noticias de IA','AI news window'));
+  const panelHeader=document.createElement('div');
+  panelHeader.className='news-panel-header';
+  panelHeader.innerHTML=`<div><strong>${say('Noticias de IA','AI news')}</strong><small>${say('Fuentes oficiales ·','Official sources ·')} ${date(news.checked_at)}</small></div><button type="button" class="news-minimize" aria-label="${say('Minimizar noticias','Minimize news')}" title="${say('Minimizar noticias','Minimize news')}">−</button>`;
+  newsPanel.querySelector('.portal-section-title').remove();
+  const panelBody=document.createElement('div');panelBody.className='news-panel-body';
+  while(newsPanel.firstChild) panelBody.append(newsPanel.firstChild);
+  newsPanel.append(panelHeader,panelBody);document.body.append(newsPanel);
+  const launcher=document.createElement('button');launcher.type='button';launcher.className='news-launcher';
+  launcher.textContent=say('Noticias de IA ↗','AI news ↗');launcher.setAttribute('aria-controls','news-window');document.body.append(launcher);
+  function showNews(open){
+    newsPanel.hidden=!open;launcher.hidden=open;
+    document.body.classList.toggle('news-panel-open',open);
+    launcher.setAttribute('aria-expanded',String(open));
+  }
+  panelHeader.querySelector('button').addEventListener('click',()=>{showNews(false);launcher.focus();});
+  launcher.addEventListener('click',()=>{showNews(true);panelHeader.querySelector('button').focus();});
+  newsPanel.addEventListener('keydown',e=>{if(e.key==='Escape'){showNews(false);launcher.focus();}});
+  document.querySelector('a[href="#news-window"]').addEventListener('click',e=>{e.preventDefault();showNews(true);panelHeader.querySelector('button').focus();});
+  showNews(!window.matchMedia('(max-width: 900px)').matches);
+
+  const fields={aipi_score:'aipi_year',government_ai_readiness_score:'government_ai_readiness_year',aipi_digital_contribution:'aipi_year',aipi_human_capital_contribution:'aipi_year',aipi_regulation_contribution:'aipi_year',business_ai_pct:'business_year',formal_education_ai_pct:'education_year',internet_users_pct:'internet_year'};
+  const period=(rows,field)=>{const ys=[...new Set(rows.map(r=>r[field]).filter(Number.isInteger))].sort();return ys.length?ys.length===1?String(ys[0]):`${ys[0]}–${ys.at(-1)}`:say('sin periodo disponible','period unavailable');};
+  const note=(view,content)=>{const target=Array.from(document.querySelectorAll("section.view")).find(v=>v.dataset.view===view)?.querySelector(".metric-strip");if(!target)return;let box=target.nextElementSibling;if(!box?.classList.contains('period-context')){box=document.createElement('p');box.className='period-context';target.after(box);}box.textContent=content;};
+  function contexts(){
+    const region=document.getElementById('global-region-filter').value;
+    const rows=region==='__all__'?p:p.filter(r=>r.region===region);
+    const field=document.getElementById('map-metric').value;
+    const observed=rows.filter(r=>Number.isFinite(r[field]));
+    note('global',say(`Indicador seleccionado: ${observed.length} de ${rows.length} países con dato · Año(s): ${period(observed,fields[field])}. Fecha de revisión: ${date(window.OBSERVATORY_ARTIFACT.snapshot.generatedAt)}.`,`Selected indicator: ${observed.length} of ${rows.length} countries with data · Year(s): ${period(observed,fields[field])}. Reviewed: ${date(window.OBSERVATORY_ARTIFACT.snapshot.generatedAt)}.`));
+    note('regions',say('Preparación estructural: AIPI, edición 2023. Los promedios regionales solo incluyen países con observación y no representan adopción de IA.','Structural preparedness: AIPI, 2023 edition. Regional averages include only observed countries and do not represent AI adoption.'));
+    const country=p.find(r=>r.iso3===document.getElementById('country-select').value);
+    if(country) note('countries',say(`Años del perfil: preparación ${country.aipi_year??'n/d'} · Oxford ${country.government_ai_readiness_year??'n/d'} · empresa ${country.business_year??'n/d'} · educación ${country.education_year??'n/d'}. La revisión del portal no modifica estos periodos.`,`Profile years: preparedness ${country.aipi_year??'n/a'} · Oxford ${country.government_ai_readiness_year??'n/a'} · business ${country.business_year??'n/a'} · education ${country.education_year??'n/a'}. The portal review does not change these periods.`));
+    note('education',say(`Cobertura: ${education.length}/${p.length} países. Educación formal: ${period(education,'education_year')}; ${eu} países de Europa y Asia Central. Uso declarado, no resultados de aprendizaje.`,`Coverage: ${education.length}/${p.length} countries. Formal education: ${period(education,'education_year')}; ${eu} countries in Europe and Central Asia. Reported use, not learning outcomes.`));
+    const business=p.filter(r=>Number.isFinite(r.business_ai_pct));
+    note('business',say(`Cobertura: ${business.length}/${p.length} países · Últimos datos por país: ${period(business,'business_year')}. Empresas de 10 o más personas; los periodos pueden diferir.`,`Coverage: ${business.length}/${p.length} countries · Latest country observations: ${period(business,'business_year')}. Enterprises with 10 or more employees; periods may differ.`));
+    note('governance',say('Ediciones: AIPI 2023 · Oxford 2025. Índices de preparación; no tasas de uso de IA.','Editions: AIPI 2023 · Oxford 2025. Preparedness indices, not rates of AI use.'));
+  }
+  contexts();document.getElementById('global-region-filter').addEventListener('change',contexts);document.getElementById('map-metric').addEventListener('change',contexts);document.getElementById('country-select').addEventListener('change',contexts);
+})();

@@ -1,9 +1,26 @@
 {
   "source_id": "oxford_government_ai_readiness_2025",
   "status": "ok",
-  "started_at": "2026-08-01T16:22:59.351Z",
-  "completed_at": "2026-08-01T16:23:01.490Z",
-  "checksum_sha256": "e52208d58bc10c2ed2432febd5ab499302265dcc632e32e68287cf978377f59d",
+  "started_at": "2026-09-04T23:58:32.497Z",
+  "completed_at": "2026-09-04T23:58:34.051Z",
+  "policy_mode": "pinned_edition",
+  "edition_year": 2025,
+  "requested_start_year": 2025,
+  "requested_end_year": 2025,
+  "as_of_date": "2026-09-04T23:58:32.496Z",
+  "base_url": "https://oxfordinsights.com/ai-readiness/government-ai-readiness-index-2025/",
+  "requested_url": "https://oxfordinsights.com/ai-readiness/government-ai-readiness-index-2025/",
+  "resolved_url": "https://oxfordinsights.com/ai-readiness/government-ai-readiness-index-2025/",
+  "raw_sha256": "6d2e4837251a6a65d6835f3dd4640fd65cb790bcde9cd05fea6f2ee660415db1",
+  "content_sha256": "daea2f17f7fd30049b4d34000d46eba1bf7da7c90376075ccd1443a43fd85415",
+  "content_checksum_scope": "sorted_iso3_metric_id_year_value_v1",
+  "checksum_sha256": "6d2e4837251a6a65d6835f3dd4640fd65cb790bcde9cd05fea6f2ee660415db1",
+  "checksum_scope": "stored_file_bytes",
+  "checksum_algorithm": "sha256",
+  "raw_size_bytes": 613321,
+  "raw_content_type": "text/html; charset=UTF-8",
+  "etag": null,
+  "last_modified": null,
   "raw_path": "data/raw/oxford_government_ai_readiness_2025.html",
   "source_records": 195,
   "matched_countries": 194,
@@ -13,5 +30,11 @@
       "country": "Taiwan"
     }
   ],
-  "observations": 1358
+  "observations": 1358,
+  "records": 1358,
+  "returned_min_year": 2025,
+  "returned_max_year": 2025,
+  "returned_years": [
+    2025
+  ]
 }

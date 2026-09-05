@@ -70,6 +70,8 @@ function renderLocale(shell, css, javascript, artifact, geojson, i18n, localeNam
     ? translateAttributes(translateTextNodes(shell, locale.static), localeName)
     : shell;
   return localizedShell
+    .replaceAll("__LIBRARY_PATH__", localeName === "es" ? "biblioteca/" : "library/")
+    .replaceAll("__TOPICS_PATH__", localeName === "es" ? "temas/" : "topics/")
     .replaceAll("__PACKAGE_VERSION__", version)
     .replaceAll("__HTML_LANG__", locale.htmlLang)
     .replaceAll("__PAGE_TITLE__", locale.pageTitle)
@@ -106,17 +108,33 @@ async function packageDashboard() {
     readJson(join(root, "package.json")),
   ]);
 
-  if (artifact.manifest.version !== 3 || artifact.snapshot.version !== 3) {
+  if (artifact.manifest.version !== 4 || artifact.snapshot.version !== 4) {
     throw new Error("El contrato analítico no corresponde a la versión esperada.");
   }
   if (geojson.features.length < 170) {
     throw new Error("La geometría mundial contiene menos de 170 países.");
   }
 
+  const news = await readJson(join(root, "data", "processed", "news.json"));
+  const baseline = await readJson(join(root, "data", "baselines", "published-snapshot.json"));
+  const current = await readJson(join(root, "data", "processed", "snapshot.json"));
+  const key = (r) => [r.source_id, r.metric_id, r.iso3, r.year].join("|");
+  const oldRows = new Map(baseline.observations.map(r => [key(r), r.value]));
+  const newRows = new Map(current.observations.map(r => [key(r), r.value]));
+  const change = {
+    added: [...newRows].filter(([k]) => !oldRows.has(k)).length,
+    removed: [...oldRows].filter(([k]) => !newRows.has(k)).length,
+    changed: [...newRows].filter(([k,v]) => oldRows.has(k) && oldRows.get(k) !== v).length,
+    baseline: baseline.generated_at,
+  };
+  const portal = await readFile(join(templateDirectory, "portal.js"), "utf8");
+  const educationEvidence = await readJson(join(root, "data/processed/education-evidence.json"));
+  const educationJs = await readFile(join(templateDirectory, "education-evidence.js"), "utf8");
+  const runtime = javascript + "\nwindow.OBSERVATORY_NEWS=" + safeJson(news) + ";\nwindow.OBSERVATORY_CHANGES=" + safeJson(change) + ";\n" + portal + "\nwindow.OBSERVATORY_EDUCATION_EVIDENCE=" + safeJson(educationEvidence) + ";\n" + educationJs;
   const outputs = {};
   for (const localeName of ["es", "en"]) {
     const outputPath = join(dashboardDirectory, i18n[localeName].output);
-    const html = renderLocale(shell, css, javascript, artifact, geojson, i18n, localeName, packageDefinition.version);
+    const html = renderLocale(shell, css, runtime, artifact, geojson, i18n, localeName, packageDefinition.version);
     await mkdir(dirname(outputPath), { recursive: true });
     await writeText(outputPath, html);
     outputs[localeName] = { path: outputPath, bytes: Buffer.byteLength(html) };

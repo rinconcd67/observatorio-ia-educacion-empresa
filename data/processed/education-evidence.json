@@ -1,0 +1,280 @@
+{
+  "schema_version": 1,
+  "reviewed_date": "2026-09-04",
+  "scope": "complementary_lac_teacher_evidence",
+  "sources": [
+    {
+      "id": "talis2024_bra",
+      "publisher": "OECD",
+      "title": "Results from TALIS 2024: Brazil",
+      "url": "https://www.oecd.org/en/publications/results-from-talis-2024-country-notes_e127f9e2-en/brazil_1e93d3b5-en.html",
+      "publication_date": "2025-10-07",
+      "locator": "Technology; Continuous professional learning",
+      "type": "survey_country_note"
+    },
+    {
+      "id": "talis2024_chl",
+      "publisher": "OECD",
+      "title": "Results from TALIS 2024: Chile",
+      "url": "https://www.oecd.org/en/publications/results-from-talis-2024-country-notes_e127f9e2-en/chile_e31949b6-en.html",
+      "publication_date": "2025-10-07",
+      "locator": "Technology; Continuous professional learning",
+      "type": "survey_country_note"
+    },
+    {
+      "id": "talis2024_col",
+      "publisher": "OECD",
+      "title": "Results from TALIS 2024: Colombia",
+      "url": "https://www.oecd.org/en/publications/results-from-talis-2024-country-notes_e127f9e2-en/colombia_8f1df220-en.html",
+      "publication_date": "2025-10-07",
+      "locator": "Technology; Continuous professional learning",
+      "type": "survey_country_note"
+    },
+    {
+      "id": "talis2024_cri",
+      "publisher": "OECD",
+      "title": "Results from TALIS 2024: Costa Rica",
+      "url": "https://www.oecd.org/en/publications/results-from-talis-2024-country-notes_e127f9e2-en/costa-rica_90152658-en.html",
+      "publication_date": "2025-10-07",
+      "locator": "Technology; Continuous professional learning",
+      "type": "survey_country_note"
+    },
+    {
+      "id": "cetic2025_e5a",
+      "publisher": "Cetic.br / NIC.br",
+      "title": "TIC Educação 2025 — E5A",
+      "url": "https://cetic.br/pt/tics/educacao/2025/escolas/E5A/expandido/",
+      "publication_date": "2026-08-04",
+      "type": "survey_table",
+      "locator": "Total"
+    },
+    {
+      "id": "cetic2025_e5b",
+      "publisher": "Cetic.br / NIC.br",
+      "title": "TIC Educação 2025 — E5B",
+      "url": "https://cetic.br/pt/tics/educacao/2025/escolas/E5B/",
+      "publication_date": "2026-08-04",
+      "type": "survey_table",
+      "locator": "Total"
+    },
+    {
+      "id": "cetic2025_method",
+      "publisher": "Cetic.br / NIC.br",
+      "title": "TIC Educação 2025 — methodology",
+      "url": "https://cetic.br/pt/noticia/tic-educacao-2025-mostra-que-8-em-cada-10-escolas-brasileiras-debatem-impacto-do-uso-de-telas-na-saude-mental-dos-alunos/",
+      "publication_date": "2026-08-04",
+      "type": "methodology",
+      "locator": "Sobre a pesquisa"
+    },
+    {
+      "id": "unesco_teacher_framework",
+      "publisher": "UNESCO",
+      "title": "AI competency framework for teachers",
+      "url": "https://www.unesco.org/en/articles/ai-competency-framework-teachers",
+      "publication_date": "2024-08-08",
+      "type": "framework",
+      "locator": "15 competencies; five dimensions"
+    },
+    {
+      "id": "unesco_lac_observatory",
+      "publisher": "UNESCO",
+      "title": "Observatory on Artificial Intelligence in Education for LAC",
+      "url": "https://www.unesco.org/en/articles/observatory-artificial-intelligence-education-latin-america-and-caribbean",
+      "publication_date": "2026-04-08",
+      "type": "regional_initiative",
+      "locator": "33 LAC Ministries of Education"
+    },
+    {
+      "id": "idb_rg_t4991",
+      "publisher": "BID / IDB",
+      "title": "RG-T4991",
+      "url": "https://www.iadb.org/en/project/RG-T4991",
+      "publication_date": null,
+      "type": "evaluation_pipeline",
+      "locator": "Project details"
+    }
+  ],
+  "observations": [
+    {
+      "iso3": "BRA",
+      "country": {
+        "es": "Brasil",
+        "en": "Brazil"
+      },
+      "year": 2024,
+      "metric_id": "teacher_ai_use",
+      "value": 56,
+      "unit": "percent",
+      "population": "ISCED_2_teachers",
+      "source_id": "talis2024_bra",
+      "precision": "published_integer",
+      "method": "self_report_survey",
+      "comparability_group": "talis2024_isced2"
+    },
+    {
+      "iso3": "BRA",
+      "country": {
+        "es": "Brasil",
+        "en": "Brazil"
+      },
+      "year": 2024,
+      "metric_id": "teacher_ai_training_high_need",
+      "value": 39,
+      "unit": "percent",
+      "population": "ISCED_2_teachers",
+      "source_id": "talis2024_bra",
+      "precision": "published_integer",
+      "method": "self_report_survey",
+      "comparability_group": "talis2024_isced2"
+    },
+    {
+      "iso3": "CHL",
+      "country": {
+        "es": "Chile",
+        "en": "Chile"
+      },
+      "year": 2024,
+      "metric_id": "teacher_ai_use",
+      "value": 55,
+      "unit": "percent",
+      "population": "ISCED_2_teachers",
+      "source_id": "talis2024_chl",
+      "precision": "published_integer",
+      "method": "self_report_survey",
+      "comparability_group": "talis2024_isced2"
+    },
+    {
+      "iso3": "CHL",
+      "country": {
+        "es": "Chile",
+        "en": "Chile"
+      },
+      "year": 2024,
+      "metric_id": "teacher_ai_training_high_need",
+      "value": 41,
+      "unit": "percent",
+      "population": "ISCED_2_teachers",
+      "source_id": "talis2024_chl",
+      "precision": "published_integer",
+      "method": "self_report_survey",
+      "comparability_group": "talis2024_isced2"
+    },
+    {
+      "iso3": "COL",
+      "country": {
+        "es": "Colombia",
+        "en": "Colombia"
+      },
+      "year": 2024,
+      "metric_id": "teacher_ai_use",
+      "value": 53,
+      "unit": "percent",
+      "population": "ISCED_2_teachers",
+      "source_id": "talis2024_col",
+      "precision": "published_integer",
+      "method": "self_report_survey",
+      "comparability_group": "talis2024_isced2"
+    },
+    {
+      "iso3": "COL",
+      "country": {
+        "es": "Colombia",
+        "en": "Colombia"
+      },
+      "year": 2024,
+      "metric_id": "teacher_ai_training_high_need",
+      "value": 43,
+      "unit": "percent",
+      "population": "ISCED_2_teachers",
+      "source_id": "talis2024_col",
+      "precision": "published_integer",
+      "method": "self_report_survey",
+      "comparability_group": "talis2024_isced2"
+    },
+    {
+      "iso3": "CRI",
+      "country": {
+        "es": "Costa Rica",
+        "en": "Costa Rica"
+      },
+      "year": 2024,
+      "metric_id": "teacher_ai_use",
+      "value": 52,
+      "unit": "percent",
+      "population": "ISCED_2_teachers",
+      "source_id": "talis2024_cri",
+      "precision": "published_integer",
+      "method": "self_report_survey",
+      "comparability_group": "talis2024_isced2"
+    },
+    {
+      "iso3": "CRI",
+      "country": {
+        "es": "Costa Rica",
+        "en": "Costa Rica"
+      },
+      "year": 2024,
+      "metric_id": "teacher_ai_training_high_need",
+      "value": 55,
+      "unit": "percent",
+      "population": "ISCED_2_teachers",
+      "source_id": "talis2024_cri",
+      "precision": "published_integer",
+      "method": "self_report_survey",
+      "comparability_group": "talis2024_isced2"
+    }
+  ],
+  "institutional": [
+    {
+      "iso3": "BRA",
+      "year": 2025,
+      "fieldwork": "2025-08/2026-04",
+      "population": "schools_basic_education_brazil",
+      "method": "CATI_school_leaders",
+      "sample_schools": 2404,
+      "metric_id": "school_ai_guidance",
+      "value": 22,
+      "unit": "percent",
+      "source_id": "cetic2025_e5a",
+      "methodology_source_id": "cetic2025_method",
+      "comparability_group": "tic_educacao2025_schools"
+    },
+    {
+      "iso3": "BRA",
+      "year": 2025,
+      "fieldwork": "2025-08/2026-04",
+      "population": "schools_basic_education_brazil",
+      "method": "CATI_school_leaders",
+      "sample_schools": 2404,
+      "metric_id": "school_student_ai_permission",
+      "value": 37,
+      "unit": "percent",
+      "source_id": "cetic2025_e5b",
+      "methodology_source_id": "cetic2025_method",
+      "comparability_group": "tic_educacao2025_schools"
+    }
+  ],
+  "resources": [
+    {
+      "source_id": "unesco_teacher_framework",
+      "role": "teacher_training_framework",
+      "edition_year": 2024,
+      "competencies": 15,
+      "dimensions": 5,
+      "levels": 3
+    },
+    {
+      "source_id": "unesco_lac_observatory",
+      "role": "regional_initiative",
+      "year": 2026,
+      "ministries": 33
+    },
+    {
+      "source_id": "idb_rg_t4991",
+      "role": "evaluation_watch",
+      "outcome_status": "not_integrated"
+    }
+  ],
+  "learning_outcomes_status": "not_integrated",
+  "integrated_into_global_metrics": false
+}

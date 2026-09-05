@@ -1,0 +1,7 @@
+{
+  "sources": [
+    {"name": "OpenAI", "url": "https://openai.com/news/rss.xml", "allowed_hosts": ["openai.com", "www.openai.com"]},
+    {"name": "Google AI", "url": "https://blog.google/technology/ai/rss/", "allowed_hosts": ["blog.google"]},
+    {"name": "Microsoft Research", "url": "https://www.microsoft.com/en-us/research/feed/", "allowed_hosts": ["www.microsoft.com", "microsoft.com"]}
+  ]
+}

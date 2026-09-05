@@ -2,10 +2,11 @@ import { mkdir } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { fetchJson, fetchText } from "./lib/http.mjs";
+import { fetchResource } from "./lib/http.mjs";
 import { parseCsv } from "./lib/csv.mjs";
-import { checksum, readJson, writeJson, writeText } from "./lib/io.mjs";
+import { readJson, sha256Bytes, writeBytes, writeJson } from "./lib/io.mjs";
 import { decodeJsonStat } from "./lib/jsonstat.mjs";
+import { resolveSourceRequest } from "./lib/temporal-policy.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const configPath = join(root, "config", "active_sources.json");
@@ -73,8 +74,14 @@ const OECD_FILTERS = {
   },
 };
 
-function nowIso() {
-  return new Date().toISOString();
+function validAsOf(value) {
+  const date = value instanceof Date ? new Date(value.getTime()) : new Date(value ?? Date.now());
+  if (Number.isNaN(date.getTime())) throw new TypeError("refresh requiere asOf como fecha válida");
+  return date;
+}
+
+function nowIso(clock = new Date()) {
+  return validAsOf(clock).toISOString();
 }
 
 function normalizeCountries(payload) {
@@ -147,13 +154,19 @@ function normalizeWorldBank(payload, source, maps) {
   });
 }
 
-function normalizeOecd(payload, source, maps) {
+export function normalizeOecd(payload, source, maps) {
   const definition = METRIC_DEFINITIONS[source.metric_id];
   const requiredFilters = OECD_FILTERS[source.id];
-  return parseCsv(payload).flatMap((row) => {
+  const rows = parseCsv(payload);
+  const requiredColumns = ["REF_AREA", "TIME_PERIOD", "OBS_VALUE", ...Object.keys(requiredFilters)];
+  if (!rows.length || requiredColumns.some((column) => !(column in rows[0]))) {
+    throw new Error(`${source.id}: respuesta SDMX-CSV vacía o esquema incompatible`);
+  }
+  return rows.flatMap((row) => {
     const matches = Object.entries(requiredFilters).every(([field, value]) => row[field] === value);
     const country = maps.byIso3.get(row.REF_AREA);
     const year = Number(row.TIME_PERIOD);
+    if (row.OBS_VALUE == null || String(row.OBS_VALUE).trim() === "") return [];
     const value = Number(row.OBS_VALUE);
     if (!matches || !country || !Number.isInteger(year) || !Number.isFinite(value)) return [];
     return [{
@@ -183,26 +196,52 @@ async function readOptionalJson(path, fallback) {
   }
 }
 
-async function downloadSources(sources) {
+function decodeResource(bytes, format) {
+  const text = new TextDecoder("utf-8").decode(bytes);
+  return format === "csv" ? text : JSON.parse(text);
+}
+
+async function downloadSources(sources, { asOf }) {
   const downloaded = new Map();
   const runs = [];
   await mkdir(rawDirectory, { recursive: true });
 
   for (const source of sources) {
     const startedAt = nowIso();
+    let request;
     try {
       const format = source.format ?? "json";
-      const payload = format === "csv" ? await fetchText(source.url) : await fetchJson(source.url);
+      request = resolveSourceRequest(source, { asOf });
+      const resource = await fetchResource(request.url, {
+        headers: { accept: format === "csv" ? "text/csv" : "application/json" },
+      });
+      const payload = decodeResource(resource.bytes, format);
       const rawPath = join(rawDirectory, `${source.id}.${format}`);
-      if (format === "csv") await writeText(rawPath, payload);
-      else await writeJson(rawPath, payload);
+      await writeBytes(rawPath, resource.bytes);
       downloaded.set(source.id, payload);
+      const rawSha256 = sha256Bytes(resource.bytes);
       runs.push({
         source_id: source.id,
         status: "ok",
         started_at: startedAt,
         completed_at: nowIso(),
-        checksum_sha256: checksum(payload),
+        policy_mode: request.policy_mode,
+        requested_start_year: request.requested_start_year,
+        requested_end_year: request.requested_end_year,
+        as_of_date: asOf.toISOString(),
+        base_url: source.url,
+        requested_url: request.url,
+        resolved_url: resource.url,
+        raw_sha256: rawSha256,
+        checksum_sha256: rawSha256,
+        checksum_scope: "stored_file_bytes",
+        checksum_algorithm: "sha256",
+        raw_size_bytes: resource.bytes.byteLength,
+        raw_content_type: resource.contentType,
+        http_status: resource.status,
+        http_attempts: resource.attempts,
+        etag: resource.etag,
+        last_modified: resource.lastModified,
         raw_path: `data/raw/${source.id}.${format}`,
       });
     } catch (error) {
@@ -211,7 +250,13 @@ async function downloadSources(sources) {
         status: "error",
         started_at: startedAt,
         completed_at: nowIso(),
+        policy_mode: request?.policy_mode ?? source.time_policy?.mode ?? null,
+        requested_start_year: request?.requested_start_year ?? null,
+        requested_end_year: request?.requested_end_year ?? null,
+        as_of_date: asOf.toISOString(),
         error: error.message,
+        http_status: error.status ?? null,
+        http_attempts: error.attempts ?? null,
       });
     }
   }
@@ -225,10 +270,11 @@ async function downloadSources(sources) {
   return { downloaded, runs };
 }
 
-export async function refresh() {
+export async function refresh(options = {}) {
+  const asOf = validAsOf(options.asOf);
   const config = await readJson(configPath);
   const activeSources = config.sources.filter((source) => source.active);
-  const { downloaded, runs } = await downloadSources(activeSources);
+  const { downloaded, runs } = await downloadSources(activeSources, { asOf });
 
   const countriesSource = activeSources.find((source) => source.id === "world_bank_countries");
   const countries = normalizeCountries(downloaded.get(countriesSource.id));
@@ -285,10 +331,24 @@ export async function refresh() {
     left.iso3.localeCompare(right.iso3) ||
     left.year - right.year);
 
+  const executionYear = asOf.getUTCFullYear();
+  for (const run of runs) {
+    const sourceRows = observations.filter((row) => row.source_id === run.source_id);
+    const years = sourceRows.map((row) => row.year).filter(Number.isInteger);
+    if (sourceRows.length) run.records = sourceRows.length;
+    run.returned_min_year = years.length ? Math.min(...years) : null;
+    run.returned_max_year = years.length ? Math.max(...years) : null;
+    run.returned_years = [...new Set(years)].sort((left, right) => left - right);
+    if (Number.isInteger(run.returned_max_year) && run.returned_max_year > executionYear) {
+      throw new Error(`${run.source_id} devolvió el año futuro ${run.returned_max_year} para una ejecución ${executionYear}.`);
+    }
+  }
+
   const snapshot = {
     schema_version: 1,
-    generated_at: nowIso(),
-    status: "ready",
+    generated_at: nowIso(asOf),
+    as_of_date: asOf.toISOString(),
+    status: runs.every((run) => run.status === "ok") ? "ready" : "degraded",
     countries_count: countries.length,
     observations_count: observations.length,
     active_sources_count: activeSources.length + (aipiRun ? 1 : 0) + (oxfordRun ? 1 : 0),
@@ -306,7 +366,7 @@ export async function refresh() {
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
-  refresh()
+  refresh({ asOf: process.env.OBSERVATORY_AS_OF })
     .then((snapshot) => {
       console.log(JSON.stringify({
         ok: true,

@@ -1,11 +1,11 @@
-import { mkdir, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { readSheet } from "read-excel-file/node";
 
-import { fetchBytes } from "./lib/http.mjs";
-import { checksum, readJson, writeJson } from "./lib/io.mjs";
+import { fetchResource } from "./lib/http.mjs";
+import { readJson, sha256Bytes, writeBytes, writeJson } from "./lib/io.mjs";
+import { resolveSourceRequest } from "./lib/temporal-policy.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const rawPath = join(root, "data", "raw", "imf_aipi.xlsx");
@@ -49,15 +49,19 @@ export function normalizeAipiRows(rows, source) {
   return observations;
 }
 
-export async function importAipi() {
+export async function importAipi(options = {}) {
+  const asOf = options.asOf instanceof Date ? options.asOf : new Date(options.asOf ?? Date.now());
+  if (Number.isNaN(asOf.getTime())) throw new TypeError("importAipi requiere asOf como fecha válida");
   const config = await readJson(join(root, "config", "controlled_downloads.json"));
   const source = config.sources.find((item) => item.id === "imf_aipi" && item.active);
   if (!source) throw new Error("La fuente controlada IMF AIPI no está activa.");
 
   const startedAt = nowIso();
-  const bytes = await fetchBytes(source.url);
-  await mkdir(dirname(rawPath), { recursive: true });
-  await writeFile(rawPath, bytes);
+  const request = resolveSourceRequest(source, { asOf });
+  const resource = await fetchResource(request.url, {
+    headers: { accept: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" },
+  });
+  await writeBytes(rawPath, resource.bytes);
 
   const rows = await readSheet(rawPath, { sheet: "AIPI" });
   const observations = normalizeAipiRows(rows, source);
@@ -67,14 +71,33 @@ export async function importAipi() {
   }
 
   const completedAt = nowIso();
+  const rawSha256 = sha256Bytes(resource.bytes);
   const run = {
     source_id: source.id,
     status: "ok",
     started_at: startedAt,
     completed_at: completedAt,
-    checksum_sha256: checksum(bytes),
+    policy_mode: request.policy_mode,
+    edition_year: source.time_policy.edition_year,
+    requested_start_year: request.requested_start_year,
+    requested_end_year: request.requested_end_year,
+    as_of_date: asOf.toISOString(),
+    base_url: source.url,
+    requested_url: request.url,
+    resolved_url: resource.url,
+    raw_sha256: rawSha256,
+    checksum_sha256: rawSha256,
+    checksum_scope: "stored_file_bytes",
+    checksum_algorithm: "sha256",
+    raw_size_bytes: resource.bytes.byteLength,
+    raw_content_type: resource.contentType,
+    etag: resource.etag,
+    last_modified: resource.lastModified,
     raw_path: "data/raw/imf_aipi.xlsx",
     records: observations.length,
+    returned_min_year: source.year,
+    returned_max_year: source.year,
+    returned_years: [source.year],
   };
   await writeJson(join(processedDirectory, "imf_aipi_observations.json"), observations);
   await writeJson(join(processedDirectory, "imf_aipi_run.json"), run);
@@ -82,7 +105,7 @@ export async function importAipi() {
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
-  importAipi()
+  importAipi({ asOf: process.env.OBSERVATORY_AS_OF })
     .then((result) => console.log(JSON.stringify({ ok: true, countries: result.countries, observations: result.observations })))
     .catch((error) => {
       console.error(error.message);

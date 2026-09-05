@@ -1,0 +1,275 @@
+[
+  {
+    "id": "ai-education",
+    "view": "education",
+    "topics": [
+      "education",
+      "teachers",
+      "policy",
+      "research",
+      "ethics"
+    ],
+    "es": {
+      "title": "IA en educación: datos, usos y límites de la evidencia",
+      "description": "Explore evidencia sobre IA en educación: estudiantes, docentes e instituciones, con fuentes oficiales, fechas y criterios para comparar indicadores.",
+      "intro": "Entender la inteligencia artificial en educación exige separar quién utiliza una herramienta, para qué la utiliza y qué resultados obtiene. El observatorio reúne indicadores y referencias institucionales para que investigadores y equipos educativos puedan recorrer esas preguntas con evidencia identificable.",
+      "sections": [
+        {
+          "heading": "Tres poblaciones, tres preguntas",
+          "text": "La serie de Eurostat sobre educación formal mide un propósito de uso entre individuos; la serie de estudiantes mide uso entre personas clasificadas como estudiantes. TALIS aporta declaraciones de docentes de secundaria baja. TIC Educação ofrece información sobre escuelas brasileñas. Ninguna de estas poblaciones puede reemplazar a las otras."
+        },
+        {
+          "heading": "Cómo leer el tablero",
+          "text": "Seleccione un país y compruebe el año, la fuente y la población antes de comparar porcentajes. Un promedio de países disponibles no representa necesariamente a una región completa. Las celdas sin datos expresan una brecha de información, nunca un uso igual a cero."
+        },
+        {
+          "heading": "De la adopción al aprendizaje",
+          "text": "Que una persona declare uso de IA no demuestra una mejora del aprendizaje. El observatorio todavía no incorpora una serie de resultados de aprendizaje atribuibles a IA. Los marcos de UNESCO ayudan a organizar competencias y decisiones educativas; cumplen una función distinta de una encuesta de adopción."
+        },
+        {
+          "heading": "Una ruta de consulta",
+          "text": "Empiece por los indicadores del tablero, continúe con las fuentes y consulte la biblioteca para profundizar en el diseño de formación y políticas. Conserve las fechas de las observaciones al reutilizar cifras: una revisión reciente del sitio no convierte una encuesta anterior en datos del año actual."
+        }
+      ],
+      "questions": [
+        {
+          "q": "¿Uso de IA equivale a calidad educativa?",
+          "a": "No. La frecuencia o presencia de uso describe adopción. Evaluar calidad exige examinar actividades, contexto y resultados con un diseño adecuado."
+        },
+        {
+          "q": "¿Puedo comparar estudiantes, docentes y escuelas?",
+          "a": "Puede describir sus indicadores por separado. No deben sumarse ni interpretarse como porcentajes de una misma población."
+        }
+      ]
+    },
+    "en": {
+      "title": "AI in education: data, uses and evidence limits",
+      "description": "Explore AI in education evidence on students, teachers and schools, with official sources, dates and guidance for interpreting indicators.",
+      "intro": "Understanding artificial intelligence in education requires separating who uses a tool, what they use it for and which outcomes follow. The observatory brings together indicators and institutional resources so researchers and education teams can investigate these questions using traceable evidence.",
+      "sections": [
+        {
+          "heading": "Three populations, three questions",
+          "text": "Eurostat’s formal education series measures a purpose of use among individuals; its student series measures use among people classified as students. TALIS contributes reports from lower secondary teachers. TIC Educação provides information about Brazilian schools. These populations are not interchangeable."
+        },
+        {
+          "heading": "Reading the dashboard",
+          "text": "Select a country and check the year, source and population before comparing percentages. An average of countries with available data does not necessarily represent an entire region. Missing cells indicate an information gap, never zero use."
+        },
+        {
+          "heading": "From adoption to learning",
+          "text": "Reported AI use does not establish improved learning. The observatory has not yet integrated a series of learning outcomes attributable to AI. UNESCO frameworks help structure competencies and educational decisions; their purpose differs from that of an adoption survey."
+        },
+        {
+          "heading": "A reading pathway",
+          "text": "Start with dashboard indicators, follow the sources and use the library to explore training and policy design. Preserve observation dates when reusing figures: a recent website review does not turn an earlier survey into current-year data."
+        }
+      ],
+      "questions": [
+        {
+          "q": "Does AI use mean better education?",
+          "a": "No. The presence or frequency of use describes adoption. Assessing quality requires examining activities, context and outcomes through an appropriate evaluation design."
+        },
+        {
+          "q": "Can I compare students, teachers and schools?",
+          "a": "You can describe their indicators separately. They should not be added together or interpreted as percentages of a single population."
+        }
+      ]
+    },
+    "sources": [
+      {
+        "title": "Eurostat — Individuals: artificial intelligence indicators",
+        "url": "https://ec.europa.eu/eurostat/databrowser/view/isoc_ai_iaiu/default/table?lang=en"
+      },
+      {
+        "title": "AI competency framework for teachers",
+        "url": "https://www.unesco.org/en/articles/ai-competency-framework-teachers"
+      },
+      {
+        "title": "TIC Educação 2025 — methodology",
+        "url": "https://cetic.br/pt/noticia/tic-educacao-2025-mostra-que-8-em-cada-10-escolas-brasileiras-debatem-impacto-do-uso-de-telas-na-saude-mental-dos-alunos/"
+      }
+    ]
+  },
+  {
+    "id": "ai-teachers-latin-america",
+    "view": "education",
+    "topics": [
+      "education",
+      "teachers",
+      "policy"
+    ],
+    "es": {
+      "title": "IA y docentes en América Latina: uso y formación",
+      "description": "Compare evidencia TALIS 2024 de Brasil, Chile, Colombia y Costa Rica y explore competencias docentes de IA con referencias oficiales de OCDE y UNESCO.",
+      "intro": "La conversación sobre IA y docentes en América Latina necesita datos que distingan uso, necesidades de formación y condiciones institucionales. Esta selección reúne cuatro países con evidencia TALIS 2024 y recursos para interpretar sus resultados sin convertirlos en un diagnóstico de toda la región.",
+      "sections": [
+        {
+          "heading": "Qué muestran los cuatro países",
+          "text": "Según las notas nacionales de TALIS 2024, el uso de IA declarado por docentes de secundaria baja alcanza 56% en Brasil, 55% en Chile, 53% en Colombia y 52% en Costa Rica. La necesidad alta de formación en IA alcanza, respectivamente, 39%, 41%, 43% y 55%."
+        },
+        {
+          "heading": "Uso y formación pueden coexistir",
+          "text": "Los dos indicadores no son categorías excluyentes. Una persona puede utilizar IA y necesitar más formación. No corresponde restarlos para estimar competencia ni leer la necesidad formativa como ausencia de capacitación. Son respuestas de encuesta, no pruebas de desempeño."
+        },
+        {
+          "heading": "Cómo convertir la evidencia en preguntas útiles",
+          "text": "Un equipo formador puede usar estos datos como punto de partida para preguntar qué tareas realizan sus docentes, qué dificultades encuentran y qué apoyos necesitan. El marco UNESCO organiza 15 competencias en cinco dimensiones y tres niveles; ofrece una referencia curricular, no una puntuación de los países."
+        },
+        {
+          "heading": "Alcance de esta selección",
+          "text": "Los cuatro países no constituyen una muestra representativa de América Latina y el Caribe. Las observaciones corresponden a 2024, aunque las notas se publicaron en 2025. Los datos escolares de Brasil se presentan por separado porque describen instituciones y otra edición de encuesta."
+        }
+      ],
+      "questions": [
+        {
+          "q": "¿Hay un promedio latinoamericano?",
+          "a": "No se calcula uno a partir de estos cuatro países. Su cobertura limitada no permite presentarlo como una estimación regional."
+        },
+        {
+          "q": "¿Una diferencia pequeña indica superioridad?",
+          "a": "No por sí sola. Los porcentajes publicados están redondeados y proceden de encuestas; una comparación inferencial requiere revisar incertidumbre y documentación metodológica."
+        }
+      ]
+    },
+    "en": {
+      "title": "AI and teachers in Latin America: use and training",
+      "description": "Compare TALIS 2024 evidence from Brazil, Chile, Colombia and Costa Rica, alongside official OECD and UNESCO resources on teachers’ AI competencies.",
+      "intro": "Discussing AI and teachers in Latin America requires distinguishing use, training needs and institutional conditions. This selection brings together four countries with TALIS 2024 evidence and resources for interpreting the findings without treating them as a diagnosis of the whole region.",
+      "sections": [
+        {
+          "heading": "What the four countries report",
+          "text": "According to the TALIS 2024 country notes, reported AI use among lower secondary teachers reaches 56% in Brazil, 55% in Chile, 53% in Colombia and 52% in Costa Rica. High training needs in AI reach 39%, 41%, 43% and 55%, respectively."
+        },
+        {
+          "heading": "Use and training needs can coexist",
+          "text": "These indicators are not mutually exclusive categories. A teacher can use AI and need further training. Subtracting one percentage from the other does not estimate competence, and a training need does not establish a lack of prior training. These are survey responses, not performance assessments."
+        },
+        {
+          "heading": "Turning evidence into useful questions",
+          "text": "Training teams can use these figures to ask which tasks their teachers undertake, what difficulties they encounter and what support they need. UNESCO’s framework organizes 15 competencies across five dimensions and three progression levels. It offers a curriculum reference, not a country score."
+        },
+        {
+          "heading": "Scope of this selection",
+          "text": "The four countries are not a representative sample of Latin America and the Caribbean. Observations refer to 2024, although the country notes were published in 2025. Brazilian school data are presented separately because they describe institutions and a different survey edition."
+        }
+      ],
+      "questions": [
+        {
+          "q": "Is there a Latin American average?",
+          "a": "The observatory does not calculate one from these four countries. Their limited coverage does not support presenting it as a regional estimate."
+        },
+        {
+          "q": "Does a small difference establish better performance?",
+          "a": "Not by itself. Published percentages are rounded survey estimates; inferential comparisons require examining uncertainty and methodological documentation."
+        }
+      ]
+    },
+    "sources": [
+      {
+        "title": "Results from TALIS 2024: Brazil",
+        "url": "https://www.oecd.org/en/publications/results-from-talis-2024-country-notes_e127f9e2-en/brazil_1e93d3b5-en.html"
+      },
+      {
+        "title": "Results from TALIS 2024: Chile",
+        "url": "https://www.oecd.org/en/publications/results-from-talis-2024-country-notes_e127f9e2-en/chile_e31949b6-en.html"
+      },
+      {
+        "title": "Results from TALIS 2024: Colombia",
+        "url": "https://www.oecd.org/en/publications/results-from-talis-2024-country-notes_e127f9e2-en/colombia_8f1df220-en.html"
+      },
+      {
+        "title": "Results from TALIS 2024: Costa Rica",
+        "url": "https://www.oecd.org/en/publications/results-from-talis-2024-country-notes_e127f9e2-en/costa-rica_90152658-en.html"
+      },
+      {
+        "title": "AI competency framework for teachers",
+        "url": "https://www.unesco.org/en/articles/ai-competency-framework-teachers"
+      }
+    ]
+  },
+  {
+    "id": "ai-business",
+    "view": "business",
+    "topics": [
+      "business",
+      "policy",
+      "ethics"
+    ],
+    "es": {
+      "title": "IA en empresas: adopción, comparaciones y contexto",
+      "description": "Consulte adopción empresarial de IA con datos de Eurostat y OCDE. Entienda población, cobertura, periodos y límites de las comparaciones entre países.",
+      "intro": "La adopción empresarial de inteligencia artificial describe la extensión del uso de estas tecnologías dentro de una población de empresas. El observatorio permite explorar esa extensión por país y año, y situarla junto a condiciones nacionales de contexto.",
+      "sections": [
+        {
+          "heading": "Qué mide el indicador empresarial",
+          "text": "La selección del observatorio utiliza empresas con diez o más personas empleadas que usan al menos una tecnología de IA. Conserva las fuentes Eurostat y OCDE y sus filtros sectoriales. No equivale a todas las empresas de una economía, ni describe por separado cada tecnología o función empresarial."
+        },
+        {
+          "heading": "Cómo comparar sin duplicar",
+          "text": "Cuando ambas fuentes ofrecen el mismo indicador para un país y año, el observatorio prioriza Eurostat; OCDE amplía la cobertura fuera del solapamiento. Antes de interpretar diferencias, revise el periodo y las notas de población y cobertura. Un dato ausente permanece ausente."
+        },
+        {
+          "heading": "Adopción, preparación y productividad",
+          "text": "El porcentaje de adopción no mide intensidad de uso, rentabilidad ni productividad. Los índices IMF AIPI y Oxford aportan perspectivas de preparación nacional y gubernamental; se mantienen separados por sus escalas, metodologías y ediciones. Una asociación descriptiva entre indicadores no demuestra causalidad."
+        },
+        {
+          "heading": "Preguntas para una lectura empresarial",
+          "text": "Use el tablero para ubicar el país y comparar años disponibles. Después, contraste el panorama con evidencia de su sector y tamaño de empresa. La diferencia entre adopción empresarial y uso educativo solo se calcula cuando existe un año común; sigue comparando poblaciones distintas y no mide una brecha de habilidades."
+        }
+      ],
+      "questions": [
+        {
+          "q": "¿El porcentaje representa a las microempresas?",
+          "a": "La selección de diez o más personas empleadas no permite inferir el uso entre empresas más pequeñas."
+        },
+        {
+          "q": "¿Más adopción significa mayor retorno de inversión?",
+          "a": "No. Para evaluar retorno hacen falta costes, beneficios, horizonte temporal y una comparación apropiada dentro de la organización."
+        }
+      ]
+    },
+    "en": {
+      "title": "AI in business: adoption, comparisons and context",
+      "description": "Explore business AI adoption using Eurostat and OECD data. Understand populations, coverage, periods and the limits of cross-country comparisons.",
+      "intro": "Business adoption of artificial intelligence describes how widely these technologies are used within a defined enterprise population. The observatory lets readers explore that reach by country and year, alongside national context indicators.",
+      "sections": [
+        {
+          "heading": "What the business indicator measures",
+          "text": "The observatory selects enterprises with ten or more persons employed that use at least one AI technology. It retains Eurostat and OECD sources and their sector filters. This is not the entire business population of an economy, nor does the headline indicator describe each technology or business function separately."
+        },
+        {
+          "heading": "Comparing without double counting",
+          "text": "When both sources provide the same indicator for a country and year, the observatory prioritizes Eurostat; OECD extends coverage beyond that overlap. Before interpreting differences, check the period and population and coverage notes. Missing data remain missing."
+        },
+        {
+          "heading": "Adoption, readiness and productivity",
+          "text": "The adoption percentage does not measure intensity of use, profitability or productivity. IMF AIPI and Oxford indices offer perspectives on national and government readiness. They remain separate because their scales, methodologies and editions differ. A descriptive association between indicators does not establish causation."
+        },
+        {
+          "heading": "Questions for business readers",
+          "text": "Use the dashboard to locate a country and compare available years. Then examine evidence for your own sector and enterprise size. The difference between business adoption and educational use is calculated only when a common year exists. It still compares different populations and does not measure a skills gap."
+        }
+      ],
+      "questions": [
+        {
+          "q": "Does the percentage represent microenterprises?",
+          "a": "The selection of enterprises with ten or more persons employed does not support inferences about smaller businesses."
+        },
+        {
+          "q": "Does greater adoption mean a higher return on investment?",
+          "a": "No. Evaluating return requires costs, benefits, a time horizon and an appropriate comparison within the organization."
+        }
+      ]
+    },
+    "sources": [
+      {
+        "title": "Eurostat — Artificial intelligence by size class of enterprise",
+        "url": "https://ec.europa.eu/eurostat/databrowser/view/isoc_eb_ai/default/table?lang=en"
+      },
+      {
+        "title": "OECD — ICT access and usage by businesses (selected AI series)",
+        "url": "https://sdmx.oecd.org/public/rest/data/OECD.STI.DEP,DSD_ICT_B@DF_BUSINESSES,1.0/.A.G14_B.PT_ENT._T.S_GE10?startPeriod=2023&dimensionAtObservation=AllDimensions&format=csvfilewithlabels"
+      }
+    ]
+  }
+]

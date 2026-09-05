@@ -2,7 +2,7 @@ import { copyFile, mkdir, readFile, rm } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { checksum, readJson, writeJson, writeText } from "./lib/io.mjs";
+import { readJson, serializeJson, sha256Bytes, writeBytes, writeJson, writeText } from "./lib/io.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const siteDirectory = join(root, "_site");
@@ -38,6 +38,10 @@ async function packageSite() {
     readFile(join(root, "dashboard", "en", "index.html"), "utf8"),
   ]);
   const csv = observationsCsv(snapshot.observations);
+  const artifactBytes = Buffer.from(serializeJson(artifact), "utf8");
+  const csvBytes = Buffer.from(csv, "utf8");
+  const artifactFileSha256 = sha256Bytes(artifactBytes);
+  const observationsCsvFileSha256 = sha256Bytes(csvBytes);
   const global = artifact.snapshot.datasets.global_summary[0];
 
   await rm(siteDirectory, { recursive: true, force: true });
@@ -47,8 +51,8 @@ async function packageSite() {
   ]);
   await writeText(join(siteDirectory, "index.html"), html);
   await writeText(join(siteDirectory, "en", "index.html"), englishHtml);
-  await writeJson(join(dataDirectory, "artifact.json"), artifact);
-  await writeText(join(dataDirectory, "observations.csv"), csv);
+  await writeBytes(join(dataDirectory, "artifact.json"), artifactBytes);
+  await writeBytes(join(dataDirectory, "observations.csv"), csvBytes);
   await writeJson(join(dataDirectory, "status.json"), {
     project: artifact.manifest.title,
     version: packageDefinition.version,
@@ -63,8 +67,10 @@ async function packageSite() {
     direct_countries: global.direct_countries,
     aipi_countries: global.aipi_countries,
     oxford_countries: global.government_readiness_countries,
-    artifact_sha256: checksum(artifact),
-    observations_csv_sha256: checksum(csv),
+    artifact_sha256: artifactFileSha256,
+    artifact_file_sha256: artifactFileSha256,
+    observations_csv_sha256: observationsCsvFileSha256,
+    observations_csv_file_sha256: observationsCsvFileSha256,
     author: {
       name: "César David Rincón Godoy",
       orcid: "https://orcid.org/0009-0003-2112-3851",
@@ -72,6 +78,8 @@ async function packageSite() {
     },
   });
 
+  await copyFile(join(root, "data/processed/education-evidence.json"), join(dataDirectory, "education-evidence.json"));
+  await copyFile(join(root, "data/processed/education-source-runs.json"), join(dataDirectory, "education-source-runs.json"));
   const publicFiles = [
     "404.html",
     "favicon.svg",

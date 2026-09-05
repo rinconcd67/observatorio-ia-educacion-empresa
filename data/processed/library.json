@@ -1,0 +1,389 @@
+{
+  "reviewed_date": "2026-09-04",
+  "items": [
+    {
+      "id": "unesco-teachers-2024",
+      "organization": "UNESCO",
+      "year": 2024,
+      "original_title": "AI competency framework for teachers",
+      "original_language": "en",
+      "source_url": "https://www.unesco.org/en/articles/ai-competency-framework-teachers",
+      "topic": "education",
+      "review_scope": "official_summary",
+      "license_note": "Enlace a la edición oficial; no se aloja el documento ni su portada. Consultar su licencia antes de reutilizarlo. / Link to the official edition; document and cover are not hosted. Check its licence before reuse.",
+      "es": {
+        "title": "Marco de competencias de IA para docentes",
+        "summary": "Propone una ruta para preparar a los docentes ante la IA mediante 15 competencias y tres niveles de progresión. Vincula fundamentos técnicos, ética, pedagogía y aprendizaje profesional con la autonomía humana. Puede orientar programas de formación y criterios de evaluación; no es una medición del dominio actual de los profesores.",
+        "takeaways": [
+          "15 competencias en cinco dimensiones",
+          "Progresión: adquirir, profundizar y crear",
+          "Adaptación a la formación docente"
+        ],
+        "audience": "Formadores de docentes y responsables curriculares"
+      },
+      "en": {
+        "title": "AI competency framework for teachers",
+        "summary": "This framework organises teacher preparation for AI into 15 competencies and three progression levels. It connects technical foundations, ethics, pedagogy and professional learning with human agency. It can guide training programmes and assessment criteria, while remaining a reference framework rather than a measurement of teachers’ current proficiency.",
+        "takeaways": [
+          "15 competencies across five dimensions",
+          "Progression: acquire, deepen and create",
+          "Adaptable to teacher preparation"
+        ],
+        "audience": "Teacher educators and curriculum leaders"
+      },
+      "added_date": "2026-09-04"
+    },
+    {
+      "id": "unesco-students-2024",
+      "organization": "UNESCO",
+      "year": 2024,
+      "original_title": "AI competency framework for students",
+      "original_language": "en",
+      "source_url": "https://www.unesco.org/en/articles/ai-competency-framework-students",
+      "topic": "education",
+      "review_scope": "official_summary",
+      "license_note": "Enlace a la edición oficial; no se aloja el documento ni su portada. Consultar su licencia antes de reutilizarlo. / Link to the official edition; document and cover are not hosted. Check its licence before reuse.",
+      "es": {
+        "title": "Marco de competencias de IA para estudiantes",
+        "summary": "Organiza la alfabetización en IA en 12 competencias que avanzan desde comprender hasta crear. Considera al estudiante usuario responsable y participante en el diseño de soluciones. Su valor para el currículo está en combinar conocimientos técnicos con juicio crítico, ciudadanía y ética, ajustando su aplicación al contexto educativo.",
+        "takeaways": [
+          "12 competencias en cuatro dimensiones",
+          "Comprender, aplicar y crear",
+          "Ciudadanía y diseño responsable"
+        ],
+        "audience": "Docentes y equipos de currículo escolar"
+      },
+      "en": {
+        "title": "AI competency framework for students",
+        "summary": "This framework structures AI literacy through 12 competencies progressing from understanding to creation. It treats students as responsible users and participants in designing solutions. Its curricular value lies in combining technical knowledge with critical judgement, citizenship and ethics, with implementation adapted to the educational context.",
+        "takeaways": [
+          "12 competencies across four dimensions",
+          "Understand, apply and create",
+          "Citizenship and responsible design"
+        ],
+        "audience": "Teachers and school curriculum teams"
+      },
+      "added_date": "2026-09-04"
+    },
+    {
+      "id": "unesco-genai-guidance-2023",
+      "organization": "UNESCO",
+      "year": 2023,
+      "original_title": "Guidance for generative AI in education and research",
+      "original_language": "en",
+      "source_url": "https://www.unesco.org/en/articles/guidance-generative-ai-education-and-research",
+      "topic": "policy",
+      "review_scope": "official_summary",
+      "license_note": "Enlace a la edición oficial; no se aloja el documento ni su portada. Consultar su licencia antes de reutilizarlo. / Link to the official edition; document and cover are not hosted. Check its licence before reuse.",
+      "es": {
+        "title": "Guía para la IA generativa en educación e investigación",
+        "summary": "Ofrece orientaciones para introducir IA generativa con un enfoque centrado en las personas. Aborda privacidad, adecuación a la edad y validación ética y pedagógica de herramientas. Sirve para estructurar políticas institucionales y explorar usos educativos, sin sustituir la evaluación de cada aplicación ni la revisión de las normas locales.",
+        "takeaways": [
+          "Privacidad y adecuación a la edad",
+          "Validación ética y pedagógica",
+          "Políticas con visión de largo plazo"
+        ],
+        "audience": "Directivos educativos e investigadores"
+      },
+      "en": {
+        "title": "Guidance for generative AI in education and research",
+        "summary": "This guidance supports a human-centred approach to introducing generative AI. It addresses privacy, age appropriateness, and ethical and pedagogical validation of tools. Institutions can use it to structure policy and explore educational applications, while still assessing individual tools and checking the rules applicable in their own context.",
+        "takeaways": [
+          "Privacy and age appropriateness",
+          "Ethical and pedagogical validation",
+          "Policy with a long-term perspective"
+        ],
+        "audience": "Education leaders and researchers"
+      },
+      "added_date": "2026-09-04"
+    },
+    {
+      "id": "unesco-ai-ethics-2022",
+      "organization": "UNESCO",
+      "year": 2022,
+      "original_title": "Recommendation on the Ethics of Artificial Intelligence",
+      "original_language": "en",
+      "source_url": "https://www.unesco.org/en/articles/recommendation-ethics-artificial-intelligence",
+      "topic": "ethics",
+      "review_scope": "official_summary",
+      "license_note": "Enlace a la edición oficial; no se aloja el documento ni su portada. Consultar su licencia antes de reutilizarlo. / Link to the official edition; document and cover are not hosted. Check its licence before reuse.",
+      "es": {
+        "title": "Recomendación sobre la ética de la inteligencia artificial",
+        "summary": "Publicación de 2022 de la recomendación adoptada en 2021. Sitúa los derechos humanos y la dignidad en el centro de la gobernanza de IA. Relaciona principios como transparencia, equidad y supervisión humana con ámbitos de acción pública. Es una referencia para deliberación institucional, no una certificación de cumplimiento.",
+        "takeaways": [
+          "Derechos humanos y dignidad",
+          "Transparencia y supervisión humana",
+          "Orientaciones para la acción pública"
+        ],
+        "audience": "Responsables de políticas y comités de ética"
+      },
+      "en": {
+        "title": "Recommendation on the Ethics of Artificial Intelligence",
+        "summary": "The 2022 publication presents the recommendation adopted in 2021. It places human rights and dignity at the centre of AI governance, connecting transparency, fairness and human oversight with areas of public action. It provides a reference for institutional deliberation rather than certifying compliance by an organisation or product.",
+        "takeaways": [
+          "Human rights and dignity",
+          "Transparency and human oversight",
+          "Guidance for public action"
+        ],
+        "audience": "Policy leaders and ethics committees"
+      },
+      "added_date": "2026-09-04"
+    },
+    {
+      "id": "bid-ai-education-2025",
+      "organization": "BID",
+      "year": 2025,
+      "original_title": "AI and Education: Building the Future Through Digital Transformation",
+      "original_language": "en",
+      "source_url": "https://publications.iadb.org/en/ai-and-education-building-future-through-digital-transformation",
+      "topic": "education",
+      "review_scope": "official_summary",
+      "license_note": "Enlace a la edición oficial; no se aloja el documento ni su portada. Consultar su licencia antes de reutilizarlo. / Link to the official edition; document and cover are not hosted. Check its licence before reuse.",
+      "es": {
+        "title": "IA y educación: construir el futuro mediante la transformación digital",
+        "summary": "Revisa lecciones de la tecnología educativa para orientar la incorporación de IA en América Latina y el Caribe. Propone definir objetivos, teoría de cambio y condiciones de implementación. Ayuda a pasar del entusiasmo tecnológico a programas evaluables que busquen mejorar calidad, equidad y eficiencia, reconociendo resultados previos mixtos.",
+        "takeaways": [
+          "Objetivos y teoría de cambio",
+          "Implementación con evaluación",
+          "Calidad, equidad y eficiencia"
+        ],
+        "audience": "Autoridades educativas y gestores de programas"
+      },
+      "en": {
+        "title": "AI and Education: Building the Future Through Digital Transformation",
+        "summary": "This report draws lessons from educational technology to inform AI integration in Latin America and the Caribbean. It proposes clear objectives, a theory of change and implementation requirements. It helps turn technological enthusiasm into evaluable programmes aimed at quality, equity and efficiency, while acknowledging mixed results from earlier initiatives.",
+        "takeaways": [
+          "Objectives and theory of change",
+          "Implementation linked to evaluation",
+          "Quality, equity and efficiency"
+        ],
+        "audience": "Education authorities and programme managers"
+      },
+      "added_date": "2026-09-04"
+    },
+    {
+      "id": "bid-ai-infrastructure-2026",
+      "organization": "BID",
+      "year": 2026,
+      "original_title": "Development and Use of Artificial Intelligence in Latin America and the Caribbean",
+      "original_language": "en",
+      "source_url": "https://publications.iadb.org/en/development-and-use-artificial-intelligence-latin-america-and-caribbean",
+      "topic": "policy",
+      "review_scope": "official_summary",
+      "license_note": "Enlace a la edición oficial; no se aloja el documento ni su portada. Consultar su licencia antes de reutilizarlo. / Link to the official edition; document and cover are not hosted. Check its licence before reuse.",
+      "es": {
+        "title": "Desarrollo y uso de la inteligencia artificial en América Latina y el Caribe",
+        "summary": "Examina la infraestructura que habilita la IA regional, con énfasis en servicios públicos. Articula cinco pilares tecnológicos y condiciones como financiación, ciberseguridad y capital humano. Su hoja de ruta diferencia contextos nacionales; resulta útil para analizar capacidades habilitantes, sin confundir preparación de infraestructura con adopción efectiva de IA.",
+        "takeaways": [
+          "Datos, cómputo y conectividad",
+          "Capacidades y gobernanza complementarias",
+          "Hoja de ruta diferenciada"
+        ],
+        "audience": "Planificadores digitales y responsables de inversión"
+      },
+      "en": {
+        "title": "Development and Use of Artificial Intelligence in Latin America and the Caribbean",
+        "summary": "This regional study examines the infrastructure enabling AI, with emphasis on public services. It connects five technological pillars with financing, cybersecurity and human capital. Its roadmap distinguishes national contexts, making it useful for assessing enabling capabilities without treating infrastructure readiness as evidence of actual AI adoption.",
+        "takeaways": [
+          "Data, computing and connectivity",
+          "Complementary capabilities and governance",
+          "A differentiated roadmap"
+        ],
+        "audience": "Digital planners and investment decision-makers"
+      },
+      "added_date": "2026-09-04"
+    },
+    {
+      "id": "bid-ai-framework-2025",
+      "organization": "BID",
+      "year": 2025,
+      "original_title": "Artificial Intelligence Framework for the Inter-American Development Group",
+      "original_language": "en",
+      "source_url": "https://publications.iadb.org/en/artificial-intelligence-framework-inter-american-development-group",
+      "topic": "policy",
+      "review_scope": "official_summary",
+      "license_note": "Enlace a la edición oficial; no se aloja el documento ni su portada. Consultar su licencia antes de reutilizarlo. / Link to the official edition; document and cover are not hosted. Check its licence before reuse.",
+      "es": {
+        "title": "Marco de inteligencia artificial para el Grupo BID",
+        "summary": "Presenta una orientación estratégica para impulsar el uso responsable de IA en la región. Organiza los retos en instituciones y gobernanza, datos e infraestructura y capital humano. Permite conectar intervenciones públicas y privadas con barreras estructurales y una agenda de investigación, prestando atención a inclusión y desigualdad.",
+        "takeaways": [
+          "Gobernanza, infraestructura y personas",
+          "Difusión responsable de la IA",
+          "Investigación para orientar políticas"
+        ],
+        "audience": "Responsables de desarrollo y estrategia institucional"
+      },
+      "en": {
+        "title": "Artificial Intelligence Framework for the Inter-American Development Group",
+        "summary": "This strategic framework addresses responsible AI uptake across the region. It groups challenges into institutions and governance, data and infrastructure, and human capital. It helps connect public and private interventions with structural barriers and a research agenda, keeping inclusion and inequality in view as adoption expands.",
+        "takeaways": [
+          "Governance, infrastructure and people",
+          "Responsible diffusion of AI",
+          "Research to inform policy"
+        ],
+        "audience": "Development and institutional strategy leaders"
+      },
+      "added_date": "2026-09-04"
+    },
+    {
+      "id": "bid-responsible-projects-2021",
+      "organization": "BID",
+      "year": 2021,
+      "original_title": "Responsible use of AI for public policy: Project formulation manual",
+      "original_language": "en",
+      "source_url": "https://publications.iadb.org/en/responsible-use-ai-public-policy-project-formulation-manual",
+      "topic": "ethics",
+      "review_scope": "official_summary",
+      "license_note": "Enlace a la edición oficial; no se aloja el documento ni su portada. Consultar su licencia antes de reutilizarlo. / Link to the official edition; document and cover are not hosted. Check its licence before reuse.",
+      "es": {
+        "title": "Uso responsable de IA para política pública: manual de formulación de proyectos",
+        "summary": "Guía la planificación, diseño, ejecución y seguimiento de proyectos que usan IA para apoyar decisiones públicas. Parte del problema que se quiere resolver e incorpora sus implicaciones éticas y legales. Puede ordenar el trabajo entre responsables y equipos técnicos; no demuestra por sí mismo la eficacia de una solución.",
+        "takeaways": [
+          "Partir del problema público",
+          "Planificar y supervisar la ejecución",
+          "Incorporar riesgos éticos y legales"
+        ],
+        "audience": "Gestores públicos y equipos multidisciplinarios"
+      },
+      "en": {
+        "title": "Responsible use of AI for public policy: Project formulation manual",
+        "summary": "This manual guides planning, design, implementation and monitoring of projects using AI to support public decisions. It starts from the policy problem and considers ethical and legal implications. It can organise collaboration between decision-makers and technical teams, but does not itself establish whether a particular solution is effective.",
+        "takeaways": [
+          "Start with the policy problem",
+          "Plan and oversee implementation",
+          "Address ethical and legal risks"
+        ],
+        "audience": "Public managers and multidisciplinary teams"
+      },
+      "added_date": "2026-09-04"
+    },
+    {
+      "id": "oecd-digital-education-2026",
+      "organization": "OCDE",
+      "year": 2026,
+      "original_title": "OECD Digital Education Outlook 2026: Exploring Effective Uses of Generative AI in Education",
+      "original_language": "en",
+      "source_url": "https://www.oecd.org/en/publications/oecd-digital-education-outlook-2026_062a7394-en.html",
+      "topic": "research",
+      "review_scope": "official_summary",
+      "license_note": "Enlace a la edición oficial; no se aloja el documento ni su portada. Consultar su licencia antes de reutilizarlo. / Link to the official edition; document and cover are not hosted. Check its licence before reuse.",
+      "es": {
+        "title": "Perspectivas de la educación digital 2026: usos eficaces de la IA generativa",
+        "summary": "Examina investigación emergente sobre IA generativa en educación. Distingue mejorar la ejecución de una tarea de aprender de manera duradera y destaca el diseño pedagógico intencional. Orienta preguntas sobre tutoría, apoyo docente y gestión institucional, preservando la autonomía del profesor y evitando generalizar beneficios a cualquier herramienta.",
+        "takeaways": [
+          "Desempeño no equivale a aprendizaje",
+          "Diseño pedagógico intencional",
+          "Investigación y autonomía docente"
+        ],
+        "audience": "Investigadores, docentes y responsables educativos"
+      },
+      "en": {
+        "title": "OECD Digital Education Outlook 2026: Exploring Effective Uses of Generative AI in Education",
+        "summary": "This outlook examines emerging research on generative AI in education. It distinguishes better task performance from lasting learning and emphasises intentional pedagogical design. It informs questions about tutoring, teacher support and institutional operations while preserving teacher agency and avoiding blanket claims that every AI tool benefits learning.",
+        "takeaways": [
+          "Performance is not learning",
+          "Intentional pedagogical design",
+          "Research and teacher agency"
+        ],
+        "audience": "Researchers, teachers and education leaders"
+      },
+      "added_date": "2026-09-04"
+    },
+    {
+      "id": "oecd-digital-education-2023",
+      "organization": "OCDE",
+      "year": 2023,
+      "original_title": "OECD Digital Education Outlook 2023: Towards an Effective Digital Education Ecosystem",
+      "original_language": "en",
+      "source_url": "https://www.oecd.org/en/publications/oecd-digital-education-outlook-2023_c74f03de-en.html",
+      "topic": "education",
+      "review_scope": "official_summary",
+      "license_note": "Enlace a la edición oficial; no se aloja el documento ni su portada. Consultar su licencia antes de reutilizarlo. / Link to the official edition; document and cover are not hosted. Check its licence before reuse.",
+      "es": {
+        "title": "Perspectivas de la educación digital 2023: hacia un ecosistema eficaz",
+        "summary": "Analiza comparativamente infraestructura, herramientas, competencias y gobernanza de la educación digital. Sitúa la IA dentro de un ecosistema donde importan también las personas y la gestión de datos. Ofrece una referencia histórica para examinar preparación institucional y brechas; sus descripciones corresponden a 2023 y no constituyen un diagnóstico actualizado.",
+        "takeaways": [
+          "Ecosistemas y gobernanza educativa",
+          "Competencias junto a infraestructura",
+          "Referencia comparativa de 2023"
+        ],
+        "audience": "Planificadores educativos y analistas"
+      },
+      "en": {
+        "title": "OECD Digital Education Outlook 2023: Towards an Effective Digital Education Ecosystem",
+        "summary": "This comparative report examines infrastructure, tools, competencies and digital education governance. It places AI within an ecosystem that also depends on people and data management. It offers a historical reference for assessing institutional readiness and gaps; its descriptions reflect 2023 and should not be treated as a current diagnosis.",
+        "takeaways": [
+          "Education ecosystems and governance",
+          "Skills alongside infrastructure",
+          "A 2023 comparative reference"
+        ],
+        "audience": "Education planners and analysts"
+      },
+      "added_date": "2026-09-04"
+    },
+    {
+      "id": "oecd-sme-ai-adoption-2025",
+      "organization": "OCDE",
+      "year": 2025,
+      "original_title": "AI adoption by small and medium-sized enterprises: OECD discussion paper for the G7",
+      "original_language": "en",
+      "source_url": "https://www.oecd.org/en/publications/ai-adoption-by-small-and-medium-sized-enterprises_426399c1-en.html",
+      "topic": "business",
+      "review_scope": "official_summary",
+      "license_note": "Enlace a la edición oficial; no se aloja el documento ni su portada. Consultar su licencia antes de reutilizarlo. / Link to the official edition; document and cover are not hosted. Check its licence before reuse.",
+      "es": {
+        "title": "Adopción de IA en pequeñas y medianas empresas",
+        "summary": "Explora diferencias de adopción entre pymes y grandes empresas mediante evidencia del G7. Propone distinguir empresas según madurez digital, complejidad y alcance de uso. Ayuda a diseñar apoyos ajustados a sus necesidades, considerando conectividad, recursos tecnológicos, capacidades y financiación, sin trasladar automáticamente sus conclusiones a América Latina.",
+        "takeaways": [
+          "Diferenciar perfiles de adopción",
+          "Capacidades y financiación habilitantes",
+          "Políticas ajustadas a cada pyme"
+        ],
+        "audience": "Empresarios y responsables de políticas productivas"
+      },
+      "en": {
+        "title": "AI adoption by small and medium-sized enterprises: OECD discussion paper for the G7",
+        "summary": "Drawing on G7 evidence, this paper explores adoption gaps between SMEs and larger firms. It distinguishes businesses by digital maturity, complexity and scope of use. It supports tailored assistance involving connectivity, technological resources, skills and finance, without assuming that its conclusions transfer directly to Latin American economies.",
+        "takeaways": [
+          "Distinguish adoption profiles",
+          "Enabling skills and finance",
+          "Support tailored to SMEs"
+        ],
+        "audience": "Business leaders and enterprise policymakers"
+      },
+      "added_date": "2026-09-04"
+    },
+    {
+      "id": "oecd-sme-workforce-2025",
+      "organization": "OCDE",
+      "year": 2025,
+      "original_title": "Generative AI and the SME Workforce: New Survey Evidence",
+      "original_language": "en",
+      "source_url": "https://www.oecd.org/en/publications/generative-ai-and-the-sme-workforce_2d08b99d-en.html",
+      "topic": "business",
+      "review_scope": "official_summary",
+      "license_note": "Enlace a la edición oficial; no se aloja el documento ni su portada. Consultar su licencia antes de reutilizarlo. / Link to the official edition; document and cover are not hosted. Check its licence before reuse.",
+      "es": {
+        "title": "IA generativa y empleo en las pymes: nueva evidencia de encuesta",
+        "summary": "Presenta una encuesta de 2024 a más de 5.000 pymes de siete países. Examina usos de IA generativa, necesidades laborales y preparación del personal. Ayuda a interpretar percepciones empresariales sobre desempeño y competencias; sus respuestas declaradas no deben convertirse en estimaciones causales ni en un promedio mundial de adopción.",
+        "takeaways": [
+          "Encuesta empresarial de siete países",
+          "Trabajo, competencias y preparación",
+          "Percepciones, no efectos causales"
+        ],
+        "audience": "Directivos de pymes y analistas laborales"
+      },
+      "en": {
+        "title": "Generative AI and the SME Workforce: New Survey Evidence",
+        "summary": "Based on a 2024 survey of over 5,000 SMEs in seven countries, this report examines generative AI use, labour needs and employee preparation. It helps interpret business perceptions of performance and skills. Reported experiences should not be treated as causal estimates or as a worldwide measure of adoption.",
+        "takeaways": [
+          "Business survey in seven countries",
+          "Work, skills and preparation",
+          "Perceptions, not causal effects"
+        ],
+        "audience": "SME leaders and labour analysts"
+      },
+      "added_date": "2026-09-04"
+    }
+  ]
+}

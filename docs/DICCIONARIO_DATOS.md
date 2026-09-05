@@ -17,6 +17,22 @@
 | `source_id` | Identificador estable de la fuente. |
 | `source_dataset` | Tabla o código del conjunto de datos original. |
 
+## Comparación empresa-educación
+
+| Campo | Definición |
+|---|---|
+| `adoption_gap_pp` | Diferencia empresa menos educación, en puntos porcentuales, calculada exclusivamente para el último año común. |
+| `adoption_gap_year` | Año común utilizado para calcular la brecha. |
+| `adoption_gap_business_pct` | Valor empresarial utilizado en la pareja comparable. |
+| `adoption_gap_education_pct` | Valor educativo utilizado en la pareja comparable. |
+| `adoption_gap_business_source_id` | Fuente de la observación empresarial comparable. |
+| `adoption_gap_education_source_id` | Fuente de la observación educativa comparable. |
+| `adoption_gap_status` | `comparable_same_year`, `no_common_year`, `missing_business`, `missing_education` o `missing_both`. |
+
+## Trazabilidad de ejecución
+
+Cada `source_run` declara `policy_mode`, ventana solicitada, años recibidos, `raw_path`, `raw_size_bytes`, `raw_content_type`, `raw_sha256`, algoritmo y `checksum_scope=stored_file_bytes`.
+
 ## Indicadores activos
 
 | `metric_id` | Unidad | Fuente |

@@ -17,7 +17,7 @@ npm run check
 npm run serve
 ```
 
-`npm run refresh` descarga las fuentes activas, conserva los archivos crudos fuera de Git, normaliza el snapshot, genera el contrato analítico y empaqueta el dashboard v0.4.0. La publicación se detiene si falla una fuente esencial o una validación estructural. Una fuente opcional indisponible se registra como error y deja sus campos vacíos.
+`npm run refresh` descarga las fuentes activas, conserva los archivos crudos fuera de Git, normaliza el snapshot, genera el contrato analítico y empaqueta el dashboard candidato v0.5.0. La publicación se detiene si falla una fuente esencial o una validación estructural. Una fuente opcional indisponible se registra como error y deja sus campos vacíos.
 
 La actualización completa importa AIPI desde el libro oficial y Oxford 2025 desde el bloque JSON publicado en su página oficial. Eurostat conserva precedencia sobre OCDE cuando ambas fuentes presentan el indicador empresarial para el mismo país y año. Ambas importaciones controladas conservan su huella SHA-256 y registran cualquier país no conciliado.
 
@@ -29,7 +29,7 @@ La actualización completa importa AIPI desde el libro oficial y Oxford 2025 des
 
 ## Trazabilidad
 
-Cada ejecución registra estado, hora de inicio, hora de cierre y SHA-256 del contenido descargado. Los archivos crudos no se versionan; el snapshot normalizado, el artefacto y el HTML sí pueden conservarse como evidencia de una edición.
+Cada ejecución registra estado, hora de inicio y cierre, política temporal, URL resuelta, ventana solicitada, años recibidos, tipo de contenido, tamaño y SHA-256. La huella se calcula sobre los bytes exactos almacenados después de la decodificación HTTP y no sobre una reserialización semántica. Los archivos crudos no se versionan; el snapshot normalizado, el artefacto y el HTML sí pueden conservarse como evidencia de una edición.
 
 El empaquetador incrusta datos, GeoJSON, CSS y JavaScript en `dashboard/index.html` y genera `_site/` para la publicación. La validación confirma ocho vistas, mapa mundial, contrato analítico, descargas, autoría, imagen social y ausencia de dependencias remotas en tiempo de lectura.
 
@@ -38,6 +38,12 @@ El empaquetador incrusta datos, GeoJSON, CSS y JavaScript en `dashboard/index.ht
 - `ci.yml` reconstruye y valida cada cambio, audita dependencias y revisa el formato del diff.
 - `deploy-pages.yml` publica `_site/` únicamente desde `main` después de superar la construcción y las validaciones.
 - `refresh-data.yml` se ejecuta el primer día de cada mes, refresca todas las fuentes y abre un pull request si existen cambios. Si la política del repositorio impide esa creación automática, conserva la rama auditada y publica en el resumen un vínculo para abrir la revisión manualmente.
-- `create-update-report.mjs` compara el candidato con la línea base y bloquea caídas críticas de cobertura.
+- `create-update-report.mjs` compara el candidato con la línea base y bloquea caídas críticas de cobertura, regresiones de año máximo, cambios silenciosos de ediciones fijadas y huellas que no representen archivos exactos.
 
 La actualización mensual nunca escribe directamente sobre `main`. El informe generado debe revisarse antes de integrar el pull request y activar el despliegue público.
+
+## Biblioteca y guías temáticas
+
+`npm run build` genera también 12 fichas en dos idiomas, estanterías y tres guías temáticas ES/EN. El catálogo está en data/processed/library.json; las reseñas iniciales se basan en fichas y resúmenes oficiales. `npm run library:validate` valida estructura bilingüe sin red; `npm run library:check` registra consultas y propuestas, preservando respuestas válidas anteriores. Véase docs/BIBLIOTECARIO.md.
+
+Las páginas son HTML estático con URLs propias, canonical, hreflang recíproco y sitemap de 36 URLs. La indexación requiere una publicación pública posterior; generar el sitemap local no implica que Google lo haya recibido.

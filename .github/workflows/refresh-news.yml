@@ -1,0 +1,39 @@
+name: Proponer titulares de IA
+on:
+  schedule:
+    - cron: "30 11 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+  pull-requests: write
+concurrency:
+  group: news-refresh
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Consultar titulares oficiales
+        run: npm run refresh:news
+      - name: Construir y validar
+        run: npm run build && npm run check && npm run check:publication
+      - name: Preparar propuesta de revisión
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NEWS_BRANCH: automation/news-${{ github.run_id }}
+        run: |
+          if git diff --quiet -- data/processed/news.json; then exit 0; fi
+          git config user.name "observatorio-automation"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$NEWS_BRANCH"
+          git add data/processed/news.json dashboard/index.html dashboard/en/index.html
+          git commit -m "news: actualizar titulares oficiales de IA"
+          git push origin "$NEWS_BRANCH"
+          gh pr create --base main --head "$NEWS_BRANCH" --title "news: revisión diaria de titulares de IA" --body "Actualización de titulares RSS oficiales con fuente, fecha y estado de consulta. Requiere revisión antes de publicar."
