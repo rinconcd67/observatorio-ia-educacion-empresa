@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-05T00:09:07.229Z",
+  "checked_at": "2026-09-05T13:58:47.805Z",
   "items": [
     {
       "title": "Daybreak for Frontline Defenders: $1B to protect essential services",
@@ -20,9 +20,9 @@
       "source": "OpenAI"
     },
     {
-      "title": "Safety overview: GPT-6 Astra",
-      "url": "https://openai.com/index/safety-overview-gpt-6-astra",
-      "published_at": "2026-09-03T00:00:00.000Z",
+      "title": "GPT-6 Astra: A new generation of intelligence",
+      "url": "https://openai.com/index/gpt-6-astra",
+      "published_at": "2026-09-03T11:00:00.000Z",
       "source": "OpenAI"
     },
     {
@@ -79,19 +79,19 @@
       "name": "OpenAI",
       "url": "https://openai.com/news/rss.xml",
       "status": "ok",
-      "last_successful_at": "2026-09-05T00:09:07.229Z"
+      "last_successful_at": "2026-09-05T13:58:47.805Z"
     },
     {
       "name": "Google AI",
       "url": "https://blog.google/technology/ai/rss/",
       "status": "ok",
-      "last_successful_at": "2026-09-05T00:09:07.229Z"
+      "last_successful_at": "2026-09-05T13:58:47.805Z"
     },
     {
       "name": "Microsoft Research",
       "url": "https://www.microsoft.com/en-us/research/feed/",
       "status": "ok",
-      "last_successful_at": "2026-09-05T00:09:07.229Z"
+      "last_successful_at": "2026-09-05T13:58:47.805Z"
     }
   ]
 }
