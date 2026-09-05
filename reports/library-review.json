@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-05T23:10:20.190Z",
+  "generated_at": "2026-09-05T23:37:18.843Z",
   "mode": "offline",
   "catalog_reviewed_date": "2026-09-05",
   "policy": "Proposal queue only. Catalog and publication are never modified. Byte changes require editorial assessment.",
@@ -73,6 +73,17 @@
           "education",
           "research",
           "policy"
+        ]
+      },
+      {
+        "id": "idb_cima",
+        "organization": "BID / IDB",
+        "url": "https://cima.iadb.org/es",
+        "catalog_url": "https://data.iadb.org/es/dataset/cima-indicators",
+        "topics": [
+          "education",
+          "learning",
+          "education finance"
         ]
       }
     ],

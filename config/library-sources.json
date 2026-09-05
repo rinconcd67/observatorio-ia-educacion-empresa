@@ -74,6 +74,17 @@
         "research",
         "policy"
       ]
+    },
+    {
+      "id": "idb_cima",
+      "organization": "BID / IDB",
+      "url": "https://cima.iadb.org/es",
+      "catalog_url": "https://data.iadb.org/es/dataset/cima-indicators",
+      "topics": [
+        "education",
+        "learning",
+        "education finance"
+      ]
     }
   ],
   "policy": {

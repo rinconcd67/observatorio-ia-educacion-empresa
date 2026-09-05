@@ -25,7 +25,9 @@
     "verify:education-sources": "node src/verify-education-evidence.mjs",
     "package:library": "node src/package-library.mjs",
     "library:validate": "node src/librarian.mjs --offline",
-    "library:check": "node src/librarian.mjs --check"
+    "library:check": "node src/librarian.mjs --check",
+    "import:cima": "node src/import-cima.mjs",
+    "import:education-finance": "node src/import-education-finance.mjs"
   },
   "engines": {
     "node": ">=20"
