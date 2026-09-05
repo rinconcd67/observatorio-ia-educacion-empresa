@@ -2,6 +2,8 @@
 
 ## 0.5.0 - 2026-09-04
 
+- Añade noticia editorial del MIT y su informe de 40 páginas con ficha ES/EN, fechas diferenciadas y PDF oficial. Catálogo ampliado a 13 obras y sitemap a 38 URLs.
+
 - Publica portal bilingüe, ventana lateral de noticias y contexto temporal explícito.
 - Incorpora evidencia docente de América Latina y datos institucionales con metodologías diferenciadas.
 - Añade biblioteca de 12 publicaciones con 24 fichas ES/EN, búsqueda y filtros.

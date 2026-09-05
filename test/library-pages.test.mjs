@@ -7,9 +7,11 @@ const root=join(dirname(fileURLToPath(import.meta.url)),'..');
 const site=join(root,'_site');
 const base='https://rinconcd67.github.io/observatorio-ia-educacion-empresa/';
 async function files(dir){const out=[];for(const e of await readdir(dir,{withFileTypes:true})){const p=join(dir,e.name);if(e.isDirectory())out.push(...await files(p));else if(e.name.endsWith('.html'))out.push(p);}return out;}
+const catalogue=JSON.parse(await readFile(join(root,'data/processed/library.json'),'utf8'));
+const pageCount=10+2*catalogue.items.length;
 const editorial=(await files(site)).filter(p=>/\/(biblioteca|library|temas|topics)\//.test(p));
-test('all 34 editorial pages expose readable static content, one heading and valid JSON-LD',async()=>{
- assert.equal(editorial.length,34);
+test('all editorial pages expose readable static content, one heading and valid JSON-LD',async()=>{
+ assert.equal(editorial.length,pageCount);
  for(const p of editorial){const html=await readFile(p,'utf8');assert.equal((html.match(/<h1[ >]/g)||[]).length,1,p);assert.ok(!html.includes('undefined'),p);for(const m of html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs))assert.ok(JSON.parse(m[1])['@type']);assert.ok(html.includes('review')||html.includes('revisión')||html.includes('Revisión')||html.includes('GUÍAS'),p);}
 });
 test('editorial links resolve under GitHub Pages subpath and language alternates return reciprocally',async()=>{
@@ -19,9 +21,9 @@ test('editorial links resolve under GitHub Pages subpath and language alternates
  }
 });
 test('sitemap contains all editorial canonicals and the two observatory language roots',async()=>{
- const xml=await readFile(join(site,'sitemap.xml'),'utf8');const locs=[...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map(m=>m[1]);assert.equal(locs.length,36);assert.equal(new Set(locs).size,36);for(const p of editorial)assert.ok(locs.includes(base+p.slice(site.length+1).replace(/index.html$/,'')));
+ const xml=await readFile(join(site,'sitemap.xml'),'utf8');const locs=[...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map(m=>m[1]);assert.equal(locs.length,pageCount+2);assert.equal(new Set(locs).size,pageCount+2);for(const p of editorial)assert.ok(locs.includes(base+p.slice(site.length+1).replace(/index.html$/,'')));
 });
 test('publication records retain source-language and review-scope disclosures in both languages',async()=>{
  const c=JSON.parse(await readFile(join(root,'data/processed/library.json'),'utf8'));
- for(const item of c.items)for(const l of ['es','en']){const p=join(site,l==='es'?'biblioteca':'en/library',item.id,'index.html');const html=await readFile(p,'utf8');assert.ok(html.includes(item.source_url.replaceAll('&','&amp;')));assert.ok(html.includes(l==='es'?'Idioma de la edición':'Edition language'));assert.ok(html.includes(l==='es'?'Ficha o resumen oficial':'Official record or summary'));}
+ for(const item of c.items)for(const l of ['es','en']){const p=join(site,l==='es'?'biblioteca':'en/library',item.id,'index.html');const html=await readFile(p,'utf8');assert.ok(html.includes(item.source_url.replaceAll('&','&amp;')));assert.ok(html.includes(l==='es'?'Idioma de la edición':'Edition language'));assert.ok(html.includes(item.review_scope==='full_text'?(l==='es'?'Texto completo':'Full text'):(l==='es'?'Ficha o resumen oficial':'Official record or summary')));}
 });

@@ -116,6 +116,7 @@ async function packageDashboard() {
   }
 
   const news = await readJson(join(root, "data", "processed", "news.json"));
+  news.editorial_items = (await readJson(join(root, "data/processed/editorial-news.json"))).items;
   const baseline = await readJson(join(root, "data", "baselines", "published-snapshot.json"));
   const current = await readJson(join(root, "data", "processed", "snapshot.json"));
   const key = (r) => [r.source_id, r.metric_id, r.iso3, r.year].join("|");
