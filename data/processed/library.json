@@ -384,6 +384,50 @@
         "audience": "SME leaders and labour analysts"
       },
       "added_date": "2026-09-04"
+    },
+    {
+      "id": "mit-ai-education-report-2026",
+      "organization": "MIT",
+      "year": 2026,
+      "original_title": "Report of MIT’s Ad Hoc Committee on AI Use in Teaching, Learning, and Research Training",
+      "original_language": "en",
+      "source_url": "https://aiandeducation.mit.edu/report/",
+      "document_url": "https://sites.mit.edu/ai-use/ai-committee-final-report-aug-13/",
+      "published_date": "2026-08-13",
+      "announcement_date": "2026-08-25",
+      "announcement_url": "https://orgchart.mit.edu/letters/ai-and-education-watershed-moment-mit",
+      "pages": 40,
+      "topic": "education",
+      "review_scope": "full_text",
+      "license_note": "Enlace al informe oficial; no se aloja el PDF ni su portada. Consultar su licencia antes de reutilizarlo. / Link to the official report; PDF and cover are not hosted. Check its licence before reuse.",
+      "es": {
+        "title": "Informe del comité de MIT sobre IA en enseñanza, aprendizaje y formación investigadora",
+        "summary": "Propone revisar objetivos, evaluaciones y políticas de IA por curso, reforzar la convivencia universitaria y sostener la formación docente. Combina recomendaciones institucionales con consultas y encuestas de MIT; no demuestra efectos causales ni representa a todas las universidades.",
+        "takeaways": [
+          "Evaluaciones alineadas con el aprendizaje",
+          "Políticas claras y justificadas por curso",
+          "Apoyo docente y revisión continua"
+        ],
+        "audience": "Docentes, directivos universitarios y responsables de investigación"
+      },
+      "en": {
+        "title": "MIT committee report on AI in teaching, learning and research training",
+        "summary": "Recommends reviewing course objectives, assessments and AI policies while strengthening campus relationships and instructor support. It combines institutional recommendations with MIT consultations and surveys; it does not establish causal effects or represent universities generally.",
+        "takeaways": [
+          "Assessments aligned with learning",
+          "Clear, justified course policies",
+          "Instructor support and continuous review"
+        ],
+        "audience": "Instructors, university leaders and research managers"
+      },
+      "added_date": "2026-09-04",
+      "reviewed_date": "2026-09-04",
+      "evidence": {
+        "retrieved_date": "2026-09-04",
+        "sha256": "eba14345d7fee5727f399bc01f0f69ef2e2542e924b947947147027e7a3c0a49",
+        "content_type": "application/pdf",
+        "review_note": "Texto del PDF completo consultado, incluidos apéndices; portada verificada visualmente. No se extraen indicadores de sus gráficos. / Complete PDF text consulted, including appendices; cover visually checked. No chart indicators extracted."
+      }
     }
   ]
 }

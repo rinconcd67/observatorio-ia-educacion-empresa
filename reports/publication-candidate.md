@@ -50,13 +50,13 @@ La automatización valida integridad y cobertura, pero no autoriza por sí sola 
 
 ## Cambios de contenido Oxford
 
-- HTML: huella modificada; observaciones: idénticas.
+- HTML: huella conservada; observaciones: idénticas.
 - SHA-256 semántico anterior: daea2f17f7fd30049b4d34000d46eba1bf7da7c90376075ccd1443a43fd85415
 - SHA-256 semántico candidato: daea2f17f7fd30049b4d34000d46eba1bf7da7c90376075ccd1443a43fd85415
 
 ## Trazabilidad
 
-- Línea base: 2026-08-01T16:23:03.407Z
+- Línea base: 2026-09-04T23:58:34.204Z
 - Candidato: 2026-09-04T23:58:34.204Z
 - Autor responsable: César David Rincón Godoy
 - ORCID: https://orcid.org/0009-0003-2112-3851

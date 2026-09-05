@@ -1,10 +1,65 @@
 {
   "schema_version": 1,
-  "allowed_hosts": ["unesco.org", "iadb.org", "oecd.org"],
-  "discovery_sources": [
-    {"id": "unesco", "organization": "UNESCO", "url": "https://www.unesco.org/en/artificial-intelligence", "catalog_url": "https://unesdoc.unesco.org/", "topics": ["education", "ethics", "policy"]},
-    {"id": "idb", "organization": "BID / IDB", "url": "https://publications.iadb.org/en", "topics": ["education", "Latin America", "business", "policy"]},
-    {"id": "oecd", "organization": "OCDE / OECD", "url": "https://www.oecd.org/en/topics/artificial-intelligence.html", "catalog_url": "https://www.oecd.org/en/publications.html", "topics": ["education", "skills", "business", "policy"]}
+  "allowed_hosts": [
+    "unesco.org",
+    "iadb.org",
+    "oecd.org",
+    "mit.edu"
   ],
-  "policy": {"catalog_mutation": false, "auto_publish": false, "languages_required": ["es", "en"], "new_edition_requires_editorial_review": true}
+  "discovery_sources": [
+    {
+      "id": "unesco",
+      "organization": "UNESCO",
+      "url": "https://www.unesco.org/en/artificial-intelligence",
+      "catalog_url": "https://unesdoc.unesco.org/",
+      "topics": [
+        "education",
+        "ethics",
+        "policy"
+      ]
+    },
+    {
+      "id": "idb",
+      "organization": "BID / IDB",
+      "url": "https://publications.iadb.org/en",
+      "topics": [
+        "education",
+        "Latin America",
+        "business",
+        "policy"
+      ]
+    },
+    {
+      "id": "oecd",
+      "organization": "OCDE / OECD",
+      "url": "https://www.oecd.org/en/topics/artificial-intelligence.html",
+      "catalog_url": "https://www.oecd.org/en/publications.html",
+      "topics": [
+        "education",
+        "skills",
+        "business",
+        "policy"
+      ]
+    },
+    {
+      "id": "mit",
+      "organization": "MIT",
+      "url": "https://aiandeducation.mit.edu/",
+      "catalog_url": "https://aihub.mit.edu/",
+      "topics": [
+        "education",
+        "research",
+        "policy"
+      ]
+    }
+  ],
+  "policy": {
+    "catalog_mutation": false,
+    "auto_publish": false,
+    "languages_required": [
+      "es",
+      "en"
+    ],
+    "new_edition_requires_editorial_review": true
+  }
 }
