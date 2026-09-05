@@ -247,7 +247,6 @@
       "Uso individual de GenAI": "Individual GenAI use",
       "Personas de 16 a 74 años, 2025.": "People aged 16 to 74, 2025.",
       "Cobertura limitada": "Limited coverage",
-      "La base no atribuye promedios educativos a regiones sin observaciones directas. UNESCO UIS se incorporará como contexto educativo global, no como sustituto de uso de IA.": "The dataset does not assign educational averages to regions without direct observations. UNESCO UIS will be added as global educational context, not as a substitute for AI-use data.",
       "Adopción empresarial de IA": "Business adoption of AI",
       "Empresas con diez o más personas empleadas; Eurostat prevalece en coincidencias con OCDE.": "Enterprises with ten or more employees; Eurostat takes precedence where OECD observations overlap.",
       "Periodos": "Periods",
@@ -332,7 +331,8 @@
       "Una estantería para comprender la inteligencia artificial.": "A bookshelf for understanding artificial intelligence.",
       "UNESCO, BID, OCDE y MIT: publicaciones, reseñas y rutas de lectura conectadas con nuestros datos.": "UNESCO, IDB, OECD and MIT: publications, reviews and reading paths connected to our data.",
       "Explorar la biblioteca →": "Explore the library →",
-      "Ver guías temáticas →": "Browse thematic guides →"
+      "Ver guías temáticas →": "Browse thematic guides →",
+      "Los datos de contexto educativo de CIMA y UNESCO UIS tienen cobertura propia y no sustituyen las mediciones de uso de IA.": "Educational context data from CIMA and UNESCO UIS have their own coverage and do not replace AI-use measurements."
     },
     "incomeGroups": {
       "Ingreso alto": "High income",

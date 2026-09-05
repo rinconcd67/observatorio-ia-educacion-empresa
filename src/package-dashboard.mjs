@@ -131,7 +131,11 @@ async function packageDashboard() {
   const portal = await readFile(join(templateDirectory, "portal.js"), "utf8");
   const educationEvidence = await readJson(join(root, "data/processed/education-evidence.json"));
   const educationJs = await readFile(join(templateDirectory, "education-evidence.js"), "utf8");
-  const runtime = javascript + "\nwindow.OBSERVATORY_NEWS=" + safeJson(news) + ";\nwindow.OBSERVATORY_CHANGES=" + safeJson(change) + ";\n" + portal + "\nwindow.OBSERVATORY_EDUCATION_EVIDENCE=" + safeJson(educationEvidence) + ";\n" + educationJs;
+  const cima = await readJson(join(root, "data/processed/cima-context.json"));
+  const cimaJs = await readFile(join(templateDirectory, "cima-context.js"), "utf8");
+  const finance = await readJson(join(root, "data/processed/education-finance.json"));
+  const financeJs = await readFile(join(templateDirectory, "education-finance.js"), "utf8");
+  const runtime = javascript + "\nwindow.OBSERVATORY_NEWS=" + safeJson(news) + ";\nwindow.OBSERVATORY_CHANGES=" + safeJson(change) + ";\n" + portal + "\nwindow.OBSERVATORY_EDUCATION_EVIDENCE=" + safeJson(educationEvidence) + ";\n" + educationJs + "\nwindow.OBSERVATORY_CIMA=" + safeJson({...cima, source_runs: undefined}) + ";\n" + cimaJs + "\nwindow.OBSERVATORY_FINANCE=" + safeJson({...finance, source_runs: undefined}) + ";\n" + financeJs;
   const outputs = {};
   for (const localeName of ["es", "en"]) {
     const outputPath = join(dashboardDirectory, i18n[localeName].output);
