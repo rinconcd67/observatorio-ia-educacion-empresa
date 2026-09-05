@@ -19,6 +19,29 @@
       ]
     },
     {
+      "id": "unesco_ethics_ai_observatory",
+      "organization": "UNESCO",
+      "url": "https://www.unesco.org/ethics-ai/en",
+      "topics": [
+        "ethics",
+        "governance",
+        "policy",
+        "neurotechnology"
+      ]
+    },
+    {
+      "id": "unesco_neurotechnology",
+      "organization": "UNESCO",
+      "url": "https://www.unesco.org/en/ethics-neurotech",
+      "topics": [
+        "neurotechnology",
+        "artificial intelligence",
+        "ethics",
+        "mental privacy",
+        "human rights"
+      ]
+    },
+    {
       "id": "idb",
       "organization": "BID / IDB",
       "url": "https://publications.iadb.org/en",

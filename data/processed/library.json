@@ -1,5 +1,5 @@
 {
-  "reviewed_date": "2026-09-04",
+  "reviewed_date": "2026-09-05",
   "items": [
     {
       "id": "unesco-teachers-2024",
@@ -428,6 +428,72 @@
         "content_type": "application/pdf",
         "review_note": "Texto del PDF completo consultado, incluidos apéndices; portada verificada visualmente. No se extraen indicadores de sus gráficos. / Complete PDF text consulted, including appendices; cover visually checked. No chart indicators extracted."
       }
+    },
+    {
+      "id": "unesco-neurotechnology-ethics-2025",
+      "year": 2025,
+      "original_title": "Recommendation on the Ethics of Neurotechnology",
+      "source_url": "https://www.unesco.org/en/legal-affairs/recommendation-ethics-neurotechnology",
+      "es": {
+        "title": "Recomendación sobre la ética de la neurotecnología",
+        "summary": "Adoptada el 11 de noviembre de 2025, orienta el desarrollo y uso responsable de la neurotecnología. Aborda su convergencia con la IA y la protección de la autonomía, la privacidad mental y el consentimiento. Incluye los riesgos de inferir estados mentales a partir de datos. Esta reseña se basa en los metadatos y apartados iniciales del texto oficial; no constituye una revisión integral.",
+        "takeaways": [
+          "Convergencia entre neurotecnología e IA",
+          "Autonomía, consentimiento y privacidad mental",
+          "Gobernanza durante el ciclo de vida"
+        ],
+        "audience": "Responsables de políticas, investigadores y equipos de ética e innovación"
+      },
+      "en": {
+        "title": "Recommendation on the Ethics of Neurotechnology",
+        "summary": "Adopted on 11 November 2025, this recommendation guides responsible neurotechnology development and use. It addresses convergence with AI and safeguards for autonomy, mental privacy and consent, including risks from data used to infer mental states. This review draws on metadata and opening sections of the official text; it is not a comprehensive assessment.",
+        "takeaways": [
+          "Convergence of neurotechnology and AI",
+          "Autonomy, consent and mental privacy",
+          "Governance across the life cycle"
+        ],
+        "audience": "Policymakers, researchers, and ethics and innovation teams"
+      },
+      "organization": "UNESCO",
+      "original_language": "en",
+      "topic": "ethics",
+      "review_scope": "official_summary",
+      "license_note": "Enlace a la edición oficial; no se aloja el documento ni su portada. Consultar su licencia antes de reutilizarlo. / Link to the official edition; document and cover are not hosted. Check its licence before reuse.",
+      "added_date": "2026-09-05",
+      "reviewed_date": "2026-09-05"
+    },
+    {
+      "id": "unesco-ibc-neurotechnology-2022",
+      "year": 2022,
+      "original_title": "Report of the IBC on ethical issues of neurotechnology",
+      "source_url": "https://unesdoc.unesco.org/ark:/48223/pf0000383559_eng",
+      "es": {
+        "title": "Informe del Comité Internacional de Bioética sobre cuestiones éticas de la neurotecnología",
+        "summary": "Examina las implicaciones éticas y de derechos humanos de tecnologías que registran o modifican la actividad cerebral. La presentación oficial destaca identidad, autonomía y privacidad, y propone acciones para Estados, investigadores, empresas y otros actores. Es un antecedente de la Recomendación de 2025. Reseña basada en la presentación institucional; no se verificó el texto completo.",
+        "takeaways": [
+          "Actividad cerebral y derechos humanos",
+          "Identidad, autonomía y privacidad",
+          "Antecedente del marco de 2025"
+        ],
+        "audience": "Investigadores, docentes de bioética y responsables de gobernanza tecnológica"
+      },
+      "en": {
+        "title": "IBC report on ethical issues of neurotechnology",
+        "summary": "Examines ethical and human rights implications of technologies that record or modify brain activity. The official presentation highlights identity, autonomy and privacy, and describes proposed actions for states, researchers, companies and other stakeholders. It precedes the 2025 Recommendation. This review is based on the institutional presentation; the full report was not verified.",
+        "takeaways": [
+          "Brain activity and human rights",
+          "Identity, autonomy and privacy",
+          "Background to the 2025 framework"
+        ],
+        "audience": "Researchers, bioethics educators and technology governance teams"
+      },
+      "organization": "UNESCO",
+      "original_language": "en",
+      "topic": "ethics",
+      "review_scope": "official_summary",
+      "license_note": "Enlace a la edición oficial; no se aloja el documento ni su portada. Consultar su licencia antes de reutilizarlo. / Link to the official edition; document and cover are not hosted. Check its licence before reuse.",
+      "added_date": "2026-09-05",
+      "reviewed_date": "2026-09-05"
     }
   ]
 }
