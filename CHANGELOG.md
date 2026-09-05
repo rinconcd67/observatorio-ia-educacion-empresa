@@ -1,5 +1,19 @@
 # Historial de cambios
 
+## 0.5.0 - 2026-09-04
+
+- Publica portal bilingüe, ventana lateral de noticias y contexto temporal explícito.
+- Incorpora evidencia docente de América Latina y datos institucionales con metodologías diferenciadas.
+- Añade biblioteca de 12 publicaciones con 24 fichas ES/EN, búsqueda y filtros.
+- Publica tres guías temáticas ES/EN y sitemap de 36 URLs.
+- Incorpora bibliotecario con comprobación de enlaces y propuestas editoriales.
+
+- Corrige la brecha empresa-educación para utilizar exclusivamente el último año común por país y conservar por separado los últimos valores disponibles.
+- Sustituye ventanas temporales finales fijas por políticas explícitas y deterministas para Eurostat, OCDE y Banco Mundial.
+- Declara AIPI 2023 y Oxford 2025 como ediciones fijadas sujetas a revisión si cambia su huella.
+- Calcula SHA-256 sobre los bytes exactos almacenados y publicados, con alcance y tamaño documentados.
+- Añade controles de regresión temporal, cambios silenciosos de ediciones y paridad de huellas raw/públicas.
+
 ## 0.4.0 - 2026-08-01
 
 - Se incorporó una versión inglesa completa en `/en/`, equivalente a la ruta española y alimentada por el mismo contrato analítico.

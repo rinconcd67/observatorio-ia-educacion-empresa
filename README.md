@@ -4,7 +4,7 @@
 
 A reproducible, bilingual system for monitoring artificial intelligence preparedness, adoption and use in education, business and government by country and region.
 
-## Version 0.4.0
+## Candidate version 0.5.0
 
 - Two equivalent public routes: Spanish at `/` and English at `/en/`.
 - Eight views: Global, Regions, Countries, Education, Business, Governance, Sources and About.
@@ -16,6 +16,8 @@ A reproducible, bilingual system for monitoring artificial intelligence prepared
 - International SEO metadata, `hreflang`, structured data, bilingual manifests and language-specific social previews.
 - Verifiable CSV/JSON downloads, authorship, ORCID, citation, data policy and privacy documentation.
 - Monthly governed updates through a comparative report and pull request; automation does not publish new data without human review.
+- Business-education comparisons use the latest common year and report an explicit status when no comparable period exists.
+- Dynamic temporal windows and SHA-256 fingerprints of the exact stored and published bytes.
 
 ## Quick start
 

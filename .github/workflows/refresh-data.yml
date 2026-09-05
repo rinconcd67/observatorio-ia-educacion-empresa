@@ -31,20 +31,27 @@ jobs:
         run: npm ci
 
       - name: Conservar línea base
-        run: cp data/processed/snapshot.json /tmp/observatorio-snapshot-before.json
+        run: cp data/baselines/published-snapshot.json /tmp/observatorio-snapshot-before.json
+
+      - name: Fijar fecha efectiva de la ejecución
+        run: echo "OBSERVATORY_AS_OF=$(date -u +%Y-%m-%dT%H:%M:%SZ)" >> "$GITHUB_ENV"
 
       - name: Actualizar todas las fuentes
         run: npm run refresh
 
-      - name: Validar actualización
-        run: npm run check
-
       - name: Generar informe comparativo
+        id: report
+        continue-on-error: true
         run: >-
-          node src/create-update-report.mjs
+          npm run report:update --
           /tmp/observatorio-snapshot-before.json
           data/processed/snapshot.json
           reports/update-candidate.md
+
+      - name: Validar actualización
+        id: validation
+        continue-on-error: true
+        run: npm run check
 
       - name: Publicar evidencia de la ejecución
         if: always()
@@ -58,10 +65,14 @@ jobs:
           retention-days: 90
           if-no-files-found: warn
 
+      - name: Aplicar puertas de aceptación
+        if: steps.report.outcome == 'failure' || steps.validation.outcome == 'failure'
+        run: exit 1
+
       - name: Detectar cambios sustantivos
         id: changes
         run: |
-          if git diff --quiet -- data/processed dashboard/artifact.json dashboard/index.html; then
+          if git diff --quiet -- data/processed dashboard/artifact.json dashboard/index.html dashboard/en/index.html; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
@@ -75,7 +86,7 @@ jobs:
           git config user.name "observatorio-automation"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -b "$BRANCH_NAME"
-          git add data/processed dashboard/artifact.json dashboard/index.html reports/update-candidate.md
+          git add data/processed dashboard/artifact.json dashboard/index.html dashboard/en/index.html reports/update-candidate.md
           git commit -m "data: proponer actualización automática"
           git push origin "$BRANCH_NAME"
 

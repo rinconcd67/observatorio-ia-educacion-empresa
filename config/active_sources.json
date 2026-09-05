@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "sources": [
     {
       "id": "eurostat_enterprise_ai",
@@ -10,6 +10,9 @@
       "access": "api_publica_sin_llave",
       "dataset": "isoc_eb_ai",
       "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/isoc_eb_ai?lang=en&freq=A&size_emp=GE10&nace_r2=C10-S951_X_K&indic_is=E_AI_TANY&unit=PC_ENT",
+      "time_policy": {
+        "mode": "all_available"
+      },
       "metric_id": "enterprise_ai_adoption",
       "refresh_frequency": "mensual"
     },
@@ -21,7 +24,11 @@
       "sector": "educacion",
       "access": "api_publica_sin_llave",
       "dataset": "isoc_ai_iaiu",
-      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/isoc_ai_iaiu?lang=en&freq=A&ind_type=IND_TOTAL&indic_is=I_IUAIFE&unit=PC_IND&time=2025",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/isoc_ai_iaiu?lang=en&freq=A&ind_type=IND_TOTAL&indic_is=I_IUAIFE&unit=PC_IND",
+      "time_policy": {
+        "mode": "since_year",
+        "start_year": 2025
+      },
       "metric_id": "formal_education_genai_use",
       "refresh_frequency": "mensual"
     },
@@ -33,7 +40,11 @@
       "sector": "educacion",
       "access": "api_publica_sin_llave",
       "dataset": "isoc_ai_iaiu",
-      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/isoc_ai_iaiu?lang=en&freq=A&ind_type=STUD&indic_is=I_IUAI&unit=PC_IND&time=2025",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/isoc_ai_iaiu?lang=en&freq=A&ind_type=STUD&indic_is=I_IUAI&unit=PC_IND",
+      "time_policy": {
+        "mode": "since_year",
+        "start_year": 2025
+      },
       "metric_id": "student_genai_use",
       "refresh_frequency": "mensual"
     },
@@ -47,6 +58,10 @@
       "dataset": "DSD_ICT_B@DF_BUSINESSES",
       "format": "csv",
       "url": "https://sdmx.oecd.org/public/rest/data/OECD.STI.DEP,DSD_ICT_B@DF_BUSINESSES,1.0/.A.G14_B.PT_ENT._T.S_GE10?startPeriod=2023&dimensionAtObservation=AllDimensions&format=csvfilewithlabels",
+      "time_policy": {
+        "mode": "open_from",
+        "start_year": 2023
+      },
       "metric_id": "enterprise_ai_adoption",
       "refresh_frequency": "mensual"
     },
@@ -60,6 +75,10 @@
       "dataset": "DSD_ICT_HH_IND@DF_IND",
       "format": "csv",
       "url": "https://sdmx.oecd.org/public/rest/data/OECD.STI.DEP,DSD_ICT_HH_IND@DF_IND,1.1/.A.D1X_I.PT_POP._Z.Y16T74._T._T._T._T?startPeriod=2025&dimensionAtObservation=AllDimensions&format=csvfilewithlabels",
+      "time_policy": {
+        "mode": "open_from",
+        "start_year": 2025
+      },
       "metric_id": "individual_genai_use",
       "refresh_frequency": "mensual"
     },
@@ -72,6 +91,9 @@
       "access": "api_publica_sin_llave",
       "dataset": "countries",
       "url": "https://api.worldbank.org/v2/country?format=json&per_page=400",
+      "time_policy": {
+        "mode": "all_available"
+      },
       "refresh_frequency": "trimestral"
     },
     {
@@ -82,7 +104,11 @@
       "sector": "contexto",
       "access": "api_publica_sin_llave",
       "dataset": "IT.NET.USER.ZS",
-      "url": "https://api.worldbank.org/v2/country/all/indicator/IT.NET.USER.ZS?format=json&per_page=20000&date=2020:2025",
+      "url": "https://api.worldbank.org/v2/country/all/indicator/IT.NET.USER.ZS?format=json&per_page=20000",
+      "time_policy": {
+        "mode": "from_year_to_run_year",
+        "start_year": 2020
+      },
       "metric_id": "internet_users",
       "refresh_frequency": "trimestral"
     },
@@ -94,7 +120,11 @@
       "sector": "contexto_educativo",
       "access": "api_publica_sin_llave",
       "dataset": "SE.TER.ENRR",
-      "url": "https://api.worldbank.org/v2/country/all/indicator/SE.TER.ENRR?format=json&per_page=20000&date=2020:2025",
+      "url": "https://api.worldbank.org/v2/country/all/indicator/SE.TER.ENRR?format=json&per_page=20000",
+      "time_policy": {
+        "mode": "from_year_to_run_year",
+        "start_year": 2020
+      },
       "metric_id": "tertiary_enrollment",
       "refresh_frequency": "trimestral"
     },
@@ -106,7 +136,11 @@
       "sector": "contexto_economico",
       "access": "api_publica_sin_llave",
       "dataset": "NY.GDP.PCAP.CD",
-      "url": "https://api.worldbank.org/v2/country/all/indicator/NY.GDP.PCAP.CD?format=json&per_page=20000&date=2020:2025",
+      "url": "https://api.worldbank.org/v2/country/all/indicator/NY.GDP.PCAP.CD?format=json&per_page=20000",
+      "time_policy": {
+        "mode": "from_year_to_run_year",
+        "start_year": 2020
+      },
       "metric_id": "gdp_per_capita",
       "refresh_frequency": "trimestral"
     }

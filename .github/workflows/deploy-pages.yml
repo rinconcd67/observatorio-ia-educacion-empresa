@@ -34,6 +34,18 @@ jobs:
       - name: Construir y validar sitio
         run: npm run build && npm run check
 
+      - name: Comparar candidato con la última publicación verificada
+        run: npm run check:publication
+
+      - name: Conservar informe del control de publicación
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: control-publicacion-${{ github.run_id }}
+          path: reports/publication-candidate.md
+          retention-days: 90
+          if-no-files-found: warn
+
       - name: Configurar GitHub Pages
         uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
 

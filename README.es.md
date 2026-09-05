@@ -4,7 +4,7 @@
 
 Sistema reproducible para monitorear adopción, brechas y condiciones de contexto de la inteligencia artificial por país. El proyecto mantiene separados los datos crudos, las tablas normalizadas, el contrato analítico y el dashboard entregable.
 
-## Estado de la versión 0.4.0
+## Estado candidato de la versión 0.5.0
 
 - Dashboard autocontenido y de solo lectura con identidad visual propia.
 - Mapa mundial interactivo y siete regiones normalizadas en español.
@@ -25,6 +25,8 @@ Sistema reproducible para monitorear adopción, brechas y condiciones de context
 - Interfaz, mapas, gráficos, tablas, tooltips, fechas y formatos numéricos localizados en ambos idiomas.
 - Metadatos internacionales `hreflang`, manifiestos bilingües y vistas sociales por idioma.
 - Actualización mensual gobernada mediante informe comparativo y pull request; la automatización no publica datos nuevos sin revisión humana.
+- Comparación empresa-educación limitada al último año común, con estados explícitos cuando no existe periodo comparable.
+- Ventanas temporales dinámicas y huellas SHA-256 de los bytes exactos almacenados y publicados.
 
 ## Inicio rápido
 

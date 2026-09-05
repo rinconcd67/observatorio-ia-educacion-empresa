@@ -1,9 +1,29 @@
 {
   "source_id": "imf_aipi",
   "status": "ok",
-  "started_at": "2026-08-01T16:22:58.946Z",
-  "completed_at": "2026-08-01T16:22:59.203Z",
+  "started_at": "2026-09-04T23:58:32.142Z",
+  "completed_at": "2026-09-04T23:58:32.350Z",
+  "policy_mode": "pinned_edition",
+  "edition_year": 2023,
+  "requested_start_year": 2023,
+  "requested_end_year": 2023,
+  "as_of_date": "2026-09-04T23:58:32.141Z",
+  "base_url": "https://www.imf.org/external/datamapper/aipidata.xlsx",
+  "requested_url": "https://www.imf.org/external/datamapper/aipidata.xlsx",
+  "resolved_url": "https://www.imf.org/external/datamapper/aipidata.xlsx",
+  "raw_sha256": "35eb38b8b692771f2a58d3c9a8db3411365873ebc11ec2e8e8f690835f9f5f17",
   "checksum_sha256": "35eb38b8b692771f2a58d3c9a8db3411365873ebc11ec2e8e8f690835f9f5f17",
+  "checksum_scope": "stored_file_bytes",
+  "checksum_algorithm": "sha256",
+  "raw_size_bytes": 29203,
+  "raw_content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "etag": "\"b28f24c25d55db1:0\"",
+  "last_modified": "Mon, 23 Dec 2024 17:11:51 GMT",
   "raw_path": "data/raw/imf_aipi.xlsx",
-  "records": 852
+  "records": 852,
+  "returned_min_year": 2023,
+  "returned_max_year": 2023,
+  "returned_years": [
+    2023
+  ]
 }

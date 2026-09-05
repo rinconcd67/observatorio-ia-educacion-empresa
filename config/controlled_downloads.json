@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "sources": [
     {
       "id": "imf_aipi",
@@ -12,6 +12,10 @@
       "format": "xlsx",
       "url": "https://www.imf.org/external/datamapper/aipidata.xlsx",
       "year": 2023,
+      "time_policy": {
+        "mode": "pinned_edition",
+        "edition_year": 2023
+      },
       "refresh_frequency": "trimestral"
     },
     {
@@ -25,6 +29,10 @@
       "format": "html_embedded_json",
       "url": "https://oxfordinsights.com/ai-readiness/government-ai-readiness-index-2025/",
       "year": 2025,
+      "time_policy": {
+        "mode": "pinned_edition",
+        "edition_year": 2025
+      },
       "refresh_frequency": "trimestral"
     }
   ]

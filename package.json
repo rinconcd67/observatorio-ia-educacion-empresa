@@ -1,6 +1,6 @@
 {
   "name": "observatorio-ia-educacion-empresa",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "private": true,
   "type": "module",
   "description": "Observatorio global reproducible de preparación y adopción de IA en educación y empresas.",
@@ -12,13 +12,20 @@
     "build:artifact": "node src/build-artifact.mjs",
     "package:dashboard": "node src/package-dashboard.mjs",
     "package:site": "node src/package-site.mjs",
-    "report:update": "node src/create-update-report.mjs data/processed/snapshot.json data/processed/snapshot.json reports/update-candidate.md",
-    "refresh": "npm run import:aipi && npm run import:oxford && npm run refresh:data && npm run build",
-    "build": "npm run build:artifact && npm run package:dashboard && npm run package:site",
+    "report:update": "node src/create-update-report.mjs",
+    "check:publication": "npm run report:update -- data/baselines/published-snapshot.json data/processed/snapshot.json reports/publication-candidate.md",
+    "refresh": "npm run import:aipi && npm run import:oxford && npm run refresh:data && npm run refresh:news && npm run build",
+    "build": "npm run build:artifact && npm run package:dashboard && npm run package:site && npm run package:library",
     "validate": "node src/validate-data.mjs",
+    "verify:integrity": "node --test test/integrity.test.mjs",
     "test": "node --test",
     "check": "npm run test && npm run validate",
-    "serve": "node src/serve.mjs"
+    "serve": "node src/serve.mjs",
+    "refresh:news": "node src/refresh-news.mjs",
+    "verify:education-sources": "node src/verify-education-evidence.mjs",
+    "package:library": "node src/package-library.mjs",
+    "library:validate": "node src/librarian.mjs --offline",
+    "library:check": "node src/librarian.mjs --check"
   },
   "engines": {
     "node": ">=20"

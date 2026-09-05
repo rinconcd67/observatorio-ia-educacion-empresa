@@ -41,6 +41,29 @@ export function latestByPriority(rows, keyFields, sourcePriority = {}) {
   return [...selected.values()];
 }
 
+export function latestCommonYearPairs(leftRows, rightRows, keyFields, sourcePriority = {}) {
+  const comparisonKeyFields = [...keyFields, "year"];
+  const leftByYear = latestByPriority(leftRows, comparisonKeyFields, sourcePriority);
+  const rightByYear = new Map(
+    latestByPriority(rightRows, comparisonKeyFields, sourcePriority)
+      .map((row) => [comparisonKeyFields.map((field) => row[field]).join("|"), row]),
+  );
+
+  const commonYearPairs = leftByYear.flatMap((left) => {
+    const comparisonKey = comparisonKeyFields.map((field) => left[field]).join("|");
+    const right = rightByYear.get(comparisonKey);
+    if (!right) return [];
+    return [{
+      ...Object.fromEntries(keyFields.map((field) => [field, left[field]])),
+      year: Number(left.year),
+      left,
+      right,
+    }];
+  });
+
+  return latestBy(commonYearPairs, keyFields);
+}
+
 export function indexBy(rows, keyField) {
   return new Map(rows.map((row) => [row[keyField], row]));
 }

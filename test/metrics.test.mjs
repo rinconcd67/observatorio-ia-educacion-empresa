@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { latestBy, latestByPriority, mean, quantile, round } from "../src/lib/metrics.mjs";
+import { latestBy, latestByPriority, latestCommonYearPairs, mean, quantile, round } from "../src/lib/metrics.mjs";
 
 test("calcula promedios solo con valores numéricos", () => {
   assert.equal(mean([10, null, 20, Number.NaN]), 15);
@@ -38,4 +38,29 @@ test("calcula cuantiles sobre valores numéricos ordenados", () => {
   assert.equal(quantile(values, 0.25), 0.4);
   assert.equal(quantile(values, 0.5), 0.6);
   assert.equal(quantile([], 0.5), null);
+});
+
+test("selecciona el último año común después de resolver la prioridad por país y año", () => {
+  const businessRows = [
+    { iso3: "CHE", year: 2023, value: 9, source_id: "oecd" },
+    { iso3: "CHE", year: 2023, value: 10, source_id: "eurostat" },
+    { iso3: "CHE", year: 2024, value: 12, source_id: "oecd" },
+  ];
+  const educationRows = [
+    { iso3: "CHE", year: 2023, value: 18, source_id: "eurostat_education" },
+    { iso3: "CHE", year: 2025, value: 20, source_id: "eurostat_education" },
+  ];
+
+  const pairs = latestCommonYearPairs(
+    businessRows,
+    educationRows,
+    ["iso3"],
+    { eurostat: 20, oecd: 10 },
+  );
+
+  assert.equal(pairs.length, 1);
+  assert.equal(pairs[0].year, 2023);
+  assert.equal(pairs[0].left.value, 10);
+  assert.equal(pairs[0].left.source_id, "eurostat");
+  assert.equal(pairs[0].right.value, 18);
 });

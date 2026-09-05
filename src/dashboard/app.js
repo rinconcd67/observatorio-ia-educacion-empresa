@@ -123,6 +123,33 @@
     return Number.isFinite(value) ? `${number(value, digits)} %` : t("na");
   }
 
+  function adoptionGapContext(row) {
+    if (row.adoption_gap_status === "comparable_same_year") {
+      return t("gapSameYear", { year: row.adoption_gap_year });
+    }
+    if (row.adoption_gap_status === "no_common_year") {
+      return t("gapNoCommonYear", {
+        businessYear: row.business_year,
+        educationYear: row.education_year,
+      });
+    }
+    if (row.adoption_gap_status === "missing_business") return t("gapMissingBusiness");
+    if (row.adoption_gap_status === "missing_education") return t("gapMissingEducation");
+    if (row.adoption_gap_status === "missing_both") return t("gapMissingBoth");
+    return null;
+  }
+
+  function sourceRequestedWindow(row) {
+    if (Number.isInteger(row.edition_year)) return t("edition", { year: row.edition_year });
+    return `${row.requested_start_year ?? t("openWindow")}–${row.requested_end_year ?? t("openWindow")}`;
+  }
+
+  function sourceReturnedPeriod(row) {
+    return Number.isInteger(row.returned_min_year)
+      ? `${row.returned_min_year}–${row.returned_max_year}`
+      : t("notApplicable");
+  }
+
   function metricCard(label, value, context, color) {
     return `<article class="metric" style="--metric-color:${color}"><span class="label">${escapeHtml(label)}</span><div class="value">${escapeHtml(value)}</div><span class="context">${escapeHtml(context)}</span></article>`;
   }
@@ -334,7 +361,7 @@
       [t("tertiaryEnrollment"), percentage(row.tertiary_enrollment_pct, 1), row.tertiary_year],
       [t("gdpPerCapita"), Number.isFinite(row.gdp_per_capita_usd) ? `USD ${integer(row.gdp_per_capita_usd)}` : t("na"), row.gdp_year],
       [t("studentAi"), percentage(row.student_ai_pct, 1), row.student_year],
-      [t("businessEducationGap"), Number.isFinite(row.adoption_gap_pp) ? `${number(row.adoption_gap_pp, 2)} pp` : t("na"), null],
+      [t("businessEducationGap"), Number.isFinite(row.adoption_gap_pp) ? `${number(row.adoption_gap_pp, 2)} pp` : t("notComparable"), adoptionGapContext(row)],
       [`Oxford · ${t("policyCapacity")}`, number(row.government_policy_capacity, 1), row.government_ai_readiness_year],
       [`Oxford · ${t("aiInfrastructure")}`, number(row.government_ai_infrastructure, 1), row.government_ai_readiness_year],
       [`Oxford · ${t("aiGovernance")}`, number(row.government_ai_governance, 1), row.government_ai_readiness_year],
@@ -345,7 +372,7 @@
       [t("region"), regionName(row.region, row), null],
       [t("isoCode"), row.iso3, null],
     ];
-    document.getElementById("country-detail-grid").innerHTML = details.map(([label, value, year]) => `<div class="detail-item"><span class="label">${escapeHtml(label)}</span><strong>${escapeHtml(value)}</strong>${year ? `<small>${escapeHtml(t("year", { year }))}</small>` : ""}</div>`).join("");
+    document.getElementById("country-detail-grid").innerHTML = details.map(([label, value, context]) => `<div class="detail-item"><span class="label">${escapeHtml(label)}</span><strong>${escapeHtml(value)}</strong>${context ? `<small>${escapeHtml(Number.isFinite(context) ? t("year", { year: context }) : context)}</small>` : ""}</div>`).join("");
   }
 
   function renderEducation() {
@@ -449,7 +476,7 @@
         : `<code>${escapeHtml(source.path)}</code>`;
       return `<article class="source-card"><strong>${escapeHtml(locale.sourceLabels[source.id] ?? source.label)}</strong><p>${escapeHtml(description)}</p>${reference}</article>`;
     }).join("");
-    document.getElementById("source-health-table").innerHTML = `<thead><tr><th>${escapeHtml(t("connector"))}</th><th>${escapeHtml(t("status"))}</th><th>${escapeHtml(t("update"))}</th><th>SHA-256</th></tr></thead><tbody>${datasets.source_health.map((row) => `<tr><td><strong>${escapeHtml(locale.sourceLabels[row.source] ?? row.source)}</strong></td><td><span class="status ${row.status === "ok" ? "" : "error"}">${escapeHtml(row.status === "ok" ? t("operational") : t("unavailable"))}</span></td><td>${escapeHtml(new Date(row.updated_at).toLocaleString(locale.dateLocale))}</td><td><code>${escapeHtml(row.checksum)}</code></td></tr>`).join("")}</tbody>`;
+    document.getElementById("source-health-table").innerHTML = `<thead><tr><th>${escapeHtml(t("connector"))}</th><th>${escapeHtml(t("status"))}</th><th>${escapeHtml(t("update"))}</th><th>${escapeHtml(t("requestedWindow"))}</th><th>${escapeHtml(t("receivedPeriod"))}</th><th>${escapeHtml(t("rawFileSha256"))}</th></tr></thead><tbody>${datasets.source_health.map((row) => `<tr><td><strong>${escapeHtml(locale.sourceLabels[row.source] ?? row.source)}</strong></td><td><span class="status ${row.status === "ok" ? "" : "error"}">${escapeHtml(row.status === "ok" ? t("operational") : t("unavailable"))}</span></td><td>${escapeHtml(new Date(row.updated_at).toLocaleString(locale.dateLocale))}</td><td>${escapeHtml(sourceRequestedWindow(row))}</td><td>${escapeHtml(sourceReturnedPeriod(row))}</td><td><code title="${escapeHtml(row.checksum_scope ?? t("notDeclared"))}">${escapeHtml(row.checksum ?? t("unavailable"))}</code></td></tr>`).join("")}</tbody>`;
   }
 
   function setView(view, options = {}) {

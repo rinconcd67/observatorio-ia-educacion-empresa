@@ -1,0 +1,102 @@
+[
+  {
+    "id": "talis2024_bra",
+    "url": "https://www.oecd.org/en/publications/results-from-talis-2024-country-notes_e127f9e2-en/brazil_1e93d3b5-en.html",
+    "checked_at": "2026-09-05T00:44:44.501Z",
+    "status": "error",
+    "error": "HTTP 403 al consultar https://www.oecd.org/en/publications/results-from-talis-2024-country-notes_e127f9e2-en/brazil_1e93d3b5-en.html"
+  },
+  {
+    "id": "talis2024_chl",
+    "url": "https://www.oecd.org/en/publications/results-from-talis-2024-country-notes_e127f9e2-en/chile_e31949b6-en.html",
+    "checked_at": "2026-09-05T00:44:44.584Z",
+    "status": "error",
+    "error": "HTTP 403 al consultar https://www.oecd.org/en/publications/results-from-talis-2024-country-notes_e127f9e2-en/chile_e31949b6-en.html"
+  },
+  {
+    "id": "talis2024_col",
+    "url": "https://www.oecd.org/en/publications/results-from-talis-2024-country-notes_e127f9e2-en/colombia_8f1df220-en.html",
+    "checked_at": "2026-09-05T00:44:44.651Z",
+    "status": "error",
+    "error": "HTTP 403 al consultar https://www.oecd.org/en/publications/results-from-talis-2024-country-notes_e127f9e2-en/colombia_8f1df220-en.html"
+  },
+  {
+    "id": "talis2024_cri",
+    "url": "https://www.oecd.org/en/publications/results-from-talis-2024-country-notes_e127f9e2-en/costa-rica_90152658-en.html",
+    "checked_at": "2026-09-05T00:44:44.725Z",
+    "status": "error",
+    "error": "HTTP 403 al consultar https://www.oecd.org/en/publications/results-from-talis-2024-country-notes_e127f9e2-en/costa-rica_90152658-en.html"
+  },
+  {
+    "id": "cetic2025_e5a",
+    "url": "https://cetic.br/pt/tics/educacao/2025/escolas/E5A/expandido/",
+    "resolved_url": "https://cetic.br/pt/tics/educacao/2025/escolas/E5A/expandido/",
+    "checked_at": "2026-09-05T00:44:45.539Z",
+    "status": "ok",
+    "http_status": 200,
+    "raw_sha256": "096d63a8a66f181ea0a868ee58eacac30ca63244baf89d9b1bbd0a5baf3ce113",
+    "raw_path": "data/raw/education_cetic2025_e5a.html",
+    "bytes": 8435,
+    "scope": "stored_file_bytes",
+    "note": "Retrieval verification; numerical claims require editorial review against source."
+  },
+  {
+    "id": "cetic2025_e5b",
+    "url": "https://cetic.br/pt/tics/educacao/2025/escolas/E5B/",
+    "resolved_url": "https://cetic.br/pt/tics/educacao/2025/escolas/E5B/",
+    "checked_at": "2026-09-05T00:44:45.670Z",
+    "status": "ok",
+    "http_status": 200,
+    "raw_sha256": "3de739a5824806770fd074d6cbf73f97d06a1189d19a312c6ddb135500a06c48",
+    "raw_path": "data/raw/education_cetic2025_e5b.html",
+    "bytes": 25911,
+    "scope": "stored_file_bytes",
+    "note": "Retrieval verification; numerical claims require editorial review against source."
+  },
+  {
+    "id": "cetic2025_method",
+    "url": "https://cetic.br/pt/noticia/tic-educacao-2025-mostra-que-8-em-cada-10-escolas-brasileiras-debatem-impacto-do-uso-de-telas-na-saude-mental-dos-alunos/",
+    "resolved_url": "https://cetic.br/pt/noticia/tic-educacao-2025-mostra-que-8-em-cada-10-escolas-brasileiras-debatem-impacto-do-uso-de-telas-na-saude-mental-dos-alunos/",
+    "checked_at": "2026-09-05T00:44:45.805Z",
+    "status": "ok",
+    "http_status": 200,
+    "raw_sha256": "676d0d5ca3b3a2208effa76bb34ec0176a019bdad6a0f81f94163815310a0fce",
+    "raw_path": "data/raw/education_cetic2025_method.html",
+    "bytes": 30852,
+    "scope": "stored_file_bytes",
+    "note": "Retrieval verification; numerical claims require editorial review against source."
+  },
+  {
+    "id": "unesco_teacher_framework",
+    "url": "https://www.unesco.org/en/articles/ai-competency-framework-teachers",
+    "resolved_url": "https://www.unesco.org/en/articles/ai-competency-framework-teachers",
+    "checked_at": "2026-09-05T00:44:50.159Z",
+    "status": "ok",
+    "http_status": 200,
+    "raw_sha256": "7e6fff99f8a01dea8ff6a1b4f7a5e8daa34d6a95e712461cb4cbd4b2a125997f",
+    "raw_path": "data/raw/education_unesco_teacher_framework.html",
+    "bytes": 82829,
+    "scope": "stored_file_bytes",
+    "note": "Retrieval verification; numerical claims require editorial review against source."
+  },
+  {
+    "id": "unesco_lac_observatory",
+    "url": "https://www.unesco.org/en/articles/observatory-artificial-intelligence-education-latin-america-and-caribbean",
+    "resolved_url": "https://www.unesco.org/en/articles/observatory-artificial-intelligence-education-latin-america-and-caribbean",
+    "checked_at": "2026-09-05T00:44:55.388Z",
+    "status": "ok",
+    "http_status": 200,
+    "raw_sha256": "c3a004210914309adcb13356d22b9e3a72dc440e997f245858c21b4b1a49c48f",
+    "raw_path": "data/raw/education_unesco_lac_observatory.html",
+    "bytes": 121920,
+    "scope": "stored_file_bytes",
+    "note": "Retrieval verification; numerical claims require editorial review against source."
+  },
+  {
+    "id": "idb_rg_t4991",
+    "url": "https://www.iadb.org/en/project/RG-T4991",
+    "checked_at": "2026-09-05T00:44:55.568Z",
+    "status": "error",
+    "error": "HTTP 403 al consultar https://www.iadb.org/en/project/RG-T4991"
+  }
+]
