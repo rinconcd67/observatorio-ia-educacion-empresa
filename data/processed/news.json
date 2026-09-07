@@ -1,28 +1,28 @@
 {
-  "checked_at": "2026-09-05T14:47:46.934Z",
+  "checked_at": "2026-09-07T16:38:10.900Z",
   "items": [
+    {
+      "title": "Supporting independent journalism in Ukraine",
+      "url": "https://openai.com/index/supporting-independent-journalism-in-ukraine",
+      "published_at": "2026-09-07T00:00:00.000Z",
+      "source": "OpenAI"
+    },
+    {
+      "title": "An Alien Mind",
+      "url": "https://openai.com/index/an-alien-mind",
+      "published_at": "2026-09-06T09:00:00.000Z",
+      "source": "OpenAI"
+    },
+    {
+      "title": "Research acceleration: The view inside OpenAI",
+      "url": "https://openai.com/index/research-acceleration-view-inside-openai",
+      "published_at": "2026-09-06T08:00:00.000Z",
+      "source": "OpenAI"
+    },
     {
       "title": "Daybreak for Frontline Defenders: $1B to protect essential services",
       "url": "https://openai.com/index/daybreak-for-frontline-defenders",
       "published_at": "2026-09-03T13:15:00.000Z",
-      "source": "OpenAI"
-    },
-    {
-      "title": "Playco cut manual fixes 50% prototyping games with GPT-6 Astra",
-      "url": "https://openai.com/index/playco-game-prototyping-with-astra",
-      "published_at": "2026-09-03T12:00:00.000Z",
-      "source": "OpenAI"
-    },
-    {
-      "title": "Legora reviewed 41 documents in minutes with GPT-6 Astra",
-      "url": "https://openai.com/index/legora-financial-statement-review-with-astra",
-      "published_at": "2026-09-03T12:00:00.000Z",
-      "source": "OpenAI"
-    },
-    {
-      "title": "GPT-6 Astra: A new generation of intelligence",
-      "url": "https://openai.com/index/gpt-6-astra",
-      "published_at": "2026-09-03T11:00:00.000Z",
       "source": "OpenAI"
     },
     {
@@ -79,19 +79,19 @@
       "name": "OpenAI",
       "url": "https://openai.com/news/rss.xml",
       "status": "ok",
-      "last_successful_at": "2026-09-05T14:47:46.934Z"
+      "last_successful_at": "2026-09-07T16:38:10.900Z"
     },
     {
       "name": "Google AI",
       "url": "https://blog.google/technology/ai/rss/",
       "status": "ok",
-      "last_successful_at": "2026-09-05T14:47:46.934Z"
+      "last_successful_at": "2026-09-07T16:38:10.900Z"
     },
     {
       "name": "Microsoft Research",
       "url": "https://www.microsoft.com/en-us/research/feed/",
       "status": "ok",
-      "last_successful_at": "2026-09-05T14:47:46.934Z"
+      "last_successful_at": "2026-09-07T16:38:10.900Z"
     }
   ]
 }
