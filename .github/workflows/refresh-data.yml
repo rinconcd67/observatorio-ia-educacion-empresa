@@ -6,6 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
+  actions: write
   contents: write
   pull-requests: write
 
@@ -103,6 +104,13 @@ jobs:
           --head "$BRANCH_NAME"
           --title "data: actualización automática del observatorio"
           --body-file reports/update-candidate.md
+
+      - name: Disparar prueba obligatoria
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCH_NAME: automation/data-refresh-${{ github.run_id }}
+        run: gh workflow run ci.yml --ref "$BRANCH_NAME"
 
       - name: Registrar revisión manual
         if: steps.changes.outputs.changed == 'true' && steps.open-pr.outcome == 'failure'
