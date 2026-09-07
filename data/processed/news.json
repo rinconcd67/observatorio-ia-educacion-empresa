@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-05T14:47:46.934Z",
+  "checked_at": "2026-09-06T14:21:26.720Z",
   "items": [
     {
       "title": "Daybreak for Frontline Defenders: $1B to protect essential services",
@@ -79,19 +79,19 @@
       "name": "OpenAI",
       "url": "https://openai.com/news/rss.xml",
       "status": "ok",
-      "last_successful_at": "2026-09-05T14:47:46.934Z"
+      "last_successful_at": "2026-09-06T14:21:26.720Z"
     },
     {
       "name": "Google AI",
       "url": "https://blog.google/technology/ai/rss/",
       "status": "ok",
-      "last_successful_at": "2026-09-05T14:47:46.934Z"
+      "last_successful_at": "2026-09-06T14:21:26.720Z"
     },
     {
       "name": "Microsoft Research",
       "url": "https://www.microsoft.com/en-us/research/feed/",
       "status": "ok",
-      "last_successful_at": "2026-09-05T14:47:46.934Z"
+      "last_successful_at": "2026-09-06T14:21:26.720Z"
     }
   ]
 }
