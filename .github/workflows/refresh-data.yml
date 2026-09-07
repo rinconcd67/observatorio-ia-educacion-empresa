@@ -6,6 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
+  actions: write
   contents: write
   pull-requests: write
 
@@ -104,11 +105,29 @@ jobs:
           --title "data: actualización automática del observatorio"
           --body-file reports/update-candidate.md
 
+      - name: Disparar prueba obligatoria
+        id: dispatch-validation
+        continue-on-error: true
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCH_NAME: automation/data-refresh-${{ github.run_id }}
+        run: gh workflow run ci.yml --ref "$BRANCH_NAME"
+
       - name: Registrar revisión manual
-        if: steps.changes.outputs.changed == 'true' && steps.open-pr.outcome == 'failure'
+        if: always() && steps.changes.outputs.changed == 'true' && (steps.open-pr.outcome == 'failure' || steps.dispatch-validation.outcome == 'failure')
         env:
           BRANCH_NAME: automation/data-refresh-${{ github.run_id }}
         run: |
           echo "### Actualización lista para revisión manual" >> "$GITHUB_STEP_SUMMARY"
-          echo "La política del repositorio no permitió abrir el pull request automáticamente." >> "$GITHUB_STEP_SUMMARY"
+          if [ "${{ steps.open-pr.outcome }}" = "failure" ]; then
+            echo "La política del repositorio no permitió abrir el pull request automáticamente." >> "$GITHUB_STEP_SUMMARY"
+          fi
+          if [ "${{ steps.dispatch-validation.outcome }}" = "failure" ]; then
+            echo "La prueba obligatoria no pudo dispararse automáticamente. Ejecute Integridad del observatorio sobre la rama de revisión." >> "$GITHUB_STEP_SUMMARY"
+          fi
           echo "[Abrir comparación y crear pull request](https://github.com/${GITHUB_REPOSITORY}/compare/main...${BRANCH_NAME}?expand=1)" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Aplicar puerta de automatización del pull request
+        if: always() && steps.changes.outputs.changed == 'true' && steps.open-pr.outcome == 'success' && steps.dispatch-validation.outcome == 'failure'
+        run: exit 1

@@ -4,6 +4,7 @@ on:
     - cron: "30 11 * * *"
   workflow_dispatch:
 permissions:
+  actions: write
   contents: write
   pull-requests: write
 concurrency:
@@ -37,3 +38,4 @@ jobs:
           git commit -m "news: actualizar titulares oficiales de IA"
           git push origin "$NEWS_BRANCH"
           gh pr create --base main --head "$NEWS_BRANCH" --title "news: revisión diaria de titulares de IA" --body "Actualización de titulares RSS oficiales con fuente, fecha y estado de consulta. Requiere revisión antes de publicar."
+          gh workflow run ci.yml --ref "$NEWS_BRANCH"
