@@ -1,28 +1,28 @@
 {
-  "checked_at": "2026-09-05T14:47:46.934Z",
+  "checked_at": "2026-09-09T15:15:16.707Z",
   "items": [
     {
-      "title": "Daybreak for Frontline Defenders: $1B to protect essential services",
-      "url": "https://openai.com/index/daybreak-for-frontline-defenders",
-      "published_at": "2026-09-03T13:15:00.000Z",
+      "title": "How GPT-5.6 Sol helps run quantum computing experiments",
+      "url": "https://openai.com/index/codex-quantum-computing-experiments",
+      "published_at": "2026-09-08T17:00:00.000Z",
       "source": "OpenAI"
     },
     {
-      "title": "Playco cut manual fixes 50% prototyping games with GPT-6 Astra",
-      "url": "https://openai.com/index/playco-game-prototyping-with-astra",
-      "published_at": "2026-09-03T12:00:00.000Z",
+      "title": "The Work Now Within Reach",
+      "url": "https://openai.com/index/the-work-now-within-reach",
+      "published_at": "2026-09-08T13:00:00.000Z",
       "source": "OpenAI"
     },
     {
-      "title": "Legora reviewed 41 documents in minutes with GPT-6 Astra",
-      "url": "https://openai.com/index/legora-financial-statement-review-with-astra",
-      "published_at": "2026-09-03T12:00:00.000Z",
+      "title": "Introducing ChatGPT Images 2.5",
+      "url": "https://openai.com/index/introducing-chatgpt-images-2-5",
+      "published_at": "2026-09-08T11:30:00.000Z",
       "source": "OpenAI"
     },
     {
-      "title": "GPT-6 Astra: A new generation of intelligence",
-      "url": "https://openai.com/index/gpt-6-astra",
-      "published_at": "2026-09-03T11:00:00.000Z",
+      "title": "On the Navier–Stokes Millennium Prize Problem",
+      "url": "https://openai.com/index/navier-stokes-solution",
+      "published_at": "2026-09-08T10:00:00.000Z",
       "source": "OpenAI"
     },
     {
@@ -79,19 +79,19 @@
       "name": "OpenAI",
       "url": "https://openai.com/news/rss.xml",
       "status": "ok",
-      "last_successful_at": "2026-09-05T14:47:46.934Z"
+      "last_successful_at": "2026-09-09T15:15:16.707Z"
     },
     {
       "name": "Google AI",
       "url": "https://blog.google/technology/ai/rss/",
       "status": "ok",
-      "last_successful_at": "2026-09-05T14:47:46.934Z"
+      "last_successful_at": "2026-09-09T15:15:16.707Z"
     },
     {
       "name": "Microsoft Research",
       "url": "https://www.microsoft.com/en-us/research/feed/",
       "status": "ok",
-      "last_successful_at": "2026-09-05T14:47:46.934Z"
+      "last_successful_at": "2026-09-09T15:15:16.707Z"
     }
   ]
 }
