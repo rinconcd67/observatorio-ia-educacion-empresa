@@ -98,7 +98,7 @@ function renderLocale(shell, css, javascript, artifact, geojson, i18n, localeNam
 }
 
 async function packageDashboard() {
-  const [shell, css, javascript, artifact, geojson, i18n, packageDefinition] = await Promise.all([
+  const [shell, css, javascript, artifact, geojson, i18n, packageDefinition, library] = await Promise.all([
     readFile(join(templateDirectory, "shell.html"), "utf8"),
     readFile(join(templateDirectory, "app.css"), "utf8"),
     readFile(join(templateDirectory, "app.js"), "utf8"),
@@ -106,6 +106,7 @@ async function packageDashboard() {
     readJson(join(root, "data", "reference", "world.geo.json")),
     readJson(join(templateDirectory, "i18n.json")),
     readJson(join(root, "package.json")),
+    readJson(join(root, "data", "processed", "library.json")),
   ]);
 
   if (artifact.manifest.version !== 4 || artifact.snapshot.version !== 4) {
@@ -135,7 +136,11 @@ async function packageDashboard() {
   const cimaJs = await readFile(join(templateDirectory, "cima-context.js"), "utf8");
   const finance = await readJson(join(root, "data/processed/education-finance.json"));
   const financeJs = await readFile(join(templateDirectory, "education-finance.js"), "utf8");
-  const runtime = javascript + "\nwindow.OBSERVATORY_NEWS=" + safeJson(news) + ";\nwindow.OBSERVATORY_CHANGES=" + safeJson(change) + ";\n" + portal + "\nwindow.OBSERVATORY_EDUCATION_EVIDENCE=" + safeJson(educationEvidence) + ";\n" + educationJs + "\nwindow.OBSERVATORY_CIMA=" + safeJson({...cima, source_runs: undefined}) + ";\n" + cimaJs + "\nwindow.OBSERVATORY_FINANCE=" + safeJson({...finance, source_runs: undefined}) + ";\n" + financeJs;
+  const editorialFreshness = {
+    news_checked_at: news.checked_at,
+    library_reviewed_date: library.reviewed_date,
+  };
+  const runtime = "window.OBSERVATORY_NEWS=" + safeJson(news) + ";\nwindow.OBSERVATORY_CHANGES=" + safeJson(change) + ";\nwindow.OBSERVATORY_EDITORIAL_FRESHNESS=" + safeJson(editorialFreshness) + ";\n" + javascript + "\n" + portal + "\nwindow.OBSERVATORY_EDUCATION_EVIDENCE=" + safeJson(educationEvidence) + ";\n" + educationJs + "\nwindow.OBSERVATORY_CIMA=" + safeJson({...cima, source_runs: undefined}) + ";\n" + cimaJs + "\nwindow.OBSERVATORY_FINANCE=" + safeJson({...finance, source_runs: undefined}) + ";\n" + financeJs;
   const outputs = {};
   for (const localeName of ["es", "en"]) {
     const outputPath = join(dashboardDirectory, i18n[localeName].output);

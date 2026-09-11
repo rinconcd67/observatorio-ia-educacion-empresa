@@ -1,5 +1,5 @@
 {
-  "reviewed_date": "2026-09-05",
+  "reviewed_date": "2026-09-11",
   "items": [
     {
       "id": "unesco-teachers-2024",
@@ -494,6 +494,140 @@
       "license_note": "Enlace a la edición oficial; no se aloja el documento ni su portada. Consultar su licencia antes de reutilizarlo. / Link to the official edition; document and cover are not hosted. Check its licence before reuse.",
       "added_date": "2026-09-05",
       "reviewed_date": "2026-09-05"
+    },
+    {
+      "id": "unesco-algorithm-room-2026",
+      "organization": "UNESCO",
+      "year": 2026,
+      "original_title": "The algorithm in the room: Seeing and confronting the implications of AI for the future of education",
+      "original_language": "en",
+      "source_url": "https://www.unesco.org/en/articles/algorithm-room-seeing-and-confronting-implications-ai-future-education?hub=348",
+      "document_url": "https://unesdoc.unesco.org/ark:/48223/pf0000399335_eng",
+      "topic": "education",
+      "review_scope": "official_summary",
+      "license_note": "Enlace a la edición oficial; no se aloja el documento ni su portada. Consultar su licencia antes de reutilizarlo. / Link to the official edition; document and cover are not hosted. Check its licence before reuse.",
+      "es": {
+        "title": "El algoritmo en el aula: implicaciones de la IA para el futuro de la educación",
+        "summary": "Reúne 26 ensayos breves sobre cómo la IA y los sistemas algorítmicos pueden transformar la educación. Enfatiza agencia humana, autonomía, relaciones pedagógicas, evaluación y gobernanza pública. La ficha se basa en la presentación y metadatos oficiales; no reemplaza la lectura completa del documento.",
+        "takeaways": [
+          "IA como asunto educativo y político",
+          "Agencia humana y relaciones pedagógicas",
+          "Preguntas para gobernanza y evaluación"
+        ],
+        "audience": "Responsables de política educativa, investigadores, docentes líderes y equipos de innovación"
+      },
+      "en": {
+        "title": "The algorithm in the room: AI and the future of education",
+        "summary": "Brings together 26 short essays on how AI and algorithmic systems may transform education. It emphasises human agency, autonomy, pedagogical relationships, assessment and public governance. This record is based on the official presentation and metadata; it does not replace full-document review.",
+        "takeaways": [
+          "AI as an educational and public-policy issue",
+          "Human agency and pedagogical relationships",
+          "Questions for governance and assessment"
+        ],
+        "audience": "Education policymakers, researchers, teacher leaders and innovation teams"
+      },
+      "added_date": "2026-09-11",
+      "reviewed_date": "2026-09-11"
+    },
+    {
+      "id": "unesco-common-good-ai-education-2026",
+      "organization": "UNESCO",
+      "year": 2026,
+      "original_title": "Ministerial Statement: Sustaining education as a common good in the age of AI",
+      "original_language": "en",
+      "source_url": "https://www.unesco.org/en/articles/education-ministers-call-education-remain-common-good-age-ai-unescos-digital-learning-week?hub=195885",
+      "topic": "policy",
+      "review_scope": "official_summary",
+      "license_note": "Enlace a la nota y declaración oficiales; no se aloja el documento ni su portada. Consultar su licencia antes de reutilizarlo. / Link to the official note and statement; document and cover are not hosted. Check its licence before reuse.",
+      "es": {
+        "title": "Sostener la educación como bien común en la era de la IA",
+        "summary": "Declaración ministerial presentada durante Digital Learning Week 2026. Propone gobernanza deliberativa, rendición pública, protección de estudiantes, agencia docente, gobernanza de datos, inclusión y evaluación de costos antes de adoptar IA educativa. La ficha se basa en nota oficial y referencia de la declaración.",
+        "takeaways": [
+          "Educación como derecho humano y bien común",
+          "Supervisión pública y gobernanza deliberativa",
+          "Protección de estudiantes y agencia docente"
+        ],
+        "audience": "Ministerios, líderes educativos, administradores escolares y equipos de cumplimiento"
+      },
+      "en": {
+        "title": "Sustaining education as a common good in the age of AI",
+        "summary": "Ministerial statement presented during Digital Learning Week 2026. It calls for deliberative governance, public accountability, learner safeguards, teacher agency, data governance, inclusion and total-cost assessment before adopting AI in education. This record is based on the official note and statement reference.",
+        "takeaways": [
+          "Education as a human right and common good",
+          "Public oversight and deliberative governance",
+          "Learner safeguards and teacher agency"
+        ],
+        "audience": "Ministries, education leaders, school administrators and compliance teams"
+      },
+      "added_date": "2026-09-11",
+      "reviewed_date": "2026-09-11"
+    },
+    {
+      "id": "oecd-skills-ai-age-2026",
+      "organization": "OCDE",
+      "year": 2026,
+      "original_title": "Skills in the AI age",
+      "original_language": "en",
+      "source_url": "https://www.oecd.org/en/publications/skills-in-the-ai-age_972bd15e-en.html",
+      "doi": "10.1787/972bd15e-en",
+      "topic": "business",
+      "review_scope": "official_summary",
+      "license_note": "Enlace a la edición oficial; no se aloja el documento ni su portada. Consultar su licencia antes de reutilizarlo. / Link to the official edition; document and cover are not hosted. Check its licence before reuse.",
+      "es": {
+        "title": "Habilidades en la era de la IA",
+        "summary": "Documento de política sobre cómo la IA transforma mercados laborales y necesidades de habilidades. Conecta productividad, crecimiento, riesgos de desplazamiento y diferencias sectoriales o regionales con respuestas de formación y política pública. La ficha se basa en resumen oficial.",
+        "takeaways": [
+          "Transformación de habilidades y empleo",
+          "Riesgos de desplazamiento si la transición no se gestiona",
+          "Políticas de formación para trabajadores y empresas"
+        ],
+        "audience": "Líderes de talento, instituciones educativas, empresas y responsables de política laboral"
+      },
+      "en": {
+        "title": "Skills in the AI age",
+        "summary": "Policy paper on how AI is reshaping labour markets and skill needs. It connects productivity, growth, displacement risks and sectoral or regional differences with training and public-policy responses. This record is based on the official abstract.",
+        "takeaways": [
+          "Changing skills and employment",
+          "Displacement risks if transition is unmanaged",
+          "Training policy for workers and firms"
+        ],
+        "audience": "Talent leaders, education institutions, companies and labour-policy makers"
+      },
+      "added_date": "2026-09-11",
+      "reviewed_date": "2026-09-11"
+    },
+    {
+      "id": "oecd-pisa-ai-reading-2026",
+      "organization": "OCDE",
+      "year": 2026,
+      "original_title": "PISA findings on artificial intelligence use, reading skills and learning",
+      "original_language": "en",
+      "source_url": "https://www.oecd.org/en/blogs/2026/09/pisa-findings-on-artificial-intelligence-use-reading-skills-and-learning.html",
+      "topic": "education",
+      "review_scope": "official_summary",
+      "license_note": "Enlace al recurso oficial; no se aloja video, blog ni portada. Consultar su licencia antes de reutilizarlo. / Link to the official resource; video, blog and cover are not hosted. Check its licence before reuse.",
+      "es": {
+        "title": "Hallazgos PISA sobre uso de IA, lectura y aprendizaje",
+        "summary": "Recurso oficial de OCDE que conecta el uso de IA con lectura y aprendizaje. Refuerza que la alfabetización lectora y el pensamiento crítico siguen siendo necesarios para evaluar información generada por IA. La ficha se basa en la presentación oficial del recurso.",
+        "takeaways": [
+          "Uso de IA y resultados de aprendizaje",
+          "Lectura crítica para evaluar respuestas de IA",
+          "Vínculo con PISA 2025"
+        ],
+        "audience": "Docentes, equipos curriculares, responsables de evaluación y líderes de alfabetización digital"
+      },
+      "en": {
+        "title": "PISA findings on AI use, reading skills and learning",
+        "summary": "OECD official resource linking AI use with reading and learning. It reinforces that reading literacy and critical thinking remain necessary to evaluate AI-generated information. This record is based on the official resource presentation.",
+        "takeaways": [
+          "AI use and learning outcomes",
+          "Critical reading to evaluate AI responses",
+          "Connection with PISA 2025"
+        ],
+        "audience": "Teachers, curriculum teams, assessment leaders and digital-literacy leads"
+      },
+      "added_date": "2026-09-11",
+      "reviewed_date": "2026-09-11"
     }
   ]
 }
