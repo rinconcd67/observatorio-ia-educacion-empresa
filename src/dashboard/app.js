@@ -521,9 +521,19 @@
     document.getElementById("governance-search").addEventListener("input", (event) => renderGovernanceTable(event.target.value));
   }
 
+  function formatDate(value) {
+    const date = new Date(value);
+    return Number.isNaN(date.valueOf()) ? String(value ?? "") : date.toLocaleDateString(locale.dateLocale, { day: "numeric", month: "short", year: "numeric" });
+  }
+
   function initialize() {
-    const generated = new Date(artifact.snapshot.generatedAt);
-    const freshness = t("updated", { date: generated.toLocaleDateString(locale.dateLocale, { day: "numeric", month: "short", year: "numeric" }) });
+    const dataDate = formatDate(artifact.snapshot.generatedAt);
+    const editorialDates = [
+      window.OBSERVATORY_EDITORIAL_FRESHNESS?.news_checked_at,
+      window.OBSERVATORY_EDITORIAL_FRESHNESS?.library_reviewed_date,
+    ].filter(Boolean).map((value) => new Date(value)).filter((date) => !Number.isNaN(date.valueOf()));
+    const editorialDate = editorialDates.length ? formatDate(new Date(Math.max(...editorialDates)).toISOString()) : dataDate;
+    const freshness = t("freshnessDetailed", { dataDate, editorialDate });
     document.getElementById("freshness-label").textContent = freshness;
     document.getElementById("footer-freshness").textContent = freshness;
     initializeControls();

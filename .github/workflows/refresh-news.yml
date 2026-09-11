@@ -5,6 +5,7 @@ on:
   workflow_dispatch:
 permissions:
   actions: write
+  checks: write
   contents: write
   pull-requests: write
 concurrency:
@@ -38,4 +39,31 @@ jobs:
           git commit -m "news: actualizar titulares oficiales de IA"
           git push origin "$NEWS_BRANCH"
           gh pr create --base main --head "$NEWS_BRANCH" --title "news: revisión diaria de titulares de IA" --body "Actualización de titulares RSS oficiales con fuente, fecha y estado de consulta. Requiere revisión antes de publicar."
+          HEAD_SHA="$(git rev-parse HEAD)"
           gh workflow run ci.yml --ref "$NEWS_BRANCH"
+          RUN_STATUS=""
+          RUN_CONCLUSION=""
+          RUN_URL=""
+          for attempt in {1..30}; do
+            RUN_JSON="$(gh run list --workflow ci.yml --branch "$NEWS_BRANCH" --event workflow_dispatch --json databaseId,headSha,status,conclusion,url --limit 10 | jq -c --arg head "$HEAD_SHA" '[.[] | select(.headSha == $head)] | first // {}')"
+            RUN_STATUS="$(printf '%s' "$RUN_JSON" | jq -r '.status // empty')"
+            RUN_CONCLUSION="$(printf '%s' "$RUN_JSON" | jq -r '.conclusion // empty')"
+            RUN_URL="$(printf '%s' "$RUN_JSON" | jq -r '.url // empty')"
+            if [ "$RUN_STATUS" = "completed" ]; then break; fi
+            sleep 10
+          done
+          if [ "$RUN_STATUS" != "completed" ]; then
+            RUN_CONCLUSION="failure"
+            RUN_URL="https://github.com/${GITHUB_REPOSITORY}/actions/workflows/ci.yml"
+          fi
+          CHECK_CONCLUSION="$RUN_CONCLUSION"
+          if [ "$CHECK_CONCLUSION" != "success" ]; then CHECK_CONCLUSION="failure"; fi
+          gh api "repos/${GITHUB_REPOSITORY}/check-runs" \
+            -f name="validate" \
+            -f head_sha="$HEAD_SHA" \
+            -f status="completed" \
+            -f conclusion="$CHECK_CONCLUSION" \
+            -f details_url="$RUN_URL" \
+            -f "output[title]=Integridad del observatorio" \
+            -f "output[summary]=Validación obligatoria ejecutada por workflow_dispatch sobre ${HEAD_SHA}."
+          test "$RUN_CONCLUSION" = "success"
