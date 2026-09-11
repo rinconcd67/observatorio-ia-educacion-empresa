@@ -44,3 +44,12 @@ Todas las fichas nuevas declaran `review_scope: official_summary`; no se atribuy
 - No se refrescaron estadísticas globales porque no correspondía revisión mensual ni había nueva evidencia estadística controlada.
 - No se modificó branch protection en GitHub.
 - No se hizo publicación directa.
+
+
+## Cierre de publicación
+
+- PR #31 fusionado por vía normal el 2026-09-11, merge commit `999c76a9db1a0db3db9f8d7512c6d1acc7df93dc`.
+- `Integridad del observatorio` en `main`: run `34621053064`, success.
+- `Publicar observatorio` en `main`: run `34621053032`, success.
+- Verificación pública: portada ES/EN HTTP200, sitemap con 50 URLs, biblioteca pública con 19 fichas y ventana de noticias visible con fecha editorial 11 sept 2026.
+- La fecha estadística global sigue siendo 4 sept 2026; la actualización editorial de noticias y biblioteca corresponde al 11 sept 2026.
