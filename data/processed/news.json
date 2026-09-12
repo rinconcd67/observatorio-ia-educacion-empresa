@@ -1,6 +1,18 @@
 {
-  "checked_at": "2026-09-11T15:09:20.046Z",
+  "checked_at": "2026-09-12T14:19:12.132Z",
   "items": [
+    {
+      "title": "Cognition helps Devin test its own work with GPT‑6 Astra",
+      "url": "https://openai.com/index/cognition-devin-testing-with-astra",
+      "published_at": "2026-09-11T16:00:00.000Z",
+      "source": "OpenAI"
+    },
+    {
+      "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users",
+      "url": "https://openai.com/index/scaling-storage-one-billion-users-part-one",
+      "published_at": "2026-09-11T10:00:00.000Z",
+      "source": "OpenAI"
+    },
     {
       "title": "How a researcher uses Codex and ChatGPT to search for new antimicrobial molecules",
       "url": "https://openai.com/index/using-codex-chatgpt-to-search-for-new-antimicrobials",
@@ -17,18 +29,6 @@
       "title": "Now everyone can put data to work",
       "url": "https://openai.com/index/put-data-to-work",
       "published_at": "2026-09-10T15:00:00.000Z",
-      "source": "OpenAI"
-    },
-    {
-      "title": "Introducing ChatGPT for Financial Services",
-      "url": "https://openai.com/index/introducing-chatgpt-financial-services",
-      "published_at": "2026-09-10T07:00:00.000Z",
-      "source": "OpenAI"
-    },
-    {
-      "title": "Expanding AI access and cyber defense for federal, state, local, and tribal governments",
-      "url": "https://openai.com/index/expanding-ai-access-us-government",
-      "published_at": "2026-09-10T07:00:00.000Z",
       "source": "OpenAI"
     },
     {
@@ -79,19 +79,19 @@
       "name": "OpenAI",
       "url": "https://openai.com/news/rss.xml",
       "status": "ok",
-      "last_successful_at": "2026-09-11T15:09:20.046Z"
+      "last_successful_at": "2026-09-12T14:19:12.132Z"
     },
     {
       "name": "Google AI",
       "url": "https://blog.google/technology/ai/rss/",
       "status": "ok",
-      "last_successful_at": "2026-09-11T15:09:20.046Z"
+      "last_successful_at": "2026-09-12T14:19:12.132Z"
     },
     {
       "name": "Microsoft Research",
       "url": "https://www.microsoft.com/en-us/research/feed/",
       "status": "ok",
-      "last_successful_at": "2026-09-11T15:09:20.046Z"
+      "last_successful_at": "2026-09-12T14:19:12.132Z"
     }
   ]
 }
