@@ -1,10 +1,34 @@
 {
-  "checked_at": "2026-09-11T15:09:20.046Z",
+  "checked_at": "2026-09-14T17:01:34.415Z",
   "items": [
     {
-      "title": "How a researcher uses Codex and ChatGPT to search for new antimicrobial molecules",
-      "url": "https://openai.com/index/using-codex-chatgpt-to-search-for-new-antimicrobials",
-      "published_at": "2026-09-10T16:00:00.000Z",
+      "title": "DevFest is back",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/devfest2026/",
+      "published_at": "2026-09-14T16:00:00.000Z",
+      "source": "Google AI"
+    },
+    {
+      "title": "How Fyxer built an AI executive assistant people trust",
+      "url": "https://openai.com/index/fyxer",
+      "published_at": "2026-09-14T12:00:00.000Z",
+      "source": "OpenAI"
+    },
+    {
+      "title": "Perplexity trusts GPT-6 Astra with end-to-end systems",
+      "url": "https://openai.com/index/perplexity-improving-accuracy-with-astra",
+      "published_at": "2026-09-14T00:00:00.000Z",
+      "source": "OpenAI"
+    },
+    {
+      "title": "Cognition helps Devin test its own work with GPT‑6 Astra",
+      "url": "https://openai.com/index/cognition-devin-testing-with-astra",
+      "published_at": "2026-09-11T16:00:00.000Z",
+      "source": "OpenAI"
+    },
+    {
+      "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users",
+      "url": "https://openai.com/index/scaling-storage-one-billion-users-part-one",
+      "published_at": "2026-09-11T10:00:00.000Z",
       "source": "OpenAI"
     },
     {
@@ -12,24 +36,6 @@
       "url": "https://blog.google/products-and-platforms/products/search/running-race-training-tips/",
       "published_at": "2026-09-10T16:00:00.000Z",
       "source": "Google AI"
-    },
-    {
-      "title": "Now everyone can put data to work",
-      "url": "https://openai.com/index/put-data-to-work",
-      "published_at": "2026-09-10T15:00:00.000Z",
-      "source": "OpenAI"
-    },
-    {
-      "title": "Introducing ChatGPT for Financial Services",
-      "url": "https://openai.com/index/introducing-chatgpt-financial-services",
-      "published_at": "2026-09-10T07:00:00.000Z",
-      "source": "OpenAI"
-    },
-    {
-      "title": "Expanding AI access and cyber defense for federal, state, local, and tribal governments",
-      "url": "https://openai.com/index/expanding-ai-access-us-government",
-      "published_at": "2026-09-10T07:00:00.000Z",
-      "source": "OpenAI"
     },
     {
       "title": "Get ready for the game with new football features in Search",
@@ -41,12 +47,6 @@
       "title": "Recreating a 70-year love story frame by frame",
       "url": "https://blog.google/innovation-and-ai/technology/ai/love-rendered-film/",
       "published_at": "2026-09-09T16:00:00.000Z",
-      "source": "Google AI"
-    },
-    {
-      "title": "Proactive cyber defense for governments and enterprises",
-      "url": "https://blog.google/innovation-and-ai/technology/safety-security/fairwind-program/",
-      "published_at": "2026-09-02T15:40:00.000Z",
       "source": "Google AI"
     },
     {
@@ -79,19 +79,19 @@
       "name": "OpenAI",
       "url": "https://openai.com/news/rss.xml",
       "status": "ok",
-      "last_successful_at": "2026-09-11T15:09:20.046Z"
+      "last_successful_at": "2026-09-14T17:01:34.415Z"
     },
     {
       "name": "Google AI",
       "url": "https://blog.google/technology/ai/rss/",
       "status": "ok",
-      "last_successful_at": "2026-09-11T15:09:20.046Z"
+      "last_successful_at": "2026-09-14T17:01:34.415Z"
     },
     {
       "name": "Microsoft Research",
       "url": "https://www.microsoft.com/en-us/research/feed/",
       "status": "ok",
-      "last_successful_at": "2026-09-11T15:09:20.046Z"
+      "last_successful_at": "2026-09-14T17:01:34.415Z"
     }
   ]
 }
