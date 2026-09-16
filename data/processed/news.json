@@ -1,53 +1,53 @@
 {
-  "checked_at": "2026-09-11T15:09:20.046Z",
+  "checked_at": "2026-09-16T15:30:28.474Z",
   "items": [
     {
-      "title": "How a researcher uses Codex and ChatGPT to search for new antimicrobial molecules",
-      "url": "https://openai.com/index/using-codex-chatgpt-to-search-for-new-antimicrobials",
-      "published_at": "2026-09-10T16:00:00.000Z",
+      "title": "Reimagining advertising with AI",
+      "url": "https://openai.com/index/reimagining-advertising-with-ai",
+      "published_at": "2026-09-16T13:00:00.000Z",
       "source": "OpenAI"
     },
     {
-      "title": "3 ways to prep for your next big race with Search",
-      "url": "https://blog.google/products-and-platforms/products/search/running-race-training-tips/",
-      "published_at": "2026-09-10T16:00:00.000Z",
+      "title": "AI for Societal Impact",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/ai-for-societal-impact/",
+      "published_at": "2026-09-15T16:00:00.000Z",
       "source": "Google AI"
     },
     {
-      "title": "Now everyone can put data to work",
-      "url": "https://openai.com/index/put-data-to-work",
-      "published_at": "2026-09-10T15:00:00.000Z",
+      "title": "Building AI to accelerate science and improve lives",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/ai-applications-science-people/",
+      "published_at": "2026-09-15T16:00:00.000Z",
+      "source": "Google AI"
+    },
+    {
+      "title": "AI for everyone in every language",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/ai-for-every-language/",
+      "published_at": "2026-09-15T16:00:00.000Z",
+      "source": "Google AI"
+    },
+    {
+      "title": "New insights from Google’s AI & Economy ATLAS",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/ai-economy-atlas-september-2026/",
+      "published_at": "2026-09-15T13:00:00.000Z",
+      "source": "Google AI"
+    },
+    {
+      "title": "How Fyxer built an AI executive assistant people trust",
+      "url": "https://openai.com/index/fyxer",
+      "published_at": "2026-09-14T12:00:00.000Z",
       "source": "OpenAI"
     },
     {
-      "title": "Introducing ChatGPT for Financial Services",
-      "url": "https://openai.com/index/introducing-chatgpt-financial-services",
-      "published_at": "2026-09-10T07:00:00.000Z",
+      "title": "Perplexity trusts GPT-6 Astra with end-to-end systems",
+      "url": "https://openai.com/index/perplexity-improving-accuracy-with-astra",
+      "published_at": "2026-09-14T00:00:00.000Z",
       "source": "OpenAI"
     },
     {
-      "title": "Expanding AI access and cyber defense for federal, state, local, and tribal governments",
-      "url": "https://openai.com/index/expanding-ai-access-us-government",
-      "published_at": "2026-09-10T07:00:00.000Z",
+      "title": "Cognition helps Devin test its own work with GPT‑6 Astra",
+      "url": "https://openai.com/index/cognition-devin-testing-with-astra",
+      "published_at": "2026-09-11T16:00:00.000Z",
       "source": "OpenAI"
-    },
-    {
-      "title": "Get ready for the game with new football features in Search",
-      "url": "https://blog.google/products-and-platforms/products/search/football-features-google-search/",
-      "published_at": "2026-09-09T16:00:00.000Z",
-      "source": "Google AI"
-    },
-    {
-      "title": "Recreating a 70-year love story frame by frame",
-      "url": "https://blog.google/innovation-and-ai/technology/ai/love-rendered-film/",
-      "published_at": "2026-09-09T16:00:00.000Z",
-      "source": "Google AI"
-    },
-    {
-      "title": "Proactive cyber defense for governments and enterprises",
-      "url": "https://blog.google/innovation-and-ai/technology/safety-security/fairwind-program/",
-      "published_at": "2026-09-02T15:40:00.000Z",
-      "source": "Google AI"
     },
     {
       "title": "GigaPath-Flash and GigaTIME-Flash: Toward population-scale discovery with efficient pathology foundation models",
@@ -79,19 +79,19 @@
       "name": "OpenAI",
       "url": "https://openai.com/news/rss.xml",
       "status": "ok",
-      "last_successful_at": "2026-09-11T15:09:20.046Z"
+      "last_successful_at": "2026-09-16T15:30:28.474Z"
     },
     {
       "name": "Google AI",
       "url": "https://blog.google/technology/ai/rss/",
       "status": "ok",
-      "last_successful_at": "2026-09-11T15:09:20.046Z"
+      "last_successful_at": "2026-09-16T15:30:28.474Z"
     },
     {
       "name": "Microsoft Research",
       "url": "https://www.microsoft.com/en-us/research/feed/",
       "status": "ok",
-      "last_successful_at": "2026-09-11T15:09:20.046Z"
+      "last_successful_at": "2026-09-16T15:30:28.474Z"
     }
   ]
 }
