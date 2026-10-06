@@ -1,77 +1,77 @@
 {
-  "checked_at": "2026-09-11T15:09:20.046Z",
+  "checked_at": "2026-10-06T17:21:53.936Z",
   "items": [
     {
-      "title": "How a researcher uses Codex and ChatGPT to search for new antimicrobial molecules",
-      "url": "https://openai.com/index/using-codex-chatgpt-to-search-for-new-antimicrobials",
-      "published_at": "2026-09-10T16:00:00.000Z",
-      "source": "OpenAI"
-    },
-    {
-      "title": "3 ways to prep for your next big race with Search",
-      "url": "https://blog.google/products-and-platforms/products/search/running-race-training-tips/",
-      "published_at": "2026-09-10T16:00:00.000Z",
-      "source": "Google AI"
-    },
-    {
-      "title": "Now everyone can put data to work",
-      "url": "https://openai.com/index/put-data-to-work",
-      "published_at": "2026-09-10T15:00:00.000Z",
-      "source": "OpenAI"
-    },
-    {
-      "title": "Introducing ChatGPT for Financial Services",
-      "url": "https://openai.com/index/introducing-chatgpt-financial-services",
-      "published_at": "2026-09-10T07:00:00.000Z",
-      "source": "OpenAI"
-    },
-    {
-      "title": "Expanding AI access and cyber defense for federal, state, local, and tribal governments",
-      "url": "https://openai.com/index/expanding-ai-access-us-government",
-      "published_at": "2026-09-10T07:00:00.000Z",
-      "source": "OpenAI"
-    },
-    {
-      "title": "Get ready for the game with new football features in Search",
-      "url": "https://blog.google/products-and-platforms/products/search/football-features-google-search/",
-      "published_at": "2026-09-09T16:00:00.000Z",
-      "source": "Google AI"
-    },
-    {
-      "title": "Recreating a 70-year love story frame by frame",
-      "url": "https://blog.google/innovation-and-ai/technology/ai/love-rendered-film/",
-      "published_at": "2026-09-09T16:00:00.000Z",
-      "source": "Google AI"
-    },
-    {
-      "title": "Proactive cyber defense for governments and enterprises",
-      "url": "https://blog.google/innovation-and-ai/technology/safety-security/fairwind-program/",
-      "published_at": "2026-09-02T15:40:00.000Z",
-      "source": "Google AI"
-    },
-    {
-      "title": "GigaPath-Flash and GigaTIME-Flash: Toward population-scale discovery with efficient pathology foundation models",
-      "url": "https://www.microsoft.com/en-us/research/blog/gigapath-flash-and-gigatime-flash-toward-population-scale-discovery-with-efficient-pathology-foundation-models/",
-      "published_at": "2026-08-31T16:00:00.000Z",
+      "title": "What AI gets wrong and what failure teaches us",
+      "url": "https://www.microsoft.com/en-us/research/podcast/what-ai-gets-wrong-and-what-failure-teaches-us/",
+      "published_at": "2026-10-06T16:19:06.000Z",
       "source": "Microsoft Research"
     },
     {
-      "title": "Broadening access to Skala creates a faster path to predictive DFT",
-      "url": "https://www.microsoft.com/en-us/research/blog/broadening-access-to-skala-creates-a-faster-path-to-predictive-dft/",
-      "published_at": "2026-08-20T16:00:00.000Z",
+      "title": "Atlassian and OpenAI expand partnership to turn enterprise knowledge into action",
+      "url": "https://openai.com/index/atlassian-partnership",
+      "published_at": "2026-10-06T16:00:00.000Z",
+      "source": "OpenAI"
+    },
+    {
+      "title": "Our approach to EU text provenance rules",
+      "url": "https://openai.com/index/eu-text-provenance",
+      "published_at": "2026-10-05T15:00:00.000Z",
+      "source": "OpenAI"
+    },
+    {
+      "title": "Building advertising for the way people use AI",
+      "url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement",
+      "published_at": "2026-10-05T10:00:00.000Z",
+      "source": "OpenAI"
+    },
+    {
+      "title": "A model guide for the GPT-6 family",
+      "url": "https://openai.com/index/practical-guide-building-gpt-6",
+      "published_at": "2026-10-02T16:15:00.000Z",
+      "source": "OpenAI"
+    },
+    {
+      "title": "The latest AI news we announced in September 2026",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/",
+      "published_at": "2026-10-02T15:00:00.000Z",
+      "source": "Google AI"
+    },
+    {
+      "title": "Forecasting space weather risks on power grids",
+      "url": "https://www.microsoft.com/en-us/research/blog/forecasting-space-weather-risks-on-power-grids/",
+      "published_at": "2026-09-30T16:00:00.000Z",
       "source": "Microsoft Research"
     },
     {
-      "title": "MindTopo reveals VLMs’ spatial reasoning abilities",
-      "url": "https://www.microsoft.com/en-us/research/blog/mindtopo-reveals-vlms-spatial-reasoning-abilities/",
-      "published_at": "2026-08-12T16:00:00.000Z",
+      "title": "Introducing Quine: An AI research system designed for the complexity of biology",
+      "url": "https://www.microsoft.com/en-us/research/blog/introducing-quine-an-ai-research-system-designed-for-the-complexity-of-biology/",
+      "published_at": "2026-09-29T14:00:02.000Z",
       "source": "Microsoft Research"
     },
     {
-      "title": "Introducing CARE-X: Towards Clinically Useful Radiology VLMs with Auxiliary Supervision, Reward-Aligned Learning, and Tool-Augmented Measurement",
-      "url": "https://www.microsoft.com/en-us/research/blog/introducing-care-x-towards-clinically-useful-radiology-vlms-with-auxiliary-supervision-reward-aligned-learning-and-tool-augmented-measurement/",
-      "published_at": "2026-08-11T16:00:00.000Z",
+      "title": "One year in: How Microsoft Research Asia – Singapore is advancing research, partnership and talent for real-world impact",
+      "url": "https://www.microsoft.com/en-us/research/blog/one-year-in-how-microsoft-research-asia-singapore-is-advancing-research-partnership-and-talent-for-real-world-impact/",
+      "published_at": "2026-09-28T21:00:00.000Z",
       "source": "Microsoft Research"
+    },
+    {
+      "title": "Watch the winning trailer from the Future Vision XPRIZE, The Gifted.",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/winner-future-vision-xprize/",
+      "published_at": "2026-09-28T19:00:00.000Z",
+      "source": "Google AI"
+    },
+    {
+      "title": "Google Beam expands with new regions, partners, and customers",
+      "url": "https://blog.google/innovation-and-ai/technology/research/google-beam-expansion/",
+      "published_at": "2026-09-23T18:00:00.000Z",
+      "source": "Google AI"
+    },
+    {
+      "title": "New experts join Google’s AI & Economy team",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/expanding-ai-economy-research-bench/",
+      "published_at": "2026-09-18T14:00:00.000Z",
+      "source": "Google AI"
     }
   ],
   "sources": [
@@ -79,19 +79,19 @@
       "name": "OpenAI",
       "url": "https://openai.com/news/rss.xml",
       "status": "ok",
-      "last_successful_at": "2026-09-11T15:09:20.046Z"
+      "last_successful_at": "2026-10-06T17:21:53.936Z"
     },
     {
       "name": "Google AI",
       "url": "https://blog.google/technology/ai/rss/",
       "status": "ok",
-      "last_successful_at": "2026-09-11T15:09:20.046Z"
+      "last_successful_at": "2026-10-06T17:21:53.936Z"
     },
     {
       "name": "Microsoft Research",
       "url": "https://www.microsoft.com/en-us/research/feed/",
       "status": "ok",
-      "last_successful_at": "2026-09-11T15:09:20.046Z"
+      "last_successful_at": "2026-10-06T17:21:53.936Z"
     }
   ]
 }
