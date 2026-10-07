@@ -29,16 +29,24 @@ jobs:
       - name: Preparar propuesta de revisión
         env:
           GH_TOKEN: ${{ github.token }}
-          NEWS_BRANCH: automation/news-${{ github.run_id }}
+          NEWS_BRANCH: automation/news-review
         run: |
+          # Una sola propuesta abierta: la rama fija se reescribe desde main en cada ejecución.
           if git diff --quiet -- data/processed/news.json; then exit 0; fi
+          if git fetch origin "$NEWS_BRANCH" 2>/dev/null && git diff --quiet FETCH_HEAD -- data/processed/news.json; then exit 0; fi
           git config user.name "observatorio-automation"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git checkout -b "$NEWS_BRANCH"
+          git checkout -B "$NEWS_BRANCH"
           git add data/processed/news.json dashboard/index.html dashboard/en/index.html
           git commit -m "news: actualizar titulares oficiales de IA"
-          git push origin "$NEWS_BRANCH"
-          gh pr create --base main --head "$NEWS_BRANCH" --title "news: revisión diaria de titulares de IA" --body "Actualización de titulares RSS oficiales con fuente, fecha y estado de consulta. Requiere revisión antes de publicar."
+          git push --force origin "$NEWS_BRANCH"
+          PR_BODY="Titulares RSS oficiales al $(date -u +%Y-%m-%d), con fuente, fecha y estado de consulta. Esta propuesta se reescribe en cada ejecución; siempre contiene la versión más reciente. Requiere revisión antes de publicar."
+          PR_NUMBER="$(gh pr list --head "$NEWS_BRANCH" --state open --json number --jq '.[0].number // empty')"
+          if [ -n "$PR_NUMBER" ]; then
+            gh pr edit "$PR_NUMBER" --body "$PR_BODY"
+          else
+            gh pr create --base main --head "$NEWS_BRANCH" --title "news: revisión de titulares de IA" --body "$PR_BODY"
+          fi
           HEAD_SHA="$(git rev-parse HEAD)"
           gh workflow run ci.yml --ref "$NEWS_BRANCH"
           RUN_STATUS=""
