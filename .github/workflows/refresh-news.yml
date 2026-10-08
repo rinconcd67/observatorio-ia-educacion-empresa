@@ -32,9 +32,10 @@ jobs:
           NEWS_BRANCH: automation/news-review
         run: |
           # Autolimpieza del modelo anterior (una propuesta y una rama automation/news-<run_id> por ejecución).
-          # Solo actúa sobre ramas que cumplen ese patrón: no toca la rama fija, ni propuestas de personas ni de Dependabot.
-          gh pr list --state open --limit 200 --json number,headRefName \
-            | jq -r '.[] | select(.headRefName | test("^automation/news-[0-9]+$")) | "\(.number) \(.headRefName)"' \
+          # Tres condiciones acumulativas: rama con ese patrón, autor github-actions y propuesta del propio
+          # repositorio (no fork). Así no toca la rama fija, ni propuestas de personas ni de Dependabot.
+          gh pr list --state open --limit 200 --json number,headRefName,author,isCrossRepository \
+            | jq -r '.[] | select(.isCrossRepository | not) | select(.author.login == "app/github-actions") | select(.headRefName | test("^automation/news-[0-9]+$")) | "\(.number) \(.headRefName)"' \
             | while read -r number branch; do
                 gh pr close "$number" --delete-branch \
                   --comment "Sustituida por la propuesta única de titulares (rama ${NEWS_BRANCH}), que se actualiza en cada ejecución." \
