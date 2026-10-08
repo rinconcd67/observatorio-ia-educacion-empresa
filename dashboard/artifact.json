@@ -5,7 +5,7 @@
     "surface": "dashboard",
     "title": "Observatorio Global de IA en Educación y Empresa",
     "description": "Preparación, adopción, uso y contexto de la inteligencia artificial por país y región.",
-    "generatedAt": "2026-09-04T23:58:34.204Z",
+    "generatedAt": "2026-10-08T17:01:25.000Z",
     "filters": [
       {
         "id": "country",
@@ -592,7 +592,7 @@
   },
   "snapshot": {
     "version": 4,
-    "generatedAt": "2026-09-04T23:58:34.204Z",
+    "generatedAt": "2026-10-08T17:01:25.000Z",
     "status": "ready",
     "datasets": {
       "summary": [
@@ -25792,7 +25792,7 @@
         {
           "source": "eurostat_enterprise_ai",
           "status": "ok",
-          "updated_at": "2026-09-04T23:58:34.800Z",
+          "updated_at": "2026-10-08T17:02:33.209Z",
           "policy_mode": "all_available",
           "edition_year": null,
           "requested_start_year": null,
@@ -25805,7 +25805,7 @@
         {
           "source": "eurostat_formal_education_ai",
           "status": "ok",
-          "updated_at": "2026-09-04T23:58:34.973Z",
+          "updated_at": "2026-10-08T17:02:33.433Z",
           "policy_mode": "since_year",
           "edition_year": null,
           "requested_start_year": 2025,
@@ -25818,7 +25818,7 @@
         {
           "source": "eurostat_student_ai",
           "status": "ok",
-          "updated_at": "2026-09-04T23:58:35.133Z",
+          "updated_at": "2026-10-08T17:02:33.646Z",
           "policy_mode": "since_year",
           "edition_year": null,
           "requested_start_year": 2025,
@@ -25831,46 +25831,46 @@
         {
           "source": "oecd_ict_businesses",
           "status": "ok",
-          "updated_at": "2026-09-04T23:58:35.209Z",
+          "updated_at": "2026-10-08T17:02:33.739Z",
           "policy_mode": "open_from",
           "edition_year": null,
           "requested_start_year": 2023,
           "requested_end_year": null,
           "returned_min_year": 2023,
           "returned_max_year": 2025,
-          "checksum": "246dc8d00471",
+          "checksum": "52c12a888480",
           "checksum_scope": "stored_file_bytes"
         },
         {
           "source": "oecd_individual_genai",
           "status": "ok",
-          "updated_at": "2026-09-04T23:58:35.241Z",
+          "updated_at": "2026-10-08T17:02:33.780Z",
           "policy_mode": "open_from",
           "edition_year": null,
           "requested_start_year": 2025,
           "requested_end_year": null,
           "returned_min_year": 2025,
           "returned_max_year": 2025,
-          "checksum": "61df1b893c94",
+          "checksum": "3d24702cb574",
           "checksum_scope": "stored_file_bytes"
         },
         {
           "source": "world_bank_countries",
           "status": "ok",
-          "updated_at": "2026-09-04T23:58:35.368Z",
+          "updated_at": "2026-10-08T17:02:34.023Z",
           "policy_mode": "all_available",
           "edition_year": null,
           "requested_start_year": null,
           "requested_end_year": null,
           "returned_min_year": null,
           "returned_max_year": null,
-          "checksum": "d29d57f8adf9",
+          "checksum": "c9acf3932785",
           "checksum_scope": "stored_file_bytes"
         },
         {
           "source": "world_bank_internet",
           "status": "ok",
-          "updated_at": "2026-09-04T23:58:35.413Z",
+          "updated_at": "2026-10-08T17:02:34.082Z",
           "policy_mode": "from_year_to_run_year",
           "edition_year": null,
           "requested_start_year": 2020,
@@ -25883,7 +25883,7 @@
         {
           "source": "world_bank_tertiary",
           "status": "ok",
-          "updated_at": "2026-09-04T23:58:35.471Z",
+          "updated_at": "2026-10-08T17:02:34.147Z",
           "policy_mode": "from_year_to_run_year",
           "edition_year": null,
           "requested_start_year": 2020,
@@ -25896,7 +25896,7 @@
         {
           "source": "world_bank_gdp_per_capita",
           "status": "ok",
-          "updated_at": "2026-09-04T23:58:35.520Z",
+          "updated_at": "2026-10-08T17:02:34.201Z",
           "policy_mode": "from_year_to_run_year",
           "edition_year": null,
           "requested_start_year": 2020,
@@ -25909,7 +25909,7 @@
         {
           "source": "imf_aipi",
           "status": "ok",
-          "updated_at": "2026-09-04T23:58:32.350Z",
+          "updated_at": "2026-10-08T17:02:01.809Z",
           "policy_mode": "pinned_edition",
           "edition_year": 2023,
           "requested_start_year": 2023,
@@ -25922,14 +25922,14 @@
         {
           "source": "oxford_government_ai_readiness_2025",
           "status": "ok",
-          "updated_at": "2026-09-04T23:58:34.051Z",
+          "updated_at": "2026-10-08T17:02:03.678Z",
           "policy_mode": "pinned_edition",
           "edition_year": 2025,
           "requested_start_year": 2025,
           "requested_end_year": 2025,
           "returned_min_year": 2025,
           "returned_max_year": 2025,
-          "checksum": "6d2e4837251a",
+          "checksum": "8a600ac3fabc",
           "checksum_scope": "stored_file_bytes"
         }
       ]
@@ -25945,7 +25945,7 @@
         "language": "sql",
         "sql": "SELECT * FROM read_json_auto('data/processed/observations.json')",
         "description": "Normaliza países, periodos, unidades y procedencia de las APIs activas.",
-        "executed_at": "2026-09-04T23:58:34.204Z",
+        "executed_at": "2026-10-08T17:01:25.000Z",
         "tables_used": [
           "data/processed/snapshot.json"
         ],
@@ -25965,7 +25965,7 @@
         "language": "sql",
         "sql": "SELECT * FROM read_json_auto('data/processed/observations.json') WHERE source_id IN ('oecd_ict_businesses', 'oecd_individual_genai')",
         "description": "Amplía la cobertura de adopción empresarial y uso individual de IA generativa. Eurostat tiene precedencia en coincidencias del mismo país y año.",
-        "executed_at": "2026-09-04T23:58:34.204Z",
+        "executed_at": "2026-10-08T17:01:25.000Z",
         "tables_used": [
           "DSD_ICT_B@DF_BUSINESSES",
           "DSD_ICT_HH_IND@DF_IND"
@@ -25988,7 +25988,7 @@
         "sql": "SELECT * FROM read_json_auto('data/processed/observations.json') WHERE source_id = 'imf_aipi'",
         "url": "https://www.imf.org/external/datamapper/aipidata.xlsx",
         "description": "Índice indicativo de preparación para IA y contribuciones de cuatro dimensiones estructurales, edición 2023.",
-        "executed_at": "2026-09-04T23:58:34.204Z",
+        "executed_at": "2026-10-08T17:01:25.000Z",
         "tables_used": [
           "aipidata.xlsx!AIPI"
         ],
@@ -26008,7 +26008,7 @@
         "language": "sql",
         "sql": "SELECT * FROM read_json_auto('data/processed/observations.json') WHERE source_id = 'oxford_government_ai_readiness_2025'",
         "description": "Índice de preparación gubernamental para la IA y seis pilares, edición 2025; escala de 0 a 100.",
-        "executed_at": "2026-09-04T23:58:34.204Z",
+        "executed_at": "2026-10-08T17:01:25.000Z",
         "tables_used": [
           "index-data-2025"
         ],
@@ -26030,7 +26030,7 @@
         "sql": "SELECT * FROM read_json_auto('data/processed/observations.json') WHERE source_id = 'eurostat_enterprise_ai'",
         "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/isoc_eb_ai?lang=en&freq=A&size_emp=GE10&nace_r2=C10-S951_X_K&indic_is=E_AI_TANY&unit=PC_ENT",
         "description": "Empresas con diez o más personas empleadas que usan al menos una tecnología de IA, por país y año.",
-        "executed_at": "2026-09-04T23:58:34.204Z",
+        "executed_at": "2026-10-08T17:01:25.000Z",
         "tables_used": [
           "Eurostat.isoc_eb_ai"
         ],
@@ -26052,7 +26052,7 @@
         "sql": "SELECT * FROM read_json_auto('data/processed/observations.json') WHERE source_id = 'eurostat_formal_education_ai'",
         "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/isoc_ai_iaiu?lang=en&freq=A&ind_type=IND_TOTAL&indic_is=I_IUAIFE&unit=PC_IND&sinceTimePeriod=2025",
         "description": "Individuos que usaron herramientas de IA generativa para educación formal; consulta abierta desde 2025.",
-        "executed_at": "2026-09-04T23:58:34.204Z",
+        "executed_at": "2026-10-08T17:01:25.000Z",
         "tables_used": [
           "Eurostat.isoc_ai_iaiu"
         ],
@@ -26074,7 +26074,7 @@
         "sql": "SELECT * FROM read_json_auto('data/processed/observations.json') WHERE source_id = 'eurostat_student_ai'",
         "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/isoc_ai_iaiu?lang=en&freq=A&ind_type=STUD&indic_is=I_IUAI&unit=PC_IND&sinceTimePeriod=2025",
         "description": "Estudiantes que usaron herramientas de IA generativa; consulta abierta desde 2025.",
-        "executed_at": "2026-09-04T23:58:34.204Z",
+        "executed_at": "2026-10-08T17:01:25.000Z",
         "tables_used": [
           "Eurostat.isoc_ai_iaiu"
         ],
@@ -26095,7 +26095,7 @@
         "language": "sql",
         "sql": "SELECT * FROM read_json_auto('data/processed/observations.json') WHERE source_id LIKE 'world_bank_%'",
         "description": "Última observación disponible desde 2020 hasta el año UTC de ejecución para conectividad, matrícula terciaria y PIB per cápita.",
-        "executed_at": "2026-09-04T23:58:34.204Z",
+        "executed_at": "2026-10-08T17:01:25.000Z",
         "tables_used": [
           "IT.NET.USER.ZS",
           "SE.TER.ENRR",

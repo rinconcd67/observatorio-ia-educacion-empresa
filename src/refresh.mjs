@@ -212,8 +212,11 @@ async function downloadSources(sources, { asOf }) {
     try {
       const format = source.format ?? "json";
       request = resolveSourceRequest(source, { asOf });
+      // `text/csv` a secas provoca HTTP 500 en el SDMX de la OCDE y 406 en Eurostat cuando el
+      // formato ya viene fijado en la URL; la alternativa `*/*;q=0.1` conserva la preferencia por
+      // CSV y deja negociar al servidor (verificado 2026-10-08 contra ambas APIs).
       const resource = await fetchResource(request.url, {
-        headers: { accept: format === "csv" ? "text/csv" : "application/json" },
+        headers: { accept: format === "csv" ? "text/csv, */*;q=0.1" : "application/json" },
       });
       const payload = decodeResource(resource.bytes, format);
       const rawPath = join(rawDirectory, `${source.id}.${format}`);
