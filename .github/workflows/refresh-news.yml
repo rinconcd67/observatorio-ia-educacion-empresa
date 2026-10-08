@@ -26,6 +26,27 @@ jobs:
         run: npm run refresh:news
       - name: Construir y validar
         run: npm run build && npm run check && npm run check:publication
+      - name: Cerrar propuestas y ramas antiguas de titulares
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NEWS_BRANCH: automation/news-review
+        run: |
+          # Autolimpieza del modelo anterior (una propuesta y una rama automation/news-<run_id> por ejecución).
+          # Solo actúa sobre ramas que cumplen ese patrón: no toca la rama fija, ni propuestas de personas ni de Dependabot.
+          gh pr list --state open --limit 200 --json number,headRefName \
+            | jq -r '.[] | select(.headRefName | test("^automation/news-[0-9]+$")) | "\(.number) \(.headRefName)"' \
+            | while read -r number branch; do
+                gh pr close "$number" --delete-branch \
+                  --comment "Sustituida por la propuesta única de titulares (rama ${NEWS_BRANCH}), que se actualiza en cada ejecución." \
+                  || echo "aviso: no se pudo cerrar la propuesta #${number} (${branch})"
+              done
+          gh api "repos/${GITHUB_REPOSITORY}/branches?per_page=100" --paginate --jq '.[].name' \
+            | { grep -E '^automation/news-[0-9]+$' || true; } \
+            | while read -r branch; do
+                gh api -X DELETE "repos/${GITHUB_REPOSITORY}/git/refs/heads/${branch}" >/dev/null \
+                  && echo "rama borrada: ${branch}" \
+                  || echo "aviso: no se pudo borrar la rama ${branch}"
+              done
       - name: Preparar propuesta de revisión
         env:
           GH_TOKEN: ${{ github.token }}
