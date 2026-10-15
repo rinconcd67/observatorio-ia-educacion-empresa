@@ -34,3 +34,11 @@
 - Contextos relevantes: checkout original preservado, 175 archivos sin diferencias; 30 páginas públicas coinciden con el build.
 - Próximos hitos: mantener fuentes y condiciones; seguimiento de indexación independiente de publicación.
 </memory>
+
+<memory project="Observatorio Skills SEO" fecha="2026-10-15">
+- Estado actual: auditoría pública completada; causa del error no demostrada.
+- Decisiones clave: conservar XML sin cambios ante ausencia de defecto demostrado; evidencia privada fuera del repositorio.
+- Versiones anteriores: Skills publicado f8686b3.
+- Contextos relevantes: HTTP 200, XML válido, 94 URL únicas y 30 Skills; checkout original preservado.
+- Próximos hitos: confirmar procesamiento con evidencia del servicio correspondiente.
+</memory>

@@ -1,0 +1,23 @@
+[
+  {
+    "url": "https://rinconcd67.github.io/robots.txt",
+    "status": 404
+  },
+  {
+    "url": "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/sitemap.xml",
+    "status": 200,
+    "content_type": "application/xml",
+    "bytes": 53197,
+    "sha256": "2a5f84750d726003eee1f42a7fa0b80f1dc5dffd54af543231a13bd949097a16",
+    "urls": 94,
+    "unique_urls": 94,
+    "skills_urls": 30
+  },
+  {
+    "url": "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/skills/",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 30475,
+    "sha256": "443cc18b47e0f9516b15428a24b42c5651dee6d66faf0643e0bade008f4ff75d"
+  }
+]
