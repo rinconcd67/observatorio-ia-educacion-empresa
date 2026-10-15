@@ -29,7 +29,10 @@ export function normalizeAipiRows(rows, source) {
     const [country, iso3, group] = row;
     if (!country || !/^[A-Z]{3}$/.test(String(iso3))) continue;
     for (const [column, metricId, metricName, unit] of METRICS) {
-      const value = Number(row[column]);
+      const rawValue = row[column];
+      if (rawValue == null || (typeof rawValue === "string" && !rawValue.trim())) continue;
+      if (typeof rawValue !== "number" && typeof rawValue !== "string") continue;
+      const value = Number(rawValue);
       if (!Number.isFinite(value)) continue;
       observations.push({
         iso3: String(iso3),
@@ -91,6 +94,8 @@ export async function importAipi(options = {}) {
     checksum_algorithm: "sha256",
     raw_size_bytes: resource.bytes.byteLength,
     raw_content_type: resource.contentType,
+    http_status: resource.status,
+    http_attempts: resource.attempts,
     etag: resource.etag,
     last_modified: resource.lastModified,
     raw_path: "data/raw/imf_aipi.xlsx",

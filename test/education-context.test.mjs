@@ -28,3 +28,10 @@ test('Finance raw response hashes and null preservation',()=>{
  assert.ok(finance.observations.some(r=>r.value===null));
  const r=rows[0];assert.throws(()=>normalizeFinance([r,r]));assert.throws(()=>normalizeFinance([{...r,value:-1}]));
 });
+
+
+test('Finance accepts the execution year and rejects future years',()=>{
+ const row={countryiso3code:'COL',country:{value:'Colombia',id:'CO'},indicator:{id:'SE.XPD.TOTL.GD.ZS'},date:'2026',value:null};
+ assert.equal(normalizeFinance([row],2026)[0].year,2026);
+ assert.throws(()=>normalizeFinance([row],2025),/Unexpected finance series/);
+});

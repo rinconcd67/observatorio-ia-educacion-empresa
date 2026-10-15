@@ -88,7 +88,8 @@
         "title": "TIC Educação 2025 — methodology",
         "url": "https://cetic.br/pt/noticia/tic-educacao-2025-mostra-que-8-em-cada-10-escolas-brasileiras-debatem-impacto-do-uso-de-telas-na-saude-mental-dos-alunos/"
       }
-    ]
+    ],
+    "reviewed_date": "2026-09-11"
   },
   {
     "id": "ai-teachers-latin-america",
@@ -185,7 +186,8 @@
         "title": "AI competency framework for teachers",
         "url": "https://www.unesco.org/en/articles/ai-competency-framework-teachers"
       }
-    ]
+    ],
+    "reviewed_date": "2026-09-11"
   },
   {
     "id": "ai-business",
@@ -270,6 +272,7 @@
         "title": "OECD — ICT access and usage by businesses (selected AI series)",
         "url": "https://sdmx.oecd.org/public/rest/data/OECD.STI.DEP,DSD_ICT_B@DF_BUSINESSES,1.0/.A.G14_B.PT_ENT._T.S_GE10?startPeriod=2023&dimensionAtObservation=AllDimensions&format=csvfilewithlabels"
       }
-    ]
+    ],
+    "reviewed_date": "2026-09-11"
   }
 ]

@@ -57,6 +57,6 @@ La automatización valida integridad y cobertura, pero no autoriza por sí sola 
 ## Trazabilidad
 
 - Línea base: 2026-09-04T23:58:34.204Z
-- Candidato: 2026-10-08T17:01:25.000Z
+- Candidato: 2026-10-15T14:28:16.842Z
 - Autor responsable: César David Rincón Godoy
 - ORCID: https://orcid.org/0009-0003-2112-3851

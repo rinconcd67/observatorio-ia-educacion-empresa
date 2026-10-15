@@ -85,6 +85,27 @@
         "learning",
         "education finance"
       ]
+    },
+    {
+      "id": "unesco_ai_education_consultation",
+      "organization": "UNESCO",
+      "url": "https://www.unesco.org/en/digital-education/artificial-intelligence/consultation",
+      "topics": [
+        "education",
+        "governance",
+        "procurement",
+        "safety"
+      ]
+    },
+    {
+      "id": "unesco_iesalc",
+      "organization": "UNESCO IESALC",
+      "url": "https://www.iesalc.unesco.org/en",
+      "topics": [
+        "higher education",
+        "Latin America",
+        "artificial intelligence"
+      ]
     }
   ],
   "policy": {

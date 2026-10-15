@@ -1,5 +1,5 @@
 {
-  "reviewed_date": "2026-09-11",
+  "reviewed_date": "2026-10-15",
   "items": [
     {
       "id": "unesco-teachers-2024",
@@ -31,7 +31,8 @@
         ],
         "audience": "Teacher educators and curriculum leaders"
       },
-      "added_date": "2026-09-04"
+      "added_date": "2026-09-04",
+      "reviewed_date": "2026-09-11"
     },
     {
       "id": "unesco-students-2024",
@@ -63,7 +64,8 @@
         ],
         "audience": "Teachers and school curriculum teams"
       },
-      "added_date": "2026-09-04"
+      "added_date": "2026-09-04",
+      "reviewed_date": "2026-09-11"
     },
     {
       "id": "unesco-genai-guidance-2023",
@@ -95,7 +97,8 @@
         ],
         "audience": "Education leaders and researchers"
       },
-      "added_date": "2026-09-04"
+      "added_date": "2026-09-04",
+      "reviewed_date": "2026-09-11"
     },
     {
       "id": "unesco-ai-ethics-2022",
@@ -127,7 +130,8 @@
         ],
         "audience": "Policy leaders and ethics committees"
       },
-      "added_date": "2026-09-04"
+      "added_date": "2026-09-04",
+      "reviewed_date": "2026-09-11"
     },
     {
       "id": "bid-ai-education-2025",
@@ -159,7 +163,8 @@
         ],
         "audience": "Education authorities and programme managers"
       },
-      "added_date": "2026-09-04"
+      "added_date": "2026-09-04",
+      "reviewed_date": "2026-09-11"
     },
     {
       "id": "bid-ai-infrastructure-2026",
@@ -191,7 +196,8 @@
         ],
         "audience": "Digital planners and investment decision-makers"
       },
-      "added_date": "2026-09-04"
+      "added_date": "2026-09-04",
+      "reviewed_date": "2026-09-11"
     },
     {
       "id": "bid-ai-framework-2025",
@@ -223,7 +229,8 @@
         ],
         "audience": "Development and institutional strategy leaders"
       },
-      "added_date": "2026-09-04"
+      "added_date": "2026-09-04",
+      "reviewed_date": "2026-09-11"
     },
     {
       "id": "bid-responsible-projects-2021",
@@ -255,7 +262,8 @@
         ],
         "audience": "Public managers and multidisciplinary teams"
       },
-      "added_date": "2026-09-04"
+      "added_date": "2026-09-04",
+      "reviewed_date": "2026-09-11"
     },
     {
       "id": "oecd-digital-education-2026",
@@ -287,7 +295,8 @@
         ],
         "audience": "Researchers, teachers and education leaders"
       },
-      "added_date": "2026-09-04"
+      "added_date": "2026-09-04",
+      "reviewed_date": "2026-09-11"
     },
     {
       "id": "oecd-digital-education-2023",
@@ -319,7 +328,8 @@
         ],
         "audience": "Education planners and analysts"
       },
-      "added_date": "2026-09-04"
+      "added_date": "2026-09-04",
+      "reviewed_date": "2026-09-11"
     },
     {
       "id": "oecd-sme-ai-adoption-2025",
@@ -351,7 +361,8 @@
         ],
         "audience": "Business leaders and enterprise policymakers"
       },
-      "added_date": "2026-09-04"
+      "added_date": "2026-09-04",
+      "reviewed_date": "2026-09-11"
     },
     {
       "id": "oecd-sme-workforce-2025",
@@ -383,7 +394,8 @@
         ],
         "audience": "SME leaders and labour analysts"
       },
-      "added_date": "2026-09-04"
+      "added_date": "2026-09-04",
+      "reviewed_date": "2026-09-11"
     },
     {
       "id": "mit-ai-education-report-2026",
@@ -628,6 +640,234 @@
       },
       "added_date": "2026-09-11",
       "reviewed_date": "2026-09-11"
+    },
+    {
+      "id": "unesco-icom-ai-museums-2026",
+      "organization": "UNESCO",
+      "year": 2026,
+      "original_title": "UNESCO-ICOM 2026 report on the use of artificial intelligence in museums",
+      "original_language": "en",
+      "source_url": "https://www.unesco.org/en/articles/unesco-icom-global-survey-finds-museums-embracing-ai-governance-and-capacity-lag-behind",
+      "topic": "business",
+      "review_scope": "official_summary",
+      "reviewed_date": "2026-10-15",
+      "published_date": "2026-09-17",
+      "added_date": "2026-10-15",
+      "license_note": "Enlace oficial; sin redistribución del documento. Reseñas traducidas editorialmente. / Official link; document not redistributed. Editorially translated reviews.",
+      "es": {
+        "title": "Informe UNESCO-ICOM 2026 sobre el uso de IA en los museos",
+        "summary": "La nota oficial presenta una encuesta de más de 400 museos de 90 países: 57 % declara usar IA y 55 % carece de política, estrategia o directrices internas. Son resultados de los museos participantes, no estimaciones para todas las organizaciones. La reseña se basa en la nota oficial; no se revisó el informe completo.",
+        "takeaways": [
+          "Adopción y gobernanza institucional",
+          "Capacidades y protección de datos"
+        ],
+        "audience": "Directivos de museos y responsables de transformación digital"
+      },
+      "en": {
+        "title": "UNESCO-ICOM 2026 report on the use of artificial intelligence in museums",
+        "summary": "The official announcement describes a survey of over 400 museums in 90 countries: 57% report using AI and 55% lack an internal policy, strategy or guidelines. These findings concern responding museums, rather than all organisations. This review uses the official announcement, not the full report.",
+        "takeaways": [
+          "Institutional adoption and governance",
+          "Capacity and data protection"
+        ],
+        "audience": "Museum leaders and digital transformation teams"
+      }
+    },
+    {
+      "id": "oecd-agentic-ai-organisations-2026",
+      "organization": "OCDE",
+      "year": 2026,
+      "original_title": "Agentic AI in organisations: Early insights from practitioner interviews",
+      "original_language": "en",
+      "source_url": "https://www.oecd.org/en/publications/agentic-ai-in-organisations_1257a26f-en.html",
+      "topic": "business",
+      "review_scope": "official_summary",
+      "reviewed_date": "2026-10-15",
+      "published_date": "2026-09-16",
+      "added_date": "2026-10-15",
+      "license_note": "Enlace oficial; sin redistribución del documento. Reseñas traducidas editorialmente. / Official link; document not redistributed. Editorially translated reviews.",
+      "es": {
+        "title": "IA agéntica en las organizaciones: primeros hallazgos de entrevistas con profesionales",
+        "summary": "Examina desarrollo, despliegue y gobernanza de sistemas de IA agéntica mediante entrevistas a organizaciones de distintas regiones y sectores. Aporta evidencia cualitativa temprana sobre aplicaciones, beneficios y dificultades; no constituye una encuesta representativa de adopción. Se revisaron ficha y resumen oficiales, no el documento completo.",
+        "takeaways": [
+          "Experiencia de profesionales",
+          "Gobernanza de sistemas agénticos"
+        ],
+        "audience": "Equipos de innovación, operaciones y gestión de riesgos"
+      },
+      "en": {
+        "title": "Agentic AI in organisations: Early insights from practitioner interviews",
+        "summary": "Examines the development, deployment and governance of agentic AI through interviews with organisations across regions and sectors. It offers early qualitative evidence on applications, benefits and challenges, rather than a representative adoption survey. The official record and abstract were reviewed, not the full paper.",
+        "takeaways": [
+          "Practitioner experience",
+          "Agentic system governance"
+        ],
+        "audience": "Innovation, operations and risk teams"
+      },
+      "doi": "10.1787/1257a26f-en"
+    },
+    {
+      "id": "unesco-iesalc-ai-higher-education-lac-2026",
+      "organization": "UNESCO",
+      "year": 2026,
+      "original_title": "AI Implementation in Higher Education in Latin America and the Caribbean",
+      "original_language": "en",
+      "source_url": "https://www.iesalc.unesco.org/en/articles/ai-implementation-higher-education-latin-america-and-caribbean",
+      "topic": "education",
+      "review_scope": "official_summary",
+      "reviewed_date": "2026-10-15",
+      "published_date": "2026-09-08",
+      "added_date": "2026-10-15",
+      "license_note": "Enlace oficial; sin redistribución del documento. Reseñas traducidas editorialmente. / Official link; document not redistributed. Editorially translated reviews.",
+      "es": {
+        "title": "Implementación de la IA en la educación superior de América Latina y el Caribe",
+        "summary": "La ficha oficial describe un estudio de 200 instituciones de 19 países: 87 % declara usar IA en alguna actividad y 26 % cuenta con estrategia formal. La brecha orienta preguntas sobre gobernanza y capacidades, sin representar a todas las universidades regionales. Se revisó el resumen oficial, no el informe íntegro; el portal ofrece ediciones inglesa y española.",
+        "takeaways": [
+          "Evidencia regional con muestra explícita",
+          "Adopción, estrategia y alfabetización digital"
+        ],
+        "audience": "Líderes universitarios, ministerios e investigadores"
+      },
+      "en": {
+        "title": "AI Implementation in Higher Education in Latin America and the Caribbean",
+        "summary": "The official record describes 200 institutions in 19 countries: 87% report AI use in some activity and 26% have a formal strategy. The gap informs governance and capacity questions without representing all regional universities. Review is limited to the official summary; the portal offers English and Spanish editions.",
+        "takeaways": [
+          "Regional evidence with an explicit sample",
+          "Adoption, strategy and digital literacy"
+        ],
+        "audience": "University leaders, ministries and researchers"
+      }
+    },
+    {
+      "id": "bid-plataformas-educativas-2026",
+      "organization": "BID",
+      "year": 2026,
+      "original_title": "Plataformas educativas: Aspectos clave para el análisis, selección y uso efectivo en América Latina y el Caribe",
+      "original_language": "es",
+      "source_url": "https://publications.iadb.org/es/plataformas-educativas-aspectos-clave-para-el-analisis-seleccion-y-uso-efectivo-en-america-latina-y",
+      "topic": "education",
+      "review_scope": "official_summary",
+      "reviewed_date": "2026-10-15",
+      "published_date": "2026-09",
+      "added_date": "2026-10-15",
+      "license_note": "Enlace oficial; sin redistribución del documento. Reseñas traducidas editorialmente. / Official link; document not redistributed. Editorially translated reviews.",
+      "es": {
+        "title": "Plataformas educativas: análisis, selección y uso efectivo en América Latina y el Caribe",
+        "summary": "Propone evaluar plataformas según necesidades de usuarios, enseñanza, contexto y evidencia de eficacia. El resumen oficial también aborda implementación a escala, sostenibilidad y oportunidades y riesgos de IA generativa. La ficha ofrece versiones ES/EN/PT; esta reseña se basa en el resumen, sin lectura íntegra de la nota técnica.",
+        "takeaways": [
+          "Selección basada en necesidades y evidencia",
+          "Implementación sostenible"
+        ],
+        "audience": "Equipos pedagógicos, compras educativas y ministerios"
+      },
+      "en": {
+        "title": "Educational platforms: analysis, selection and effective use in Latin America and the Caribbean",
+        "summary": "Offers an evaluation framework covering user needs, teaching, implementation context and evidence of effectiveness. The official abstract also addresses implementation at scale, sustainability and generative AI opportunities and risks. The record offers Spanish, English and Portuguese versions. This review covers the abstract, not the complete technical note.",
+        "takeaways": [
+          "Needs-based, evidence-informed selection",
+          "Sustainable implementation"
+        ],
+        "audience": "Teaching teams, education procurement teams and ministries"
+      },
+      "doi": "10.18235/0014491"
+    },
+    {
+      "id": "oecd-ai-employment-belgium-greece-2026",
+      "organization": "OCDE",
+      "year": 2026,
+      "original_title": "AI and Digitalisation for Employment Support in Belgium and Greece: New Tools to Support Minimum Income Beneficiaries",
+      "original_language": "en",
+      "source_url": "https://www.oecd.org/en/publications/ai-and-digitalisation-for-employment-support-in-belgium-and-greece_78164e71-en.html",
+      "topic": "business",
+      "review_scope": "official_summary",
+      "reviewed_date": "2026-10-15",
+      "published_date": "2026-09-24",
+      "added_date": "2026-10-15",
+      "license_note": "Enlace oficial; sin redistribución del documento. Reseñas traducidas editorialmente. / Official link; document not redistributed. Editorially translated reviews.",
+      "es": {
+        "title": "IA y digitalización para apoyar el empleo en Bélgica y Grecia",
+        "summary": "Propone herramientas de recomendación laboral y profesional con IA para beneficiarios de ingresos mínimos. Parte de datos administrativos y experiencias de servicios de empleo. Son propuestas para apoyar servicios existentes, no resultados ya demostrados de implementación. Se revisaron ficha, resumen y resumen ejecutivo oficiales, no el informe completo.",
+        "takeaways": [
+          "Apoyo a trayectorias profesionales",
+          "Datos y servicios coordinados"
+        ],
+        "audience": "Servicios de empleo, responsables de datos y formación profesional"
+      },
+      "en": {
+        "title": "AI and Digitalisation for Employment Support in Belgium and Greece: New Tools to Support Minimum Income Beneficiaries",
+        "summary": "Proposes AI-enhanced job and career recommendation tools for minimum-income beneficiaries. It draws on administrative data and employment-service experience. The tools are proposals to support existing services, not demonstrated implementation outcomes. Review covers the official record, abstract and executive summary, not the full report.",
+        "takeaways": [
+          "Career progression support",
+          "Data and coordinated services"
+        ],
+        "audience": "Employment services, data teams and vocational training leaders"
+      },
+      "doi": "10.1787/78164e71-en"
+    },
+    {
+      "id": "bid-ai-counseling-chile-2026",
+      "organization": "BID",
+      "year": 2026,
+      "original_title": "Scaling Up Counseling with AI: Evidence from a Nationwide Experiment",
+      "original_language": "en",
+      "source_url": "https://publications.iadb.org/en/scaling-counseling-ai-evidence-nationwide-experiment",
+      "topic": "education",
+      "review_scope": "official_summary",
+      "reviewed_date": "2026-10-15",
+      "published_date": "2026-10",
+      "added_date": "2026-10-15",
+      "license_note": "Enlace oficial; sin redistribución del documento. Reseñas traducidas editorialmente. / Official link; document not redistributed. Editorially translated reviews.",
+      "es": {
+        "title": "Escalar la orientación con IA: evidencia de un experimento nacional",
+        "summary": "Compara el chatbot Kai con orientadores humanos en un experimento chileno de unos 42.000 estudiantes. El resumen informa efectos sobre preferencias por carreras de educación entre quienes ya tenían interés inicial. No demuestra una mejora general del aprendizaje ni superioridad universal de la IA. Se revisaron ficha y resumen, sin tablas ni anexos.",
+        "takeaways": [
+          "Evaluación experimental de orientación",
+          "Resultados delimitados por población y objetivo"
+        ],
+        "audience": "Investigadores educativos y responsables de orientación"
+      },
+      "en": {
+        "title": "Scaling Up Counseling with AI: Evidence from a Nationwide Experiment",
+        "summary": "Compares the Kai chatbot with human counsellors in a Chilean experiment involving about 42,000 students. The abstract reports effects on education-major choices among those initially interested. It does not establish general learning gains or universal AI superiority. Review covers the official record and abstract, excluding tables and appendices.",
+        "takeaways": [
+          "Experimental evaluation of counselling",
+          "Population- and outcome-specific findings"
+        ],
+        "audience": "Education researchers and counselling leaders"
+      },
+      "doi": "10.18235/0014549"
+    },
+    {
+      "id": "unesco-ethical-impact-assessment-2023",
+      "organization": "UNESCO",
+      "year": 2023,
+      "original_title": "Ethical Impact Assessment: A Tool of the Recommendation on the Ethics of Artificial Intelligence",
+      "original_language": "en",
+      "source_url": "https://www.unesco.org/en/articles/ethical-impact-assessment-tool-recommendation-ethics-artificial-intelligence",
+      "topic": "ethics",
+      "review_scope": "official_summary",
+      "reviewed_date": "2026-10-15",
+      "published_date": "2023-08-28",
+      "added_date": "2026-10-15",
+      "license_note": "Enlace a ficha oficial; documento no redistribuido. / Link to official record; document not redistributed.",
+      "es": {
+        "title": "Evaluación de impacto ético: herramienta de la Recomendación sobre la Ética de la IA",
+        "summary": "Herramienta para examinar sistemas de IA antes y después de su despliegue mediante preguntas sobre procesos, transparencia e impactos. La descripción oficial orienta su uso en compras y desarrollo de sistemas. Se revisó esa descripción, no el documento completo. Es una recuperación de 2023, no una nueva publicación de 2026.",
+        "takeaways": [
+          "Evaluación durante el ciclo de vida",
+          "Preguntas para compras y desarrollo responsable"
+        ],
+        "audience": "Equipos de compras, desarrolladores y responsables de gobernanza"
+      },
+      "en": {
+        "title": "Ethical Impact Assessment: A Tool of the Recommendation on the Ethics of Artificial Intelligence",
+        "summary": "A tool for examining AI systems before and after deployment through questions about processes, transparency and impacts. The official description addresses procurement and system development. This review covers that description, not the complete document. It is a recovered 2023 publication, not a new 2026 release.",
+        "takeaways": [
+          "Assessment across the lifecycle",
+          "Questions for procurement and responsible development"
+        ],
+        "audience": "Procurement teams, developers and governance leaders"
+      }
     }
   ]
 }
