@@ -16,8 +16,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
-      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: 22
           cache: npm
@@ -41,27 +41,27 @@ jobs:
                   --comment "Sustituida por la propuesta única de titulares (rama ${NEWS_BRANCH}), que se actualiza en cada ejecución." \
                   || echo "aviso: no se pudo cerrar la propuesta #${number} (${branch})"
               done
-          gh api "repos/${GITHUB_REPOSITORY}/branches?per_page=100" --paginate --jq '.[].name' \
-            | { grep -E '^automation/news-[0-9]+$' || true; } \
-            | while read -r branch; do
-                gh api -X DELETE "repos/${GITHUB_REPOSITORY}/git/refs/heads/${branch}" >/dev/null \
-                  && echo "rama borrada: ${branch}" \
-                  || echo "aviso: no se pudo borrar la rama ${branch}"
-              done
       - name: Preparar propuesta de revisión
         env:
           GH_TOKEN: ${{ github.token }}
           NEWS_BRANCH: automation/news-review
         run: |
           # Una sola propuesta abierta: la rama fija se reescribe desde main en cada ejecución.
-          if git diff --quiet -- data/processed/news.json; then exit 0; fi
-          if git fetch origin "$NEWS_BRANCH" 2>/dev/null && git diff --quiet FETCH_HEAD -- data/processed/news.json; then exit 0; fi
+          NEWS_UNCHANGED="$(node .github/scripts/news-equivalent.mjs HEAD data/processed/news.json)"
+          if [ "$NEWS_UNCHANGED" = "true" ]; then exit 0; fi
+          # Capture the expected remote OID explicitly: shallow checkout has no review tracking ref.
+          REMOTE_OID="$(git ls-remote --heads origin "refs/heads/$NEWS_BRANCH" | cut -f1)"
+          if [ -n "$REMOTE_OID" ]; then
+            git fetch origin "$REMOTE_OID"
+            NEWS_UNCHANGED="$(node .github/scripts/news-equivalent.mjs FETCH_HEAD data/processed/news.json)"
+            if [ "$NEWS_UNCHANGED" = "true" ]; then exit 0; fi
+          fi
           git config user.name "observatorio-automation"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -B "$NEWS_BRANCH"
           git add data/processed/news.json dashboard/index.html dashboard/en/index.html
           git commit -m "news: actualizar titulares oficiales de IA"
-          git push --force origin "$NEWS_BRANCH"
+          bash .github/scripts/push-review-branch.sh "$NEWS_BRANCH" "$REMOTE_OID"
           PR_BODY="Titulares RSS oficiales al $(date -u +%Y-%m-%d), con fuente, fecha y estado de consulta. Esta propuesta se reescribe en cada ejecución; siempre contiene la versión más reciente. Requiere revisión antes de publicar."
           PR_NUMBER="$(gh pr list --head "$NEWS_BRANCH" --state open --json number --jq '.[0].number // empty')"
           if [ -n "$PR_NUMBER" ]; then
@@ -97,3 +97,9 @@ jobs:
             -f "output[title]=Integridad del observatorio" \
             -f "output[summary]=Validación obligatoria ejecutada por workflow_dispatch sobre ${HEAD_SHA}."
           test "$RUN_CONCLUSION" = "success"
+
+      - name: Verificar que el PR no requiere intervención
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REVIEW_BRANCH: automation/news-review
+        run: bash .github/scripts/check-pr-review.sh

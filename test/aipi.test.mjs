@@ -17,3 +17,13 @@ test("normaliza una fila AIPI sin dependencia del entorno local", () => {
   assert.equal(observations[0].value, 0.5);
   assert.equal(observations[4].metric_id, "ai_regulation_ethics");
 });
+
+
+test("AIPI preserves a real zero and omits missing or nonnumeric cells", () => {
+  const rows = [["header"], ["header"], ["Colombia", "COL", "EM", null, " ", 0, false, "invalid"]];
+  const source = { id: "imf_aipi", dataset: "aipidata.xlsx", year: 2023 };
+  const observations = normalizeAipiRows(rows, source);
+  assert.equal(observations.length, 1);
+  assert.equal(observations[0].metric_id, "ai_innovation_integration");
+  assert.equal(observations[0].value, 0);
+});

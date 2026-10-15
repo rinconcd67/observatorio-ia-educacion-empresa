@@ -125,6 +125,8 @@ export async function importOxfordReadiness(options = {}) {
     checksum_algorithm: "sha256",
     raw_size_bytes: resource.bytes.byteLength,
     raw_content_type: resource.contentType,
+    http_status: resource.status,
+    http_attempts: resource.attempts,
     etag: resource.etag,
     last_modified: resource.lastModified,
     raw_path: "data/raw/oxford_government_ai_readiness_2025.html",

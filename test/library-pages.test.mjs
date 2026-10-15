@@ -27,3 +27,18 @@ test('publication records retain source-language and review-scope disclosures in
  const c=JSON.parse(await readFile(join(root,'data/processed/library.json'),'utf8'));
  for(const item of c.items)for(const l of ['es','en']){const p=join(site,l==='es'?'biblioteca':'en/library',item.id,'index.html');const html=await readFile(p,'utf8');assert.ok(html.includes(item.source_url.replaceAll('&','&amp;')));assert.ok(html.includes(l==='es'?'Idioma de la edición':'Edition language'));assert.ok(html.includes(item.review_scope==='full_text'?(l==='es'?'Texto completo':'Full text'):(l==='es'?'Ficha o resumen oficial':'Official record or summary')));}
 });
+
+test('each record preserves its own review date when the collection changes',async()=>{
+ for(const item of catalogue.items){
+  const date=item.reviewed_date || item.added_date || catalogue.reviewed_date;
+  for(const prefix of ['biblioteca','en/library']){
+   const html=await readFile(join(site,prefix,item.id,'index.html'),'utf8');
+   assert.ok(html.includes(`<dd>${date}</dd>`),`${item.id}: original review date must remain visible`);
+  }
+ }
+ const topics=JSON.parse(await readFile(join(root,'src/content/topics.json'),'utf8'));
+ for(const topic of topics)for(const prefix of ['temas','en/topics']){
+  const html=await readFile(join(site,prefix,topic.id,'index.html'),'utf8');
+  assert.ok(html.includes(`· ${topic.reviewed_date} ·`),`${topic.id}: catalogue additions must not redate guides`);
+ }
+});
