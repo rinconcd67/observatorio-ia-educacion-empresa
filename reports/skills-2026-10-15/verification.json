@@ -1,0 +1,26 @@
+{
+  "status": "LISTO_PARA_REVISION_HUMANA",
+  "published": false,
+  "items": 10,
+  "spanish": 8,
+  "free_learning": 10,
+  "routes": 4,
+  "skills_pages": 30,
+  "candidate_sitemap_urls": 94,
+  "tests": {
+    "pass": 89,
+    "fail": 0,
+    "skipped": 0
+  },
+  "original_files_checked": 175,
+  "original_files_changed": [],
+  "preview": "http://127.0.0.1:4181/skills/",
+  "browser_checks": [
+    "ES desktop",
+    "English Google record",
+    "Google free learning and original language disclosed",
+    "Filters Spanish8; Spanish+teach1; noresults0; reset10",
+    "Mobile390px: no horizontal overflow; route1column",
+    "Home Skills navigation"
+  ]
+}
