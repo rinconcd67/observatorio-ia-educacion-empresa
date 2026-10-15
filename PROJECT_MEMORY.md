@@ -34,3 +34,11 @@
 - Contextos relevantes: checkout original preservado, 175 archivos sin diferencias; 30 páginas públicas coinciden con el build.
 - Próximos hitos: mantener fuentes y condiciones; seguimiento de indexación independiente de publicación.
 </memory>
+
+<memory project="Observatorio sitemap controls" fecha="2026-10-15">
+- Estado actual: controles reproducibles preparados y validados para publicación autorizada.
+- Decisiones clave: mismo inventario público de 94 URL; copia XML idéntica, XML básico y texto plano; alcance exclusivo de la subcarpeta del Observatorio.
+- Versiones anteriores: sitemap principal y páginas Skills conservados byte a byte.
+- Contextos relevantes: 91 pruebas correctas; evidencias privadas y comparación de Search Console fuera del repositorio público; ningún cambio en la raíz ni en otros proyectos.
+- Próximos hitos: contrastar publicación con hashes y comparar una lectura automática posterior al envío único de cada control; no inferir causa mientras los resultados sean inconclusos.
+</memory>

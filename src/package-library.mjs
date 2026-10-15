@@ -44,5 +44,15 @@ for(const l of ['es','en']){
 await writeFile(join(root,'_site/data/library.json'),JSON.stringify(catalogue,null,2)+'\n');
 await packageSkills({root,base,shell,save});
 const all=[{path:'',alternate:'en/',l:'es'},{path:'en/',alternate:'',l:'en'},...pages];
-await writeFile(join(root,'_site/sitemap.xml'),`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">${all.map(p=>`<url><loc>${base+p.path}</loc><xhtml:link rel="alternate" hreflang="${p.l}" href="${base+p.path}"/><xhtml:link rel="alternate" hreflang="${p.l==='es'?'en':'es'}" href="${base+p.alternate}"/><xhtml:link rel="alternate" hreflang="x-default" href="${base+(p.l==='es'?p.path:p.alternate)}"/></url>`).join('\n')}</urlset>\n`);
+const sitemap=`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">${all.map(p=>`<url><loc>${base+p.path}</loc><xhtml:link rel="alternate" hreflang="${p.l}" href="${base+p.path}"/><xhtml:link rel="alternate" hreflang="${p.l==='es'?'en':'es'}" href="${base+p.alternate}"/><xhtml:link rel="alternate" hreflang="x-default" href="${base+(p.l==='es'?p.path:p.alternate)}"/></url>`).join('\n')}</urlset>\n`;
+// Diagnostic controls share the same public canonicals; the primary sitemap stays intact.
+const canonicalUrls=all.map(p=>base+p.path);
+if(canonicalUrls.some(url=>!url.startsWith(base)))throw new Error('Sitemap control outside Observatory scope');
+const simpleSitemap=`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${canonicalUrls.map(url=>`<url><loc>${esc(url)}</loc></url>\n`).join('')}</urlset>\n`;
+await Promise.all([
+ writeFile(join(root,'_site/sitemap.xml'),sitemap),
+ writeFile(join(root,'_site/sitemap-control.xml'),sitemap),
+ writeFile(join(root,'_site/sitemap-simple.xml'),simpleSitemap),
+ writeFile(join(root,'_site/sitemap-control.txt'),canonicalUrls.join('\n')+'\n'),
+]);
 console.log(JSON.stringify({ok:true,library_items:catalogue.items.length,editorial_pages:pages.length,sitemap_urls:all.length}));

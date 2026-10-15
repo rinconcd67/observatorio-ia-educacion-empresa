@@ -1,0 +1,30 @@
+{
+  "scope": "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/",
+  "canonical_urls": 94,
+  "skills_urls": 30,
+  "tests_passed": 91,
+  "tests_failed": 0,
+  "tests_skipped": 0,
+  "files": [
+    {
+      "path": "sitemap.xml",
+      "bytes": 53197,
+      "sha256": "2a5f84750d726003eee1f42a7fa0b80f1dc5dffd54af543231a13bd949097a16"
+    },
+    {
+      "path": "sitemap-control.xml",
+      "bytes": 53197,
+      "sha256": "2a5f84750d726003eee1f42a7fa0b80f1dc5dffd54af543231a13bd949097a16"
+    },
+    {
+      "path": "sitemap-simple.xml",
+      "bytes": 11250,
+      "sha256": "e62d0104cc1cb5b30e6e5c0d0aae5eaf4168a81bc0ab24b369a150c9e84de00a"
+    },
+    {
+      "path": "sitemap-control.txt",
+      "bytes": 9072,
+      "sha256": "3f5b1730676142c25654785d3e155482b536d5e02146ebcf73517cc632338079"
+    }
+  ]
+}
