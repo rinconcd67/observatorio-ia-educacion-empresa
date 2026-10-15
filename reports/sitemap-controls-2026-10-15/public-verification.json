@@ -1,0 +1,42 @@
+{
+  "verified_at": "2026-10-15T19:33:18.972265+00:00",
+  "deployment": "0ee2379a3b8708988cafea56db9b74c4b1aeaf74",
+  "checks": [
+    {
+      "path": "sitemap.xml",
+      "bytes": 53197,
+      "sha256": "2a5f84750d726003eee1f42a7fa0b80f1dc5dffd54af543231a13bd949097a16",
+      "url": "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/sitemap.xml",
+      "status": 200,
+      "content_type": "application/xml",
+      "matches_build": true
+    },
+    {
+      "path": "sitemap-control.xml",
+      "bytes": 53197,
+      "sha256": "2a5f84750d726003eee1f42a7fa0b80f1dc5dffd54af543231a13bd949097a16",
+      "url": "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/sitemap-control.xml",
+      "status": 200,
+      "content_type": "application/xml",
+      "matches_build": true
+    },
+    {
+      "path": "sitemap-simple.xml",
+      "bytes": 11250,
+      "sha256": "e62d0104cc1cb5b30e6e5c0d0aae5eaf4168a81bc0ab24b369a150c9e84de00a",
+      "url": "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/sitemap-simple.xml",
+      "status": 200,
+      "content_type": "application/xml",
+      "matches_build": true
+    },
+    {
+      "path": "sitemap-control.txt",
+      "bytes": 9072,
+      "sha256": "3f5b1730676142c25654785d3e155482b536d5e02146ebcf73517cc632338079",
+      "url": "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/sitemap-control.txt",
+      "status": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "matches_build": true
+    }
+  ]
+}
