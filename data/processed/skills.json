@@ -1,0 +1,468 @@
+{
+  "reviewed_date": "2026-10-15",
+  "items": [
+    {
+      "id": "elements-ai-intro",
+      "provider": "Elements of AI · Universidad de Helsinki",
+      "source_url": "https://course.elementsofai.com/es/",
+      "evidence_urls": [
+        "https://course.elementsofai.com/es/",
+        "https://community.elementsofai.com/c/elements-faq/i-have-passed-an-elements-of-ai-course-where-is-my-certificate"
+      ],
+      "verified_date": "2026-10-15",
+      "language": "es",
+      "cost": "free",
+      "level": "beginner",
+      "routes": [
+        "start"
+      ],
+      "es": {
+        "title": "Introducción a la IA",
+        "summary": "Fundamentos para comprender algoritmos, aprendizaje y efectos sociales.",
+        "duration": "6 capítulos; duración total no indicada en la ficha consultada.",
+        "prerequisites": "No se detallan en la ficha consultada.",
+        "access": "Registro gratuito para acceder al curso completo.",
+        "credential": "Certificado digital gratuito tras completar las condiciones y revisiones entre pares.",
+        "cost_note": "Curso y certificado de Introducción gratuitos.",
+        "outcomes": [
+          "Reconocer problemas de IA",
+          "Comprender aprendizaje automático",
+          "Examinar implicaciones sociales"
+        ],
+        "practice": "Propuesta del observatorio: explica un uso de IA de tu entorno y documenta dos límites con ejemplos."
+      },
+      "en": {
+        "title": "Introduction to AI",
+        "summary": "Foundations for understanding algorithms, learning and social effects.",
+        "duration": "6 chapters; total duration not stated on the reviewed page.",
+        "prerequisites": "Not detailed on the reviewed page.",
+        "access": "Free registration for full course access.",
+        "credential": "Free digital certificate after fulfilling completion and peer-review requirements.",
+        "cost_note": "Introduction course and certificate are free.",
+        "outcomes": [
+          "Recognize AI problems",
+          "Understand machine learning",
+          "Examine social implications"
+        ],
+        "practice": "Observatory proposal: explain an AI use in your context and document two limitations with examples."
+      }
+    },
+    {
+      "id": "microsoft-ai-educators",
+      "provider": "Microsoft Learn",
+      "source_url": "https://learn.microsoft.com/es-es/training/paths/ai-education/",
+      "evidence_urls": [
+        "https://learn.microsoft.com/es-es/training/paths/ai-education/",
+        "https://learn.microsoft.com/en-us/training/support/faq"
+      ],
+      "verified_date": "2026-10-15",
+      "language": "es",
+      "cost": "free",
+      "level": "beginner",
+      "routes": [
+        "teach"
+      ],
+      "es": {
+        "title": "IA para educadores",
+        "summary": "Ruta sobre enseñanza, indicaciones y uso responsable de IA.",
+        "duration": "4 módulos; duración total no indicada.",
+        "prerequisites": "Ninguno.",
+        "access": "Lectura abierta; cuenta para registrar logros.",
+        "credential": "Logro de Microsoft Learn; no equivale a certificación profesional.",
+        "cost_note": "Formación gratuita; las herramientas pueden tener condiciones de licencia.",
+        "outcomes": [
+          "Explorar aplicaciones educativas",
+          "Diseñar indicaciones",
+          "Revisar contenido generado"
+        ],
+        "practice": "Propuesta del observatorio: crea una actividad con objetivo, rúbrica y revisión de errores; usa datos ficticios."
+      },
+      "en": {
+        "title": "AI for educators",
+        "summary": "Learning path covering teaching, prompts and responsible AI use.",
+        "duration": "4 modules; total duration not stated.",
+        "prerequisites": "None.",
+        "access": "Open reading; account needed to track achievements.",
+        "credential": "Microsoft Learn achievement, not a professional certification.",
+        "cost_note": "Free training; tools may have licensing conditions.",
+        "outcomes": [
+          "Explore educational uses",
+          "Design prompts",
+          "Review generated content"
+        ],
+        "practice": "Observatory proposal: create an activity with an objective, rubric and error review; use fictional data."
+      }
+    },
+    {
+      "id": "microsoft-generative-ai",
+      "provider": "Microsoft Learn",
+      "source_url": "https://learn.microsoft.com/es-es/training/modules/fundamentals-generative-ai/",
+      "evidence_urls": [
+        "https://learn.microsoft.com/es-es/training/modules/fundamentals-generative-ai/",
+        "https://learn.microsoft.com/en-us/training/support/faq"
+      ],
+      "verified_date": "2026-10-15",
+      "language": "es",
+      "cost": "free",
+      "level": "beginner",
+      "routes": [
+        "start",
+        "build"
+      ],
+      "es": {
+        "title": "Introducción a la inteligencia artificial y los agentes generativos",
+        "summary": "Módulo sobre modelos de lenguaje, indicaciones y agentes.",
+        "duration": "37 minutos; 7 unidades.",
+        "prerequisites": "Familiaridad con IA y fundamentos de aprendizaje automático.",
+        "access": "Contenido abierto; cuenta para registrar la evaluación.",
+        "credential": "Aprobación del módulo en el perfil al superar la evaluación.",
+        "cost_note": "Contenido gratuito; los servicios utilizados en ejercicios pueden requerir suscripción.",
+        "outcomes": [
+          "Explicar los LLM",
+          "Preparar indicaciones",
+          "Distinguir agentes de IA"
+        ],
+        "practice": "Propuesta del observatorio: compara un asistente y un agente; define qué acciones requieren supervisión humana."
+      },
+      "en": {
+        "title": "Introduction to generative AI and agents",
+        "summary": "Module on language models, prompts and agents.",
+        "duration": "37 minutes; 7 units.",
+        "prerequisites": "Familiarity with AI and machine-learning fundamentals.",
+        "access": "Open content; account to record the assessment.",
+        "credential": "Module pass recorded in the profile after assessment.",
+        "cost_note": "Free content; exercise services may require a subscription.",
+        "outcomes": [
+          "Explain LLMs",
+          "Prepare prompts",
+          "Distinguish AI agents"
+        ],
+        "practice": "Observatory proposal: compare an assistant and an agent; define which actions require human supervision."
+      }
+    },
+    {
+      "id": "microsoft-business-workflows",
+      "provider": "Microsoft Learn",
+      "source_url": "https://learn.microsoft.com/es-es/training/paths/transform-business-workflows-with-ai/",
+      "evidence_urls": [
+        "https://learn.microsoft.com/es-es/training/paths/transform-business-workflows-with-ai/",
+        "https://learn.microsoft.com/en-us/training/support/faq"
+      ],
+      "verified_date": "2026-10-15",
+      "language": "es",
+      "cost": "free",
+      "level": "beginner",
+      "routes": [
+        "work"
+      ],
+      "es": {
+        "title": "Mejora de los flujos de trabajo empresariales con IA",
+        "summary": "Aplicación de Copilot a contenido, datos y colaboración.",
+        "duration": "4 módulos; duración total no indicada.",
+        "prerequisites": "Experiencia funcional básica con Microsoft 365.",
+        "access": "Contenido abierto; cuenta para registrar avances.",
+        "credential": "Logro de la ruta en Microsoft Learn; no certificación profesional.",
+        "cost_note": "Formación gratuita; el acceso a funciones de Microsoft 365/Copilot puede requerir licencia.",
+        "outcomes": [
+          "Refinar borradores",
+          "Analizar datos",
+          "Organizar colaboración"
+        ],
+        "practice": "Propuesta del observatorio: diseña un flujo para preparar un informe con datos ficticios y aprobación humana antes de compartirlo."
+      },
+      "en": {
+        "title": "Improve business workflows with AI",
+        "summary": "Apply Copilot to content, data and collaboration.",
+        "duration": "4 modules; total duration not stated.",
+        "prerequisites": "Basic working experience with Microsoft 365.",
+        "access": "Open content; account to track progress.",
+        "credential": "Microsoft Learn path achievement; not a professional certification.",
+        "cost_note": "Free training; Microsoft 365/Copilot features may require a license.",
+        "outcomes": [
+          "Refine drafts",
+          "Analyze data",
+          "Organize collaboration"
+        ],
+        "practice": "Observatory proposal: design a report workflow using fictional data and human approval before sharing."
+      }
+    },
+    {
+      "id": "ibm-ai-literacy",
+      "provider": "IBM SkillsBuild",
+      "source_url": "https://ibm.biz/BdeReN",
+      "evidence_urls": [
+        "https://ibm.biz/BdeReN",
+        "https://www.skillsbuild.org/es/digital-credentials",
+        "https://www.skillsbuild.org/es"
+      ],
+      "verified_date": "2026-10-15",
+      "language": "es",
+      "cost": "free",
+      "level": "beginner",
+      "routes": [
+        "start"
+      ],
+      "es": {
+        "title": "Conocimientos básicos sobre IA",
+        "summary": "Introducción a conceptos, riesgos y usos de IA.",
+        "duration": "4 horas.",
+        "prerequisites": "No especificados.",
+        "access": "Registro en SkillsBuild; todos los alumnos.",
+        "credential": "Credencial digital al cumplir requisitos.",
+        "cost_note": "Formación gratuita.",
+        "outcomes": [
+          "Comprender conceptos",
+          "Examinar riesgos",
+          "Explorar usos cotidianos"
+        ],
+        "practice": "Propuesta del observatorio: clasifica cinco tareas cotidianas según su utilidad y riesgo al usar IA."
+      },
+      "en": {
+        "title": "AI Literacy",
+        "summary": "Introduction to AI concepts, risks and uses.",
+        "duration": "4 hours.",
+        "prerequisites": "Not specified.",
+        "access": "SkillsBuild registration; all learners.",
+        "credential": "Digital credential upon meeting requirements.",
+        "cost_note": "Free training.",
+        "outcomes": [
+          "Understand concepts",
+          "Examine risks",
+          "Explore everyday uses"
+        ],
+        "practice": "Observatory proposal: classify five everyday tasks by usefulness and risk when using AI."
+      }
+    },
+    {
+      "id": "ibm-generative-ai",
+      "provider": "IBM SkillsBuild",
+      "source_url": "https://ibm.biz/Bde7Me",
+      "evidence_urls": [
+        "https://ibm.biz/Bde7Me",
+        "https://www.skillsbuild.org/es/digital-credentials",
+        "https://www.skillsbuild.org/es"
+      ],
+      "verified_date": "2026-10-15",
+      "language": "es",
+      "cost": "free",
+      "level": "beginner",
+      "routes": [
+        "work"
+      ],
+      "es": {
+        "title": "Introducción a la IA generativa",
+        "summary": "Modelos generativos, ética y aplicaciones con Granite.",
+        "duration": "3 horas.",
+        "prerequisites": "No especificados.",
+        "access": "Registro en SkillsBuild; todos los alumnos.",
+        "credential": "Credencial digital al cumplir requisitos.",
+        "cost_note": "Formación gratuita.",
+        "outcomes": [
+          "Explorar modelos",
+          "Reconocer riesgos",
+          "Aplicar IA a contenidos"
+        ],
+        "practice": "Propuesta del observatorio: redacta un texto ficticio con IA y entrega una versión corregida junto a tu lista de verificaciones."
+      },
+      "en": {
+        "title": "Introduction to Generative AI",
+        "summary": "Generative models, ethics and Granite applications.",
+        "duration": "3 hours.",
+        "prerequisites": "Not specified.",
+        "access": "SkillsBuild registration; all learners.",
+        "credential": "Digital credential upon meeting requirements.",
+        "cost_note": "Free training.",
+        "outcomes": [
+          "Explore models",
+          "Recognize risks",
+          "Apply AI to content"
+        ],
+        "practice": "Observatory proposal: draft fictional content with AI and submit a corrected version with your verification checklist."
+      }
+    },
+    {
+      "id": "google-generative-ai",
+      "provider": "Google Skills",
+      "source_url": "https://www.skills.google/course_templates/536?locale=es",
+      "evidence_urls": [
+        "https://www.skills.google/course_templates/536?locale=es",
+        "https://cloud.google.com/ai/generative-ai?hl=es-419"
+      ],
+      "verified_date": "2026-10-15",
+      "language": "es",
+      "cost": "free",
+      "level": "beginner",
+      "routes": [
+        "start"
+      ],
+      "es": {
+        "title": "Introducción a la IA generativa",
+        "summary": "Microcurso para distinguir IA generativa y aprendizaje automático tradicional.",
+        "duration": "45 minutos.",
+        "prerequisites": "Nivel introductorio; no se declaran requisitos en la ficha actual.",
+        "access": "Cuenta en Google Skills para registrar el aprendizaje.",
+        "credential": "La ficha ofrece una insignia de finalización.",
+        "cost_note": "Curso introductorio sin costo; no incluye créditos para otros servicios.",
+        "outcomes": [
+          "Definir IA generativa",
+          "Distinguir enfoques",
+          "Reconocer aplicaciones"
+        ],
+        "practice": "Propuesta del observatorio: compara tres usos posibles y señala cuál requiere comprobar datos externos."
+      },
+      "en": {
+        "title": "Introduction to Generative AI",
+        "summary": "Microcourse distinguishing generative AI from traditional machine learning.",
+        "duration": "45 minutes.",
+        "prerequisites": "Introductory level; no prerequisites stated on the current page.",
+        "access": "Google Skills account to record learning.",
+        "credential": "The page offers a completion badge.",
+        "cost_note": "No-cost introductory course; does not include credits for other services.",
+        "outcomes": [
+          "Define generative AI",
+          "Distinguish approaches",
+          "Recognize applications"
+        ],
+        "practice": "Observatory proposal: compare three possible uses and identify which requires checking external data."
+      }
+    },
+    {
+      "id": "google-machine-learning",
+      "provider": "Google for Developers",
+      "source_url": "https://developers.google.com/machine-learning/crash-course?hl=es-419",
+      "evidence_urls": [
+        "https://developers.google.com/machine-learning/crash-course?hl=es-419",
+        "https://developers.google.com/machine-learning/crash-course/prereqs-and-prework?hl=es-419",
+        "https://blog.google/innovation-and-ai/technology/developers-tools/machine-learning-crash-course/"
+      ],
+      "verified_date": "2026-10-15",
+      "language": "es",
+      "cost": "free",
+      "level": "intermediate",
+      "routes": [
+        "build"
+      ],
+      "es": {
+        "title": "Curso intensivo de aprendizaje automático",
+        "summary": "Formación práctica sobre modelos, datos y evaluación.",
+        "duration": "A tu ritmo; consultar tiempos por módulo.",
+        "prerequisites": "Álgebra, estadística básica y programación; Python recomendado.",
+        "access": "Material abierto y ejercicios en el navegador con Colab.",
+        "credential": "No se confirma certificado en las páginas revisadas.",
+        "cost_note": "Curso gratuito; servicios adicionales sujetos a sus propias condiciones.",
+        "outcomes": [
+          "Comparar modelos",
+          "Detectar sobreajuste",
+          "Examinar equidad"
+        ],
+        "practice": "Propuesta del observatorio: prueba un clasificador con datos públicos y registra errores, métricas y límites de uso."
+      },
+      "en": {
+        "title": "Machine Learning Crash Course",
+        "summary": "Practical training on models, data and evaluation.",
+        "duration": "Self-paced; see individual module timings.",
+        "prerequisites": "Algebra, basic statistics and programming; Python recommended.",
+        "access": "Open material and browser exercises through Colab.",
+        "credential": "No certificate confirmed on the reviewed pages.",
+        "cost_note": "Free course; additional services have their own terms.",
+        "outcomes": [
+          "Compare models",
+          "Detect overfitting",
+          "Examine fairness"
+        ],
+        "practice": "Observatory proposal: test a classifier on public data and record errors, metrics and usage limitations."
+      }
+    },
+    {
+      "id": "google-ai-educator-series",
+      "provider": "Google for Education",
+      "source_url": "https://edu.google.com/learning-center/google-ai-educator-series/",
+      "evidence_urls": [
+        "https://edu.google.com/learning-center/google-ai-educator-series/",
+        "https://support.google.com/googleforeducation/answer/18558350?hl=en"
+      ],
+      "verified_date": "2026-10-15",
+      "language": "en",
+      "cost": "free",
+      "level": "beginner",
+      "routes": [
+        "teach"
+      ],
+      "es": {
+        "title": "Google AI Educator Series",
+        "summary": "Sesiones prácticas para incorporar herramientas de IA a la docencia.",
+        "duration": "10–45 minutos según sesión.",
+        "prerequisites": "Sin requisitos previos.",
+        "access": "Autoestudio. Disponible en inglés de EE. UU. y coreano; español no confirmado.",
+        "credential": "Insignia tras superar el cuestionario de cada sesión.",
+        "cost_note": "Serie gratuita; algunas funciones utilizadas en las prácticas son de pago.",
+        "outcomes": [
+          "Explorar herramientas docentes",
+          "Preparar recursos",
+          "Revisar usos educativos"
+        ],
+        "practice": "Propuesta del observatorio: adapta una sesión a tu asignatura y documenta su objetivo, revisión humana y alternativa sin herramienta de pago."
+      },
+      "en": {
+        "title": "Google AI Educator Series",
+        "summary": "Practical sessions for incorporating AI tools into teaching.",
+        "duration": "10–45 minutes depending on the session.",
+        "prerequisites": "No prerequisites.",
+        "access": "Self-paced. Available in US English and Korean; Spanish not confirmed.",
+        "credential": "Badge after passing each session quiz.",
+        "cost_note": "Free series; some features used in practice require payment.",
+        "outcomes": [
+          "Explore teaching tools",
+          "Prepare resources",
+          "Review educational uses"
+        ],
+        "practice": "Observatory proposal: adapt a session to your subject and document its objective, human review and an alternative without paid tools."
+      }
+    },
+    {
+      "id": "huggingface-agents",
+      "provider": "Hugging Face",
+      "source_url": "https://huggingface.co/learn/agents-course/en/unit0/introduction",
+      "evidence_urls": [
+        "https://huggingface.co/learn/agents-course/en/unit0/introduction"
+      ],
+      "verified_date": "2026-10-15",
+      "language": "en",
+      "cost": "free",
+      "level": "intermediate",
+      "routes": [
+        "build"
+      ],
+      "es": {
+        "title": "AI Agents Course",
+        "summary": "Curso práctico de agentes con bibliotecas y evaluación.",
+        "duration": "Ritmo recomendado: 3–4 horas semanales por capítulo.",
+        "prerequisites": "Python básico y conocimientos básicos de LLM.",
+        "access": "Contenido abierto; cuenta gratuita de Hugging Face para actividades.",
+        "credential": "Certificados gratuitos con los requisitos de unidades, tareas y reto final que correspondan.",
+        "cost_note": "Curso y certificación gratuitos; revisar límites de servicios externos al ejecutar proyectos.",
+        "outcomes": [
+          "Comprender agentes",
+          "Usar bibliotecas",
+          "Evaluar un proyecto"
+        ],
+        "practice": "Propuesta del observatorio: construye un agente con una herramienta limitada y prueba fallos, permisos y trazabilidad."
+      },
+      "en": {
+        "title": "AI Agents Course",
+        "summary": "Hands-on agent course with libraries and evaluation.",
+        "duration": "Recommended pace: 3–4 hours weekly per chapter.",
+        "prerequisites": "Basic Python and LLM knowledge.",
+        "access": "Open content; free Hugging Face account for activities.",
+        "credential": "Free certificates subject to the relevant unit, assignment and final-challenge requirements.",
+        "cost_note": "Course and certification are free; check external service limits when running projects.",
+        "outcomes": [
+          "Understand agents",
+          "Use libraries",
+          "Evaluate a project"
+        ],
+        "practice": "Observatory proposal: build an agent with one limited tool and test failures, permissions and traceability."
+      }
+    }
+  ]
+}

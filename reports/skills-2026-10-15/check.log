@@ -1,0 +1,110 @@
+
+> observatorio-ia-educacion-empresa@0.5.0 check
+> npm run test && npm run validate
+
+
+> observatorio-ia-educacion-empresa@0.5.0 test
+> node --test
+
+✔ normaliza una fila AIPI sin dependencia del entorno local (0.874125ms)
+✔ AIPI preserves a real zero and omits missing or nonnumeric cells (0.098042ms)
+✔ news polling timestamps alone do not create another proposal (0.786875ms)
+✔ article updates and source deterioration remain substantive (0.113833ms)
+✔ explicit lease updates an existing remote branch without tracking refs and rejects a concurrent update (283.175833ms)
+✔ reports action_required on the current PR head instead of claiming success (250.841417ms)
+✔ ignores an approval block belonging to an older PR head (109.192291ms)
+✔ a refresh with no open proposal exits without an approval assertion (98.115208ms)
+✔ a newer successful PR run supersedes an older block on the same head (105.95625ms)
+✔ toda brecha de adopción publicada compara empresa y educación en el mismo año (1.144166ms)
+✔ Suiza no publica una brecha al combinar empresa 2023 con educación 2025 (1.219291ms)
+✔ Suiza conserva sus últimos valores individuales aunque la brecha no sea comparable (0.239625ms)
+✔ gap_analysis contiene exclusivamente países con años comparables (0.119ms)
+✔ cada perfil declara el estado de comparabilidad que corresponde a su cobertura (0.106208ms)
+✔ el resumen cuenta exclusivamente las parejas del mismo año (0.046292ms)
+✔ analiza CSV con comas, comillas escapadas y saltos CRLF (1.397875ms)
+✔ CIMA raw bytes reproduce selected national observations and exclude aggregates (8.776708ms)
+✔ CIMA rejects mixed populations, duplicates and null values (0.210833ms)
+✔ CIMA refuses failed and incomplete API responses (21.968458ms)
+✔ Finance raw response hashes and null preservation (2.89825ms)
+✔ Finance accepts the execution year and rejects future years (0.233458ms)
+✔ cada observación docente conserva población TALIS y fuente nacional (0.970708ms)
+✔ capa institucional no se confunde con docentes ni resultados de aprendizaje (0.11075ms)
+✔ fuentes complementarias identificables y con enlaces HTTPS oficiales (0.100792ms)
+✔ recupera HTTP 500 transitorio y registra intentos (28.183083ms)
+✔ respeta Retry-After 429 y no reintenta errores permanentes (0.959667ms)
+✔ no reintenta antes de un Retry-After superior al límite del proceso (0.199334ms)
+✔ mantiene paridad entre los mensajes dinámicos en español e inglés (1.487417ms)
+✔ declara rutas, metadatos y documentos públicos específicos por idioma (0.151041ms)
+✔ incluye traducciones estáticas y dinámicas no vacías (0.128541ms)
+✔ la huella byte-exacta detecta cualquier cambio de contenido o fin de línea (1.485875ms)
+✔ writeJson, serializeJson y checksum comparten exactamente los mismos bytes (8.326083ms)
+✔ fetchResource conserva bytes y metadatos sin romper los wrappers existentes (25.516042ms)
+✔ cada source_run identifica los bytes exactos de su archivo raw (3.124875ms)
+✔ status.json declara el SHA-256 exacto de artifact.json (1.228291ms)
+✔ status.json declara el SHA-256 exacto de observations.csv (1.1595ms)
+✔ decodifica un cubo JSON-stat disperso (1.351ms)
+✔ rechaza respuestas sin dimensiones (0.232791ms)
+✔ bilingual validation rejects missing English and duplicate resources (1.518625ms)
+✔ HTTP 403 preserves last known successful verification (23.850916ms)
+✔ byte changes become proposals, never claims of a new edition (2.0305ms)
+✔ redirects to unapproved hosts are never fetched (0.410333ms)
+✔ timeout is distinct from HTTP failure (5.921833ms)
+✔ offline validation retains prior network evidence without fetching (0.198916ms)
+✔ size limit does not replace previous good hash with partial content (0.278334ms)
+✔ old successful evidence is not reused after a source URL change (0.127833ms)
+✔ all editorial pages expose readable static content, one heading and valid JSON-LD (15.420709ms)
+✔ editorial links resolve under GitHub Pages subpath and language alternates return reciprocally (57.998042ms)
+✔ sitemap contains all editorial canonicals and the two observatory language roots (4.775042ms)
+✔ publication records retain source-language and review-scope disclosures in both languages (5.214583ms)
+✔ each record preserves its own review date when the collection changes (4.587583ms)
+✔ calcula promedios solo con valores numéricos (0.839875ms)
+✔ selecciona el último año por clave (1.015834ms)
+✔ redondea de forma determinista (0.1235ms)
+✔ resuelve coincidencias del mismo año según la precedencia de fuente (0.128792ms)
+✔ calcula cuantiles sobre valores numéricos ordenados (0.139375ms)
+✔ selecciona el último año común después de resolver la prioridad por país y año (0.196916ms)
+✔ SDMX CSV conserva cero real y descarta ausencias sin imputación (1.32925ms)
+✔ rechaza HTTP 200 con HTML o CSV incompatible (0.242958ms)
+✔ Oxford no convierte ausencias, blancos o booleanos a cero (1.227291ms)
+✔ huella semántica cambia con cualquiera de las cuatro dimensiones (0.605209ms)
+✔ resuelve índices de las rutas públicas bilingües (0.780959ms)
+✔ conserva rutas directas de datos y recursos (0.098125ms)
+✔ Skills offers ten distinct verified records with Spanish/free priority and all four routes (0.793625ms)
+✔ Skills static content, internal links, canonical and language alternates work under the project subpath (32.04625ms)
+✔ Every Skills record exposes original language, source and verification date in ES and EN (2.550333ms)
+✔ las fuentes temporales activas declaran una política explícita (1.115625ms)
+✔ Eurostat educación y estudiantes quedan abiertos a años futuros (1.03525ms)
+✔ Banco Mundial resuelve el límite superior con el año de ejecución inyectado (0.14275ms)
+✔ OECD conserva ventanas abiertas desde su año inicial (0.122834ms)
+✔ las fuentes dinámicas no contienen un año final literal en sus URL base (0.250541ms)
+✔ AIPI y Oxford se distinguen como ediciones fijadas, no como fuentes dinámicas (0.117459ms)
+✔ all_available conserva la URL sin límites temporales (0.094875ms)
+✔ rechaza políticas temporales ausentes, desconocidas o incoherentes (0.255667ms)
+✔ aprueba una actualización que conserva cobertura e integridad (1.688958ms)
+✔ bloquea una caída superior al diez por ciento de observaciones (0.225333ms)
+✔ bloquea una regresión del año máximo observado por fuente (0.679375ms)
+✔ bloquea un cambio silencioso de huella en una edición fijada (0.229ms)
+✔ Oxford admite HTML distinto con estadísticas idénticas y base sin huella semántica (1.298458ms)
+✔ Oxford bloquea correcciones estadísticas aunque se conserve la huella HTML o declarada (0.66875ms)
+✔ Oxford nunca certifica snapshots vacíos, parciales, inválidos o duplicados (1.356833ms)
+✔ bloquea fuentes de línea base ausentes aunque salud y cobertura aparenten completas (0.339958ms)
+✔ RSS and Atom expose only headline, publication date and link (66.084958ms)
+✔ rejects entity declarations, HTML and malformed XML (84.015583ms)
+✔ rejects future, undated, external, script and credential links (1.232875ms)
+✔ failure preserves last valid articles and successful retrieval timestamp (0.353333ms)
+✔ empty feed is a failure and never silently removes valid cache (0.064416ms)
+✔ deduplicates canonical URLs and caps display at twelve (4.835042ms)
+✔ partial outage preserves source cache while successful sources advance (0.221584ms)
+ℹ tests 89
+ℹ suites 0
+ℹ pass 89
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 665.31
+
+> observatorio-ia-educacion-empresa@0.5.0 validate
+> node src/validate-data.mjs
+
+{"ok":true,"snapshot":{"countries":218,"observations":5280,"directCountries":40,"aipiCountries":165,"oxfordCountries":194},"artifact":{"blocks":12,"cards":7,"charts":6,"tables":3},"dashboards":{"es":{"language":"es","bytes":1460844,"views":8,"selfContained":true},"en":{"language":"en","bytes":1460649,"views":8,"selfContained":true}},"site":{"version":"0.5.0","csvRows":5280,"status":"ready","socialPreviewBytes":436827,"englishSocialPreviewBytes":83737,"languages":["es","en"],"artifactFileSha256":"aa214ea2833dabcd6c7afece6efdc363542387c7219c19251f3603f116e1d546","observationsCsvFileSha256":"ce8208711d86623447d400ffb28202569588e73a17b48dd466c73228f638183c"}}

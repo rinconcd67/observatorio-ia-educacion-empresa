@@ -16,3 +16,13 @@
 
 - Actualización candidata 2026-10-08: rama `update/observatorio-2026-10-08` desde `origin/main` (`c132382`). Primer refresco estadístico completo desde v0.5.0: 11/11 fuentes, 5.280 observaciones, 0 valores distintos frente a la base publicada, informe comparativo APROBADA PARA REVISIÓN HUMANA, 76/76 pruebas. Causa raíz del bloqueo del flujo mensual (2026-09-01 y 2026-10-01, 8/11 fuentes): la cabecera `accept: text/csv` provoca HTTP 500 en el SDMX de la OCDE y 406 en Eurostat; corregida en `src/refresh.mjs` a `text/csv, */*;q=0.1`, verificada con Node contra ambas APIs. Oxford cambió bytes HTML con observaciones idénticas. Doce titulares nuevos (23 sept a 8 oct). Reporte: reports/daily-review-2026-10-08/update-candidate.md. Aparte, PR #58 corrige el flujo diario de titulares (propuesta única sobre `automation/news-review` y autolimpieza de 31 propuestas y 33 ramas antiguas). Publicación remota pendiente de pull request y revisión humana.
 </memory>
+
+<memory project="ObservatorioIAEducacionEmpresa">
+- Estado actual: Skills candidato local15oct2026,4rutas,10fichas,8ES+2EN,aprendizaje gratuito; no publicado.
+- Decisiones: Google EducatorSeries incluida con idioma inglés/coreano explícito; diferenciar costo herramientas, credencial y formación; ofertasintro alternativas.
+- Versiones anteriores: baseaa11f04/PR63 MITLegacy; checkout original175archivos sin cambios.
+- Verificación:89pruebas y gate local aprobados;30páginas Skills ES/EN;94URL sitemap candidato sin enviar; QA escritorio y móvil.
+- Próximo hito: revisión humana en http://127.0.0.1:4181/skills/ antes de cualquier publicación. Evidencia reports/skills-2026-10-15/CANDIDATO.md.
+</memory>
+
+<autorizacion fecha="2026-10-15">Usuario aprueba publicar Skills con cuatro rutas y diez fichas, validaciones previas, verificación pública y cierre Git limpio. Checkout original preservado. Referencia remota actualizada a74f9438 antes del cambio.</autorizacion>

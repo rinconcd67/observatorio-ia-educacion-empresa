@@ -21,7 +21,7 @@ test('editorial links resolve under GitHub Pages subpath and language alternates
  }
 });
 test('sitemap contains all editorial canonicals and the two observatory language roots',async()=>{
- const xml=await readFile(join(site,'sitemap.xml'),'utf8');const locs=[...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map(m=>m[1]);assert.equal(locs.length,pageCount+2);assert.equal(new Set(locs).size,pageCount+2);for(const p of editorial)assert.ok(locs.includes(base+p.slice(site.length+1).replace(/index.html$/,'')));
+ const xml=await readFile(join(site,'sitemap.xml'),'utf8');const locs=[...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map(m=>m[1]);const htmlCount=(await files(site)).filter(p=>!p.endsWith('/404.html')).length;assert.equal(locs.length,htmlCount);assert.equal(new Set(locs).size,htmlCount);for(const p of editorial)assert.ok(locs.includes(base+p.slice(site.length+1).replace(/index.html$/,'')));
 });
 test('publication records retain source-language and review-scope disclosures in both languages',async()=>{
  const c=JSON.parse(await readFile(join(root,'data/processed/library.json'),'utf8'));
