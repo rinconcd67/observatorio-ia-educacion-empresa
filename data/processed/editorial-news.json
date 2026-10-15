@@ -1,5 +1,5 @@
 {
-  "reviewed_date": "2026-09-04",
+  "reviewed_date": "2026-10-15",
   "policy": "Verified editorial selections, preserved independently of RSS refreshes",
   "items": [
     {
@@ -9,7 +9,10 @@
       "url": "https://orgchart.mit.edu/letters/ai-and-education-watershed-moment-mit",
       "published_at": "2026-08-25",
       "source": "MIT",
-      "library_id": "mit-ai-education-report-2026"
+      "library_id": "mit-ai-education-report-2026",
+      "status": "legacy",
+      "archived_at": "2026-10-15",
+      "archive_reason": "Report already included in the Observatory library."
     }
   ]
 }
