@@ -26,3 +26,11 @@
 </memory>
 
 <autorizacion fecha="2026-10-15">Usuario aprueba publicar Skills con cuatro rutas y diez fichas, validaciones previas, verificación pública y cierre Git limpio. Checkout original preservado. Referencia remota actualizada a74f9438 antes del cambio.</autorizacion>
+
+<memory project="Observatorio Skills" fecha="2026-10-15">
+- Estado actual: publicado y verificado; PR #64, despliegue 38781149345.
+- Decisiones clave: cuatro rutas, diez fichas, ocho en español; formación gratuita separada de costos de herramientas o credenciales.
+- Versiones anteriores: candidato local aprobado; implementación c25a113; integración 338f341.
+- Contextos relevantes: checkout original preservado, 175 archivos sin diferencias; 30 páginas públicas coinciden con el build.
+- Próximos hitos: mantener fuentes y condiciones; seguimiento de indexación independiente de publicación.
+</memory>

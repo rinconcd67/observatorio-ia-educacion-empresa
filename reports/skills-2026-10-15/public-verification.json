@@ -1,0 +1,199 @@
+{
+  "verified_at": "2026-10-15T17:54:53.575941+00:00",
+  "deployment_commit": "338f341bb6a15b6ac97af96b0211afa192429bbd",
+  "deployment_run": 38781149345,
+  "routes": 4,
+  "items": 10,
+  "skills_pages": 30,
+  "sitemap_urls": 94,
+  "checks": [
+    {
+      "url": "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/skills/",
+      "status": 200,
+      "matches_validated_build": true,
+      "sha256": "443cc18b47e0f9516b15428a24b42c5651dee6d66faf0643e0bade008f4ff75d"
+    },
+    {
+      "url": "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/skills/rutas/start/",
+      "status": 200,
+      "matches_validated_build": true,
+      "sha256": "31ce342408f0cdce7a27ffd6c417563d589be2835e31ef8d36045a9092b2bd9b"
+    },
+    {
+      "url": "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/skills/rutas/teach/",
+      "status": 200,
+      "matches_validated_build": true,
+      "sha256": "85828c3840bf3d615c4bd7765f3d508e4aefb0f0319ea8a151f7372f92447b24"
+    },
+    {
+      "url": "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/skills/rutas/work/",
+      "status": 200,
+      "matches_validated_build": true,
+      "sha256": "a1710e3fdec26a0fc6188688cb4f7cce5479d1110bf18c7c45417e74d38f0106"
+    },
+    {
+      "url": "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/skills/rutas/build/",
+      "status": 200,
+      "matches_validated_build": true,
+      "sha256": "140cfcfebede1b40fc79f3e0751521b66ae97e0889b2666c53661964890df9a6"
+    },
+    {
+      "url": "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/skills/elements-ai-intro/",
+      "status": 200,
+      "matches_validated_build": true,
+      "sha256": "9de1dfdc3882a8db08179ee499f2c325f535bc797f8eed234a0b632a5db3a501"
+    },
+    {
+      "url": "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/skills/microsoft-ai-educators/",
+      "status": 200,
+      "matches_validated_build": true,
+      "sha256": "8c211b1d533d37b94184a89ccffc26eae7fb8b9566664c06096f399c427529a4"
+    },
+    {
+      "url": "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/skills/microsoft-generative-ai/",
+      "status": 200,
+      "matches_validated_build": true,
+      "sha256": "f1e80df2c00f64fbd809fbe7295f210bc70e0fa8c55db5169c664a51dff017bd"
+    },
+    {
+      "url": "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/skills/microsoft-business-workflows/",
+      "status": 200,
+      "matches_validated_build": true,
+      "sha256": "22a0d4e075eefbd4b4ad54c6014929ebb9f88283b2a67a8ef8be5d6e3c265ef0"
+    },
+    {
+      "url": "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/skills/ibm-ai-literacy/",
+      "status": 200,
+      "matches_validated_build": true,
+      "sha256": "3d23ccc4127c76b28860140d6d2a1611cf4b2bb7c6ce244df1d7243444aeda34"
+    },
+    {
+      "url": "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/skills/ibm-generative-ai/",
+      "status": 200,
+      "matches_validated_build": true,
+      "sha256": "08fbc7f1d36e2a6fde7278c9040b029dd5f5db5f10b30e9514b1560acf23b111"
+    },
+    {
+      "url": "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/skills/google-generative-ai/",
+      "status": 200,
+      "matches_validated_build": true,
+      "sha256": "efca5b813014f522242216bb9dd3032246a70e26523e1465a718e3b1aa27e3b9"
+    },
+    {
+      "url": "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/skills/google-machine-learning/",
+      "status": 200,
+      "matches_validated_build": true,
+      "sha256": "44d4f8dc1c91d06144efe17c2b20480f47b8e9076858302aadb3f678e1b5e77b"
+    },
+    {
+      "url": "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/skills/google-ai-educator-series/",
+      "status": 200,
+      "matches_validated_build": true,
+      "sha256": "26086b103b7c59c1589e302a8fffacf7d4612fb9bbac4fb9ea8149547e4b224e"
+    },
+    {
+      "url": "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/skills/huggingface-agents/",
+      "status": 200,
+      "matches_validated_build": true,
+      "sha256": "1417124aed2d1fcac6410d8c46d85d5a372e5e794b798dac3d5ce9ccb65fecec"
+    },
+    {
+      "url": "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/en/skills/",
+      "status": 200,
+      "matches_validated_build": true,
+      "sha256": "c32fbb5b74b1957d1cbc809cceddad51473fcab332ff4414d2f788c7a326c1bb"
+    },
+    {
+      "url": "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/en/skills/routes/start/",
+      "status": 200,
+      "matches_validated_build": true,
+      "sha256": "da36b0149be69f99c8480f7866c45dcf14e4b0afad085bb7b08409e88f316323"
+    },
+    {
+      "url": "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/en/skills/routes/teach/",
+      "status": 200,
+      "matches_validated_build": true,
+      "sha256": "437c96c87ea6e8dd67753554e5ab13dfb265850c52c99c36864b3449b1c86854"
+    },
+    {
+      "url": "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/en/skills/routes/work/",
+      "status": 200,
+      "matches_validated_build": true,
+      "sha256": "3afdd51b8e81543c3975a1b8fee91559d8a15faad9d86512c5337eeb75845141"
+    },
+    {
+      "url": "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/en/skills/routes/build/",
+      "status": 200,
+      "matches_validated_build": true,
+      "sha256": "8642c0af5d9c53744e7cbf45bd03f11432f5952245f08a2290419e75b7f425c9"
+    },
+    {
+      "url": "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/en/skills/elements-ai-intro/",
+      "status": 200,
+      "matches_validated_build": true,
+      "sha256": "b8aaa402452d2ef7bab87dd23eaf1ddac537e9025bd67e6fd86cd6c56ac75616"
+    },
+    {
+      "url": "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/en/skills/microsoft-ai-educators/",
+      "status": 200,
+      "matches_validated_build": true,
+      "sha256": "a96b4d14784b2fbcecca472f57c5fdf897270838dbe17040d6b399e09a9ed0c5"
+    },
+    {
+      "url": "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/en/skills/microsoft-generative-ai/",
+      "status": 200,
+      "matches_validated_build": true,
+      "sha256": "c1e340cdb4d0ed2d420a45e5e5bcbeb1614aec1b6262683c05b3df96e86dff1f"
+    },
+    {
+      "url": "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/en/skills/microsoft-business-workflows/",
+      "status": 200,
+      "matches_validated_build": true,
+      "sha256": "a21778183d137eba88d9dc4ea43954dc3a3616ab87cc91a024737b39f301c5d0"
+    },
+    {
+      "url": "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/en/skills/ibm-ai-literacy/",
+      "status": 200,
+      "matches_validated_build": true,
+      "sha256": "cafe8eb20159cc2e999b97c4859166a67daffccb6ad3e059ccd5ec51bbbbefeb"
+    },
+    {
+      "url": "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/en/skills/ibm-generative-ai/",
+      "status": 200,
+      "matches_validated_build": true,
+      "sha256": "0ee56141ae8379c5338e8b6b2dd6c7314a754f8072d09a216c54ab4710cb5558"
+    },
+    {
+      "url": "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/en/skills/google-generative-ai/",
+      "status": 200,
+      "matches_validated_build": true,
+      "sha256": "c6cdeea0d60e38316b635005c62a9dee51a3e1dc9341c8d732e43db48f8d40cc"
+    },
+    {
+      "url": "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/en/skills/google-machine-learning/",
+      "status": 200,
+      "matches_validated_build": true,
+      "sha256": "0cedf1dcfc25d882d26dcc920148ceb8fa9f9cf517bacae3366743736ca83d58"
+    },
+    {
+      "url": "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/en/skills/google-ai-educator-series/",
+      "status": 200,
+      "matches_validated_build": true,
+      "sha256": "3c51140d1f90364648d099b0d42ffb3cc9031db0be20a42cd73ce78c9802520b"
+    },
+    {
+      "url": "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/en/skills/huggingface-agents/",
+      "status": 200,
+      "matches_validated_build": true,
+      "sha256": "b4d36de26515396a02d226d778103b20502547e6001a5a9b37a5298db002015f"
+    },
+    {
+      "url": "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/sitemap.xml",
+      "status": 200,
+      "matches_validated_build": true,
+      "sha256": "2a5f84750d726003eee1f42a7fa0b80f1dc5dffd54af543231a13bd949097a16"
+    }
+  ],
+  "original_files_checked": 175,
+  "original_files_changed": []
+}
