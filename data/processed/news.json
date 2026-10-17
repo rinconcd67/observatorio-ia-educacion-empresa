@@ -1,29 +1,35 @@
 {
-  "checked_at": "2026-10-15T14:24:48.771Z",
+  "checked_at": "2026-10-17T14:20:52.466Z",
   "items": [
     {
-      "title": "Teaching students to think and learn through questions",
-      "url": "https://openai.com/index/teaching-students-to-think-and-learn-through-questions",
-      "published_at": "2026-10-15T13:00:00.000Z",
+      "title": "How Itaú is building generative AI for its entire customer base",
+      "url": "https://openai.com/index/itau-generative-ai",
+      "published_at": "2026-10-16T19:00:00.000Z",
       "source": "OpenAI"
     },
     {
-      "title": "Amp puts AI agents to work beyond code with OpenAI models",
-      "url": "https://openai.com/index/amp-beyond-coding",
-      "published_at": "2026-10-14T12:00:00.000Z",
+      "title": "Stack Overflow for Agents triples signups with ChatGPT plugin",
+      "url": "https://openai.com/index/stack-overflow-chatgpt-plugin",
+      "published_at": "2026-10-16T00:00:00.000Z",
       "source": "OpenAI"
     },
     {
-      "title": "SentinelOne cuts malware analysis from weeks to hours",
-      "url": "https://openai.com/index/sentinelone",
-      "published_at": "2026-10-14T12:00:00.000Z",
+      "title": "Benefit Street Partners answers questions faster with Codex",
+      "url": "https://openai.com/index/benefit-street-partners",
+      "published_at": "2026-10-16T00:00:00.000Z",
       "source": "OpenAI"
     },
     {
-      "title": "How Third Moment Research runs 10,000 agents for 36+ hours",
-      "url": "https://openai.com/index/third-moment-research",
-      "published_at": "2026-10-14T07:00:00.000Z",
+      "title": "Bringing GPT-Rosalind to academic research labs",
+      "url": "https://openai.com/index/introducing-the-rosalind-academic-plan",
+      "published_at": "2026-10-15T19:00:00.000Z",
       "source": "OpenAI"
+    },
+    {
+      "title": "Proof-based general-purpose computing with Magnetar",
+      "url": "https://www.microsoft.com/en-us/research/blog/proof-based-general-purpose-computing-with-magnetar/",
+      "published_at": "2026-10-15T16:00:00.000Z",
+      "source": "Microsoft Research"
     },
     {
       "title": "Gemini 4 Argon: Built to solve your hardest problems",
@@ -62,12 +68,6 @@
       "source": "Google AI"
     },
     {
-      "title": "Forecasting space weather risks on power grids",
-      "url": "https://www.microsoft.com/en-us/research/blog/forecasting-space-weather-risks-on-power-grids/",
-      "published_at": "2026-09-30T16:00:00.000Z",
-      "source": "Microsoft Research"
-    },
-    {
       "title": "Watch the winning trailer from the Future Vision XPRIZE, The Gifted.",
       "url": "https://blog.google/innovation-and-ai/technology/ai/winner-future-vision-xprize/",
       "published_at": "2026-09-28T19:00:00.000Z",
@@ -79,19 +79,19 @@
       "name": "OpenAI",
       "url": "https://openai.com/news/rss.xml",
       "status": "ok",
-      "last_successful_at": "2026-10-15T14:24:48.771Z"
+      "last_successful_at": "2026-10-17T14:20:52.466Z"
     },
     {
       "name": "Google AI",
       "url": "https://blog.google/technology/ai/rss/",
       "status": "ok",
-      "last_successful_at": "2026-10-15T14:24:48.771Z"
+      "last_successful_at": "2026-10-17T14:20:52.466Z"
     },
     {
       "name": "Microsoft Research",
       "url": "https://www.microsoft.com/en-us/research/feed/",
       "status": "ok",
-      "last_successful_at": "2026-10-15T14:24:48.771Z"
+      "last_successful_at": "2026-10-17T14:20:52.466Z"
     }
   ]
 }
