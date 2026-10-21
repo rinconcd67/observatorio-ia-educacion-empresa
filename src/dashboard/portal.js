@@ -45,7 +45,7 @@
   launcher.addEventListener('click',()=>{showNews(true);panelHeader.querySelector('button').focus();});
   newsPanel.addEventListener('keydown',e=>{if(e.key==='Escape'){showNews(false);launcher.focus();}});
   document.querySelector('a[href="#news-window"]').addEventListener('click',e=>{e.preventDefault();showNews(true);panelHeader.querySelector('button').focus();});
-  showNews(!window.matchMedia('(max-width: 900px)').matches);
+  showNews(false);
 
   const fields={aipi_score:'aipi_year',government_ai_readiness_score:'government_ai_readiness_year',aipi_digital_contribution:'aipi_year',aipi_human_capital_contribution:'aipi_year',aipi_regulation_contribution:'aipi_year',business_ai_pct:'business_year',formal_education_ai_pct:'education_year',internet_users_pct:'internet_year'};
   const period=(rows,field)=>{const ys=[...new Set(rows.map(r=>r[field]).filter(Number.isInteger))].sort();return ys.length?ys.length===1?String(ys[0]):`${ys[0]}–${ys.at(-1)}`:say('sin periodo disponible','period unavailable');};

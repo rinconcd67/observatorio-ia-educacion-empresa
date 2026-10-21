@@ -48,8 +48,48 @@
   select('series').addEventListener('change', resetSeries);
   ['year', 'category', 'geography'].forEach(name => select(name).addEventListener('change', render));
   resetSeries();
-  const entry = document.createElement('div');
-  entry.className = 'lac-entry';
-  entry.innerHTML = `<div><strong>${t('CEPAL · Conectividad y acceso a la formación','ECLAC · Connectivity and access to learning')}</strong><span>${t('Explora brechas por ingreso, territorio y nivel educativo, con períodos y ausencias visibles.','Explore gaps by income, area and education level, with visible periods and missing values.')}</span></div><a href="?view=education#cepal-context">${t('Consultar las tres series','Explore the three series')} ↗</a>`;
-  document.getElementById('editorial-portal').append(entry);
+  const entry = document.createElement('article');
+  entry.className = 'ecosystem-card';
+  entry.innerHTML = `<span class="ecosystem-badge">CEPALSTAT · ILIA</span><h3>${t('Conectividad y brecha digital','Connectivity and digital divide')}</h3><p>${t('Hogares conectados, acceso escolar y habilidades digitales por ingreso y territorio en América Latina.','Connected households, school access and digital skills by income and area in Latin America.')}</p><div class="ecosystem-links"><a href="?view=education#cepal-context">${t('Consultar las tres series','Explore the three series')} →</a><a href="${es ? 'biblioteca/' : 'library/'}cepal-cenia-ilia-2025/">${t('Ficha ILIA 2025','ILIA 2025 record')} →</a></div>`;
+  (document.getElementById('ecosystem-cards') || document.getElementById('editorial-portal')).append(entry);
+
+  const tabContainer = document.getElementById('lac-layer-tabs');
+  if (tabContainer) {
+    const layerIds = ['education-evidence', 'cima-context', 'education-finance', 'cepal-context'];
+    function activateLacTab(targetId) {
+      tabContainer.querySelectorAll('.lac-tab').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lacTab === targetId);
+      });
+      layerIds.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.hidden = targetId !== 'all' && id !== targetId;
+      });
+    }
+    tabContainer.querySelectorAll('.lac-tab').forEach(btn => {
+      btn.addEventListener('click', () => activateLacTab(btn.dataset.lacTab));
+    });
+    function syncHashTab() {
+      const hash = window.location.hash.replace('#', '');
+      if (layerIds.includes(hash)) {
+        activateLacTab(hash);
+      } else if (hash === 'lac-title') {
+        activateLacTab('education-evidence');
+      }
+    }
+    window.addEventListener('hashchange', syncHashTab);
+    activateLacTab('education-evidence');
+    syncHashTab();
+  }
+  if (window.location.protocol === 'file:') {
+    const publicBase = es
+      ? 'https://rinconcd67.github.io/observatorio-ia-educacion-empresa/'
+      : 'https://rinconcd67.github.io/observatorio-ia-educacion-empresa/en/';
+    document.querySelectorAll('a[href]').forEach(anchor => {
+      const raw = anchor.getAttribute('href') || '';
+      if (!raw || raw.startsWith('#') || raw.startsWith('?') || /^[a-z]+:/i.test(raw)) return;
+      if (/^(?:\.\.\/)?(?:biblioteca|library|temas|topics|skills|en)\b/i.test(raw) || raw === '../') {
+        anchor.href = new URL(raw, publicBase).href;
+      }
+    });
+  }
 })();

@@ -393,3 +393,60 @@ footer a { color: #fff; }
 /* CEPAL context uses separate countries/aggregates and preserves source absences. */
 #cepal-context{scroll-margin-top:160px}.cepal-filters{flex-wrap:wrap}.cepal-filters label{min-width:150px;max-width:100%}.cepal-filters label:first-child{flex:1 1 320px}.cepal-filters select{max-width:100%;width:100%}.cepal-table-wrap{max-height:520px;overflow:auto}.cepal-table-wrap caption{text-align:left;padding:12px 0;font-weight:600}.cepal-table-wrap th small{font-weight:400;color:var(--muted)}
 @media(max-width:600px){.cepal-filters label{width:100%;flex:1 1 100%}#cepal-context{scroll-margin-top:110px}}
+
+/* Architecture v2: 4-Pillar Navigation, Ecosystem Grid, Tabbed LAC Explorer, and 360 Country Dossier */
+.primary-nav { align-items: center; gap: 18px; padding: 6px 28px; flex-wrap: nowrap; }
+.nav-pillar { display: inline-flex; align-items: center; gap: 14px; padding-right: 18px; border-right: 1px solid #e2e8e5; }
+.nav-pillar:last-child { border-right: 0; padding-right: 0; }
+.nav-pillar.nav-meta { margin-left: auto; }
+.pillar-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.6px; color: var(--teal-dark); background: var(--teal-light); padding: 3px 7px; border-radius: 4px; white-space: nowrap; }
+.nav-pillar > a.nav-item { text-decoration: none; display: inline-block; }
+
+.ecosystem-hub { padding: 34px max(28px, calc((100vw - 1440px) / 2)); background: #eef3ef; border-bottom: 1px solid var(--line); }
+.ecosystem-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+.ecosystem-card { display: flex; flex-direction: column; justify-content: space-between; padding: 22px; background: var(--surface); border: 1px solid #cfd9d4; border-top: 4px solid var(--teal); border-radius: var(--radius); box-shadow: 0 4px 12px rgba(23, 33, 31, 0.04); }
+.ecosystem-card.ecosystem-library { border-top-color: var(--gold); background: #fcfbf7; }
+.ecosystem-badge { display: inline-block; align-self: flex-start; margin-bottom: 10px; font-size: 11px; font-weight: 800; text-transform: uppercase; color: var(--teal-dark); background: var(--teal-light); padding: 3px 8px; border-radius: 4px; }
+.ecosystem-card h3 { font-size: 17px; margin-bottom: 8px; line-height: 1.3; }
+.ecosystem-card p { font-size: 13px; color: var(--muted); line-height: 1.55; margin-bottom: 16px; }
+.ecosystem-links { display: flex; flex-direction: column; gap: 7px; margin-top: auto; padding-top: 12px; border-top: 1px solid #e7ece9; }
+.ecosystem-links a, .dossier-link { color: var(--teal-dark); font-size: 13px; font-weight: 750; text-decoration: none; }
+.ecosystem-links a:hover, .dossier-link:hover { text-decoration: underline; }
+
+.sector-switcher { display: inline-flex; gap: 6px; padding: 5px; background: #eef2f0; border: 1px solid #d4deda; border-radius: 8px; align-self: center; }
+.sector-pill { border: 0; background: transparent; color: var(--muted); padding: 7px 14px; border-radius: 6px; font-size: 13px; font-weight: 700; white-space: nowrap; }
+.sector-pill.active { background: var(--surface); color: var(--ink); box-shadow: 0 2px 6px rgba(23, 33, 31, 0.08); }
+
+.lac-explorer { background: #f7faf7; border-top: 3px solid #b38a3d; }
+.lac-explorer-header { padding: 28px max(28px, calc((100vw - 1440px) / 2)) 0; display: flex; flex-direction: column; gap: 18px; }
+.lac-tabs { display: flex; flex-wrap: wrap; gap: 8px; border-bottom: 1px solid #cdd9d2; padding-bottom: 14px; }
+.lac-tab { border: 1px solid #bfd0c8; background: #fff; color: #3d524b; padding: 8px 14px; border-radius: 6px; font-size: 13px; font-weight: 700; }
+.lac-tab.active { background: #173d38; border-color: #173d38; color: #fff; }
+.lac-explorer .lac-evidence { border-top: 0; padding-top: 22px; }
+.lac-evidence[hidden] { display: none !important; }
+
+.country-dossier-band { background: #f4f7f5; }
+.dossier-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.dossier-card { display: flex; flex-direction: column; padding: 22px; background: var(--surface); border: 1px solid #cfd9d4; border-top: 4px solid var(--blue); border-radius: var(--radius); }
+.dossier-card:nth-child(2) { border-top-color: var(--teal); }
+.dossier-card:nth-child(3) { border-top-color: var(--gold); }
+.dossier-card h3 { font-size: 17px; margin-bottom: 12px; }
+.dossier-list { margin: 0 0 16px; padding-left: 18px; color: var(--ink); font-size: 13px; line-height: 1.6; }
+.dossier-list li { margin-bottom: 8px; }
+.dossier-list a { color: var(--teal-dark); text-decoration: none; }
+.dossier-list a:hover { text-decoration: underline; }
+.dossier-link { margin-top: auto; padding-top: 12px; border-top: 1px solid #e7ece9; display: inline-block; }
+
+@media (max-width: 1100px) {
+  .ecosystem-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .dossier-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+  .primary-nav.open { flex-direction: column; align-items: stretch; gap: 10px; }
+  .nav-pillar { border-right: 0; border-bottom: 1px solid #e2e8e5; padding-bottom: 8px; flex-wrap: wrap; }
+  .nav-pillar.nav-meta { margin-left: 0; }
+  .ecosystem-grid { grid-template-columns: 1fr; }
+  .sector-switcher { width: 100%; justify-content: space-between; }
+  .sector-pill { flex: 1; text-align: center; }
+  .lac-explorer-header { padding: 22px 18px 0; }
+}
