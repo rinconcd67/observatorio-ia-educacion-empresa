@@ -1,0 +1,86 @@
+{
+  "checked_at": "2026-10-20T21:31:31.386419-04:00",
+  "base_url": "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/",
+  "pages_http_200": 106,
+  "pages_match_validated_build": 106,
+  "sitemap_unique_urls": 106,
+  "skills_pages": 38,
+  "asset_checks": [
+    {
+      "path": "data/cepal-context.json",
+      "status": 200,
+      "sha256": "e221c73474b5e2c11e844b1d1dccac8321df9baa94bef544700b3865d579fe1c",
+      "matches_build": true
+    },
+    {
+      "path": "data/library.json",
+      "status": 200,
+      "sha256": "69b8362cff9b19295fbcf5facbfee00a6d38bc6352a3b7e7a08881e554dac073",
+      "matches_build": true
+    },
+    {
+      "path": "data/skills.json",
+      "status": 200,
+      "sha256": "875cfd38755fdf9396170723b7de962badcbd991e411bea4636b1c2c39f7d247",
+      "matches_build": true
+    },
+    {
+      "path": "data/artifact.json",
+      "status": 200,
+      "sha256": "aa214ea2833dabcd6c7afece6efdc363542387c7219c19251f3603f116e1d546",
+      "matches_build": true
+    },
+    {
+      "path": "data/observations.csv",
+      "status": 200,
+      "sha256": "ce8208711d86623447d400ffb28202569588e73a17b48dd466c73228f638183c",
+      "matches_build": true
+    },
+    {
+      "path": "sitemap-control.xml",
+      "status": 200,
+      "sha256": "733fcf8dd3193caeed27e0c2ab1487816003c1be1ab277d678c280bdfa58b8a6",
+      "matches_build": true
+    },
+    {
+      "path": "sitemap-simple.xml",
+      "status": 200,
+      "sha256": "87eaff12cdfe6167779dd9905553e74d23aaed0012f5434c64095a0adda9fac4",
+      "matches_build": true
+    },
+    {
+      "path": "sitemap-control.txt",
+      "status": 200,
+      "sha256": "21face4f3d8eb73c0977f435cfdae39b67e8923ae9f94923297d723bdf84f9b1",
+      "matches_build": true
+    }
+  ],
+  "library_records": 28,
+  "skills_records": 14,
+  "cepal_series": 3,
+  "cepal_records": 3105,
+  "cepal_non_null": 3103,
+  "cepal_missing": 2,
+  "cepal_aggregate_records": 220,
+  "new_library_records": 2,
+  "new_skills_records": 4,
+  "search_console_actions": false,
+  "implementation_commit": "f7b14360c28e9cc08861b4424d4ec902b3e99269",
+  "merge_commit": "cfc8490ca813f252fed2b3b6063c6ff9ad6ab45b",
+  "pull_request": "https://github.com/rinconcd67/observatorio-ia-educacion-empresa/pull/69",
+  "ci_pull_request_run": 39527571235,
+  "ci_main_run": 39527704176,
+  "deployment_run": 39527704163,
+  "deployment_conclusion": "success",
+  "local_tests": {
+    "passed": 99,
+    "failed": 0,
+    "skipped": 0
+  },
+  "original_preserved": {
+    "files": 175,
+    "git_status": true,
+    "head": true
+  },
+  "publication_performed": true
+}
