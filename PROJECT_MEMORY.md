@@ -63,3 +63,12 @@ El usuario aprueba publicar el candidato revisado: stage selectivo, commit, push
 - Contextos relevantes: sin cambios en la raíz ni en otros proyectos; sin envío aSearchConsole,la publicación no prueba indexación. Evidencia pública reports/cepal-ilia-skills-2026-10-20/PUBLICACION.md.
 - Próximos hitos: mantenimiento de fuentes y seguimiento independiente de indexación.
 </memory>
+
+<autorizacion fecha="2026-10-21" proyecto="Arquitectura-Observatorio-v2">
+El usuario autoriza commit y push para actualizar el sitio público con la mejora de arquitectura del Observatorio: navegación agrupada en 4 pilares + método, explorador global antes del hub de recursos y radar de noticias colapsado por defecto, vista Educación con gráficos principales arriba y explorador por pestañas de América Latina, Expediente 360° por país y enlaces de recursos dirigidos al sitio web independiente.
+</autorizacion>
+
+<memory project="Observatorio-Arquitectura-v2" fecha="2026-10-21">
+- Estado actual: validado localmente (103/103 pruebas, npm run validate OK) y autorizado para commit y push al sitio público.
+- Decisiones clave: 4 pilares de navegación (Panorama, Sectores, Perfil 360°, Recursos) + Método; conmutador rápido de sectores; explorador regional por pestañas en Educación; Expediente Nacional 360° cruzando TALIS, PISA-CIMA, UNESCO UIS, CEPALSTAT, Biblioteca y Skills; enlaces de Recursos dirigidos a https://rinconcd67.github.io/observatorio-ia-educacion-empresa/.
+</memory>

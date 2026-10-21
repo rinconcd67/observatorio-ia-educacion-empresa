@@ -373,6 +373,127 @@
       [t("isoCode"), row.iso3, null],
     ];
     document.getElementById("country-detail-grid").innerHTML = details.map(([label, value, context]) => `<div class="detail-item"><span class="label">${escapeHtml(label)}</span><strong>${escapeHtml(value)}</strong>${context ? `<small>${escapeHtml(Number.isFinite(context) ? t("year", { year: context }) : context)}</small>` : ""}</div>`).join("");
+    renderCountryDossier(row);
+  }
+
+  function renderCountryDossier(row) {
+    const container = document.getElementById("country-360-dossier");
+    if (!container) return;
+    const ev = window.OBSERVATORY_EDUCATION_EVIDENCE;
+    const talisUse = ev?.observations?.find((r) => r.iso3 === row.iso3 && r.metric_id === "teacher_ai_use");
+    const talisNeed = ev?.observations?.find((r) => r.iso3 === row.iso3 && r.metric_id === "teacher_ai_training_high_need");
+    const talisLine = talisUse && talisNeed
+      ? t("dossierTalisTeacher", { use: number(talisUse.value, 1), need: number(talisNeed.value, 1) })
+      : t("dossierNoTalis");
+    const braGuide = row.iso3 === "BRA" ? ev?.institutional?.find((r) => r.metric_id === "school_ai_guidance") : null;
+    const braAllow = row.iso3 === "BRA" ? ev?.institutional?.find((r) => r.metric_id === "school_student_ai_permission") : null;
+    const braLine = braGuide && braAllow
+      ? `<li>${escapeHtml(t("dossierBrazilSchools", { guide: number(braGuide.value, 1), allow: number(braAllow.value, 1) }))}</li>`
+      : "";
+
+    const cimaRows = (window.OBSERVATORY_CIMA?.observations ?? []).filter((r) => r.iso3 === row.iso3 && Number.isFinite(r.value));
+    let cimaLine = t("dossierNoCima");
+    if (cimaRows.length) {
+      const maxYear = Math.max(...cimaRows.map((r) => r.year));
+      const byMetric = (m) => cimaRows.find((r) => r.year === maxYear && r.metric_id === m)?.value;
+      cimaLine = t("dossierCimaPisa", {
+        year: maxYear,
+        read: number(byMetric("pisa_reading"), 1),
+        math: number(byMetric("pisa_mathematics"), 1),
+        sci: number(byMetric("pisa_science"), 1),
+      });
+    }
+
+    const finRows = (window.OBSERVATORY_FINANCE?.observations ?? []).filter((r) => r.iso3 === row.iso3 && Number.isFinite(r.value));
+    let finLine = t("dossierNoFinance");
+    if (finRows.length) {
+      const gdpRow = finRows.filter((r) => r.metric_id === "SE.XPD.TOTL.GD.ZS").sort((a, b) => b.year - a.year)[0];
+      const expRow = finRows.filter((r) => r.metric_id === "SE.XPD.TOTL.GB.ZS").sort((a, b) => b.year - a.year)[0];
+      finLine = t("dossierFinanceUis", {
+        gdp: number(gdpRow?.value, 2),
+        gdpYear: gdpRow?.year ?? t("na"),
+        exp: number(expRow?.value, 2),
+        expYear: expRow?.year ?? t("na"),
+      });
+    }
+
+    const cepalSeries = window.OBSERVATORY_CEPAL?.series ?? [];
+    const cepalLines = [];
+    for (const s of cepalSeries) {
+      const obs = (s.observations ?? [])
+        .filter((r) => r.iso3 === row.iso3 && Number.isFinite(r.value))
+        .sort((a, b) => b.year - a.year || (a.category === "Total" ? -1 : 1))[0];
+      if (obs) {
+        cepalLines.push(t("dossierCepalSeries", {
+          title: s.title?.[localeName] ?? s.id,
+          val: number(obs.value, 1),
+          year: obs.year,
+          cat: localeName === "en" ? (obs.category_en ?? obs.category) : obs.category,
+        }));
+      }
+    }
+    const cepalListHtml = cepalLines.length
+      ? cepalLines.map((line) => `<li>${escapeHtml(line)}</li>`).join("")
+      : `<li>${escapeHtml(t("dossierNoCepal"))}</li>`;
+
+    const libItems = window.OBSERVATORY_LIBRARY?.items ?? [];
+    const skillItems = window.OBSERVATORY_SKILLS?.items ?? [];
+    const isLac = row.region === "América Latina y el Caribe";
+    const preferredIds = isLac
+      ? ["cepal-cenia-ilia-2025", "bid-ai-education-2025", "unesco-teachers-2024"]
+      : ["oecd-digital-education-2026", "unesco-teachers-2024", "mit-ai-education-report-2026"];
+    const featuredDocs = preferredIds.map((id) => libItems.find((item) => item.id === id)).filter(Boolean);
+    const publicSite = "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/";
+    const libPrefix = localeName === "en" ? `${publicSite}en/library/` : `${publicSite}biblioteca/`;
+    const skillsPrefix = localeName === "en" ? `${publicSite}en/skills/` : `${publicSite}skills/`;
+
+    container.innerHTML = `
+      <article class="dossier-card">
+        <span class="ecosystem-badge">TALIS · PISA-CIMA · UIS</span>
+        <h3>${escapeHtml(t("dossierEducationTitle"))}</h3>
+        <ul class="dossier-list">
+          <li>${escapeHtml(talisLine)}</li>
+          ${braLine}
+          <li>${escapeHtml(cimaLine)}</li>
+          <li>${escapeHtml(finLine)}</li>
+        </ul>
+        <a class="dossier-link" href="?view=education#education-evidence" data-dossier-view="education">${escapeHtml(t("dossierOpenEducationTab"))}</a>
+      </article>
+      <article class="dossier-card">
+        <span class="ecosystem-badge">CEPALSTAT · World Bank</span>
+        <h3>${escapeHtml(t("dossierConnectivityTitle"))}</h3>
+        <ul class="dossier-list">
+          ${cepalListHtml}
+          <li>${escapeHtml(t("internetUse"))}: <strong>${escapeHtml(percentage(row.internet_users_pct, 1))}</strong> (${escapeHtml(row.internet_year ?? t("na"))})</li>
+        </ul>
+        <a class="dossier-link" href="?view=education#cepal-context" data-dossier-view="education" data-dossier-tab="cepal-context">${escapeHtml(t("dossierOpenCepalTab"))}</a>
+      </article>
+      <article class="dossier-card">
+        <span class="ecosystem-badge">Knowledge Hub</span>
+        <h3>${escapeHtml(t("dossierResourcesTitle"))}</h3>
+        <ul class="dossier-list">
+          ${featuredDocs.map((doc) => `<li><a href="${escapeHtml(libPrefix + doc.id + "/")}"><strong>${escapeHtml(doc.organization)} (${doc.year}):</strong> ${escapeHtml(doc[localeName]?.title ?? doc.original_title)}</a></li>`).join("")}
+        </ul>
+        <div class="ecosystem-links">
+          <a href="${escapeHtml(libPrefix)}">${escapeHtml(t("dossierOpenLibrary", { count: libItems.length }))}</a>
+          <a href="${escapeHtml(skillsPrefix)}">${escapeHtml(t("dossierOpenSkills", { count: skillItems.length }))}</a>
+        </div>
+      </article>
+    `;
+    container.querySelectorAll("[data-dossier-view]").forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        const targetTab = link.dataset.dossierTab;
+        setView(link.dataset.dossierView);
+        if (targetTab) {
+          const tabBtn = document.querySelector(`.lac-tab[data-lac-tab="${targetTab}"]`);
+          if (tabBtn) tabBtn.click();
+        }
+        const anchor = document.getElementById(targetTab || "lac-layers-explorer");
+        if (anchor) anchor.scrollIntoView({ behavior: "smooth" });
+      });
+    });
+    resolveIndependentWebLinks(container);
   }
 
   function renderEducation() {
@@ -484,6 +605,7 @@
     state.view = view;
     document.querySelectorAll(".view").forEach((section) => section.classList.toggle("active", section.dataset.view === view));
     document.querySelectorAll(".nav-item").forEach((button) => button.classList.toggle("active", button.dataset.viewTarget === view));
+    document.querySelectorAll(".sector-pill").forEach((button) => button.classList.toggle("active", button.dataset.viewTarget === view));
     document.getElementById("primary-nav").classList.remove("open");
     const navToggle = document.getElementById("nav-toggle");
     navToggle.setAttribute("aria-expanded", "false");
@@ -507,7 +629,7 @@
     populateSelect(document.getElementById("country-select"), profiles.map((row) => [row.iso3, `${countryName(row)} · ${regionName(row.region, row)}`]), state.country);
     populateSelect(document.getElementById("map-metric"), Object.entries(mapMetrics).map(([id, metric]) => [id, metric.label]), state.mapMetric);
 
-    document.querySelectorAll(".nav-item").forEach((button) => button.addEventListener("click", () => setView(button.dataset.viewTarget)));
+    document.querySelectorAll(".nav-item[data-view-target], .sector-pill[data-view-target]").forEach((button) => button.addEventListener("click", () => setView(button.dataset.viewTarget)));
     document.getElementById("nav-toggle").addEventListener("click", (event) => {
       const nav = document.getElementById("primary-nav");
       const open = nav.classList.toggle("open");
@@ -526,6 +648,20 @@
     return Number.isNaN(date.valueOf()) ? String(value ?? "") : date.toLocaleDateString(locale.dateLocale, { day: "numeric", month: "short", year: "numeric", timeZone: "America/New_York" });
   }
 
+  function resolveIndependentWebLinks(rootNode = document) {
+    if (window.location.protocol !== "file:") return;
+    const publicBase = localeName === "en"
+      ? "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/en/"
+      : "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/";
+    rootNode.querySelectorAll("a[href]").forEach((anchor) => {
+      const raw = anchor.getAttribute("href") || "";
+      if (!raw || raw.startsWith("#") || raw.startsWith("?") || /^[a-z]+:/i.test(raw)) return;
+      if (/^(?:\.\.\/)?(?:biblioteca|library|temas|topics|skills|en)\b/i.test(raw) || raw === "../") {
+        anchor.href = new URL(raw, publicBase).href;
+      }
+    });
+  }
+
   function initialize() {
     const dataDate = formatDate(artifact.snapshot.generatedAt);
     const newsDate = formatDate(window.OBSERVATORY_EDITORIAL_FRESHNESS?.news_checked_at);
@@ -536,6 +672,8 @@
     initializeControls();
     setView(state.view, { sync: false });
     syncUrl();
+    resolveIndependentWebLinks(document);
+    window.addEventListener("load", () => resolveIndependentWebLinks(document));
   }
 
   initialize();

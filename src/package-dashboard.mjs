@@ -69,9 +69,11 @@ function renderLocale(shell, css, javascript, artifact, geojson, i18n, localeNam
   const localizedShell = localeName === "en"
     ? translateAttributes(translateTextNodes(shell, locale.static), localeName)
     : shell;
+  const baseUrl = "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/";
   return localizedShell
-    .replaceAll("__LIBRARY_PATH__", localeName === "es" ? "biblioteca/" : "library/")
-    .replaceAll("__TOPICS_PATH__", localeName === "es" ? "temas/" : "topics/")
+    .replaceAll("__LIBRARY_PATH__", localeName === "es" ? `${baseUrl}biblioteca/` : `${baseUrl}en/library/`)
+    .replaceAll("__TOPICS_PATH__", localeName === "es" ? `${baseUrl}temas/` : `${baseUrl}en/topics/`)
+    .replaceAll("__SKILLS_PATH__", localeName === "es" ? `${baseUrl}skills/` : `${baseUrl}en/skills/`)
     .replaceAll("__PACKAGE_VERSION__", version)
     .replaceAll("__HTML_LANG__", locale.htmlLang)
     .replaceAll("__PAGE_TITLE__", locale.pageTitle)
@@ -98,7 +100,7 @@ function renderLocale(shell, css, javascript, artifact, geojson, i18n, localeNam
 }
 
 async function packageDashboard() {
-  const [shell, css, javascript, artifact, geojson, i18n, packageDefinition, library] = await Promise.all([
+  const [shell, css, javascript, artifact, geojson, i18n, packageDefinition, library, skills] = await Promise.all([
     readFile(join(templateDirectory, "shell.html"), "utf8"),
     readFile(join(templateDirectory, "app.css"), "utf8"),
     readFile(join(templateDirectory, "app.js"), "utf8"),
@@ -107,6 +109,7 @@ async function packageDashboard() {
     readJson(join(templateDirectory, "i18n.json")),
     readJson(join(root, "package.json")),
     readJson(join(root, "data", "processed", "library.json")),
+    readJson(join(root, "data", "processed", "skills.json")),
   ]);
 
   if (artifact.manifest.version !== 4 || artifact.snapshot.version !== 4) {
@@ -142,7 +145,23 @@ async function packageDashboard() {
     news_checked_at: news.checked_at,
     library_reviewed_date: library.reviewed_date,
   };
-  const runtime = "window.OBSERVATORY_NEWS=" + safeJson(news) + ";\nwindow.OBSERVATORY_CHANGES=" + safeJson(change) + ";\nwindow.OBSERVATORY_EDITORIAL_FRESHNESS=" + safeJson(editorialFreshness) + ";\n" + javascript + "\n" + portal + "\nwindow.OBSERVATORY_EDUCATION_EVIDENCE=" + safeJson(educationEvidence) + ";\n" + educationJs + "\nwindow.OBSERVATORY_CIMA=" + safeJson({...cima, source_runs: undefined}) + ";\n" + cimaJs + "\nwindow.OBSERVATORY_FINANCE=" + safeJson({...finance, source_runs: undefined}) + ";\n" + financeJs + "\nwindow.OBSERVATORY_CEPAL=" + safeJson({...cepal, source_runs: undefined}) + ";\n" + cepalJs;
+  const runtime = [
+    "window.OBSERVATORY_NEWS=" + safeJson(news) + ";",
+    "window.OBSERVATORY_CHANGES=" + safeJson(change) + ";",
+    "window.OBSERVATORY_EDITORIAL_FRESHNESS=" + safeJson(editorialFreshness) + ";",
+    "window.OBSERVATORY_LIBRARY=" + safeJson(library) + ";",
+    "window.OBSERVATORY_SKILLS=" + safeJson(skills) + ";",
+    "window.OBSERVATORY_EDUCATION_EVIDENCE=" + safeJson(educationEvidence) + ";",
+    "window.OBSERVATORY_CIMA=" + safeJson({ ...cima, source_runs: undefined }) + ";",
+    "window.OBSERVATORY_FINANCE=" + safeJson({ ...finance, source_runs: undefined }) + ";",
+    "window.OBSERVATORY_CEPAL=" + safeJson({ ...cepal, source_runs: undefined }) + ";",
+    javascript,
+    portal,
+    educationJs,
+    cimaJs,
+    financeJs,
+    cepalJs,
+  ].join("\n");
   const outputs = {};
   for (const localeName of ["es", "en"]) {
     const outputPath = join(dashboardDirectory, i18n[localeName].output);
