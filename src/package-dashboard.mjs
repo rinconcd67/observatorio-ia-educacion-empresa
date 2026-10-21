@@ -39,25 +39,45 @@ function translateAttributes(shell, locale) {
 
 function structuredData(locale, version) {
   const spanish = locale.htmlLang === "es";
+  const baseUrl = "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/";
+  const authorObj = {
+    "@type": "Person",
+    name: "César David Rincón Godoy",
+    identifier: "https://orcid.org/0009-0003-2112-3851",
+    url: "https://cesar-rincon-profile.rinconcd67.chatgpt.site",
+    affiliation: { "@type": "CollegeOrUniversity", name: "Broward International University" },
+  };
   return {
     "@context": "https://schema.org",
-    "@type": "WebApplication",
+    "@type": ["WebApplication", "Dataset"],
     name: locale.pageTitle,
+    description: locale.metaDescription,
+    url: locale.canonical,
     applicationCategory: "EducationalApplication",
     operatingSystem: "Web",
     inLanguage: locale.htmlLang,
     version,
-    author: {
-      "@type": "Person",
-      name: "César David Rincón Godoy",
-      identifier: "https://orcid.org/0009-0003-2112-3851",
-      url: "https://cesar-rincon-profile.rinconcd67.chatgpt.site",
-      affiliation: { "@type": "CollegeOrUniversity", name: "Broward International University" },
-    },
+    license: "https://creativecommons.org/licenses/by/4.0/",
+    author: authorObj,
+    creator: authorObj,
+    publisher: { "@type": "CollegeOrUniversity", name: "Broward International University" },
+    temporalCoverage: "2000/2026",
+    spatialCoverage: "Global (218 countries and economies)",
+    keywords: spanish
+      ? ["Inteligencia artificial", "Educación", "Empresa", "Gobernanza", "América Latina", "Stanford HAI", "OCDE", "CEPAL"]
+      : ["Artificial intelligence", "Education", "Business", "Governance", "Latin America", "Stanford HAI", "OECD", "ECLAC"],
     about: spanish
       ? ["Inteligencia artificial", "Educación", "Empresa", "Gobernanza"]
       : ["Artificial intelligence", "Education", "Business", "Governance"],
     isAccessibleForFree: true,
+    distribution: [
+      { "@type": "DataDownload", encodingFormat: "text/csv", contentUrl: `${baseUrl}data/observations.csv` },
+      { "@type": "DataDownload", encodingFormat: "application/json", contentUrl: `${baseUrl}data/artifact.json` },
+      { "@type": "DataDownload", encodingFormat: "application/json", contentUrl: `${baseUrl}data/cepal-context.json` },
+      { "@type": "DataDownload", encodingFormat: "application/json", contentUrl: `${baseUrl}data/cima-context.json` },
+      { "@type": "DataDownload", encodingFormat: "application/json", contentUrl: `${baseUrl}data/education-finance.json` },
+      { "@type": "DataDownload", encodingFormat: "application/json", contentUrl: `${baseUrl}data/education-evidence.json` },
+    ],
   };
 }
 
@@ -141,6 +161,7 @@ async function packageDashboard() {
   const financeJs = await readFile(join(templateDirectory, "education-finance.js"), "utf8");
   const cepal = await readJson(join(root, "data/processed/cepal-context.json"));
   const cepalJs = await readFile(join(templateDirectory, "cepal-context.js"), "utf8");
+  const stanfordScholarJs = await readFile(join(templateDirectory, "stanford-scholar.js"), "utf8");
   const editorialFreshness = {
     news_checked_at: news.checked_at,
     library_reviewed_date: library.reviewed_date,
@@ -161,6 +182,7 @@ async function packageDashboard() {
     cimaJs,
     financeJs,
     cepalJs,
+    stanfordScholarJs,
   ].join("\n");
   const outputs = {};
   for (const localeName of ["es", "en"]) {

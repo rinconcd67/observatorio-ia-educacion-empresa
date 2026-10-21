@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { readFile, stat } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import test from "node:test";
 import { fileURLToPath } from "node:url";
@@ -51,4 +51,23 @@ test("la vista Países incorpora el Expediente 360° con cruce de catálogos y c
     assert.ok(html.includes("window.OBSERVATORY_SKILLS="), "Falta el catálogo de skills en runtime");
     assert.ok(html.includes("function renderCountryDossier(row)"), "Falta renderCountryDossier en app.js");
   }
+});
+
+test("integra las 5 mejoras de Stanford HAI, tabla comparativa e indexación Google Scholar y Dataset Search", async () => {
+  for (const html of [siteEs, siteEn]) {
+    assert.ok(html.includes('name="citation_title"'), "Falta meta tag Highwire Press citation_title para Google Scholar");
+    assert.ok(html.includes('name="citation_author_orcid" content="https://orcid.org/0009-0003-2112-3851"'), "Falta ORCID en meta tag citation_author_orcid");
+    assert.ok(html.includes('"@type":["WebApplication","Dataset"]'), "El JSON-LD debe declarar WebApplication y Dataset para Google Dataset Search");
+    assert.ok(html.includes("DataDownload"), "El JSON-LD debe incluir distribuciones DataDownload");
+    assert.ok(html.includes("international-benchmark"), "Falta la tabla comparativa de observatorios internacionales");
+    assert.ok(html.includes("hcai-glossary"), "Falta el glosario crítico HCAI");
+    assert.ok(html.includes("gvt-weights-simulator"), "Falta el simulador de ponderación por pilares estilo Stanford GVT");
+    assert.ok(html.includes("country-policy-brief-sheet"), "Falta el generador de Policy Brief nacional");
+    assert.ok(html.includes("scholar-indexing-hub"), "Falta el hub de exportación BibTeX y RIS para Google Scholar");
+  }
+  assert.ok((await stat(join(root, "_site", "data", "citation.bib"))).isFile(), "Falta archivo descargable citation.bib");
+  assert.ok((await stat(join(root, "_site", "data", "citation.ris"))).isFile(), "Falta archivo descargable citation.ris");
+  assert.ok((await stat(join(root, "_site", "biblioteca", "stanford-hai-ai-index-2026", "index.html"))).isFile(), "Falta ficha ES de Stanford AI Index 2026");
+  assert.ok((await stat(join(root, "_site", "en", "library", "stanford-hai-ai-index-2026", "index.html"))).isFile(), "Falta ficha EN de Stanford AI Index 2026");
+  assert.ok((await stat(join(root, "_site", "biblioteca", "stanford-hai-global-vibrancy-tool-2025", "index.html"))).isFile(), "Falta ficha ES de Stanford Global Vibrancy Tool");
 });

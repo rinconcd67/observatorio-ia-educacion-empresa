@@ -102,6 +102,14 @@ async function packageSite() {
     copyFile(join(root, "docs", "PRIVACY.md"), join(dataDirectory, "privacy.en.txt")),
     copyFile(join(root, "docs", "POLITICA_DATOS.md"), join(dataDirectory, "data-policy.txt")),
     copyFile(join(root, "docs", "DATA_POLICY.md"), join(dataDirectory, "data-policy.en.txt")),
+    writeText(
+      join(dataDirectory, "citation.bib"),
+      `@misc{rincongodoy2026observatorio,\n  author       = {Rinc{\\'o}n Godoy, C{\\'e}sar David},\n  title        = {Observatorio Global de Inteligencia Artificial en Educaci{\\'o}n y Empresa (v0.5.0)},\n  year         = {2026},\n  publisher    = {Broward International University},\n  howpublished = {\\url{https://rinconcd67.github.io/observatorio-ia-educacion-empresa/}},\n  note         = {ORCID: 0009-0003-2112-3851. Dataset reproducible con 5.280 observaciones globales y 3.105 registros CEPALSTAT verificados por SHA-256}\n}\n`,
+    ),
+    writeText(
+      join(dataDirectory, "citation.ris"),
+      `TY  - DATA\nT1  - Observatorio Global de Inteligencia Artificial en Educación y Empresa (v0.5.0)\nAU  - Rincón Godoy, César David\nPY  - 2026\nPB  - Broward International University\nUR  - https://rinconcd67.github.io/observatorio-ia-educacion-empresa/\nN1  - ORCID: 0009-0003-2112-3851; SHA-256 verified open dataset\nER  - \n`,
+    ),
   ]);
 
   return {
@@ -109,7 +117,7 @@ async function packageSite() {
     version: packageDefinition.version,
     html_bytes: Buffer.byteLength(html),
     csv_rows: snapshot.observations.length,
-    files: 18,
+    files: 20,
   };
 }
 

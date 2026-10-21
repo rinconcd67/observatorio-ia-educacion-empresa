@@ -450,3 +450,45 @@ footer a { color: #fff; }
   .sector-pill { flex: 1; text-align: center; }
   .lac-explorer-header { padding: 22px 18px 0; }
 }
+
+/* Stanford HAI Benchmark, HCAI Glossary, Custom Weights Simulator, Policy Brief & Google Scholar Hub */
+.benchmark-band { background: #fbfcfa; }
+.benchmark-table th[scope="row"] { min-width: 210px; }
+.benchmark-highlight-row { background: #eaf4f1 !important; border-left: 4px solid var(--teal); }
+.glossary-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: 16px; }
+.glossary-card { padding: 18px; background: var(--surface); border: 1px solid #cfd9d4; border-top: 3px solid var(--teal); border-radius: var(--radius); }
+.glossary-card h3 { font-size: 15px; margin-bottom: 7px; }
+.glossary-card p { font-size: 12.5px; color: var(--muted); line-height: 1.55; margin: 0; }
+
+.simulator-band { background: #f4f8f6; }
+.sim-presets { display: flex; flex-wrap: wrap; gap: 8px; }
+.sim-controls-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; margin-top: 16px; }
+.sim-slider-card { padding: 14px; background: var(--surface); border: 1px solid #cfd9d4; border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between; gap: 8px; }
+.sim-slider-card span { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 12px; color: var(--ink); }
+.sim-slider-card input[type="range"] { width: 100%; accent-color: var(--teal); }
+
+.country-actions-wrap { display: flex; align-items: flex-end; gap: 12px; flex-wrap: wrap; }
+.policy-brief-sheet { margin: 0 max(28px, calc((100vw - 1440px) / 2)) 28px; padding: 24px; background: #fffdf7; border: 1px solid #d8c9a3; border-left: 5px solid var(--gold); border-radius: var(--radius); }
+.brief-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; margin-bottom: 16px; }
+.brief-summary-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; padding: 14px 0; border-top: 1px solid #e6dcc2; border-bottom: 1px solid #e6dcc2; font-size: 13px; }
+.brief-citation { margin: 14px 0 0; font-size: 12.5px; color: #4d4027; line-height: 1.55; }
+
+.scholar-indexing-band { background: #f4f7f5; }
+.scholar-code-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 16px; }
+.scholar-pre { margin: 8px 0 0; padding: 14px; background: #142220; color: #e3efec; border-radius: 6px; font-size: 12px; line-height: 1.5; overflow-x: auto; }
+
+@media (max-width: 1100px) {
+  .glossary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sim-controls-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .brief-summary-grid, .scholar-code-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+  .glossary-grid, .sim-controls-grid { grid-template-columns: 1fr; }
+  .policy-brief-sheet { margin: 0 18px 24px; }
+  .brief-header { flex-direction: column; }
+}
+@media print {
+  .app-header, .news-window, .news-launcher, .sector-switcher, #trigger-print-btn, #print-country-brief-btn, footer { display: none !important; }
+  body, main, .view.active { background: #fff !important; margin: 0 !important; }
+  .policy-brief-sheet { border: 2px solid #000 !important; page-break-inside: avoid; }
+}
