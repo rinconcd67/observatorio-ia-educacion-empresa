@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-05T23:37:18.843Z",
+  "generated_at": "2026-10-21T09:02:22.612Z",
   "mode": "offline",
-  "catalog_reviewed_date": "2026-09-05",
+  "catalog_reviewed_date": "2026-10-20",
   "policy": "Proposal queue only. Catalog and publication are never modified. Byte changes require editorial assessment.",
   "discovery": {
     "status": "editorial_review_required",
@@ -85,13 +85,47 @@
           "learning",
           "education finance"
         ]
+      },
+      {
+        "id": "unesco_ai_education_consultation",
+        "organization": "UNESCO",
+        "url": "https://www.unesco.org/en/digital-education/artificial-intelligence/consultation",
+        "topics": [
+          "education",
+          "governance",
+          "procurement",
+          "safety"
+        ]
+      },
+      {
+        "id": "unesco_iesalc",
+        "organization": "UNESCO IESALC",
+        "url": "https://www.iesalc.unesco.org/en",
+        "topics": [
+          "higher education",
+          "Latin America",
+          "artificial intelligence"
+        ]
+      },
+      {
+        "id": "cepal_digital_development",
+        "organization": "CEPAL",
+        "url": "https://desarrollodigital.cepal.org/es",
+        "catalog_url": "https://www.cepal.org/es/publicaciones",
+        "topics": [
+          "artificial intelligence",
+          "education",
+          "skills",
+          "Latin America and the Caribbean",
+          "digital development"
+        ]
       }
     ],
     "note": "Discovery portals are provided for research; no automatic claim extraction or new-item publication."
   },
   "validation": {
     "valid": true,
-    "item_count": 15,
+    "item_count": 30,
     "issues": []
   },
   "checks": [

@@ -961,6 +961,82 @@
       },
       "added_date": "2026-10-20",
       "reviewed_date": "2026-10-20"
+    },
+    {
+      "id": "stanford-hai-ai-index-2026",
+      "organization": "Stanford HAI",
+      "year": 2026,
+      "original_title": "Artificial Intelligence Index Report 2026",
+      "original_language": "en",
+      "source_url": "https://hai.stanford.edu/ai-index",
+      "document_url": "https://hai.stanford.edu/assets/files/ai_index_report_2026.pdf",
+      "topic": "research",
+      "review_scope": "selected_sections",
+      "review_note": {
+        "es": "Revisión editorial del portal oficial y secciones sobre brecha capacidad-gobernanza, educación, economía y opinión pública.",
+        "en": "Editorial review of the official portal and sections on the capability-governance gap, education, economy and public opinion."
+      },
+      "license_note": "Reseña editorial propia y enlace a la fuente oficial de Stanford HAI; no se aloja copia del PDF ni cubierta original. / Observatory editorial review and link to the official Stanford HAI source; neither the PDF nor the original cover is hosted.",
+      "es": {
+        "title": "Informe AI Index 2026: progreso técnico, economía, educación y gobernanza",
+        "summary": "Evalúa la trayectoria global de la inteligencia artificial desde un enfoque centrado en las personas. Documenta la brecha creciente entre las capacidades técnicas de los sistemas de IA, su acelerada integración económica y el rezago de los marcos de gobernanza, evaluación y preparación educativa.",
+        "takeaways": [
+          "Brecha entre capacidad técnica y preparación institucional",
+          "Medición comparada de I+D, economía, educación y opinión pública",
+          "Necesidad de evaluación rigurosa e independiente ante menor transparencia"
+        ],
+        "audience": "Investigadores doctorales, responsables de políticas educativas y directivos universitarios"
+      },
+      "en": {
+        "title": "2026 AI Index Report: technical progress, economy, education and governance",
+        "summary": "Tracks the global trajectory of artificial intelligence through a human-centered lens. It documents the widening gap between rapidly advancing technical capabilities, accelerating economic integration, and lagging frameworks for governance, evaluation and educational readiness.",
+        "takeaways": [
+          "Widening gap between AI capability and institutional preparedness",
+          "Cross-sector metrics on R&D, economy, education and public opinion",
+          "Independent measurement as data transparency declines"
+        ],
+        "audience": "Doctoral researchers, education policymakers and university leaders"
+      },
+      "added_date": "2026-10-21",
+      "reviewed_date": "2026-10-21"
+    },
+    {
+      "id": "stanford-hai-global-vibrancy-tool-2025",
+      "organization": "Stanford HAI",
+      "year": 2025,
+      "original_title": "The Global AI Vibrancy Tool: Methodology and Cross-Country Comparisons",
+      "original_language": "en",
+      "source_url": "https://hai.stanford.edu/ai-index/global-vibrancy-tool",
+      "document_url": "https://hai.stanford.edu/assets/files/global_ai_vibrancy_tool_paper_november2024.pdf",
+      "topic": "policy",
+      "review_scope": "selected_sections",
+      "review_note": {
+        "es": "Revisión de la herramienta interactiva y del documento metodológico sobre construcción de indicadores compuestos y ponderación por pilares.",
+        "en": "Review of the interactive tool and methodological paper on composite indicator construction and pillar weighting."
+      },
+      "license_note": "Reseña propia y enlace a la publicación oficial de Stanford HAI; no se aloja copia local del PDF. / Original review and link to the official Stanford HAI publication; no local PDF copy is hosted.",
+      "es": {
+        "title": "Global AI Vibrancy Tool: metodología de comparación internacional y ponderación por pilares",
+        "summary": "Presenta el índice y la plataforma interactiva de Stanford HAI para comparar la vibrancia de IA en 36 países mediante indicadores agrupados en siete pilares (I+D, IA responsable, economía, talento, política y gobernanza, opinión pública e infraestructura), junto con series longitudinales para 66 economías.",
+        "takeaways": [
+          "Siete pilares con ponderación ajustable por el usuario",
+          "Separación entre ranking compuesto (36 países) y series longitudinales (66 países)",
+          "En América Latina el ranking compuesto solo incluye a Brasil (#16) y México (#32)"
+        ],
+        "audience": "Analistas de políticas públicas, equipos de planeación estratégica e investigadores en educación comparada"
+      },
+      "en": {
+        "title": "Global AI Vibrancy Tool: cross-country methodology and custom pillar weighting",
+        "summary": "Introduces Stanford HAI's composite index and interactive suite comparing AI vibrancy across 36 countries using indicators organized into seven pillars (R&D, Responsible AI, Economy, Talent, Policy and Governance, Public Opinion, and Infrastructure), complemented by longitudinal series for 66 economies.",
+        "takeaways": [
+          "Seven pillars with user-adjustable custom weights",
+          "Distinction between the 36-country composite ranking and 66-country time series",
+          "In Latin America, the composite ranking covers only Brazil (#16) and Mexico (#32)"
+        ],
+        "audience": "Public policy analysts, strategic planning teams and comparative education researchers"
+      },
+      "added_date": "2026-10-21",
+      "reviewed_date": "2026-10-21"
     }
   ]
 }
