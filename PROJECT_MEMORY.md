@@ -54,3 +54,12 @@
 <autorizacion fecha="2026-10-20" proyecto="CEPAL-ILIA-Skills">
 El usuario aprueba publicar el candidato revisado: stage selectivo, commit, push, PR y despliegue tras validar, verificación pública y cierre Git limpio. El permiso se limita al Observatorio y exige preservar el checkout original. Las 99 pruebas locales y la auditoría del diff fueron satisfactorias; CI, merge y publicación deben verificarse por separado.
 </autorizacion>
+
+<memory project="Observatorio-CEPAL-ILIA-Skills" fecha="2026-10-20">
+- Estado actual: publicado y verificado mediante PR69; implementaciónf7b1436,mergecfc8490,despliegue39527704163success.
+- Decisiones clave: tres seriesCEPAL de contexto con3.105registros,220agregadosseparados y2ausencias; biblioteca28fichas con2ILIA; Skills14fichas,12ES+2EN,Pythoncomplemento y4rutas.
+- Versiones anteriores: candidato validado99pruebas; origenmain42097ff. Las26fichasdocumentales y10Skills previas se conservan.
+- Verificación pública:106páginasHTTP200idénticas albuild,38Skills;8recursos coincidentes; CI asociada alPR ymaincorrecta; original175archivos,estadoGit yHEADpreservados.
+- Contextos relevantes: sin cambios en la raíz ni en otros proyectos; sin envío aSearchConsole,la publicación no prueba indexación. Evidencia pública reports/cepal-ilia-skills-2026-10-20/PUBLICACION.md.
+- Próximos hitos: mantenimiento de fuentes y seguimiento independiente de indexación.
+</memory>
