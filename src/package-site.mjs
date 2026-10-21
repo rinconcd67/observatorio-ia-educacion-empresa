@@ -82,6 +82,7 @@ async function packageSite() {
   await copyFile(join(root, "data/processed/education-source-runs.json"), join(dataDirectory, "education-source-runs.json"));
   await copyFile(join(root, "data/processed/cima-context.json"), join(dataDirectory, "cima-context.json"));
   await copyFile(join(root, "data/processed/education-finance.json"), join(dataDirectory, "education-finance.json"));
+  await copyFile(join(root, "data/processed/cepal-context.json"), join(dataDirectory, "cepal-context.json"));
   const publicFiles = [
     "404.html",
     "favicon.svg",

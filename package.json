@@ -27,7 +27,8 @@
     "library:validate": "node src/librarian.mjs --offline",
     "library:check": "node src/librarian.mjs --check",
     "import:cima": "node src/import-cima.mjs",
-    "import:education-finance": "node src/import-education-finance.mjs"
+    "import:education-finance": "node src/import-education-finance.mjs",
+    "import:cepal": "node src/import-cepal.mjs"
   },
   "engines": {
     "node": ">=20"
