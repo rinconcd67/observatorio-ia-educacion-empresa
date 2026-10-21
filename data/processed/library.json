@@ -1,5 +1,5 @@
 {
-  "reviewed_date": "2026-10-15",
+  "reviewed_date": "2026-10-20",
   "items": [
     {
       "id": "unesco-teachers-2024",
@@ -868,6 +868,99 @@
         ],
         "audience": "Procurement teams, developers and governance leaders"
       }
+    },
+    {
+      "id": "cepal-cenia-ilia-2025",
+      "organization": "CEPAL",
+      "year": 2025,
+      "original_title": "Índice Latinoamericano de Inteligencia Artificial (ILIA) 2025",
+      "original_language": "es",
+      "source_url": "https://www.cepal.org/es/publicaciones/82514-indice-latinoamericano-inteligencia-artificial-ilia-2025",
+      "document_url": "https://repositorio.cepal.org/server/api/core/bitstreams/58abbd61-7c47-4208-8e8f-44bc1d14b894/content",
+      "published_date": "2025-12-08",
+      "edition": "LC/TS.2025/68/Rev.1",
+      "pages": 195,
+      "institutional_author": "NU. CEPAL",
+      "coordinators": [
+        "Álvaro Soto",
+        "Rodrigo Durán",
+        "Antonia Moreno",
+        "Sebastián Adasme",
+        "Sebastián Rovira",
+        "Valeria Jordán",
+        "Laura Poveda"
+      ],
+      "topic": "policy",
+      "review_scope": "selected_sections",
+      "review_note": {
+        "es": "Ficha, créditos, estructura y secciones sobre formación y metodología; no lectura íntegra. La edición revisada es del 8 de diciembre de 2025. El sitio oficial anunció ILIA 2026 el 20 de octubre de 2026; su documento completo queda pendiente de revisión.",
+        "en": "Official record, credits, structure and sections on training and methodology; not a full reading. This revised edition is dated 8 December 2025. The official site announced ILIA 2026 on 20 October 2026; its full document remains pending review."
+      },
+      "license_note": "Derechos reservados según el PDF. Reseña propia y enlace a la edición oficial; no se aloja el documento ni una portada oficial. / The PDF states all rights reserved. Original editorial review and link to the official edition; neither the document nor its official cover is hosted.",
+      "es": {
+        "title": "ILIA 2025: capacidades y ecosistemas de IA en América Latina y el Caribe",
+        "summary": "Examina los ecosistemas de IA de 19 países mediante factores habilitantes, investigación, desarrollo y adopción, y gobernanza. Ayuda a interpretar las condiciones regionales para la formación y el desarrollo de IA. Los puntajes y las métricas de plataformas requieren conservar definición, cobertura y período. Corresponde a la edición revisada de 2025; ILIA 2026 ya fue anunciado y su lectura documental sigue pendiente.",
+        "takeaways": [
+          "19 países y tres dimensiones de los ecosistemas de IA",
+          "Distinguir preparación, capacidades y adopción efectiva",
+          "La demanda de cursos basada en plataformas no equivale a personas formadas"
+        ],
+        "audience": "Investigadores, responsables educativos y equipos de políticas de IA"
+      },
+      "en": {
+        "title": "ILIA 2025: AI capabilities and ecosystems in Latin America and the Caribbean",
+        "summary": "Examines AI ecosystems in 19 countries through enabling factors, research, development and adoption, and governance. It provides regional context for AI training and development. Scores and platform metrics require their definitions, coverage and periods to be retained. This is the revised 2025 edition; ILIA 2026 has been announced and its full documentary review remains pending.",
+        "takeaways": [
+          "19 countries and three dimensions of AI ecosystems",
+          "Distinguish readiness, capabilities and actual adoption",
+          "Platform-based course demand does not equal people trained"
+        ],
+        "audience": "Researchers, education leaders and AI policy teams"
+      },
+      "added_date": "2026-10-20",
+      "reviewed_date": "2026-10-20"
+    },
+    {
+      "id": "cepal-ilia-2025-country-methodology-2026",
+      "organization": "CEPAL",
+      "year": 2026,
+      "original_title": "Índice Latinoamericano de Inteligencia Artificial (ILIA) 2025: fichas de país y aspectos metodológicos",
+      "original_language": "es",
+      "source_url": "https://www.cepal.org/es/publicaciones/86020-indice-latinoamericano-inteligencia-artificial-ilia-2025-fichas-pais-aspectos",
+      "document_url": "https://repositorio.cepal.org/server/api/core/bitstreams/d7f13839-caee-4abb-8ef9-9df335698e39/content",
+      "published_date": "2026-03-18",
+      "edition": "LC/TS.2026/16",
+      "pages": 238,
+      "institutional_author": "NU. CEPAL",
+      "topic": "policy",
+      "review_scope": "selected_sections",
+      "review_note": {
+        "es": "Ficha oficial y secciones sobre comparabilidad, imputación y construcción del índice; no lectura íntegra de las 238 páginas. Publicado en 2026, complementa la edición ILIA 2025.",
+        "en": "Official record and sections on comparability, imputation and index construction; not a full reading of the 238 pages. Published in 2026, it complements the ILIA 2025 edition."
+      },
+      "license_note": "Reseña propia y enlace al documento oficial; no se aloja una copia ni una portada oficial. Consultar las condiciones del documento antes de reutilizarlo. / Original editorial review and link to the official document; neither a copy nor an official cover is hosted. Check the document terms before reuse.",
+      "es": {
+        "title": "ILIA 2025: fichas nacionales y metodología",
+        "summary": "Complementa ILIA 2025 con fichas de 19 países y documentación de fuentes, normalización, imputación y ponderación. Advierte que los puntajes de 2024 y 2025 no son directamente comparables tras cambios del índice. Permite distinguir observaciones, estimaciones y puntajes, y evitar atribuir todas las variaciones a cambios reales de desempeño.",
+        "takeaways": [
+          "Fichas de 19 países y anexo metodológico",
+          "Puntajes 2024–2025 no directamente comparables",
+          "Identificar normalización, imputaciones y ponderaciones"
+        ],
+        "audience": "Investigadores, analistas de datos y responsables de seguimiento de políticas de IA"
+      },
+      "en": {
+        "title": "ILIA 2025: country profiles and methodology",
+        "summary": "Complements ILIA 2025 with profiles of 19 countries and documentation of sources, normalisation, imputation and weighting. It warns that 2024 and 2025 scores are not directly comparable following changes to the index. It helps distinguish observations, estimates and scores, avoiding the attribution of every variation to actual performance changes.",
+        "takeaways": [
+          "19 country profiles and a methodological annex",
+          "2024–2025 scores are not directly comparable",
+          "Identify normalisation, imputation and weighting"
+        ],
+        "audience": "Researchers, data analysts and AI policy monitoring teams"
+      },
+      "added_date": "2026-10-20",
+      "reviewed_date": "2026-10-20"
     }
   ]
 }

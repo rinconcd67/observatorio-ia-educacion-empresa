@@ -25,7 +25,7 @@ test('sitemap contains all editorial canonicals and the two observatory language
 });
 test('publication records retain source-language and review-scope disclosures in both languages',async()=>{
  const c=JSON.parse(await readFile(join(root,'data/processed/library.json'),'utf8'));
- for(const item of c.items)for(const l of ['es','en']){const p=join(site,l==='es'?'biblioteca':'en/library',item.id,'index.html');const html=await readFile(p,'utf8');assert.ok(html.includes(item.source_url.replaceAll('&','&amp;')));assert.ok(html.includes(l==='es'?'Idioma de la edición':'Edition language'));assert.ok(html.includes(item.review_scope==='full_text'?(l==='es'?'Texto completo':'Full text'):(l==='es'?'Ficha o resumen oficial':'Official record or summary')));}
+ for(const item of c.items)for(const l of ['es','en']){const p=join(site,l==='es'?'biblioteca':'en/library',item.id,'index.html');const html=await readFile(p,'utf8');assert.ok(html.includes(item.source_url.replaceAll('&','&amp;')));assert.ok(html.includes(l==='es'?'Idioma de la edición':'Edition language'));assert.ok(html.includes(item.review_scope==='full_text'?(l==='es'?'Texto completo':'Full text'):item.review_scope==='selected_sections'?(l==='es'?'Secciones seleccionadas':'Selected sections'):(l==='es'?'Ficha o resumen oficial':'Official record or summary')));}
 });
 
 test('each record preserves its own review date when the collection changes',async()=>{

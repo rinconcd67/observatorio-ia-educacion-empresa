@@ -42,3 +42,15 @@
 - Contextos relevantes: 91 pruebas correctas; evidencias privadas y comparación de Search Console fuera del repositorio público; ningún cambio en la raíz ni en otros proyectos.
 - Próximos hitos: contrastar publicación con hashes y comparar una lectura automática posterior al envío único de cada control; no inferir causa mientras los resultados sean inconclusos.
 </memory>
+
+<memory project="Observatorio-CEPAL-ILIA-Skills" fecha="2026-10-20">
+- Estado actual: candidato local en copia aislada, listo para revisión humana; sin publicación.
+- Decisiones clave: CEPALSTAT 4052/4891/3816; 3.105 registros con 220 agregados separados y dos ausencias por nota; dos ILIA con lectura parcial; tres cursos IA y Python complemento.
+- Versiones anteriores: main42097ff; catálogo anterior26documentos/10Skills; candidato28/14 y106URL.
+- Verificación:99pruebas aprobadas,0fallos,0omitidas;106HTTP200local;QAES/EN y móvil; original175archivos,estadoGit yHEADpreservados.
+- Próximos hitos: revisión en http://127.0.0.1:4182/?view=education#cepal-context ; publicación y cierreGit pendientes de autorización.
+</memory>
+
+<autorizacion fecha="2026-10-20" proyecto="CEPAL-ILIA-Skills">
+El usuario aprueba publicar el candidato revisado: stage selectivo, commit, push, PR y despliegue tras validar, verificación pública y cierre Git limpio. El permiso se limita al Observatorio y exige preservar el checkout original. Las 99 pruebas locales y la auditoría del diff fueron satisfactorias; CI, merge y publicación deben verificarse por separado.
+</autorizacion>

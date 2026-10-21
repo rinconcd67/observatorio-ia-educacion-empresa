@@ -522,18 +522,15 @@
   }
 
   function formatDate(value) {
-    const date = new Date(value);
-    return Number.isNaN(date.valueOf()) ? String(value ?? "") : date.toLocaleDateString(locale.dateLocale, { day: "numeric", month: "short", year: "numeric" });
+    const date = new Date(/^\d{4}-\d{2}-\d{2}$/.test(value) ? value + "T12:00:00Z" : value);
+    return Number.isNaN(date.valueOf()) ? String(value ?? "") : date.toLocaleDateString(locale.dateLocale, { day: "numeric", month: "short", year: "numeric", timeZone: "America/New_York" });
   }
 
   function initialize() {
     const dataDate = formatDate(artifact.snapshot.generatedAt);
-    const editorialDates = [
-      window.OBSERVATORY_EDITORIAL_FRESHNESS?.news_checked_at,
-      window.OBSERVATORY_EDITORIAL_FRESHNESS?.library_reviewed_date,
-    ].filter(Boolean).map((value) => new Date(value)).filter((date) => !Number.isNaN(date.valueOf()));
-    const editorialDate = editorialDates.length ? formatDate(new Date(Math.max(...editorialDates)).toISOString()) : dataDate;
-    const freshness = t("freshnessDetailed", { dataDate, editorialDate });
+    const newsDate = formatDate(window.OBSERVATORY_EDITORIAL_FRESHNESS?.news_checked_at);
+    const libraryDate = formatDate(window.OBSERVATORY_EDITORIAL_FRESHNESS?.library_reviewed_date);
+    const freshness = t("freshnessDetailed", { dataDate, newsDate, libraryDate });
     document.getElementById("freshness-label").textContent = freshness;
     document.getElementById("footer-freshness").textContent = freshness;
     initializeControls();

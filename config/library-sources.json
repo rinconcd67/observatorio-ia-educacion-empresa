@@ -4,7 +4,8 @@
     "unesco.org",
     "iadb.org",
     "oecd.org",
-    "mit.edu"
+    "mit.edu",
+    "cepal.org"
   ],
   "discovery_sources": [
     {
@@ -105,6 +106,19 @@
         "higher education",
         "Latin America",
         "artificial intelligence"
+      ]
+    },
+    {
+      "id": "cepal_digital_development",
+      "organization": "CEPAL",
+      "url": "https://desarrollodigital.cepal.org/es",
+      "catalog_url": "https://www.cepal.org/es/publicaciones",
+      "topics": [
+        "artificial intelligence",
+        "education",
+        "skills",
+        "Latin America and the Caribbean",
+        "digital development"
       ]
     }
   ],

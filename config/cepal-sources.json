@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "scope": "context_only_not_ai_adoption",
+  "api_documentation": "https://statistics.cepal.org/portal/cepalstat/open-data.html?lang=es",
+  "sources": [
+    {
+      "id": "cepal_household_internet_quintile",
+      "indicator_id": 4052,
+      "url": "https://api-cepalstat.cepal.org/cepalstat/api/v1/indicator/4052/data?lang=es",
+      "category_dimension_id": 77315,
+      "origin": "CEPAL Observatorio de Desarrollo Digital / BADEHOG",
+      "title": {"es": "Internet en hogares por quintil de ingreso", "en": "Household Internet access by income quintile"},
+      "note": {"es": "Porcentaje de hogares de cada quintil con conexión fija o móvil; no mide competencias ni adopción de IA.", "en": "Percentage of households in each quintile with fixed or mobile access; this does not measure skills or AI adoption."}
+    },
+    {
+      "id": "cepal_household_internet_area",
+      "indicator_id": 4891,
+      "url": "https://api-cepalstat.cepal.org/cepalstat/api/v1/indicator/4891/data?lang=es",
+      "category_dimension_id": 102949,
+      "origin": "CEPAL Observatorio de Desarrollo Digital / BADEHOG",
+      "title": {"es": "Internet en hogares por zona geográfica", "en": "Household Internet access by geographical area"},
+      "note": {"es": "Porcentaje de hogares de cada zona; urbano, rural y total son desagregaciones distintas.", "en": "Percentage of households in each area; urban, rural and total are distinct categories."}
+    },
+    {
+      "id": "cepal_school_internet",
+      "indicator_id": 3816,
+      "url": "https://api-cepalstat.cepal.org/cepalstat/api/v1/indicator/3816/data?lang=es",
+      "category_dimension_id": 74607,
+      "report_dimension_id": 74389,
+      "null_note_ids": [12256],
+      "origin": "UN SDG database / UNESCO UIS, distributed by CEPALSTAT",
+      "title": {"es": "Escuelas con Internet para fines pedagógicos", "en": "Schools with Internet access for pedagogical purposes"},
+      "note": {"es": "Porcentaje por nivel educativo. La nota 12256 identifica ausencias, aunque el valor original sea cero. No mide uso ni calidad de IA educativa.", "en": "Percentage by education level. Note 12256 identifies missing data, even when the original value is zero. This does not measure use or quality of educational AI."}
+    }
+  ]
+}

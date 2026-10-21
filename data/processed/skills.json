@@ -1,5 +1,5 @@
 {
-  "reviewed_date": "2026-10-15",
+  "reviewed_date": "2026-10-20",
   "items": [
     {
       "id": "elements-ai-intro",
@@ -463,6 +463,190 @@
         ],
         "practice": "Observatory proposal: build an agent with one limited tool and test failures, permissions and traceability."
       }
+    },
+    {
+      "id": "cisco-modern-ai",
+      "provider": "Cisco Networking Academy",
+      "source_url": "https://www.netacad.com/es/courses/introduction-to-modern-ai?courseLang=es-XL",
+      "evidence_urls": [
+        "https://www.netacad.com/es/courses/introduction-to-modern-ai?courseLang=es-XL"
+      ],
+      "verified_date": "2026-10-20",
+      "language": "es",
+      "cost": "free",
+      "level": "beginner",
+      "routes": [
+        "start"
+      ],
+      "es": {
+        "title": "Introducción a la IA moderna",
+        "summary": "Introducción a las aplicaciones cotidianas de la IA, los chatbots, la visión y la traducción, con actividades para explorar sus posibilidades y límites.",
+        "duration": "6 horas; a ritmo propio.",
+        "prerequisites": "Nivel principiante. No se especifican requisitos adicionales en la ficha revisada.",
+        "access": "Cuenta para cursar. La ficha pública ofrece inicio autoguiado; no se comprobó la matrícula ni las restricciones geográficas tras el registro.",
+        "credential": "Insignia digital del curso; la ficha revisada no garantiza un certificado adicional ni una certificación profesional.",
+        "cost_note": "Formación sin cargo según la ficha oficial.",
+        "outcomes": [
+          "Reconocer aplicaciones cotidianas de la IA",
+          "Explorar chatbots, visión y traducción",
+          "Examinar posibilidades y límites de una aplicación"
+        ],
+        "practice": "Propuesta del observatorio: describe una aplicación de IA y contrasta dos afirmaciones sobre su funcionamiento con fuentes verificables."
+      },
+      "en": {
+        "title": "Introduction to modern AI",
+        "summary": "An introduction to everyday AI applications, chatbots, vision and translation, with activities for exploring their possibilities and limitations.",
+        "duration": "6 hours; self-paced.",
+        "prerequisites": "Beginner level. No additional prerequisites are specified in the reviewed record.",
+        "access": "An account is needed to take the course. The public record offers self-paced enrolment; enrolment and geographic restrictions after registration were not checked.",
+        "credential": "Course digital badge; the reviewed record does not guarantee an additional certificate or professional certification.",
+        "cost_note": "Training is free of charge according to the official record.",
+        "outcomes": [
+          "Recognise everyday AI applications",
+          "Explore chatbots, vision and translation",
+          "Examine an application’s opportunities and limitations"
+        ],
+        "practice": "Observatory suggestion: describe an AI application and check two claims about how it works against verifiable sources."
+      }
+    },
+    {
+      "id": "santander-responsible-prompting",
+      "provider": "Microsoft & Founderz · Santander Open Academy",
+      "source_url": "https://app.santanderopenacademy.com/es/course/master-ai-with-responsible-prompting",
+      "evidence_urls": [
+        "https://app.santanderopenacademy.com/es/course/master-ai-with-responsible-prompting"
+      ],
+      "verified_date": "2026-10-20",
+      "language": "es",
+      "cost": "free",
+      "level": "beginner",
+      "routes": [
+        "work",
+        "start"
+      ],
+      "es": {
+        "title": "Domina la IA con prompting responsable",
+        "summary": "Formación sobre indicaciones, Copilot y automatizaciones sin programar, con atención al uso responsable y a la revisión de resultados.",
+        "duration": "8 horas lectivas según la ficha actual; a ritmo propio.",
+        "prerequisites": "Mayores de 16 años, de cualquier país de residencia. No se detallan otros requisitos en la ficha actual.",
+        "access": "Plazas ilimitadas con registro. Oferta declarada abierta hasta el 31 de diciembre de 2026; esa fecha no acredita cuándo expira el acceso del alumno.",
+        "credential": "Certificado de finalización al completar con éxito el curso.",
+        "cost_note": "Formación gratuita. El acceso a todas las funciones de las herramientas utilizadas no queda garantizado como gratuito. La ficha actual indica 8 horas; páginas anteriores mencionaban 2.",
+        "outcomes": [
+          "Preparar indicaciones con propósito y contexto",
+          "Aplicar IA a tareas y flujos cotidianos",
+          "Revisar resultados y considerar riesgos éticos"
+        ],
+        "practice": "Propuesta del observatorio: compara dos indicaciones para una tarea con datos ficticios y evalúa las respuestas con una rúbrica y revisión humana."
+      },
+      "en": {
+        "title": "Master AI with responsible prompting",
+        "summary": "Training in prompts, Copilot and no-code automations, with attention to responsible use and reviewing outputs.",
+        "duration": "8 learning hours according to the current record; self-paced.",
+        "prerequisites": "Over 16 years old, from any country of residence. No other prerequisites are detailed in the current record.",
+        "access": "Unlimited places with registration. The offer is stated to be open until 31 December 2026; this does not establish when a learner’s access expires.",
+        "credential": "Completion certificate after successfully finishing the course.",
+        "cost_note": "Free training. Free access to every feature of the tools used is not guaranteed. The current record states 8 hours; earlier pages mentioned 2.",
+        "outcomes": [
+          "Prepare prompts with a purpose and context",
+          "Apply AI to everyday tasks and workflows",
+          "Review outputs and consider ethical risks"
+        ],
+        "practice": "Observatory suggestion: compare two prompts for a task using fictional data, then assess their outputs with a rubric and human review."
+      }
+    },
+    {
+      "id": "santander-ai-rules",
+      "provider": "Santander Open Academy",
+      "source_url": "https://www.santanderopenacademy.com/es/courses/safe-fair-legal-how-to-use-ai-right.html.html",
+      "evidence_urls": [
+        "https://www.santanderopenacademy.com/es/courses/safe-fair-legal-how-to-use-ai-right.html.html"
+      ],
+      "verified_date": "2026-10-20",
+      "language": "es",
+      "cost": "free",
+      "level": "beginner",
+      "routes": [
+        "start",
+        "teach",
+        "work"
+      ],
+      "es": {
+        "title": "Reglas de la IA: cómo usarla sin correr riesgos legales",
+        "summary": "Introducción a sesgos, privacidad, desinformación y uso responsable de IA mediante ejemplos y actividades accesibles.",
+        "duration": "8 horas lectivas; a ritmo propio.",
+        "prerequisites": "Mayores de 16 años, de cualquier país. No requiere experiencia técnica ni jurídica.",
+        "access": "Curso online con registro. Oferta declarada abierta hasta el 31 de diciembre de 2026; no se infiere la fecha de expiración del acceso. Necesita conexión a Internet.",
+        "credential": "Certificado de finalización descargable al completar todos los elementos del curso.",
+        "cost_note": "Curso financiado íntegramente por Santander, sin pago del alumno según la FAQ oficial. Es formación de sensibilización, no asesoría jurídica.",
+        "outcomes": [
+          "Identificar sesgos, desinformación y riesgos de privacidad",
+          "Aplicar criterios éticos al uso de IA",
+          "Evaluar casos y medidas para reducir riesgos"
+        ],
+        "practice": "Propuesta del observatorio: revisa un caso ficticio de uso de IA en clase o en el trabajo y documenta decisiones sobre privacidad, sesgo y supervisión."
+      },
+      "en": {
+        "title": "AI rules: using AI safely and responsibly",
+        "summary": "An accessible introduction to bias, privacy, misinformation and responsible AI use through examples and activities.",
+        "duration": "8 learning hours; self-paced.",
+        "prerequisites": "Over 16 years old, from any country. No technical or legal experience is required.",
+        "access": "Online course with registration. The offer is stated to be open until 31 December 2026; the date when access expires is not inferred. An Internet connection is required.",
+        "credential": "Downloadable completion certificate after completing all course elements.",
+        "cost_note": "Fully funded by Santander, with no learner payment according to the official FAQ. This is awareness training, not legal advice.",
+        "outcomes": [
+          "Identify bias, misinformation and privacy risks",
+          "Apply ethical criteria to AI use",
+          "Assess cases and measures to reduce risks"
+        ],
+        "practice": "Observatory suggestion: review a fictional AI use case at school or work and document privacy, bias and oversight decisions."
+      }
+    },
+    {
+      "id": "santander-python-introduction",
+      "provider": "Santander Open Academy",
+      "source_url": "https://app.santanderopenacademy.com/es/course/introduction_to_python_programming",
+      "evidence_urls": [
+        "https://app.santanderopenacademy.com/es/course/introduction_to_python_programming"
+      ],
+      "verified_date": "2026-10-20",
+      "language": "es",
+      "cost": "free",
+      "level": "beginner",
+      "routes": [
+        "build"
+      ],
+      "es": {
+        "title": "Introducción a la programación con Python",
+        "summary": "Complemento técnico para la ruta Construye con IA. Introduce programación desde cero; no es un curso específico de inteligencia artificial.",
+        "duration": "8 horas lectivas; a ritmo propio.",
+        "prerequisites": "Mayores de 16 años, de cualquier país. Se inicia desde cero.",
+        "access": "Plazas ilimitadas con registro. Oferta declarada abierta hasta el 31 de diciembre de 2026; esa fecha no acredita cuándo expira el acceso del alumno.",
+        "credential": "Certificado de finalización al completar el curso.",
+        "cost_note": "Formación gratuita. Se incorpora como preparación técnica complementaria, no como formación específica de IA.",
+        "outcomes": [
+          "Utilizar variables y estructuras de control y datos",
+          "Crear funciones y gestionar excepciones",
+          "Trabajar con entrada, salida y módulos"
+        ],
+        "practice": "Propuesta del observatorio: prepara y valida un CSV con datos sintéticos y documenta errores antes de utilizarlo en un prototipo de IA."
+      },
+      "en": {
+        "title": "Introduction to Python programming",
+        "summary": "A technical complement for the Build with AI route. Introduces programming from scratch; it is not an AI-specific course.",
+        "duration": "8 learning hours; self-paced.",
+        "prerequisites": "Over 16 years old, from any country. Starts from scratch.",
+        "access": "Unlimited places with registration. The offer is stated to be open until 31 December 2026; this does not establish when a learner’s access expires.",
+        "credential": "Completion certificate after finishing the course.",
+        "cost_note": "Free training. Included as complementary technical preparation, not as AI-specific training.",
+        "outcomes": [
+          "Use variables, control flow and data structures",
+          "Create functions and handle exceptions",
+          "Work with input, output and modules"
+        ],
+        "practice": "Observatory suggestion: prepare and validate a CSV with synthetic data, documenting errors before using it in an AI prototype."
+      },
+      "kind": "complement"
     }
   ]
 }

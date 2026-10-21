@@ -136,11 +136,13 @@ async function packageDashboard() {
   const cimaJs = await readFile(join(templateDirectory, "cima-context.js"), "utf8");
   const finance = await readJson(join(root, "data/processed/education-finance.json"));
   const financeJs = await readFile(join(templateDirectory, "education-finance.js"), "utf8");
+  const cepal = await readJson(join(root, "data/processed/cepal-context.json"));
+  const cepalJs = await readFile(join(templateDirectory, "cepal-context.js"), "utf8");
   const editorialFreshness = {
     news_checked_at: news.checked_at,
     library_reviewed_date: library.reviewed_date,
   };
-  const runtime = "window.OBSERVATORY_NEWS=" + safeJson(news) + ";\nwindow.OBSERVATORY_CHANGES=" + safeJson(change) + ";\nwindow.OBSERVATORY_EDITORIAL_FRESHNESS=" + safeJson(editorialFreshness) + ";\n" + javascript + "\n" + portal + "\nwindow.OBSERVATORY_EDUCATION_EVIDENCE=" + safeJson(educationEvidence) + ";\n" + educationJs + "\nwindow.OBSERVATORY_CIMA=" + safeJson({...cima, source_runs: undefined}) + ";\n" + cimaJs + "\nwindow.OBSERVATORY_FINANCE=" + safeJson({...finance, source_runs: undefined}) + ";\n" + financeJs;
+  const runtime = "window.OBSERVATORY_NEWS=" + safeJson(news) + ";\nwindow.OBSERVATORY_CHANGES=" + safeJson(change) + ";\nwindow.OBSERVATORY_EDITORIAL_FRESHNESS=" + safeJson(editorialFreshness) + ";\n" + javascript + "\n" + portal + "\nwindow.OBSERVATORY_EDUCATION_EVIDENCE=" + safeJson(educationEvidence) + ";\n" + educationJs + "\nwindow.OBSERVATORY_CIMA=" + safeJson({...cima, source_runs: undefined}) + ";\n" + cimaJs + "\nwindow.OBSERVATORY_FINANCE=" + safeJson({...finance, source_runs: undefined}) + ";\n" + financeJs + "\nwindow.OBSERVATORY_CEPAL=" + safeJson({...cepal, source_runs: undefined}) + ";\n" + cepalJs;
   const outputs = {};
   for (const localeName of ["es", "en"]) {
     const outputPath = join(dashboardDirectory, i18n[localeName].output);
