@@ -1,29 +1,65 @@
 {
-  "checked_at": "2026-10-15T14:24:48.771Z",
+  "checked_at": "2026-10-31T16:16:43.057Z",
   "items": [
     {
-      "title": "Teaching students to think and learn through questions",
-      "url": "https://openai.com/index/teaching-students-to-think-and-learn-through-questions",
-      "published_at": "2026-10-15T13:00:00.000Z",
+      "title": "From synthetic enterprise data evaluations to real Microsoft Copilot AI confidence",
+      "url": "https://www.microsoft.com/en-us/research/blog/from-synthetic-enterprise-data-evaluations-to-real-microsoft-copilot-ai-confidence/",
+      "published_at": "2026-10-30T13:05:28.000Z",
+      "source": "Microsoft Research"
+    },
+    {
+      "title": "Making it easier for websites to express AI training preferences",
+      "url": "https://openai.com/index/helping-websites-express-ai-training-preferences",
+      "published_at": "2026-10-30T09:30:00.000Z",
       "source": "OpenAI"
     },
     {
-      "title": "Amp puts AI agents to work beyond code with OpenAI models",
-      "url": "https://openai.com/index/amp-beyond-coding",
-      "published_at": "2026-10-14T12:00:00.000Z",
+      "title": "Community safety report and new protections for teens",
+      "url": "https://openai.com/index/community-safety-report-and-new-protections-for-teens",
+      "published_at": "2026-10-30T09:00:00.000Z",
       "source": "OpenAI"
     },
     {
-      "title": "SentinelOne cuts malware analysis from weeks to hours",
-      "url": "https://openai.com/index/sentinelone",
-      "published_at": "2026-10-14T12:00:00.000Z",
+      "title": "Fair use benefits everyone",
+      "url": "https://openai.com/index/fair-use-benefits-everyone",
+      "published_at": "2026-10-30T00:00:00.000Z",
       "source": "OpenAI"
     },
     {
-      "title": "How Third Moment Research runs 10,000 agents for 36+ hours",
-      "url": "https://openai.com/index/third-moment-research",
-      "published_at": "2026-10-14T07:00:00.000Z",
+      "title": "Microsoft Research Focus – Edition #97",
+      "url": "https://www.microsoft.com/en-us/research/podcast/microsoft-research-focus-edition-97/",
+      "published_at": "2026-10-29T19:19:16.000Z",
+      "source": "Microsoft Research"
+    },
+    {
+      "title": "An updated Model Spec for more capable and beneficial AI",
+      "url": "https://openai.com/index/updated-model-spec",
+      "published_at": "2026-10-29T17:00:00.000Z",
       "source": "OpenAI"
+    },
+    {
+      "title": "Our newest AI Quest: Mapping the human brain",
+      "url": "https://blog.google/products-and-platforms/products/education/ai-quests-polar-peaks/",
+      "published_at": "2026-10-26T16:00:00.000Z",
+      "source": "Google AI"
+    },
+    {
+      "title": "Flint-interactive: A language for creating interactive data visualizations",
+      "url": "https://www.microsoft.com/en-us/research/blog/flint-interactive-a-language-for-creating-interactive-data-visualizations/",
+      "published_at": "2026-10-22T16:00:00.000Z",
+      "source": "Microsoft Research"
+    },
+    {
+      "title": "Solving a 31-year-old grand challenge in mathematics – the KLS conjecture",
+      "url": "https://www.microsoft.com/en-us/research/blog/solving-a-31-year-old-grand-challenge-in-mathematics-the-kls-conjecture/",
+      "published_at": "2026-10-21T16:00:00.000Z",
+      "source": "Microsoft Research"
+    },
+    {
+      "title": "Southeast Asia’s digital economy to hit $368 billion",
+      "url": "https://blog.google/company-news/inside-google/around-the-globe/google-asia/e-conomy-sea-report-2026/",
+      "published_at": "2026-10-21T04:00:00.000Z",
+      "source": "Google AI"
     },
     {
       "title": "Gemini 4 Argon: Built to solve your hardest problems",
@@ -32,45 +68,9 @@
       "source": "Google AI"
     },
     {
-      "title": "Simulating student learning for better AI tutoring",
-      "url": "https://www.microsoft.com/en-us/research/blog/simulating-student-learning-for-better-ai-tutoring/",
-      "published_at": "2026-10-12T16:00:00.000Z",
-      "source": "Microsoft Research"
-    },
-    {
-      "title": "Agent Lightning v1.0: A 3,500-Line Lightweight Agentic RL Framework for Training Agents with Real Harnesses",
-      "url": "https://www.microsoft.com/en-us/research/blog/agent-lightning-v1-0-a-3500-line-lightweight-agentic-rl-framework-for-training-agents-with-real-harnesses/",
-      "published_at": "2026-10-07T16:00:00.000Z",
-      "source": "Microsoft Research"
-    },
-    {
       "title": "Introducing Playground: Create and play custom games",
       "url": "https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/",
       "published_at": "2026-10-07T12:00:00.000Z",
-      "source": "Google AI"
-    },
-    {
-      "title": "What AI gets wrong and what failure teaches us",
-      "url": "https://www.microsoft.com/en-us/research/podcast/what-ai-gets-wrong-and-what-failure-teaches-us/",
-      "published_at": "2026-10-06T16:19:06.000Z",
-      "source": "Microsoft Research"
-    },
-    {
-      "title": "The latest AI news we announced in September 2026",
-      "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/",
-      "published_at": "2026-10-02T15:00:00.000Z",
-      "source": "Google AI"
-    },
-    {
-      "title": "Forecasting space weather risks on power grids",
-      "url": "https://www.microsoft.com/en-us/research/blog/forecasting-space-weather-risks-on-power-grids/",
-      "published_at": "2026-09-30T16:00:00.000Z",
-      "source": "Microsoft Research"
-    },
-    {
-      "title": "Watch the winning trailer from the Future Vision XPRIZE, The Gifted.",
-      "url": "https://blog.google/innovation-and-ai/technology/ai/winner-future-vision-xprize/",
-      "published_at": "2026-09-28T19:00:00.000Z",
       "source": "Google AI"
     }
   ],
@@ -79,19 +79,19 @@
       "name": "OpenAI",
       "url": "https://openai.com/news/rss.xml",
       "status": "ok",
-      "last_successful_at": "2026-10-15T14:24:48.771Z"
+      "last_successful_at": "2026-10-31T16:16:43.057Z"
     },
     {
       "name": "Google AI",
       "url": "https://blog.google/technology/ai/rss/",
       "status": "ok",
-      "last_successful_at": "2026-10-15T14:24:48.771Z"
+      "last_successful_at": "2026-10-31T16:16:43.057Z"
     },
     {
       "name": "Microsoft Research",
       "url": "https://www.microsoft.com/en-us/research/feed/",
       "status": "ok",
-      "last_successful_at": "2026-10-15T14:24:48.771Z"
+      "last_successful_at": "2026-10-31T16:16:43.057Z"
     }
   ]
 }
