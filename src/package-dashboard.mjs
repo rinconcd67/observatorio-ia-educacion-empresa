@@ -3,6 +3,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { readJson, writeText } from "./lib/io.mjs";
+import { renderPortalFallback } from "./lib/portal-fallback.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const templateDirectory = join(root, "src", "dashboard");
@@ -32,7 +33,7 @@ function translateAttributes(shell, locale) {
     "Mapa mundial por indicador": "World map by indicator",
     "País o región": "Country or region",
   } : {};
-  return shell.replace(/\b(aria-label|title|placeholder)="([^"]+)"/g, (match, name, value) => {
+  return shell.replace(/\b(aria-label|title|placeholder|alt)="([^"]+)"/g, (match, name, value) => {
     return `${name}="${attributes[value] ?? value}"`;
   });
 }
@@ -60,7 +61,7 @@ function structuredData(locale, version) {
     license: "https://creativecommons.org/licenses/by/4.0/",
     author: authorObj,
     creator: authorObj,
-    publisher: { "@type": "CollegeOrUniversity", name: "Broward International University" },
+    publisher: authorObj,
     temporalCoverage: "2000/2026",
     spatialCoverage: "Global (218 countries and economies)",
     keywords: spanish
@@ -81,7 +82,7 @@ function structuredData(locale, version) {
   };
 }
 
-function renderLocale(shell, css, javascript, artifact, geojson, i18n, localeName, version) {
+function renderLocale(shell, css, javascript, artifact, geojson, i18n, localeName, version, officialSources) {
   const locale = i18n[localeName];
   const runtimeI18n = Object.fromEntries(
     Object.entries(i18n).map(([name, configuration]) => [name, { ...configuration, static: undefined }]),
@@ -91,9 +92,11 @@ function renderLocale(shell, css, javascript, artifact, geojson, i18n, localeNam
     : shell;
   const baseUrl = "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/";
   return localizedShell
-    .replaceAll("__LIBRARY_PATH__", localeName === "es" ? `${baseUrl}biblioteca/` : `${baseUrl}en/library/`)
-    .replaceAll("__TOPICS_PATH__", localeName === "es" ? `${baseUrl}temas/` : `${baseUrl}en/topics/`)
-    .replaceAll("__SKILLS_PATH__", localeName === "es" ? `${baseUrl}skills/` : `${baseUrl}en/skills/`)
+    .replace("__OBSERVATORY_PORTAL_FALLBACK__", () => renderPortalFallback(localeName, officialSources))
+    .replaceAll("__LIBRARY_PATH__", localeName === "es" ? "biblioteca/" : "library/")
+    .replaceAll("__TOPICS_PATH__", localeName === "es" ? "temas/" : "topics/")
+    .replaceAll("__SKILLS_PATH__", localeName === "es" ? "skills/" : "skills/")
+    .replaceAll("__SKIP_LABEL__", localeName === "es" ? "Saltar al contenido" : "Skip to content")
     .replaceAll("__PACKAGE_VERSION__", version)
     .replaceAll("__HTML_LANG__", locale.htmlLang)
     .replaceAll("__PAGE_TITLE__", locale.pageTitle)
@@ -152,6 +155,12 @@ async function packageDashboard() {
     changed: [...newRows].filter(([k,v]) => oldRows.has(k) && oldRows.get(k) !== v).length,
     baseline: baseline.generated_at,
   };
+  const visitsConfig = await readFile(join(root, "src/public/assets/visits-config.js"), "utf8");
+  const visits = await readFile(join(root, "src/public/assets/visits.js"), "utf8");
+  const discoveryCore = await readFile(join(templateDirectory, "discovery-core.js"), "utf8");
+  const discovery = await readFile(join(templateDirectory, "discovery.js"), "utf8");
+  const discoveryCss = await readFile(join(templateDirectory, "discovery.css"), "utf8");
+  const officialSources = await readJson(join(root, "src/content/official-sources.json"));
   const portal = await readFile(join(templateDirectory, "portal.js"), "utf8");
   const educationEvidence = await readJson(join(root, "data/processed/education-evidence.json"));
   const educationJs = await readFile(join(templateDirectory, "education-evidence.js"), "utf8");
@@ -176,6 +185,7 @@ async function packageDashboard() {
     "window.OBSERVATORY_CIMA=" + safeJson({ ...cima, source_runs: undefined }) + ";",
     "window.OBSERVATORY_FINANCE=" + safeJson({ ...finance, source_runs: undefined }) + ";",
     "window.OBSERVATORY_CEPAL=" + safeJson({ ...cepal, source_runs: undefined }) + ";",
+    "window.OBSERVATORY_OFFICIAL_SOURCES=" + safeJson(officialSources) + ";",
     javascript,
     portal,
     educationJs,
@@ -183,11 +193,15 @@ async function packageDashboard() {
     financeJs,
     cepalJs,
     stanfordScholarJs,
+    discoveryCore,
+    discovery,
+    visitsConfig,
+    visits,
   ].join("\n");
   const outputs = {};
   for (const localeName of ["es", "en"]) {
     const outputPath = join(dashboardDirectory, i18n[localeName].output);
-    const html = renderLocale(shell, css, runtime, artifact, geojson, i18n, localeName, packageDefinition.version);
+    const html = renderLocale(shell, css + "\n" + discoveryCss, runtime, artifact, geojson, i18n, localeName, packageDefinition.version, officialSources);
     await mkdir(dirname(outputPath), { recursive: true });
     await writeText(outputPath, html);
     outputs[localeName] = { path: outputPath, bytes: Buffer.byteLength(html) };

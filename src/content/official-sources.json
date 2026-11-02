@@ -1,0 +1,459 @@
+{
+  "reviewed_date": "2026-11-02",
+  "scope": {
+    "es": "Selección mundial de recursos oficiales para educación, competencias y empresa. Cada enlace conduce a la institución responsable.",
+    "en": "A worldwide selection of official resources for education, skills and business. Each link leads to the responsible institution."
+  },
+  "items": [
+    {
+      "id": "mit-raise",
+      "name": "MIT RAISE",
+      "region": "americas",
+      "type": "skills",
+      "url": "https://raise.mit.edu/",
+      "es": {
+        "title": "Aprender, crear y enseñar con IA",
+        "description": "Recursos e investigación del MIT para alfabetización en IA, creatividad y formación docente."
+      },
+      "en": {
+        "title": "Learn, create and teach with AI",
+        "description": "MIT resources and research on AI literacy, creativity and teacher learning."
+      }
+    },
+    {
+      "id": "mit-futuretech",
+      "name": "MIT CSAIL FutureTech",
+      "region": "americas",
+      "type": "research",
+      "url": "https://futuretech.mit.edu/",
+      "es": {
+        "title": "IA, trabajo y productividad",
+        "description": "Investigación sobre capacidades tecnológicas, automatización y adopción de IA en el trabajo y la ciencia."
+      },
+      "en": {
+        "title": "AI, work and productivity",
+        "description": "Research on technological capabilities, automation and AI adoption in work and science."
+      }
+    },
+    {
+      "id": "stanford-assessment",
+      "name": "Stanford / ETS",
+      "region": "americas",
+      "type": "research",
+      "url": "https://acceleratelearning.stanford.edu/story/white-paper-responsible-student-assessments-in-the-ai-era/",
+      "es": {
+        "title": "Evaluar el aprendizaje en la era de la IA",
+        "description": "Documento sobre evaluación responsable del aprendizaje y capacidades humanas en entornos con IA."
+      },
+      "en": {
+        "title": "Assessing learning in the AI era",
+        "description": "A paper on responsible assessment of learning and human capabilities in AI-enabled environments."
+      }
+    },
+    {
+      "id": "unesco-ethics",
+      "name": "UNESCO",
+      "region": "global",
+      "type": "observatory",
+      "url": "https://www.unesco.org/ethics-ai/es",
+      "es": {
+        "title": "Ética y gobernanza de la IA",
+        "description": "Observatorio global con perfiles nacionales, herramientas y recursos sobre gobernanza y capacidades institucionales."
+      },
+      "en": {
+        "title": "AI ethics and governance",
+        "description": "A global observatory with country profiles, tools and resources on governance and institutional capabilities."
+      }
+    },
+    {
+      "id": "unesco-alc",
+      "name": "UNESCO Santiago",
+      "region": "americas",
+      "type": "observatory",
+      "url": "https://www.unesco.org/es/fieldoffice/santiago/observatorio-ia-alc",
+      "es": {
+        "title": "IA en educación en América Latina y el Caribe",
+        "description": "Observatorio regional con perfiles de países, publicaciones y formación para orientar la IA en los sistemas educativos."
+      },
+      "en": {
+        "title": "AI in education in Latin America and the Caribbean",
+        "description": "A regional observatory with country profiles, publications and learning resources to guide AI in education systems."
+      }
+    },
+    {
+      "id": "cepal-digital",
+      "name": "CEPAL / ECLAC",
+      "region": "americas",
+      "type": "observatory",
+      "url": "https://desarrollodigital.cepal.org/es/tema/inteligencia-artificial",
+      "es": {
+        "title": "Observatorio de Desarrollo Digital",
+        "description": "Recursos sobre capacidades, adopción y transformación productiva de la IA en América Latina y el Caribe."
+      },
+      "en": {
+        "title": "Digital Development Observatory",
+        "description": "Resources on AI capabilities, adoption and productive transformation in Latin America and the Caribbean."
+      }
+    },
+    {
+      "id": "ilia",
+      "name": "CEPAL / CENIA",
+      "region": "americas",
+      "type": "observatory",
+      "url": "https://www.cepal.org/en/node/91474",
+      "es": {
+        "title": "Índice Latinoamericano de Inteligencia Artificial",
+        "description": "Publicación ILIA 2026 para explorar y comparar ecosistemas de IA en la región."
+      },
+      "en": {
+        "title": "Latin American Artificial Intelligence Index",
+        "description": "The ILIA 2026 publication for exploring and comparing AI ecosystems across the region."
+      }
+    },
+    {
+      "id": "fairlac",
+      "name": "BID / IDB",
+      "region": "americas",
+      "type": "initiative",
+      "url": "https://fairlac.iadb.org/",
+      "es": {
+        "title": "fAIr LAC: IA aplicada",
+        "description": "Herramientas y experiencias para diseñar proyectos de IA responsable en América Latina y el Caribe."
+      },
+      "en": {
+        "title": "fAIr LAC: applied AI",
+        "description": "Tools and experiences for designing responsible AI projects in Latin America and the Caribbean."
+      }
+    },
+    {
+      "id": "worldbank-foundations",
+      "name": "Banco Mundial / World Bank",
+      "region": "global",
+      "type": "research",
+      "url": "https://www.worldbank.org/en/publication/dptr2025-ai-foundations",
+      "es": {
+        "title": "Las bases para desarrollar IA",
+        "description": "Informe sobre conectividad, cómputo, datos y competencias necesarios para ampliar las capacidades de IA."
+      },
+      "en": {
+        "title": "Building the foundations for AI",
+        "description": "A report on connectivity, computing, data and skills needed to develop AI capabilities."
+      }
+    },
+    {
+      "id": "imf-aipi",
+      "name": "FMI / IMF",
+      "region": "global",
+      "type": "observatory",
+      "url": "https://www.imf.org/external/datamapper/datasets/AIPI",
+      "es": {
+        "title": "Preparación de los países para la IA",
+        "description": "Índice AIPI para consultar infraestructura digital, capital humano y otros componentes de preparación estructural."
+      },
+      "en": {
+        "title": "Country preparedness for AI",
+        "description": "The AIPI index for exploring digital infrastructure, human capital and other components of structural preparedness."
+      }
+    },
+    {
+      "id": "wef-skills",
+      "name": "World Economic Forum",
+      "region": "global",
+      "type": "research",
+      "url": "https://es.weforum.org/publications/the-future-of-jobs-report-2025/3-skills-outlook",
+      "es": {
+        "title": "Competencias y futuro del trabajo",
+        "description": "Perspectivas de competencias del Future of Jobs Report 2025 para estudiar transformación laboral y recualificación."
+      },
+      "en": {
+        "title": "Skills and the future of work",
+        "description": "The Future of Jobs Report 2025 skills outlook explores workforce transformation and reskilling."
+      }
+    },
+    {
+      "id": "unitar-ai",
+      "name": "UNITAR",
+      "region": "global",
+      "type": "skills",
+      "url": "https://unitar.org/specialized-training-artificial-intelligence",
+      "es": {
+        "title": "IA y competencias profesionales",
+        "description": "Oferta institucional de formación en IA, liderazgo, aprendizaje y gobernanza para profesionales."
+      },
+      "en": {
+        "title": "AI and professional skills",
+        "description": "Institutional learning opportunities in AI, leadership, learning and governance for professionals."
+      }
+    },
+    {
+      "id": "itu-skills",
+      "name": "UIT / ITU",
+      "region": "global",
+      "type": "skills",
+      "url": "https://aiforgood.itu.int/ai-skills-coalition/",
+      "es": {
+        "title": "AI Skills Coalition",
+        "description": "Iniciativa para ampliar el acceso a formación y desarrollo de capacidades en inteligencia artificial."
+      },
+      "en": {
+        "title": "AI Skills Coalition",
+        "description": "An initiative expanding access to AI learning and capacity development."
+      }
+    },
+    {
+      "id": "ilo-skills",
+      "name": "OIT / ILO",
+      "region": "global",
+      "type": "research",
+      "url": "https://www.ilo.org/publications/changing-landscape-skills-age-ai",
+      "es": {
+        "title": "Competencias en la era de la IA",
+        "description": "Informe sobre competencias cognitivas, socioemocionales y digitales ante los cambios asociados a la IA."
+      },
+      "en": {
+        "title": "Skills in the age of AI",
+        "description": "A report on cognitive, social-emotional and digital skills amid AI-related changes."
+      }
+    },
+    {
+      "id": "oecd-ai",
+      "name": "OCDE / OECD",
+      "region": "global",
+      "type": "observatory",
+      "url": "https://oecd.ai/en/",
+      "es": {
+        "title": "Políticas y evidencia sobre IA",
+        "description": "Plataforma para explorar políticas de IA, indicadores y recursos sobre trabajo, capacidades y gobernanza."
+      },
+      "en": {
+        "title": "AI policy and evidence",
+        "description": "A platform for exploring AI policies, indicators and resources on work, capabilities and governance."
+      }
+    },
+    {
+      "id": "latamgpt",
+      "name": "CENIA",
+      "region": "americas",
+      "type": "initiative",
+      "url": "https://cenia.cl/2026/02/10/latam-gpt-la-primera-ia-regional-abierta-creada-con-datos-latinoamericanos/",
+      "es": {
+        "title": "Latam-GPT: perspectiva latinoamericana",
+        "description": "Iniciativa colaborativa de un modelo de lenguaje con datos y contexto de América Latina."
+      },
+      "en": {
+        "title": "Latam-GPT: a Latin American perspective",
+        "description": "A collaborative language-model initiative built with Latin American data and context."
+      }
+    },
+    {
+      "id": "cetic-ai",
+      "name": "Cetic.br / NIC.br",
+      "region": "americas",
+      "type": "observatory",
+      "url": "https://www.cetic.br/pt/temas/inteligencia-artificial/",
+      "es": {
+        "title": "IA en la educación y las empresas de Brasil",
+        "description": "Investigaciones y estadísticas sobre adopción y usos de IA, con recursos de TIC Educação y TIC Empresas."
+      },
+      "en": {
+        "title": "AI in Brazilian education and businesses",
+        "description": "Research and statistics on AI adoption and use, including ICT in Education and ICT in Enterprises resources."
+      }
+    },
+    {
+      "id": "eu-aiwatch",
+      "name": "Comisión Europea / European Commission",
+      "region": "europe",
+      "type": "observatory",
+      "url": "https://digital-skills-jobs.europa.eu/en/learning-space/resources/ai-watch",
+      "es": {
+        "title": "AI Watch",
+        "description": "Referencia institucional al seguimiento del desarrollo, adopción e impacto de la IA en Europa."
+      },
+      "en": {
+        "title": "AI Watch",
+        "description": "An institutional reference for monitoring AI development, adoption and impact in Europe."
+      }
+    },
+    {
+      "id": "turing-skills",
+      "name": "The Alan Turing Institute",
+      "region": "europe",
+      "type": "skills",
+      "url": "https://www.turing.ac.uk/skills/learn-and-apply",
+      "es": {
+        "title": "Aprender y aplicar ciencia de datos e IA",
+        "description": "Cursos y recursos de formación para desarrollar capacidades y aplicarlas a problemas reales."
+      },
+      "en": {
+        "title": "Learn and apply data science and AI",
+        "description": "Courses and learning resources for building capabilities and applying them to real problems."
+      }
+    },
+    {
+      "id": "helsinki-ai",
+      "name": "University of Helsinki",
+      "region": "europe",
+      "type": "skills",
+      "url": "https://www.helsinki.fi/en/admissions-and-education/open-university/multidisciplinary-themed-modules/artificial-intelligence-collection",
+      "es": {
+        "title": "Una ruta de fundamentos de IA",
+        "description": "Colección universitaria con Elements of AI, Building AI y cursos sobre ética y sociedad."
+      },
+      "en": {
+        "title": "A pathway through AI foundations",
+        "description": "A university collection including Elements of AI, Building AI and courses on ethics and society."
+      }
+    },
+    {
+      "id": "ai-singapore",
+      "name": "AI Singapore",
+      "region": "asia",
+      "type": "initiative",
+      "url": "https://aisingapore.org/",
+      "es": {
+        "title": "Investigación, talento y adopción",
+        "description": "Programas que conectan capacidades de IA con formación práctica y proyectos empresariales en Singapur."
+      },
+      "en": {
+        "title": "Research, talent and adoption",
+        "description": "Programmes connecting AI capabilities with practical training and business projects in Singapore."
+      }
+    },
+    {
+      "id": "indiaai",
+      "name": "Gobierno de India / Government of India",
+      "region": "asia",
+      "type": "initiative",
+      "url": "https://psa.gov.in/ai-mission",
+      "es": {
+        "title": "IndiaAI Mission",
+        "description": "Marco institucional que reúne cómputo, datos, modelos, aplicaciones y desarrollo de talento mediante FutureSkills."
+      },
+      "en": {
+        "title": "IndiaAI Mission",
+        "description": "An institutional framework bringing together computing, data, models, applications and talent development through FutureSkills."
+      }
+    },
+    {
+      "id": "riken-aip",
+      "name": "RIKEN",
+      "region": "asia",
+      "type": "research",
+      "url": "https://www.riken.jp/en/research/labs/aip/index.html",
+      "es": {
+        "title": "Advanced Intelligence Project",
+        "description": "Investigación pública japonesa sobre fundamentos de aprendizaje automático y aplicaciones de IA."
+      },
+      "en": {
+        "title": "Advanced Intelligence Project",
+        "description": "Japanese public research on machine-learning foundations and AI applications."
+      }
+    },
+    {
+      "id": "tsinghua-aige",
+      "name": "Tsinghua University",
+      "region": "asia",
+      "type": "research",
+      "url": "https://aige.cs.tsinghua.edu.cn/redbook/en/index.html",
+      "es": {
+        "title": "Educación general en IA",
+        "description": "Marco universitario sobre alfabetización en IA, juicio, evaluación y autonomía cognitiva."
+      },
+      "en": {
+        "title": "AI general education",
+        "description": "A university framework on AI literacy, judgement, assessment and cognitive autonomy."
+      }
+    },
+    {
+      "id": "au-ai",
+      "name": "Unión Africana / African Union",
+      "region": "africa",
+      "type": "initiative",
+      "url": "https://au.int/en/documents/20240809/continental-artificial-intelligence-strategy?qt-qt_documents_dp=1",
+      "es": {
+        "title": "Estrategia continental de IA",
+        "description": "Estrategia sobre capacidades, talento, infraestructura e innovación para el desarrollo africano."
+      },
+      "en": {
+        "title": "Continental AI Strategy",
+        "description": "A strategy on capabilities, talent, infrastructure and innovation for African development."
+      }
+    },
+    {
+      "id": "aims-science",
+      "name": "AIMS",
+      "region": "africa",
+      "type": "skills",
+      "url": "https://ai.aims.ac.za/",
+      "es": {
+        "title": "AI for Science",
+        "description": "Formación matemática e investigadora para aplicar inteligencia artificial al descubrimiento científico."
+      },
+      "en": {
+        "title": "AI for Science",
+        "description": "Mathematical and research training for applying artificial intelligence to scientific discovery."
+      }
+    },
+    {
+      "id": "tii-falcon",
+      "name": "Technology Innovation Institute",
+      "region": "asia",
+      "type": "initiative",
+      "url": "https://falconllm.tii.ae/",
+      "es": {
+        "title": "Falcon: modelos e investigación",
+        "description": "Portal institucional de la familia de modelos Falcon y sus recursos de desarrollo e investigación."
+      },
+      "en": {
+        "title": "Falcon: models and research",
+        "description": "The institutional portal for the Falcon model family and its development and research resources."
+      }
+    },
+    {
+      "id": "australia-adoption",
+      "name": "National AI Centre · Australia",
+      "region": "oceania",
+      "type": "observatory",
+      "url": "https://www.ai.gov.au/news-and-insights/reports/ai-adoption-tracker",
+      "es": {
+        "title": "Adopción de IA en pequeñas y medianas empresas",
+        "description": "Datos sobre adopción, aplicaciones, beneficios y desafíos de la IA en pymes australianas."
+      },
+      "en": {
+        "title": "AI adoption in small and medium enterprises",
+        "description": "Data on AI adoption, applications, benefits and challenges among Australian SMEs."
+      }
+    },
+    {
+      "id": "australia-jobs",
+      "name": "Jobs and Skills Australia",
+      "region": "oceania",
+      "type": "research",
+      "url": "https://www.jobsandskills.gov.au/research/emerging-roles/artificial-intelligence",
+      "es": {
+        "title": "Nuevas ocupaciones y competencias de IA",
+        "description": "Investigación de demanda laboral para relacionar roles emergentes, ocupaciones y competencias técnicas."
+      },
+      "en": {
+        "title": "Emerging AI roles and skills",
+        "description": "Labour-demand research connecting emerging roles, occupations and technical skills."
+      }
+    },
+    {
+      "id": "nz-ai",
+      "name": "MBIE · New Zealand",
+      "region": "oceania",
+      "type": "initiative",
+      "url": "https://www.mbie.govt.nz/business-and-employment/economic-growth/digital-policy/new-zealands-ai-strategy-investing-with-confidence",
+      "es": {
+        "title": "Estrategia de IA de Nueva Zelanda",
+        "description": "Orientación institucional sobre adopción empresarial de IA, capacidades e innovación productiva."
+      },
+      "en": {
+        "title": "New Zealand AI Strategy",
+        "description": "Institutional guidance on business adoption of AI, capabilities and productive innovation."
+      }
+    }
+  ]
+}

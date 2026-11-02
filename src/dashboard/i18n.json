@@ -373,7 +373,9 @@
       "Aprendizajes PISA (BID / CIMA)": "PISA learning outcomes (IDB / CIMA)",
       "Gasto educativo (UNESCO UIS)": "Education expenditure (UNESCO UIS)",
       "Conectividad (CEPALSTAT)": "Connectivity (CEPALSTAT)",
-      "Ver todas las capas": "Show all layers"
+      "Ver todas las capas": "Show all layers",
+      "Observatorio": "Observatory",
+      "Global de IA": "Global AI"
     },
     "incomeGroups": {
       "Ingreso alto": "High income",
