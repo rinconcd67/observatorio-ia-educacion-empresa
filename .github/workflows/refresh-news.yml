@@ -72,8 +72,9 @@ jobs:
           # Capture the expected remote OID explicitly: shallow checkout has no review tracking ref.
           REMOTE_OID="$(git ls-remote --heads origin "refs/heads/$NEWS_BRANCH" | cut -f1)"
           if [ -n "$REMOTE_OID" ]; then
-            git fetch origin "$REMOTE_OID"
-            NEWS_UNCHANGED="$(node .github/scripts/news-equivalent.mjs FETCH_HEAD data/processed/news.json)"
+            git fetch --depth=1 origin "$REMOTE_OID"
+            # Equal headlines only permit reuse when the proposal also uses current main.
+            NEWS_UNCHANGED="$(node .github/scripts/news-equivalent.mjs FETCH_HEAD data/processed/news.json HEAD)"
             if [ "$NEWS_UNCHANGED" = "true" ]; then exit 0; fi
           fi
           git config user.name "observatorio-automation"
