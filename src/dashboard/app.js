@@ -443,7 +443,7 @@
       ? ["cepal-cenia-ilia-2025", "bid-ai-education-2025", "unesco-teachers-2024"]
       : ["oecd-digital-education-2026", "unesco-teachers-2024", "mit-ai-education-report-2026"];
     const featuredDocs = preferredIds.map((id) => libItems.find((item) => item.id === id)).filter(Boolean);
-    const publicSite = "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/";
+    const publicSite = window.location.protocol === "file:" ? "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/" : new URL(localeName === "en" ? "../" : "./", window.location.href).href;
     const libPrefix = localeName === "en" ? `${publicSite}en/library/` : `${publicSite}biblioteca/`;
     const skillsPrefix = localeName === "en" ? `${publicSite}en/skills/` : `${publicSite}skills/`;
 

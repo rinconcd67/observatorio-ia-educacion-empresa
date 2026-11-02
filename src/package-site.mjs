@@ -1,4 +1,4 @@
-import { copyFile, mkdir, readFile, rm } from "node:fs/promises";
+import { cp, copyFile, mkdir, readFile, rm } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -83,6 +83,7 @@ async function packageSite() {
   await copyFile(join(root, "data/processed/cima-context.json"), join(dataDirectory, "cima-context.json"));
   await copyFile(join(root, "data/processed/education-finance.json"), join(dataDirectory, "education-finance.json"));
   await copyFile(join(root, "data/processed/cepal-context.json"), join(dataDirectory, "cepal-context.json"));
+  await cp(join(publicDirectory, "assets"), join(siteDirectory, "assets"), { recursive: true });
   const publicFiles = [
     "404.html",
     "favicon.svg",
