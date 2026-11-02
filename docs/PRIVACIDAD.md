@@ -4,7 +4,7 @@ El observatorio no solicita cuentas, contraseñas ni pagos a sus visitantes. El 
 
 ## Contador de páginas vistas
 
-El sitio incorpora una integración opcional con GoatCounter. Mientras la cuenta no esté conectada, la medición permanece desactivada y el contador oculto. Una vez activado, registra cargas de página únicamente en la dirección pública del Observatorio; no mide las copias locales de revisión. El total comienza con la activación, no representa tráfico histórico ni personas únicas. Los datos públicos pueden actualizarse con hasta cuatro horas de demora.
+El contador de GoatCounter se activa el 2 de noviembre de 2026. Registra cargas de página únicamente en la dirección pública del Observatorio; no mide las copias locales de revisión. El total comienza con la activación, no representa tráfico histórico ni personas únicas. Los datos públicos pueden actualizarse con hasta cuatro horas de demora.
 
 La integración no utiliza cookies ni almacenamiento local. Envía la ruta de la página sin parámetros de consulta, fragmentos, título, correo ni URL de procedencia. Respeta la señal Do Not Track del navegador. Como receptor de una petición web, GoatCounter puede procesar datos técnicos de conexión según su propia política: https://www.goatcounter.com/help/privacy . El Observatorio muestra solamente totales agregados y no obtiene direcciones IP de visitantes.
 

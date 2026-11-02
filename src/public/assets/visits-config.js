@@ -3,6 +3,6 @@
  * permits its public counter, and confirms collection settings (docs/visits.md).
  */
 window.OBSERVATORY_VISITS_CONFIG = Object.freeze({
-  enabled: false,
-  siteCode: '',
+  enabled: true,
+  siteCode: 'observatorio-ia-rinconcd67',
 });

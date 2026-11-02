@@ -1,6 +1,6 @@
 # Contador de páginas vistas — GoatCounter
 
-Estado de entrega: adaptador local probado, configuración desactivada, cuenta pendiente de alta manual. No se han enviado visitas, creado cuentas ni aceptado términos durante estas pruebas. El widget permanece oculto mientras `enabled` sea `false`.
+Activación preparada el 2026-11-02 para `observatorio-ia-rinconcd67.goatcounter.com`, cuenta creada y correo verificado por el propietario. El contador público está permitido; Sessions, Referrer, User-Agent, Size, Country, Region, Language e Individual pageviews están desactivados en el servicio. El dashboard permanece privado. La configuración del sitio habilita la integración; la recepción real se verifica después de su despliegue.
 
 ## Integración
 
@@ -65,4 +65,4 @@ El proveedor recibe necesariamente la conexión de red. Su [política](https://w
 node --test test/visits.test.mjs
 ```
 
-Once pruebas, sin acceso a la red, comprueban configuración desactivada, restricción de origen/rutas, DNT/GPC, minimización de parámetros, una sola petición por documento, carga/visibilidad, mes UTC, formato de números, errores y timeout. La activación y recepción real siguen pendientes hasta disponer de la cuenta.
+Once pruebas, sin acceso a la red, comprueban configuración pública válida y desactivación, restricción de origen/rutas, DNT/GPC, minimización de parámetros, una sola petición por documento, carga/visibilidad, mes UTC, formato de números, errores y timeout. El mes y los totales públicos usan UTC. Las preferencias personales del panel mantienen America/New_York; se debe tener en cuenta al comparar intervalos cerca de medianoche. Las pruebas unitarias no generan visitas reales.

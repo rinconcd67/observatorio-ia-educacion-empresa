@@ -64,11 +64,12 @@ function browser(options = {}) {
 const collection = ui => ui.calls.filter(call => new URL(call.url).pathname === '/count');
 const statistics = ui => ui.calls.filter(call => new URL(call.url).pathname.startsWith('/counter/'));
 
-test('committed configuration is disabled and contains no account or credential', () => {
+test('public configuration permits only a valid site code and no credentials', () => {
   const context = vm.createContext({}); context.window = context;
   vm.runInContext(configSource, context);
-  assert.equal(context.OBSERVATORY_VISITS_CONFIG.enabled, false);
-  assert.equal(context.OBSERVATORY_VISITS_CONFIG.siteCode, '');
+  assert.equal(typeof context.OBSERVATORY_VISITS_CONFIG.enabled, 'boolean');
+  if (context.OBSERVATORY_VISITS_CONFIG.enabled) assert.match(context.OBSERVATORY_VISITS_CONFIG.siteCode, /^[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?$/);
+  else assert.equal(typeof context.OBSERVATORY_VISITS_CONFIG.siteCode, 'string');
   assert.deepEqual(Object.keys(context.OBSERVATORY_VISITS_CONFIG).sort(), ['enabled', 'siteCode']);
 });
 
