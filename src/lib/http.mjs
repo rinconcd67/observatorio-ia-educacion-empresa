@@ -3,9 +3,16 @@ const DEFAULT_HEADERS = {
   "user-agent": "Observatorio-IA-Educacion-Empresa/0.1 (academic research)",
 };
 
-export async function fetchWithRetry(url, options = {}) {
+async function requestWithRetry(url, options, consumeResponse) {
   const timeoutMs = options.timeoutMs ?? 45_000;
   const attempts = options.attempts ?? 3;
+  const retryBaseDelayMs = options.retryBaseDelayMs ?? 1000;
+  const retryMaxDelayMs = options.retryMaxDelayMs ?? 30_000;
+  for (const [name, value] of Object.entries({ retryBaseDelayMs, retryMaxDelayMs })) {
+    if (!Number.isSafeInteger(value) || value <= 0) {
+      throw new TypeError(`${name} must be a positive safe integer`);
+    }
+  }
   const fetchImpl = options.fetchImpl ?? fetch;
   const sleep = options.sleep ?? ((ms) => new Promise((resolve) => setTimeout(resolve, ms)));
   let lastError;
@@ -13,7 +20,7 @@ export async function fetchWithRetry(url, options = {}) {
   for (let attempt = 1; attempt <= attempts; attempt += 1) {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), timeoutMs);
-    let delayMs = Math.min(1000 * 2 ** (attempt - 1), 30_000);
+    let delayMs = Math.min(retryBaseDelayMs * 2 ** (attempt - 1), retryMaxDelayMs);
     try {
       const response = await fetchImpl(url, {
         headers: { ...DEFAULT_HEADERS, ...options.headers },
@@ -34,7 +41,10 @@ export async function fetchWithRetry(url, options = {}) {
         await response.body?.cancel();
         throw error;
       }
-      return { response, attempts: attempt };
+      // Keep body consumption inside this attempt: a disconnect must retry the
+      // entire request, and the abort deadline must cover more than headers.
+      const value = await consumeResponse(response);
+      return { response, attempts: attempt, value };
     } catch (error) {
       error.attempts = attempt;
       lastError = error;
@@ -45,6 +55,11 @@ export async function fetchWithRetry(url, options = {}) {
     await sleep(delayMs);
   }
   throw lastError;
+}
+
+export async function fetchWithRetry(url, options = {}) {
+  const { response, attempts } = await requestWithRetry(url, options, async () => undefined);
+  return { response, attempts };
 }
 
 export async function fetchJson(url, options = {}) {
@@ -69,8 +84,9 @@ export async function fetchBytes(url, options = {}) {
 }
 
 export async function fetchResource(url, options = {}) {
-  const { response, attempts } = await fetchWithRetry(url, options);
-  const bytes = new Uint8Array(await response.arrayBuffer());
+  const { response, attempts, value: bytes } = await requestWithRetry(
+    url, options, async (response) => new Uint8Array(await response.arrayBuffer()),
+  );
   return {
     bytes,
     url: response.url || String(url),

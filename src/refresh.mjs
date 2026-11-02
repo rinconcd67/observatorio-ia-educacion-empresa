@@ -217,6 +217,14 @@ async function downloadSources(sources, { asOf }) {
       // CSV y deja negociar al servidor (verificado 2026-10-08 contra ambas APIs).
       const resource = await fetchResource(request.url, {
         headers: { accept: format === "csv" ? "text/csv, */*;q=0.1" : "application/json" },
+        // OECD returned HTTP 500 through all three short retries on 2026-11-01.
+        // Allow a bounded recovery window; exhausted requests remain errors and
+        // the existing coverage/publication gates still reject degraded data.
+        ...(source.id.startsWith("oecd_") ? {
+          attempts: 5,
+          retryBaseDelayMs: 15_000,
+          retryMaxDelayMs: 60_000,
+        } : {}),
       });
       const payload = decodeResource(resource.bytes, format);
       const rawPath = join(rawDirectory, `${source.id}.${format}`);

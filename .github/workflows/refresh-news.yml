@@ -4,19 +4,39 @@ on:
     - cron: "30 11 * * *"
   workflow_dispatch:
 permissions:
-  actions: write
-  checks: write
-  contents: write
-  pull-requests: write
+  actions: read
+  contents: read
+  pull-requests: read
 concurrency:
   group: news-refresh
   cancel-in-progress: false
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 40
     steps:
+      - name: Comprobar configuración de la App
+        env:
+          APP_CLIENT_ID: ${{ vars.OBSERVATORY_APP_CLIENT_ID }}
+          APP_PRIVATE_KEY: ${{ secrets.OBSERVATORY_APP_PRIVATE_KEY }}
+        run: |
+          if [ -z "$APP_CLIENT_ID" ] || [ -z "$APP_PRIVATE_KEY" ]; then
+            echo "::error::Configure OBSERVATORY_APP_CLIENT_ID y OBSERVATORY_APP_PRIVATE_KEY antes de activar esta rutina. Consulte docs/automation-app.md."
+            exit 1
+          fi
+      - name: Crear token limitado de la App
+        id: app-token
+        uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3
+        with:
+          client-id: ${{ vars.OBSERVATORY_APP_CLIENT_ID }}
+          private-key: ${{ secrets.OBSERVATORY_APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: ${{ github.event.repository.name }}
+          permission-contents: write
+          permission-pull-requests: write
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          token: ${{ steps.app-token.outputs.token }}
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: 22
@@ -28,7 +48,7 @@ jobs:
         run: npm run build && npm run check && npm run check:publication
       - name: Cerrar propuestas y ramas antiguas de titulares
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
           NEWS_BRANCH: automation/news-review
         run: |
           # Autolimpieza del modelo anterior (una propuesta y una rama automation/news-<run_id> por ejecución).
@@ -43,7 +63,7 @@ jobs:
               done
       - name: Preparar propuesta de revisión
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
           NEWS_BRANCH: automation/news-review
         run: |
           # Una sola propuesta abierta: la rama fija se reescribe desde main en cada ejecución.
@@ -69,36 +89,7 @@ jobs:
           else
             gh pr create --base main --head "$NEWS_BRANCH" --title "news: revisión de titulares de IA" --body "$PR_BODY"
           fi
-          HEAD_SHA="$(git rev-parse HEAD)"
-          gh workflow run ci.yml --ref "$NEWS_BRANCH"
-          RUN_STATUS=""
-          RUN_CONCLUSION=""
-          RUN_URL=""
-          for attempt in {1..30}; do
-            RUN_JSON="$(gh run list --workflow ci.yml --branch "$NEWS_BRANCH" --event workflow_dispatch --json databaseId,headSha,status,conclusion,url --limit 10 | jq -c --arg head "$HEAD_SHA" '[.[] | select(.headSha == $head)] | first // {}')"
-            RUN_STATUS="$(printf '%s' "$RUN_JSON" | jq -r '.status // empty')"
-            RUN_CONCLUSION="$(printf '%s' "$RUN_JSON" | jq -r '.conclusion // empty')"
-            RUN_URL="$(printf '%s' "$RUN_JSON" | jq -r '.url // empty')"
-            if [ "$RUN_STATUS" = "completed" ]; then break; fi
-            sleep 10
-          done
-          if [ "$RUN_STATUS" != "completed" ]; then
-            RUN_CONCLUSION="failure"
-            RUN_URL="https://github.com/${GITHUB_REPOSITORY}/actions/workflows/ci.yml"
-          fi
-          CHECK_CONCLUSION="$RUN_CONCLUSION"
-          if [ "$CHECK_CONCLUSION" != "success" ]; then CHECK_CONCLUSION="failure"; fi
-          gh api "repos/${GITHUB_REPOSITORY}/check-runs" \
-            -f name="validate" \
-            -f head_sha="$HEAD_SHA" \
-            -f status="completed" \
-            -f conclusion="$CHECK_CONCLUSION" \
-            -f details_url="$RUN_URL" \
-            -f "output[title]=Integridad del observatorio" \
-            -f "output[summary]=Validación obligatoria ejecutada por workflow_dispatch sobre ${HEAD_SHA}."
-          test "$RUN_CONCLUSION" = "success"
-
-      - name: Verificar que el PR no requiere intervención
+      - name: Verificar CI nativo del PR actual
         env:
           GH_TOKEN: ${{ github.token }}
           REVIEW_BRANCH: automation/news-review

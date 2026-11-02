@@ -6,10 +6,9 @@ on:
   workflow_dispatch:
 
 permissions:
-  actions: write
-  checks: write
-  contents: write
-  pull-requests: write
+  actions: read
+  contents: read
+  pull-requests: read
 
 concurrency:
   group: data-refresh
@@ -18,10 +17,31 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 45
     steps:
+      - name: Comprobar configuración de la App
+        env:
+          APP_CLIENT_ID: ${{ vars.OBSERVATORY_APP_CLIENT_ID }}
+          APP_PRIVATE_KEY: ${{ secrets.OBSERVATORY_APP_PRIVATE_KEY }}
+        run: |
+          if [ -z "$APP_CLIENT_ID" ] || [ -z "$APP_PRIVATE_KEY" ]; then
+            echo "::error::Configure OBSERVATORY_APP_CLIENT_ID y OBSERVATORY_APP_PRIVATE_KEY antes de activar esta rutina. Consulte docs/automation-app.md."
+            exit 1
+          fi
+      - name: Crear token limitado de la App
+        id: app-token
+        uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3
+        with:
+          client-id: ${{ vars.OBSERVATORY_APP_CLIENT_ID }}
+          private-key: ${{ secrets.OBSERVATORY_APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: ${{ github.event.repository.name }}
+          permission-contents: write
+          permission-pull-requests: write
       - name: Obtener repositorio
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          token: ${{ steps.app-token.outputs.token }}
 
       - name: Preparar Node.js
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
@@ -96,10 +116,9 @@ jobs:
 
       - name: Abrir propuesta de actualización
         id: open-pr
-        continue-on-error: true
         if: steps.changes.outputs.changed == 'true'
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
           BRANCH_NAME: automation/data-refresh-${{ github.run_id }}
         run: >-
           gh pr create
@@ -108,64 +127,18 @@ jobs:
           --title "data: actualización automática del observatorio"
           --body-file reports/update-candidate.md
 
-      - name: Disparar prueba obligatoria
-        id: dispatch-validation
-        continue-on-error: true
-        if: steps.changes.outputs.changed == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-          BRANCH_NAME: automation/data-refresh-${{ github.run_id }}
-        run: |
-          HEAD_SHA="$(git rev-parse HEAD)"
-          gh workflow run ci.yml --ref "$BRANCH_NAME"
-          RUN_STATUS=""
-          RUN_CONCLUSION=""
-          RUN_URL=""
-          for attempt in {1..30}; do
-            RUN_JSON="$(gh run list --workflow ci.yml --branch "$BRANCH_NAME" --event workflow_dispatch --json databaseId,headSha,status,conclusion,url --limit 10 | jq -c --arg head "$HEAD_SHA" '[.[] | select(.headSha == $head)] | first // {}')"
-            RUN_STATUS="$(printf '%s' "$RUN_JSON" | jq -r '.status // empty')"
-            RUN_CONCLUSION="$(printf '%s' "$RUN_JSON" | jq -r '.conclusion // empty')"
-            RUN_URL="$(printf '%s' "$RUN_JSON" | jq -r '.url // empty')"
-            if [ "$RUN_STATUS" = "completed" ]; then break; fi
-            sleep 10
-          done
-          if [ "$RUN_STATUS" != "completed" ]; then
-            RUN_CONCLUSION="failure"
-            RUN_URL="https://github.com/${GITHUB_REPOSITORY}/actions/workflows/ci.yml"
-          fi
-          CHECK_CONCLUSION="$RUN_CONCLUSION"
-          if [ "$CHECK_CONCLUSION" != "success" ]; then CHECK_CONCLUSION="failure"; fi
-          gh api "repos/${GITHUB_REPOSITORY}/check-runs" \
-            -f name="validate" \
-            -f head_sha="$HEAD_SHA" \
-            -f status="completed" \
-            -f conclusion="$CHECK_CONCLUSION" \
-            -f details_url="$RUN_URL" \
-            -f "output[title]=Integridad del observatorio" \
-            -f "output[summary]=Validación obligatoria ejecutada por workflow_dispatch sobre ${HEAD_SHA}."
-          test "$RUN_CONCLUSION" = "success"
-
-      - name: Registrar revisión manual
-        if: always() && steps.changes.outputs.changed == 'true' && (steps.open-pr.outcome == 'failure' || steps.dispatch-validation.outcome == 'failure')
+      - name: Registrar error al abrir la propuesta
+        if: failure() && steps.open-pr.outcome == 'failure'
         env:
           BRANCH_NAME: automation/data-refresh-${{ github.run_id }}
         run: |
-          echo "### Actualización lista para revisión manual" >> "$GITHUB_STEP_SUMMARY"
-          if [ "${{ steps.open-pr.outcome }}" = "failure" ]; then
-            echo "La política del repositorio no permitió abrir el pull request automáticamente." >> "$GITHUB_STEP_SUMMARY"
-          fi
-          if [ "${{ steps.dispatch-validation.outcome }}" = "failure" ]; then
-            echo "La prueba obligatoria no pudo dispararse automáticamente. Ejecute Integridad del observatorio sobre la rama de revisión." >> "$GITHUB_STEP_SUMMARY"
-          fi
-          echo "[Abrir comparación y crear pull request](https://github.com/${GITHUB_REPOSITORY}/compare/main...${BRANCH_NAME}?expand=1)" >> "$GITHUB_STEP_SUMMARY"
+          echo "No se pudo abrir el PR. La ejecución permanece fallida; revise el error anterior." >> "$GITHUB_STEP_SUMMARY"
+          echo "Comparación: https://github.com/${GITHUB_REPOSITORY}/compare/main...${BRANCH_NAME}?expand=1" >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Aplicar puerta de automatización del pull request
-        if: always() && steps.changes.outputs.changed == 'true' && steps.open-pr.outcome == 'success' && steps.dispatch-validation.outcome == 'failure'
-        run: exit 1
-
-      - name: Verificar que el PR no requiere intervención
-        if: steps.changes.outputs.changed == 'true' && steps.open-pr.outcome == 'success' && steps.dispatch-validation.outcome == 'success'
+      - name: Verificar CI nativo del PR actual
+        if: steps.changes.outputs.changed == 'true' && steps.open-pr.outcome == 'success'
         env:
           GH_TOKEN: ${{ github.token }}
+          REQUIRE_PR: 'true'
           REVIEW_BRANCH: automation/data-refresh-${{ github.run_id }}
         run: bash .github/scripts/check-pr-review.sh
