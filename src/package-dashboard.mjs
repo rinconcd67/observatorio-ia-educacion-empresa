@@ -105,6 +105,7 @@ function renderLocale(shell, css, javascript, artifact, geojson, i18n, localeNam
     .replaceAll("__OG_LOCALE__", locale.ogLocale)
     .replaceAll("__OG_DESCRIPTION__", locale.ogDescription)
     .replaceAll("__OG_IMAGE__", locale.ogImage)
+    .replaceAll("__OG_IMAGE_ALT__", locale.ogImageAlt)
     .replaceAll("__ASSET_PREFIX__", locale.assetPrefix)
     .replaceAll("__MANIFEST__", locale.manifest)
     .replaceAll("__LANGUAGE_SWITCH_PATH__", locale.languageSwitchPath)
