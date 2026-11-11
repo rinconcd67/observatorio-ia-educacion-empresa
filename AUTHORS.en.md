@@ -1,21 +1,20 @@
-# Authorship and contributions
+# Authorship, Scientific Leadership & Contributions
 
-## Intellectual author and academic lead
+## Principal Investigator & Academic Lead (PI)
 
-**César David Rincón Godoy**
+**César David Rincón Godoy**  
+- **ORCID:** <https://orcid.org/0009-0003-2112-3851>  
+- **Google Scholar:** <https://scholar.google.com/citations?user=jwtoI84AAAAJ>  
+- **Academic Affiliation:** Doctoral Program in Education and Artificial Intelligence, Broward International University  
+- **Institutional Email:** <cesar.rincon@biu.us>  
+- **Professional Profile:** <https://cesar-rincon-profile.rinconcd67.chatgpt.site>
 
-ORCID: <https://orcid.org/0009-0003-2112-3851>
+**Responsibilities:** Conceptualization, scientific direction, methodological architecture, indicator selection, functional specification, analytical oversight, interpretation, validation, and final approval.
 
-Doctoral Program in Education and Artificial Intelligence
+For project governance, technology partnerships, and licensing framework, see [GOVERNANCE.en.md](GOVERNANCE.en.md).
 
-Broward International University, Miami, Florida, United States
+## AI-Assisted Technical Support
 
-Professional profile: <https://cesar-rincon-profile.rinconcd67.chatgpt.site>
+Software engineering, data pipelines, and maintenance are conducted through human-AI collaboration using advanced development tools (**OpenAI Codex**, **Google Antigravity**) under the author's direct supervision, review, and final approval. These tools provide assistance with architecture, data ingestion, pipeline automation, test suites, and documentation.
 
-Responsibilities: conceptualization, intellectual direction, methodological design, indicator selection, functional definition, supervision, interpretation, validation and final approval.
-
-## AI-assisted technical development
-
-The technical implementation was developed through human-AI collaboration with **OpenAI Codex**, under the author's direction, review and approval. Codex supported software architecture, data engineering, programming, visualization, automation, technical documentation, testing and quality assurance.
-
-OpenAI Codex is disclosed as a technical assistance tool and is not listed as an academic author or editorially responsible party.
+AI platforms are acknowledged as computational and development assistants and are not listed as academic authors or editorially responsible parties.

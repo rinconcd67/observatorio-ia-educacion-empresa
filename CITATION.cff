@@ -1,24 +1,28 @@
 cff-version: 1.2.0
-message: "If you use this observatory, please cite it using the metadata below."
+message: "If you use this observatory in scientific publications, policy reports, or software, please cite it using the metadata below."
 title: "Observatorio Global de Inteligencia Artificial en Educación y Empresa"
 type: software
 authors:
   - family-names: "Rincón Godoy"
     given-names: "César David"
     orcid: "https://orcid.org/0009-0003-2112-3851"
+    email: "cesar.rincon@biu.us"
+    website: "https://scholar.google.com/citations?user=jwtoI84AAAAJ"
     affiliation: "Doctoral Program in Education and Artificial Intelligence, Broward International University"
 version: 0.5.0
 date-released: 2026-08-01
 url: "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/"
 repository-code: "https://github.com/rinconcd67/observatorio-ia-educacion-empresa"
 abstract: >-
-  Bilingual information system and interactive dashboard for comparative
-  monitoring of artificial intelligence preparedness, adoption and use in
-  education, business and government by country and region.
+  Bilingual scientific information system and interactive dashboard for comparative
+  monitoring of artificial intelligence preparedness, adoption, and use in
+  education, business, and government across countries and regions.
 keywords:
   - artificial intelligence
   - education
-  - business
+  - enterprise
   - government readiness
+  - agentic AI
+  - self-regulated learning
   - data observatory
-  - dashboard
+  - open science

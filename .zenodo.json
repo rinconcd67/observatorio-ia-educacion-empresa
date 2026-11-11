@@ -1,0 +1,25 @@
+{
+  "title": "Observatorio Global de Inteligencia Artificial en Educación y Empresa",
+  "description": "Bilingual scientific information system and interactive monitoring platform tracking artificial intelligence preparedness, adoption, agentic systems, and governance in education, enterprise, and public policy.",
+  "creators": [
+    {
+      "name": "Rincón Godoy, César David",
+      "affiliation": "Broward International University",
+      "orcid": "0009-0003-2112-3851"
+    }
+  ],
+  "keywords": [
+    "artificial intelligence",
+    "education",
+    "business",
+    "government readiness",
+    "agentic AI",
+    "self-regulated learning",
+    "observatory",
+    "open science",
+    "monitoring platform"
+  ],
+  "license": "other-at",
+  "upload_type": "software",
+  "access_right": "open"
+}
