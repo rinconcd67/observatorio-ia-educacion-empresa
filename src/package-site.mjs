@@ -83,6 +83,7 @@ async function packageSite() {
   await copyFile(join(root, "data/processed/cima-context.json"), join(dataDirectory, "cima-context.json"));
   await copyFile(join(root, "data/processed/education-finance.json"), join(dataDirectory, "education-finance.json"));
   await copyFile(join(root, "data/processed/cepal-context.json"), join(dataDirectory, "cepal-context.json"));
+  await copyFile(join(root, "src/content/national-ai-strategies.json"), join(dataDirectory, "national-ai-strategies.json"));
   await cp(join(publicDirectory, "assets"), join(siteDirectory, "assets"), { recursive: true });
   const publicFiles = [
     "404.html",

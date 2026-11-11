@@ -43,14 +43,16 @@ test("en la vista Educación los gráficos principales preceden al explorador po
   }
 });
 
-test("la vista Países incorpora el Expediente 360° con cruce de catálogos y capas regionales", () => {
+test("la vista Países incorpora el Expediente 360° con cruce de catálogos y capas regionales", async () => {
   for (const html of [siteEs, siteEn]) {
     assert.ok(html.includes('id="country-360-band"'), "Falta la banda country-360-band");
     assert.ok(html.includes('id="country-360-dossier"'), "Falta el contenedor country-360-dossier");
     assert.ok(html.includes("window.OBSERVATORY_LIBRARY="), "Falta el catálogo de biblioteca en runtime");
     assert.ok(html.includes("window.OBSERVATORY_SKILLS="), "Falta el catálogo de skills en runtime");
+    assert.ok(html.includes("window.OBSERVATORY_NATIONAL_STRATEGIES="), "Falta el catálogo de estrategias nacionales en runtime");
     assert.ok(html.includes("function renderCountryDossier(row)"), "Falta renderCountryDossier en app.js");
   }
+  assert.ok((await stat(join(root, "_site", "data", "national-ai-strategies.json"))).isFile(), "Falta archivo exportado national-ai-strategies.json");
 });
 
 test("integra las 5 mejoras de Stanford HAI, tabla comparativa e indexación Google Scholar y Dataset Search", async () => {

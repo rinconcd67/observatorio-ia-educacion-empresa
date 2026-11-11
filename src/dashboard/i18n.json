@@ -184,7 +184,16 @@
       "dossierOpenEducationTab": "Abrir explorador educativo →",
       "dossierOpenCepalTab": "Abrir series CEPALSTAT →",
       "dossierOpenLibrary": "Ver {count} publicaciones en Biblioteca →",
-      "dossierOpenSkills": "Ver {count} cursos verificados en Skills →"
+      "dossierOpenSkills": "Ver {count} cursos verificados en Skills →",
+      "dossierEducationBadge": "ODS 4.4 / 4.c · UNESCO Ética Art. 89-96 · TALIS",
+      "dossierGovernanceBadge": "ENIA · UNESCO RAM · OECD",
+      "dossierGovernanceTitle": "Gobernanza Ética y Estrategia Nacional",
+      "dossierEniaLabel": "Estrategia",
+      "dossierEniaStatus": "Estado",
+      "dossierEniaAuthority": "Autoridad",
+      "dossierEniaEthics": "Marco ético",
+      "dossierNoEnia": "Estrategia nacional en seguimiento / relevamiento multilateral",
+      "dossierOpenGovernanceTab": "Ver comparativa de gobernanza e índices →"
     }
   },
   "en": {
@@ -216,6 +225,7 @@
       "Regiones": "Regions",
       "Países": "Countries",
       "Educación": "Education",
+      "Educación · ODS 4 & UNESCO": "Education · SDG 4 & UNESCO",
       "Empresa": "Business",
       "Gobernanza": "Governance",
       "Fuentes": "Sources",
@@ -259,6 +269,7 @@
       "Los periodos pueden variar por fuente; la ausencia se conserva explícitamente.": "Periods may vary by source; missing data remain explicitly visible.",
       "Uso educativo e individual de IA generativa": "Educational and individual use of generative AI",
       "Indicadores de uso de IA y evidencia docente e institucional, con fuentes, poblaciones y cobertura explícitas.": "AI use indicators and teacher and institutional evidence, with explicit sources, populations and coverage.",
+      "Indicadores de uso de IA y evidencia docente e institucional, alineados con ODS 4 (metas 4.4 y 4.c) y la Recomendación de UNESCO (Art. 89-96).": "AI indicators and teacher and institutional evidence, aligned with SDG 4 (targets 4.4 & 4.c) and the UNESCO Recommendation (Art. 89-96).",
       "Educación formal": "Formal education",
       "Uso por país": "Use by country",
       "Porcentaje de individuos, 2025.": "Percentage of individuals, 2025.",
@@ -543,7 +554,16 @@
       "dossierOpenEducationTab": "Open education explorer →",
       "dossierOpenCepalTab": "Open CEPALSTAT series →",
       "dossierOpenLibrary": "Browse {count} publications in Library →",
-      "dossierOpenSkills": "Browse {count} verified courses in Skills →"
+      "dossierOpenSkills": "Browse {count} verified courses in Skills →",
+      "dossierEducationBadge": "SDG 4.4 / 4.c · UNESCO Ethics Art. 89-96 · TALIS",
+      "dossierGovernanceBadge": "ENIA · UNESCO RAM · OECD",
+      "dossierGovernanceTitle": "Ethical Governance & National AI Strategy",
+      "dossierEniaLabel": "Strategy",
+      "dossierEniaStatus": "Status",
+      "dossierEniaAuthority": "Authority",
+      "dossierEniaEthics": "Ethical framework",
+      "dossierNoEnia": "National strategy in multilateral monitoring phase",
+      "dossierOpenGovernanceTab": "View governance and readiness indices →"
     }
   }
 }
