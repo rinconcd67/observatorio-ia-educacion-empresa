@@ -193,7 +193,8 @@
       "dossierEniaAuthority": "Autoridad",
       "dossierEniaEthics": "Marco ético",
       "dossierNoEnia": "Estrategia nacional en seguimiento / relevamiento multilateral",
-      "dossierOpenGovernanceTab": "Ver comparativa de gobernanza e índices →"
+      "dossierOpenGovernanceTab": "Ver comparativa de gobernanza e índices →",
+      "dossierDownloadApiJson": "API JSON · {iso3} ↓"
     }
   },
   "en": {
@@ -320,6 +321,10 @@
       "Los archivos procesados conservan periodo, unidad, fuente y código de país.": "Processed files retain period, unit, source and country code.",
       "Descargar CSV": "Download CSV",
       "Contrato JSON": "JSON contract",
+      "API REST (JSON)": "REST API (JSON)",
+      "Regulación y derechos": "Regulation and rights",
+      "Taxonomía global de riesgos de IA": "Global AI risk taxonomy",
+      "Armonización entre el EU AI Act (2024/1689), la Recomendación de la UNESCO (2021) y los Principios de la OCDE.": "Harmonization between the EU AI Act (2024/1689), the UNESCO Recommendation (2021) and OECD Principles.",
       "Estado de datos": "Data status",
       "Autoría y propósito": "Authorship and purpose",
       "Acerca del Observatorio": "About the Observatory",
@@ -563,7 +568,8 @@
       "dossierEniaAuthority": "Authority",
       "dossierEniaEthics": "Ethical framework",
       "dossierNoEnia": "National strategy in multilateral monitoring phase",
-      "dossierOpenGovernanceTab": "View governance and readiness indices →"
+      "dossierOpenGovernanceTab": "View governance and readiness indices →",
+      "dossierDownloadApiJson": "JSON API · {iso3} ↓"
     }
   }
 }

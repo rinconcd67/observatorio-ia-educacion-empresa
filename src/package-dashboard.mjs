@@ -79,6 +79,8 @@ function structuredData(locale, version) {
       { "@type": "DataDownload", encodingFormat: "application/json", contentUrl: `${baseUrl}data/education-finance.json` },
       { "@type": "DataDownload", encodingFormat: "application/json", contentUrl: `${baseUrl}data/education-evidence.json` },
       { "@type": "DataDownload", encodingFormat: "application/json", contentUrl: `${baseUrl}data/national-ai-strategies.json` },
+      { "@type": "DataDownload", encodingFormat: "application/json", contentUrl: `${baseUrl}data/ai-risk-taxonomy.json` },
+      { "@type": "DataDownload", encodingFormat: "application/json", contentUrl: `${baseUrl}api/v1/index.json` },
     ],
   };
 }
@@ -164,6 +166,7 @@ async function packageDashboard() {
   const discoveryCss = await readFile(join(templateDirectory, "discovery.css"), "utf8");
   const officialSources = await readJson(join(root, "src/content/official-sources.json"));
   const nationalStrategies = await readJson(join(root, "src/content/national-ai-strategies.json"));
+  const riskTaxonomy = await readJson(join(root, "src/content/ai-risk-taxonomy.json"));
   const portal = await readFile(join(templateDirectory, "portal.js"), "utf8");
   const educationEvidence = await readJson(join(root, "data/processed/education-evidence.json"));
   const educationJs = await readFile(join(templateDirectory, "education-evidence.js"), "utf8");
@@ -190,6 +193,7 @@ async function packageDashboard() {
     "window.OBSERVATORY_CEPAL=" + safeJson({ ...cepal, source_runs: undefined }) + ";",
     "window.OBSERVATORY_OFFICIAL_SOURCES=" + safeJson(officialSources) + ";",
     "window.OBSERVATORY_NATIONAL_STRATEGIES=" + safeJson(nationalStrategies) + ";",
+    "window.OBSERVATORY_RISK_TAXONOMY=" + safeJson(riskTaxonomy) + ";",
     javascript,
     portal,
     educationJs,
