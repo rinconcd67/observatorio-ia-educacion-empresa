@@ -1,16 +1,40 @@
 {
-  "checked_at": "2026-11-10T18:46:22.880Z",
+  "checked_at": "2026-11-11T18:42:29.052Z",
   "items": [
     {
-      "title": "We’re bringing Adobe’s creative and productivity tools closer to your everyday Google apps.",
-      "url": "https://blog.google/company-news/inside-google/company-announcements/adobe-google-partnership-integration/",
-      "published_at": "2026-11-10T14:00:00.000Z",
+      "title": "Gemini Decisions API: Fast, calibrated multimodal decisions",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+      "published_at": "2026-11-11T18:00:00.000Z",
       "source": "Google AI"
     },
     {
-      "title": "Google Cloud launches Gemini for healthcare.",
-      "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/gemini-for-healthcare/",
-      "published_at": "2026-11-10T13:00:00.000Z",
+      "title": "Try Tabletop: Customizable, collaborative spaces for groups to plan, play and do more together.",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/tabletop/",
+      "published_at": "2026-11-11T16:00:00.000Z",
+      "source": "Google AI"
+    },
+    {
+      "title": "Experience the art and legacy of Dr. Esther Mahlangu",
+      "url": "https://blog.google/company-news/outreach-and-initiatives/arts-culture/esther-mahlangu/",
+      "published_at": "2026-11-11T09:00:00.000Z",
+      "source": "Google AI"
+    },
+    {
+      "title": "ChatGPT Plus for veterans and servicemembers",
+      "url": "https://openai.com/index/chatgpt-plus-for-veterans",
+      "published_at": "2026-11-11T08:00:00.000Z",
+      "source": "OpenAI"
+    },
+    {
+      "title": "Lazare, veni foras: Reprogramming Dormant Neurons to Backdoor AI Agents",
+      "url": "https://www.microsoft.com/en-us/research/blog/lazare-veni-foras-reprogramming-dormant-neurons-to-backdoor-ai-agents/",
+      "published_at": "2026-11-10T20:52:56.000Z",
+      "source": "Microsoft Research"
+    },
+    {
+      "title": "Gemini Intelligence: New features, on more devices",
+      "url": "https://blog.google/products-and-platforms/platforms/android/gemini-intelligence-november-features-devices/",
+      "published_at": "2026-11-10T19:00:00.000Z",
       "source": "Google AI"
     },
     {
@@ -32,18 +56,6 @@
       "source": "OpenAI"
     },
     {
-      "title": "Work at the Frontier: AI’s effect on freelance work",
-      "url": "https://openai.com/index/ai-effect-on-freelance-work",
-      "published_at": "2026-11-10T07:00:00.000Z",
-      "source": "OpenAI"
-    },
-    {
-      "title": "Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips",
-      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
-      "published_at": "2026-11-05T17:00:00.000Z",
-      "source": "Google AI"
-    },
-    {
       "title": "Formally verifying agent-written full-stack web apps with PDD Kit",
       "url": "https://www.microsoft.com/en-us/research/blog/formally-verifying-agent-written-full-stack-web-apps-with-pdd-kit/",
       "published_at": "2026-11-05T16:00:00.000Z",
@@ -56,21 +68,9 @@
       "source": "Microsoft Research"
     },
     {
-      "title": "The latest AI news we announced in October 2026",
-      "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-october-2026/",
-      "published_at": "2026-11-02T17:45:00.000Z",
-      "source": "Google AI"
-    },
-    {
       "title": "From synthetic enterprise data evaluations to real Microsoft Copilot AI confidence",
       "url": "https://www.microsoft.com/en-us/research/blog/from-synthetic-enterprise-data-evaluations-to-real-microsoft-copilot-ai-confidence/",
       "published_at": "2026-10-30T13:05:28.000Z",
-      "source": "Microsoft Research"
-    },
-    {
-      "title": "Microsoft Research Focus – Edition #97",
-      "url": "https://www.microsoft.com/en-us/research/podcast/microsoft-research-focus-edition-97/",
-      "published_at": "2026-10-29T19:19:16.000Z",
       "source": "Microsoft Research"
     }
   ],
@@ -79,19 +79,19 @@
       "name": "OpenAI",
       "url": "https://openai.com/news/rss.xml",
       "status": "ok",
-      "last_successful_at": "2026-11-10T18:46:22.880Z"
+      "last_successful_at": "2026-11-11T18:42:29.052Z"
     },
     {
       "name": "Google AI",
       "url": "https://blog.google/technology/ai/rss/",
       "status": "ok",
-      "last_successful_at": "2026-11-10T18:46:22.880Z"
+      "last_successful_at": "2026-11-11T18:42:29.052Z"
     },
     {
       "name": "Microsoft Research",
       "url": "https://www.microsoft.com/en-us/research/feed/",
       "status": "ok",
-      "last_successful_at": "2026-11-10T18:46:22.880Z"
+      "last_successful_at": "2026-11-11T18:42:29.052Z"
     }
   ]
 }
