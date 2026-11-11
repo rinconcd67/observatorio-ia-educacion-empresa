@@ -1,5 +1,7 @@
 # Global AI Observatory for Education and Business
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24140002.svg)](https://doi.org/10.5281/zenodo.24140002)
+
 [Español](README.es.md) | **English**
 
 A reproducible, bilingual system for monitoring artificial intelligence preparedness, adoption and use in education, business and government by country and region.

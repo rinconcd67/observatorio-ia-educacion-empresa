@@ -1,5 +1,7 @@
 # Observatorio Global de IA en Educación y Empresa
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24140002.svg)](https://doi.org/10.5281/zenodo.24140002)
+
 **Español** | [English](README.md)
 
 Sistema reproducible para monitorear adopción, brechas y condiciones de contexto de la inteligencia artificial por país. El proyecto mantiene separados los datos crudos, las tablas normalizadas, el contrato analítico y el dashboard entregable.
