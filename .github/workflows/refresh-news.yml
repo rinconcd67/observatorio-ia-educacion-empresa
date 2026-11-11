@@ -1,7 +1,7 @@
 name: Proponer titulares de IA
 on:
   schedule:
-    - cron: "30 11 * * *"
+    - cron: "17 11 * * *"
   workflow_dispatch:
 permissions:
   actions: read
@@ -95,3 +95,12 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           REVIEW_BRANCH: automation/news-review
         run: bash .github/scripts/check-pr-review.sh
+      - name: Integrar propuesta validada en main
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+          NEWS_BRANCH: automation/news-review
+        run: |
+          PR_NUMBER="$(gh pr list --head "$NEWS_BRANCH" --state open --json number --jq '.[0].number // empty')"
+          if [ -n "$PR_NUMBER" ]; then
+            gh pr merge "$PR_NUMBER" --merge --delete-branch
+          fi
