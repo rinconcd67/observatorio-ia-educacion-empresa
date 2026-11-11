@@ -446,6 +446,7 @@
     const publicSite = window.location.protocol === "file:" ? "https://rinconcd67.github.io/observatorio-ia-educacion-empresa/" : new URL(localeName === "en" ? "../" : "./", window.location.href).href;
     const libPrefix = localeName === "en" ? `${publicSite}en/library/` : `${publicSite}biblioteca/`;
     const skillsPrefix = localeName === "en" ? `${publicSite}en/skills/` : `${publicSite}skills/`;
+    const apiEndpointUrl = `${publicSite}api/v1/countries/${row.iso3}.json`;
 
     const strat = window.OBSERVATORY_NATIONAL_STRATEGIES?.strategies?.[row.iso3];
     let eniaListHtml = "";
@@ -491,7 +492,10 @@
         <ul class="dossier-list">
           ${eniaListHtml}
         </ul>
-        <a class="dossier-link" href="?view=governance" data-dossier-view="governance">${escapeHtml(t("dossierOpenGovernanceTab"))}</a>
+        <div class="dossier-actions">
+          <a class="dossier-link" href="?view=governance" data-dossier-view="governance">${escapeHtml(t("dossierOpenGovernanceTab"))}</a>
+          <a class="dossier-api-link" href="${escapeHtml(apiEndpointUrl)}" target="_blank" download="observatorio-${escapeHtml(row.iso3)}.json">${escapeHtml(t("dossierDownloadApiJson", { iso3: row.iso3 }))}</a>
+        </div>
       </article>
       <article class="dossier-card">
         <span class="ecosystem-badge">Knowledge Hub</span>
@@ -612,6 +616,46 @@
     renderBarList("governance-oxford-regions", regions, { field: "government_readiness_average", label: (row) => regionName(row.region, row), max: 75, digits: 1, color: palette.gold, note: (row) => t("countriesCount", { count: row.government_readiness_countries }) });
     renderIndexComparison();
     renderGovernanceTable(document.getElementById("governance-search").value);
+    renderRiskTaxonomy();
+  }
+
+  function renderRiskTaxonomy() {
+    const container = document.getElementById("risk-taxonomy-grid");
+    if (!container) return;
+    const data = window.OBSERVATORY_RISK_TAXONOMY;
+    if (!data?.categories) return;
+
+    container.innerHTML = data.categories.map((cat) => {
+      const title = localeName === "en" ? cat.title_en : cat.title_es;
+      const badge = localeName === "en" ? cat.badge_en : cat.badge;
+      const scope = localeName === "en" ? cat.scope_en : cat.scope_es;
+      const edu = localeName === "en" ? cat.education_en : cat.education_es;
+      const biz = localeName === "en" ? cat.business_en : cat.business_es;
+      const eduLabel = localeName === "en" ? "Education Impact (SDG 4)" : "Impacto en Educación (ODS 4)";
+      const bizLabel = localeName === "en" ? "Enterprise & Labor Impact" : "Impacto en Empresa y Trabajo";
+      return `
+        <article class="risk-card" style="border-top-color: ${escapeHtml(cat.color)};">
+          <div class="risk-card-header">
+            <span class="risk-badge" style="background-color: ${escapeHtml(cat.color)}1a; color: ${escapeHtml(cat.color)}; border: 1px solid ${escapeHtml(cat.color)}40;">${escapeHtml(badge)}</span>
+            <h3>${escapeHtml(title)}</h3>
+          </div>
+          <p class="risk-scope">${escapeHtml(scope)}</p>
+          <div class="risk-implications">
+            <div class="risk-col">
+              <strong>${escapeHtml(eduLabel)}</strong>
+              <p>${escapeHtml(edu)}</p>
+            </div>
+            <div class="risk-col">
+              <strong>${escapeHtml(bizLabel)}</strong>
+              <p>${escapeHtml(biz)}</p>
+            </div>
+          </div>
+          <div class="risk-legal">
+            <small>${escapeHtml(cat.legal_basis.join(" · "))}</small>
+          </div>
+        </article>
+      `;
+    }).join("");
   }
 
   function renderSources() {

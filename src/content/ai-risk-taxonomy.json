@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-11-11",
+  "framework": "Armonización Regulatoria Global: EU AI Act (Reglamento UE 2024/1689), UNESCO Recomendación sobre la Ética de la IA (2021) y Principios de la OCDE sobre IA (2024)",
+  "framework_en": "Global Regulatory Harmonization: EU AI Act (Regulation EU 2024/1689), UNESCO Recommendation on the Ethics of AI (2021) & OECD AI Principles (2024)",
+  "categories": [
+    {
+      "id": "unacceptable_risk",
+      "tier": 1,
+      "color": "#dc2626",
+      "badge": "Prohibido / Inaceptable",
+      "badge_en": "Prohibited / Unacceptable",
+      "title_es": "Riesgo Inaceptable · Prácticas Prohibidas",
+      "title_en": "Unacceptable Risk · Prohibited Practices",
+      "scope_es": "Sistemas de IA que vulneran la dignidad humana y los derechos fundamentales mediante manipulación conductual subliminal perjudicial, explotación de vulnerabilidades por edad o discapacidad, puntuación social gubernamental ('social scoring') y categorización biométrica indebida.",
+      "scope_en": "AI systems that breach human dignity and fundamental rights via harmful subliminal behavioral manipulation, exploitation of vulnerabilities due to age or disability, citizen social scoring, and untargeted biometric categorization.",
+      "education_es": "Prohibición taxativa de reconocimiento de emociones en aulas o entornos educativos (salvo motivos médicos/accesibilidad estrictamente comprobados) y prohibición de sistemas de puntuación conductual acumulativa para menores de edad.",
+      "education_en": "Strict prohibition of emotion recognition in classrooms or educational settings (except verified medical/accessibility grounds) and prohibition of cumulative behavioral scoring systems for minors.",
+      "business_es": "Prohibición de reconocimiento de emociones en el lugar de trabajo, sistemas de clasificación social discriminatoria de clientes o empleados y vigilancia biométrica masiva indiscriminada.",
+      "business_en": "Prohibition of workplace emotion recognition, discriminatory social classification of customers or workers, and untargeted mass biometric surveillance.",
+      "legal_basis": [
+        "EU AI Act (Reglamento UE 2024/1689) Art. 5",
+        "UNESCO Ética de la IA (2021) Principio 1: Proporcionalidad e Inocuidad",
+        "OCDE Principio 1.2: Valores centrados en el ser humano y equidad"
+      ]
+    },
+    {
+      "id": "high_risk_education",
+      "tier": 2,
+      "color": "#ea580c",
+      "badge": "Alto Riesgo · ODS 4",
+      "badge_en": "High Risk · SDG 4",
+      "title_es": "Alto Riesgo · Educación y Formación Profesional",
+      "title_en": "High Risk · Education & Vocational Training",
+      "scope_es": "Sistemas de IA destinados a determinar el acceso, admisión o asignación de personas físicas a instituciones educativas y de formación profesional, evaluación del progreso del aprendizaje, supervisión de exámenes y perfilamiento de trayectorias académicas.",
+      "scope_en": "AI systems used to determine access, admission or assignment of natural persons to education and vocational institutions, evaluating learning outcomes, proctoring tests and profiling academic pathways.",
+      "education_es": "Obligación de evaluación de conformidad previa, mitigación de sesgos algorítmicos en poblaciones diversas, trazabilidad técnica rigurosa, supervisión humana continua (human-in-the-loop) y salvaguarda de la agencia y pensamiento crítico del estudiante (ODS 4.4 y 4.c).",
+      "education_en": "Mandatory conformity assessment, bias mitigation across diverse populations, rigorous technical traceability, continuous human-in-the-loop oversight, and safeguarding learner agency and critical inquiry (SDG 4.4 & 4.c).",
+      "business_es": "Acreditación y certificación de cualificaciones profesionales mediadas por IA sujetas a transparencia de criterios y derecho a revisión humana independiente.",
+      "business_en": "Professional qualification credentials and certifications mediated by AI subject to transparent criteria and independent human review rights.",
+      "legal_basis": [
+        "EU AI Act Art. 6 & Anexo III Punto 3 (Educación y Formación Profesional)",
+        "UNESCO Ética de la IA (2021) Artículos 89-96 (Educación e Investigación)",
+        "OCDE Principio 1.4: Transparencia y Explicabilidad"
+      ]
+    },
+    {
+      "id": "high_risk_employment",
+      "tier": 3,
+      "color": "#d97706",
+      "badge": "Alto Riesgo · Empresa",
+      "badge_en": "High Risk · Enterprise",
+      "title_es": "Alto Riesgo · Empleo, Gestión Laboral y Empresa",
+      "title_en": "High Risk · Employment, Labor Management & Enterprise",
+      "scope_es": "Sistemas de IA utilizados para la publicación selectiva de ofertas de empleo, filtrado y cribado de candidaturas, evaluación de candidatos en entrevistas, toma de decisiones sobre ascensos, rescisión contractual, asignación de tareas basada en conducta y control de productividad.",
+      "scope_en": "AI systems used for targeted job recruitment, resume filtering and screening, interview candidate assessment, promotion, termination, behavior-based task allocation, and workplace performance monitoring.",
+      "education_es": "Garantía de equidad en la transición de graduados hacia el primer empleo; protección frente a barreras algorítmicas de entrada al mercado de trabajo sin intervención humana.",
+      "education_en": "Guaranteed fairness in graduate school-to-work transitions; protection against algorithmic gatekeeping in labor market entry without human review.",
+      "business_es": "Evaluación obligatoria de impacto en derechos fundamentales (FRIA), auditorías externas de no discriminación (género, etnia, edad), registro en base de datos de la UE y gobernanza de datos de entrenamiento.",
+      "business_en": "Mandatory Fundamental Rights Impact Assessment (FRIA), non-discrimination audits (gender, ethnicity, age), EU database registration, and rigorous training data governance.",
+      "legal_basis": [
+        "EU AI Act Art. 6 & Anexo III Punto 4 (Empleo y Gestión de Trabajadores)",
+        "UNESCO Ética de la IA (2021) Artículos 97-104 (Economía y Trabajo)",
+        "OCDE Principio 1.1: Crecimiento inclusivo, desarrollo sostenible y bienestar"
+      ]
+    },
+    {
+      "id": "transparency_risk_genai",
+      "tier": 4,
+      "color": "#2563eb",
+      "badge": "Transparencia · GenAI",
+      "badge_en": "Transparency · GenAI",
+      "title_es": "Riesgo Específico de Transparencia · IA Generativa y GPAI",
+      "title_en": "Transparency Risk · Generative AI & GPAI",
+      "scope_es": "Sistemas de IA que interactúan directamente con personas (chatbots conversacionales, tutores virtuales), generan audio, vídeo, texto o imagen sintéticos ('deepfakes') y modelos de IA para fines generales (GPAI) con o sin riesgo sistémico.",
+      "scope_en": "AI systems interacting directly with humans (conversational agents, virtual tutors), synthetic audio, video, text, or image generation, and General-Purpose AI (GPAI) models with or without systemic risk.",
+      "education_es": "Notificación expresa e ineludible al estudiante de que interactúa con un agente artificial; prohibición de simulación de empatía humana engañosa; etiquetado machine-readable de contenidos educativos sintéticos (Guía UNESCO IESALC).",
+      "education_en": "Clear and unavoidable disclosure to learners when interacting with an AI agent; prohibition of misleading simulated human empathy; machine-readable watermarking of synthetic learning assets (UNESCO IESALC Guidelines).",
+      "business_es": "Publicación obligatoria de resúmenes de contenidos protegidos por derechos de autor empleados en el entrenamiento y marcado técnico robusto de contenidos multimedia sintéticos.",
+      "business_en": "Mandatory public summary of copyright-protected material used in model pretraining and robust technical marking of synthetic media.",
+      "legal_basis": [
+        "EU AI Act Art. 50 (Obligaciones de transparencia) y Art. 51-55 (Modelos GPAI)",
+        "UNESCO Guía para la IA Generativa en Educación e Investigación (2023)",
+        "OCDE Principio 1.4: Divulgación responsable y trazabilidad"
+      ]
+    }
+  ]
+}

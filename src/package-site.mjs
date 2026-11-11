@@ -3,6 +3,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { readJson, serializeJson, sha256Bytes, writeBytes, writeJson, writeText } from "./lib/io.mjs";
+import { packageApi } from "./package-api.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const siteDirectory = join(root, "_site");
@@ -84,6 +85,7 @@ async function packageSite() {
   await copyFile(join(root, "data/processed/education-finance.json"), join(dataDirectory, "education-finance.json"));
   await copyFile(join(root, "data/processed/cepal-context.json"), join(dataDirectory, "cepal-context.json"));
   await copyFile(join(root, "src/content/national-ai-strategies.json"), join(dataDirectory, "national-ai-strategies.json"));
+  await copyFile(join(root, "src/content/ai-risk-taxonomy.json"), join(dataDirectory, "ai-risk-taxonomy.json"));
   await cp(join(publicDirectory, "assets"), join(siteDirectory, "assets"), { recursive: true });
   const publicFiles = [
     "404.html",
@@ -113,6 +115,8 @@ async function packageSite() {
       `TY  - DATA\nT1  - Observatorio Global de Inteligencia Artificial en Educación y Empresa (v0.5.0)\nAU  - Rincón Godoy, César David\nPY  - 2026\nPB  - Broward International University\nUR  - https://rinconcd67.github.io/observatorio-ia-educacion-empresa/\nN1  - ORCID: 0009-0003-2112-3851; SHA-256 verified open dataset\nER  - \n`,
     ),
   ]);
+
+  await packageApi();
 
   return {
     directory: siteDirectory,
