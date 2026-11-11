@@ -69,4 +69,4 @@ The map geometry comes from `johan/world.geo.json`, released into the public dom
 - **Principal Investigator & Academic Lead (PI):** César David Rincón Godoy ([ORCID: 0009-0003-2112-3851](https://orcid.org/0009-0003-2112-3851) | [Google Scholar](https://scholar.google.com/citations?user=jwtoI84AAAAJ)).
 - **Governance & R&D Framework:** See [GOVERNANCE.en.md](GOVERNANCE.en.md) for research tracks, technology partnerships (Google Research / Cloud), and open-science intellectual property terms.
 - **Citation & Scholarly Metadata:** See [CITATION.cff](CITATION.cff) or [AUTHORS.en.md](AUTHORS.en.md) to cite this repository in academic works.
-- **AI-Assisted Technical Support:** OpenAI Codex and Google Antigravity provide technical and engineering assistance in architecture, data engineering, pipelines, and testing under the author's supervision, and are not listed as academic authors.
+- **AI-Assisted Technical Support:** Google Antigravity (Antigravity by Google) provides technical and engineering assistance in architecture, data engineering, pipelines, and testing under the author's supervision, and is not listed as an academic author.

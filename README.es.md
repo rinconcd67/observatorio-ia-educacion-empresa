@@ -80,4 +80,4 @@ La geometría cartográfica procede de `johan/world.geo.json`, publicada en domi
 - **Investigador Principal y Director General (PI):** César David Rincón Godoy ([ORCID: 0009-0003-2112-3851](https://orcid.org/0009-0003-2112-3851) | [Google Scholar](https://scholar.google.com/citations?user=jwtoI84AAAAJ)).
 - **Carta de Gobernanza e I+D+i:** Consulte [GOVERNANCE.md](GOVERNANCE.md) para conocer las líneas de investigación, alianzas con socios tecnológicos (Google Research / Cloud) y esquema de propiedad intelectual.
 - **Citación y Metadatos Académicos:** Consulte [CITATION.cff](CITATION.cff) o [AUTHORS.md](AUTHORS.md) para citar este repositorio en artículos y reportes.
-- **Asistencia Tecnológica:** OpenAI Codex y Google Antigravity prestan asistencia técnica en arquitectura, ingeniería de datos, automatización, pruebas y documentación, sin figurar como autores académicos.
+- **Asistencia Tecnológica:** Google Antigravity (Antigravity by Google) presta asistencia técnica en arquitectura, ingeniería de datos, automatización, pruebas y documentación, sin figurar como autor académico.
