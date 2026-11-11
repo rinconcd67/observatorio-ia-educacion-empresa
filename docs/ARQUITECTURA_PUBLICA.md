@@ -52,4 +52,4 @@ flowchart LR
 
 ## Autoridad y responsabilidad
 
-César David Rincón Godoy conserva la dirección intelectual, metodológica y editorial. OpenAI Codex participa como asistencia técnica declarada. La automatización prepara evidencia y propuestas; no sustituye la revisión ni la aprobación humana.
+César David Rincón Godoy conserva la dirección intelectual, metodológica y editorial. Google Antigravity participa como asistencia técnica declarada. La automatización prepara evidencia y propuestas; no sustituye la revisión ni la aprobación humana.

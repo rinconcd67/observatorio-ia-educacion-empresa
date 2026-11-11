@@ -74,7 +74,7 @@ async function packageSite() {
     author: {
       name: "César David Rincón Godoy",
       orcid: "https://orcid.org/0009-0003-2112-3851",
-      profile: "https://cesar-rincon-profile.rinconcd67.chatgpt.site",
+      profile: "https://scholar.google.com/citations?user=jwtoI84AAAAJ",
     },
   });
 

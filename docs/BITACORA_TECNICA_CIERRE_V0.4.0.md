@@ -41,7 +41,7 @@ El alcance funcional de v0.4.0 incluye ocho vistas: Global, Regiones, Países, E
 
 La concepción, dirección intelectual, selección de fuentes, decisiones metodológicas, interpretación y aprobación final corresponden a César David Rincón Godoy.
 
-OpenAI Codex fue utilizado como herramienta de asistencia tecnológica para arquitectura, ingeniería de datos, programación, visualización, automatización, documentación, pruebas y control de calidad. Esta asistencia no sustituye la responsabilidad humana ni constituye autoría académica.
+Google Antigravity fue utilizado como herramienta de asistencia tecnológica para arquitectura, ingeniería de datos, programación, visualización, automatización, documentación, pruebas y control de calidad. Esta asistencia no sustituye la responsabilidad humana ni constituye autoría académica.
 
 El código, la metodología, la estructura analítica, los textos y el diseño original están protegidos por los archivos `LICENSE-CODE.md` y `LICENSE-CONTENT.md`. La publicación del repositorio permite transparencia y consulta, pero no convierte el código en software de código abierto ni transfiere derechos. Los datos de terceros conservan sus licencias y condiciones de uso.
 
@@ -302,7 +302,7 @@ La fecha `2021-12`, asociada previamente al inicio del programa doctoral, fue re
 
 Los siguientes recursos quedaron publicados en la sección `Websites & social links` con visibilidad `Everyone`:
 
-- perfil profesional de César David Rincón Godoy: <https://cesar-rincon-profile.rinconcd67.chatgpt.site>;
+- perfil profesional de César David Rincón Godoy: <https://scholar.google.com/citations?user=jwtoI84AAAAJ>;
 - Observatorio Global de IA en Educación y Empresa: <https://rinconcd67.github.io/observatorio-ia-educacion-empresa/>.
 
 El enlace corporativo de RINCONCD67 Consulting & Supply LLC permanece como referencia profesional independiente. No se utiliza como institución académica del observatorio.

@@ -6,7 +6,7 @@
 ORCID: <https://orcid.org/0009-0003-2112-3851>  
 Doctoral Program in Education and Artificial Intelligence, Broward International University, Miami, Florida, United States.
 
-Perfil profesional: <https://cesar-rincon-profile.rinconcd67.chatgpt.site>
+Perfil profesional: <https://scholar.google.com/citations?user=jwtoI84AAAAJ>
 
 ## Author Note
 
@@ -18,8 +18,8 @@ His doctoral research focuses on ethics and the logic of language in human-AI in
 
 The author reports no conflicts of interest.
 
-Correspondence concerning this work should be addressed to César David Rincón Godoy, Broward International University, Miami, Florida, United States. Email: `cdavidve67@gmail.com`.
+Correspondence concerning this work should be addressed to César David Rincón Godoy, Broward International University, Miami, Florida, United States. Email: `cesar.rincon@biu.us`.
 
 ## Declaración sobre inteligencia artificial
 
-OpenAI Codex se utilizó como herramienta de asistencia tecnológica para arquitectura de software, ingeniería de datos, programación, visualización, automatización, documentación técnica, pruebas y control de calidad. La conceptualización, las decisiones metodológicas, la supervisión, la interpretación y la aprobación final corresponden al autor.
+Google Antigravity (Antigravity by Google) se utilizó como herramienta de asistencia tecnológica para arquitectura de software, ingeniería de datos, programación, visualización, automatización, documentación técnica, pruebas y control de calidad. La conceptualización, las decisiones metodológicas, la supervisión, la interpretación y la aprobación final corresponden al autor.

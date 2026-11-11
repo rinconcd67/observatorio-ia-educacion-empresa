@@ -45,7 +45,7 @@ function structuredData(locale, version) {
     "@type": "Person",
     name: "César David Rincón Godoy",
     identifier: "https://orcid.org/0009-0003-2112-3851",
-    url: "https://cesar-rincon-profile.rinconcd67.chatgpt.site",
+    url: "https://scholar.google.com/citations?user=jwtoI84AAAAJ",
     affiliation: { "@type": "CollegeOrUniversity", name: "Broward International University" },
   };
   return {
