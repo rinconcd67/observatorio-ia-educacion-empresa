@@ -42,12 +42,13 @@ El Observatorio acoge alianzas estratégicas, convenios de investigación y patr
 
 ---
 
-## 5. Licenciamiento y Acceso Abierto
+## 5. Régimen de Licenciamiento y Derechos de Uso
 
-Para maximizar la transferencia de conocimiento y facilitar la cooperación con la industria y la academia, el proyecto aplica un esquema de licenciamiento dual:
+El Observatorio preserva la titularidad y derechos de autor de su creador, garantizando a la vez la transparencia y reproducibilidad académica:
 
-* **Código Fuente y Software:** Licencia permisiva [MIT License](LICENSE), facilitando la interoperabilidad técnica y la reutilización de código abierto.
-* **Datos, Informes y Contenidos Editoriales:** Licencia [Creative Commons Atribución 4.0 Internacional (CC-BY 4.0)](https://creativecommons.org/licenses/by/4.0/), requiriendo cita y atribución explícita al autor y al repositorio oficial en cualquier uso público o derivado.
+* **Código Fuente:** Sujeto a los términos de [LICENSE-CODE.md](LICENSE-CODE.md) (Copyright © 2026 César David Rincón Godoy. Todos los derechos reservados). Se publica para consulta, inspección académica y reproducibilidad. La copia, redistribución o integración en productos derivados comerciales o institucionales requiere autorización previa y escrita del titular.
+* **Metodología, Contenido e Informes:** Sujeto a [LICENSE-CONTENT.md](LICENSE-CONTENT.md). Se permite la consulta y citación académica con atribución completa del autor. La reproducción masiva, adaptación o explotación comercial requiere consentimiento escrito.
+* **Datos de Terceros:** Las fuentes externas (FMI, OCDE, Banco Mundial, Eurostat, Oxford Insights, CEPAL, etc.) mantienen sus respectivos términos y licencias de origen.
 
 ---
 

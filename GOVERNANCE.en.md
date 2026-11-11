@@ -42,10 +42,13 @@ The Observatory actively welcomes strategic partnerships, research grants, and t
 
 ---
 
-## 5. Dual Open Access Licensing
+## 5. Licensing Terms and Rights of Use
 
-* **Source Code & Software:** [MIT License](LICENSE), enabling open collaboration, interoperability, and industrial/academic integration.
-* **Datasets, Content & Reports:** [Creative Commons Attribution 4.0 International (CC-BY 4.0)](https://creativecommons.org/licenses/by/4.0/), requiring clear attribution to the author and the official repository.
+The Observatory preserves the author's copyright and intellectual property while ensuring scholarly transparency and reproducibility:
+
+* **Source Code:** Governed by [LICENSE-CODE.md](LICENSE-CODE.md) (Copyright © 2026 César David Rincón Godoy. All rights reserved). Published for scholarly transparency, academic audit, and execution. Copying, modification, redistribution, or derivative integration requires prior written consent from the copyright holder.
+* **Methodology, Content, and Reports:** Governed by [LICENSE-CONTENT.md](LICENSE-CONTENT.md). Scholarly consultation and academic citation are permitted with full author attribution. Bulk reproduction, adaptation, or commercial reuse requires prior written authorization.
+* **Third-Party Data:** External sources (IMF, OECD, World Bank, Eurostat, Oxford Insights, ECLAC, etc.) retain their respective original terms and licenses.
 
 ---
 
