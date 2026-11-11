@@ -62,6 +62,9 @@ The observatory does not replace missing values with zero and does not reinterpr
 
 The map geometry comes from `johan/world.geo.json`, released into the public domain under the UNLICENSE. Boundaries are used solely for analytical visualization and do not express an institutional position on borders or territories.
 
-## Authorship
+## Authorship and Scientific Governance
 
-Intellectual direction, methodology and final approval: César David Rincón Godoy ([ORCID 0009-0003-2112-3851](https://orcid.org/0009-0003-2112-3851)). OpenAI Codex provides disclosed technical assistance in architecture, data engineering, programming, documentation and testing, and is not listed as an academic author.
+- **Principal Investigator & Academic Lead (PI):** César David Rincón Godoy ([ORCID: 0009-0003-2112-3851](https://orcid.org/0009-0003-2112-3851) | [Google Scholar](https://scholar.google.com/citations?user=jwtoI84AAAAJ)).
+- **Governance & R&D Framework:** See [GOVERNANCE.en.md](GOVERNANCE.en.md) for research tracks, technology partnerships (Google Research / Cloud), and open-science intellectual property terms.
+- **Citation & Scholarly Metadata:** See [CITATION.cff](CITATION.cff) or [AUTHORS.en.md](AUTHORS.en.md) to cite this repository in academic works.
+- **AI-Assisted Technical Support:** OpenAI Codex and Google Antigravity provide technical and engineering assistance in architecture, data engineering, pipelines, and testing under the author's supervision, and are not listed as academic authors.
