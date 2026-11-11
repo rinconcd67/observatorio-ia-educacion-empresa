@@ -2,7 +2,7 @@ name: Proponer actualización de datos
 
 on:
   schedule:
-    - cron: "15 10 1 * *"
+    - cron: "23 10 1 * *"
   workflow_dispatch:
 
 permissions:
@@ -105,32 +105,35 @@ jobs:
       - name: Crear rama de revisión
         if: steps.changes.outputs.changed == 'true'
         env:
-          BRANCH_NAME: automation/data-refresh-${{ github.run_id }}
+          BRANCH_NAME: automation/data-refresh
         run: |
+          REMOTE_OID="$(git ls-remote --heads origin "refs/heads/$BRANCH_NAME" | cut -f1)"
+          cp data/processed/snapshot.json data/baselines/published-snapshot.json
           git config user.name "observatorio-automation"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git checkout -b "$BRANCH_NAME"
-          git add data/processed dashboard/artifact.json dashboard/index.html dashboard/en/index.html reports/update-candidate.md
+          git checkout -B "$BRANCH_NAME"
+          git add data/baselines/published-snapshot.json data/processed dashboard/artifact.json dashboard/index.html dashboard/en/index.html reports/update-candidate.md
           git commit -m "data: proponer actualización automática"
-          git push origin "$BRANCH_NAME"
+          bash .github/scripts/push-review-branch.sh "$BRANCH_NAME" "$REMOTE_OID"
 
       - name: Abrir propuesta de actualización
         id: open-pr
         if: steps.changes.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
-          BRANCH_NAME: automation/data-refresh-${{ github.run_id }}
-        run: >-
-          gh pr create
-          --base main
-          --head "$BRANCH_NAME"
-          --title "data: actualización automática del observatorio"
-          --body-file reports/update-candidate.md
+          BRANCH_NAME: automation/data-refresh
+        run: |
+          PR_NUMBER="$(gh pr list --head "$BRANCH_NAME" --state open --json number --jq '.[0].number // empty')"
+          if [ -n "$PR_NUMBER" ]; then
+            gh pr edit "$PR_NUMBER" --body-file reports/update-candidate.md
+          else
+            gh pr create --base main --head "$BRANCH_NAME" --title "data: actualización automática del observatorio" --body-file reports/update-candidate.md
+          fi
 
       - name: Registrar error al abrir la propuesta
         if: failure() && steps.open-pr.outcome == 'failure'
         env:
-          BRANCH_NAME: automation/data-refresh-${{ github.run_id }}
+          BRANCH_NAME: automation/data-refresh
         run: |
           echo "No se pudo abrir el PR. La ejecución permanece fallida; revise el error anterior." >> "$GITHUB_STEP_SUMMARY"
           echo "Comparación: https://github.com/${GITHUB_REPOSITORY}/compare/main...${BRANCH_NAME}?expand=1" >> "$GITHUB_STEP_SUMMARY"
@@ -140,5 +143,16 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           REQUIRE_PR: 'true'
-          REVIEW_BRANCH: automation/data-refresh-${{ github.run_id }}
+          REVIEW_BRANCH: automation/data-refresh
         run: bash .github/scripts/check-pr-review.sh
+
+      - name: Integrar actualización validada en main
+        if: steps.changes.outputs.changed == 'true' && steps.open-pr.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+          BRANCH_NAME: automation/data-refresh
+        run: |
+          PR_NUMBER="$(gh pr list --head "$BRANCH_NAME" --state open --json number --jq '.[0].number // empty')"
+          if [ -n "$PR_NUMBER" ]; then
+            gh pr merge "$PR_NUMBER" --merge --delete-branch
+          fi
