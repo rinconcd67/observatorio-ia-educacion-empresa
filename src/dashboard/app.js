@@ -447,9 +447,26 @@
     const libPrefix = localeName === "en" ? `${publicSite}en/library/` : `${publicSite}biblioteca/`;
     const skillsPrefix = localeName === "en" ? `${publicSite}en/skills/` : `${publicSite}skills/`;
 
+    const strat = window.OBSERVATORY_NATIONAL_STRATEGIES?.strategies?.[row.iso3];
+    let eniaListHtml = "";
+    if (strat) {
+      const stratName = localeName === "en" ? strat.strategy_en : strat.strategy_es;
+      const status = localeName === "en" ? strat.status_en : strat.status_es;
+      const ethics = localeName === "en" ? strat.ethics_framework_en : strat.ethics_framework_es;
+      const ram = localeName === "en" ? strat.unesco_ram_en : strat.unesco_ram_es;
+      eniaListHtml = `
+        <li><strong>${escapeHtml(t("dossierEniaLabel"))}:</strong> ${escapeHtml(stratName)} (${escapeHtml(strat.year)})</li>
+        <li><strong>${escapeHtml(t("dossierEniaAuthority"))}:</strong> ${escapeHtml(strat.authority)} · <em>${escapeHtml(status)}</em></li>
+        <li><strong>${escapeHtml(t("dossierEniaEthics"))}:</strong> ${escapeHtml(ethics)}</li>
+        <li><strong>UNESCO RAM:</strong> ${escapeHtml(ram)}</li>
+      `;
+    } else {
+      eniaListHtml = `<li>${escapeHtml(t("dossierNoEnia"))}</li>`;
+    }
+
     container.innerHTML = `
       <article class="dossier-card">
-        <span class="ecosystem-badge">TALIS · PISA-CIMA · UIS</span>
+        <span class="ecosystem-badge">${escapeHtml(t("dossierEducationBadge"))}</span>
         <h3>${escapeHtml(t("dossierEducationTitle"))}</h3>
         <ul class="dossier-list">
           <li>${escapeHtml(talisLine)}</li>
@@ -467,6 +484,14 @@
           <li>${escapeHtml(t("internetUse"))}: <strong>${escapeHtml(percentage(row.internet_users_pct, 1))}</strong> (${escapeHtml(row.internet_year ?? t("na"))})</li>
         </ul>
         <a class="dossier-link" href="?view=education#cepal-context" data-dossier-view="education" data-dossier-tab="cepal-context">${escapeHtml(t("dossierOpenCepalTab"))}</a>
+      </article>
+      <article class="dossier-card">
+        <span class="ecosystem-badge">${escapeHtml(t("dossierGovernanceBadge"))}</span>
+        <h3>${escapeHtml(t("dossierGovernanceTitle"))}</h3>
+        <ul class="dossier-list">
+          ${eniaListHtml}
+        </ul>
+        <a class="dossier-link" href="?view=governance" data-dossier-view="governance">${escapeHtml(t("dossierOpenGovernanceTab"))}</a>
       </article>
       <article class="dossier-card">
         <span class="ecosystem-badge">Knowledge Hub</span>
@@ -488,9 +513,11 @@
         if (targetTab) {
           const tabBtn = document.querySelector(`.lac-tab[data-lac-tab="${targetTab}"]`);
           if (tabBtn) tabBtn.click();
+          const anchor = document.getElementById(targetTab || "lac-layers-explorer");
+          if (anchor) anchor.scrollIntoView({ behavior: "smooth" });
+        } else {
+          window.scrollTo({ top: 0, behavior: "smooth" });
         }
-        const anchor = document.getElementById(targetTab || "lac-layers-explorer");
-        if (anchor) anchor.scrollIntoView({ behavior: "smooth" });
       });
     });
     resolveIndependentWebLinks(container);
