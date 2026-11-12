@@ -1,6 +1,30 @@
 {
-  "checked_at": "2026-11-11T18:42:29.052Z",
+  "checked_at": "2026-11-12T18:56:34.388Z",
   "items": [
+    {
+      "title": "Google Search gets a major upgrade with Gemini 4 Hydrogen",
+      "url": "https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade/",
+      "published_at": "2026-11-12T18:00:00.000Z",
+      "source": "Google AI"
+    },
+    {
+      "title": "Holiday Extras is rethinking what it can build with Codex",
+      "url": "https://openai.com/business/customer-stories/holidays-extras-codex",
+      "published_at": "2026-11-12T09:30:00.000Z",
+      "source": "OpenAI"
+    },
+    {
+      "title": "Supporting research on AI and children’s safety",
+      "url": "https://openai.com/index/children-first-declaration",
+      "published_at": "2026-11-12T00:00:00.000Z",
+      "source": "OpenAI"
+    },
+    {
+      "title": "Gilbert + Tobin rethinks the business of law with AI",
+      "url": "https://openai.com/index/gilbert-tobin-sam-nickless",
+      "published_at": "2026-11-12T00:00:00.000Z",
+      "source": "OpenAI"
+    },
     {
       "title": "Gemini Decisions API: Fast, calibrated multimodal decisions",
       "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
@@ -32,30 +56,6 @@
       "source": "Microsoft Research"
     },
     {
-      "title": "Gemini Intelligence: New features, on more devices",
-      "url": "https://blog.google/products-and-platforms/platforms/android/gemini-intelligence-november-features-devices/",
-      "published_at": "2026-11-10T19:00:00.000Z",
-      "source": "Google AI"
-    },
-    {
-      "title": "Helping caregivers use AI in everyday life",
-      "url": "https://openai.com/index/helping-caregivers-use-ai-in-everyday-life",
-      "published_at": "2026-11-10T12:00:00.000Z",
-      "source": "OpenAI"
-    },
-    {
-      "title": "Introducing Businesses in ChatGPT",
-      "url": "https://openai.com/index/introducing-businesses-chatgpt",
-      "published_at": "2026-11-10T10:00:00.000Z",
-      "source": "OpenAI"
-    },
-    {
-      "title": "Closing the AI guidance gap in education",
-      "url": "https://openai.com/index/closing-ai-guidance-gap-education",
-      "published_at": "2026-11-10T09:00:00.000Z",
-      "source": "OpenAI"
-    },
-    {
       "title": "Formally verifying agent-written full-stack web apps with PDD Kit",
       "url": "https://www.microsoft.com/en-us/research/blog/formally-verifying-agent-written-full-stack-web-apps-with-pdd-kit/",
       "published_at": "2026-11-05T16:00:00.000Z",
@@ -79,19 +79,19 @@
       "name": "OpenAI",
       "url": "https://openai.com/news/rss.xml",
       "status": "ok",
-      "last_successful_at": "2026-11-11T18:42:29.052Z"
+      "last_successful_at": "2026-11-12T18:56:34.388Z"
     },
     {
       "name": "Google AI",
       "url": "https://blog.google/technology/ai/rss/",
       "status": "ok",
-      "last_successful_at": "2026-11-11T18:42:29.052Z"
+      "last_successful_at": "2026-11-12T18:56:34.388Z"
     },
     {
       "name": "Microsoft Research",
       "url": "https://www.microsoft.com/en-us/research/feed/",
       "status": "ok",
-      "last_successful_at": "2026-11-11T18:42:29.052Z"
+      "last_successful_at": "2026-11-12T18:56:34.388Z"
     }
   ]
 }
