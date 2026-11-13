@@ -1,6 +1,24 @@
 {
-  "checked_at": "2026-11-12T18:56:34.388Z",
+  "checked_at": "2026-11-13T18:31:58.327Z",
   "items": [
+    {
+      "title": "Introducing ChatGPT Wallet",
+      "url": "https://openai.com/index/introducing-chatgpt-wallet",
+      "published_at": "2026-11-13T15:00:00.000Z",
+      "source": "OpenAI"
+    },
+    {
+      "title": "Microsoft Research Focus – Edition #98",
+      "url": "https://www.microsoft.com/en-us/research/podcast/microsoft-research-focus-edition-98/",
+      "published_at": "2026-11-12T21:31:57.000Z",
+      "source": "Microsoft Research"
+    },
+    {
+      "title": "How Amplitude ships product improvements in 1–2 days with OpenAI",
+      "url": "https://openai.com/business/customer-stories/amplitude",
+      "published_at": "2026-11-12T20:00:00.000Z",
+      "source": "OpenAI"
+    },
     {
       "title": "Google Search gets a major upgrade with Gemini 4 Hydrogen",
       "url": "https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade/",
@@ -8,21 +26,15 @@
       "source": "Google AI"
     },
     {
+      "title": "Gondola doubles revenue as its team builds more with Codex",
+      "url": "https://openai.com/business/customer-stories/gondola",
+      "published_at": "2026-11-12T12:00:00.000Z",
+      "source": "OpenAI"
+    },
+    {
       "title": "Holiday Extras is rethinking what it can build with Codex",
       "url": "https://openai.com/business/customer-stories/holidays-extras-codex",
       "published_at": "2026-11-12T09:30:00.000Z",
-      "source": "OpenAI"
-    },
-    {
-      "title": "Supporting research on AI and children’s safety",
-      "url": "https://openai.com/index/children-first-declaration",
-      "published_at": "2026-11-12T00:00:00.000Z",
-      "source": "OpenAI"
-    },
-    {
-      "title": "Gilbert + Tobin rethinks the business of law with AI",
-      "url": "https://openai.com/index/gilbert-tobin-sam-nickless",
-      "published_at": "2026-11-12T00:00:00.000Z",
       "source": "OpenAI"
     },
     {
@@ -44,12 +56,6 @@
       "source": "Google AI"
     },
     {
-      "title": "ChatGPT Plus for veterans and servicemembers",
-      "url": "https://openai.com/index/chatgpt-plus-for-veterans",
-      "published_at": "2026-11-11T08:00:00.000Z",
-      "source": "OpenAI"
-    },
-    {
       "title": "Lazare, veni foras: Reprogramming Dormant Neurons to Backdoor AI Agents",
       "url": "https://www.microsoft.com/en-us/research/blog/lazare-veni-foras-reprogramming-dormant-neurons-to-backdoor-ai-agents/",
       "published_at": "2026-11-10T20:52:56.000Z",
@@ -66,12 +72,6 @@
       "url": "https://www.microsoft.com/en-us/research/podcast/learn-the-rules-the-hacker-mindset/",
       "published_at": "2026-11-03T17:14:38.000Z",
       "source": "Microsoft Research"
-    },
-    {
-      "title": "From synthetic enterprise data evaluations to real Microsoft Copilot AI confidence",
-      "url": "https://www.microsoft.com/en-us/research/blog/from-synthetic-enterprise-data-evaluations-to-real-microsoft-copilot-ai-confidence/",
-      "published_at": "2026-10-30T13:05:28.000Z",
-      "source": "Microsoft Research"
     }
   ],
   "sources": [
@@ -79,19 +79,19 @@
       "name": "OpenAI",
       "url": "https://openai.com/news/rss.xml",
       "status": "ok",
-      "last_successful_at": "2026-11-12T18:56:34.388Z"
+      "last_successful_at": "2026-11-13T18:31:58.327Z"
     },
     {
       "name": "Google AI",
       "url": "https://blog.google/technology/ai/rss/",
       "status": "ok",
-      "last_successful_at": "2026-11-12T18:56:34.388Z"
+      "last_successful_at": "2026-11-13T18:31:58.327Z"
     },
     {
       "name": "Microsoft Research",
       "url": "https://www.microsoft.com/en-us/research/feed/",
       "status": "ok",
-      "last_successful_at": "2026-11-12T18:56:34.388Z"
+      "last_successful_at": "2026-11-13T18:31:58.327Z"
     }
   ]
 }
