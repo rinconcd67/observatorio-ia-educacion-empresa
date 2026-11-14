@@ -1,10 +1,16 @@
 {
-  "checked_at": "2026-11-13T18:31:58.327Z",
+  "checked_at": "2026-11-14T17:08:53.001Z",
   "items": [
     {
       "title": "Introducing ChatGPT Wallet",
       "url": "https://openai.com/index/introducing-chatgpt-wallet",
       "published_at": "2026-11-13T15:00:00.000Z",
+      "source": "OpenAI"
+    },
+    {
+      "title": "Shield helps technicians hand off legacy portal work with OpenAI",
+      "url": "https://openai.com/business/customer-stories/shield",
+      "published_at": "2026-11-13T08:00:00.000Z",
       "source": "OpenAI"
     },
     {
@@ -29,12 +35,6 @@
       "title": "Gondola doubles revenue as its team builds more with Codex",
       "url": "https://openai.com/business/customer-stories/gondola",
       "published_at": "2026-11-12T12:00:00.000Z",
-      "source": "OpenAI"
-    },
-    {
-      "title": "Holiday Extras is rethinking what it can build with Codex",
-      "url": "https://openai.com/business/customer-stories/holidays-extras-codex",
-      "published_at": "2026-11-12T09:30:00.000Z",
       "source": "OpenAI"
     },
     {
@@ -79,19 +79,19 @@
       "name": "OpenAI",
       "url": "https://openai.com/news/rss.xml",
       "status": "ok",
-      "last_successful_at": "2026-11-13T18:31:58.327Z"
+      "last_successful_at": "2026-11-14T17:08:53.001Z"
     },
     {
       "name": "Google AI",
       "url": "https://blog.google/technology/ai/rss/",
       "status": "ok",
-      "last_successful_at": "2026-11-13T18:31:58.327Z"
+      "last_successful_at": "2026-11-14T17:08:53.001Z"
     },
     {
       "name": "Microsoft Research",
       "url": "https://www.microsoft.com/en-us/research/feed/",
       "status": "ok",
-      "last_successful_at": "2026-11-13T18:31:58.327Z"
+      "last_successful_at": "2026-11-14T17:08:53.001Z"
     }
   ]
 }
