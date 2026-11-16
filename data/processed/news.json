@@ -1,16 +1,40 @@
 {
-  "checked_at": "2026-11-14T17:08:53.001Z",
+  "checked_at": "2026-11-16T21:02:15.651Z",
   "items": [
     {
-      "title": "Introducing ChatGPT Wallet",
-      "url": "https://openai.com/index/introducing-chatgpt-wallet",
-      "published_at": "2026-11-13T15:00:00.000Z",
+      "title": "TokenEconomizer: Learning from Experience to Make AI Coding Agents More Efficient",
+      "url": "https://www.microsoft.com/en-us/research/blog/tokeneconomizer-learning-from-experience-to-make-ai-coding-agents-more-efficient/",
+      "published_at": "2026-11-16T17:01:35.000Z",
+      "source": "Microsoft Research"
+    },
+    {
+      "title": "Broadening access to AI for scientists",
+      "url": "https://openai.com/index/expanding-chatgpt-for-academic-researchers",
+      "published_at": "2026-11-16T17:00:00.000Z",
       "source": "OpenAI"
     },
     {
-      "title": "Shield helps technicians hand off legacy portal work with OpenAI",
-      "url": "https://openai.com/business/customer-stories/shield",
-      "published_at": "2026-11-13T08:00:00.000Z",
+      "title": "Strengthening the fight against online child sexual abuse with new tools and support",
+      "url": "https://openai.com/index/strengthening-online-child-safety",
+      "published_at": "2026-11-16T17:00:00.000Z",
+      "source": "OpenAI"
+    },
+    {
+      "title": "New Ask Maps features to help with holiday travel and prep",
+      "url": "https://blog.google/products-and-platforms/products/maps/ask-maps-holiday-travel-features-2026/",
+      "published_at": "2026-11-16T14:00:00.000Z",
+      "source": "Google AI"
+    },
+    {
+      "title": "Science at the Frontier: How scientists use ChatGPT",
+      "url": "https://openai.com/index/science-at-the-frontier",
+      "published_at": "2026-11-16T12:00:00.000Z",
+      "source": "OpenAI"
+    },
+    {
+      "title": "LVMH’s Media Division announces strategic partnership with OpenAI",
+      "url": "https://openai.com/index/lvmh-media-division-partnership",
+      "published_at": "2026-11-16T09:00:00.000Z",
       "source": "OpenAI"
     },
     {
@@ -20,22 +44,10 @@
       "source": "Microsoft Research"
     },
     {
-      "title": "How Amplitude ships product improvements in 1–2 days with OpenAI",
-      "url": "https://openai.com/business/customer-stories/amplitude",
-      "published_at": "2026-11-12T20:00:00.000Z",
-      "source": "OpenAI"
-    },
-    {
       "title": "Google Search gets a major upgrade with Gemini 4 Hydrogen",
       "url": "https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade/",
       "published_at": "2026-11-12T18:00:00.000Z",
       "source": "Google AI"
-    },
-    {
-      "title": "Gondola doubles revenue as its team builds more with Codex",
-      "url": "https://openai.com/business/customer-stories/gondola",
-      "published_at": "2026-11-12T12:00:00.000Z",
-      "source": "OpenAI"
     },
     {
       "title": "Gemini Decisions API: Fast, calibrated multimodal decisions",
@@ -50,12 +62,6 @@
       "source": "Google AI"
     },
     {
-      "title": "Experience the art and legacy of Dr. Esther Mahlangu",
-      "url": "https://blog.google/company-news/outreach-and-initiatives/arts-culture/esther-mahlangu/",
-      "published_at": "2026-11-11T09:00:00.000Z",
-      "source": "Google AI"
-    },
-    {
       "title": "Lazare, veni foras: Reprogramming Dormant Neurons to Backdoor AI Agents",
       "url": "https://www.microsoft.com/en-us/research/blog/lazare-veni-foras-reprogramming-dormant-neurons-to-backdoor-ai-agents/",
       "published_at": "2026-11-10T20:52:56.000Z",
@@ -66,12 +72,6 @@
       "url": "https://www.microsoft.com/en-us/research/blog/formally-verifying-agent-written-full-stack-web-apps-with-pdd-kit/",
       "published_at": "2026-11-05T16:00:00.000Z",
       "source": "Microsoft Research"
-    },
-    {
-      "title": "Learn the rules: The hacker mindset",
-      "url": "https://www.microsoft.com/en-us/research/podcast/learn-the-rules-the-hacker-mindset/",
-      "published_at": "2026-11-03T17:14:38.000Z",
-      "source": "Microsoft Research"
     }
   ],
   "sources": [
@@ -79,19 +79,19 @@
       "name": "OpenAI",
       "url": "https://openai.com/news/rss.xml",
       "status": "ok",
-      "last_successful_at": "2026-11-14T17:08:53.001Z"
+      "last_successful_at": "2026-11-16T21:02:15.651Z"
     },
     {
       "name": "Google AI",
       "url": "https://blog.google/technology/ai/rss/",
       "status": "ok",
-      "last_successful_at": "2026-11-14T17:08:53.001Z"
+      "last_successful_at": "2026-11-16T21:02:15.651Z"
     },
     {
       "name": "Microsoft Research",
       "url": "https://www.microsoft.com/en-us/research/feed/",
       "status": "ok",
-      "last_successful_at": "2026-11-14T17:08:53.001Z"
+      "last_successful_at": "2026-11-16T21:02:15.651Z"
     }
   ]
 }
