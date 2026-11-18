@@ -1,10 +1,34 @@
 {
-  "checked_at": "2026-11-17T19:52:02.410Z",
+  "checked_at": "2026-11-18T19:24:22.527Z",
   "items": [
     {
-      "title": "Introducing GPT-6.2 Astra and Sol",
-      "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol",
-      "published_at": "2026-11-17T17:45:00.000Z",
+      "title": "The Gemini app is now available on lower-memory Android devices.",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-lower-memory-devices/",
+      "published_at": "2026-11-18T17:00:00.000Z",
+      "source": "Google AI"
+    },
+    {
+      "title": "Inside the Codex sandbox",
+      "url": "https://openai.com/index/inside-the-codex-sandbox",
+      "published_at": "2026-11-18T08:00:00.000Z",
+      "source": "OpenAI"
+    },
+    {
+      "title": "The Silent Consensus",
+      "url": "https://openai.com/index/the-silent-consensus",
+      "published_at": "2026-11-18T00:00:00.000Z",
+      "source": "OpenAI"
+    },
+    {
+      "title": "Advancing chip design with OpenAI models",
+      "url": "https://openai.com/index/advancing-chip-design-with-our-models",
+      "published_at": "2026-11-18T00:00:00.000Z",
+      "source": "OpenAI"
+    },
+    {
+      "title": "Le Groupe Figaro and OpenAI partner to bring Le Figaro journalism to ChatGPT",
+      "url": "https://openai.com/index/le-groupe-figaro-and-openai-announce-partnership",
+      "published_at": "2026-11-18T00:00:00.000Z",
       "source": "OpenAI"
     },
     {
@@ -18,24 +42,6 @@
       "url": "https://www.microsoft.com/en-us/research/podcast/can-ai-help-build-a-healthier-future/",
       "published_at": "2026-11-17T16:52:17.000Z",
       "source": "Microsoft Research"
-    },
-    {
-      "title": "Strengthening NATO and allied cyber defenses with AI",
-      "url": "https://openai.com/index/strengthening-nato-allied-cyber-defences-ai",
-      "published_at": "2026-11-17T00:00:00.000Z",
-      "source": "OpenAI"
-    },
-    {
-      "title": "Introducing OpenAI for Chile",
-      "url": "https://openai.com/index/introducing-openai-for-chile",
-      "published_at": "2026-11-17T00:00:00.000Z",
-      "source": "OpenAI"
-    },
-    {
-      "title": "Astra for Law leads in legal intelligence",
-      "url": "https://openai.com/index/astra-law-6-2",
-      "published_at": "2026-11-17T00:00:00.000Z",
-      "source": "OpenAI"
     },
     {
       "title": "TokenEconomizer: Learning from Experience to Make AI Coding Agents More Efficient",
@@ -62,12 +68,6 @@
       "source": "Google AI"
     },
     {
-      "title": "Gemini Decisions API: Fast, calibrated multimodal decisions",
-      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
-      "published_at": "2026-11-11T18:00:00.000Z",
-      "source": "Google AI"
-    },
-    {
       "title": "Lazare, veni foras: Reprogramming Dormant Neurons to Backdoor AI Agents",
       "url": "https://www.microsoft.com/en-us/research/blog/lazare-veni-foras-reprogramming-dormant-neurons-to-backdoor-ai-agents/",
       "published_at": "2026-11-10T20:52:56.000Z",
@@ -79,19 +79,19 @@
       "name": "OpenAI",
       "url": "https://openai.com/news/rss.xml",
       "status": "ok",
-      "last_successful_at": "2026-11-17T19:52:02.410Z"
+      "last_successful_at": "2026-11-18T19:24:22.527Z"
     },
     {
       "name": "Google AI",
       "url": "https://blog.google/technology/ai/rss/",
       "status": "ok",
-      "last_successful_at": "2026-11-17T19:52:02.410Z"
+      "last_successful_at": "2026-11-18T19:24:22.527Z"
     },
     {
       "name": "Microsoft Research",
       "url": "https://www.microsoft.com/en-us/research/feed/",
       "status": "ok",
-      "last_successful_at": "2026-11-17T19:52:02.410Z"
+      "last_successful_at": "2026-11-18T19:24:22.527Z"
     }
   ]
 }
