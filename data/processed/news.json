@@ -1,6 +1,24 @@
 {
-  "checked_at": "2026-11-18T19:24:22.527Z",
+  "checked_at": "2026-11-19T19:29:12.638Z",
   "items": [
+    {
+      "title": "Introducing Tool Retrieval in the Gemini API",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/",
+      "published_at": "2026-11-19T18:00:00.000Z",
+      "source": "Google AI"
+    },
+    {
+      "title": "Walter Isaacson on curiosity and creativity in the AI age.",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/dialogues-walter-isaacson/",
+      "published_at": "2026-11-19T17:00:00.000Z",
+      "source": "Google AI"
+    },
+    {
+      "title": "How OpenAI’s Performance Factory keeps ChatGPT fast",
+      "url": "https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast",
+      "published_at": "2026-11-19T08:00:00.000Z",
+      "source": "OpenAI"
+    },
     {
       "title": "The Gemini app is now available on lower-memory Android devices.",
       "url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-lower-memory-devices/",
@@ -8,27 +26,21 @@
       "source": "Google AI"
     },
     {
-      "title": "Inside the Codex sandbox",
-      "url": "https://openai.com/index/inside-the-codex-sandbox",
+      "title": "The Silent Consensus",
+      "url": "https://openai.com/index/the-silent-consensus",
+      "published_at": "2026-11-18T10:00:00.000Z",
+      "source": "OpenAI"
+    },
+    {
+      "title": "How Sumitomo Life’s leaders helped teams adopt ChatGPT Enterprise",
+      "url": "https://openai.com/business/customer-stories/sumitomo-life",
       "published_at": "2026-11-18T08:00:00.000Z",
       "source": "OpenAI"
     },
     {
-      "title": "The Silent Consensus",
-      "url": "https://openai.com/index/the-silent-consensus",
-      "published_at": "2026-11-18T00:00:00.000Z",
-      "source": "OpenAI"
-    },
-    {
-      "title": "Advancing chip design with OpenAI models",
-      "url": "https://openai.com/index/advancing-chip-design-with-our-models",
-      "published_at": "2026-11-18T00:00:00.000Z",
-      "source": "OpenAI"
-    },
-    {
-      "title": "Le Groupe Figaro and OpenAI partner to bring Le Figaro journalism to ChatGPT",
-      "url": "https://openai.com/index/le-groupe-figaro-and-openai-announce-partnership",
-      "published_at": "2026-11-18T00:00:00.000Z",
+      "title": "Research acceleration: The jagged frontier",
+      "url": "https://openai.com/index/research-acceleration-jagged-frontier",
+      "published_at": "2026-11-18T08:00:00.000Z",
       "source": "OpenAI"
     },
     {
@@ -50,22 +62,10 @@
       "source": "Microsoft Research"
     },
     {
-      "title": "New Ask Maps features to help with holiday travel and prep",
-      "url": "https://blog.google/products-and-platforms/products/maps/ask-maps-holiday-travel-features-2026/",
-      "published_at": "2026-11-16T14:00:00.000Z",
-      "source": "Google AI"
-    },
-    {
       "title": "Microsoft Research Focus – Edition #98",
       "url": "https://www.microsoft.com/en-us/research/podcast/microsoft-research-focus-edition-98/",
       "published_at": "2026-11-12T21:31:57.000Z",
       "source": "Microsoft Research"
-    },
-    {
-      "title": "Google Search gets a major upgrade with Gemini 4 Hydrogen",
-      "url": "https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade/",
-      "published_at": "2026-11-12T18:00:00.000Z",
-      "source": "Google AI"
     },
     {
       "title": "Lazare, veni foras: Reprogramming Dormant Neurons to Backdoor AI Agents",
@@ -79,19 +79,19 @@
       "name": "OpenAI",
       "url": "https://openai.com/news/rss.xml",
       "status": "ok",
-      "last_successful_at": "2026-11-18T19:24:22.527Z"
+      "last_successful_at": "2026-11-19T19:29:12.638Z"
     },
     {
       "name": "Google AI",
       "url": "https://blog.google/technology/ai/rss/",
       "status": "ok",
-      "last_successful_at": "2026-11-18T19:24:22.527Z"
+      "last_successful_at": "2026-11-19T19:29:12.638Z"
     },
     {
       "name": "Microsoft Research",
       "url": "https://www.microsoft.com/en-us/research/feed/",
       "status": "ok",
-      "last_successful_at": "2026-11-18T19:24:22.527Z"
+      "last_successful_at": "2026-11-19T19:29:12.638Z"
     }
   ]
 }
