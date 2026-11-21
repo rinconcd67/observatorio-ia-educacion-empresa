@@ -1,6 +1,18 @@
 {
-  "checked_at": "2026-11-20T19:06:31.046Z",
+  "checked_at": "2026-11-21T17:57:54.996Z",
   "items": [
+    {
+      "title": "Combatting adversarial distillation",
+      "url": "https://openai.com/index/combatting-adversarial-distillation",
+      "published_at": "2026-11-20T10:00:00.000Z",
+      "source": "OpenAI"
+    },
+    {
+      "title": "Hebbia sees improvements in financial research with GPT-6 Astra",
+      "url": "https://openai.com/business/customer-stories/hebbia",
+      "published_at": "2026-11-20T00:00:00.000Z",
+      "source": "OpenAI"
+    },
     {
       "title": "Can AI help scientists identify promising drug candidates?",
       "url": "https://openai.com/index/introducing-medchembench",
@@ -23,18 +35,6 @@
       "title": "How OpenAI’s Performance Factory keeps ChatGPT fast",
       "url": "https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast",
       "published_at": "2026-11-19T08:00:00.000Z",
-      "source": "OpenAI"
-    },
-    {
-      "title": "Get started with Daybreak Blue",
-      "url": "https://openai.com/business/learn/daybreak-blue-onboarding-demo",
-      "published_at": "2026-11-19T00:00:00.000Z",
-      "source": "OpenAI"
-    },
-    {
-      "title": "See PR scans in action",
-      "url": "https://openai.com/business/learn/pr-scans-demo",
-      "published_at": "2026-11-19T00:00:00.000Z",
       "source": "OpenAI"
     },
     {
@@ -79,19 +79,19 @@
       "name": "OpenAI",
       "url": "https://openai.com/news/rss.xml",
       "status": "ok",
-      "last_successful_at": "2026-11-20T19:06:31.046Z"
+      "last_successful_at": "2026-11-21T17:57:54.996Z"
     },
     {
       "name": "Google AI",
       "url": "https://blog.google/technology/ai/rss/",
       "status": "ok",
-      "last_successful_at": "2026-11-20T19:06:31.046Z"
+      "last_successful_at": "2026-11-21T17:57:54.996Z"
     },
     {
       "name": "Microsoft Research",
       "url": "https://www.microsoft.com/en-us/research/feed/",
       "status": "ok",
-      "last_successful_at": "2026-11-20T19:06:31.046Z"
+      "last_successful_at": "2026-11-21T17:57:54.996Z"
     }
   ]
 }
