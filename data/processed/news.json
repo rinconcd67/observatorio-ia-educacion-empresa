@@ -1,6 +1,12 @@
 {
-  "checked_at": "2026-11-21T17:57:54.996Z",
+  "checked_at": "2026-11-22T18:31:31.626Z",
   "items": [
+    {
+      "title": "Perplexity and Intelligence",
+      "url": "https://openai.com/index/perplexity-and-intelligence",
+      "published_at": "2026-11-22T00:00:00.000Z",
+      "source": "OpenAI"
+    },
     {
       "title": "Combatting adversarial distillation",
       "url": "https://openai.com/index/combatting-adversarial-distillation",
@@ -30,12 +36,6 @@
       "url": "https://blog.google/innovation-and-ai/technology/ai/dialogues-walter-isaacson/",
       "published_at": "2026-11-19T17:00:00.000Z",
       "source": "Google AI"
-    },
-    {
-      "title": "How OpenAI’s Performance Factory keeps ChatGPT fast",
-      "url": "https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast",
-      "published_at": "2026-11-19T08:00:00.000Z",
-      "source": "OpenAI"
     },
     {
       "title": "The Gemini app is now available on lower-memory Android devices.",
@@ -79,19 +79,19 @@
       "name": "OpenAI",
       "url": "https://openai.com/news/rss.xml",
       "status": "ok",
-      "last_successful_at": "2026-11-21T17:57:54.996Z"
+      "last_successful_at": "2026-11-22T18:31:31.626Z"
     },
     {
       "name": "Google AI",
       "url": "https://blog.google/technology/ai/rss/",
       "status": "ok",
-      "last_successful_at": "2026-11-21T17:57:54.996Z"
+      "last_successful_at": "2026-11-22T18:31:31.626Z"
     },
     {
       "name": "Microsoft Research",
       "url": "https://www.microsoft.com/en-us/research/feed/",
       "status": "ok",
-      "last_successful_at": "2026-11-21T17:57:54.996Z"
+      "last_successful_at": "2026-11-22T18:31:31.626Z"
     }
   ]
 }
