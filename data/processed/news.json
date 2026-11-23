@@ -1,28 +1,34 @@
 {
-  "checked_at": "2026-11-22T18:31:31.626Z",
+  "checked_at": "2026-11-23T22:39:07.761Z",
   "items": [
+    {
+      "title": "OpenAI and Cisco introduce Shirudo",
+      "url": "https://openai.com/index/introducing-shirudo",
+      "published_at": "2026-11-23T21:20:00.000Z",
+      "source": "OpenAI"
+    },
+    {
+      "title": "A more tailored Google Search that’s uniquely yours",
+      "url": "https://blog.google/products-and-platforms/products/search/google-search-personal-intelligence-apps/",
+      "published_at": "2026-11-23T17:00:00.000Z",
+      "source": "Google AI"
+    },
+    {
+      "title": "Connected intelligence for in-house legal",
+      "url": "https://openai.com/business/learn/connected-intelligence-for-in-house-legal",
+      "published_at": "2026-11-23T08:00:00.000Z",
+      "source": "OpenAI"
+    },
+    {
+      "title": "Richpanel helps companies automate 50% of support in 30 days",
+      "url": "https://openai.com/business/customer-stories/richpanel-ai-customer-support",
+      "published_at": "2026-11-23T08:00:00.000Z",
+      "source": "OpenAI"
+    },
     {
       "title": "Perplexity and Intelligence",
       "url": "https://openai.com/index/perplexity-and-intelligence",
       "published_at": "2026-11-22T00:00:00.000Z",
-      "source": "OpenAI"
-    },
-    {
-      "title": "Combatting adversarial distillation",
-      "url": "https://openai.com/index/combatting-adversarial-distillation",
-      "published_at": "2026-11-20T10:00:00.000Z",
-      "source": "OpenAI"
-    },
-    {
-      "title": "Hebbia sees improvements in financial research with GPT-6 Astra",
-      "url": "https://openai.com/business/customer-stories/hebbia",
-      "published_at": "2026-11-20T00:00:00.000Z",
-      "source": "OpenAI"
-    },
-    {
-      "title": "Can AI help scientists identify promising drug candidates?",
-      "url": "https://openai.com/index/introducing-medchembench",
-      "published_at": "2026-11-20T00:00:00.000Z",
       "source": "OpenAI"
     },
     {
@@ -41,12 +47,6 @@
       "title": "The Gemini app is now available on lower-memory Android devices.",
       "url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-lower-memory-devices/",
       "published_at": "2026-11-18T17:00:00.000Z",
-      "source": "Google AI"
-    },
-    {
-      "title": "Put Gemini to work for you",
-      "url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/",
-      "published_at": "2026-11-17T17:00:00.000Z",
       "source": "Google AI"
     },
     {
@@ -79,19 +79,19 @@
       "name": "OpenAI",
       "url": "https://openai.com/news/rss.xml",
       "status": "ok",
-      "last_successful_at": "2026-11-22T18:31:31.626Z"
+      "last_successful_at": "2026-11-23T22:39:07.761Z"
     },
     {
       "name": "Google AI",
       "url": "https://blog.google/technology/ai/rss/",
       "status": "ok",
-      "last_successful_at": "2026-11-22T18:31:31.626Z"
+      "last_successful_at": "2026-11-23T22:39:07.761Z"
     },
     {
       "name": "Microsoft Research",
       "url": "https://www.microsoft.com/en-us/research/feed/",
       "status": "ok",
-      "last_successful_at": "2026-11-22T18:31:31.626Z"
+      "last_successful_at": "2026-11-23T22:39:07.761Z"
     }
   ]
 }
