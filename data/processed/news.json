@@ -1,6 +1,30 @@
 {
-  "checked_at": "2026-11-23T22:39:07.761Z",
+  "checked_at": "2026-11-24T21:11:50.132Z",
   "items": [
+    {
+      "title": "How Gemini is changing the game for Golden State's organization and fans.",
+      "url": "https://blog.google/products-and-platforms/products/gemini/gemini-golden-state/",
+      "published_at": "2026-11-24T16:00:00.000Z",
+      "source": "Google AI"
+    },
+    {
+      "title": "Searching for distant planets with Astra",
+      "url": "https://openai.com/index/searching-for-distant-planets-with-astra",
+      "published_at": "2026-11-24T11:00:00.000Z",
+      "source": "OpenAI"
+    },
+    {
+      "title": "How Intentful uses dots to make more time for growth",
+      "url": "https://openai.com/business/customer-stories/intentful-dots",
+      "published_at": "2026-11-24T00:00:00.000Z",
+      "source": "OpenAI"
+    },
+    {
+      "title": "How iFood scales coding agents across 15,000 repositories",
+      "url": "https://openai.com/business/customer-stories/ifood",
+      "published_at": "2026-11-24T00:00:00.000Z",
+      "source": "OpenAI"
+    },
     {
       "title": "OpenAI and Cisco introduce Shirudo",
       "url": "https://openai.com/index/introducing-shirudo",
@@ -14,24 +38,6 @@
       "source": "Google AI"
     },
     {
-      "title": "Connected intelligence for in-house legal",
-      "url": "https://openai.com/business/learn/connected-intelligence-for-in-house-legal",
-      "published_at": "2026-11-23T08:00:00.000Z",
-      "source": "OpenAI"
-    },
-    {
-      "title": "Richpanel helps companies automate 50% of support in 30 days",
-      "url": "https://openai.com/business/customer-stories/richpanel-ai-customer-support",
-      "published_at": "2026-11-23T08:00:00.000Z",
-      "source": "OpenAI"
-    },
-    {
-      "title": "Perplexity and Intelligence",
-      "url": "https://openai.com/index/perplexity-and-intelligence",
-      "published_at": "2026-11-22T00:00:00.000Z",
-      "source": "OpenAI"
-    },
-    {
       "title": "Introducing Tool Retrieval in the Gemini API",
       "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/",
       "published_at": "2026-11-19T18:00:00.000Z",
@@ -41,12 +47,6 @@
       "title": "Walter Isaacson on curiosity and creativity in the AI age.",
       "url": "https://blog.google/innovation-and-ai/technology/ai/dialogues-walter-isaacson/",
       "published_at": "2026-11-19T17:00:00.000Z",
-      "source": "Google AI"
-    },
-    {
-      "title": "The Gemini app is now available on lower-memory Android devices.",
-      "url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-lower-memory-devices/",
-      "published_at": "2026-11-18T17:00:00.000Z",
       "source": "Google AI"
     },
     {
@@ -79,19 +79,19 @@
       "name": "OpenAI",
       "url": "https://openai.com/news/rss.xml",
       "status": "ok",
-      "last_successful_at": "2026-11-23T22:39:07.761Z"
+      "last_successful_at": "2026-11-24T21:11:50.132Z"
     },
     {
       "name": "Google AI",
       "url": "https://blog.google/technology/ai/rss/",
       "status": "ok",
-      "last_successful_at": "2026-11-23T22:39:07.761Z"
+      "last_successful_at": "2026-11-24T21:11:50.132Z"
     },
     {
       "name": "Microsoft Research",
       "url": "https://www.microsoft.com/en-us/research/feed/",
       "status": "ok",
-      "last_successful_at": "2026-11-23T22:39:07.761Z"
+      "last_successful_at": "2026-11-24T21:11:50.132Z"
     }
   ]
 }
