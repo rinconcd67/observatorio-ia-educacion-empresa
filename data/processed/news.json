@@ -1,11 +1,17 @@
 {
-  "checked_at": "2026-11-24T21:11:50.132Z",
+  "checked_at": "2026-11-25T20:28:52.936Z",
   "items": [
     {
       "title": "How Gemini is changing the game for Golden State's organization and fans.",
       "url": "https://blog.google/products-and-platforms/products/gemini/gemini-golden-state/",
       "published_at": "2026-11-24T16:00:00.000Z",
       "source": "Google AI"
+    },
+    {
+      "title": "GPT-6 models demonstrate intrinsic protein-design capabilities",
+      "url": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities",
+      "published_at": "2026-11-24T13:00:00.000Z",
+      "source": "OpenAI"
     },
     {
       "title": "Searching for distant planets with Astra",
@@ -23,12 +29,6 @@
       "title": "How iFood scales coding agents across 15,000 repositories",
       "url": "https://openai.com/business/customer-stories/ifood",
       "published_at": "2026-11-24T00:00:00.000Z",
-      "source": "OpenAI"
-    },
-    {
-      "title": "OpenAI and Cisco introduce Shirudo",
-      "url": "https://openai.com/index/introducing-shirudo",
-      "published_at": "2026-11-23T21:20:00.000Z",
       "source": "OpenAI"
     },
     {
@@ -79,19 +79,19 @@
       "name": "OpenAI",
       "url": "https://openai.com/news/rss.xml",
       "status": "ok",
-      "last_successful_at": "2026-11-24T21:11:50.132Z"
+      "last_successful_at": "2026-11-25T20:28:52.936Z"
     },
     {
       "name": "Google AI",
       "url": "https://blog.google/technology/ai/rss/",
       "status": "ok",
-      "last_successful_at": "2026-11-24T21:11:50.132Z"
+      "last_successful_at": "2026-11-25T20:28:52.936Z"
     },
     {
       "name": "Microsoft Research",
       "url": "https://www.microsoft.com/en-us/research/feed/",
       "status": "ok",
-      "last_successful_at": "2026-11-24T21:11:50.132Z"
+      "last_successful_at": "2026-11-25T20:28:52.936Z"
     }
   ]
 }
