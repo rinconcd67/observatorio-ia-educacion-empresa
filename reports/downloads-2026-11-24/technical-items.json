@@ -1,0 +1,44 @@
+[
+  {
+    "id": "uniandes-prompt-workflow-2025",
+    "organization": "Universidad de los Andes",
+    "year": 2025,
+    "original_title": "Del prompt al workflow: Guía para la interacción estratégica y consciente con la IA generativa",
+    "original_language": "es",
+    "source_url": "https://eduhubia.uniandes.edu.co/wp-content/uploads/HUB_IEIA_PROMPTWORKFLOWS_IsabelTejada.pdf",
+    "topic": "education",
+    "document_type": "practitioner_guide",
+    "review_scope": "selected_sections",
+    "pages": 3,
+    "review_note": {
+      "es": "Consultadas las tres páginas y el PDF institucional. Se conserva 2025 porque así lo indica la cita bibliográfica del documento; la fecha técnica de generación del archivo en 2026 no se usa como publicación.",
+      "en": "All three pages and the institutional PDF consulted. The document’s bibliographic citation states 2025; the file’s technical generation date in 2026 is not treated as publication."
+    },
+    "license_note": "Reseña original y enlace al editor o institución. No se aloja el PDF descargado ni se presume autorización de redistribución. / Original summary and publisher or institutional link. The downloaded PDF is not hosted and redistribution permission is not presumed.",
+    "es": {
+      "title": "Del prompt al workflow: interacción estratégica con IA",
+      "summary": "Material de aula que compara una petición aislada con un flujo iterativo de trabajo. Adapta SCRIBE para especificar contexto, responsabilidades, instrucciones y evaluación. Aporta una lista de comprobación para reflexionar sobre el proceso de colaboración con IA.",
+      "takeaways": [
+        "Comparar prompt y workflow",
+        "Especificar contexto y responsabilidad",
+        "Autoevaluar la colaboración"
+      ],
+      "audience": "Docentes, formadores y estudiantes universitarios"
+    },
+    "en": {
+      "title": "From prompt to workflow: strategic interaction with AI",
+      "summary": "A classroom resource comparing a single request with an iterative workflow. Adapts SCRIBE to specify context, responsibilities, instructions and evaluation. Provides a checklist for reflecting on human–AI collaboration.",
+      "takeaways": [
+        "Compare prompts and workflows",
+        "Specify context and responsibility",
+        "Self-assess collaboration"
+      ],
+      "audience": "Teachers, teacher educators and university students"
+    },
+    "added_date": "2026-11-24",
+    "reviewed_date": "2026-11-24",
+    "authors": [
+      "Isabel Tejada-Sánchez"
+    ]
+  }
+]

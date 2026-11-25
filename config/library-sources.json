@@ -7,7 +7,29 @@
     "mit.edu",
     "cepal.org",
     "stanford.edu",
-    "hai.stanford.edu"
+    "hai.stanford.edu",
+    "www.unesco.org",
+    "publications.iadb.org",
+    "www.oecd.org",
+    "aiandeducation.mit.edu",
+    "unesdoc.unesco.org",
+    "www.iesalc.unesco.org",
+    "www.cepal.org",
+    "documents.worldbank.org",
+    "oei.int",
+    "segib.org",
+    "www.officeforstudents.org.uk",
+    "iau.global",
+    "intef.es",
+    "code.intef.es",
+    "acceleratelearning.stanford.edu",
+    "op.europa.eu",
+    "economics.mit.edu",
+    "eduhubia.uniandes.edu.co",
+    "www.un.org",
+    "airisk.mit.edu",
+    "digital.gob.es",
+    "www.undp.org"
   ],
   "discovery_sources": [
     {
@@ -121,6 +143,18 @@
         "skills",
         "Latin America and the Caribbean",
         "digital development"
+      ]
+    },
+    {
+      "id": "world_bank_ai_development",
+      "organization": "Banco Mundial / World Bank",
+      "url": "https://www.worldbank.org/en/publication/wdr2026",
+      "catalog_url": "https://documents.worldbank.org/",
+      "topics": [
+        "artificial intelligence",
+        "development",
+        "education",
+        "business"
       ]
     }
   ],

@@ -50,7 +50,7 @@
   resetSeries();
   const entry = document.createElement('article');
   entry.className = 'ecosystem-card';
-  entry.innerHTML = `<span class="ecosystem-badge">CEPALSTAT · ILIA</span><h3>${t('Conectividad y brecha digital','Connectivity and digital divide')}</h3><p>${t('Hogares conectados, acceso escolar y habilidades digitales por ingreso y territorio en América Latina.','Connected households, school access and digital skills by income and area in Latin America.')}</p><div class="ecosystem-links"><a href="?view=education#cepal-context">${t('Consultar las tres series','Explore the three series')} →</a><a href="${es ? 'biblioteca/' : 'library/'}cepal-cenia-ilia-2025/">${t('Ficha ILIA 2025','ILIA 2025 record')} →</a></div>`;
+  entry.innerHTML = `<span class="ecosystem-badge">CEPALSTAT · ILIA</span><h3>${t('Conectividad y brecha digital','Connectivity and digital divide')}</h3><p>${t('Hogares conectados, acceso escolar y habilidades digitales por ingreso y territorio en América Latina.','Connected households, school access and digital skills by income and area in Latin America.')}</p><div class="ecosystem-links"><a href="?view=education#cepal-context">${t('Consultar las tres series','Explore the three series')} →</a><a href="${es ? 'biblioteca/' : 'library/'}cepal-cenia-ilia-2026/">${t('Ficha ILIA 2026','ILIA 2026 record')} →</a></div>`;
   (document.getElementById('ecosystem-cards') || document.getElementById('editorial-portal')).append(entry);
 
   const tabContainer = document.getElementById('lac-layer-tabs');

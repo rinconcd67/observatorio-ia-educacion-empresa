@@ -1,0 +1,202 @@
+[
+  {
+    "id": "scientific-panel-ai-capacity-building-2026",
+    "organization": "Independent International Scientific Panel on AI",
+    "year": 2026,
+    "original_title": "AI Capacity-Building",
+    "original_language": "en",
+    "source_url": "https://www.un.org/independent-international-scientific-panel-ai/sites/default/files/2026-11/Thematic%20Brief_AI%20Capacity-Building_22%20Nov%202026.pdf",
+    "topic": "policy",
+    "review_scope": "selected_sections",
+    "review_note": {
+      "es": "Lectura de páginas PDF 1–5, 13, 15 y 18: presentación, gobernanza, capital humano y lagunas de evidencia; no lectura íntegra. Thematic Brief 2, noviembre de 2026. El propio informe aclara que no representa las posiciones de Naciones Unidas.",
+      "en": "Read PDF pages 1–5, 13, 15 and 18: introduction, governance, human capital and evidence gaps; not a full reading. Thematic Brief 2, November 2026. The report states that it does not represent United Nations positions."
+    },
+    "license_note": "Reseña propia y enlace a la fuente; no se aloja el PDF ni su portada. Consultar los derechos de cada publicación antes de reutilizarla. / Original review and source link; PDF and cover are not hosted. Check each publication’s rights before reuse.",
+    "es": {
+      "title": "Fortalecer capacidades para la inteligencia artificial",
+      "summary": "Sintetiza evidencia sobre capacidades necesarias para adoptar y desarrollar IA según contextos locales. Relaciona gobernanza, infraestructura, talento e inclusión lingüística. Ayuda a priorizar formación e inversiones, diferenciando disponibilidad tecnológica, uso efectivo y resultados demostrados; identifica lagunas que requieren evaluación adicional.",
+      "takeaways": [
+        "Capacidades institucionales, técnicas y humanas",
+        "Adaptación al contexto y las lenguas locales",
+        "Distinguir acceso, adopción e impacto"
+      ],
+      "audience": "Responsables de política pública, formación e infraestructura"
+    },
+    "en": {
+      "title": "AI capacity-building",
+      "summary": "Synthesises evidence on capabilities needed to adopt and develop AI in local contexts. It connects governance, infrastructure, talent and linguistic inclusion. It helps prioritise training and investment while distinguishing technological availability, effective use and demonstrated outcomes, and identifying evidence gaps.",
+      "takeaways": [
+        "Institutional, technical and human capabilities",
+        "Adaptation to local contexts and languages",
+        "Separate access, adoption and impact"
+      ],
+      "audience": "Policymakers, training leaders and infrastructure planners"
+    },
+    "added_date": "2026-11-24",
+    "reviewed_date": "2026-11-24",
+    "pages": 22,
+    "publication_type": "thematic_brief"
+  },
+  {
+    "id": "cepal-ai-governance-lac-2026",
+    "organization": "CEPAL",
+    "year": 2026,
+    "original_title": "El estado de la gobernanza de la inteligencia artificial en América Latina y el Caribe: análisis integral de los fundamentos conceptuales, los marcos internacionales y los perfiles nacionales de gobernanza de la inteligencia artificial en América Latina y el Caribe",
+    "original_language": "es",
+    "source_url": "https://www.cepal.org/es/publicaciones/90489-estado-la-gobernanza-la-inteligencia-artificial-america-latina-caribe-analisis",
+    "topic": "policy",
+    "review_scope": "selected_sections",
+    "review_note": {
+      "es": "Lectura de páginas PDF 1–5 y 11–12: preliminares, índice e introducción; no lectura íntegra ni verificación individual de 46 perfiles nacionales y territoriales. Identidad y año contrastados con ficha institucional DLAB y documento LC/TS.2026/74. La URL CEPAL procede del enlace de DLAB; su acceso automatizado devolvió 403. El documento declara no haber sido sometido a revisión editorial.",
+      "en": "Read PDF pages 1–5 and 11–12: preliminary material, contents and introduction; neither a full reading nor individual verification of the 46 country and territory profiles. Identity and year checked against the institutional DLAB entry and document LC/TS.2026/74. The CEPAL URL is linked by DLAB; automated retrieval returned 403. The document states it has not undergone editorial review."
+    },
+    "license_note": "Reseña propia y enlace a la fuente; no se aloja el PDF ni su portada. Consultar los derechos de cada publicación antes de reutilizarla. / Original review and source link; PDF and cover are not hosted. Check each publication’s rights before reuse.",
+    "es": {
+      "title": "Estado de la gobernanza de IA en América Latina y el Caribe",
+      "summary": "Examina fundamentos, marcos internacionales y perfiles de gobernanza de IA en América Latina y el Caribe. Relaciona regulación con capacidades institucionales e implementación. Aporta contexto comparativo para políticas regionales; sus perfiles corresponden al corte del informe y requieren actualización jurídica.",
+      "takeaways": [
+        "Fundamentos y marcos internacionales de gobernanza",
+        "46 perfiles nacionales y territoriales",
+        "Capacidad institucional más allá de legislar"
+      ],
+      "audience": "Responsables públicos, investigadores y universidades latinoamericanas"
+    },
+    "en": {
+      "title": "The state of AI governance in Latin America and the Caribbean",
+      "summary": "Examines foundations, international frameworks and national AI governance profiles across Latin America and the Caribbean. It connects regulation with institutional capacity and implementation. It provides comparative policy context; country profiles reflect the report’s reference period and require subsequent legal verification.",
+      "takeaways": [
+        "Governance foundations and international frameworks",
+        "46 country and territory profiles",
+        "Institutional capacity beyond legislation"
+      ],
+      "audience": "Policymakers, researchers and Latin American universities"
+    },
+    "added_date": "2026-11-24",
+    "reviewed_date": "2026-11-24",
+    "pages": 195,
+    "authors": [
+      "Demetris Herakleous"
+    ],
+    "publication_type": "report"
+  },
+  {
+    "id": "spain-public-administration-ethical-ai-guide-2026",
+    "organization": "Ministerio para la Transformación Digital y de la Función Pública (España)",
+    "year": 2026,
+    "original_title": "Guía para la adopción ética de la inteligencia artificial en las Administraciones públicas",
+    "original_language": "es",
+    "source_url": "https://digital.gob.es/content/dam/portal-mtdfp/avance-digital/telecomunicacion-e-infraestructuras-digitales/estadisticas-e-informes/Guia-de-IA-en-las-AAPP.pdf",
+    "topic": "policy",
+    "review_scope": "selected_sections",
+    "review_note": {
+      "es": "Lectura de páginas PDF 1–4 y 30: presentación, estructura y condiciones previas a la contratación; no lectura íntegra. Versión de noviembre de 2026, anunciada el 19 de noviembre. Guía para administraciones españolas en contexto europeo; no constituye una nueva norma ni se generaliza a otras jurisdicciones.",
+      "en": "Read PDF pages 1–4 and 30: introduction, structure and prerequisites for procurement; not a full reading. November 2026 version, announced 19 November. Guidance for Spanish public administrations in the European context; not a new law or automatically applicable to other jurisdictions."
+    },
+    "license_note": "Reseña propia y enlace a la fuente; no se aloja el PDF ni su portada. Consultar los derechos de cada publicación antes de reutilizarla. / Original review and source link; PDF and cover are not hosted. Check each publication’s rights before reuse.",
+    "es": {
+      "title": "Adopción ética de IA en las administraciones públicas españolas",
+      "summary": "Orienta a las administraciones públicas españolas en la adopción ética de IA, considerando necesidades, datos, infraestructura y riesgos antes de contratar soluciones. Relaciona responsabilidades, supervisión humana y derechos. Su utilidad requiere atender al contexto institucional y al marco europeo aplicable.",
+      "takeaways": [
+        "Evaluar necesidad y viabilidad antes de contratar",
+        "Asignar responsabilidades y supervisión humana",
+        "Adaptar los controles al contexto público"
+      ],
+      "audience": "Responsables de innovación pública, contratación y gobernanza"
+    },
+    "en": {
+      "title": "Ethical AI adoption in Spanish public administrations",
+      "summary": "Guides Spanish public administrations on ethical AI adoption, considering needs, data, infrastructure and risks before procuring solutions. It connects responsibilities, human oversight and rights. Practical use requires attention to each institution’s circumstances and the applicable European framework and implementation requirements.",
+      "takeaways": [
+        "Assess need and feasibility before procurement",
+        "Assign responsibilities and human oversight",
+        "Adapt controls to the public sector context"
+      ],
+      "audience": "Public innovation, procurement and governance leaders"
+    },
+    "added_date": "2026-11-24",
+    "reviewed_date": "2026-11-24",
+    "pages": 50,
+    "announcement_date": "2026-11-19",
+    "publication_type": "guide"
+  },
+  {
+    "id": "undp-atlas-public-communication-innovation-2026",
+    "organization": "PNUD / UNDP",
+    "year": 2026,
+    "original_title": "Atlas of Innovation in Public Communication",
+    "original_language": "en",
+    "source_url": "https://www.undp.org/sites/g/files/zskgke326/files/2026-10/undp-report-atlas-of-innovation-finalversion.pdf",
+    "topic": "policy",
+    "review_scope": "selected_sections",
+    "review_note": {
+      "es": "Lectura de páginas PDF 1–8 y 11: presentación, categorías e introducción metodológica; no lectura íntegra ni evaluación individual de todas las experiencias. Año identificado en el documento. Contexto complementario sobre comunicación pública; no es un informe exclusivo de IA ni una evaluación causal de impacto.",
+      "en": "Read PDF pages 1–8 and 11: introduction, categories and methodological overview; neither a full reading nor individual assessment of every practice. Year identified in the document. Complementary public communication context, not an AI-only report or a causal impact evaluation."
+    },
+    "license_note": "Reseña propia y enlace a la fuente; no se aloja el PDF ni su portada. Consultar los derechos de cada publicación antes de reutilizarla. / Original review and source link; PDF and cover are not hosted. Check each publication’s rights before reuse.",
+    "es": {
+      "title": "Atlas de innovación en comunicación pública",
+      "summary": "Reúne prácticas de comunicación pública orientadas a claridad, inclusión, participación y confianza. Permite explorar cómo las instituciones explican asuntos complejos y utilizan formatos tecnológicos. Aporta contexto para comunicar políticas de IA; los ejemplos seleccionados no demuestran por sí impacto causal.",
+      "takeaways": [
+        "Claridad, inclusión y participación ciudadana",
+        "Prácticas seleccionadas de comunicación pública",
+        "Contexto complementario para comunicar la IA"
+      ],
+      "audience": "Equipos de comunicación pública, participación y educación"
+    },
+    "en": {
+      "title": "Atlas of Innovation in Public Communication",
+      "summary": "Collects public communication practices addressing clarity, inclusion, participation and trust. It explores how institutions explain complex issues and use technological formats. The examples offer complementary context for communicating AI policies, without establishing causal impact or constituting a dedicated AI assessment.",
+      "takeaways": [
+        "Clarity, inclusion and citizen participation",
+        "Selected public communication practices",
+        "Complementary context for communicating AI"
+      ],
+      "audience": "Public communication, participation and education teams"
+    },
+    "added_date": "2026-11-24",
+    "reviewed_date": "2026-11-24",
+    "pages": 86,
+    "publication_type": "report"
+  },
+  {
+    "id": "cepal-geopolitics-ruptures-opportunities-2026",
+    "organization": "CEPAL",
+    "year": 2026,
+    "original_title": "Rupturas y oportunidades: propuestas para que América Latina y el Caribe prospere en la nueva era geopolítica",
+    "original_language": "es",
+    "source_url": "https://www.cepal.org/es/publicaciones/90219-rupturas-oportunidades-propuestas-que-america-latina-caribe-prospere-la-nueva",
+    "topic": "policy",
+    "review_scope": "selected_sections",
+    "review_note": {
+      "es": "Lectura de páginas PDF 1–5, 23 y 105–106: preliminares, introducción y pasajes sobre IA y desinformación; no lectura íntegra. Documento LC/PUB.2026/10, publicado el 4 de agosto de 2026 según CEPAL. Marco geopolítico complementario, no conjunto de indicadores exclusivos de IA.",
+      "en": "Read PDF pages 1–5, 23 and 105–106: preliminary material, introduction and passages on AI and disinformation; not a full reading. Document LC/PUB.2026/10, published 4 August 2026 according to CEPAL. Complementary geopolitical context, not a dedicated AI indicator dataset."
+    },
+    "license_note": "Reseña propia y enlace a la fuente; no se aloja el PDF ni su portada. Consultar los derechos de cada publicación antes de reutilizarla. / Original review and source link; PDF and cover are not hosted. Check each publication’s rights before reuse.",
+    "es": {
+      "title": "Rupturas y oportunidades para América Latina y el Caribe",
+      "summary": "Analiza transformaciones geopolíticas y opciones de desarrollo para América Latina y el Caribe. Sus pasajes sobre tecnología e información ayudan a contextualizar concentración de poder, desinformación y cooperación regional. Complementa el análisis de gobernanza de IA con una perspectiva institucional.",
+      "takeaways": [
+        "Contexto geopolítico del cambio tecnológico",
+        "Concentración, información y capacidad institucional",
+        "Cooperación regional y opciones de desarrollo"
+      ],
+      "audience": "Investigadores, responsables públicos y equipos de estrategia"
+    },
+    "en": {
+      "title": "Ruptures and opportunities for Latin America and the Caribbean",
+      "summary": "Analyses geopolitical change and development options for Latin America and the Caribbean. Its technology and information discussions contextualise concentrated power, disinformation and regional cooperation. It complements AI governance analysis with a institutional perspective rather than providing a dedicated AI assessment.",
+      "takeaways": [
+        "Geopolitical context for technological change",
+        "Concentration, information and institutional capacity",
+        "Regional cooperation and development options"
+      ],
+      "audience": "Researchers, policymakers and strategy teams"
+    },
+    "added_date": "2026-11-24",
+    "reviewed_date": "2026-11-24",
+    "pages": 414,
+    "published_date": "2026-08-04",
+    "publication_type": "report"
+  }
+]

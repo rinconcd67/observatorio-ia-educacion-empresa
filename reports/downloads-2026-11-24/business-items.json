@@ -1,0 +1,96 @@
+[
+  {
+    "id": "acemoglu-simple-macroeconomics-ai-2024",
+    "organization": "MIT",
+    "year": 2024,
+    "original_title": "The Simple Macroeconomics of AI",
+    "original_language": "en",
+    "source_url": "https://economics.mit.edu/sites/default/files/2024-04/The%20Simple%20Macroeconomics%20of%20AI.pdf",
+    "topic": "business",
+    "review_scope": "selected_sections",
+    "publication_type": "academic_working_paper",
+    "review_note": {
+      "es": "Leídos portada, resumen e inicio de introducción. El archivo corresponde al borrador del 5 de abril de 2024; existen revisiones posteriores con estimaciones diferentes. No equiparar esta versión con el artículo definitivo.",
+      "en": "Read cover, abstract and beginning of introduction. The file is the 5 April 2024 draft; later revisions contain different estimates. This version is not equated with the final journal article."
+    },
+    "license_note": "Reseña propia de secciones seleccionadas y enlace al editor; no se aloja el PDF ni su portada. / Original review of selected sections and link to the publisher; neither the PDF nor its cover is hosted.",
+    "es": {
+      "title": "La macroeconomía de la IA: modelo por tareas de Acemoglu",
+      "summary": "Borrador académico de abril de 2024 sobre productividad, automatización y desigualdad. Conecta exposición de tareas y ahorro de costos con efectos agregados. Sus estimaciones dependen de supuestos y evidencia disponibles entonces; no son mediciones de impacto en 2026.",
+      "takeaways": [
+        "Modelo económico por tareas",
+        "Supuestos de productividad y distribución",
+        "Borrador histórico de abril de 2024"
+      ],
+      "audience": "Investigadores y analistas económicos"
+    },
+    "en": {
+      "title": "The Simple Macroeconomics of AI: Acemoglu’s task model",
+      "summary": "April 2024 academic draft on productivity, automation and inequality. Links task exposure and cost savings to aggregate effects. Estimates depend on assumptions and evidence available at that time; they are not measurements of AI’s impact in 2026.",
+      "takeaways": [
+        "Task-based economic model",
+        "Productivity and distribution assumptions",
+        "Historical April 2024 draft"
+      ],
+      "audience": "Researchers and economic analysts"
+    },
+    "added_date": "2026-11-24",
+    "reviewed_date": "2026-11-24",
+    "published_date": "2024-04-05",
+    "pages": 50,
+    "authors": [
+      "Daron Acemoglu"
+    ],
+    "edition": "Draft dated 5 April 2024"
+  },
+  {
+    "id": "bid-digitalization-ai-productivity-2026",
+    "organization": "BID",
+    "year": 2026,
+    "original_title": "From Digitalization to Artificial Intelligence: Turning Promises into Productivity",
+    "original_language": "en",
+    "source_url": "https://publications.iadb.org/en/digitalization-artificial-intelligence-turning-promises-productivity",
+    "topic": "business",
+    "review_scope": "selected_sections",
+    "publication_type": "multilateral_research_book",
+    "review_note": {
+      "es": "Cotejadas portadas y créditos ES/EN; leídos índice, prefacio y comienzo del capítulo 1 en inglés. No lectura íntegra del libro. Fecha oficial noviembre de 2026; el año 1970 del generador de citas del portal es inconsistente y no se adopta.",
+      "en": "Compared Spanish and English covers and credits; read contents, preface and opening of chapter 1 in English. Not a full reading of the book. Official date November 2026; the portal citation generator’s inconsistent 1970 year is not adopted."
+    },
+    "license_note": "Reseña propia de secciones seleccionadas y enlace al editor; no se aloja el PDF ni su portada. / Original review of selected sections and link to the publisher; neither the PDF nor its cover is hosted.",
+    "es": {
+      "title": "De la digitalización a la IA: convertir promesas en productividad",
+      "summary": "Libro de investigación del BID sobre adopción digital, IA y productividad en América Latina y el Caribe. Examina instituciones, capacidades y servicios públicos. Las ediciones española e inglesa son una misma obra; se distinguen potencial tecnológico y resultados observados.",
+      "takeaways": [
+        "Adopción e instituciones",
+        "Productividad y servicios públicos",
+        "Una obra en dos idiomas"
+      ],
+      "audience": "Investigadores, directivos y responsables de políticas públicas"
+    },
+    "en": {
+      "title": "From Digitalization to AI: turning promises into productivity",
+      "summary": "IDB research book on digital adoption, AI and productivity in Latin America and the Caribbean. Examines institutions, capabilities and public services. Spanish and English editions are the same work; technological potential is distinguished from observed outcomes.",
+      "takeaways": [
+        "Adoption and institutions",
+        "Productivity and public services",
+        "One work in two languages"
+      ],
+      "audience": "Researchers, executives and public policy leaders"
+    },
+    "added_date": "2026-11-24",
+    "reviewed_date": "2026-11-24",
+    "published_month": "2026-11",
+    "doi": "10.18235/0014610",
+    "languages": [
+      "en",
+      "es"
+    ],
+    "editors": [
+      "Julián Cristia",
+      "Philip Keefer",
+      "Nadia Rocha",
+      "Christian Volpe Martincus"
+    ]
+  }
+]

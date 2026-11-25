@@ -72,3 +72,43 @@ El usuario autoriza commit y push para actualizar el sitio público con la mejor
 - Estado actual: validado localmente (103/103 pruebas, npm run validate OK) y autorizado para commit y push al sitio público.
 - Decisiones clave: 4 pilares de navegación (Panorama, Sectores, Perfil 360°, Recursos) + Método; conmutador rápido de sectores; explorador regional por pestañas en Educación; Expediente Nacional 360° cruzando TALIS, PISA-CIMA, UNESCO UIS, CEPALSTAT, Biblioteca y Skills; enlaces de Recursos dirigidos a https://rinconcd67.github.io/observatorio-ia-educacion-empresa/.
 </memory>
+
+
+<memory project="ObservatorioIAEducacionEmpresa" fecha="2026-11-24">
+- Estado actual: candidato institucional local de 53 publicaciones y 35 recursos; Skills conserva cuatro fichas (Helsinki y tres cursos Google). Sin publicación remota.
+- Decisiones clave: el usuario limita recursos públicos a multilaterales, UE, universidades, organismos públicos y observatorios. Editoriales comerciales, consultoras, empresas, guías de productos y casos mixtos quedan para consumo interno local. Reseñas/enlaces sin PDFs alojados.
+- Versiones anteriores: biblioteca de base 30, candidato 36, ampliación 76, primera depuración 63 y selección vigente 53. Se retiran 23 fichas y quedan diez cursos excluidos tras restituir tres de Google; se conservan seis altas iniciales y 17 de Downloads.
+- Contextos relevantes: archivo interno en carpeta hermana fuera del repositorio publicable; PDFs de Downloads intactos. Estadísticas con corte 10 nov 2026; no se presume licencia abierta de todas las obras institucionales.
+- Excepción expresa posterior: se autorizan los enlaces a tres cursos gratuitos oficiales de Google, sin alojamiento de materiales ni extensión automática a otros proveedores.
+- Próximos hitos: revisión y autorización de publicación de la selección institucional, PR/CI/despliegue y verificación pública. Evidencia reports/downloads-2026-11-24/CANDIDATO.md; criterio EDITORIAL_POLICY.md.
+- Benchmark de imagen y contenido: cinco referentes, ocho hallazgos y trece capturas aceptadas; informe local en carpeta hermana Observatorio_Benchmark_2026-11-24. Prioridad propuesta: introducción para principiantes, aplicación guiada y comparación metodológica justa. Diseño sin cambios; móvil pendiente de validación.
+</memory>
+
+<memory project="Observatorio-Recorrido-15min" fecha="2026-11-24">
+- Estado actual: recorrido aprobado conceptualmente, implementado y verificado en candidato local; vista http://127.0.0.1:4184/empieza/. Sin publicación.
+- Decisiones clave: cuatro pasos 3/3/6/3 minutos estimados, introducción IA, caso ficticio, identificación de dos inferencias indebidas, escritura opcional y tres preguntas con feedback/reintentos. ES/EN y rutas posteriores docente/empresa/investigación.
+- Versiones anteriores: mapa conceptual aprobado por el usuario tras benchmark; portada previa dirigía a cursos externos. La nueva portada, buscador y navegación de recursos ofrecen el recorrido.
+- Contextos relevantes: 53 publicaciones, 4 Skills y 35 recursos conservados; sitemap136URL. Estadísticas intactas. No almacenamiento ni envío de respuestas. QA escritorio y emulación390px; no estudio de usuarios ni certificación de accesibilidad.
+- Verificación: suite general154PASS/0FAIL/1SKIP más6pruebas propiasPASS; flujoESEN en navegador, vacíos/errores/reintentos/reinicio. Informe reports/journey-2026-11-24/QA.md.
+- Próximos hitos: revisión visual del usuario; publicación únicamente después de autorización expresa para el candidato final.
+</memory>
+
+<memory project="Observatorio-Recorrido-15min" fecha="2026-11-24" revision="sin-escritura">
+- Estado actual: corregida localmente la barrera de avance señalada por el usuario; no publicado.
+- Decisiones clave: sin campo de escritura; práctica con clics o lectura de ejemplos/respuestas explicadas. Avanzar y terminar no exige responder ni acertar. Feedback conserva distinción entre respuesta correcta y explicación consultada; cierre no atribuye competencias.
+- Versiones anteriores: primera versión con escritura opcional y bloqueo por selecciones/quiz correctos; sustituida por aprendizaje sin bloqueo.
+- Contextos relevantes: el usuario considera inadecuado que una persona que no escribe se quede detenida. Aplicado a ambos idiomas.
+- Verificación:12pruebasPASS; navegadorESEN completado sin escritura ni respuestas; captura reports/journey-2026-11-24/practica-sin-escribir.jpg.
+- Próximos hitos: revisión de la experiencia corregida y autorización de publicación pendiente.
+</memory>
+
+<autorizacion fecha="2026-11-24" proyecto="Observatorio-Actualizacion-y-Recorrido">
+El usuario solicita: «ahora sí, publica la versión corregida del observatorio». Se autoriza publicar el candidato revisado, incluida la selección institucional y el recorrido sin escritura ni bloqueo por aciertos, mediante commit, push, PR, controles nativos, integración y despliegue. La verificación pública queda pendiente hasta observar el despliegue y comprobar su contenido.
+</autorizacion>
+
+<memory project="Observatorio-Actualizacion-y-Recorrido" fecha="2026-11-24" revision="publicacion-autorizada">
+- Estado actual: publicación autorizada; candidato final local validado con160pruebasPASS,0FAIL,1SKIP por archivo bruto ausente. Biblioteca53sinproblemas,4Skills,35recursos,sitemap136URL.
+- Decisiones clave: se publica el recorrido corregido sin escritura obligatoria ni bloqueo por respuestas; ejemplos explicados accesibles. Selección institucional y excepción Google conservadas; archivos internos fuera del repositorio.
+- Versiones anteriores: main9805bc6, candidato revisado en localhost4184. No deriva estadística respecto a la base;5280observaciones,218países,40conmedición directa.
+- Próximos hitos: revisión final, commit/push,CI delPR,merge,Pages y comprobación pública. El estado remoto se documentará con los identificadores reales al completar.
+</memory>

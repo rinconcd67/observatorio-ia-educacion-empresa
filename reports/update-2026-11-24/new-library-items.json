@@ -1,0 +1,253 @@
+[
+  {
+    "id": "oecd-digital-economy-society-2026",
+    "organization": "OCDE",
+    "year": 2026,
+    "original_title": "OECD Digital Economy and Society Outlook 2026",
+    "original_language": "en",
+    "source_url": "https://www.oecd.org/en/publications/oecd-digital-economy-and-society-outlook-2026_022ed474-en.html",
+    "topic": "business",
+    "review_scope": "official_summary",
+    "review_note": {
+      "es": "Ficha, introducción y principales resultados oficiales consultados; no lectura íntegra del informe. Las tasas de empresas se refieren al universo y período definidos por la OCDE, no a todas las empresas del mundo.",
+      "en": "Official publication record, introduction and key findings reviewed; not a full reading. Enterprise rates apply to the population and period defined by the OECD, not all businesses worldwide."
+    },
+    "license_note": "Reseña propia y enlaces a fuentes oficiales; no se aloja el documento ni su portada. Consultar las condiciones de reutilización del editor. / Original editorial summary and links to official sources; neither the document nor its cover is hosted. Check the publisher’s reuse terms.",
+    "es": {
+      "title": "Economía y sociedad digitales 2026: adopción de IA y brechas empresariales",
+      "summary": "Examina la difusión de tecnologías digitales, la infraestructura de cómputo y las políticas de transformación digital. Distingue la adopción de IA por tamaño empresarial y las brechas generacionales de uso. Sus resultados ayudan a contextualizar capacidades organizacionales; no demuestran por sí solos mejoras de productividad.",
+      "takeaways": [
+        "Adopción por tamaño empresarial",
+        "Capacidades complementarias para aprovechar la IA",
+        "Separar datos observados y proyecciones"
+      ],
+      "audience": "Directivos, analistas y responsables de políticas digitales"
+    },
+    "en": {
+      "title": "Digital Economy and Society Outlook 2026: AI adoption and business gaps",
+      "summary": "Examines digital technology diffusion, compute infrastructure and digital transformation policies. Distinguishes AI uptake by firm size and generational differences in use. Its findings provide context for organisational capabilities rather than direct evidence of productivity gains.",
+      "takeaways": [
+        "AI uptake by firm size",
+        "Complementary capabilities for effective AI use",
+        "Separate observed data and projections"
+      ],
+      "audience": "Executives, analysts and digital policy leaders"
+    },
+    "added_date": "2026-11-24",
+    "reviewed_date": "2026-11-24",
+    "published_date": "2026-11-05",
+    "pages": 264,
+    "doi": "10.1787/022ed474-en"
+  },
+  {
+    "id": "world-bank-wdr-ai-2026",
+    "organization": "Banco Mundial",
+    "year": 2026,
+    "original_title": "World Development Report 2026: The Promise of Artificial Intelligence",
+    "original_language": "en",
+    "source_url": "https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099090426145520570",
+    "topic": "policy",
+    "review_scope": "official_summary",
+    "review_note": {
+      "es": "Registro oficial indexado y comunicado de lanzamiento del 4 de agosto de 2026 consultados; no lectura íntegra. El registro indica divulgación el 4 de septiembre. La nota conceptual de febrero es otro documento.",
+      "en": "Indexed official record and launch announcement dated 4 August 2026 reviewed; not a full reading. The record lists disclosure on 4 September. The February concept note is a separate document."
+    },
+    "license_note": "Reseña propia y enlaces a fuentes oficiales; no se aloja el documento ni su portada. Consultar las condiciones de reutilización del editor. / Original editorial summary and links to official sources; neither the document nor its cover is hosted. Check the publisher’s reuse terms.",
+    "es": {
+      "title": "Informe sobre el desarrollo mundial 2026: la promesa de la inteligencia artificial",
+      "summary": "Examina las posibilidades de la IA para países de ingreso bajo y mediano y las condiciones que pueden limitar su aprovechamiento. Vincula adopción y adaptación tecnológica con electricidad, conectividad, competencias e instituciones. Ofrece una perspectiva de desarrollo, sin equiparar potencial tecnológico con efectos ya alcanzados.",
+      "takeaways": [
+        "Perspectiva de países de ingreso bajo y mediano",
+        "Capacidades para adoptar y adaptar la IA",
+        "Distinguir potencial tecnológico y resultados"
+      ],
+      "audience": "Gestores públicos, directivos educativos y analistas de desarrollo"
+    },
+    "en": {
+      "title": "World Development Report 2026: The Promise of Artificial Intelligence",
+      "summary": "Examines AI opportunities for low- and middle-income countries and the conditions that may constrain them. Links technology adoption and adaptation with electricity, connectivity, skills and institutions. Provides a development perspective without treating technological potential as an already achieved impact.",
+      "takeaways": [
+        "Low- and middle-income country perspective",
+        "Capabilities to adopt and adapt AI",
+        "Distinguish technological potential from outcomes"
+      ],
+      "audience": "Public managers, education leaders and development analysts"
+    },
+    "added_date": "2026-11-24",
+    "reviewed_date": "2026-11-24",
+    "published_date": "2026-08-04",
+    "disclosure_date": "2026-09-04",
+    "doi": "10.1596/978-1-4648-2331-2",
+    "verification_urls": [
+      "https://www.worldbank.org/en/news/press-release/2026/08/04/ai-offers-lifeline-to-developing-economies-in-an-era-of-weak-growth"
+    ]
+  },
+  {
+    "id": "cepal-cenia-ilia-2026",
+    "organization": "CEPAL",
+    "year": 2026,
+    "original_title": "Índice Latinoamericano de Inteligencia Artificial (ILIA) 2026",
+    "original_language": "es",
+    "source_url": "https://www.cepal.org/es/publicaciones/90413-indice-latinoamericano-inteligencia-artificial-ilia-2026",
+    "topic": "policy",
+    "review_scope": "official_summary",
+    "review_note": {
+      "es": "Ficha y resumen oficiales recuperados mediante el índice del buscador; la apertura directa devolvió HTTP 403. No se leyó el PDF ni se incorporaron sus puntajes a las series estadísticas.",
+      "en": "Official record and abstract retrieved through the search index; direct opening returned HTTP 403. The PDF was not read and its scores were not incorporated into statistical series."
+    },
+    "license_note": "Reseña propia y enlaces a fuentes oficiales; no se aloja el documento ni su portada. Consultar las condiciones de reutilización del editor. / Original editorial summary and links to official sources; neither the document nor its cover is hosted. Check the publisher’s reuse terms.",
+    "es": {
+      "title": "ILIA 2026: capacidades y ecosistemas de IA en América Latina y el Caribe",
+      "summary": "La cuarta edición analiza los ecosistemas de IA de 20 países mediante factores habilitantes, investigación, desarrollo y adopción, y gobernanza. Ofrece contexto regional para formación, innovación y políticas públicas. La comparación con ediciones anteriores requiere revisar cambios metodológicos antes de interpretar variaciones de puntajes.",
+      "takeaways": [
+        "20 países de América Latina y el Caribe",
+        "Tres dimensiones de los ecosistemas de IA",
+        "Revisar comparabilidad entre ediciones"
+      ],
+      "audience": "Investigadores, responsables educativos y analistas regionales"
+    },
+    "en": {
+      "title": "ILIA 2026: AI capabilities and ecosystems in Latin America and the Caribbean",
+      "summary": "The fourth edition examines AI ecosystems in 20 countries through enabling factors, research, development and adoption, and governance. It provides regional context for training, innovation and public policy. Comparisons with earlier editions require checking methodological changes before interpreting score movements.",
+      "takeaways": [
+        "20 Latin American and Caribbean countries",
+        "Three dimensions of AI ecosystems",
+        "Check comparability across editions"
+      ],
+      "audience": "Researchers, education leaders and regional analysts"
+    },
+    "added_date": "2026-11-24",
+    "reviewed_date": "2026-11-24",
+    "published_date": "2026-10-20",
+    "pages": 276,
+    "edition": "LC/TS.2026/97",
+    "institutional_author": "NU. CEPAL",
+    "verification_urls": [
+      "https://www.cepal.org/es/eventos/lanzamiento-indice-latinoamericano-inteligencia-artificial-2026"
+    ]
+  },
+  {
+    "id": "oecd-ec-ai-literacy-2026",
+    "organization": "OCDE",
+    "year": 2026,
+    "original_title": "Empowering Learners for the Age of AI: An AI Literacy Framework for Primary and Secondary Education",
+    "original_language": "en",
+    "source_url": "https://www.oecd.org/en/publications/empowering-learners-for-the-age-of-ai_65cd27d4-en.html",
+    "topic": "education",
+    "review_scope": "official_summary",
+    "review_note": {
+      "es": "Ficha y resumen oficiales consultados; no lectura íntegra. Es una incorporación al catálogo, no una publicación de noviembre.",
+      "en": "Official record and abstract reviewed; not a full reading. This is a catalogue addition, not a November publication."
+    },
+    "license_note": "Reseña propia y enlaces a fuentes oficiales; no se aloja el documento ni su portada. Consultar las condiciones de reutilización del editor. / Original editorial summary and links to official sources; neither the document nor its cover is hosted. Check the publisher’s reuse terms.",
+    "es": {
+      "title": "Alfabetización en IA para primaria y secundaria: marco OCDE y Comisión Europea",
+      "summary": "Propone un marco común de conocimientos, habilidades y actitudes para comprender sistemas de IA, evaluar sus resultados y utilizarlos de forma ética y creativa. Orienta objetivos de aprendizaje dentro y fuera del aula. Su ámbito es primaria y secundaria; la adaptación universitaria requiere desarrollo propio.",
+      "takeaways": [
+        "Conocimientos, habilidades y actitudes",
+        "Evaluación crítica de resultados de IA",
+        "Ámbito de primaria y secundaria explícito"
+      ],
+      "audience": "Docentes, formadores y diseñadores curriculares"
+    },
+    "en": {
+      "title": "Empowering Learners for the Age of AI: a school AI literacy framework",
+      "summary": "Proposes a shared framework of knowledge, skills and attitudes for understanding AI systems, assessing outputs and using AI ethically and creatively. Guides learning outcomes inside and outside classrooms. Its scope is primary and secondary education; higher education adaptation requires additional work.",
+      "takeaways": [
+        "Knowledge, skills and attitudes",
+        "Critical assessment of AI outputs",
+        "Explicit primary and secondary education scope"
+      ],
+      "audience": "Teachers, teacher educators and curriculum designers"
+    },
+    "added_date": "2026-11-24",
+    "reviewed_date": "2026-11-24",
+    "published_date": "2026-06-18",
+    "pages": 64,
+    "doi": "10.1787/65cd27d4-en",
+    "institutional_author": "OECD; European Commission"
+  },
+  {
+    "id": "unesco-ai-answers-you-decide-2026",
+    "organization": "UNESCO",
+    "year": 2026,
+    "original_title": "AI Answers. You Decide. – Teaching Media and Information Literacy in AI-Mediated Information Environments",
+    "original_language": "en",
+    "source_url": "https://www.unesco.org/en/articles/ai-answers-you-decide-unesco-launches-new-media-and-information-literacy-curriculum",
+    "topic": "education",
+    "review_scope": "official_summary",
+    "review_note": {
+      "es": "Artículo oficial de presentación leído; guía completa pendiente de lectura. El anuncio es del 10 de noviembre, pero señala presentación durante la semana del 24 al 31 de octubre; no se asigna fecha exacta de publicación al documento.",
+      "en": "Official introduction article read; the full guide remains unread. The announcement is dated 10 November and reports an introduction during 24–31 October; no exact document publication date is assigned."
+    },
+    "license_note": "Reseña propia y enlaces a fuentes oficiales; no se aloja el documento ni su portada. Consultar las condiciones de reutilización del editor. / Original editorial summary and links to official sources; neither the document nor its cover is hosted. Check the publisher’s reuse terms.",
+    "es": {
+      "title": "La IA responde, tú decides: alfabetización mediática e informacional",
+      "summary": "Guía complementaria del currículo UNESCO de alfabetización mediática e informacional. Aborda cómo la IA transforma la información, los medios, el conocimiento y las relaciones de poder. Propone actividades y preguntas para fortalecer el pensamiento crítico y la confianza informada, sin centrarse en una herramienta comercial.",
+      "takeaways": [
+        "Pensamiento crítico y confianza informada",
+        "Información, medios y derechos",
+        "Actividades adaptables a diferentes contextos"
+      ],
+      "audience": "Docentes, instituciones formadoras y diseñadores curriculares"
+    },
+    "en": {
+      "title": "AI Answers. You Decide: media and information literacy",
+      "summary": "Companion guide to UNESCO’s media and information literacy curriculum. Examines how AI changes information, media, knowledge and power relationships. Offers activities and discussion prompts to strengthen critical thinking and informed trust without centring on a particular commercial tool.",
+      "takeaways": [
+        "Critical thinking and informed trust",
+        "Information, media and rights",
+        "Activities adaptable to different contexts"
+      ],
+      "audience": "Teachers, teacher-training institutions and curriculum designers"
+    },
+    "added_date": "2026-11-24",
+    "reviewed_date": "2026-11-24",
+    "announcement_date": "2026-11-10",
+    "document_url": "https://unesdoc.unesco.org/ark:/48223/pf0000400013",
+    "authors": [
+      "Anne Leppäjärvi"
+    ]
+  },
+  {
+    "id": "unesco-ucl-ai-climate-2026",
+    "organization": "UNESCO",
+    "year": 2026,
+    "original_title": "Can We Trust AI on Climate? Why it seeks to please the user, and fails on complex reasoning and multilingualism",
+    "original_language": "en",
+    "source_url": "https://www.unesco.org/en/articles/ai-models-abandon-climate-facts-first-sign-user-push-back-unesco-ucl-report-shows",
+    "topic": "research",
+    "review_scope": "official_summary",
+    "review_note": {
+      "es": "Comunicado oficial leído; informe y metodología completos pendientes. Anuncio del 16 de noviembre, actualizado el 18; no se atribuye al documento una fecha exacta de publicación. Las pruebas de complacencia y otros análisis usan diferentes conjuntos de modelos.",
+      "en": "Official release read; the full report and methodology remain unread. Announcement dated 16 November, updated on 18 November; no exact document publication date is inferred. Agreement-bias tests and other analyses use different model sets."
+    },
+    "license_note": "Reseña propia y enlaces a fuentes oficiales; no se aloja el documento ni su portada. Consultar las condiciones de reutilización del editor. / Original editorial summary and links to official sources; neither the document nor its cover is hosted. Check the publisher’s reuse terms.",
+    "es": {
+      "title": "¿Podemos confiar en la IA sobre el clima? Fiabilidad, razonamiento y lenguas",
+      "summary": "Estudia la fiabilidad de modelos de lenguaje al responder preguntas científicas sobre el clima. El comunicado presenta pruebas de complacencia ante el usuario, razonamiento y diferencias entre lenguas. Resulta útil para enseñar evaluación crítica de respuestas, sin generalizar los resultados a todos los modelos o disciplinas.",
+      "takeaways": [
+        "Complacencia ante el usuario",
+        "Conocimiento y razonamiento diferenciados",
+        "Variaciones entre lenguas"
+      ],
+      "audience": "Investigadores, docentes y profesionales de comunicación científica"
+    },
+    "en": {
+      "title": "Can We Trust AI on Climate? Reliability, reasoning and languages",
+      "summary": "Studies language-model reliability when answering scientific climate questions. The official release describes tests of user agreement bias, reasoning and cross-language differences. Useful for teaching critical assessment of AI responses without generalising findings to every model or discipline.",
+      "takeaways": [
+        "User agreement bias",
+        "Distinguishing knowledge from reasoning",
+        "Cross-language differences"
+      ],
+      "audience": "Researchers, teachers and science communication professionals"
+    },
+    "added_date": "2026-11-24",
+    "reviewed_date": "2026-11-24",
+    "announcement_date": "2026-11-16",
+    "announcement_updated_date": "2026-11-18",
+    "document_url": "https://unesdoc.unesco.org/ark:/48223/pf0000400048",
+    "institutional_author": "UNESCO; University College London"
+  }
+]

@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-24",
+  "status": "local_candidate_not_published",
+  "catalog_items": 53,
+  "directory_items": 35,
+  "skills_items": 4,
+  "download_additions": 17,
+  "prior_candidate_additions": 6,
+  "selected_distinct_files": 57,
+  "excluded_library_items": 23,
+  "excluded_skills_items": 10,
+  "reserved_directory_items": 1,
+  "sitemap_urls": 134,
+  "excluded_id_occurrences_in_site": 0,
+  "missing_internal_link_targets": [],
+  "editorial_issues": 0,
+  "statistics_unchanged": true,
+  "statistical_cut": "2026-11-10",
+  "tests": {
+    "pass": 154,
+    "fail": 0,
+    "skip": 1,
+    "scope": "Full suite before Google restoration; targeted suite rerun after restoration"
+  },
+  "private_materials_outside_repository": true,
+  "browser_qa": [
+    "53 publications remain",
+    "4 Skills records and3routes visible",
+    "Google search returns3of4records"
+  ],
+  "google_skills_restored": 3,
+  "active_skills_routes": 3,
+  "current_targeted_tests": {
+    "pass": 12,
+    "fail": 0,
+    "skip": 0
+  }
+}
