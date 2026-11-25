@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-24",
+  "base_sha": "9805bc63bad7fcb963733585e3e0bc1e6d973037",
+  "library_items": 36,
+  "directory_items": 34,
+  "new_library_items": 6,
+  "new_directory_items": 4,
+  "sitemap_urls": 122,
+  "full_suite": {
+    "passed": 153,
+    "failed": 0,
+    "skipped": 1,
+    "skip_reason": "Raw source files are not present in the checkout"
+  },
+  "final_targeted_suite": {
+    "passed": 20,
+    "failed": 0,
+    "skipped": 0
+  },
+  "statistical_refresh": false,
+  "statistical_snapshot": "2026-11-10T21:00:00.000Z",
+  "remote_publication_performed": false
+}

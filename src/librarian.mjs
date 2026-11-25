@@ -16,7 +16,7 @@ export function validateCatalog(catalog) {
     for (const key of ['id', 'organization', 'original_title', 'source_url', 'review_scope']) {
       if (!populated(item[key])) issue('missing_field', key);
     }
-    if (!Number.isInteger(Number(item.year)) || Number(item.year) < 1900 || Number(item.year) > 2100) issue('invalid_year', 'year');
+    if (!(item.year === null && item.publication_date_status === 'undated') && (!Number.isInteger(Number(item.year)) || Number(item.year) < 1900 || Number(item.year) > 2100)) issue('invalid_year', 'year');
     if (!(populated(item.topic) || (Array.isArray(item.topic) && item.topic.length && item.topic.every(populated)))) issue('missing_field', 'topic');
     if (ids.has(item.id)) issue('duplicate_id', 'id');
     ids.add(item.id);

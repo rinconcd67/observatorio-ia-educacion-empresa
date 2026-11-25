@@ -1,8 +1,8 @@
 {
-  "reviewed_date": "2026-11-02",
+  "reviewed_date": "2026-11-24",
   "scope": {
-    "es": "Selección mundial de recursos oficiales para educación, competencias y empresa. Cada enlace conduce a la institución responsable.",
-    "en": "A worldwide selection of official resources for education, skills and business. Each link leads to the responsible institution."
+    "es": "Selección mundial de recursos oficiales para educación, competencias y empresa. Los enlaces permiten consultar fuentes externas; no implican una alianza institucional.",
+    "en": "A worldwide selection of official resources for education, skills and business. Links provide access to external sources; they do not imply an institutional partnership."
   },
   "items": [
     {
@@ -100,15 +100,16 @@
       "name": "CEPAL / CENIA",
       "region": "americas",
       "type": "observatory",
-      "url": "https://www.cepal.org/en/node/91474",
+      "url": "https://www.cepal.org/es/publicaciones/90413-indice-latinoamericano-inteligencia-artificial-ilia-2026",
       "es": {
-        "title": "Índice Latinoamericano de Inteligencia Artificial",
-        "description": "Publicación ILIA 2026 para explorar y comparar ecosistemas de IA en la región."
+        "title": "ILIA 2026 · Ecosistemas latinoamericanos",
+        "description": "Edición 2026 del índice de CEPAL y CENIA sobre capacidades, investigación, adopción y gobernanza de IA en 20 países. Revisar la metodología antes de comparar ediciones o reutilizar indicadores."
       },
       "en": {
-        "title": "Latin American Artificial Intelligence Index",
-        "description": "The ILIA 2026 publication for exploring and comparing AI ecosystems across the region."
-      }
+        "title": "ILIA 2026 · Latin American ecosystems",
+        "description": "The 2026 ECLAC and CENIA index of AI capabilities, research, adoption and governance in 20 countries. Review the methodology before comparing editions or reusing indicators."
+      },
+      "reviewed_date": "2026-11-24"
     },
     {
       "id": "fairlac",
@@ -153,21 +154,6 @@
       "en": {
         "title": "Country preparedness for AI",
         "description": "The AIPI index for exploring digital infrastructure, human capital and other components of structural preparedness."
-      }
-    },
-    {
-      "id": "wef-skills",
-      "name": "World Economic Forum",
-      "region": "global",
-      "type": "research",
-      "url": "https://es.weforum.org/publications/the-future-of-jobs-report-2025/3-skills-outlook",
-      "es": {
-        "title": "Competencias y futuro del trabajo",
-        "description": "Perspectivas de competencias del Future of Jobs Report 2025 para estudiar transformación laboral y recualificación."
-      },
-      "en": {
-        "title": "Skills and the future of work",
-        "description": "The Future of Jobs Report 2025 skills outlook explores workforce transformation and reskilling."
       }
     },
     {
@@ -265,15 +251,16 @@
       "name": "Comisión Europea / European Commission",
       "region": "europe",
       "type": "observatory",
-      "url": "https://digital-skills-jobs.europa.eu/en/learning-space/resources/ai-watch",
+      "url": "https://knowledge-for-policy.ec.europa.eu/projects-activities/ai-watch_en",
       "es": {
-        "title": "AI Watch",
-        "description": "Referencia institucional al seguimiento del desarrollo, adopción e impacto de la IA en Europa."
+        "title": "AI Watch · Archivo europeo",
+        "description": "Proyecto del JRC operativo entre 2018 y 2022 sobre capacidades, políticas y adopción de IA en Europa. Sus paneles conservan datos sin actualizar desde 2020. Para investigaciones recientes, consultar Scientific AI Hub."
       },
       "en": {
-        "title": "AI Watch",
-        "description": "An institutional reference for monitoring AI development, adoption and impact in Europe."
-      }
+        "title": "AI Watch · European archive",
+        "description": "A JRC project active from 2018 to 2022 covering AI capacity, policies and uptake in Europe. Its dashboards retain data that have not been updated since 2020. For recent research, consult Scientific AI Hub."
+      },
+      "reviewed_date": "2026-11-24"
     },
     {
       "id": "turing-skills",
@@ -399,15 +386,15 @@
       "id": "tii-falcon",
       "name": "Technology Innovation Institute",
       "region": "asia",
-      "type": "initiative",
-      "url": "https://falconllm.tii.ae/",
+      "type": "research",
+      "url": "https://www.tii.ae/about-us",
       "es": {
-        "title": "Falcon: modelos e investigación",
-        "description": "Portal institucional de la familia de modelos Falcon y sus recursos de desarrollo e investigación."
+        "title": "Investigación pública en IA y ciencias digitales",
+        "description": "Centro de investigación aplicada del Consejo de Investigación en Tecnología Avanzada del Gobierno de Abu Dabi. Sus áreas incluyen inteligencia artificial, ciencias digitales y sistemas seguros."
       },
       "en": {
-        "title": "Falcon: models and research",
-        "description": "The institutional portal for the Falcon model family and its development and research resources."
+        "title": "Public research in AI and digital science",
+        "description": "Applied research institute within the Abu Dhabi Government’s Advanced Technology Research Council. Its research areas include artificial intelligence, digital science and secure systems."
       }
     },
     {
@@ -454,6 +441,106 @@
         "title": "New Zealand AI Strategy",
         "description": "Institutional guidance on business adoption of AI, capabilities and productive innovation."
       }
+    },
+    {
+      "id": "obvia",
+      "name": "Obvia",
+      "region": "americas",
+      "type": "observatory",
+      "url": "https://www.obvia.ca/collaborations",
+      "es": {
+        "title": "Impactos sociales de la IA",
+        "description": "Observatorio internacional con sede en Quebec que reúne investigación sobre los impactos sociales, éticos y ambientales de la IA. Ofrece recursos, notas de orientación y posibilidades de colaboración para educación, organizaciones y empresas."
+      },
+      "en": {
+        "title": "Societal impacts of AI",
+        "description": "An international observatory based in Quebec bringing together research on the social, ethical and environmental impacts of AI. It offers resources, policy briefs and collaboration opportunities for education, organisations and businesses."
+      },
+      "added_date": "2026-11-24",
+      "reviewed_date": "2026-11-24"
+    },
+    {
+      "id": "ife-observatory",
+      "name": "Observatorio | Instituto para el Futuro de la Educación",
+      "region": "americas",
+      "type": "observatory",
+      "url": "https://observatorio.tec.mx/",
+      "es": {
+        "title": "Innovación educativa e IA",
+        "description": "El Observatorio del Tecnológico de Monterrey reúne noticias, análisis, reportes y recursos para educadores. Su cobertura de IA generativa ayuda a explorar prácticas docentes, integridad académica y transformación de la educación superior."
+      },
+      "en": {
+        "title": "Educational innovation and AI",
+        "description": "Tecnológico de Monterrey’s Observatory brings together news, analysis, reports and resources for educators. Its generative AI coverage helps readers explore teaching practices, academic integrity and the transformation of higher education."
+      },
+      "added_date": "2026-11-24",
+      "reviewed_date": "2026-11-24"
+    },
+    {
+      "id": "jrc-scientific-ai-hub",
+      "name": "JRC Scientific AI Hub",
+      "region": "europe",
+      "type": "research",
+      "url": "https://knowledge-for-policy.ec.europa.eu/scientific-ai-hub_en",
+      "es": {
+        "title": "Evidencia europea sobre IA",
+        "description": "El centro de conocimiento del JRC reúne estudios y herramientas sobre adopción de IA, ciencia, sector público, transparencia y supervisión. Es la referencia actual del JRC para investigación sobre IA y complementa el archivo histórico de AI Watch."
+      },
+      "en": {
+        "title": "European evidence on AI",
+        "description": "The JRC knowledge hub brings together studies and tools on AI adoption, science, the public sector, transparency and oversight. It is the JRC’s current reference for AI research and complements the historical AI Watch archive."
+      },
+      "added_date": "2026-11-24",
+      "reviewed_date": "2026-11-24"
+    },
+    {
+      "id": "stanford-ai-index",
+      "name": "Stanford HAI · AI Index",
+      "region": "global",
+      "type": "research",
+      "url": "https://hai.stanford.edu/ai-index",
+      "es": {
+        "title": "Tendencias globales de la IA",
+        "description": "Programa de Stanford HAI que recopila y analiza evidencia sobre el desarrollo y los efectos de la IA. Su informe 2026 incluye educación, economía y gobernanza, con acceso a datos públicos para consultar las fuentes y los periodos de cada indicador."
+      },
+      "en": {
+        "title": "Global AI trends",
+        "description": "A Stanford HAI programme that compiles and analyses evidence on AI development and its effects. Its 2026 report covers education, the economy and governance, with public data for checking each indicator’s sources and reference periods."
+      },
+      "added_date": "2026-11-24",
+      "reviewed_date": "2026-11-24"
+    },
+    {
+      "id": "mit-ai-risk-initiative",
+      "name": "MIT AI Risk Initiative",
+      "region": "global",
+      "type": "research",
+      "url": "https://airisk.mit.edu/",
+      "es": {
+        "title": "Riesgos, incidentes y gobernanza de la IA",
+        "description": "Iniciativa de investigación del MIT con repositorios y herramientas para estudiar riesgos, incidentes, mitigaciones y gobernanza de IA. Su inclusión es una referencia documental; no implica alianza institucional."
+      },
+      "en": {
+        "title": "AI risks, incidents and governance",
+        "description": "MIT research initiative with repositories and tools for studying AI risks, incidents, mitigations and governance. Inclusion is a documentary reference and does not imply an institutional partnership."
+      }
+    },
+    {
+      "id": "intef-ai-observatory",
+      "name": "INTEF · Observatorio de la IA",
+      "region": "europe",
+      "type": "observatory",
+      "url": "https://code.intef.es/observatorio-ia/",
+      "es": {
+        "title": "IA en educación no universitaria",
+        "description": "Observatorio del INTEF con publicaciones, noticias y recursos para la integración educativa de IA. Su ámbito son las etapas no universitarias y el contexto español."
+      },
+      "en": {
+        "title": "AI in school education",
+        "description": "INTEF observatory offering publications, news and resources for educational AI integration. Its scope is school education and the Spanish context."
+      },
+      "reviewed_date": "2026-11-24",
+      "added_date": "2026-11-24"
     }
   ]
 }

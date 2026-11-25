@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-21T09:02:22.612Z",
+  "generated_at": "2026-11-25T03:12:27.959Z",
   "mode": "offline",
-  "catalog_reviewed_date": "2026-10-20",
+  "catalog_reviewed_date": "2026-11-24",
   "policy": "Proposal queue only. Catalog and publication are never modified. Byte changes require editorial assessment.",
   "discovery": {
     "status": "editorial_review_required",
@@ -119,13 +119,25 @@
           "Latin America and the Caribbean",
           "digital development"
         ]
+      },
+      {
+        "id": "world_bank_ai_development",
+        "organization": "Banco Mundial / World Bank",
+        "url": "https://www.worldbank.org/en/publication/wdr2026",
+        "catalog_url": "https://documents.worldbank.org/",
+        "topics": [
+          "artificial intelligence",
+          "development",
+          "education",
+          "business"
+        ]
       }
     ],
     "note": "Discovery portals are provided for research; no automatic claim extraction or new-item publication."
   },
   "validation": {
     "valid": true,
-    "item_count": 30,
+    "item_count": 53,
     "issues": []
   },
   "checks": [

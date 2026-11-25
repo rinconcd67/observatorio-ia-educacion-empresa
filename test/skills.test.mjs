@@ -3,19 +3,18 @@ import assert from 'node:assert/strict';
 import {readFile,readdir,stat} from 'node:fs/promises';
 import {join} from 'node:path';
 import {fileURLToPath} from 'node:url';
-import {validateSkillsCatalogue} from '../src/package-skills.mjs';
+import {validateSkillsCatalogue,activeSkillsRoutes} from '../src/package-skills.mjs';
 const root=fileURLToPath(new URL('../',import.meta.url));
 const base='https://rinconcd67.github.io/observatorio-ia-educacion-empresa/';
 const catalogue=JSON.parse(await readFile(join(root,'data/processed/skills.json'),'utf8'));
 async function pages(dir){const out=[];for(const entry of await readdir(dir,{withFileTypes:true})){const p=join(dir,entry.name);if(entry.isDirectory())out.push(...await pages(p));else if(entry.name==='index.html')out.push(p);}return out;}
-const routeIds=['start','teach','work','build'];
-test('Skills preserves the original ten records and adds four Spanish learning options across the four routes',()=>{
- assert.equal(catalogue.items.length,14);
- for(const id of ['elements-ai-intro','microsoft-ai-educators','microsoft-generative-ai','microsoft-business-workflows','ibm-ai-literacy','ibm-generative-ai','google-generative-ai','google-machine-learning','google-ai-educator-series','huggingface-agents'])assert.ok(catalogue.items.some(x=>x.id===id),`Existing course removed: ${id}`);
- assert.equal(new Set(catalogue.items.map(x=>x.id)).size,14);
- assert.equal(new Set(catalogue.items.map(x=>x.source_url)).size,14);
- assert.ok(catalogue.items.filter(x=>x.language==='es'&&x.cost==='free').length>=12);
- for(const route of routeIds)assert.ok(catalogue.items.some(x=>x.routes.includes(route)),route);
+const routeIds=activeSkillsRoutes(catalogue).map(([id])=>id);
+test('Skills public catalogue retains university learning and the explicitly approved Google links',()=>{
+ assert.deepEqual(catalogue.items.map(x=>x.id),['elements-ai-intro','google-generative-ai','google-machine-learning','google-ai-educator-series']);
+ assert.deepEqual(routeIds,['start','teach','build']);
+ assert.equal(catalogue.items[0].language,'es');
+ assert.equal(catalogue.items[0].cost,'free');
+ assert.match(catalogue.items[0].provider,/Helsinki/);
  for(const item of catalogue.items){
   assert.match(item.verified_date,/^\d{4}-\d{2}-\d{2}$/);
   for(const url of [item.source_url,...item.evidence_urls])assert.equal(new URL(url).protocol,'https:');
@@ -26,7 +25,7 @@ test('Skills preserves the original ten records and adds four Spanish learning o
 test('Skills static content, internal links, canonical and language alternates work under the project subpath',async()=>{
  const site=join(root,'_site');
  const all=[...await pages(join(site,'skills')),...await pages(join(site,'en/skills'))];
- assert.equal(all.length,38);
+ assert.equal(all.length,2*(catalogue.items.length+routeIds.length+1));
  const sitemap=await readFile(join(site,'sitemap.xml'),'utf8');
  for(const p of all){
   const html=await readFile(p,'utf8');const url=base+p.slice(site.length+1).replace(/index.html$/,'');
@@ -66,16 +65,21 @@ test('Skills catalogue accepts growth while rejecting duplicate providers’ URL
  subset.items[0].en.summary='A summary';subset.items[0].source_url='https://user:secret@example.org/course';assert.throws(()=>validateSkillsCatalogue(subset),/without credentials/);
  assert.throws(()=>validateSkillsCatalogue({reviewed_date:'2026-10-20',items:[]}),/requires records/);
 });
-test('New Skills options distinguish AI training, badges and technical preparation',()=>{
- const added=catalogue.items.filter(x=>['cisco-modern-ai','santander-responsible-prompting','santander-ai-rules','santander-python-introduction'].includes(x.id));
- assert.equal(added.length,4);
- for(const item of added){assert.equal(item.language,'es');assert.equal(item.cost,'free');assert.equal(item.verified_date,'2026-10-20');}
- const cisco=added.find(x=>x.id==='cisco-modern-ai');assert.match(cisco.es.credential,/Insignia digital/);assert.match(cisco.es.credential,/no garantiza/);assert.match(cisco.es.duration,/6 horas/);
- const python=added.find(x=>x.id==='santander-python-introduction');assert.equal(python.kind,'complement');assert.match(python.es.summary,/no es un curso específico/);assert.deepEqual(python.routes,['build']);
- for(const item of added.filter(x=>x.id.startsWith('santander-'))){assert.match(item.es.access,/31 de diciembre de 2026/);assert.match(item.es.credential,/Certificado/);assert.match(item.es.duration,/8 horas/);}
+test('Skills routes disappear when their final course is removed',()=>{
+ const item=structuredClone(catalogue.items[0]);
+ const expanded={items:[item,{...item,id:'another-course',routes:['teach','build']}]};
+ assert.deepEqual(activeSkillsRoutes(expanded).map(([id])=>id),['start','teach','build']);
+ expanded.items.pop();
+ assert.deepEqual(activeSkillsRoutes(expanded).map(([id])=>id),['start']);
 });
-test('Python is visibly identified as a technical complement in both catalogue and course pages',async()=>{
- for(const [prefix,label] of [['skills','Complemento técnico'],['en/skills','Technical complement']]){
-  for(const subpath of ['', 'santander-python-introduction/']){const html=await readFile(join(root,'_site',prefix,subpath,'index.html'),'utf8');assert.ok(html.includes(label));}
+test('Skills landing displays only available routes, languages and costs',async()=>{
+ for(const [prefix,singular] of [['skills','4 fichas verificadas'],['en/skills','4 verified records']]){
+  const html=await readFile(join(root,'_site',prefix,'index.html'),'utf8');
+  assert.ok(html.includes(singular));
+  assert.ok(!html.includes('Cuatro rutas')&&!html.includes('Four routes'));
+  assert.ok(html.includes('<option value="en">'));
+  assert.ok(!html.includes('<option value="paid">'));
+  assert.ok(!html.includes('<option value="work">'));
+  for(const id of ['start','teach','build']) assert.ok(html.includes(`<option value="${id}">`));
  }
 });

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "obvia",
+    "name": "Obvia",
+    "region": "americas",
+    "type": "observatory",
+    "url": "https://www.obvia.ca/collaborations",
+    "es": {
+      "title": "Impactos sociales de la IA",
+      "description": "Observatorio internacional con sede en Quebec que reúne investigación sobre los impactos sociales, éticos y ambientales de la IA. Ofrece recursos, notas de orientación y posibilidades de colaboración para educación, organizaciones y empresas."
+    },
+    "en": {
+      "title": "Societal impacts of AI",
+      "description": "An international observatory based in Quebec bringing together research on the social, ethical and environmental impacts of AI. It offers resources, policy briefs and collaboration opportunities for education, organisations and businesses."
+    }
+  },
+  {
+    "id": "ife-observatory",
+    "name": "Observatorio | Instituto para el Futuro de la Educación",
+    "region": "americas",
+    "type": "observatory",
+    "url": "https://observatorio.tec.mx/",
+    "es": {
+      "title": "Innovación educativa e IA",
+      "description": "El Observatorio del Tecnológico de Monterrey reúne noticias, análisis, reportes y recursos para educadores. Su cobertura de IA generativa ayuda a explorar prácticas docentes, integridad académica y transformación de la educación superior."
+    },
+    "en": {
+      "title": "Educational innovation and AI",
+      "description": "Tecnológico de Monterrey’s Observatory brings together news, analysis, reports and resources for educators. Its generative AI coverage helps readers explore teaching practices, academic integrity and the transformation of higher education."
+    }
+  },
+  {
+    "id": "jrc-scientific-ai-hub",
+    "name": "JRC Scientific AI Hub",
+    "region": "europe",
+    "type": "research",
+    "url": "https://knowledge-for-policy.ec.europa.eu/scientific-ai-hub_en",
+    "es": {
+      "title": "Evidencia europea sobre IA",
+      "description": "El centro de conocimiento del JRC reúne estudios y herramientas sobre adopción de IA, ciencia, sector público, transparencia y supervisión. Es la referencia actual del JRC para investigación sobre IA y complementa el archivo histórico de AI Watch."
+    },
+    "en": {
+      "title": "European evidence on AI",
+      "description": "The JRC knowledge hub brings together studies and tools on AI adoption, science, the public sector, transparency and oversight. It is the JRC’s current reference for AI research and complements the historical AI Watch archive."
+    }
+  },
+  {
+    "id": "stanford-ai-index",
+    "name": "Stanford HAI · AI Index",
+    "region": "global",
+    "type": "research",
+    "url": "https://hai.stanford.edu/ai-index",
+    "es": {
+      "title": "Tendencias globales de la IA",
+      "description": "Programa de Stanford HAI que recopila y analiza evidencia sobre el desarrollo y los efectos de la IA. Su informe 2026 incluye educación, economía y gobernanza, con acceso a datos públicos para consultar las fuentes y los periodos de cada indicador."
+    },
+    "en": {
+      "title": "Global AI trends",
+      "description": "A Stanford HAI programme that compiles and analyses evidence on AI development and its effects. Its 2026 report covers education, the economy and governance, with public data for checking each indicator’s sources and reference periods."
+    }
+  }
+]

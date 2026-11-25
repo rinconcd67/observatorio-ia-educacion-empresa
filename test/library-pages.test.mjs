@@ -42,3 +42,15 @@ test('each record preserves its own review date when the collection changes',asy
   assert.ok(html.includes(`· ${topic.reviewed_date} ·`),`${topic.id}: catalogue additions must not redate guides`);
  }
 });
+
+
+test('publication and announcement dates remain visible independently of PDF links', async () => {
+ for (const item of catalogue.items) for (const lang of ['es', 'en']) {
+  const prefix=lang==='es'?'biblioteca':'en/library';
+  const html=await readFile(join(site,prefix,item.id,'index.html'),'utf8');
+  if (item.published_date) assert.ok(html.includes(`${lang==='es'?'Fecha de publicación':'Publication date'}: ${item.published_date}`),item.id);
+  if (item.announcement_date) assert.ok(html.includes(`${lang==='es'?'Anuncio':'Announcement'}: ${item.announcement_date}`),item.id);
+  const metadata=[...html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)].map(m=>JSON.parse(m[1])).find(x=>x.about?.['@type']==='CreativeWork');
+  assert.equal(metadata.about.datePublished,item.published_date || (item.year == null ? undefined : String(item.year)),item.id);
+ }
+});

@@ -65,3 +65,13 @@ test('old successful evidence is not reused after a source URL change', async ()
   const result = await inspectLink(item, { allowedHosts: config.allowed_hosts, previous: { source_url: 'https://www.unesco.org/other', last_success: { sha256: 'unrelated' } }, fetchImpl: async () => new Response('no', { status: 403 }) });
   assert.equal(result.last_success, undefined);
 });
+
+
+test('undated publications require an explicit unknown-date declaration', () => {
+ const undated=structuredClone(catalog);undated.items[0].year=null;
+ assert.ok(validateCatalog(undated).some(x=>x.code==='invalid_year'));
+ undated.items[0].publication_date_status='undated';
+ assert.equal(validateCatalog(undated).length,0);
+ undated.items[0].year=0;
+ assert.ok(validateCatalog(undated).some(x=>x.code==='invalid_year'));
+});

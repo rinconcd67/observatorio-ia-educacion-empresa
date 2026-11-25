@@ -22,7 +22,8 @@ export function renderPortalFallback(localeName, catalogue) {
         <h1>${say('Entiende la IA.<br><em>Imagina lo que sigue.</em>', 'Understand AI.<br><em>Imagine what’s next.</em>')}</h1>
         <p class="portal-deck">${say('Descubre cómo la inteligencia artificial transforma la educación y el trabajo. Explora datos, encuentra ideas y desarrolla nuevas habilidades.', 'Discover how artificial intelligence is transforming education and work. Explore data, find ideas and build new skills.')}</p>
         <div class="hero-actions">
-          <a class="portal-button" href="${es ? 'biblioteca/' : 'library/'}">${say('Explorar la biblioteca', 'Explore the library')}</a>
+          <a class="portal-button" href="${es ? 'empieza/' : 'start/'}">${say('Empieza aquí · 15 min', 'Start here · 15 min')}</a>
+          <a class="portal-secondary" href="${es ? 'biblioteca/' : 'library/'}">${say('Explorar la biblioteca', 'Explore the library')}</a>
           <a class="portal-secondary" href="skills/">${say('Aprender IA', 'Learn AI')}</a>
           <a class="portal-secondary" href="${es ? 'temas/' : 'topics/'}">${say('Guías temáticas', 'Topic guides')}</a>
         </div>

@@ -1,5 +1,5 @@
 {
-  "reviewed_date": "2026-10-20",
+  "reviewed_date": "2026-11-24",
   "items": [
     {
       "id": "unesco-teachers-2024",
@@ -1037,6 +1037,971 @@
       },
       "added_date": "2026-10-21",
       "reviewed_date": "2026-10-21"
+    },
+    {
+      "id": "oecd-digital-economy-society-2026",
+      "organization": "OCDE",
+      "year": 2026,
+      "original_title": "OECD Digital Economy and Society Outlook 2026",
+      "original_language": "en",
+      "source_url": "https://www.oecd.org/en/publications/oecd-digital-economy-and-society-outlook-2026_022ed474-en.html",
+      "topic": "business",
+      "review_scope": "selected_sections",
+      "review_note": {
+        "es": "Ficha oficial y extractos de portada, créditos y resumen ejecutivo del PDF local (páginas 1–4 y 13); no lectura íntegra. Se conservan los universos empresariales y periodos de la OCDE.",
+        "en": "Official record and excerpts from the local PDF cover, credits and executive summary (pages 1–4 and 13); not a full reading. OECD enterprise populations and periods are retained."
+      },
+      "license_note": "Reseña propia y enlaces a fuentes oficiales; no se aloja el documento ni su portada. Consultar las condiciones de reutilización del editor. / Original editorial summary and links to official sources; neither the document nor its cover is hosted. Check the publisher’s reuse terms.",
+      "es": {
+        "title": "Economía y sociedad digitales 2026: adopción de IA y brechas empresariales",
+        "summary": "Examina la difusión de tecnologías digitales, la infraestructura de cómputo y las políticas de transformación digital. Distingue la adopción de IA por tamaño empresarial y las brechas generacionales de uso. Sus resultados ayudan a contextualizar capacidades organizacionales; no demuestran por sí solos mejoras de productividad.",
+        "takeaways": [
+          "Adopción por tamaño empresarial",
+          "Capacidades complementarias para aprovechar la IA",
+          "Separar datos observados y proyecciones"
+        ],
+        "audience": "Directivos, analistas y responsables de políticas digitales"
+      },
+      "en": {
+        "title": "Digital Economy and Society Outlook 2026: AI adoption and business gaps",
+        "summary": "Examines digital technology diffusion, compute infrastructure and digital transformation policies. Distinguishes AI uptake by firm size and generational differences in use. Its findings provide context for organisational capabilities rather than direct evidence of productivity gains.",
+        "takeaways": [
+          "AI uptake by firm size",
+          "Complementary capabilities for effective AI use",
+          "Separate observed data and projections"
+        ],
+        "audience": "Executives, analysts and digital policy leaders"
+      },
+      "added_date": "2026-11-24",
+      "reviewed_date": "2026-11-24",
+      "published_date": "2026-11-05",
+      "pages": 264,
+      "doi": "10.1787/022ed474-en"
+    },
+    {
+      "id": "world-bank-wdr-ai-2026",
+      "organization": "Banco Mundial",
+      "year": 2026,
+      "original_title": "World Development Report 2026: The Promise of Artificial Intelligence",
+      "original_language": "en",
+      "source_url": "https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099090426145520570",
+      "topic": "policy",
+      "review_scope": "official_summary",
+      "review_note": {
+        "es": "Registro oficial indexado y comunicado de lanzamiento del 4 de agosto de 2026 consultados; no lectura íntegra. El registro indica divulgación el 4 de septiembre. La nota conceptual de febrero es otro documento.",
+        "en": "Indexed official record and launch announcement dated 4 August 2026 reviewed; not a full reading. The record lists disclosure on 4 September. The February concept note is a separate document."
+      },
+      "license_note": "Reseña propia y enlaces a fuentes oficiales; no se aloja el documento ni su portada. Consultar las condiciones de reutilización del editor. / Original editorial summary and links to official sources; neither the document nor its cover is hosted. Check the publisher’s reuse terms.",
+      "es": {
+        "title": "Informe sobre el desarrollo mundial 2026: la promesa de la inteligencia artificial",
+        "summary": "Examina las posibilidades de la IA para países de ingreso bajo y mediano y las condiciones que pueden limitar su aprovechamiento. Vincula adopción y adaptación tecnológica con electricidad, conectividad, competencias e instituciones. Ofrece una perspectiva de desarrollo, sin equiparar potencial tecnológico con efectos ya alcanzados.",
+        "takeaways": [
+          "Perspectiva de países de ingreso bajo y mediano",
+          "Capacidades para adoptar y adaptar la IA",
+          "Distinguir potencial tecnológico y resultados"
+        ],
+        "audience": "Gestores públicos, directivos educativos y analistas de desarrollo"
+      },
+      "en": {
+        "title": "World Development Report 2026: The Promise of Artificial Intelligence",
+        "summary": "Examines AI opportunities for low- and middle-income countries and the conditions that may constrain them. Links technology adoption and adaptation with electricity, connectivity, skills and institutions. Provides a development perspective without treating technological potential as an already achieved impact.",
+        "takeaways": [
+          "Low- and middle-income country perspective",
+          "Capabilities to adopt and adapt AI",
+          "Distinguish technological potential from outcomes"
+        ],
+        "audience": "Public managers, education leaders and development analysts"
+      },
+      "added_date": "2026-11-24",
+      "reviewed_date": "2026-11-24",
+      "published_date": "2026-08-04",
+      "disclosure_date": "2026-09-04",
+      "doi": "10.1596/978-1-4648-2331-2",
+      "verification_urls": [
+        "https://www.worldbank.org/en/news/press-release/2026/08/04/ai-offers-lifeline-to-developing-economies-in-an-era-of-weak-growth"
+      ]
+    },
+    {
+      "id": "cepal-cenia-ilia-2026",
+      "organization": "CEPAL",
+      "year": 2026,
+      "original_title": "Índice Latinoamericano de Inteligencia Artificial (ILIA) 2026",
+      "original_language": "es",
+      "source_url": "https://www.cepal.org/es/publicaciones/90413-indice-latinoamericano-inteligencia-artificial-ilia-2026",
+      "topic": "policy",
+      "review_scope": "official_summary",
+      "review_note": {
+        "es": "Ficha y resumen oficiales recuperados mediante el índice del buscador; la apertura directa devolvió HTTP 403. No se leyó el PDF ni se incorporaron sus puntajes a las series estadísticas.",
+        "en": "Official record and abstract retrieved through the search index; direct opening returned HTTP 403. The PDF was not read and its scores were not incorporated into statistical series."
+      },
+      "license_note": "Reseña propia y enlaces a fuentes oficiales; no se aloja el documento ni su portada. Consultar las condiciones de reutilización del editor. / Original editorial summary and links to official sources; neither the document nor its cover is hosted. Check the publisher’s reuse terms.",
+      "es": {
+        "title": "ILIA 2026: capacidades y ecosistemas de IA en América Latina y el Caribe",
+        "summary": "La cuarta edición analiza los ecosistemas de IA de 20 países mediante factores habilitantes, investigación, desarrollo y adopción, y gobernanza. Ofrece contexto regional para formación, innovación y políticas públicas. La comparación con ediciones anteriores requiere revisar cambios metodológicos antes de interpretar variaciones de puntajes.",
+        "takeaways": [
+          "20 países de América Latina y el Caribe",
+          "Tres dimensiones de los ecosistemas de IA",
+          "Revisar comparabilidad entre ediciones"
+        ],
+        "audience": "Investigadores, responsables educativos y analistas regionales"
+      },
+      "en": {
+        "title": "ILIA 2026: AI capabilities and ecosystems in Latin America and the Caribbean",
+        "summary": "The fourth edition examines AI ecosystems in 20 countries through enabling factors, research, development and adoption, and governance. It provides regional context for training, innovation and public policy. Comparisons with earlier editions require checking methodological changes before interpreting score movements.",
+        "takeaways": [
+          "20 Latin American and Caribbean countries",
+          "Three dimensions of AI ecosystems",
+          "Check comparability across editions"
+        ],
+        "audience": "Researchers, education leaders and regional analysts"
+      },
+      "added_date": "2026-11-24",
+      "reviewed_date": "2026-11-24",
+      "published_date": "2026-10-20",
+      "pages": 276,
+      "edition": "LC/TS.2026/97",
+      "institutional_author": "NU. CEPAL",
+      "verification_urls": [
+        "https://www.cepal.org/es/eventos/lanzamiento-indice-latinoamericano-inteligencia-artificial-2026"
+      ]
+    },
+    {
+      "id": "oecd-ec-ai-literacy-2026",
+      "organization": "OCDE",
+      "year": 2026,
+      "original_title": "Empowering Learners for the Age of AI: An AI Literacy Framework for Primary and Secondary Education",
+      "original_language": "en",
+      "source_url": "https://www.oecd.org/en/publications/empowering-learners-for-the-age-of-ai_65cd27d4-en.html",
+      "topic": "education",
+      "review_scope": "official_summary",
+      "review_note": {
+        "es": "Ficha y resumen oficiales consultados; no lectura íntegra. Es una incorporación al catálogo, no una publicación de noviembre.",
+        "en": "Official record and abstract reviewed; not a full reading. This is a catalogue addition, not a November publication."
+      },
+      "license_note": "Reseña propia y enlaces a fuentes oficiales; no se aloja el documento ni su portada. Consultar las condiciones de reutilización del editor. / Original editorial summary and links to official sources; neither the document nor its cover is hosted. Check the publisher’s reuse terms.",
+      "es": {
+        "title": "Alfabetización en IA para primaria y secundaria: marco OCDE y Comisión Europea",
+        "summary": "Propone un marco común de conocimientos, habilidades y actitudes para comprender sistemas de IA, evaluar sus resultados y utilizarlos de forma ética y creativa. Orienta objetivos de aprendizaje dentro y fuera del aula. Su ámbito es primaria y secundaria; la adaptación universitaria requiere desarrollo propio.",
+        "takeaways": [
+          "Conocimientos, habilidades y actitudes",
+          "Evaluación crítica de resultados de IA",
+          "Ámbito de primaria y secundaria explícito"
+        ],
+        "audience": "Docentes, formadores y diseñadores curriculares"
+      },
+      "en": {
+        "title": "Empowering Learners for the Age of AI: a school AI literacy framework",
+        "summary": "Proposes a shared framework of knowledge, skills and attitudes for understanding AI systems, assessing outputs and using AI ethically and creatively. Guides learning outcomes inside and outside classrooms. Its scope is primary and secondary education; higher education adaptation requires additional work.",
+        "takeaways": [
+          "Knowledge, skills and attitudes",
+          "Critical assessment of AI outputs",
+          "Explicit primary and secondary education scope"
+        ],
+        "audience": "Teachers, teacher educators and curriculum designers"
+      },
+      "added_date": "2026-11-24",
+      "reviewed_date": "2026-11-24",
+      "published_date": "2026-06-18",
+      "pages": 64,
+      "doi": "10.1787/65cd27d4-en",
+      "institutional_author": "OECD; European Commission"
+    },
+    {
+      "id": "unesco-ai-answers-you-decide-2026",
+      "organization": "UNESCO",
+      "year": 2026,
+      "original_title": "AI Answers. You Decide. A Companion Guide to the UNESCO Media and Information Literacy Curriculum",
+      "original_language": "en",
+      "source_url": "https://www.unesco.org/en/articles/ai-answers-you-decide-unesco-launches-new-media-and-information-literacy-curriculum",
+      "topic": "education",
+      "review_scope": "selected_sections",
+      "review_note": {
+        "es": "Portada, créditos y extractos de presentación del PDF local (páginas 1–6), además del anuncio oficial. No lectura íntegra de las 118 páginas. El anuncio del 10 de noviembre no se utiliza como fecha exacta de publicación de la guía.",
+        "en": "Cover, credits and introduction excerpts from the local PDF (pages 1–6), plus the official announcement. Not a full reading of the 118 pages. The 10 November announcement is not used as the guide’s exact publication date."
+      },
+      "license_note": "Reseña propia y enlaces a fuentes oficiales; no se aloja el documento ni su portada. Consultar las condiciones de reutilización del editor. / Original editorial summary and links to official sources; neither the document nor its cover is hosted. Check the publisher’s reuse terms.",
+      "es": {
+        "title": "La IA responde, tú decides: alfabetización mediática e informacional",
+        "summary": "Guía complementaria del currículo UNESCO de alfabetización mediática e informacional. Aborda cómo la IA transforma la información, los medios, el conocimiento y las relaciones de poder. Propone actividades y preguntas para fortalecer el pensamiento crítico y la confianza informada, sin centrarse en una herramienta comercial.",
+        "takeaways": [
+          "Pensamiento crítico y confianza informada",
+          "Información, medios y derechos",
+          "Actividades adaptables a diferentes contextos"
+        ],
+        "audience": "Docentes, instituciones formadoras y diseñadores curriculares"
+      },
+      "en": {
+        "title": "AI Answers. You Decide: media and information literacy",
+        "summary": "Companion guide to UNESCO’s media and information literacy curriculum. Examines how AI changes information, media, knowledge and power relationships. Offers activities and discussion prompts to strengthen critical thinking and informed trust without centring on a particular commercial tool.",
+        "takeaways": [
+          "Critical thinking and informed trust",
+          "Information, media and rights",
+          "Activities adaptable to different contexts"
+        ],
+        "audience": "Teachers, teacher-training institutions and curriculum designers"
+      },
+      "added_date": "2026-11-24",
+      "reviewed_date": "2026-11-24",
+      "announcement_date": "2026-11-10",
+      "document_url": "https://unesdoc.unesco.org/ark:/48223/pf0000400013",
+      "authors": [
+        "Anne Leppäjärvi"
+      ],
+      "doi": "10.58338/JXYO3928",
+      "pages": 118,
+      "document_type": "practitioner_guide"
+    },
+    {
+      "id": "unesco-ucl-ai-climate-2026",
+      "organization": "UNESCO",
+      "year": 2026,
+      "original_title": "Can We Trust AI on Climate? Why it seeks to please the user, and fails on complex reasoning and multilingualism",
+      "original_language": "en",
+      "source_url": "https://www.unesco.org/en/articles/ai-models-abandon-climate-facts-first-sign-user-push-back-unesco-ucl-report-shows",
+      "topic": "research",
+      "review_scope": "official_summary",
+      "review_note": {
+        "es": "Comunicado oficial leído; informe y metodología completos pendientes. Anuncio del 16 de noviembre, actualizado el 18; no se atribuye al documento una fecha exacta de publicación. Las pruebas de complacencia y otros análisis usan diferentes conjuntos de modelos.",
+        "en": "Official release read; the full report and methodology remain unread. Announcement dated 16 November, updated on 18 November; no exact document publication date is inferred. Agreement-bias tests and other analyses use different model sets."
+      },
+      "license_note": "Reseña propia y enlaces a fuentes oficiales; no se aloja el documento ni su portada. Consultar las condiciones de reutilización del editor. / Original editorial summary and links to official sources; neither the document nor its cover is hosted. Check the publisher’s reuse terms.",
+      "es": {
+        "title": "¿Podemos confiar en la IA sobre el clima? Fiabilidad, razonamiento y lenguas",
+        "summary": "Estudia la fiabilidad de modelos de lenguaje al responder preguntas científicas sobre el clima. El comunicado presenta pruebas de complacencia ante el usuario, razonamiento y diferencias entre lenguas. Resulta útil para enseñar evaluación crítica de respuestas, sin generalizar los resultados a todos los modelos o disciplinas.",
+        "takeaways": [
+          "Complacencia ante el usuario",
+          "Conocimiento y razonamiento diferenciados",
+          "Variaciones entre lenguas"
+        ],
+        "audience": "Investigadores, docentes y profesionales de comunicación científica"
+      },
+      "en": {
+        "title": "Can We Trust AI on Climate? Reliability, reasoning and languages",
+        "summary": "Studies language-model reliability when answering scientific climate questions. The official release describes tests of user agreement bias, reasoning and cross-language differences. Useful for teaching critical assessment of AI responses without generalising findings to every model or discipline.",
+        "takeaways": [
+          "User agreement bias",
+          "Distinguishing knowledge from reasoning",
+          "Cross-language differences"
+        ],
+        "audience": "Researchers, teachers and science communication professionals"
+      },
+      "added_date": "2026-11-24",
+      "reviewed_date": "2026-11-24",
+      "announcement_date": "2026-11-16",
+      "announcement_updated_date": "2026-11-18",
+      "document_url": "https://unesdoc.unesco.org/ark:/48223/pf0000400048",
+      "institutional_author": "UNESCO; University College London"
+    },
+    {
+      "id": "unesco-higher-education-trends-summary-2026",
+      "organization": "UNESCO",
+      "year": 2026,
+      "original_title": "Informe mundial sobre tendencias de la educación superior de la UNESCO 2026. Resumen ejecutivo",
+      "original_language": "es",
+      "source_url": "https://www.unesco.org/es/articles/informe-mundial-sobre-tendencias-de-la-educacion-superior-hacia-una-educacion-inclusiva-equitativa-y",
+      "topic": "education",
+      "document_type": "institutional_report",
+      "review_scope": "selected_sections",
+      "review_note": {
+        "es": "PDF local: revisión de extractos de PDF pp. 1–6; no lectura íntegra. Fuente editorial contrastada en web.",
+        "en": "Local PDF: review of excerpts from PDF pp. 1–6; not a full reading. Publisher source checked on the web."
+      },
+      "license_note": "Reseña propia y enlace al editor. No se aloja una copia del PDF. / Original summary and publisher link; the PDF is not hosted.",
+      "es": {
+        "title": "Tendencias mundiales de la educación superior 2026: resumen ejecutivo",
+        "summary": "Resume tendencias de acceso, equidad, gobernanza y transformación digital de la educación superior. Aporta contexto para interpretar la integración institucional de IA. Las cifras describen poblaciones y periodos específicos; no miden por sí mismas efectos sobre el aprendizaje.",
+        "takeaways": [
+          "Contexto mundial de educación superior",
+          "Gobernanza y transformación digital",
+          "Resumen ejecutivo, no informe íntegro"
+        ],
+        "audience": "Docentes, investigadores y responsables institucionales"
+      },
+      "en": {
+        "title": "Global higher education trends 2026: executive summary",
+        "summary": "Summarises higher education trends in access, equity, governance and digital transformation. Provides context for institutional AI integration. Figures describe specific populations and periods; they do not by themselves measure effects on learning.",
+        "takeaways": [
+          "Global higher education context",
+          "Governance and digital transformation",
+          "Executive summary, not the full report"
+        ],
+        "audience": "Educators, researchers and institutional leaders"
+      },
+      "added_date": "2026-11-24",
+      "reviewed_date": "2026-11-24",
+      "pages": 12,
+      "document_url": "https://unesdoc.unesco.org/ark:/48223/pf0000398946_spa"
+    },
+    {
+      "id": "oei-construyendo-futuro-aulas-2026",
+      "organization": "OEI",
+      "year": 2026,
+      "original_title": "Construyendo el futuro desde las aulas. La educación en Iberoamérica: de las brechas estructurales a la acción política",
+      "original_language": "es",
+      "source_url": "https://oei.int/oficinas/secretaria-general/noticias/la-oei-publica-construyendo-el-futuro-desde-las-aulas-un-analisis-de-los-desafios-y-las-oportunidades-de-la-educacion-en-iberoamerica/",
+      "topic": "education",
+      "document_type": "book",
+      "review_scope": "selected_sections",
+      "review_note": {
+        "es": "PDF local: revisión de extractos de PDF pp. 1–5, 133–134, 240–241; no lectura íntegra. Fuente editorial contrastada en web.",
+        "en": "Local PDF: review of excerpts from PDF pp. 1–5, 133–134, 240–241; not a full reading. Publisher source checked on the web."
+      },
+      "license_note": "Reseña propia y enlace al editor. No se aloja una copia del PDF. / Original summary and publisher link; the PDF is not hosted.",
+      "es": {
+        "title": "Construyendo el futuro desde las aulas: brechas, docentes e IA",
+        "summary": "Francesc Pedró analiza brechas estructurales y opciones de política educativa iberoamericana. Las secciones consultadas diferencian acceso tecnológico, competencias y uso pedagógico, y relacionan formación docente con integración de IA. Es una síntesis de políticas, no una evaluación experimental única.",
+        "takeaways": [
+          "Acceso y competencias son brechas diferentes",
+          "Formación docente y uso pedagógico",
+          "Políticas educativas con evaluación"
+        ],
+        "audience": "Docentes, investigadores y responsables institucionales"
+      },
+      "en": {
+        "title": "Building the future from classrooms: gaps, teachers and AI",
+        "summary": "Francesc Pedró examines structural gaps and education policy options in Ibero-America. Reviewed sections distinguish technology access, skills and pedagogical use, linking teacher development with AI integration. This is a policy synthesis rather than a single experimental evaluation.",
+        "takeaways": [
+          "Access and skills are different gaps",
+          "Teacher development and pedagogical use",
+          "Education policies with evaluation"
+        ],
+        "audience": "Educators, researchers and institutional leaders"
+      },
+      "added_date": "2026-11-24",
+      "reviewed_date": "2026-11-24",
+      "pages": 354,
+      "published_date": "2026-11",
+      "doi": "10.35362/oei_legado_01",
+      "authors": [
+        "Francesc Pedró"
+      ]
+    },
+    {
+      "id": "segib-ia-transformacion-digital-2026",
+      "organization": "SEGIB",
+      "year": 2026,
+      "original_title": "Inteligencia artificial y transformación digital en Iberoamérica",
+      "original_language": "es",
+      "source_url": "https://segib.org/es/publicacion/inteligencia-artificial-y-transformacion-digital-en-iberoamerica/",
+      "topic": "policy",
+      "document_type": "book",
+      "review_scope": "selected_sections",
+      "review_note": {
+        "es": "PDF local: revisión de extractos de portada, créditos, índice y apertura del capítulo I; no lectura íntegra. Fuente editorial contrastada en web.",
+        "en": "Local PDF: review of excerpts from cover, credits, contents and chapter I opening; not a full reading. Publisher source checked on the web."
+      },
+      "license_note": "Reseña propia y enlace al editor. No se aloja una copia del PDF. / Original summary and publisher link; the PDF is not hosted.",
+      "es": {
+        "title": "Inteligencia artificial y transformación digital en Iberoamérica",
+        "summary": "Obra institucional sobre transformación digital, inteligencia artificial y cooperación iberoamericana. Sitúa cambios en educación, trabajo y derechos dentro de una discusión sobre capacidades y soberanía. Ofrece perspectivas de política; no constituye una serie estadística comparable de adopción.",
+        "takeaways": [
+          "Cooperación iberoamericana",
+          "Capacidades y soberanía",
+          "Transformación transversal"
+        ],
+        "audience": "Docentes, investigadores y responsables institucionales"
+      },
+      "en": {
+        "title": "Artificial intelligence and digital transformation in Ibero-America",
+        "summary": "An institutional volume on digital transformation, artificial intelligence and Ibero-American cooperation. Places changes in education, work and rights within a discussion of capabilities and sovereignty. Offers policy perspectives rather than a comparable statistical adoption series.",
+        "takeaways": [
+          "Ibero-American cooperation",
+          "Capabilities and sovereignty",
+          "Cross-sector transformation"
+        ],
+        "audience": "Educators, researchers and institutional leaders"
+      },
+      "added_date": "2026-11-24",
+      "reviewed_date": "2026-11-24",
+      "pages": 334,
+      "published_date": "2026-10"
+    },
+    {
+      "id": "ofs-making-ai-work-students-2026",
+      "organization": "Office for Students / Advance HE",
+      "year": 2026,
+      "original_title": "Making AI work for students: reflections on institutional practice",
+      "original_language": "en",
+      "source_url": "https://www.officeforstudents.org.uk/publications/making-ai-work-for-students-reflections-on-institutional-practice/",
+      "topic": "education",
+      "document_type": "institutional_report",
+      "review_scope": "selected_sections",
+      "review_note": {
+        "es": "PDF local: revisión de extractos de portada visual y PDF pp. 2–6; no lectura íntegra. Fuente editorial contrastada en web.",
+        "en": "Local PDF: review of excerpts from visual cover and PDF pp. 2–6; not a full reading. Publisher source checked on the web."
+      },
+      "license_note": "Reseña propia y enlace al editor. No se aloja una copia del PDF. / Original summary and publisher link; the PDF is not hosted.",
+      "es": {
+        "title": "Hacer que la IA funcione para los estudiantes: prácticas institucionales",
+        "summary": "Recoge experiencias de estudiantes y personal universitario, principalmente de Inglaterra, sobre docencia, evaluación y alfabetización en IA. Examina prácticas y tensiones institucionales. Las conversaciones y casos orientan reflexión profesional; no estiman efectos causales ni representan a todas las universidades.",
+        "takeaways": [
+          "Evaluación y aprendizaje",
+          "Alfabetización disciplinar en IA",
+          "Casos institucionales contextualizados"
+        ],
+        "audience": "Docentes, investigadores y responsables institucionales"
+      },
+      "en": {
+        "title": "Making AI work for students: reflections on institutional practice",
+        "summary": "Collects experiences of students and university staff, primarily in England, on teaching, assessment and AI literacy. Examines institutional practices and tensions. Conversations and cases support professional reflection; they neither estimate causal effects nor represent all universities.",
+        "takeaways": [
+          "Assessment and learning",
+          "Discipline-specific AI literacy",
+          "Contextualised institutional cases"
+        ],
+        "audience": "Educators, researchers and institutional leaders"
+      },
+      "added_date": "2026-11-24",
+      "reviewed_date": "2026-11-24",
+      "pages": 48,
+      "published_date": "2026-11-11",
+      "publication_symbol": "OfS 2026.56"
+    },
+    {
+      "id": "iau-horizons-universities-ai-2026",
+      "organization": "IAU",
+      "year": 2026,
+      "original_title": "IAU Horizons, Vol. 31 No. 2: The Value of Universities in the Era of Artificial Intelligence",
+      "original_language": "en",
+      "source_url": "https://iau.global/all-publications/the-value-of-universities-in-the-era-of-ai",
+      "topic": "education",
+      "document_type": "journal_issue",
+      "review_scope": "selected_sections",
+      "review_note": {
+        "es": "PDF local: revisión de extractos de PDF pp. 1–2, 6–7, 19; no lectura íntegra. Fuente editorial contrastada en web.",
+        "en": "Local PDF: review of excerpts from PDF pp. 1–2, 6–7, 19; not a full reading. Publisher source checked on the web."
+      },
+      "license_note": "Reseña propia y enlace al editor. No se aloja una copia del PDF. / Original summary and publisher link; the PDF is not hosted.",
+      "es": {
+        "title": "IAU Horizons: el valor de las universidades en la era de la IA",
+        "summary": "Número temático que reúne perspectivas académicas para líderes universitarios sobre el valor de las universidades ante la IA. Explora liderazgo, responsabilidad y transformación institucional. Sus contribuciones son análisis y recomendaciones; no deben interpretarse como una encuesta representativa.",
+        "takeaways": [
+          "Perspectivas para líderes universitarios",
+          "Responsabilidad y valor institucional",
+          "Distinguir opinión experta y medición"
+        ],
+        "audience": "Docentes, investigadores y responsables institucionales"
+      },
+      "en": {
+        "title": "IAU Horizons: the value of universities in the AI era",
+        "summary": "A thematic issue bringing academic perspectives to university leaders on universities’ value in the AI era. Explores leadership, responsibility and institutional transformation. Contributions are analyses and recommendations rather than findings from a representative survey.",
+        "takeaways": [
+          "Perspectives for university leaders",
+          "Responsibility and institutional value",
+          "Distinguish expert opinion from measurement"
+        ],
+        "audience": "Educators, researchers and institutional leaders"
+      },
+      "added_date": "2026-11-24",
+      "reviewed_date": "2026-11-24",
+      "pages": 56,
+      "published_date": "2026-10",
+      "announcement_date": "2026-11-03"
+    },
+    {
+      "id": "intef-integracion-ia-centros-2026",
+      "organization": "INTEF",
+      "year": 2026,
+      "original_title": "Orientaciones para la integración de la inteligencia artificial en los centros educativos",
+      "original_language": "es",
+      "source_url": "https://intef.es/wp-content/uploads/2026/11/Orientaciones_para_la_integracion_de_la_inteligenc-1.pdf",
+      "topic": "education",
+      "document_type": "practitioner_guide",
+      "review_scope": "selected_sections",
+      "review_note": {
+        "es": "PDF local: revisión de extractos de PDF pp. 1–7; no lectura íntegra. Fuente editorial contrastada en web.",
+        "en": "Local PDF: review of excerpts from PDF pp. 1–7; not a full reading. Publisher source checked on the web."
+      },
+      "license_note": "Reseña propia y enlace al editor. No se aloja una copia del PDF. / Original summary and publisher link; the PDF is not hosted.",
+      "es": {
+        "title": "Orientaciones para integrar la IA en los centros educativos",
+        "summary": "Guía institucional española para planificar la incorporación de IA en centros educativos. Organiza principios, formación, objetivos y seguimiento, con atención a derechos y finalidad pedagógica. Su marco normativo pertenece al contexto español y europeo; requiere adaptación en otras jurisdicciones.",
+        "takeaways": [
+          "Planificación del centro",
+          "Formación y seguimiento",
+          "Contexto español y europeo"
+        ],
+        "audience": "Docentes, investigadores y responsables institucionales"
+      },
+      "en": {
+        "title": "Guidance for integrating AI in schools",
+        "summary": "Spanish institutional guidance for planning AI integration in schools. Organises principles, training, objectives and monitoring, with attention to rights and pedagogical purpose. Its regulatory context is Spanish and European and requires adaptation elsewhere.",
+        "takeaways": [
+          "School-level planning",
+          "Training and monitoring",
+          "Spanish and European context"
+        ],
+        "audience": "Educators, researchers and institutional leaders"
+      },
+      "added_date": "2026-11-24",
+      "reviewed_date": "2026-11-24",
+      "pages": 61,
+      "published_date": "2026-11",
+      "publication_symbol": "NIPO 164-26-104-0"
+    },
+    {
+      "id": "intef-epcia-resultados-2022",
+      "organization": "INTEF",
+      "year": 2022,
+      "original_title": "Escuela de pensamiento computacional e inteligencia artificial 21/22. De la formación docente al cambio metodológico. Resultados de la investigación",
+      "original_language": "es",
+      "source_url": "https://code.intef.es/wp-content/uploads/2022/11/09_22_Experimentacion_Investigacion-EPCIA-21-22_Investigacion-R3.pdf",
+      "topic": "education",
+      "document_type": "research_report",
+      "review_scope": "selected_sections",
+      "review_note": {
+        "es": "PDF local: revisión de extractos de PDF pp. 1–7; no lectura íntegra. Fuente editorial contrastada en web.",
+        "en": "Local PDF: review of excerpts from PDF pp. 1–7; not a full reading. Publisher source checked on the web."
+      },
+      "license_note": "Reseña propia y enlace al editor. No se aloja una copia del PDF. / Original summary and publisher link; the PDF is not hosted.",
+      "es": {
+        "title": "EPCIA 2021/2022: formación docente y cambio metodológico",
+        "summary": "Antecedente del programa español de pensamiento computacional e IA. Documenta formación docente y experiencias de implementación en el aula. Corresponde al curso 2021/2022; no describe adopción de IA generativa en 2026 ni permite trasladar resultados automáticamente a otros contextos.",
+        "takeaways": [
+          "Antecedente histórico 2021/2022",
+          "Formación docente",
+          "Contextualizar implementación"
+        ],
+        "audience": "Docentes, investigadores y responsables institucionales"
+      },
+      "en": {
+        "title": "EPCIA 2021/2022: teacher development and methodological change",
+        "summary": "A historical reference from Spain’s computational thinking and AI programme. Documents teacher development and classroom implementation experiences. Covers the 2021/2022 school year; it neither describes generative AI adoption in 2026 nor supports automatic transfer to other contexts.",
+        "takeaways": [
+          "Historical 2021/2022 reference",
+          "Teacher development",
+          "Contextualise implementation"
+        ],
+        "audience": "Educators, researchers and institutional leaders"
+      },
+      "added_date": "2026-11-24",
+      "reviewed_date": "2026-11-24",
+      "pages": 71,
+      "publication_symbol": "NIPO 847-22-142-3"
+    },
+    {
+      "id": "stanford-ets-responsible-assessment-2026",
+      "organization": "Stanford / ETS",
+      "year": 2026,
+      "original_title": "Responsible Assessment in the AI Era: Key Insights from a Future-Focused Conference",
+      "original_language": "en",
+      "source_url": "https://acceleratelearning.stanford.edu/story/white-paper-responsible-student-assessments-in-the-ai-era/",
+      "topic": "education",
+      "document_type": "institutional_report",
+      "review_scope": "selected_sections",
+      "review_note": {
+        "es": "PDF local: revisión de extractos de PDF pp. 1–5 y 19; no lectura íntegra. Fuente editorial contrastada en web.",
+        "en": "Local PDF: review of excerpts from PDF pp. 1–5 and 19; not a full reading. Publisher source checked on the web."
+      },
+      "license_note": "Reseña propia y enlace al editor. No se aloja una copia del PDF. / Original summary and publisher link; the PDF is not hosted.",
+      "es": {
+        "title": "Evaluación responsable del aprendizaje en la era de la IA",
+        "summary": "Síntesis de un encuentro de Stanford y ETS sobre evaluación, equidad y validez ante la IA. Propone ampliar la evidencia de aprendizaje y fortalecer transparencia y colaboración. Refleja discusiones de un evento, no una revisión exhaustiva ni validación experimental.",
+        "takeaways": [
+          "Validez y equidad",
+          "Evidencia del proceso de aprendizaje",
+          "Síntesis de un encuentro"
+        ],
+        "audience": "Docentes, investigadores y responsables institucionales"
+      },
+      "en": {
+        "title": "Responsible assessment in the AI era",
+        "summary": "A synthesis of a Stanford and ETS convening on assessment, fairness and validity in the AI era. Proposes broader learning evidence, transparency and collaboration. Reflects discussions from one event rather than an exhaustive review or experimental validation.",
+        "takeaways": [
+          "Validity and fairness",
+          "Evidence of learning processes",
+          "Convening synthesis"
+        ],
+        "audience": "Educators, researchers and institutional leaders"
+      },
+      "added_date": "2026-11-24",
+      "reviewed_date": "2026-11-24",
+      "pages": 24,
+      "document_url": "https://acceleratelearning.stanford.edu/app/uploads/2026/07/ResponsibleAssessmentintheAIEra_StanfordAcceleratorforLearning.pdf",
+      "announcement_date": "2026-07-23"
+    },
+    {
+      "id": "ec-ai-impact-societies-2026",
+      "organization": "Comisión Europea",
+      "year": 2026,
+      "original_title": "The impact of Artificial Intelligence on our societies",
+      "original_language": "en",
+      "source_url": "https://op.europa.eu/en/publication-detail/-/publication/b7875ebe-443a-11f1-8095-01aa75ed71a1/",
+      "topic": "policy",
+      "document_type": "institutional_report",
+      "review_scope": "selected_sections",
+      "review_note": {
+        "es": "PDF local: revisión de extractos de PDF pp. 1–7 e índice; no lectura íntegra. Fuente editorial contrastada en web.",
+        "en": "Local PDF: review of excerpts from PDF pp. 1–7 and contents; not a full reading. Publisher source checked on the web."
+      },
+      "license_note": "Reseña propia y enlace al editor. No se aloja una copia del PDF. / Original summary and publisher link; the PDF is not hosted.",
+      "es": {
+        "title": "Impacto de la IA en nuestras sociedades: revisión de expertos",
+        "summary": "Revisión independiente encargada por la Comisión Europea sobre impactos sociales, investigación y gobernanza de IA. Aborda desinformación, desigualdad y usos de interés público. La edición es de 2026, pero el manuscrito indica cierre en abril de 2025.",
+        "takeaways": [
+          "Impactos sociales y desigualdad",
+          "Investigación orientada al interés público",
+          "Fecha editorial distinta del cierre del manuscrito"
+        ],
+        "audience": "Docentes, investigadores y responsables institucionales"
+      },
+      "en": {
+        "title": "The impact of AI on our societies: expert review",
+        "summary": "An independent review commissioned by the European Commission on AI’s social impacts, research and governance. Addresses misinformation, inequality and public-interest applications. Published in 2026, while the manuscript states completion in April 2025.",
+        "takeaways": [
+          "Social impacts and inequality",
+          "Public-interest research",
+          "Publication differs from manuscript completion"
+        ],
+        "audience": "Educators, researchers and institutional leaders"
+      },
+      "added_date": "2026-11-24",
+      "reviewed_date": "2026-11-24",
+      "pages": 66,
+      "doi": "10.2777/2377840"
+    },
+    {
+      "id": "acemoglu-simple-macroeconomics-ai-2024",
+      "organization": "MIT",
+      "year": 2024,
+      "original_title": "The Simple Macroeconomics of AI",
+      "original_language": "en",
+      "source_url": "https://economics.mit.edu/sites/default/files/2024-04/The%20Simple%20Macroeconomics%20of%20AI.pdf",
+      "topic": "business",
+      "review_scope": "selected_sections",
+      "publication_type": "academic_working_paper",
+      "review_note": {
+        "es": "Leídos portada, resumen e inicio de introducción. El archivo corresponde al borrador del 5 de abril de 2024; existen revisiones posteriores con estimaciones diferentes. No equiparar esta versión con el artículo definitivo.",
+        "en": "Read cover, abstract and beginning of introduction. The file is the 5 April 2024 draft; later revisions contain different estimates. This version is not equated with the final journal article."
+      },
+      "license_note": "Reseña propia de secciones seleccionadas y enlace al editor; no se aloja el PDF ni su portada. / Original review of selected sections and link to the publisher; neither the PDF nor its cover is hosted.",
+      "es": {
+        "title": "La macroeconomía de la IA: modelo por tareas de Acemoglu",
+        "summary": "Borrador académico de abril de 2024 sobre productividad, automatización y desigualdad. Conecta exposición de tareas y ahorro de costos con efectos agregados. Sus estimaciones dependen de supuestos y evidencia disponibles entonces; no son mediciones de impacto en 2026.",
+        "takeaways": [
+          "Modelo económico por tareas",
+          "Supuestos de productividad y distribución",
+          "Borrador histórico de abril de 2024"
+        ],
+        "audience": "Investigadores y analistas económicos"
+      },
+      "en": {
+        "title": "The Simple Macroeconomics of AI: Acemoglu’s task model",
+        "summary": "April 2024 academic draft on productivity, automation and inequality. Links task exposure and cost savings to aggregate effects. Estimates depend on assumptions and evidence available at that time; they are not measurements of AI’s impact in 2026.",
+        "takeaways": [
+          "Task-based economic model",
+          "Productivity and distribution assumptions",
+          "Historical April 2024 draft"
+        ],
+        "audience": "Researchers and economic analysts"
+      },
+      "added_date": "2026-11-24",
+      "reviewed_date": "2026-11-24",
+      "published_date": "2024-04-05",
+      "pages": 50,
+      "authors": [
+        "Daron Acemoglu"
+      ],
+      "edition": "Draft dated 5 April 2024",
+      "document_type": "working_paper"
+    },
+    {
+      "id": "bid-digitalization-ai-productivity-2026",
+      "organization": "BID",
+      "year": 2026,
+      "original_title": "From Digitalization to Artificial Intelligence: Turning Promises into Productivity",
+      "original_language": "en",
+      "source_url": "https://publications.iadb.org/en/digitalization-artificial-intelligence-turning-promises-productivity",
+      "topic": "business",
+      "review_scope": "selected_sections",
+      "publication_type": "multilateral_research_book",
+      "review_note": {
+        "es": "Cotejadas portadas y créditos ES/EN; leídos índice, prefacio y comienzo del capítulo 1 en inglés. No lectura íntegra del libro. Fecha oficial noviembre de 2026; el año 1970 del generador de citas del portal es inconsistente y no se adopta.",
+        "en": "Compared Spanish and English covers and credits; read contents, preface and opening of chapter 1 in English. Not a full reading of the book. Official date November 2026; the portal citation generator’s inconsistent 1970 year is not adopted."
+      },
+      "license_note": "Reseña propia de secciones seleccionadas y enlace al editor; no se aloja el PDF ni su portada. / Original review of selected sections and link to the publisher; neither the PDF nor its cover is hosted.",
+      "es": {
+        "title": "De la digitalización a la IA: convertir promesas en productividad",
+        "summary": "Libro de investigación del BID sobre adopción digital, IA y productividad en América Latina y el Caribe. Examina instituciones, capacidades y servicios públicos. Las ediciones española e inglesa son una misma obra; se distinguen potencial tecnológico y resultados observados.",
+        "takeaways": [
+          "Adopción e instituciones",
+          "Productividad y servicios públicos",
+          "Una obra en dos idiomas"
+        ],
+        "audience": "Investigadores, directivos y responsables de políticas públicas"
+      },
+      "en": {
+        "title": "From Digitalization to AI: turning promises into productivity",
+        "summary": "IDB research book on digital adoption, AI and productivity in Latin America and the Caribbean. Examines institutions, capabilities and public services. Spanish and English editions are the same work; technological potential is distinguished from observed outcomes.",
+        "takeaways": [
+          "Adoption and institutions",
+          "Productivity and public services",
+          "One work in two languages"
+        ],
+        "audience": "Researchers, executives and public policy leaders"
+      },
+      "added_date": "2026-11-24",
+      "reviewed_date": "2026-11-24",
+      "published_month": "2026-11",
+      "doi": "10.18235/0014610",
+      "languages": [
+        "en",
+        "es"
+      ],
+      "editors": [
+        "Julián Cristia",
+        "Philip Keefer",
+        "Nadia Rocha",
+        "Christian Volpe Martincus"
+      ],
+      "document_type": "institutional_report"
+    },
+    {
+      "id": "uniandes-prompt-workflow-2025",
+      "organization": "Universidad de los Andes",
+      "year": 2025,
+      "original_title": "Del prompt al workflow: Guía para la interacción estratégica y consciente con la IA generativa",
+      "original_language": "es",
+      "source_url": "https://eduhubia.uniandes.edu.co/wp-content/uploads/HUB_IEIA_PROMPTWORKFLOWS_IsabelTejada.pdf",
+      "topic": "education",
+      "document_type": "practitioner_guide",
+      "review_scope": "selected_sections",
+      "pages": 3,
+      "review_note": {
+        "es": "Consultadas las tres páginas y el PDF institucional. Se conserva 2025 porque así lo indica la cita bibliográfica del documento; la fecha técnica de generación del archivo en 2026 no se usa como publicación.",
+        "en": "All three pages and the institutional PDF consulted. The document’s bibliographic citation states 2025; the file’s technical generation date in 2026 is not treated as publication."
+      },
+      "license_note": "Reseña original y enlace al editor o institución. No se aloja el PDF descargado ni se presume autorización de redistribución. / Original summary and publisher or institutional link. The downloaded PDF is not hosted and redistribution permission is not presumed.",
+      "es": {
+        "title": "Del prompt al workflow: interacción estratégica con IA",
+        "summary": "Material de aula que compara una petición aislada con un flujo iterativo de trabajo. Adapta SCRIBE para especificar contexto, responsabilidades, instrucciones y evaluación. Aporta una lista de comprobación para reflexionar sobre el proceso de colaboración con IA.",
+        "takeaways": [
+          "Comparar prompt y workflow",
+          "Especificar contexto y responsabilidad",
+          "Autoevaluar la colaboración"
+        ],
+        "audience": "Docentes, formadores y estudiantes universitarios"
+      },
+      "en": {
+        "title": "From prompt to workflow: strategic interaction with AI",
+        "summary": "A classroom resource comparing a single request with an iterative workflow. Adapts SCRIBE to specify context, responsibilities, instructions and evaluation. Provides a checklist for reflecting on human–AI collaboration.",
+        "takeaways": [
+          "Compare prompts and workflows",
+          "Specify context and responsibility",
+          "Self-assess collaboration"
+        ],
+        "audience": "Teachers, teacher educators and university students"
+      },
+      "added_date": "2026-11-24",
+      "reviewed_date": "2026-11-24",
+      "authors": [
+        "Isabel Tejada-Sánchez"
+      ]
+    },
+    {
+      "id": "scientific-panel-ai-capacity-building-2026",
+      "organization": "Independent International Scientific Panel on AI",
+      "year": 2026,
+      "original_title": "AI Capacity-Building",
+      "original_language": "en",
+      "source_url": "https://www.un.org/independent-international-scientific-panel-ai/sites/default/files/2026-11/Thematic%20Brief_AI%20Capacity-Building_22%20Nov%202026.pdf",
+      "topic": "policy",
+      "review_scope": "selected_sections",
+      "review_note": {
+        "es": "Lectura de páginas PDF 1–5, 13, 15 y 18: presentación, gobernanza, capital humano y lagunas de evidencia; no lectura íntegra. Thematic Brief 2, noviembre de 2026. El propio informe aclara que no representa las posiciones de Naciones Unidas.",
+        "en": "Read PDF pages 1–5, 13, 15 and 18: introduction, governance, human capital and evidence gaps; not a full reading. Thematic Brief 2, November 2026. The report states that it does not represent United Nations positions."
+      },
+      "license_note": "Reseña propia y enlace a la fuente; no se aloja el PDF ni su portada. Consultar los derechos de cada publicación antes de reutilizarla. / Original review and source link; PDF and cover are not hosted. Check each publication’s rights before reuse.",
+      "es": {
+        "title": "Fortalecer capacidades para la inteligencia artificial",
+        "summary": "Sintetiza evidencia sobre capacidades necesarias para adoptar y desarrollar IA según contextos locales. Relaciona gobernanza, infraestructura, talento e inclusión lingüística. Ayuda a priorizar formación e inversiones, diferenciando disponibilidad tecnológica, uso efectivo y resultados demostrados; identifica lagunas que requieren evaluación adicional.",
+        "takeaways": [
+          "Capacidades institucionales, técnicas y humanas",
+          "Adaptación al contexto y las lenguas locales",
+          "Distinguir acceso, adopción e impacto"
+        ],
+        "audience": "Responsables de política pública, formación e infraestructura"
+      },
+      "en": {
+        "title": "AI capacity-building",
+        "summary": "Synthesises evidence on capabilities needed to adopt and develop AI in local contexts. It connects governance, infrastructure, talent and linguistic inclusion. It helps prioritise training and investment while distinguishing technological availability, effective use and demonstrated outcomes, and identifying evidence gaps.",
+        "takeaways": [
+          "Institutional, technical and human capabilities",
+          "Adaptation to local contexts and languages",
+          "Separate access, adoption and impact"
+        ],
+        "audience": "Policymakers, training leaders and infrastructure planners"
+      },
+      "added_date": "2026-11-24",
+      "reviewed_date": "2026-11-24",
+      "pages": 22,
+      "publication_type": "thematic_brief",
+      "document_type": "policy_brief"
+    },
+    {
+      "id": "cepal-ai-governance-lac-2026",
+      "organization": "CEPAL",
+      "year": 2026,
+      "original_title": "El estado de la gobernanza de la inteligencia artificial en América Latina y el Caribe: análisis integral de los fundamentos conceptuales, los marcos internacionales y los perfiles nacionales de gobernanza de la inteligencia artificial en América Latina y el Caribe",
+      "original_language": "es",
+      "source_url": "https://www.cepal.org/es/publicaciones/90489-estado-la-gobernanza-la-inteligencia-artificial-america-latina-caribe-analisis",
+      "topic": "policy",
+      "review_scope": "selected_sections",
+      "review_note": {
+        "es": "Lectura de páginas PDF 1–5 y 11–12: preliminares, índice e introducción; no lectura íntegra ni verificación individual de 46 perfiles nacionales y territoriales. Identidad y año contrastados con ficha institucional DLAB y documento LC/TS.2026/74. La URL CEPAL procede del enlace de DLAB; su acceso automatizado devolvió 403. El documento declara no haber sido sometido a revisión editorial.",
+        "en": "Read PDF pages 1–5 and 11–12: preliminary material, contents and introduction; neither a full reading nor individual verification of the 46 country and territory profiles. Identity and year checked against the institutional DLAB entry and document LC/TS.2026/74. The CEPAL URL is linked by DLAB; automated retrieval returned 403. The document states it has not undergone editorial review."
+      },
+      "license_note": "Reseña propia y enlace a la fuente; no se aloja el PDF ni su portada. Consultar los derechos de cada publicación antes de reutilizarla. / Original review and source link; PDF and cover are not hosted. Check each publication’s rights before reuse.",
+      "es": {
+        "title": "Estado de la gobernanza de IA en América Latina y el Caribe",
+        "summary": "Examina fundamentos, marcos internacionales y perfiles nacionales de gobernanza de IA en América Latina y el Caribe. Relaciona regulación con capacidades institucionales e implementación. Aporta contexto comparativo para políticas regionales; sus perfiles corresponden al corte del informe y requieren actualización jurídica.",
+        "takeaways": [
+          "Fundamentos y marcos internacionales de gobernanza",
+          "46 perfiles nacionales y territoriales",
+          "Capacidad institucional más allá de legislar"
+        ],
+        "audience": "Responsables públicos, investigadores y universidades latinoamericanas"
+      },
+      "en": {
+        "title": "The state of AI governance in Latin America and the Caribbean",
+        "summary": "Examines foundations, international frameworks and national AI governance profiles across Latin America and the Caribbean. It connects regulation with institutional capacity and implementation. It provides comparative policy context; country profiles reflect the report’s reference period and require subsequent legal verification.",
+        "takeaways": [
+          "Governance foundations and international frameworks",
+          "46 country and territory profiles",
+          "Institutional capacity beyond legislation"
+        ],
+        "audience": "Policymakers, researchers and Latin American universities"
+      },
+      "added_date": "2026-11-24",
+      "reviewed_date": "2026-11-24",
+      "pages": 195,
+      "authors": [
+        "Demetris Herakleous"
+      ],
+      "publication_type": "report",
+      "document_type": "institutional_report"
+    },
+    {
+      "id": "spain-public-administration-ethical-ai-guide-2026",
+      "organization": "Ministerio para la Transformación Digital y de la Función Pública (España)",
+      "year": 2026,
+      "original_title": "Guía para la adopción ética de la inteligencia artificial en las Administraciones públicas",
+      "original_language": "es",
+      "source_url": "https://digital.gob.es/content/dam/portal-mtdfp/avance-digital/telecomunicacion-e-infraestructuras-digitales/estadisticas-e-informes/Guia-de-IA-en-las-AAPP.pdf",
+      "topic": "policy",
+      "review_scope": "selected_sections",
+      "review_note": {
+        "es": "Lectura de páginas PDF 1–4 y 30: presentación, estructura y condiciones previas a la contratación; no lectura íntegra. Versión de noviembre de 2026, anunciada el 19 de noviembre. Guía para administraciones españolas en contexto europeo; no constituye una nueva norma ni se generaliza a otras jurisdicciones.",
+        "en": "Read PDF pages 1–4 and 30: introduction, structure and prerequisites for procurement; not a full reading. November 2026 version, announced 19 November. Guidance for Spanish public administrations in the European context; not a new law or automatically applicable to other jurisdictions."
+      },
+      "license_note": "Reseña propia y enlace a la fuente; no se aloja el PDF ni su portada. Consultar los derechos de cada publicación antes de reutilizarla. / Original review and source link; PDF and cover are not hosted. Check each publication’s rights before reuse.",
+      "es": {
+        "title": "Adopción ética de IA en las administraciones públicas españolas",
+        "summary": "Orienta a las administraciones públicas españolas en la adopción ética de IA, considerando necesidades, datos, infraestructura y riesgos antes de contratar soluciones. Relaciona responsabilidades, supervisión humana y derechos. Su utilidad práctica requiere atender al contexto institucional y al marco europeo aplicable.",
+        "takeaways": [
+          "Evaluar necesidad y viabilidad antes de contratar",
+          "Asignar responsabilidades y supervisión humana",
+          "Adaptar los controles al contexto público"
+        ],
+        "audience": "Responsables de innovación pública, contratación y gobernanza"
+      },
+      "en": {
+        "title": "Ethical AI adoption in Spanish public administrations",
+        "summary": "Guides Spanish public administrations on ethical AI adoption, considering needs, data, infrastructure and risks before procuring solutions. It connects responsibilities, human oversight and rights. Practical use requires attention to each institution’s circumstances and the applicable European framework and implementation requirements.",
+        "takeaways": [
+          "Assess need and feasibility before procurement",
+          "Assign responsibilities and human oversight",
+          "Adapt controls to the public sector context"
+        ],
+        "audience": "Public innovation, procurement and governance leaders"
+      },
+      "added_date": "2026-11-24",
+      "reviewed_date": "2026-11-24",
+      "pages": 50,
+      "announcement_date": "2026-11-19",
+      "publication_type": "guide",
+      "document_type": "practitioner_guide"
+    },
+    {
+      "id": "undp-atlas-public-communication-innovation-2026",
+      "organization": "PNUD / UNDP",
+      "year": 2026,
+      "original_title": "Atlas of Innovation in Public Communication",
+      "original_language": "en",
+      "source_url": "https://www.undp.org/sites/g/files/zskgke326/files/2026-10/undp-report-atlas-of-innovation-finalversion.pdf",
+      "topic": "policy",
+      "review_scope": "selected_sections",
+      "review_note": {
+        "es": "Lectura de páginas PDF 1–8 y 11: presentación, categorías e introducción metodológica; no lectura íntegra ni evaluación individual de todas las experiencias. Año identificado en el documento. Contexto complementario sobre comunicación pública; no es un informe exclusivo de IA ni una evaluación causal de impacto.",
+        "en": "Read PDF pages 1–8 and 11: introduction, categories and methodological overview; neither a full reading nor individual assessment of every practice. Year identified in the document. Complementary public communication context, not an AI-only report or a causal impact evaluation."
+      },
+      "license_note": "Reseña propia y enlace a la fuente; no se aloja el PDF ni su portada. Consultar los derechos de cada publicación antes de reutilizarla. / Original review and source link; PDF and cover are not hosted. Check each publication’s rights before reuse.",
+      "es": {
+        "title": "Atlas de innovación en comunicación pública",
+        "summary": "Reúne prácticas de comunicación pública orientadas a claridad, inclusión, participación y confianza. Permite explorar cómo las instituciones explican asuntos complejos y utilizan formatos tecnológicos. Aporta contexto para comunicar políticas de IA; los ejemplos seleccionados no demuestran por sí solos impacto causal.",
+        "takeaways": [
+          "Claridad, inclusión y participación ciudadana",
+          "Prácticas seleccionadas de comunicación pública",
+          "Contexto complementario para comunicar la IA"
+        ],
+        "audience": "Equipos de comunicación pública, participación y educación"
+      },
+      "en": {
+        "title": "Atlas of Innovation in Public Communication",
+        "summary": "Collects public communication practices addressing clarity, inclusion, participation and trust. It explores how institutions explain complex issues and use technological formats. The examples offer complementary context for communicating AI policies, without independently establishing causal impact or constituting a dedicated AI assessment.",
+        "takeaways": [
+          "Clarity, inclusion and citizen participation",
+          "Selected public communication practices",
+          "Complementary context for communicating AI"
+        ],
+        "audience": "Public communication, participation and education teams"
+      },
+      "added_date": "2026-11-24",
+      "reviewed_date": "2026-11-24",
+      "pages": 86,
+      "publication_type": "report",
+      "document_type": "institutional_report"
+    },
+    {
+      "id": "cepal-geopolitics-ruptures-opportunities-2026",
+      "organization": "CEPAL",
+      "year": 2026,
+      "original_title": "Rupturas y oportunidades: propuestas para que América Latina y el Caribe prospere en la nueva era geopolítica",
+      "original_language": "es",
+      "source_url": "https://www.cepal.org/es/publicaciones/90219-rupturas-oportunidades-propuestas-que-america-latina-caribe-prospere-la-nueva",
+      "topic": "policy",
+      "review_scope": "selected_sections",
+      "review_note": {
+        "es": "Lectura de páginas PDF 1–5, 23 y 105–106: preliminares, introducción y pasajes sobre IA y desinformación; no lectura íntegra. Documento LC/PUB.2026/10, publicado el 4 de agosto de 2026 según CEPAL. Marco geopolítico complementario, no conjunto de indicadores exclusivos de IA.",
+        "en": "Read PDF pages 1–5, 23 and 105–106: preliminary material, introduction and passages on AI and disinformation; not a full reading. Document LC/PUB.2026/10, published 4 August 2026 according to CEPAL. Complementary geopolitical context, not a dedicated AI indicator dataset."
+      },
+      "license_note": "Reseña propia y enlace a la fuente; no se aloja el PDF ni su portada. Consultar los derechos de cada publicación antes de reutilizarla. / Original review and source link; PDF and cover are not hosted. Check each publication’s rights before reuse.",
+      "es": {
+        "title": "Rupturas y oportunidades para América Latina y el Caribe",
+        "summary": "Analiza transformaciones geopolíticas y opciones de desarrollo para América Latina y el Caribe. Sus pasajes sobre tecnología e información ayudan a contextualizar concentración de poder, desinformación y cooperación regional. Complementa el análisis de gobernanza de IA con una perspectiva institucional amplia.",
+        "takeaways": [
+          "Contexto geopolítico del cambio tecnológico",
+          "Concentración, información y capacidad institucional",
+          "Cooperación regional y opciones de desarrollo"
+        ],
+        "audience": "Investigadores, responsables públicos y equipos de estrategia"
+      },
+      "en": {
+        "title": "Ruptures and opportunities for Latin America and the Caribbean",
+        "summary": "Analyses geopolitical change and development options for Latin America and the Caribbean. Its technology and information discussions contextualise concentrated power, disinformation and regional cooperation. It complements AI governance analysis with a broader institutional perspective rather than providing a dedicated AI assessment.",
+        "takeaways": [
+          "Geopolitical context for technological change",
+          "Concentration, information and institutional capacity",
+          "Regional cooperation and development options"
+        ],
+        "audience": "Researchers, policymakers and strategy teams"
+      },
+      "added_date": "2026-11-24",
+      "reviewed_date": "2026-11-24",
+      "pages": 414,
+      "published_date": "2026-08-04",
+      "publication_type": "report",
+      "document_type": "institutional_report"
     }
   ]
 }

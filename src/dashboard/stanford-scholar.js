@@ -160,11 +160,11 @@
             <td>${say('Fuente primaria de nuestras series SDMX de adopción empresarial/individual y de las notas docentes TALIS 2024.', 'Primary source for our SDMX business/individual adoption series and TALIS 2024 teacher evidence.')}</td>
           </tr>
           <tr>
-            <th scope="row"><a href="https://www.cepal.org/es/publicaciones/82315-indice-latinoamericano-inteligencia-artificial-ilia-2025" target="_blank" rel="noopener noreferrer">CEPAL &amp; CENIA · ILIA 2025 ↗</a></th>
-            <td>${say('19 países de América Latina y el Caribe', '19 Latin American and Caribbean countries')}</td>
-            <td>${say('Alta en capacidades nacionales (19 países), sin cruce directo con Eurostat/OCDE global', 'High for national capabilities (19 countries), without global Eurostat/OECD crossover')}</td>
+            <th scope="row"><a href="https://www.cepal.org/es/publicaciones/90413-indice-latinoamericano-inteligencia-artificial-ilia-2026" target="_blank" rel="noopener noreferrer">CEPAL &amp; CENIA · ILIA 2026 ↗</a></th>
+            <td>${say('20 países de América Latina y el Caribe', '20 Latin American and Caribbean countries')}</td>
+            <td>${say('Alta en capacidades nacionales (20 países); la comparación entre ediciones requiere revisar la metodología', 'High for national capabilities (20 countries); comparisons across editions require checking the methodology')}</td>
             <td>${say('3 dimensiones: Factores habilitantes, I+D y Adopción, Gobernanza', '3 dimensions: Enabling factors, R&D and Adoption, Governance')}</td>
-            <td>${say('Integrado en nuestra Biblioteca y complementado con 3.105 registros de conectividad CEPALSTAT en el explorador educativo.', 'Integrated in our Library and complemented by 3,105 CEPALSTAT connectivity records in the education explorer.')}</td>
+            <td>${say('Ficha de ILIA 2026 en la Biblioteca; sus puntajes no se han importado al tablero. CEPALSTAT aporta una capa independiente de conectividad.', 'ILIA 2026 record in the Library; its scores have not been imported into the dashboard. CEPALSTAT provides a separate connectivity layer.')}</td>
           </tr>
           <tr>
             <th scope="row"><a href="https://www.unesco.org/en/artificial-intelligence" target="_blank" rel="noopener noreferrer">UNESCO Global AI Observatory &amp; UIS ↗</a></th>
@@ -177,7 +177,7 @@
             <th scope="row"><strong>${say('Observatorio Global de IA en Educación y Empresa (BIU)', 'Global AI Observatory for Education and Business (BIU)')}</strong></th>
             <td><strong>${say('218 países y economías en catálogo (194 Oxford · 165 AIPI · 40 uso directo)', '218 countries and economies in catalog (194 Oxford · 165 AIPI · 40 direct use)')}</strong></td>
             <td><strong>${say('Cobertura integral: CEPALSTAT (33 países/territorios), CIMA-PISA (26), UIS (26), TALIS (4) y Cetic.br', 'Comprehensive coverage: CEPALSTAT (33 countries/territories), CIMA-PISA (26), UIS (26), TALIS (4) & Cetic.br')}</strong></td>
-            <td><strong>${say('4 pilares: Panorama, Sectores (Educación, Empresa, Gobernanza), Expediente País 360° y Recursos (30 informes + 14 cursos)', '4 pillars: Overview, Sectors (Education, Business, Governance), 360° Country Dossier & Resources (30 reports + 14 courses)')}</strong></td>
+            <td><strong>${say(`4 pilares: Panorama, Sectores (Educación, Empresa, Gobernanza), Expediente País 360° y Recursos (${window.OBSERVATORY_LIBRARY?.items?.length ?? 0} publicaciones + ${window.OBSERVATORY_SKILLS?.items?.length ?? 0} ${window.OBSERVATORY_SKILLS?.items?.length === 1 ? 'curso' : 'cursos'})`, `4 pillars: Overview, Sectors (Education, Business, Governance), 360° Country Dossier & Resources (${window.OBSERVATORY_LIBRARY?.items?.length ?? 0} publications + ${window.OBSERVATORY_SKILLS?.items?.length ?? 0} ${window.OBSERVATORY_SKILLS?.items?.length === 1 ? 'course' : 'courses'})` )}</strong></td>
             <td><strong>${say('Observatorio académico bilingüe que cruza preparación macro, adopción real empresa-educación y micro-evidencia docente sin imputar ausencias, con verificación SHA-256 y metadatos Google Scholar / Dataset Search.', 'Bilingual academic observatory crossing macro readiness, actual business-education adoption and teacher micro-evidence without imputing missing data, with SHA-256 verification and Google Scholar / Dataset Search metadata.')}</strong></td>
           </tr>
         </tbody>
